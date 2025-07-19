@@ -1,0 +1,920 @@
+# Running machine learning and large language models locally <!-- omit from toc -->
+
+**Table of contents**
+- [Introduction](#introduction)
+    - [LLM system characteristics](#llm-system-characteristics)
+        - [Model Size](#model-size)
+        - [Quantization](#quantization)
+        - [Prompt Length](#prompt-length)
+        - [Batch Size](#batch-size)
+        - [CPU Performance](#cpu-performance)
+            - [Example](#example)
+        - [Thread/Parallelism Efficiency](#threadparallelism-efficiency)
+        - [GPU parameters](#gpu-parameters)
+- [Additional Important Parameters](#additional-important-parameters)
+        - [Memory Bandwidth and Latency](#memory-bandwidth-and-latency)
+        - [Required operations per token](#required-operations-per-token)
+        - [Software Optimization](#software-optimization)
+        - [Hyperthreading: Use one thread per CPU core](#hyperthreading-use-one-thread-per-cpu-core)
+    - [LLM inference performance indicators](#llm-inference-performance-indicators)
+        - [Prompt Processing Throughput](#prompt-processing-throughput)
+        - [Time to First Token](#time-to-first-token)
+        - [Token Generation Throughput](#token-generation-throughput)
+- [Benchmarks](#benchmarks)
+- [Hardware](#hardware)
+    - [PIM](#pim)
+    - [Other hardware](#other-hardware)
+- [Survey](#survey)
+- [Software](#software)
+    - [Frameworks](#frameworks)
+    - [TextSynth Server](#textsynth-server)
+    - [Embedding](#embedding)
+    - [Text-to-speech](#text-to-speech)
+    - [Visual analysis](#visual-analysis)
+    - [OCR](#ocr)
+
+## Introduction
+
+This is a collection of links and information to assess the viability of
+running machine learning models and large language models locally.
+
+
+### LLM system characteristics
+
+The performance of the LLM is a combination of model characteristics, hardware
+capabilities, and software efficiency. The following parameters are indicating
+performance:
+-   Time to first token [millisecond]
+-   Prompt processing throughput [token/second]
+-   Token generation throughput [token/second]
+
+
+#### Model Size
+
+Larger models generally achieve higher accuracy and better performance, but
+require more memory and computational resources. Smaller models are faster,
+use less memory, and are cheaper to run, but may have lower accuracy and are
+worse at complex tasks. The trade-off is between performance and resource
+usage.
+
+The size of an LLM model is typically measured by the number of parameters --
+the weights and biases in the artificial neural network. Each parameter is a
+numerical value that adjusts the strength of connections between neurons. LLMs
+typically have millions or billions of parameters, and the total storage size
+is measured in gigabytes.
+
+$S_{model}$: Size of the model file in GB. Typical values for publicly
+available language models:
+
+| Model Name                | Parameters | $S_{model}$ (FP16, GB) |
+|---------------------------|------------|------------------------|
+| Tiny models (e.g. DistilGPT2) | ~80M   | ~0.15                  |
+| GPT-2 Small               | 124M       | ~0.25                  |
+| GPT-2 Medium              | 345M       | ~0.70                  |
+| GPT-2 Large               | 774M       | ~1.5                   |
+| GPT-2 XL                  | 1.5B       | ~3.0                   |
+| Llama 2 7B                | 7B         | ~13                    |
+| Llama 2 13B               | 13B        | ~25                    |
+| Llama 2 70B               | 70B        | ~140                   |
+| Falcon 180B               | 180B       | ~360                   |
+
+FP16 (16-bit floating point) is commonly used for inference, halving the
+storage compared to FP32, typically used when training the model. Actual file
+sizes may vary slightly due to model architecture and tokenizer data. Some
+models (e.g., Mistral, Phi-2, Gemma) fall between these sizes (e.g., 2–8 GB
+for 1–3B parameters).
+
+#### Quantization
+
+Lower bit depth (e.g., 4-bit) reduces memory and computation needs but can
+decrease model accuracy. Higher bit quantization (e.g., 8-bit, 16-bit, 32-bit)
+preserves more precision but uses more resources.
+
+Typical quantization values used in LLMs are 4-bit (int4), 8-bit (int8), and
+sometimes 16-bit (fp16 or bfloat16).
+[bfloat](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) (Google
+Brain floating point) has the same exponent size as float32 but fewer mantissa
+bits; it has a wide dynamic range and reduced precision. Processors with
+[AVX-512](https://en.wikipedia.org/wiki/AVX-512) extensions support this data
+format. The 4-bit and 8-bit quantizations are most common for efficient
+inference, while 16-bit is often used for training or higher-precision
+inference.
+
+There is no universal optimum bit depth -- it depends on the model, task, and
+acceptable accuracy loss. 8-bit is often a good balance for inference, while
+4-bit is used for maximum efficiency with some accuracy trade-off.
+
+32-bit models (fp32) are used when maximum precision is needed, such as during
+model development, debugging, or when training very large models where
+numerical stability is critical. 16-bit models (fp16 or bfloat16) are commonly
+used during training to save memory and speed up computation while maintaining
+good accuracy. For inference, 16-bit is often sufficient, but 32-bit may be
+used if highest accuracy is required.
+
+#### Prompt Length
+
+$L_{prompt}$: Prompt Length -- number of tokens in the input prompt.
+
+Longer prompts require more computation, especially for attention mechanisms.
+
+-   Short prompts: 5–50 tokens (e.g., simple questions, instructions)
+-   Medium prompts: 50–200 tokens (e.g., paragraphs, multi-step instructions)
+-   Long prompts: 200–1000+ tokens (e.g., documents, code, multi-turn conversations)
+
+Most practical prompts are between 10 and 200 tokens. Some advanced
+applications (retrieval-augmented generation, long context tasks) may use much
+longer prompts, up to the model’s context window (often 2,048–32,768 tokens,
+depending on the model).
+
+#### Batch Size
+
+$B$: Batch size - number of prompts processed in parallel. Batching can
+improve throughput if the CPU has enough resources. Typical batch sizes for
+LLM inference depend on the use case and available system resources:
+
+-   For interactive/chat use, $B = 1$ (this is the most common if low latency is prioritized)
+-   For batch processing / offline inference: $B = 2..16$ (sometimes up to 32 or 64 on high-end CPUs/GPUs)
+-   For CPU-based LLMs: Batch sizes are usually $B = 1..4$ due to memory and bandwidth constraints
+-   For GPU-based LLMs: Batch sizes can be much larger ($`8..128+`$), limited by GPU memory
+
+#### CPU Performance
+
+$F_{cpu}$: CPU FLOPS -- floating-point operations per second. The number of
+cores, clock speed, and architecture (e.g., AVX2/AVX-512 support) directly
+affect how quickly the computer can process data.
+
+-   Modern Desktop CPUs (2023–2025):
+    -   Single Core: $~20–100$ GFLOPS (billion FLOPS)
+    -   Multi-core ($`8..32`$ cores): $~200..2000$ GFLOPS ($`0.2`$ to $`2`$ TFLOPS)
+-   High-End Server CPUs:
+    -   Multi-socket, AVX-512: Up to $`5..10`$ TFLOPS (theoretical peak,
+        rarely sustained in practice)
+
+Actual sustained FLOPS for LLM inference is usually lower due to memory
+bottlenecks and non-ideal vectorization.
+
+##### Example
+
+[//]: # (Review this block. The values seem to be a bit off. Actual measured
+    value is 23 GFLOP/s.)
+
+The Intel Core i5-1335U is a 13th Gen mobile CPU with a hybrid architecture
+(Performance and Efficiency cores). Intel does not publish official FLOPS
+(floating point operations per second) numbers for consumer CPUs, but you can
+estimate peak theoretical FLOPS per core as follows:
+
+1. Find the max clock speed per core:
+   - P-cores: up to 4.6 GHz
+   - E-cores: up to 3.4 GHz
+
+2. Determine SIMD width:
+   - Supports AVX2 (256-bit SIMD), which is 8 single-precision (FP32) or 4
+     double-precision (FP64) operations per instruction.
+
+3. FLOPS per core (theoretical, FP32):
+   - Each core can do 8 FP32 operations per cycle (with AVX2
+     [FMA](https://en.wikipedia.org/wiki/FMA_instruction_set)).
+   - FLOPS = SIMD width × FMA × clock speed
+
+For a P-core at 4.6 GHz: $FLOPS = 8 (SIMD ~ FP32 ops) × 2 (FMA) × 4.6e9 (Hz) =
+73.6 GFLOPS$ (per P-core, FP32)
+
+For an E-core at 3.4 GHz: $FLOPS = 8 × 2 × 3.4e9 = 54.4 GFLOPS$ (per E-core,
+FP32)
+
+| Core Type | Max Clock | Theoretical Peak FP32 FLOPS per Core |
+|-----------|-----------|--------------------------------------|
+| P-core    | 4.6 GHz   | ~73.6 GFLOPS                         |
+| E-core    | 3.4 GHz   | ~54.4 GFLOPS                         |
+
+These are theoretical maximums assuming AVX2 FMA is fully utilized, which is
+rare in real-world workloads. Actual FLOPS will be lower due to memory,
+instruction mix, and other bottlenecks.
+
+#### Thread/Parallelism Efficiency
+
+$E_{par}$: How well the workload is parallelized. It is the ratio of actual
+speedup to theoretical maximum speedup. Typical values on a multi-core CPU
+are:
+
+-   Ideal (perfect scaling): $E_{par} = 1.0$
+-   Real-world (good scaling): $E_{par} = 0.7$ to $`0.9`$
+-   Suboptimal (memory-bound or poor threading): $`E_{par} = 0.4`$ to $`0.7`$
+
+For LLM inference, $E_{par}$ is often $`0.6`$ to $`0.85`$ on modern CPUs,
+depending on model size, memory bandwidth, and software optimization. Larger
+models and memory-bound workloads tend to have lower values. For example, if
+the CPU has 16 cores and the observed speedup is 10× over a single core, then
+$E_{par} = 10/16 = 0.625$.
+
+#### GPU parameters
+
+-   Memory (VRAM): Determines the maximum model size you can run. Larger
+    models require more VRAM.
+
+-   Memory Bandwidth is very important for feeding data to compute units efficiently.
+
+-   Compute Units/Shading Units: Perform the parallel computations needed for
+    matrix operations. More units generally mean faster inference (CUDA cores on
+    NVIDIA, Stream Processors on AMD)
+
+-   Tensor Cores/Matrix Cores: Specialized hardware that dramatically accelerates matrix operations
+
+-   Precision Support: Hardware support for FP16, BF16, INT8 operations
+
+
+
+
+
+GPU parameters not relevant for LLM inference:
+-   TMUs (Texture Mapping Units): Graphics-specific feature for texture handling
+-   ROPs (Render Output Pipelines): Handle pixel output operations for displays
+-   RT Cores (Ray Tracing Cores): Specialized for graphics ray tracing
+
+## Additional Important Parameters
+
+
+
+#### Memory Bandwidth and Latency
+
+$BW_{mem}$: RAM bandwidth in GB/s. LLMs are memory-intensive; slow RAM or
+insufficient bandwidth limit performance.
+
+First, the LLM model file needs to be loaded from the disk into the system
+memory. This is a one-off initialization step, bound by the disk's throughput.
+The typical read bandwidth of a modern SSD ranges from 500 MB/s (SATA SSDs) to
+3,000–7,000 MB/s (NVMe SSDs using PCIe Gen3/Gen4). Today's fastest SSDs can
+reach a peak throughput of 14 GB/s. Assuming 1-10 GB/s SSD read speed and
+1-100 GB LLM model files sizes, loading the model to the system RAM can range
+from 0.1 second to 1.5 minutes.
+
+If CPU-only inference is used, then each weight and bias of the model is
+stage-by-stage loaded to the CPU's L3, L2, and L1 cache. Depending on how well
+the inference code is optimized, this loading procedure may need to be
+repeated for each output token produced. In turn, the system's inference speed
+is determined by how many times per second the complete model plus the context
+can be loaded into the memory.
+
+In the case of GPU inference the process is similar: the model is first loaded
+from the system RAM into the GPU VRAM; then subsequently into the GPU Compute
+Units' L3, L2, and L1 cache. As long as the GPU has sufficient VRAM to hold
+the complete model, the inference speed is determined by the GPU VRAM
+throughput.
+
+If the model does not fit completely into the GPU VRAM, then hybrid CPU+GPU
+operation is needed. System performance is determined by how much data is
+moved within the system RAM.
+
+The inference process requires matrix multiplications, which are relatively
+cheap operations compared to the time required to move data within the memory.
+
+Typical memory throughput values:
+
+-   CPU only:
+    -   DDR4: 25–50 GB/s (dual/quad channel)
+    -   DDR5: 50–100 GB/s (higher end, e.g., Intel 13th/14th Gen, AMD Ryzen 7000+)
+-   New APUs (AMD Ryzen 8000G, AMD Ryzen AI Max+ PRO 395, Intel Meteor Lake):
+        - Use fast LPDDR5/DDR5, typically 50–200 GB/s shared between CPU and integrated GPU
+-   GPU only:
+    -   Consumer GPUs (e.g., RTX 4060): 250–400 GB/s
+    -   High-end GPUs (e.g., RTX 4090, A100): 800–2000+ GB/s (with GDDR6X or HBM2/3)
+-   CPU+GPU:
+    -   Add CPU and GPU bandwidths separately; data transfer between them is
+        limited by PCIe (16–64 GB/s for PCIe 4.0/5.0 x16)
+
+Real-world bandwidth is often lower than peak theoretical values -- observed
+bandwidth can be as low as 0.3 to 0.8 of the theoretical maximum. For AI/LLM
+workloads, GPU bandwidth is usually the bottleneck.
+
+#### Required operations per token
+
+$O_{token}$: Number of floating point operations needed to
+process/generate one token [FLOP/token]. As a rule of thumb:
+
+$O_{token} [FLOP/token] \approx 2 \times N \times d_{model}^2$,
+
+where \
+$N$: Number of transformer layers, and \
+$d_{model}$: hidden size.
+
+Typical Values:
+
+| Model              | Op per token [GFLOP/token] |
+|--------------------|------------------------------|
+| GPT-2 Small (124M) | 2–3                          |
+| GPT-2 Medium (345M)| 6–8                          |
+| GPT-2 Large (774M) | 15–20                        |
+| GPT-3 6.7B         | 120–150                      |
+| GPT-3 13B          | 250–300                      |
+| Llama 7B           | 80–100                       |
+| Llama 13B          | 160–200                      |
+| Llama 70B          | 800–1000                     |
+
+These are rough estimates; actual values depend on architecture details and
+prompt length (due to attention scaling).
+
+
+The number of transformer layers and hidden size from the total parameter count of a large language model (LLM) can be estimated, but only approximately.
+
+Parameter count in a transformer is mostly determined by:
+-   Number of layers (L)
+-   Hidden size (d_model)
+-   Vocabulary size (V)
+-   Feedforward size (d_ff)
+-   Number of attention heads (h)
+
+A rough formula for the parameter count in a decoder-only transformer (like GPT) is: $Parameters ≈ 12 * L * d_{model}^2$. This formula assumes the feedforward size is 4x the hidden size and ignores embedding/vocab for simplicity.
+
+Given only the parameter count:
+- You can guess plausible (L, d_model) pairs that fit the count.
+- But you can’t uniquely determine both, since many combinations are possible.
+- Knowing the architecture (e.g., GPT-2, Llama, etc.) helps, as typical ratios are used.
+
+Example: If a model has 350M parameters, and you know it’s GPT-like:
+- Try L = 24, d_model = 1024: 12 * 24 * 1024^2 ≈ 302M (plus embeddings)
+- Try L = 36, d_model = 768: 12 * 36 * 768^2 ≈ 254M
+
+You can estimate the range of possible layer counts and hidden sizes, but not get exact values without more information.
+
+
+#### Software Optimization
+
+Efficient libraries (e.g., BLAS, oneDNN) and threading can significantly
+impact throughput.
+
+#### Hyperthreading: Use one thread per CPU core
+
+For LLM inference on CPUs it is best to use one thread per physical core.
+
+Hyperthreading (SMT) usually provides limited or no benefit, and sometimes
+even reduces performance compared to running one thread per physical core.
+This is because LLM inference is typically memory bandwidth-bound.
+Hyperthreading helps when there are idle CPU resources (e.g., waiting on
+memory), but with LLMs, all threads often compete for the same memory
+bandwidth. Adding more threads can increase contention and cache thrashing.
+
+### LLM inference performance indicators
+
+#### Prompt Processing Throughput
+
+$PP$: Number of input tokens processed in a second. The model attends to all
+prompt tokens (full attention over the entire prompt). Computational cost
+grows with prompt length ((O(L_{prompt}^2)) for attention). More memory and
+compute required for long prompts.
+
+The formula for prompt processing speed (token/s) is:
+
+$$
+PP [token/s] = \frac{F_{cpu} \times E_{par}}{O_{token}}
+$$
+
+Where:
+- $F_{cpu}$: CPU FLOPS (floating-point operations per second) $[FLOP/s]$
+- $E_{par}$: Parallelism efficiency (0–1) $[1]$
+- $L_{prompt}$: Prompt length (number of tokens) $[token]$
+- $O_{token}$: FLOPs required to process one token $[FLOP/token]$
+
+This formula assumes the process is compute-bound. For very large models, memory bandwidth may also become a limiting factor.
+
+#### Time to First Token
+
+$T_{first}$: The time from submitting a prompt to receiving the first output token. It includes:
+
+-   Processing the input prompt (attention over all prompt tokens).
+-   Generating the first output token.
+
+A simplified formula:
+
+$$
+T_{first} [s] \approx \frac{L_{prompt}}{PP} + \frac{S_{model}}{BW_{mem}}
+$$
+
+-   The first term is the compute time for the prompt.
+-   The second term is the time to load model weights from RAM (if not already cached).
+
+#### Token Generation Throughput
+
+$TG$: Token Generation Throughput. For large models, token generation is often memory-bound:
+
+$$
+TG [token/s] \approx BW_{mem} [GB/s] / S_{model} [GB]
+$$
+
+For example, if memory bandwidth is 50 GB/s and model size is 10 GB: $TG \approx 50
+/ 10 = 5 token/s$. If compute is the bottleneck (for small models or
+slow CPUs):
+
+$$
+TG [token/s] \approx (F_{cpu} × E_{par}) / O_{token}
+$$
+
+For most large LLMs on CPUs, memory bandwidth and model size are the main
+determinants for token generation throughput. Prompt processing (time to first
+token) is more compute-bound and depends on prompt length and CPU speed.
+
+Typical values/ranges for (( F_{cpu} )): "Floating-point operations per second", and (( O_{token} )): "Number of FLOPs needed to process/generate one token"?
+
+
+
+
+
+## Benchmarks
+
+-   [OpenBenchmarking.org](https://openbenchmarking.org/)
+    -   [Machine Learning Test Suite](https://openbenchmarking.org/suite/pts/machine-learning)
+        -   Uses the [Phoronix Test Suite](https://github.com/phoronix-test-suite/phoronix-test-suite)
+            -- a comprehensive testing and benchmarking platform
+        -   [LocalScore](https://openbenchmarking.org/test/pts/localscore&eval=c240e0c478d017d275f0bdcf4fb57117a2e5d22b#metrics)
+            -   Models:
+                -   Model: Llama-3.2-1B-Instruct-Q4_K_M.gguf - Acceleration: CPU
+                -   Model: Llama-3.2-1B-Instruct-Q4_K_M.gguf - Acceleration: GPU
+                -   Model: Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf - Acceleration: CPU
+                -   Model: Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf - Acceleration: GPU
+                -   Model: Qwen2.5-14B-Instruct-Q4_K_M.gguf - Acceleration: CPU
+                -   Model: Qwen2.5-14B-Instruct-Q4_K_M.gguf - Acceleration: GPU
+                -   Model: Qwen3-32B-Q4_K_M.gguf - Acceleration: CPU
+                -   Model: Qwen3-32B-Q4_K_M.gguf - Acceleration: GPU
+
+                | FileName                                 | FileSize       |
+                |------------------------------------------|---------------:|
+                | localscore-0.9.3                         |    380,479,144 |
+                | Llama-3.2-1B-Instruct-Q4_K_M.gguf        |    807,694,464 |
+                | Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf   |  4,920,739,232 |
+                | Qwen2.5-14B-Instruct-Q4_K_M.gguf         |  8,988,110,976 |
+                | Qwen3-32B-Q4_K_M.gguf                    | 19,762,150,048 |
+
+            -   Results: \
+                Note: Processors with AMD EPYC SP5 and Threadripper sTR5 sockets are omitted.
+
+                -   Model: Model: Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf - Acceleration: CPU
+
+                    | Component                          | Percentile Rank | Prompt Processing - tok/s (Average) |
+                    |------------------------------------|-----------------|-------------------------------------|
+                    | AMD Ryzen 9 9950X 16-Core          | 70th            | 246                                 |
+                    | AMD Ryzen 9 9950X3D 16-Core        | 65th            | 236 +/- 2                           |
+                    | AMD EPYC 4585PX 16-Core            | 59th            | 226 +/- 30                          |
+                    | AMD EPYC 4465P 12-Core             | 51st            | 165                                 |
+                    | AMD RYZEN AI MAX+ PRO 395          | 51st            | 165 +/- 16                          |
+                    | AMD RYZEN AI MAX PRO 390           | 41st            | 138 +/- 4                           |
+                    | AMD EPYC 4545P 16-Core             | 34th            | 111 +/- 6                           |
+                    | AMD Ryzen 7 7840HS                 | 27th            | 79                                  |
+                    | AMD Ryzen AI 9 365                 | 18th            | 61 +/- 1                            |
+
+                    | Component                          | Percentile Rank | Time To First Token - ms (Average)  |
+                    |------------------------------------|-----------------|-------------------------------------|
+                    | AMD Ryzen 9 9950X 16-Core          | 68th            | 5660 +/- 2                          |
+                    | AMD Ryzen 9 9950X3D 16-Core        | 59th            | 5831 +/- 46                         |
+                    | AMD EPYC 4465P 12-Core             | 45th            | 8415 +/- 5                          |
+                    | AMD RYZEN AI MAX PRO 390           | 41st            | 9640 +/- 103                        |
+                    | AMD EPYC 4545P 16-Core             | 35th            | 12093 +/- 927                       |
+                    | AMD Ryzen 7 7840HS                 | 27th            | 17516 +/- 122                       |
+                    | AMD Ryzen AI 9 365                 | 21st            | 22242 +/- 499                       |
+
+                    | Component                          | Percentile Rank | Token Generation - tok/s (Average)  |
+                    |------------------------------------|-----------------|-------------------------------------|
+                    | AMD RYZEN AI MAX+ PRO 395          | 62nd            | 20.3 +/- 0.4                        |
+                    | AMD RYZEN AI MAX PRO 390           | 55th            | 19.2 +/- 0.3                        |
+                    | AMD Ryzen 9 9950X 16-Core          | 51st            | 14.5                                |
+                    | AMD Ryzen 9 9950X3D 16-Core        | 49th            | 14.3 +/- 0.1                        |
+                    | Intel Core i9-10980XE              | 44th            | 13.9 +/- 0.1                        |
+                    | AMD Ryzen AI 9 365                 | 42nd            | 12.1 +/- 0.3                        |
+                    | AMD EPYC 4465P 12-Core             | 38th            | 11.9                                |
+                    | AMD EPYC 4585PX 16-Core            | 34th            | 11.3 +/- 0.1                        |
+                    | AMD Ryzen AI 9 HX 370              | 31st            | 11.2 +/- 1.1                        |
+
+                -   Model: Qwen2.5-14B-Instruct-Q4_K_M.gguf - Acceleration: CPU
+
+                    | Component                          | Percentile Rank | Prompt Processing - tok/s (Average) |
+                    |------------------------------------|-----------------|-------------------------------------|
+                    | AMD Ryzen 9 9950X 16-Core          | 72nd            | 125                                 |
+                    | AMD Ryzen 9 9950X3D 16-Core        | 65th            | 121 +/- 1                           |
+                    | AMD EPYC 4585PX 16-Core            | 59th            | 116 +/- 15                          |
+                    | AMD RYZEN AI MAX+ PRO 395          | 53rd            | 84 +/- 3                            |
+                    | AMD EPYC 4465P 12-Core             | 49th            | 83                                  |
+                    | AMD RYZEN AI MAX PRO 390           | 42nd            | 71 +/- 3                            |
+
+                    | Component                          | Percentile Rank | Time To First Token - ms (Average) |
+                    |------------------------------------|-----------------|------------------------------------|
+                    | AMD Ryzen 9 9950X 16-Core          | 69th            | 11190 +/- 15                       |
+                    | AMD Ryzen 9 9950X3D 16-Core        | 60th            | 11460 +/- 85                       |
+                    | AMD RYZEN AI MAX+ PRO 395          | 53rd            | 16158 +/- 467                      |
+                    | AMD EPYC 4465P 12-Core             | 47th            | 16717 +/- 23                       |
+                    | AMD RYZEN AI MAX PRO 390           | 41st            | 18981 +/- 334                      |
+
+                    | Component                          | Percentile Rank | Token Generation - tok/s (Average) |
+                    |------------------------------------|-----------------|------------------------------------|
+                    | AMD RYZEN AI MAX+ PRO 395          | 65th            | 11.11 +/- 0.27                     |
+                    | AMD RYZEN AI MAX PRO 390           | 57th            | 10.52 +/- 0.27                     |
+                    | AMD Ryzen 9 9950X 16-Core          | 53rd            | 7.93 +/- 0.01                      |
+                    | AMD Ryzen 9 9950X3D 16-Core        | 51st            | 7.83 +/- 0.07                      |
+                    | AMD Ryzen AI 9 365                 | 42nd            | 6.60 +/- 0.08                      |
+                    | AMD EPYC 4465P 12-Core             | 41st            | 6.53 +/- 0.01                      |
+                    | AMD EPYC 4585PX 16-Core            | 35th            | 6.19 +/- 0.03                      |
+                    | AMD Ryzen AI 9 HX 370              | 32nd            | 6.11 +/- 0.57                      |
+
+                -   Model: Qwen3-32B-Q4_K_M.gguf - Acceleration: CPU
+
+                    | Component                   | Percentile Rank | Prompt Processing - tok/s (Average) |
+                    |-----------------------------|-----------------|-------------------------------------|
+                    | AMD Ryzen 9 9950X 16-Core   | 50th            | 53                                  |
+                    | AMD Ryzen 9 9950X3D 16-Core | 45th            | 52                                  |
+                    | AMD RYZEN AI MAX+ PRO 395   | 36th            | 36 +/- 1                            |
+                    | AMD RYZEN AI MAX PRO 390    | 28th            | 30 +/- 1                            |
+                    | AMD EPYC 4545P 16-Core      | 21st            | 25 +/- 1                            |
+
+                    | Component                   | Percentile Rank | Time To First Token - ms (Average) |
+                    |-----------------------------|-----------------|------------------------------------|
+                    | AMD Ryzen 9 9950X 16-Core   | 51st            | 26,414 +/- 49                      |
+                    | AMD Ryzen 9 9950X3D 16-Core | 44th            | 26,991 +/- 160                     |
+                    | AMD RYZEN AI MAX+ PRO 395   | 38th            | 38,082 +/- 959                     |
+                    | AMD RYZEN AI MAX PRO 390    | 27th            | 43,996 +/- 273                     |
+                    | AMD EPYC 4545P 16-Core      | 20th            | 56,061 +/- 3,460                   |
+
+                    | Component                   | Percentile Rank | Token Generation - tok/s (Average) |
+                    |-----------------------------|-----------------|------------------------------------|
+                    | AMD RYZEN AI MAX+ PRO 395   | 51st            | 5.12 +/- 0.08                      |
+                    | AMD RYZEN AI MAX PRO 390    | 40th            | 4.85 +/- 0.07                      |
+                    | Intel Core i9-10980XE       | 38th            | 3.67 +/- 0.01                      |
+                    | AMD Ryzen 9 9950X 16-Core   | 33rd            | 3.60                               |
+                    | AMD Ryzen 9 9950X3D 16-Core | 27th            | 3.57 +/- 0.02                      |
+                    | AMD Ryzen AI 9 HX 370       | 21st            | 3.00 +/- 0.01                      |
+                    | AMD EPYC 4545P 16-Core      | 16th            | 2.72 +/- 0.01                      |
+
+        -   [AMD Ryzen 9 9950X3D 16-Core](https://openbenchmarking.org/s/AMD+Ryzen+9+9950X3D+16-Core)
+        -   The AMD Ryzen 9 9950X3D 16-Core is a 16 core and 32 thread
+            processor configuration with 5.8GHz clock speed and 192MB L3
+            cache. The AMD Ryzen 9 9950X3D 16-Core is a "Zen 5" processor. Of
+            the 143 test profiles the overall rank was approximately in the
+            80th percentile.
+    -   [2 x AMD EPYC 9175F 16-Core](https://openbenchmarking.org/s/2+x+AMD+EPYC+9175F+16-Core)
+-   [LocalScore](https://www.localscore.ai/) - Benchmarks for LLMs and a
+    repository for the results.
+
+    A LocalScore is a measure of three key performance metrics that matter for
+    local LLM performance: Prompt Processing Speed, Generation Speed, and Time
+    to First Token. These metrics are combined into a single LocalScore which
+    gives you a straightforward way to compare different hardware
+    configurations. A score of 1,000 is excellent, 250 is passable, and below
+    100 will likely be a poor user experience in some regard.
+
+    Tests:
+
+    | Prompt Tokens | Text Generation Tokens | Sample Use Cases                                                     |
+    |---------------|-----------------------|-----------------------------------------------------------------------|
+    | 1024          | 16                    | Classification, sentiment analysis, keyword extraction                |
+    | 4096          | 256                   | Long document Q&A, RAG, short summary of extensive text               |
+    | 2048          | 256                   | Article summarization, contextual paragraph generation                |
+    | 2048          | 768                   | Drafting detailed replies, multi-paragraph generation, content sections|
+    | 1024          | 1024                  | Balanced Q&A, content drafting, code generation based on long sample  |
+    | 1280          | 3072                  | Complex reasoning, chain-of-thought, long-form creative writing, code generation |
+    | 384           | 1152                  | Prompt expansion, explanation generation, creative writing, code generation |
+    | 64            | 1024                  | Short prompt creative generation (poetry/story), Q&A, code generation |
+    | 16            | 1536                  | Creative text writing/storytelling, Q&A, code generation              |
+
+    Models:
+
+    | Model Size           | Tiny      | Small     | Medium    |
+    |----------------------|-----------|-----------|-----------|
+    | # Params             | 1B        | 8B        | 14B       |
+    | Model                | Llama 3.2 | Llama 3.1 | Qwen 2.5  |
+    | Quantization         | Q4_K_M    | Q4_K_M    | Q4_K_M    |
+    | Approx VRAM Required | 2 GB      | 6 GB      | 10 GB     |
+
+-   https://www.reddit.com/r/LocalLLaMA/comments/1iyztni/dual_9175f_amd_epyc_9005_a_new_trend/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1jq13ik/comment/ml6hg70/?context=3
+-   https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/
+-   https://old.chipsandcheese.com/2024/11/24/pushing-amds-infinity-fabric-to-its-limits/
+-   https://www.servethehome.com/amd-epyc-genoa-gaps-intel-xeon-in-stunning-fashion/3/
+-   https://www.reddit.com/r/FlowZ13/comments/1j2uymr/comment/mhauazc/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1kedbv7/ryzen_ai_max_395_a_gpu/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1kmi3ra/amd_strix_halo_ryzen_ai_max_395_gpu_llm/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1ghvwsj/llamacpp_compute_and_memory_bandwidth_efficiency/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1ghvwsj/comment/lv4sx1e/
+
+```
+========================= System Information =========================
+
+Kernel Type:         Windows
+Kernel Release:      10.0
+Version:             Cosmopolitan 3.9.7 MODE=x86_64
+System Architecture: x86_64
+CPU:                 13th Gen Intel Core i5-1335U (alderlake)
+RAM:                 63.2 GiB
+
+======================================================================
+
+Loading model... Model loaded.
+Warming up...... Warmup complete.
+
++---------------------------------------------------------------------------------------------------+
+|                        13th Gen Intel Core i5-1335U (alderlake) - 63.2 GiB                        |
+|                               Llama 3.2 1B Instruct - Q4_K - Medium                               |
++---------------------------------------------------------------------------------------------------+
+|          test | run number | avg time   | tokens processed | pp t/s     | tg t/s     | ttft       |
+| ------------- | ---------- | ---------- | ---------------- | ---------- | ---------- | ---------- |
+|   pp1024+tg16 | 1/1        | 33.81 s    | 1040 / 1040      | 31.45      | 12.89      | 32.64 s    |
+|  pp4096+tg256 | 1/1        | 176.20 s   | 4352 / 4352      | 27.58      | 9.24       | 148.62 s   |
+|  pp2048+tg256 | 1/1        | 82.49 s    | 2304 / 2304      | 34.35      | 11.20      | 59.71 s    |
+|  pp2048+tg768 | 1/1        | 139.83 s   | 2816 / 2816      | 29.10      | 11.06      | 70.47 s    |
+| pp1024+tg1024 | 1/1        | 116.55 s   | 2048 / 2048      | 31.53      | 12.18      | 32.55 s    |
+| pp1280+tg3072 | 1/1        | 334.08 s   | 4352 / 4352      | 29.18      | 10.59      | 43.94 s    |
+|  pp384+tg1152 | 1/1        | 99.17 s    | 1536 / 1536      | 35.75      | 13.03      | 10.81 s    |
+|   pp64+tg1024 | 1/1        | 77.89 s    | 1088 / 1088      | 24.98      | 13.59      | 2.63 s     |
+|   pp16+tg1536 | 1/1        | 116.16 s   | 1552 / 1552      | 23.95      | 13.30      | 736.59 ms  |
++---------------------------------------------------------------------------------------------------+
+
+Token Generation:        11.90 tok/s
+Prompt Processing:       29.76 tok/s
+Time to First Token:     44679.56 ms
+```
+
+
+```
+========================= System Information =========================
+
+Kernel Type:         Windows
+Kernel Release:      10.0
+Version:             Cosmopolitan 3.9.7 MODE=x86_64
+System Architecture: x86_64
+CPU:                 13th Gen Intel Core i5-1335U (alderlake)
+RAM:                 63.2 GiB
+
+======================================================================
+
+Loading model... Model loaded.
+Warming up...... Warmup complete.
+
++---------------------------------------------------------------------------------------------------+
+|                        13th Gen Intel Core i5-1335U (alderlake) - 63.2 GiB                        |
+|                            Meta Llama 3.1 8B Instruct - Q4_K - Medium                             |
++---------------------------------------------------------------------------------------------------+
+|          test | run number | avg time   | tokens processed | pp t/s     | tg t/s     | ttft       |
+| ------------- | ---------- | ---------- | ---------------- | ---------- | ---------- | ---------- |
+|   pp1024+tg16 | 1/1        | 152.13 s   | 1040 / 1040      | 7.07       | 2.21       | 145.35 s   |
+|  pp4096+tg256 | 1/1        | 801.74 s   | 4352 / 4352      | 6.31       | 1.68       | 649.83 s   |
+|  pp2048+tg256 | 1/1        | 458.81 s   | 2304 / 2304      | 6.59       | 1.73       | 311.50 s   |
+|  pp2048+tg768 | 1/1        | 970.11 s   | 2816 / 2816      | 3.68       | 1.86       | 556.94 s   |
+| pp1024+tg1024 | 1/1        | 774.28 s   | 2048 / 2048      | 3.74       | 2.05       | 274.32 s   |
+| pp1280+tg3072 | 1/1        | 4577.06 s  | 4352 / 4352      | 3.49       | 0.73       | 367.64 s   |
+|  pp384+tg1152 | 1/1        | 633.35 s   | 1536 / 1536      | 3.98       | 2.15       | 96.87 s    |
+|   pp64+tg1024 | 1/1        | 490.01 s   | 1088 / 1088      | 3.54       | 2.17       | 18.53 s    |
+|   pp16+tg1536 | 1/1        | 665.35 s   | 1552 / 1552      | 3.44       | 2.32       | 5.10 s     |
++---------------------------------------------------------------------------------------------------+
+```
+
+```
+========================= System Information =========================
+
+Kernel Type:         Windows
+Kernel Release:      10.0
+Version:             Cosmopolitan 3.9.7 MODE=x86_64
+System Architecture: x86_64
+CPU:                 13th Gen Intel Core i5-1335U (alderlake)
+RAM:                 63.2 GiB
+
+======================================================================
+
+Loading model... Model loaded.
+Warming up...... Warmup complete.
+
++---------------------------------------------------------------------------------------------------+
+|                        13th Gen Intel Core i5-1335U (alderlake) - 63.2 GiB                        |
+|                               Qwen2.5 14B Instruct - Q4_K - Medium                                |
++---------------------------------------------------------------------------------------------------+
+|          test | run number | avg time   | tokens processed | pp t/s     | tg t/s     | ttft       |
+| ------------- | ---------- | ---------- | ---------------- | ---------- | ---------- | ---------- |
+|   pp1024+tg16 | 1/1        | 278.12 s   | 1040 / 1040      | 3.86       | 1.28       | 266.46 s   |
+|  pp4096+tg256 | 1/1        | 1443.68 s  | 4352 / 4352      | 3.46       | 0.98       | 1184.38 s  |
+|  pp2048+tg256 | 1/1        | 871.53 s   | 2304 / 2304      | 3.14       | 1.17       | 653.83 s   |
+|  pp2048+tg768 | 1/1        | 1247.34 s  | 2816 / 2816      | 3.64       | 1.12       | 564.08 s   |
+| pp1024+tg1024 | 1/1        | 1066.21 s  | 2048 / 2048      | 4.56       | 1.22       | 225.25 s   |
+| pp1280+tg3072 | 1/1        | 3081.05 s  | 4352 / 4352      | 4.67       | 1.09       | 274.74 s   |
+|  pp384+tg1152 | 1/1        | 1020.51 s  | 1536 / 1536      | 3.10       | 1.28       | 124.71 s   |
+|   pp64+tg1024 | 1/1        | 881.12 s   | 1088 / 1088      | 2.10       | 1.20       | 31.21 s    |
+|   pp16+tg1536 | 1/1        | 1425.30 s  | 1552 / 1552      | 2.03       | 1.08       | 8.73 s     |
++---------------------------------------------------------------------------------------------------+
+
+Token Generation:        1.16 tok/s
+Prompt Processing:       3.39 tok/s
+Time to First Token:     370377.41 ms
+```
+
+## Hardware
+
+### PIM
+
+-   https://semiconductor.samsung.com/technologies/memory/pim/
+-   https://semiconductor.samsung.com/news-events/tech-blog/hbm-pim-cutting-edge-memory-technology-to-accelerate-next-generation-ai/
+-   https://www.techpowerup.com/278586/samsung-develops-industrys-first-high-bandwidth-memory-with-ai-processing-power
+-   https://www.techpowerup.com/328510/samsung-hopes-pim-memory-technology-can-replace-hbm-in-next-gen-ai-applications
+-   https://www.upmem.com/technology/
+-   https://www.upmem.com/
+-   https://sdk.upmem.com/master/00_ToolchainAtAGlance.html
+-   https://resources.sw.siemens.com/en-US/white-paper-innovative-upmem-pim-dram-requires-innovative-power-integrity-analysis/
+-   https://github.com/CMU-SAFARI/prim-benchmarks
+-   https://people.inf.ethz.ch/omutlu/pub/PrIM-UPMEM-Tutorial-Analysis-Benchmarking-SAFARI-Live-Seminar-2021-07-12-talk.pdf
+-   https://arxiv.org/html/2308.00846v3
+
+### Other hardware
+
+-   https://en.wikipedia.org/wiki/List_of_interface_bit_rates
+-   https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Ryzen_AI_300_series
+-   https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Turin_and_Turin_Dense)
+-   https://en.wikipedia.org/wiki/Threadripper#Shimada_Peak_(Threadripper_9000_series,_Zen_5_based)
+-   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?_pos=1&_psq=ai370&_ss=e&_v=1.0&variant=51875206496622
+-   https://store.minisforum.com/products/elitemini-ai370
+-   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?_pos=1&_psq=ai370&_ss=e&_v=1.0&variant=51875206496622
+-   https://minisforumpc.eu/en
+-   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?variant=51875206496622
+-   https://www.hp.com/us-en/workstations/z2-mini-a.html
+-   https://www.techpowerup.com/333983/sapphire-develops-edge-ai-mini-pc-series-with-amd-ryzen-ai-300-targeting-gamers-and-creatives
+-   https://www.techpowerup.com/333983/sapphire-develops-edge-ai-mini-pc-series-with-amd-ryzen-ai-300-targeting-gamers-and-creatives
+-   https://www.techpowerup.com/cpu-specs/ryzen-ai-max-pro-395.c3998
+-   https://noctua.at/en/products/fan/nf-a12x25-ls-pwm
+-   https://www.anandtech.com/show/21524/the-amd-ryzen-9-9950x-and-ryzen-9-9900x-review/10
+-   https://www.amd.com/en/products/specifications/server-processor.html
+-   https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-plus-pro-395.html
+-   https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html
+-   https://www.amd.com/en/blogs/2025/amd-ryzen-ai-max-395-processor-breakthrough-ai-.html
+-   https://bizon-tech.com/gpu-benchmarks/NVIDIA-RTX-4090-vs-NVIDIA-RTX-4500-Ada/637vs697
+-   https://www.techpowerup.com/gpu-specs/geforce-rtx-5060-ti-16-gb.c4292
+-   https://www.techpowerup.com/review/pny-geforce-rtx-5070-ti-epic-x-rgb-plus-oc/39.html
+-   https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-pro-6000-blackwell-gpu-is-listed-for-usd8-565-at-us-retailer-26-percent-more-expensive-than-the-last-gen-rtx-6000-ada
+-   https://www.techpowerup.com/gpu-specs/
+-   https://www.techpowerup.com/327388/amd-granite-ridge-zen-5-processor-annotated
+-   https://www.techpowerup.com/review/ddr5-memory-performance-scaling-with-amd-zen-5/2.html
+-   https://www.techpowerup.com/review/ddr5-memory-performance-scaling-with-amd-zen-5/22.html
+-   https://docs.tinygrad.org/tinybox/
+-   https://tinycorp.myshopify.com/products/tinybox-red
+-   https://tinygrad.org/#tinygrad
+-   https://www.tomshardware.com/pc-components/gpus/rtx-5080-super-rumored-with-24gb-of-memory-same-10-752-cuda-cores-as-the-vanilla-variant-with-a-400w-tgp
+-   https://www.thomas-krenn.com/en/wiki/Optimize_memory_performance_of_Intel_Xeon_Scalable_systems
+-   https://www.servethehome.com/memory-bandwidth-per-core-and-per-socket-for-intel-xeon-and-amd-epyc/
+-   https://www.servethehome.com/guide-ddr-ddr2-ddr3-ddr4-and-ddr5-bandwidth-by-generation/
+-   https://www.asrockrack.com/general/productdetail.asp?Model=TURIN2D16-2T#Specifications
+-   https://blog.cloudflare.com/ddr4-memory-organization-and-how-it-affects-memory-bandwidth/#:~:text=Memory%20rank%20is%20a%20term,address%2C%20command%20and%20control%20signals.
+-   https://www.amd.com/en/products/processors/workstations/ryzen-threadripper.html
+-   https://www.tomshardware.com/pc-components/cpus/more-affordable-strix-halo-model-emerges-early-ryzen-ai-max-385-geekbench-result-reveals-an-eight-core-option
+-   https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/gpu-partitioning/mi300a/overview.html
+-   https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-pro-6000-up-close-blackwell-rtx-workstation-max-q-workstation-and-server-variants-shown
+-   https://smicro.hu/nvidia-rtx-pro-6000-blackwell-max-q-ws-900-5g153-2200-000-4
+-   https://smicro.hu/nvidia-blackwell-5
+-   https://smicro.hu/pny-nvidia-rtx-pro-6000-server-edition-tcsrtxpro6000se-pb-4
+-   https://smicro.hu/nvidia-rtx-pro-6000-blackwell-server-edition-96gb-gddr7-ecc-passive-fhfl-600w-900-2g153-0000-000-4
+-   https://smicro.hu/pny-nvidia-rtx-pro-6000-blackwell-workstation-edition-vcnrtxpro6000-sb-4
+-   https://www.reddit.com/r/LocalLLaMA/comments/1judxsq/gmktec_evox2_powered_by_ryzen_ai_max_395_to/
+-   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell-max-q.c4273
+-   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272
+-   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell-server.c4274
+-   https://frame.work/hu/en/products/framework-desktop-mainboard-amd-ryzen-ai-max-300-series?v=FRAFMK0006
+-   https://de.gmktec.com/en/products/gmktec-evo-x2-amd-ryzen%E2%84%A2-ai-max-395-mini-pc-1?variant=51106344992952
+-   https://skatterbencher.com/2025/03/11/skatterbencher-85-ryzen-9-9950x3d-overclocked-to-5900-mhz/
+
+## Survey
+
+-   https://chatgpt.com/c/6830acbc-6258-800b-b8de-0b5a51a6ee13
+-   https://www.reddit.com/r/LocalLLaMA/comments/19crc6v/what_matters_cpuwise_for_gpu_inference/
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=The%20biggest%20factor%20limiting%20performance,better%20suited%20for%20CPU%20inference
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=In%20contrast%2C%20CPU%20inference%20uses,model%20on%20a%20capable%20GPU
+-   https://news.ycombinator.com/item?id=37067933#:~:text=Anything%20with%2064GB%20of%20memory,That%20should%20generate%20faster%20than
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=GPU%20inference%2C%20RAM%E2%80%99s%20primary%20use,RAM%E2%80%99s%20job%20is%20essentially%20done
+-   https://news.ycombinator.com/item?id=37067933#:~:text=Anything%20with%2064GB%20of%20memory,faster%20than%20you%20can%20read
+-   https://news.ycombinator.com/item?id=41046980#:~:text=match%20at%20L149%20A%20405B,disc%20and%20be%20unusably%20slow
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=The%20biggest%20factor%20limiting%20performance,Threadripper%20PRO%20or%20EPYCs%2C%20are
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=Regardless%20of%20the%20inference%20method%2C,be%20much%20of%20a%20concern
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=In%20addition%20to%20strictly%20CPU,the%20greater%20the%20performance%20impact
+-   https://www.reddit.com/r/LocalLLaMA/comments/1cj4det/llama_3_70b_instruct_works_surprisingly_well_on/
+-   https://medium.com/@markpalatucci/how-to-build-a-silent-multi-gpu-water-cooled-deep-learning-rig-for-under-10k-aefcdd1f96a5#:~:text=Power%20Supply%20,fan%20noise%20ramps%20considerably%20above
+-   https://medium.com/@markpalatucci/how-to-build-a-silent-multi-gpu-water-cooled-deep-learning-rig-for-under-10k-aefcdd1f96a5#:~:text=Now%20multiply%20this%20noise%20by,next%20to%20a%20jet%20runway
+-   https://medium.com/@markpalatucci/how-to-build-a-silent-multi-gpu-water-cooled-deep-learning-rig-for-under-10k-aefcdd1f96a5#:~:text=GPUs%3A%203x%20Nvidia%20Founder%E2%80%99s%20Edition,These%20were%20%241200%20each
+-   https://news.ycombinator.com/item?id=41046980#:~:text=Energy%20costs%20are%20an%20important,hardware%20running%20in%20a%20homelab
+-   https://news.ycombinator.com/item?id=37067933#:~:text=I%20built%20a%20DIY%20PC,a%20challenge%2C%20but%20it%27s%20possible
+-   https://news.ycombinator.com/item?id=41046980#:~:text=Unsure%20if%20anyone%20has%20specific,1%20405b%20for%20roughly%20%2410k
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=One%20of%20the%20first%20forks,be%20run%20via%20the%20GPU
+-   https://modal.com/blog/how-much-vram-need-inference#:~:text=Let%E2%80%99s%20consider%204,70B
+-   https://huggingface.co/blog/llama31#:~:text=70B%20%20140%20GB%20,405%20GB%20%20203%20GB
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=NVIDIA%20vs%20AMD%20GPU%20Performance,Capability
+-   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=support%20base%2C%20NVIDIA%20GPUs%20also,in%20terms%20of%20raw%20performance
+-   https://www.hardware-corner.net/guides/qwq-llm-rtx-3090-benchmark/
+-   https://www.hardware-corner.net/amd-targets-faster-local-llms/
+-   https://www.hardware-corner.net/how-fast-ai-max-395-llm-20250317/
+-   https://www.hardware-corner.net/category/llm-news/page/2/
+-   https://www.hardware-corner.net/ai-playground-oss-arc-gpu-inference-20250418/
+-   https://www.hardware-corner.net/nvidia-rtx-5060-ti-16gb-spec-leaked/
+-   https://www.hardware-corner.net/dual-rtx-5060-ti-price-for-llm-build-20250415/
+-   https://www.hardware-corner.net/the-rtx-5060-ti-price-20250416/
+-   https://www.hardware-corner.net/nvidia-rtx-5060-ti-16gb-spec-leaked/
+-   https://www.hardware-corner.net/dual-rtx-5060-ti-price-for-llm-build-20250415/
+-   https://www.hardware-corner.net/the-rtx-5060-ti-price-20250416/
+-   https://www.hardware-corner.net/ai-playground-oss-arc-gpu-inference-20250418/
+-   https://www.arukereso.hu/videokartya-c3142/?st=RTX+5060+Ti
+-   https://www.arukereso.hu/videokartya-c3142/?st=RTX+5070+Ti
+-   https://www.nvidia.com/en-us/geforce/news/ultimate-guide-to-5060/
+-   https://www.tomshardware.com/pc-components/gpus/nvidia-geforce-rtx-5060-ti-16gb-review
+-   https://www.hardware-corner.net/meta-releases-llama-4-what-hardware/
+-   https://www.hardware-corner.net/ddr-9000-ddr-8000-for-llm/
+-   https://www.hardware-corner.net/guides/install-llama-2-windows-pc/
+-   https://www.kitguru.net/channel/generaltech/joao-silva/amd-ryzen-ai-300-series-shows-impressive-llm-performance/
+-   https://i0.wp.com/timdettmers.com/wp-content/uploads/2023/01/gpu_recommendations.png?w=845&ssl=1
+-   https://timdettmers.com/
+-   https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/
+-   https://timdettmers.com/2023/01/30/which-gpu-for-deep-learning/
+-   https://timdettmers.com/2018/12/16/deep-learning-hardware-guide/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1erh260/2x_rtx_3090_threadripper_3970x_256gb_ram_llm/
+-   https://github.com/ggml-org/llama.cpp/discussions/11765
+-   https://www.pugetsystems.com/labs/hpc/exploring-hybrid-cpu-gpu-llm-inference/
+-   https://ipon.hu/shop/termek/amd-epyc-9115-26ghz-sp5-oem-100-000001552/2330933?aku=27dcaa5a946a5d25ecbc2b5ca46149b2
+-   https://hostbor.com/rtx-5060ti-vs-4060ti-comparison/
+-   https://blogs.nvidia.com/blog/ai-decoded-lm-studio/
+-   https://dev.to/maximsaplin/running-local-llms-cpu-vs-gpu-a-quick-speed-test-2cjn
+-   https://dev.to/maximsaplin/llamacpp-cpu-vs-gpu-shared-vram-and-inference-speed-3jpl
+-   https://dev.to/maximsaplin/ddr5-speed-and-llm-inference-3cdn
+-   https://dev.to/maximsaplin/fine-tuning-llm-on-a-laptop-vram-shared-memory-gpu-load-performance-4agj
+-   https://x-dev.pages.jsc.fz-juelich.de/2022/08/01/mi250-first-performances.html
+-   https://github.com/stas00/ml-engineering/blob/master/compute/accelerator/README.md
+-   https://docs.nvidia.com/nim/large-language-models/latest/supported-models.html
+-   https://www.phoronix.com/review/intel-sapphirerapids-avx512/2
+-   https://community.amd.com/t5/ai/integration-ascendant-exploring-the-amd-ryzen-ai-max-pro-series/ba-p/753606
+-   https://www.reddit.com/r/LocalLLaMA/comments/15rwe7t/the_llm_gpu_buying_guide_august_2023/
+-   https://www.pugetsystems.com/labs/articles/llm-inference-consumer-gpu-performance/
+-   https://www.hyperstack.cloud/technical-resources/tutorials/how-to-choose-the-right-gpu-for-llm-a-practical-guide
+-   https://www.reddit.com/r/LocalLLaMA/comments/1iyztni/dual_9175f_amd_epyc_9005_a_new_trend/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1k57b1o/what_workstationrack_should_i_buy_for_offline_llm/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1lhd1j0/some_observations_using_the_rtx_6000_pro_blackwell/
+
+
+## Software
+
+### Frameworks
+
+-   [llamafile](https://github.com/Mozilla-Ocho/llamafile) - Lets you distribute and run LLMs with a single file.
+    -   [LLaMA 3.2 3B Instruct - llamafile](https://huggingface.co/Mozilla/Llama-3.2-3B-Instruct-llamafile) -
+        -   A large language model small enough to run on most computers with 8GB+ of RAM.
+
+### TextSynth Server
+
+-   https://bellard.org/ts_server/
+-   https://bellard.org/ts_server/ts_server.html
+-   https://textsynth.com/documentation.html#embeddings
+-   https://textsynth.com/documentation.html#engines
+-   https://huggingface.co/fbellard/ts_server/tree/main
+-   https://developer.nvidia.com/nccl
+-   https://lightning.ai/pages/community/serve-stable-diffusion-three-times-faster/
+-   https://github.com/bitsandbytes-foundation/bitsandbytes
+-   https://medium.com/@geronimo7/llms-multi-gpu-inference-with-accelerate-5a8333e4c5db
+-   https://docs.vllm.ai/en/v0.8.0/serving/distributed_serving.html
+-   https://www.amd.com/en/developer/resources/technical-articles/zendnn-5-0-supercharge-ai-on-amd-epyc-server-cpus.html
+-   https://github.com/ggml-org/llama.cpp/issues/11744
+-   https://github.com/ggml-org/llama.cpp/discussions/11733
+-   https://documentation.suse.com/sbp/tuning-performance/html/SBP-AMD-EPYC-5-SLES15SP6/index.html
+
+
+### Embedding
+
+-   https://radimrehurek.com/gensim/auto_examples/core/run_core_concepts.html
+-   https://github.com/piskvorky/gensim
+-   https://radimrehurek.com/gensim/#
+-   https://en.wikipedia.org/wiki/ELMo
+-   https://en.wikipedia.org/wiki/Cosine_similarity
+-   https://en.wikipedia.org/wiki/Word2vec
+-   https://en.wikipedia.org/wiki/FastText
+-   https://en.wikipedia.org/wiki/Gensim
+
+
+### Text-to-speech
+
+-   [Piper](https://github.com/rhasspy/piper) - A fast, local neural TTS optimized for the Raspberry Pi 4.
+
+### Visual analysis
+
+-   [Moondream](https://moondream.ai/) - Open-source visual language model that understands images using simple text prompts. Fast and wildly capable.
+-   [LLaVA](https://llava-vl.github.io/) - Large Language and Vision Assistant
+
+### OCR
+
+-   https://medium.com/@fuelyourdigital/how-to-extract-data-from-a-graph-image-with-chatgpt-4-6a26351e4227
+-   https://apps.automeris.io/wpd4/
+-   https://automeris.io/
+-   https://automeris.io/docs/
+-   https://zertrin.org/webplotdigitizer/
+-   https://github.com/automeris-io/WebPlotDigitizer
+-   https://web.eecs.utk.edu/~dcostine/personal/PowerDeviceLib/DigiTest/index.html
+-   https://www.colliseum.net/WebPlot/
+-   https://alternativeto.net/software/graphclick/?platform=windows
+-   https://alternativeto.net/software/graphclick/
+-   https://academia.stackexchange.com/questions/7671/software-for-extracting-data-from-a-graph-without-having-to-click-on-every-singl
+-   https://www.im2graph.co.il/
+-   https://github.com/Cvrane/ChartReader
+-   http://www.graphreader.com/
+-   https://plotdigitizer.com/
+-   https://www.microsoft.com/en-us/research/publication/chartocr-data-extraction-from-charts-images-via-a-deep-hybrid-framework/
+-   https://mathematica.stackexchange.com/questions/102362/reconstruct-a-graph-from-an-image-curved-edges-and-edge-crossings
+-   https://mathematica.stackexchange.com/questions/102262/how-to-generate-a-graph-from-a-picture-of-a-graph?lq=1
+-   https://www.geeksforgeeks.org/image-reconstruction-using-singular-value-decomposition-svd-in-python/
+-   https://medium.com/@pranjallk1995/pca-for-image-reconstruction-from-scratch-cf4a787c1e36
+-   http://www.fmwconcepts.com/imagemagick/textcleaner/index.php
+-   https://willus.com/blog.shtml?tesseract_accuracy
+-   https://www.zdnet.com/article/the-next-decade-in-ai-gary-marcus-four-steps-towards-robust-artificial-intelligence/
+-   https://github.com/zacharywhitley/awesome-ocr
+-   https://en.wikipedia.org/wiki/OCRopus
+-   https://en.wikipedia.org/wiki/Tesseract_(software)
