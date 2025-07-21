@@ -23,6 +23,8 @@
 - [Benchmarks](#benchmarks)
 - [Hardware](#hardware)
     - [PIM](#pim)
+    - [GPUs](#gpus)
+        - [AMD RX 7900 XTX vs NVIDIA RTX 5090](#amd-rx-7900-xtx-vs-nvidia-rtx-5090)
     - [Other hardware](#other-hardware)
 - [Survey](#survey)
 - [Software](#software)
@@ -66,8 +68,8 @@ is measured in gigabytes.
 $S_{model}$: Size of the model file in GB. Typical values for publicly
 available language models:
 
-| Model Name                | Parameters | $S_{model}$ (FP16, GB) |
-|---------------------------|------------|------------------------|
+| Model Name                | Parameters | $S_{model}$ FP16 [GB]  |
+|---------------------------|-----------:|-----------------------:|
 | Tiny models (e.g. DistilGPT2) | ~80M   | ~0.15                  |
 | GPT-2 Small               | 124M       | ~0.25                  |
 | GPT-2 Medium              | 345M       | ~0.70                  |
@@ -86,12 +88,12 @@ for 1–3B parameters).
 
 #### Quantization
 
-Lower bit depth (e.g., 4-bit) reduces memory and computation needs but can
-decrease model accuracy. Higher bit quantization (e.g., 8-bit, 16-bit, 32-bit)
-preserves more precision but uses more resources.
+Lower bit depth (e.g., 4-bit, 8-bit) reduces memory and computation needs but
+can decrease model accuracy. Higher bit quantization (16-bit, 32-bit)
+preserves precision but uses more resources.
 
-Typical quantization values used in LLMs are 4-bit (int4), 8-bit (int8), and
-sometimes 16-bit (fp16 or bfloat16).
+Typical quantization values used in local LLMs are 4-bit (int4), 8-bit (int8),
+and sometimes 16-bit (fp16 or bfloat16).
 [bfloat](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) (Google
 Brain floating point) has the same exponent size as float32 but fewer mantissa
 bits; it has a wide dynamic range and reduced precision. Processors with
@@ -113,7 +115,7 @@ used if highest accuracy is required.
 
 #### Prompt Length
 
-$L_{prompt}$: Prompt Length -- number of tokens in the input prompt.
+$L_{prompt}$: Number of tokens in the input prompt.
 
 Longer prompts require more computation, especially for attention mechanisms.
 
@@ -714,6 +716,19 @@ Time to First Token:     370377.41 ms
 -   https://github.com/CMU-SAFARI/prim-benchmarks
 -   https://people.inf.ethz.ch/omutlu/pub/PrIM-UPMEM-Tutorial-Analysis-Benchmarking-SAFARI-Live-Seminar-2021-07-12-talk.pdf
 -   https://arxiv.org/html/2308.00846v3
+
+### GPUs
+
+#### AMD RX 7900 XTX vs NVIDIA RTX 5090
+
+-   [George Hotz | Exploring | Tenstorrent Blackhole on Arch Linux |
+    tinycorp.myshopify.com | Part
+    2](https://www.youtube.com/watch?v=lNGFAI7R0PE&t=10690s)
+    > Um so this is the tiny reimplementation of HLBC. 19 seconds. Okay. So,
+    > it's it's this 7900 XTX is 4x slower than a 5090, which yeah, it's about
+    > it's about a quarter the price. Yo, you know what? I'm half tempted to
+    > get rid of the discount on the red boxes. Like this is actually really
+    > usable. What is NV back end? Yeah, it's Nvidia without CUDA.
 
 ### Other hardware
 
