@@ -730,6 +730,14 @@ Time to First Token:     370377.41 ms
     > get rid of the discount on the red boxes. Like this is actually really
     > usable. What is NV back end? Yeah, it's Nvidia without CUDA.
 
+-   [Phoronix: Tiny Corp Closing In On "Completely Sovereign" Compute Stack
+    For AMD GPUs With Tinygrad](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/1519271-tiny-corp-nearing-completely-sovereign-compute-stack-for-amd-gpus-with-tinygrad/page2)
+    > By the end of this year, I'm confident we'll have end to end perf
+    > similar to a 4090 in PyTorch on the 7900XTX. But this is a long journey
+    > where each piece needs to work together. End of the year, you can hold
+    > me to that.
+
+
 ### Other hardware
 
 -   https://en.wikipedia.org/wiki/List_of_interface_bit_rates
