@@ -40,15 +40,20 @@
 This is a collection of links and information to assess the viability of
 running machine learning models and large language models locally.
 
+The aim is to support engineers and stakeholders to bring a well-informed
+decision when procuring LLM infrastructure.
+
 
 ### LLM system characteristics
 
-The performance of the LLM is a combination of model characteristics, hardware
-capabilities, and software efficiency. The following parameters are indicating
-performance:
+A large language model takes a sequence of tokens as input (called prompt) and produces a
+sequence of tokens as output. The performance of the LLM is a combination of
+model characteristics, hardware capabilities, and software efficiency. The
+following parameters are indicators of performance:
 -   Time to first token [millisecond]
 -   Prompt processing throughput [token/second]
 -   Token generation throughput [token/second]
+
 
 
 #### Model Size
