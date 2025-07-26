@@ -742,6 +742,31 @@ Time to First Token:     370377.41 ms
     > where each piece needs to work together. End of the year, you can hold
     > me to that.
 
+-   [George Hotz blog - Nobody
+    Profits](https://geohot.github.io/blog/jekyll/update/2025/02/19/nobody-will-profit.html)
+    > The best outcome of AI is if it delivers huge amounts of value to
+    > society but no profit to anyone.
+
+    > Spin up open source projects in every sector to eliminate all the
+    > capturable value. This is what I’m trying to do with comma.ai and
+    > tinygrad.
+
+-   [George Hotz | AMD PC Build | tinygrad: building the new tinygrad computer | EPYC 7662 RX 7900 | ROCm]((https://www.youtube.com/watch?v=IhkXxFJ_qeI)):
+    ([Subtitles](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt))
+    ([Transcript](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt.txt))
+    -   Date of stream 30 Apr 2023.
+    -   Excerpt from the [technical summary](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt.txt.technical_details.md):
+        -   Motherboard: ASRock Rack Rome a2t/BCM, 7 full bandwidth PCIe ports, $649 retail
+        -   CPU: AMD EPYC 7662 64-core processor, Gen 2 EPYC, $6,000 CPU from 2019, purchased for $800
+        -   RAM: 64GB Samsung (made in Philippines), 8GB sticks, single rank, 3200 MHz, ~$38 per stick, total around $300
+        -   GPUs: 2x AMD Radeon 7900 XTX (RDNA3 architecture), 24GB per GPU, 13 teraflops measured during testing, using PCIe extenders (16x PCIe4),
+            -   one GPU not connecting properly (likely due to longer extender), extender lengths: one 30cm, one 15cm
+        -   Storage: Samsung SSD 990 Pro 2TB NVMe
+        -   Power Supply: EVGA 1600 watt (primary), Dell server power supplies (2000W at 220V, limited to 1000W on US power) (backup), Dell 2400W power supplies that can do 1400W (alternative)
+        -   Cooling: Noctua fans (12 volt fans run at 5 volts), 3x 120mm fans, 1x 140mm fan, 2x 80mm fans
+        -   Network: Dual 10 gigabit network on PCIe
+        -   Software: Ubuntu Server 22.04 "Jammy Jellyfish", tinygrad, LLAMA model testing, ROCm stack for AMD GPUs
+        -   Approximately $5,000 total for the build
 
 ### Other hardware
 
