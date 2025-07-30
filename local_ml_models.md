@@ -761,12 +761,15 @@ Time to First Token:     370377.41 ms
         -   RAM: 64GB Samsung (made in Philippines), 8GB sticks, single rank, 3200 MHz, ~$38 per stick, total around $300
         -   GPUs: 2x AMD Radeon 7900 XTX (RDNA3 architecture), 24GB per GPU, 13 teraflops measured during testing, using PCIe extenders (16x PCIe4),
             -   one GPU not connecting properly (likely due to longer extender), extender lengths: one 30cm, one 15cm
+            -   AMD consumer GPUs support peer-to-peer communication (NVIDIA consumer GPUs don't)
         -   Storage: Samsung SSD 990 Pro 2TB NVMe
         -   Power Supply: EVGA 1600 watt (primary), Dell server power supplies (2000W at 220V, limited to 1000W on US power) (backup), Dell 2400W power supplies that can do 1400W (alternative)
         -   Cooling: Noctua fans (12 volt fans run at 5 volts), 3x 120mm fans, 1x 140mm fan, 2x 80mm fans
         -   Network: Dual 10 gigabit network on PCIe
         -   Software: Ubuntu Server 22.04 "Jammy Jellyfish", tinygrad, LLAMA model testing, ROCm stack for AMD GPUs
         -   Approximately $5,000 total for the build
+
+-   AMD GPUs support PCIe peer‑to‑peer out of the box, making it ideal for LLM training workloads that require tight coupling across multiple GPUs.
 
 ### Other hardware
 
