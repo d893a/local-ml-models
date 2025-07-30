@@ -1,0 +1,138 @@
+Date of stream 4 Sep 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat).
+Stream title: stable diffusion, in tinygrad?!? can it happen? pt 2
+
+Source files:
+- https://github.com/geohot/tinygrad
+- https://github.com/CompVis/stable-diffusion
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+Compute computer
+- Ubuntu 20.04.4 LTS
+- AMD Ryzen 9 5950X
+- 64GB RAM
+- AMD Radeon RX 6900 XT
+Streaming computer
+- Apple MacBook M1
+- LG UltraFine 5K
+- Blue Yeti
+- Apple Magic Keyboard
+- HHKB
+- tmux & Vim & Visual Studio Code with Vim Key Bindings and other
+  https://github.com/geohot/configuration
+
+Chapters:
+00:00:00 intro
+00:02:06 quiet computer
+00:02:25 how far did we get yesterday
+00:04:08 cleanup
+00:06:15 class Linear
+00:07:50 class UnetModel, SiLU
+00:10:25 fighting Mark Zuckerberg, Elon Musk, Vladimir Putin
+00:13:10 hand to hand combat, Elon is cool
+00:14:35 input_blocks
+00:19:14 fusion power, stagnation
+00:22:40 chemical engine, rocket fules
+00:36:25 preview of blog post
+00:51:10 class UNetModel, UnetResnetBlock, ResBlock
+00:58:40 crypto is good for one thing
+01:01:50 don't actually clip it, no clips
+01:02:00 cloudflare bad move
+01:02:50 blockchain will not replace sql database
+01:03:45 crypto DAOs
+01:05:20 meta stock
+01:06:19 I take back the clip, don't want clips
+01:07:23 blockchain things that will succceed 
+01:08:18 drugs are not cool anymore
+01:08:45 unregistered securities
+01:13:47 decentralization
+01:14:40 cheapETH
+01:17:20 what can you buy with money
+01:17:58 crypto disrupting fiat currency
+01:21:00 lack of respect to Russia
+01:25:27 I don't know that much about this stuff
+01:26:25 stop building technology
+01:27:35 communism, vietnam, capitalism good or bad
+01:28:24 christianity
+01:31:32 population collapse
+01:32:55 ubi
+01:36:25 go protest outside cloudflare
+01:37:45 two kinds of power
+01:42:44 cloth masks
+01:43:35 race relations
+01:45:25 metaverse, love in the world
+01:46:44 more Elon's in the world
+01:47:00 scams in self driving space
+01:47:50 politics is interested in you
+01:51:20 you got to earn the right to an opinion
+01:52:00 nn linear pytorch
+02:12:50 are we learning?
+02:14:20 understand the structure
+02:17:20 why is that that
+02:18:55 saying hello to Alex
+02:19:18 rules for chat, rules for any social environment
+02:22:18 middle block
+02:26:35 kanye west
+02:28:50 when people say something stupid
+02:31:55 fan spinning up, slow
+02:34:55 VIP for agifirealarm
+02:37:50 what tensor.uniform doing
+02:41:25 subs and non subs
+02:41:45 done diffusion model, break
+02:45:10 transformers are sample efficient world models
+02:49:00 visual transformers paper
+02:52:15 hutter price, understanding math in this book I could solve AI
+02:58:05 job at huawei, american propaganda about china
+03:02:55 optimism crypto
+03:06:15 averaging weights leads to wider optima
+03:07:30 can't reshape
+03:21:00 object is not callable
+03:25:18 just because you subscribed we are not going off-topic
+03:26:45 AssertionError, has no attribute reshape, not callable
+03:34:45 UNetModel
+03:39:19 what is the dimension there
+03:41:55 good idea
+03:42:25 chunk
+03:47:00 Alex call
+03:50:13 torch chunk
+03:56:10 np.random.uniform
+04:01:50 was wrong
+04:05:55 timeout for bad commenter
+04:06:20 finding print
+04:07:55 can't reshape
+04:10:25 new problem, output blocks
+04:12:45 it's a unet
+04:16:30 it just ran
+04:20:15 why it's not lazy
+04:23:10 torch tinygrad fusion implementation
+04:23:39 Alex bring food
+04:24:55 load apple latent space
+04:27:35 we are out of memory, tensor.no_grad=true
+04:30:25 opencl=1
+04:38:40 the problem was nograd
+04:42:45 black apple, bajillion bugs
+04:51:50 non subs talk
+04:52:20 two things to do
+04:57:35 more streams
+04:59:18 deep understanding by doing
+05:00:00 Pat Stay death
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

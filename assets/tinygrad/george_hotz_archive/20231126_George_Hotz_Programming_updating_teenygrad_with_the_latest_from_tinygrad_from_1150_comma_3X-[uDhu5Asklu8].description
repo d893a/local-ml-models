@@ -1,0 +1,108 @@
+Date of the stream 25 Nov 2023.
+from $1150 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/tinygrad/teenygrad
+- https://github.com/tinygrad/tinygrad
+Hardware:
+- Apple M3 MAX
+- Logitech MX Anywhere
+- HHKB Professional 2
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:01:00 Apple M3 MAX
+00:01:25 Logitech MX Anywhere
+00:02:20 tiny corp has an intern
+00:02:40 Sam Altman, Effective altruism, Eliezer Yudkowsky
+00:06:30 openai, gpt4, EA
+00:10:20 advice to openai, regulatory capture, contribute to open source
+00:12:42 buy a comma 3x from $1150
+00:14:40 people on reddit about openpilot
+00:15:35 fire alarm for AGI, violence to stop AI
+00:17:00 AI safety, fake AI safety
+00:19:25 when AI takes over country
+00:20:10 tinybox design reveal
+00:20:25 EA, openai regulatory capture
+00:22:18 first stream since big drama
+00:23:46 problem with political philosophy
+00:24:44 argentina currency
+00:26:40 mad tasty, Logitech MX Anywhere, hhkb2
+00:28:15 daily calm meditation
+00:32:00 comma body 
+00:32:40 teenygrad
+00:35:00 5000 lines warning light
+00:35:35 what is teenygrad, front end of tinygrad
+00:41:55 mnist.py 
+00:44:35 rawcpubuffer
+00:46:50 GPU, apple neural engine
+00:47:00 BEAM=2
+00:50:35 what things do, what things are
+00:53:20 rewrite code to be more clear
+00:54:45 favorite test
+00:57:50 adding type support to teenygrad
+01:01:10 test_reshape
+01:08:28 keyerror float64
+01:16:30 dataclass
+01:22:10 torch repeat
+01:29:00 teenygrad is complete
+01:31:10 CI failed
+01:38:10 dtypes
+01:40:40 trash code someone should improve it
+01:44:30 adding a lot of lines to teenygrad
+01:59:35 astype np
+02:01:44 1000 lines
+02:11:00 AMD tensor cores
+02:12:24 test_real_world.py
+02:13:07 mypy
+02:30:30 teenygrad pre commit hooks
+02:35:05 crappy gpt
+02:37:50 yaml lint
+02:45:00 nektos act github actions locally
+02:47:40 tenstorrent fake buy botton
+02:49:30 versions-manifest.json
+02:52:35 --container-architecture linux/amd64
+02:55:40 cool websites George reads everyday
+02:58:05 tiny9
+02:58:50 tinygrad discord colors
+03:02:40 wandb
+03:10:10 tinygrad intern, comma intern
+03:12:50 what do you consider genius
+03:15:00 IQ
+03:19:25 what you can change, what you value
+03:19:48 where you apply yourself, what do you believe in
+03:25:10 useful advice
+03:26:25 what did you change because your watch George
+03:31:05 how much money do you need to live?
+03:33:30 asshole, how George got money
+03:40:50 motivation, find your passion 
+03:43:10 living in a van
+03:44:10 kim dotcom us economy, diet coke
+03:45:10 biggest regret, twitter
+03:45:50 Elon monarchy is not perfect
+03:46:38 2K a week for interns at tinycorp
+03:49:50 twitter grok
+03:50:05 How to not fail at life. quit bitching about the bitches edition.
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

@@ -1,0 +1,132 @@
+Date of stream 20 Feb 2023.
+from $1499 buy https://comma.ai/shop/comma-three
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad
+- https://tinygrad.org/recognize.html
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:02:20 c backend for $2500
+00:06:15 elon and george and twitter
+00:10:15 bad user in chat
+00:15:30 random extension of power
+00:21:30 beautiful c code
+00:28:20 ctypes load library
+00:29:25 os path file exists python
+00:31:25 pain of using C, multithreading
+00:38:00 np.ctypeslib.as_array
+00:41:25 c99 max function
+00:43:30 c backend in 33 lines
+00:49:45 indexError: list index out of range
+00:52:50 segmentation fault 11
+00:54:40 running tinygrad example
+00:59:00 CLANG=1
+01:00:40 using rust
+01:01:40 thank you to everyone who keept the example working
+01:06:10 gpu runner, jit_cache
+01:08:10 args, buffers, malloc
+01:19:10 CLPrograms error
+01:20:45 loading the weights, identifying the inputs and outputs
+01:23:00 c auto formatter tabs, clang-format
+01:25:40 copyright, spreading the word, selling royce rolls
+01:26:25 lib jpeg pain, linking to opencv, cheapeth scam
+01:27:30 tiny corp is broke
+01:27:55 bad chat, who can follow this, talking to Alex
+01:29:15 can anyone follow this, explaining to noobs
+01:36:00 arg max
+01:37:55 c float infinity
+01:43:35 language translation features from github
+01:49:40 fread
+01:56:10 512 bugged
+01:58:20 how we are going to get an image?
+02:00:30 c array of strings
+02:03:20 very upset about reading the image
+02:04:45 c example libjpeg
+02:05:35 link to libjpeg
+02:06:20 libjpeg dev homebrew, libpng
+02:07:20 png file format, load png in c header only
+02:08:10 c link to opencv
+02:08:35 worse part of C
+02:08:55 stb_image.h
+02:21:45 trying coca cola image
+02:24:10 remote control
+02:25:50 embedding binary data in c
+02:37:10 incompatible integer to pointer conversion
+02:40:30 so long, putting it to the pipe
+02:44:40 binary data in c header
+02:49:35 I love temp, temp my favorite folder on computer
+02:52:15 completely portable application that runs classifier
+03:00:40 banana, hyperpop song
+03:03:10 imagesnap
+03:05:25 detecting objects via camera
+03:08:40 triceratops
+03:09:20 sending people to jail
+03:11:25 distributing recognize to tinygrad.org
+03:15:30 banana, c time nanoseconds, code html5
+03:19:25 finding the right image, c assert, bing chatgpt
+03:45:10 letting everyone else to test on their devices to fix any bugs
+03:52:55 what can tiny corp do that other companies can't do
+03:56:00 can you run this command on your terminal
+03:58:00 what we should do next
+04:01:40 49% of tiny corp to microsoft for $10B
+04:02:10 openai code and models
+04:03:25 George trolling the chat, vulcano story
+04:04:40 Andrej Karpathy joining openai
+04:05:30 what features to remove from c++
+04:07:00 refactors to do
+04:09:40 responsible ai, ai safety, anti democratic
+04:12:30 chatgpt safety filter
+04:19:10 bash command line assert output
+04:21:45 tinybrowser, nn simple, tensors
+04:24:10 compile c to wasm
+04:28:30 python3 -m http.server
+04:30:25 svelte wasm
+04:32:30 javascript fetch
+04:46:55 .wat file, wasienv
+04:48:35 wasm
+05:03:50 fromCharCode
+05:14:00 javascript abort
+05:16:40 SEEK_CUR
+05:19:50 it works
+05:26:40 upload file from javascript
+05:35:30 doing style
+05:51:50 connecting to webcam
+05:55:15 fixing img box
+06:05:20 camera capture
+06:39:05 ios webcam from non https
+06:44:20 working on iPhone
+06:45:30 HackerNews
+06:46:00 real future ideas
+06:48:10 Alex on the phone
+06:50:20 fixing bugs
+06:56:25 governance tokens
+06:57:20 happy hacking keyboard
+06:57:50 what did we do today
+06:58:15 net's in the browser
+06:59:00 tiny corp no money, trap drums
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

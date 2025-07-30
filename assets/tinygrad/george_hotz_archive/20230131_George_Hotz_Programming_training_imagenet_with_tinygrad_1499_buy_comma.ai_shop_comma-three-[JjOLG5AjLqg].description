@@ -1,0 +1,133 @@
+Date of stream 30 Jan 2023.
+from $1499 buy https://comma.ai/shop/comma-three
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad
+- https://myrtle.ai/learn/how-to-train-your-resnet-8-bag-of-tricks/
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:02:00 n02018795 imagenet categories
+00:05:30 staying on topic, tinygrad discord
+00:06:00 rap battle
+00:07:25 benchmark_train_efficientnet.py
+00:10:05 what net to use
+00:11:00 how to contribute to tinygrad
+00:12:55 state of the art for training imagenet
+00:13:10 tinygrad discord, CLCACHE
+00:14:00 pull requests
+00:15:00 no nix, rust, llvmlite, cuda
+00:16:30 what paper to implement
+00:18:40 resnet paper
+00:23:10 CIFAR-10
+00:25:20 1080 ti
+00:25:30 torchvision installing issue
+00:26:30 nix does not solve this
+00:27:55 xkcd standards
+00:29:30 net ema
+00:30:44 maxpool2d
+00:36:30 19s runtime in pytorch
+00:38:20 tinygrad discord strict rules
+00:38:38 hackernews people, maslow's hierarchy of argument, conversation
+00:39:10 life after degree, ideas, honest conversations
+00:41:10 compassion will hold you back
+00:42:55 elon's rules, rule 0 surface complexity, building hardware, vertical integration 
+00:43:55 no reason for this to be a class
+00:51:40 pytorch unsqueeze
+00:52:45 beautiful implementation
+00:55:35 ResNet whitening
+00:59:20 shorter, better than pytorch
+01:01:25 dumbest question
+01:03:25 fire tweet, ai safety, old people text
+01:04:15 fate of the world, twitter saga, internet get things wrong
+01:05:40 jai beta
+01:07:00 creating an optimizer
+01:09:00 broken hoodie
+01:09:30 batchsize 512
+01:10:40 642 vs 53 lines
+01:13:50 make_pair and first attempt at hlb_cifar10
+01:15:00 DEBUG=2
+01:17:50 more readable code
+01:19:00 TEST_AST=1, unable to allocate 144 GiB
+01:25:00 gelu is causing nans
+01:28:00 64 batch size
+01:31:10 nn.CrossEntropyLoss
+01:34:30 cifar-10-batches-py/data_batch_1
+01:39:20 open-assistant
+01:40:40 comma ai safety principles vs waymo safety
+01:44:25 bad questions in chat 
+01:46:00 train_step_jitted
+02:05:00 the losses are different with optimizer
+02:12:20 the idea of tinygrad performance
+02:13:05 printing out the kernels that are running
+02:16:20 opencl nvidia tensor core
+02:18:40 58 TFLOPS
+02:20:15 question in tinygrad discord
+02:23:20 why the fusion is broken, tensor cores, float 16 support
+02:40:15 17 TFLOPS
+02:45:10 arm support for tinygrad
+02:46:55 all time spend on gpu
+02:50:55 12x off
+02:55:20 4x4 matrix
+02:58:36 optimizer outputing wrong code
+03:05:00 kernels output
+03:08:00 -1%10
+03:14:10 decode utf-8
+03:16:40 fma.rn.f32, opencl cuda enable tensor cores
+03:21:40 reviewing symbolic test pull request
+03:23:00 sm_86, using triton, kernel search
+03:30:50 only 10x off
+03:36:00 tinygrad.org, pytorch mps, python requests get
+03:43:00 right shapes, lazy.py
+03:45:20 tinygrad contributors, over 1000 lines
+03:49:45 comparing the cpu backend, pytorch cuda
+03:53:35 is tinygrad stupid project
+04:01:45 reviewing tqdm pull request
+04:08:30 reviewing progress bar pull
+04:09:35 highest quality code you ever written in life
+04:10:35 housing and food for tinygrad intern (no salary)
+04:11:35 tinygrad looking into making money (merch)
+04:13:15 comma tiny corp partnership 
+04:13:45 refactors in tinygrad
+04:14:00 employee number 1 pitch
+04:21:00 checking food options
+04:23:15 make_pair, progress bar pull request
+04:34:00 tqdm requests progress bar
+04:41:45 bad pull requests
+04:46:50 good programmers, money, goat progress bar
+04:56:25 new policy chatgpt banned
+05:11:50 plan to fix the optimizer, reviewing pastebin code
+05:31:30 instagram women dm filtering
+05:31:50 testing intervention
+05:47:25 NoneType object has no attribute copyin, how much fake speed
+05:53:00 the best code is no code
+06:12:30 this should only copy the base buffer and retain the shapetracker
+06:20:25 aritter2 get's VIP for his good comments
+06:28:00 offensive question
+06:29:15 commit fix multiple accumulators, ast fuzzer, progress today 
+06:34:00 interesting code, jeff bezos e/acc, KOPT=2, 6.5x speed up, debug, tinygrad internships
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

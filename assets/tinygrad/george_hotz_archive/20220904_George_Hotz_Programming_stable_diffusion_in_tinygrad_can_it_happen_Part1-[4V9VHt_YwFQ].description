@@ -1,0 +1,118 @@
+Date of stream 3 Sep 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat).
+Stream title: stable diffusion, in tinygrad?!? can it happen?
+
+Source files:
+- https://github.com/geohot/tinygrad
+- https://github.com/CompVis/stable-diffusion
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:01:50 feelings
+00:03:20 stable_diffusion.py
+00:04:40 difference between George and Andrej
+00:05:25 cannot create an OBJECT array from memory buffer
+00:07:50 known bug in tinygrad
+00:08:37 what is stable diffusion, Emad Mostaque boss, opensource, AI safety
+00:10:00 safety checker
+00:11:35 what this models are
+00:13:15 CompVis/stable-diffusion, reading the code
+00:17:30 ready to give up, learning, advice, nathan for you, passion
+00:18:34 32GB VRAM it's a mac and it's shared
+00:18:48 UNet attention, where are the inputs and outputs
+00:20:10 what parts of transformer matter, terminology
+00:21:22 about stable diffusion, UNet attention
+00:22:45 dictatorizing, problem with the world, democratizing
+00:24:03 privileged, triggered
+00:25:20 Axel Nix lawsuit comma, assholes in the world
+00:27:12 Cool people in the world, rant about Aurora, Tesla wining self driving 
+00:29:25 Elon Musk, billionaires, zoox, Aurora scam, people like scams
+00:30:45 stable diffusion paper, LDM
+00:32:05 learn latest tricks in deep learning
+00:32:21 glasses, astigmatism, health insurance premiums
+00:33:05 why three pieces
+00:35:25 how it works? 
+00:40:49 thanks to flavioschneider for real information
+00:41:25 taking a look at Unet
+00:43:40 Autoencoder, basic idea about diffusion, encoder
+00:45:05 first stage model, transformers are sample efficient world models, eloialonso/iris
+00:47:00 google-research/rliable
+00:48:10 facebookresearch/hydra
+00:48:45 how clip model get's to UNet
+00:51:15 hating too much on the paper
+00:51:40 a walk in the park learning to walk in 20 minutes
+00:52:25 jax.readthedocs.io
+00:53:30 training is insanely hard
+00:54:30 implementation of stable diffusion
+00:55:35 numpy assign, assignment, insert, np.copyTo
+01:05:50 it match pytorch exactly, easier to load things
+01:06:48 break, uber eats in iceland
+01:13:48 banning a person in chat
+01:17:00 it's outputting a distribution, freedom of speech can't be bought
+01:17:30 quant_conv, nin_shortcut
+01:21:05 class StableDiffusion, AutoencoderKL, Encoder, ResnetBlock
+01:28:45 How to Catch Multiple Exceptions in Python
+01:29:35 stable_diffusion.md
+01:33:20 asymmetric padding supported in tinygrad, class Encoder, ResnetBlock, StableDiffusion
+01:51:20 break, uber eats, class Decoder
+02:35:25 iPhone to dad, apps manipulation 
+02:35:50 torch.nn.functional.interpolate
+02:42:35 tuple object cannot be interpreted as integer 
+02:48:08 cannot handle this data type
+02:49:30 black square because noting in text-prompt
+02:50:45 need to write groupnorm
+02:57:04 picture like art
+02:58:05 break, the graph
+03:00:52 class AttnBlock
+03:06:00 image looks the same
+03:08:40 torch layernorm
+03:11:15 orange square, deep learning is not like cryptography
+03:17:40 break, single color square, there is bugs, 
+03:22:50 don't want to do this properly
+03:30:30 doing it the proper way
+03:35:25 so much fun, kids you could get into computers, github copilot is not good 
+03:39:08 PyTorch image, noise is better then solid color
+03:43:18 looks stupider, is it trained?
+03:48:05 don't know if better or worse
+03:49:00 it works, before and after image
+03:55:00 Torch apple, we are nothing but script kiddies
+04:00:30 negative apple, five times apple
+04:05:15 we don't have anything working at all
+04:09:05 let's dive in block one
+04:18:00 bug in gpu implementation in tinygrad
+04:22:30 make a test
+04:27:20 overflowing int, this is not python
+04:36:00 PyTorch vs tinygrad difference, opencl tinygrad backend
+04:41:30 Alex on the call, clinfo on quiet computer
+04:45:15 very serious bug in tinygrad
+04:47:15 Lana_Lux raid, works on gpu in other computer
+04:49:10 this is why Nvidia is king, thinking about simple fix
+05:14:00 big victory for tinygrad is running openpilot model
+05:18:05 Alex bringing drink, tinygrad code easier to read
+05:25:50 explaining the problem
+05:33:10 raiding Lana_Lux making twitch loop
+05:38:25 cloudflare The Project Jengo Saga, free speech
+05:40:15 here is something we can do AutoencoderKL
+05:45:35 still to do diffusionmodules, FrozenCLIPERmbedder
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

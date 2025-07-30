@@ -1,0 +1,135 @@
+Date of the stream 6 Jan 2024.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+
+Original stream title:
+- tinygrad: rewriting the scheduler
+Sources:
+- https://arxiv.org/pdf/2106.01345.pdf
+- https://huggingface.co/blog/decision-transformers
+-https://medium.com/@jscriptcoder/demystifying-upside-down-reinforcement-learning-a-k-a-ꓤ-b7bd4214b33f
+- https://youtu.be/xc0jGZYFQLQ
+tinygrad bounties:
+- https://docs.google.com/spreadsheets/d/1WKHbT-7KOgjEawq5h5Ic1qUWzpfAzuD_J06N1JwOCGs/
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 lunarlander_transformer.py
+00:04:25 twitch substance warning
+00:06:00 perplexity decision transformer
+00:12:00 assert not x.requires_grad
+00:15:00 192 % start_pos
+00:21:45 food
+00:24:25 fixes needed in tinygrad
+00:41:00 gpt2 works
+00:46:40 contraction not explained
+00:55:00 rant
+01:00:25 Ron Paul
+01:04:40 usa population pyramid
+01:05:30 jit
+01:08:55 africa documentaries
+01:13:15 cross 
+01:19:00 not supported 768 %
+01:23:20 do things team
+01:24:50 tinygrad intern phone call
+01:28:50 postmodernism
+01:36:40 assert t.grad is not None
+01:38:30 advice, schedule
+01:43:20 decision transformer paper
+01:53:00 not balancing
+02:05:00 K=20
+02:10:00 plt.show()
+02:15:30 clip 50
+02:19:00 lunarlander fails
+02:20:00 uber eats scam
+02:27:00 decision transformers on Hugging Fac
+02:31:30 logits
+02:45:00 temperature
+02:54:00 should never output 2
+03:11:40 so many bugs
+03:12:40 good idea from chat
+03:15:00 lunarlander is not landing
+03:16:30 128 clip
+03:17:00 highest_reward bug
+03:18:50 lunar lander rewards
+03:24:30 let's make it work
+03:29:00 unknown change
+03:31:40 piano
+03:34:20 reinforcement learning is impossible
+03:37:25 write gym environment
+03:50:00 stupid decision transformer
+03:57:20 98%
+03:58:50 that is what we get for smoking weed
+04:02:10 press the light up button
+04:05:00 learned to play the game
+04:12:55 the optimal strategy
+04:13:45 press_the_light_up_button.py
+04:17:40 desired reward
+04:19:40 so broken
+04:27:20 some bug with
+04:29:00 action and reward embedding
+04:32:30 broadcast issue
+04:37:50 another layer
+04:44:40 50/50 probability
+04:51:40 feeling so scammed
+05:00:20 close to AGI
+05:07:10 test model code
+05:18:00 learning excruciating slowly
+05:24:20 scientific notation suppress
+05:25:40 making some progress
+05:28:55 it's learning press the light up button
+05:33:00 JIT disabled
+05:34:15 equity and inclusion
+05:36:10 loss going down
+05:39:00 we did reinforcement learning
+05:39:50 Alex, voting
+05:43:40 it's learning
+05:48:30 render_mode default
+05:53:20 demystifying Upside-Down reinforcement learning
+05:55:55 CartPole
+05:58:30 lunarlander
+06:02:15 pressthelightupbutton
+06:04:00 lunarlander
+06:09:00 spacex simulations
+06:09:30 3e-4
+06:17:00 size, game_length
+06:28:50 life advice
+06:32:05 predicting action
+06:36:40 life advice answers
+06:38:00 ambition greater than your intelligence
+06:39:10 learn how to learn, no gradient
+06:41:30 most people should just give up
+06:42:00 putting time into programming
+06:46:40 bug in pressthelightupbutton 
+06:53:25 it's dumb
+07:00:50 game_lenght=32
+07:05:40 scale
+07:14:25 Alex bringing food
+07:26:00 same data over and over
+07:28:09 reading the paper
+07:38:00 entropy_loss
+07:40:50 reading twitch chat
+07:43:50 RL stream makes us angry
+07:46:30 stream overview
+07:47:00 no push to github
+07:47:50 ground changes shape
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

@@ -1,0 +1,120 @@
+Date of stream 2 Aug 2023.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Source:
+- https://github.com/tinygrad/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 muted intro
+00:00:55 un-muted, touch grass freestyle
+00:02:45 conductors, new chair
+00:04:20 official tinygrad meeting in tinygrad discord
+00:04:45 PS5, 33 years old man, video games
+00:05:50 installing sentencepiece, llvmlite, slow load
+00:12:10 bitcast op, Alex
+00:16:15 different debug levels
+00:18:00 thank you to bedeks
+00:18:35 ops_gpu not right
+00:20:45 code getting unreadable
+00:21:55 raw buffer, no copy, it's just a view
+00:22:25 on gpu cl buffer and change dtype
+00:23:30 this is becoming insane
+00:23:45 collapsing under complexity, needs a refactor
+00:27:55 bitcast just a flag on cast
+00:30:40 making tuple
+00:36:00 numpy bitcast
+00:42:20 assertionerror
+00:46:25 test_shape_change_bitcast
+00:47:20 who wrote this crap haha
+00:48:00 feeling good about this
+00:48:25 test_dtype works with CPU and PyTorch
+00:53:40 all this casts a mistake
+00:53:50 features make things hard to read
+00:54:10 dtype mismatch on realize
+00:57:50 useful tracebacks
+01:00:30 tuple no attribute name, assert instance dtype
+01:02:40 I wrote unreadable code
+01:07:10 how is numpy getting the type
+01:11:50 I wrote hacks, disktype
+01:17:00 we need tests for this, bitcast
+01:18:50 Nelly rob the jewelry store and a grill
+01:20:20 I'm a 20 year old girl who is looking for a good lay in Palm Coast
+01:23:50 chat with 70B good
+01:24:30 socialism
+01:25:30 getting inappropriate
+01:27:00 how to prevent regulatory capture
+01:31:30 Llama 2 very inapropriate
+01:32:30 how many genders are there
+01:33:00 I want to be software
+01:34:00 barbie post woke
+01:34:40 discord at 5pm welcome to join the meeting
+01:35:50 tiny voice channel
+01:37:10 tinygrad pull requests
+01:40:30 bounties
+01:42:25 deceptively easy/hard $400
+01:43:20 CIFAR improvement before selling tinybox
+01:43:10 tinybox specs vs A100
+01:44:50 locking SVC bounty
+01:47:00 training multi gpu pull
+01:48:00 rewriting AMD backend
+01:48:25 gem stuff integration, single GPU faster
+01:48:35 something like cuda cache thing
+01:50:25 whisper pull
+01:55:25 tiny3 back up, tiny5 mechanical box
+01:58:50 tracking via pull issues
+01:59:35 implementation is all it matters
+01:59:45 engineering is all about tradeoffs
+02:00:40 meetings not the right place for generic questions
+02:01:20 hate meetings every day at 5
+02:01:35 tinycorp, hate managing people
+02:02:00 don't ask me questions
+02:02:10 how to ask questions the smart way
+02:02:50 tyranny of remote work
+02:03:10 better and better metric that track people
+02:03:30 what is a company in the future
+02:03:40 async strategy
+02:05:00 monday meetings
+02:06:20 designer at comma
+02:06:35 dealing with people pisses me off, dealing with hardware makes me happy
+02:07:35 why did I start another company
+02:08:25 tiny boxes will print cash
+02:08:55 end goal is building a chip
+02:10:50 tinygrad has the right ideas
+02:12:30 getting better, no regression 
+02:12:50 rockchip tinygrad backend
+02:13:30 windows banned from tinygrad, whinygrad for windows
+02:14:00 companies becomes own by bankers
+02:14:10 qualcom board of directors
+02:15:00 nvidia board of directors
+02:15:25 meta board of directors
+02:16:30 getting cancelled
+02:17:10 defcon vaccine cards
+02:18:40 cyber
+02:20:40 tiny grad operating system for robots
+02:21:05 every robot should use RK3588
+02:22:10 why do I even stream
+02:22:20 Connor Leahy debate
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

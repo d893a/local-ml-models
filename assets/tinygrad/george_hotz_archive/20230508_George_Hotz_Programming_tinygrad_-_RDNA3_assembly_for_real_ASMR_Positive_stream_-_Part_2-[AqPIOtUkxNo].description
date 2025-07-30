@@ -1,0 +1,129 @@
+Date of stream 6 May 2023.
+from $1499 buy https://comma.ai/shop/comma-three
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+
+Chapters:
+00:00:00 intro
+00:00:15 RDNA3 instruction set architecture stream
+00:00:30 absolute joy to work with AMD open source drivers
+00:00:40 less then half time they crash, time machine
+00:01:45 RDNA3 assembly syntax highlighters
+00:02:28 pathlib, quiet pc
+00:04:45 running shaders
+00:05:55 assembly highlighting
+00:07:15 v_dual_mov_b32
+00:08:30 s_sendmsg
+00:10:10 amd driver is lovely, works 95% of the time
+00:12:00 power_dpm_force_performance_level
+00:12:50 rocm sniffer segmentation fault
+00:14:05 big font
+00:14:20 what is sniffer doing
+00:16:05 gpu doorbells
+00:18:30 we are going to write our own simple driver
+00:21:20 assembly language for RDNA3 runtime io controls
+00:22:20 sigemptyset
+00:25:40 sigsegv handler inside python
+00:26:50 operating between a level kernel and userspace, doorbell
+00:28:50 sigaction threads
+00:32:25 killed by SIGSEGV
+00:32:50 mojo source code
+00:33:25 sa.sa_flags = SA_SIGINFO
+00:36:42 rt_sigaction sa_restorer
+00:37:15 sigemptyset
+00:38:49 sigaction(SIGSEGV, &sa, NULL)
+00:39:38 sigaction isn't being caught
+00:41:10 rt_sigprocmask
+00:41:37 example sigprocmask
+00:43:00 Alex 
+00:43:30 sigprocmask example
+00:45:10 Alex bringing ramen
+00:46:25 removing LOG_LEVEL=5
+00:47:00 Alex, chair
+00:49:45 queue_type 1, dma queue
+00:50:00 spindrift, tortellini, grateful for ramen
+00:50:52 positive upbeat, negative stream before, advent of scala part 1
+00:51:20 thank you ptim for gifting 10 subs
+00:51:40 KFD_IOC_QUEUE_TYPE_SDMA
+00:52:15 JacobsM1 gifted 5 subs
+00:53:10 HSA Async Copy staged
+00:54:10 DMACopy
+00:54:25 Alex and George working on GPUs
+00:55:00 Alex feeling GPU energy around George all the time
+00:56:00 cobracoba gifted 5 subs, mojo questions
+00:56:35 it's not as good if it's secret in startups
+00:57:05 Chris Lattner open source, modular $30 million
+00:58:30 hsa_kernel_dispatch_packet_t
+00:59:10 Alex patch & George hoodie matching
+00:59:30 entertainment not for education
+01:00:00 the packet definitions
+01:00:50 stormfrosty: ~4 years of being underpaid at AMD paid off
+01:01:10 it's not ok not being aware of how little you know, taking pride in not knowing things
+01:01:50 sunrise san diego, Alex get clothes ready for sunrise
+01:02:55 Lana_Lux raiding stream
+01:03:30 looking at all the parts of the gpu driver in order to make a good gpu driver
+01:03:41 doorbell, queue_type transfers, amd open source
+01:05:15 PM4 packets, PGM_RSRC1
+01:06:39 AMD's PAL github
+01:09:35 hsa_status_t DmaCopy
+01:11:00 DmaCopy(void dst, SubmitLiniarCopyCommand
+01:11:25 HSA_PACKET_TYPE_BARRIER_AND
+01:13:00 HSA_ENABLE_SDMA=0
+01:13:55 CPDMA, user space level
+01:14:30 enable_sdma
+01:16:20 SDMA_PKT, SDMA_OP_TIMESTAMP, SDMA_OP_GCR
+01:20:10 fatal error file not found
+01:25:40 George got distracted, sdma_registers.h
+01:26:30 offset
+01:27:55 tinygrad code gen engine is good
+01:28:05 unhandled packet type 17, unhandled packet type 1
+01:30:00 end goal is to make it good
+01:30:10 SDMA cool, different queue, unhandled packet type 10
+01:30:55 User Mode Register Debugger
+01:31:30 learning about how it works, did the same with CUDA
+01:32:22 SMDA_PKT_COPY_LINEAR
+01:37:20 we understand how the buffer get's transferred
+01:38:05 queue_type 1
+01:40:45 this running the program, transferring buffer
+01:41:00 copy kernel guess, dumb the args
+01:41:25 hsa_kernel_dispatch_packet_t
+01:43:00 tired, positive progress
+01:43:15 time machine that worked 98% of the time
+01:43:40 thank you for gifted subs, we got custom assembly running on gpu
+01:44:10 dumping kernel arg address
+01:46:20 ComputeABI initial-kernel-register-state
+01:46:40 private segment buffer
+01:47:45 what is the address
+01:49:00 what address is actually in the gpu
+01:49:35 you can step through the kernel assembly with gdb
+01:50:15 github.com/RadeonOpenCompute/ROCm_Documentation/blob/master/ROCm_Tools/ROCgdb.rst
+01:51:00 rocm-gdb
+01:52:00 break point
+01:52:40 could not attach a fatal error has occurred
+01:53:40 global_store_b32
+01:56:40 ds_load_b64, s_load_b64
+01:57:15 enjoy your amd GPUs, AMD I want to make your GPUs amazing you should reach out to tinycorp
+01:57:43 will not send them back, I bought this GPUs and I am going to make them work
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

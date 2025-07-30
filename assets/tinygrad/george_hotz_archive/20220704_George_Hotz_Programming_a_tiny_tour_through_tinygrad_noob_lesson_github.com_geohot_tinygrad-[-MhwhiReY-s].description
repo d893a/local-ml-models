@@ -1,0 +1,126 @@
+Date of stream 3 Jul 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat).
+Stream title: a tiny tour through tinygrad (noob lesson)
+
+Source files:
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+Compute computer
+- Ubuntu 20.04.4 LTS
+- AMD Ryzen 9 5950X
+- 64GB RAM
+- AMD Radeon RX 6900 XT
+Streaming computer
+- Apple MacBook M1
+- LG UltraFine 5K
+- Blue Yeti
+- Apple Magic Keyboard
+- HHKB
+- tmux & Vim & Visual Studio Code with Vim Key Bindings and other
+  https://github.com/geohot/configuration
+
+Chapters:
+00:00:00 intro
+00:00:41 drug test, drinks, to shower or not to
+00:04:40 sub only chat, tinygrad lazy
+00:05:10 tour of tinygrad, Tensor
+00:06:20 graph
+00:07:30 print underlying buffer if it's realized
+00:09:20 lazy mode, two armies of haters
+00:10:20 multiplying two matrices and graph
+00:11:00 GPU support, dashes - not a contiguous tensor
+00:11:35 tinygrad codebase, three backends CPU, GPU and Torch
+00:11:50 lazy mode
+00:13:00 tinygrad is a tensor library, tensor is a list of numbers
+00:14:20 benefit of laziness
+00:16:10 stream lag, dirty hoodie
+00:16:48 ImageNet inference, stream lag, GPU=1
+00:19:47 tinygrad definition, 992 lines
+00:20:25 tensor class, karpathy, micrograd, 
+00:23:15 backends, openpilot model
+00:24:05 automatic differentiation engine, bad bug
+00:26:05 let's fix that bug
+00:29:15 hlops, tests
+00:31:50 fun thing in tinygrad
+00:32:25 pad2d, matmul
+00:35:40 transpose, flatten, sum
+00:36:40 softmax, dropout, pools, conv, unary
+00:37:05 binary ops
+00:38:20 tinygrad is one of the best things I have ever written
+00:39:25 div, short break
+00:40:30 neural networks ops
+00:41:45 linear
+00:43:10 sequential, reduce
+00:44:40 an instantiation of the function in the context
+00:45:45 mlops, cleanup, unary ops
+00:47:50 good tests, more cleanup
+00:53:20 the derivative of convolutions as convolutions
+00:53:50 llops - unary_op, binary_op, movement_op, procesing_op, reduce_op
+00:54:20 working on the code
+01:00:00 how does it run on the device
+01:02:10 numpy, GPU backend, Torch backend
+01:02:50 train efficientnet and graph
+01:05:00 custom accelerator support, shapetracker
+01:05:45 optimizers, BatchNorm, Conv2d
+01:06:40 cherry hardware, data movement is expensive
+01:08:45 rockchip neural network accelerator
+01:09:20 replacing numpy
+01:12:45 improving performance by removing GPU cache
+01:14:00 equivalent of Numpy.argsort() python
+01:16:15 codebase understanding, tests
+01:18:00 chain the autograd
+01:20:00 nobody liked the tinygrad tour
+01:22:15 new readme
+01:23:00 tinyvoice, tinygrad will be faster then pytorch
+01:24:15 GPU support
+01:25:50 simple and memory efficient
+01:27:00 tinygrad support
+01:28:00 this should be in the readme, everything compiled on the fly
+01:28:40 tinygrad++, refactor feels correct
+01:30:10 convolution
+01:31:30 bugs to fix
+01:37:55 benchmarks 
+01:39:10 Tuple index out of rage, cannot resolve name lazyop, more errors
+02:11:40 commit typechecks 
+02:21:00 why I don't stream tinygrad
+02:22:35 torch question, issue
+02:26:15 timeout for bad question, more bad questions
+02:28:40 cool pull request from smurfd0
+02:29:50 sub so you don't get a timeout
+02:30:10 no j_blow stream to raid
+02:31:20 freedom of speech on twitch, non subs vs subs
+02:34:30 giving money to amazon, patreon
+02:35:45 prime sub
+02:36:25 tinygrad is work of art, whiteboard
+02:38:20 tuning the guitar
+02:40:00 drake - best i ever had
+02:41:00 eagles - hotel california
+02:44:00 the front bottoms - twin size mattress
+02:46:30 goo goo dolls - iris
+02:48:08 american football - never meant
+02:48:45 john denver - take me home, country roads
+02:51:45 dragonforce - through the fire and flames
+02:52:05 the hotelier - an ode to the nite ratz club
+02:52:45 led zeppelin - stairway to heaven
+02:57:25 thank you for watching
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

@@ -1,0 +1,3900 @@
+1
+00:00:36,649 --> 00:00:38,649
+sleepydude1: kayawaWinkeWinke
+
+2
+00:00:43,083 --> 00:00:45,083
+payday05: yoo
+
+3
+00:00:45,899 --> 00:00:47,899
+RangeBomber: fast af
+
+4
+00:00:46,333 --> 00:00:48,333
+0xmalvee_: and we got 1 GBPS wtf
+
+5
+00:00:47,019 --> 00:00:49,019
+sleepydude1: TPFufun PikaRamen
+
+6
+00:00:47,191 --> 00:00:49,191
+Izaroth: hello
+
+7
+00:00:47,251 --> 00:00:49,251
+jmickelly9: yo
+
+8
+00:00:49,705 --> 00:00:51,705
+TandeBoy: hi
+
+9
+00:00:51,167 --> 00:00:53,167
+userismale: hii
+
+10
+00:00:52,276 --> 00:00:54,276
+dantedante33: CrreamAwk
+
+11
+00:00:52,654 --> 00:00:54,654
+amratesh: hey man
+
+12
+00:00:53,446 --> 00:00:55,446
+0xmalvee_: I have 35 mbps lol
+
+13
+00:00:53,657 --> 00:00:55,657
+userismale: mis u
+
+14
+00:01:00,124 --> 00:01:02,124
+hotfirebulldog: wow so sexy
+
+15
+00:01:01,995 --> 00:01:03,995
+Iron_Therapy: Iron_Therapy subscribed with Prime. They've subscribed for 5 months!
+
+16
+00:01:02,062 --> 00:01:04,062
+jayhey00: yo
+
+17
+00:01:08,771 --> 00:01:10,771
+payday05: back in San Diego?
+
+18
+00:01:11,234 --> 00:01:13,234
+r3mote: hii
+
+19
+00:01:24,030 --> 00:01:26,030
+yugz_baby: hello!
+
+20
+00:01:25,815 --> 00:01:27,815
+leikowo: o/
+
+21
+00:01:28,286 --> 00:01:30,286
+userismale: How not to be a noob - George Hotz
+
+22
+00:01:33,807 --> 00:01:35,807
+spoonx0r: AT&T?
+
+23
+00:01:42,576 --> 00:01:44,576
+whiterunknight: Hi George
+
+24
+00:01:50,564 --> 00:01:52,564
+payday05: u don’t like cursor?
+
+25
+00:01:57,870 --> 00:01:59,870
+Not_Snorlax0_0: Hi
+
+26
+00:01:58,570 --> 00:02:00,570
+bunterr: all my apartment has is 3 LTE bars
+
+27
+00:01:59,475 --> 00:02:01,475
+kerubelk: oh shit he’s back
+
+28
+00:01:59,924 --> 00:02:01,924
+Galaxygon666: Good timing, now i can Co-Code with the legend xD
+
+29
+00:02:05,484 --> 00:02:07,484
+0xmalvee_: linux kernal?
+
+30
+00:02:06,590 --> 00:02:08,590
+TandeBoy: what’s happened with tinygrad since last stream?
+
+31
+00:02:10,461 --> 00:02:12,461
+SouFi_Wara: GitHub copilot ?
+
+32
+00:02:27,758 --> 00:02:29,758
+lukasf6: Hello
+
+33
+00:02:34,771 --> 00:02:36,771
+kerubelk: are you still in china?
+
+34
+00:02:53,207 --> 00:02:55,207
+glennposadas: greetings from the 🇵🇭, George. :D
+
+35
+00:02:54,196 --> 00:02:56,196
+ashcrok: hi georgie
+
+36
+00:02:55,297 --> 00:02:57,297
+21st_centuryman: European boys 🔛🔝
+
+37
+00:03:09,162 --> 00:03:11,162
+tunesout: He's in San Diego
+
+38
+00:03:18,514 --> 00:03:20,514
+SouFi_Wara: Cheer1
+
+39
+00:03:26,440 --> 00:03:28,440
+21st_centuryman: tinygrad OS when?
+
+40
+00:03:39,434 --> 00:03:41,434
+dhavalkotak: Hello
+
+41
+00:04:39,212 --> 00:04:41,212
+perlpimp: sup cracker, ello from 🇨🇦
+
+42
+00:05:01,975 --> 00:05:03,975
+AK_ttv_: Lol so this is it, I thought you'd have thousands of viewers
+
+43
+00:05:33,427 --> 00:05:35,427
+AK_ttv_: Geo do you remember NextGenUpdate back in the day
+
+44
+00:05:53,292 --> 00:05:55,292
+yugz_baby: george: "where's the viewers at?!"
+
+45
+00:06:11,177 --> 00:06:13,177
+hexdhog: what's the python code box above the kernel code?
+
+46
+00:06:52,530 --> 00:06:54,530
+mn2197: Long time no see. What is the current speed performance of tinygrad? tinygrad cuda vs tinygrad amd vs torch cuda?
+
+47
+00:06:56,562 --> 00:06:58,562
+backend_hacisi: any plans to visit singapore george?
+
+48
+00:07:41,380 --> 00:07:43,380
+gliched_robot: gliched_robot subscribed at Tier 1. They've subscribed for 33 months!
+
+49
+00:07:45,752 --> 00:07:47,752
+userismale: George Hotz why ur twitter acc tweets not visible
+
+50
+00:07:45,923 --> 00:07:47,923
+gliched_robot: I write a lot of molecular dynamics code, I plan to test the code
+
+51
+00:07:54,254 --> 00:07:56,254
+yugz_baby: am I the only one who understands jack?
+
+52
+00:08:29,922 --> 00:08:31,922
+ViKiNg688: ViKiNg688 subscribed at Tier 1.
+
+53
+00:08:33,335 --> 00:08:35,335
+tuugen3213: did he say when/what is the tour
+
+54
+00:08:36,582 --> 00:08:38,582
+yugz_baby: or is everyone here for the vibes...
+
+55
+00:08:36,919 --> 00:08:38,919
+Cinnabon2: is there a name for how this is presented
+
+56
+00:08:41,714 --> 00:08:43,714
+ViKiNg688: Wow I never catch you live
+
+57
+00:08:49,192 --> 00:08:51,192
+userismale: @tuugen3213 no
+
+58
+00:08:56,340 --> 00:08:58,340
+hask_nosiit: Ayeeeeee
+
+59
+00:09:00,113 --> 00:09:02,113
+hask_nosiit: Yooo
+
+60
+00:09:00,682 --> 00:09:02,682
+jordandiaz1988: jordandiaz1988 subscribed at Tier 1. They've subscribed for 27 months, currently on a 7 month streak! hello bro from Peru
+
+61
+00:09:04,757 --> 00:09:06,757
+smurfd0: tour of tinygrad
+
+62
+00:09:35,129 --> 00:09:37,129
+userismale: u guys able too see hes x acc ?
+
+63
+00:10:12,115 --> 00:10:14,115
+gliched_robot: wait is he using keyboard shortcut to navigate viz graph what the hell.
+
+64
+00:11:25,148 --> 00:11:27,148
+gliched_robot: what is the diff on the right ?
+
+65
+00:12:13,432 --> 00:12:15,432
+leikowo: wait so the squares are UOps, and every single one of them has a value ? eg: view has a value ? so each of them really has it's own shape ?
+
+66
+00:13:36,062 --> 00:13:38,062
+gliched_robot: Ya, this is fucking cool. It should be the default in every NN library. Makes debugging so easy!
+
+67
+00:14:15,182 --> 00:14:17,182
+allright_iamhim: When do you think tinygrad will be at a level of pytorch?
+
+68
+00:15:02,545 --> 00:15:04,545
+gliched_robot: @allright_iamhim end of the year I think
+
+69
+00:16:02,742 --> 00:16:04,742
+leikowo: could you explain quickly how the vectoriser works ? I remember the dtypes had a number of elements
+
+70
+00:17:53,636 --> 00:17:55,636
+allright_iamhim: Sorry to ask but can anyone tell me what is the tool is he using for these graphs?
+
+71
+00:18:03,139 --> 00:18:05,139
+leikowo: tiny glossary
+
+72
+00:18:15,749 --> 00:18:17,749
+georgehotz: VIZ=1 python3 test/test_tiny.py TestTiny.test_gemm
+
+73
+00:19:26,928 --> 00:19:28,928
+gliched_robot: Here is a link to install from master: https://github.com/tinygrad/tinygrad?tab=readme-ov-file#from-source
+
+74
+00:19:42,738 --> 00:19:44,738
+leikowo: yes, but there was something wrong with the gpu noob program, it didn't account for nvidia being smart and the register dependencies (I spent a week figuring it out)
+
+75
+00:19:44,112 --> 00:19:46,112
+sjray90: I miss the Quentin days :(
+
+76
+00:20:27,079 --> 00:20:29,079
+leikowo: tiny viz working perfectly
+
+77
+00:20:28,023 --> 00:20:30,023
+allright_iamhim: Geohot for the president.
+
+78
+00:20:34,022 --> 00:20:36,022
+pablusame: cheers from Argentina we kinda now about “economic distress”
+
+79
+00:20:35,147 --> 00:20:37,147
+Ayyyy420Lmao: george what's your account on polymarket?
+
+80
+00:20:35,182 --> 00:20:37,182
+illesteggplant: yooo
+
+81
+00:20:36,603 --> 00:20:38,603
+shadypc: W economy
+
+82
+00:20:37,968 --> 00:20:39,968
+wittentrip: hi
+
+83
+00:20:38,707 --> 00:20:40,707
+devroyalty: hope  you've been well bro
+
+84
+00:20:40,917 --> 00:20:42,917
+the_twitch_of_the_itch: finally
+
+85
+00:20:46,196 --> 00:20:48,196
+ReedThings: What, I thought you love Trump, no way Kappa
+
+86
+00:20:52,038 --> 00:20:54,038
+tricky_labyrinth: bro nothing ever happens, good or bad
+
+87
+00:20:53,282 --> 00:20:55,282
+userismale: me too
+
+88
+00:20:54,889 --> 00:20:56,889
+shadypc: impossible
+
+89
+00:20:59,737 --> 00:21:01,737
+wittentrip: not voting is never a good idea though
+
+90
+00:21:00,025 --> 00:21:02,025
+zaboomafooxd: nah
+
+91
+00:21:00,365 --> 00:21:02,365
+saratogahole: based lol
+
+92
+00:21:01,573 --> 00:21:03,573
+devroyalty: lol
+
+93
+00:21:05,478 --> 00:21:07,478
+TandeBoy: based
+
+94
+00:21:05,628 --> 00:21:07,628
+hugenippy: lmfao
+
+95
+00:21:07,059 --> 00:21:09,059
+itripleji: this is what you guys wanted, now lets stew in filth LUL
+
+96
+00:21:10,839 --> 00:21:12,839
+cacaosteve: if we all move to asia we can get our chinese goods
+
+97
+00:21:12,023 --> 00:21:14,023
+Meercal: I would be a better president
+
+98
+00:21:14,157 --> 00:21:16,157
+hamzard1: W stocks
+
+99
+00:21:15,501 --> 00:21:17,501
+speed__surge: ya at least the money wouldnt have been liberated from my wallet
+
+100
+00:21:26,849 --> 00:21:28,849
+jayhey00: chyna
+
+101
+00:21:31,572 --> 00:21:33,572
+devroyalty: mmm
+
+102
+00:21:37,914 --> 00:21:39,914
+boywitharupee: are you going to add support for visualizing flame graphs? Brenden Gregg style.
+
+103
+00:21:38,083 --> 00:21:40,083
+userismale: well said
+
+104
+00:21:40,029 --> 00:21:42,029
+RealOrtoXX: the market already rallied back up
+
+105
+00:21:40,942 --> 00:21:42,942
+sjray90: honestly that last stream renewed my interest in deep diving into the GPU area, spent the week going into it, really fun! thanks : )
+
+106
+00:21:42,861 --> 00:21:44,861
+preggzor: best in what regard?
+
+107
+00:21:59,721 --> 00:22:01,721
+TandeBoy: @RealOrtoXX just wait, the worst is yet to come
+
+108
+00:22:11,976 --> 00:22:13,976
+Ayyyy420Lmao: isnt that from AA?
+
+109
+00:22:13,175 --> 00:22:15,175
+Not_Snorlax0_0: Prayge
+
+110
+00:22:13,793 --> 00:22:15,793
+shadypc: W god
+
+111
+00:22:14,378 --> 00:22:16,378
+vybster: David sacks & co are such losers for shilling
+
+112
+00:22:15,485 --> 00:22:17,485
+hamzard1: W prayer
+
+113
+00:22:17,398 --> 00:22:19,398
+devroyalty: fsmPray
+
+114
+00:22:21,063 --> 00:22:23,063
+stuart2199: the chinese know calculus america doesn't know algebra :\
+
+115
+00:22:22,675 --> 00:22:24,675
+tricky_labyrinth: the visualizer's so much better than I remember
+
+116
+00:22:26,689 --> 00:22:28,689
+hexadecimal58: Are you back from HK?
+
+117
+00:22:27,196 --> 00:22:29,196
+rantos9: we should reindustrialize the world, we shouldn't leave all manufacturing to china, it's a bad long term strategy
+
+118
+00:22:39,914 --> 00:22:41,914
+userismale: hahaha
+
+119
+00:22:41,028 --> 00:22:43,028
+Meercal: lol gold one
+
+120
+00:22:45,777 --> 00:22:47,777
+the_twitch_of_the_itch: KEKW
+
+121
+00:22:49,967 --> 00:22:51,967
+arnaude: So sell all my stocks?
+
+122
+00:22:54,589 --> 00:22:56,589
+pepeega: it's a bit late dont you think
+
+123
+00:23:08,911 --> 00:23:10,911
+jakewhit14: "of course I'm mad with power, ever tried going mad without power? its terrible, no one listens to you"
+
+124
+00:23:09,845 --> 00:23:11,845
+thecoockoo: 145% tariff on python imports
+
+125
+00:23:11,171 --> 00:23:13,171
+rantos9: short term pain, long term gain
+
+126
+00:23:20,111 --> 00:23:22,111
+Ayyyy420Lmao: @thecoockoo KEKW
+
+127
+00:23:26,037 --> 00:23:28,037
+preggzor: but chyna pays the tarrifs Kappa
+
+128
+00:23:44,438 --> 00:23:46,438
+hexadecimal58: know the meme of the dude in the bicycle? it's the US perfectly. outsourced because they wanted to and now they're doubly shooting their foot.
+
+129
+00:23:46,215 --> 00:23:48,215
+AbacusFinchJD: compromise: mexico pays the tariffs
+
+130
+00:23:47,120 --> 00:23:49,120
+hamzard1: that actually makes a lot of sense. now even less manufacturing will take place in the US
+
+131
+00:23:51,805 --> 00:23:53,805
+sarah99___: sub mode off 👀
+
+132
+00:23:51,954 --> 00:23:53,954
+ViKiNg688: yes. this.
+
+133
+00:23:52,829 --> 00:23:54,829
+boywitharupee: flamegraph support in VIZ?
+
+134
+00:23:56,450 --> 00:23:58,450
+leikowo: so looking at the VIZ for the command, what's  - view base - lowered - expander - devectorizer  and where do we see the final kernel that goes into codegen ?
+
+135
+00:23:57,463 --> 00:23:59,463
+shadypc: the shit talk is too much
+
+136
+00:24:13,825 --> 00:24:15,825
+masroor_k: Peter Thiel says it's a negotiation tactic. It's a way to have leverage in order to have a reset
+
+137
+00:24:19,061 --> 00:24:21,061
+userismale: rugged
+
+138
+00:24:23,397 --> 00:24:25,397
+brotama: How did anyone think Trump would stop being retarded all the sudden? The "America first" stuff was always an obvious lie, dude does not give half a warm shit about America
+
+139
+00:24:27,849 --> 00:24:29,849
+john_kosta01: He will get there but may take so time
+
+140
+00:24:29,516 --> 00:24:31,516
+doberman1071: What did you expect from a populist leader anyway? They act in line with their own interests
+
+141
+00:24:32,170 --> 00:24:34,170
+oskrM: @masroor_k Art of the deal KEKW
+
+142
+00:24:37,940 --> 00:24:39,940
+AbacusFinchJD: @masroor_k anything trump does that doesn't work is a "negotiation tactic" Kappa
+
+143
+00:24:40,079 --> 00:24:42,079
+rantos9: based lmao
+
+144
+00:24:41,092 --> 00:24:43,092
+hamzard1: W numbers
+
+145
+00:24:43,786 --> 00:24:45,786
+Ayyyy420Lmao: obesity rates
+
+146
+00:24:46,305 --> 00:24:48,305
+arnaude: But what if they delete the income tax
+
+147
+00:24:50,297 --> 00:24:52,297
+hourzer: taxes are going up
+
+148
+00:25:01,017 --> 00:25:03,017
+rantos9: is e/acc legit?
+
+149
+00:25:02,639 --> 00:25:04,639
+shadypc: W graph
+
+150
+00:25:11,106 --> 00:25:13,106
+Meercal: up good , down bad
+
+151
+00:25:14,938 --> 00:25:16,938
+john_kosta01: nah
+
+152
+00:25:15,973 --> 00:25:17,973
+AbacusFinchJD: we need to breed more hamsters and build more wheels
+
+153
+00:25:21,390 --> 00:25:23,390
+shadypc: ^
+
+154
+00:25:23,905 --> 00:25:25,905
+hexadecimal58: USA just wants to boycott  and fuck China over. Loser strategy
+
+155
+00:25:25,719 --> 00:25:27,719
+Meercal: lklklklk
+
+156
+00:25:29,947 --> 00:25:31,947
+pepeega: the important number https://ourworldindata.org/grapher/per-capita-electricity-generation?tab=chart
+
+157
+00:25:30,488 --> 00:25:32,488
+gliched_robot: America is linear growth china is exponential
+
+158
+00:25:32,989 --> 00:25:34,989
+m4l4r100: fuck that stupid mass deportation. we want workers coming in
+
+159
+00:25:52,616 --> 00:25:54,616
+rantos9: LUL
+
+160
+00:26:03,880 --> 00:26:05,880
+m4l4r100: welcome to trade deficit therory
+
+161
+00:26:04,723 --> 00:26:06,723
+vybster: tiny grad requires python 3.9.6 not in '>= 3.10
+
+162
+00:26:06,914 --> 00:26:08,914
+cacaosteve: preparing profile: 100%|███████████████████████| 5/5 [00:00<00:00, 61224.26it/s] *** started viz on http://127.0.0.1:8000
+
+163
+00:26:07,784 --> 00:26:09,784
+john_kosta01: not that hard right
+
+164
+00:26:08,961 --> 00:26:10,961
+zaboomafooxd: good time to work for US DoD?
+
+165
+00:26:09,440 --> 00:26:11,440
+hamzard1: W coffee
+
+166
+00:26:21,060 --> 00:26:23,060
+brotama: Oh I just got tinygrad installed, whats the command we were gonna test again?
+
+167
+00:26:23,532 --> 00:26:25,532
+john_kosta01: Yeah just do the right way
+
+168
+00:26:30,922 --> 00:26:32,922
+Meercal: legal people are being deported
+
+169
+00:26:31,431 --> 00:26:33,431
+thebirdabides: @georgehotz are more ASICs in the training and inference space a viable strategy to combatting power needs? They would be more efficient, than general compute, no?
+
+170
+00:26:34,832 --> 00:26:36,832
+thecoockoo: legal immigration is cool, yeah
+
+171
+00:26:38,212 --> 00:26:40,212
+cacaosteve: @vybster i think you need to activate a conda environment with the right version of python
+
+172
+00:26:49,943 --> 00:26:51,943
+brotama: Oh I just got tinygrad installed, whats the command we were gonna test again? @georgehotz
+
+173
+00:26:51,614 --> 00:26:53,614
+pepeega: it's crazy that voter ID is even an issue
+
+174
+00:26:54,218 --> 00:26:56,218
+frxncas: This is Silicon Valley: E/ACC vs. traditional conservatism now
+
+175
+00:26:56,826 --> 00:26:58,826
+TandeBoy: how do you think this will end up?
+
+176
+00:26:58,624 --> 00:27:00,624
+Cinnabon2: we should build data centres in cold, oily Canada but we'd rather keep it in the ground 🤷‍♂️
+
+177
+00:27:03,856 --> 00:27:05,856
+oskrM: legal and even citizens are being deported
+
+178
+00:27:18,417 --> 00:27:20,417
+thecoockoo: wrong numbers go up
+
+179
+00:27:29,948 --> 00:27:31,948
+cacaosteve: VIZ=1 python test/test_tiny.py TestTiny.test_gemm
+
+180
+00:27:33,779 --> 00:27:35,779
+frxncas: this is tech bros vs tradicional boomerism now
+
+181
+00:27:40,278 --> 00:27:42,278
+m4l4r100: I really wanna know your thought process on why you still gave somebody like trump a chance @georgehotz
+
+182
+00:27:48,631 --> 00:27:50,631
+hexadecimal58: It's crazy how the US spent 50 years creating the rules of the international trade game. Then China played the game by the rules. Won. And now the US is mad and wants a "reset" LUL loser
+
+183
+00:27:58,817 --> 00:28:00,817
+Toxicosmos: sure, here you have inflation going up
+
+184
+00:28:05,768 --> 00:28:07,768
+Cinnabon2: @oskrm I head about that. so they show ID and still get arrested?
+
+185
+00:28:16,512 --> 00:28:18,512
+cacaosteve: Trump let Ross out but now he's sending guys with no driver's license in non-California states back to central america
+
+186
+00:28:17,405 --> 00:28:19,405
+arnaude: gamergate?
+
+187
+00:28:22,505 --> 00:28:24,505
+gliched_robot: Got it now!
+
+188
+00:28:26,301 --> 00:28:28,301
+leikowo: for the people who want to get the viz up `git clone git@github.com:tinygrad/tinygrad.git` `cd tinygrad` `python3 -m venv .venv` `source .venv/bin/activate` `pip install -e .` `VIZ=1 python3 test/test_tiny.py TestTiny.test_gemm`
+
+189
+00:28:36,892 --> 00:28:38,892
+pepeega: chinese middle class is massive
+
+190
+00:28:40,309 --> 00:28:42,309
+Meercal: tesla is big in china
+
+191
+00:28:44,390 --> 00:28:46,390
+VanyaFTW: you looks like vibecoder
+
+192
+00:28:47,974 --> 00:28:49,974
+Cinnabon2: one complaint I heard is that you can't sue and enforce copyright
+
+193
+00:28:56,621 --> 00:28:58,621
+john_kosta01: He is
+
+194
+00:28:58,597 --> 00:29:00,597
+hamzard1: do they have costco tho ?
+
+195
+00:29:00,139 --> 00:29:02,139
+Morgahl_: "Democratic" Oligarchy
+
+196
+00:29:00,296 --> 00:29:02,296
+HurricaneFP: America is in managed decline
+
+197
+00:29:07,502 --> 00:29:09,502
+P4sik: AI is gone
+
+198
+00:29:07,868 --> 00:29:09,868
+TandeBoy: why would China import from the US, when their manufacturing is just better?
+
+199
+00:29:24,590 --> 00:29:26,590
+ReedThings: Is Tesla big? I thought BYD is destroying Tesla in China
+
+200
+00:29:36,167 --> 00:29:38,167
+rantos9: china should at least allow for 100% foreign owned companies to operate there, and not just for Tesla
+
+201
+00:29:55,859 --> 00:29:57,859
+Meercal: for how long more you think nvidia will continue leading the gpu market
+
+202
+00:30:00,402 --> 00:30:02,402
+stuart2199: can't export to communist bloc can only sell to great america capitalist ones
+
+203
+00:30:01,618 --> 00:30:03,618
+Black3v3r: At this point sell Tinyboxes without the cards and let people put theirs in LUL
+
+204
+00:30:15,445 --> 00:30:17,445
+thebirdabides: US services are superior as well
+
+205
+00:30:16,898 --> 00:30:18,898
+hamzard1: beef and pork
+
+206
+00:30:21,536 --> 00:30:23,536
+sjray90: Do you think Red box v2 this year too?
+
+207
+00:30:26,936 --> 00:30:28,936
+rafaelrcmrg: rafaelrcmrg subscribed at Tier 1.
+
+208
+00:30:31,444 --> 00:30:33,444
+diplacidon: soybeans
+
+209
+00:30:36,879 --> 00:30:38,879
+rantos9: LUL
+
+210
+00:30:42,075 --> 00:30:44,075
+spede: nvidia avg salary is $300k so of course the best engineers from china and everywhere want to work in the US instead of where ever they are from
+
+211
+00:30:51,586 --> 00:30:53,586
+Handelorian: Do you think you'll back on Lex's pod any time soon?
+
+212
+00:30:52,290 --> 00:30:54,290
+leikowo: Could you explain the different steps on the side bar in viz ?
+
+213
+00:30:52,753 --> 00:30:54,753
+hexadecimal58: Every single time the US tried to boycott and lock out/slow China, they won in the end. "You can't participate in our international space stations". China: "ok." build's their own LUL
+
+214
+00:30:56,131 --> 00:30:58,131
+Black3v3r: True, people would try random mixes of cards and then complain LUL
+
+215
+00:30:58,090 --> 00:31:00,090
+rantos9: who cares about AMD GPUs
+
+216
+00:30:59,322 --> 00:31:01,322
+cacaosteve: Thailand has BYD now... i just hope they don't have issues that like building that fell down
+
+217
+00:31:02,391 --> 00:31:04,391
+userismale: broke atm lmaoo
+
+218
+00:31:02,827 --> 00:31:04,827
+frxncas: The cyberpunk model unironically looks like the most promising future in the background of radically degraded state capacity.
+
+219
+00:31:12,729 --> 00:31:14,729
+Joooooooooonas: I have faith in amd, nvidias drivers lately are so shit and amd gets better and better
+
+220
+00:31:16,329 --> 00:31:18,329
+Cinnabon2: @black3v3r remember SLI
+
+221
+00:31:31,844 --> 00:31:33,844
+Black3v3r: @Cinnabon2 I'd rather not Kappa
+
+222
+00:31:40,401 --> 00:31:42,401
+SlimeSwallower: hi george <3
+
+223
+00:31:49,798 --> 00:31:51,798
+sjray90: You were on an AMD bender a while back... have they shown any signs of change? Or is your view still that they aren't taking AI seriously?
+
+224
+00:32:10,303 --> 00:32:12,303
+Dathknei: what does this box do?
+
+225
+00:32:12,814 --> 00:32:14,814
+shadypc: wasnt me
+
+226
+00:32:16,132 --> 00:32:18,132
+john_kosta01: The new guy
+
+227
+00:32:21,578 --> 00:32:23,578
+rantos9: LUL classic AMD GPU shenanigans
+
+228
+00:32:22,629 --> 00:32:24,629
+cytotoxnk: @Dathknei AI stuff
+
+229
+00:32:29,572 --> 00:32:31,572
+water_boy_h20: classic
+
+230
+00:32:32,295 --> 00:32:34,295
+hamzard1: republicans
+
+231
+00:32:34,954 --> 00:32:36,954
+TandeBoy: must be the intern
+
+232
+00:33:20,904 --> 00:33:22,904
+pepeega: so anyway, buy nvidia cards
+
+233
+00:33:22,309 --> 00:33:24,309
+Cinnabon2: sorrow34Dance2
+
+234
+00:33:24,273 --> 00:33:26,273
+userismale: hahaha
+
+235
+00:33:27,444 --> 00:33:29,444
+I_am_paranoid: LUL
+
+236
+00:33:31,297 --> 00:33:33,297
+Handelorian: The world isn't run by weapons anymore, or energy, or money. It's run by little ones and zeroes, little bits of data. It's all just electrons.
+
+237
+00:33:40,639 --> 00:33:42,639
+smurfd0: 'dpkg -l|grep llvm' to see what ver of llvm you got
+
+238
+00:33:43,677 --> 00:33:45,677
+Cinnabon2: @handelorian and weapons too
+
+239
+00:33:59,764 --> 00:34:01,764
+swolka: @Handelorian same as your brain huh
+
+240
+00:34:10,108 --> 00:34:12,108
+Handelorian: that's what  I get for quoting a movie from 1992
+
+241
+00:34:19,423 --> 00:34:21,423
+kolmok0dz: somehow Fujitsu just partnered with AMD "For ROCm"   I kid you not.
+
+242
+00:34:31,288 --> 00:34:33,288
+Cinnabon2: the talkies
+
+243
+00:34:34,847 --> 00:34:36,847
+hexdhog: Democrats have Critical Race Theory, Republicans have Critical Trade Theory and both are equally stupid
+
+244
+00:34:40,277 --> 00:34:42,277
+m4l4r100: how good are your rolling skills
+
+245
+00:34:52,034 --> 00:34:54,034
+john_kosta01: lol
+
+246
+00:34:53,060 --> 00:34:55,060
+Panda1Express: xD
+
+247
+00:34:58,276 --> 00:35:00,276
+boywitharupee: dump?
+
+248
+00:35:02,921 --> 00:35:04,921
+leikowo: trying to understand VIZ; could you explain the left column steps ?
+
+249
+00:35:08,269 --> 00:35:10,269
+cacaosteve: we need illegal immigrants to work in the factories
+
+250
+00:35:11,439 --> 00:35:13,439
+spede: 2% want to pay the price tag for a completely american made car
+
+251
+00:35:21,153 --> 00:35:23,153
+gyne: build the ai robots to do the manufacturing jobs KKona
+
+252
+00:35:26,912 --> 00:35:28,912
+ViKiNg688: NUMBER GO UP
+
+253
+00:35:30,850 --> 00:35:32,850
+hamzard1: Lord save the NUMBER
+
+254
+00:35:32,501 --> 00:35:34,501
+john_kosta01: Dollar abou to be at the same price as Canadian dollar
+
+255
+00:35:35,125 --> 00:35:37,125
+kolmok0dz: Darwin will take care of that.
+
+256
+00:35:38,891 --> 00:35:40,891
+thebirdabides: @georgehotz what ever happened to those companies trying to burn transformers onto an ASIC ?
+
+257
+00:35:41,793 --> 00:35:43,793
+Morgahl_: the problem is the manufacturing jobs taken away from places that had workforces that actively WANTED the jobs
+
+258
+00:35:55,872 --> 00:35:57,872
+m4l4r100: well kamala wouldn't have put one million % tariff on china
+
+259
+00:35:58,968 --> 00:36:00,968
+cacaosteve: you can import 25 year old Japanese cars to USA, might be a good option
+
+260
+00:36:04,128 --> 00:36:06,128
+john_kosta01: I yeah true
+
+261
+00:36:13,841 --> 00:36:15,841
+kolmok0dz: Every one is amazing kreskin
+
+262
+00:36:21,727 --> 00:36:23,727
+gliched_robot: Think about it they give 85k H1B , there are more homeless in LA and SF.
+
+263
+00:36:31,604 --> 00:36:33,604
+john_kosta01: They had one jib and fucked
+
+264
+00:36:32,111 --> 00:36:34,111
+funtimes19: what's wrong with dei
+
+265
+00:36:35,424 --> 00:36:37,424
+nuttyodin1: George has been rizzing up China before Speed
+
+266
+00:36:35,785 --> 00:36:37,785
+SlimeSwallower: DEI in my soup again? madge
+
+267
+00:36:49,443 --> 00:36:51,443
+john_kosta01: AMAZING
+
+268
+00:36:53,443 --> 00:36:55,443
+yugz_baby: that voice is hilarious
+
+269
+00:36:58,114 --> 00:37:00,114
+kolmok0dz: GH : countries are dumb, merit is all the matters
+
+270
+00:37:08,004 --> 00:37:10,004
+cacaosteve: we can all be Amish in USA
+
+271
+00:37:16,245 --> 00:37:18,245
+pepeega: kanye 2028 will make number go up
+
+272
+00:37:20,400 --> 00:37:22,400
+rantos9: LUL
+
+273
+00:37:22,883 --> 00:37:24,883
+gliched_robot: what is this comminisum !
+
+274
+00:37:35,014 --> 00:37:37,014
+kolmok0dz: Chinese citizens can be *made* to work.
+
+275
+00:37:35,333 --> 00:37:37,333
+pressOk: still in CN?
+
+276
+00:37:57,454 --> 00:37:59,454
+hamzard1: Deficit Export Import
+
+277
+00:37:57,486 --> 00:37:59,486
+rantos9: what do you think about term limits for presidents?
+
+278
+00:38:06,222 --> 00:38:08,222
+Dathknei: @gliched_robot trump wouldnt mind if usa switched to communism and him being leader
+
+279
+00:38:11,451 --> 00:38:13,451
+water_boy_h20: the problem is that china make the basics things like screws and less important stuff, wich make the big things that we use
+
+280
+00:38:12,478 --> 00:38:14,478
+Cinnabon2: i wish I was more competitive. unemployed 3 years. I wouldn't mind if my gov use bs to advantage me
+
+281
+00:38:40,666 --> 00:38:42,666
+illesteggplant: lmaoooo
+
+282
+00:39:06,830 --> 00:39:08,830
+funtimes19: as long as they get due process
+
+283
+00:39:07,257 --> 00:39:09,257
+m4l4r100: hmm trump. or maybe you would have known that the best cars come from germany and not america
+
+284
+00:39:08,393 --> 00:39:10,393
+Cinnabon2: dead on. I hate being a mooch it's depressing
+
+285
+00:39:09,082 --> 00:39:11,082
+Morgahl_: @Dathknei he doesn't want communism he want a Oligarchy
+
+286
+00:39:09,520 --> 00:39:11,520
+SlimeSwallower: whats a mush
+
+287
+00:39:11,971 --> 00:39:13,971
+kolmok0dz: you should xeet that.
+
+288
+00:39:17,687 --> 00:39:19,687
+teachingtorches: we're deporting dudes posting up at Home Depot to build shit instead
+
+289
+00:39:18,616 --> 00:39:20,616
+nuttyodin1: Both parties fear China
+
+290
+00:39:21,905 --> 00:39:23,905
+shadypc: and keep the pooches
+
+291
+00:39:23,890 --> 00:39:25,890
+SyntaxWraith: @SlimeSwallower I don't know, don't ask me
+
+292
+00:39:23,991 --> 00:39:25,991
+gliched_robot: yes. please is you are paying taxes for 2 years you are out!
+
+293
+00:39:24,651 --> 00:39:26,651
+jagger_rsw: zis are serious things, no? :)
+
+294
+00:39:27,543 --> 00:39:29,543
+vybster: big ayn rand energy
+
+295
+00:39:34,852 --> 00:39:36,852
+funtimes19: disabled people = mooches
+
+296
+00:39:38,424 --> 00:39:40,424
+runnamucker4: ill be the rare one to break from the norm to say, hi george, thank you for strimming, it is always awesome!
+
+297
+00:39:49,903 --> 00:39:51,903
+nuttyodin1: Is fear of China justified? Is the real question
+
+298
+00:40:06,854 --> 00:40:08,854
+fehehehe: damn
+
+299
+00:40:14,054 --> 00:40:16,054
+hamzard1: W hawkin
+
+300
+00:40:16,858 --> 00:40:18,858
+rantos9: HOLY
+
+301
+00:40:16,957 --> 00:40:18,957
+Cinnabon2: at least make AI slop instagram content or write books if you're disabled
+
+302
+00:40:26,519 --> 00:40:28,519
+pressOk: robotz
+
+303
+00:40:34,729 --> 00:40:36,729
+m4l4r100: is the us afraid of greenland? hmm
+
+304
+00:42:23,895 --> 00:42:25,895
+leikowo: trying to understand VIZ; could you explain the different steps in the left column ?
+
+305
+00:42:30,033 --> 00:42:32,033
+gliched_robot: Ok should I be using clang in my mac ?
+
+306
+00:42:36,738 --> 00:42:38,738
+yehspehr: yehspehr subscribed at Tier 1. They've subscribed for 2 months!
+
+307
+00:42:43,329 --> 00:42:45,329
+gliched_robot: ^to get this viz
+
+308
+00:43:13,388 --> 00:43:15,388
+nuttyodin1: Let me get to another question later
+
+309
+00:43:32,125 --> 00:43:34,125
+nuttyodin1: nuttyodin1 subscribed at Tier 1. They've subscribed for 25 months, currently on a 1 month streak!
+
+310
+00:43:56,508 --> 00:43:58,508
+leikowo: are they in exec order ?
+
+311
+00:43:58,099 --> 00:44:00,099
+sw4rtz13: sw4rtz13 subscribed with Prime. They've subscribed for 13 months!
+
+312
+00:44:28,064 --> 00:44:30,064
+sjray90: damn this is cool
+
+313
+00:45:40,400 --> 00:45:42,400
+leikowo: do you get the metadata from python reflection ?
+
+314
+00:46:16,806 --> 00:46:18,806
+gliched_robot: Ok I am getting a blank screen for mnist in my uops window https://i.imgur.com/5Hmw6Yf.png
+
+315
+00:46:19,389 --> 00:46:21,389
+sjray90: do you use this to help write better kernels?
+
+316
+00:46:58,933 --> 00:47:00,933
+leikowo: so index takes a buffer & an index and returns the sum ?
+
+317
+00:48:05,932 --> 00:48:07,932
+nuttyodin1: i use you as my background noise to work
+
+318
+00:48:47,024 --> 00:48:49,024
+nuttyodin1: won't spam anymore
+
+319
+00:50:15,328 --> 00:50:17,328
+leikowo: what's expanding ?
+
+320
+00:51:03,613 --> 00:51:05,613
+tohrxyz: tohrxyz subscribed at Tier 1.
+
+321
+00:51:59,867 --> 00:52:01,867
+tohrxyz: Hello and great day to everyone
+
+322
+00:53:08,289 --> 00:53:10,289
+leikowo: how are you changing like this ? it's the 0 1 2 on the right under the kernel ?
+
+323
+00:54:04,494 --> 00:54:06,494
+leikowo: is special used for anything else than gid and lid ?
+
+324
+00:55:51,124 --> 00:55:53,124
+sjray90: does a refactor mean 1.00 is far away?
+
+325
+00:56:31,100 --> 00:56:33,100
+leikowo: I remember the UOp docs not explaining much :c
+
+326
+00:57:55,910 --> 00:57:57,910
+leikowo: reduce a list of pms ?
+
+327
+01:00:18,328 --> 01:00:20,328
+colonizethemoon: yo
+
+328
+01:10:19,220 --> 01:10:21,220
+leikowo: why can the renderer be none ?
+
+329
+01:20:10,587 --> 01:20:12,587
+tohrxyz: always vitamin water, never caffeine. are you rawdogging thinking?? :Dd
+
+330
+01:28:32,578 --> 01:28:34,578
+smurfd0: tour and debugging stream all at once :)
+
+331
+01:30:26,721 --> 01:30:28,721
+smurfd0: compare the working generated code and the not working?
+
+332
+01:36:19,619 --> 01:36:21,619
+smurfd0: row 555 in the diff you touched the liniarizer... spelling
+
+333
+01:36:47,862 --> 01:36:49,862
+smurfd0: yea that
+
+334
+01:42:36,117 --> 01:42:38,117
+smurfd0: thought you were defragmenting a disc, but no, just test a plenty ;)
+
+335
+01:43:39,474 --> 01:43:41,474
+nitropiece: nitropiece subscribed with Prime. They've subscribed for 4 months, currently on a 1 month streak!
+
+336
+02:09:40,871 --> 02:09:42,871
+lBdCompanyl: lBdCompanyl subscribed with Prime.
+
+337
+02:09:47,710 --> 02:09:49,710
+lBdCompanyl: this dude is a mage, love it <3
+
+338
+02:11:56,923 --> 02:11:58,923
+lBdCompanyl: what is tinygrad? im new here
+
+339
+02:12:09,295 --> 02:12:11,295
+nuttyodin1: who registered for "world" to distinguish themselves from AI?!
+
+340
+02:23:18,599 --> 02:23:20,599
+leikowo: sm90a can do f32x2
+
+341
+02:24:24,017 --> 02:24:26,017
+leikowo: some of the ptx ops can handle dual alu yes I read that somewhere
+
+342
+02:25:26,598 --> 02:25:28,598
+leikowo: "add.f32x2 requires sm_100 or higher." from ptx docs
+
+343
+02:25:43,015 --> 02:25:45,015
+leikowo: so Blackwell datacenter & rtx blackwell
+
+344
+02:27:59,040 --> 02:28:01,040
+drtinybloom: drtinybloom subscribed with Prime.
+
+345
+02:28:06,164 --> 02:28:08,164
+leikowo: how does gpu fryer compare to gpu-burn ?
+
+346
+02:28:59,904 --> 02:29:01,904
+smurfd0: lul the picture :D
+
+347
+02:29:15,110 --> 02:29:17,110
+leikowo: rustup pls
+
+348
+02:29:33,183 --> 02:29:35,183
+leikowo: how old was that rustc? x)
+
+349
+02:30:05,043 --> 02:30:07,043
+drtinybloom: Chat plz, what's tiny grad?
+
+350
+02:30:15,626 --> 02:30:17,626
+leikowo: use rustup please
+
+351
+02:30:27,403 --> 02:30:29,403
+leikowo: https://www.rust-lang.org/tools/install
+
+352
+02:31:53,412 --> 02:31:55,412
+drtinybloom: https://github.com/tinygrad/tinygrad  Ok seems cool related to the rewrited of pytorch for AMD hardware from like &.5 years ago or so ?
+
+353
+02:32:01,740 --> 02:32:03,740
+leikowo: 80 is fine on gddr but on hbm I would be scared
+
+354
+02:32:29,235 --> 02:32:31,235
+drtinybloom: lul not on twitch, but happy to catch up
+
+355
+02:32:49,171 --> 02:32:51,171
+leikowo: It's made for big clusters stress testing
+
+356
+02:33:18,477 --> 02:33:20,477
+gliched_robot: I suspect the fan controller is cooked.
+
+357
+02:33:48,732 --> 02:33:50,732
+leikowo: great temps for 600W x 4, my gpus go to 90c at 300W
+
+358
+02:35:47,653 --> 02:35:49,653
+leikowo: (though I can't afford a tinybox and spent a year to make my own box for 5K)
+
+359
+02:36:46,105 --> 02:36:48,105
+gliched_robot: I remember where there was a company called DSpace, which made boxes like this; it cost 2x the price for 1/2x the power. With shit software.
+
+360
+02:39:01,425 --> 02:39:03,425
+leikowo: would you delied a datacenter gpu ? some older ones have the thermal paste between die and ihs all dried up
+
+361
+02:39:06,701 --> 02:39:08,701
+smurfd0: probably some kernel driver you need to load on the new box
+
+362
+02:39:13,170 --> 02:39:15,170
+gliched_robot: how many db? are the fans ?
+
+363
+02:40:27,009 --> 02:40:29,009
+gliched_robot: Nice! awesome
+
+364
+02:41:57,110 --> 02:41:59,110
+gliched_robot: aws also runs gpus hot too. My A100 temp is 70c currently.
+
+365
+02:44:10,547 --> 02:44:12,547
+Zeevo: What chair do you use?
+
+366
+02:44:32,419 --> 02:44:34,419
+zup_zup: haha chair
+
+367
+02:44:34,102 --> 02:44:36,102
+lBdCompanyl: how to be good like u? =DDD
+
+368
+02:44:36,783 --> 02:44:38,783
+smurfd0: thanks for stream :)
+
+369
+02:44:47,770 --> 02:44:49,770
+gliched_robot: @lBdCompanyl work
+
+370
+02:44:48,772 --> 02:44:50,772
+dalgalarlagulumse: thank you
+
+371
+02:45:01,610 --> 02:45:03,610
+skarmorysavvy: will you ever make the tinygrad tutorials more addictive
+
+372
+02:45:07,037 --> 02:45:09,037
+gliched_robot: thank you hope your sunday is good folks!
+
+373
+02:45:09,270 --> 02:45:11,270
+leikowo: could you explain the different UOps one of the next streams ? The docs are pretty slim for them
+
+374
+02:45:16,141 --> 02:45:18,141
+gliched_robot: @skarmorysavvy BROOOOO
+
+375
+02:45:20,026 --> 02:45:22,026
+chevarra77: Gorg, you the best
+
+376
+02:45:24,545 --> 02:45:26,545
+thecreator3: you mentioned qcom dsp simulator. has anyone started that work?
+
+377
+02:45:36,367 --> 02:45:38,367
+ikki1100: Did you change the room for streams? that is my question LUL
+
+378
+02:46:44,110 --> 02:46:46,110
+Fredirecko: you move back?
+
+379
+02:46:46,855 --> 02:46:48,855
+Reformedot: A bit new here, what's the purpose of that UI thingy? Why is related with tinygrad?
+
+380
+02:47:14,299 --> 02:47:16,299
+DrakenZA: you need to advertise these boxes with how many anime babe ai generated images it can do per min Kappa
+
+381
+02:47:15,355 --> 02:47:17,355
+lBdCompanyl: no idea whats happening =) still love
+
+382
+02:47:20,076 --> 02:47:22,076
+UltraScientism: I just joined, who makes the dsp?
+
+383
+02:47:52,668 --> 02:47:54,668
+DrakenZA: it doesnt matter who buys bro
+
+384
+02:48:22,566 --> 02:48:24,566
+Gameplayer0618: 30% is easily led
+
+385
+02:48:27,956 --> 02:48:29,956
+inceptiondev: did you check out deepwiki for tinygrad? im curious
+
+386
+02:48:33,619 --> 02:48:35,619
+zup_zup: Anyone use tinybox with torchaudio? Thinking about it for underwater acoustics ML
+
+387
+02:48:37,256 --> 02:48:39,256
+Reformedot: The UI is for debugging?
+
+388
+02:48:38,235 --> 02:48:40,235
+reqx0x: i really really have no idea at all what you are doing but its fun to watch your stream :D
+
+389
+02:48:43,618 --> 02:48:45,618
+leikowo: does the 7900XTX over usb on the MacBook still work ?
+
+390
+02:49:47,345 --> 02:49:49,345
+SirMaxMD: The problem is there is no middle ground between a 30k tinygrad and 400k for a H200 server, I am looking for a 100k server
+
+391
+02:49:56,475 --> 02:49:58,475
+DrakenZA: lol
+
+392
+02:50:00,243 --> 02:50:02,243
+dedknd: do you get any special deal on the gpus or buy them like the rest of us plebs?
+
+393
+02:50:02,390 --> 02:50:04,390
+Thirsty4K: Any predictions on the next big mathematical operation that will manage to link contextual information with spatial at the performance of a transformer, without the huge computational complexity?
+
+394
+02:50:18,795 --> 02:50:20,795
+inceptiondev: https://deepwiki.com/tinygrad/tinygrad
+
+395
+02:50:52,925 --> 02:50:54,925
+Fredirecko: Listening
+
+396
+02:50:59,542 --> 02:51:01,542
+drtinybloom: DGX sparks will be the spoonfed garbage, if it ever see sunlight, i guess... XD
+
+397
+02:51:17,355 --> 02:51:19,355
+Toxicosmos: Deepwiki is cool, until you ask it something about the code
+
+398
+02:52:45,306 --> 02:52:47,306
+zup_zup: What's the most exciting company tech company right now to you outside of tinybox :D
+
+399
+02:53:02,339 --> 02:53:04,339
+chachitheghost: chachitheghost subscribed at Tier 1.
+
+400
+02:53:19,872 --> 02:53:21,872
+georgehotz: python3 -m tinygrad.device
+
+401
+02:53:55,380 --> 02:53:57,380
+smurfd0: docs.tinygrad.org instead of that deepwiki.. ;)
+
+402
+02:54:17,149 --> 02:54:19,149
+715209: can we see the servers?
+
+403
+02:54:38,429 --> 02:54:40,429
+Toxicosmos: Diagrams are very cool
+
+404
+02:54:55,036 --> 02:54:57,036
+m00rsecode: Wait, does the open source hexagon qemu support HMX?
+
+405
+02:55:46,398 --> 02:55:48,398
+skarmorysavvy: my 6650xt only has GPU and LLVM :(
+
+406
+02:55:59,557 --> 02:56:01,557
+gliched_robot: taughts on this : https://www.youtube.com/live/yOMflrCRya0?si=O8XUlWF3fSl2WkLk
+
+407
+02:56:02,629 --> 02:56:04,629
+NoticabelyFAT: megaGrad
+
+408
+02:56:39,435 --> 02:56:41,435
+gliched_robot: they mention its opensource
+
+409
+02:56:49,458 --> 02:56:51,458
+Zeevo: @georgehotz do you worry that tinygrad is too difficult to contribute to without OOP?
+
+410
+02:56:54,099 --> 02:56:56,099
+Toxicosmos: Do you think MLIR is the solution?
+
+411
+02:57:02,083 --> 02:57:04,083
+solAPEX_: did "program or be programmed" by Douglas Rushkoff come into mind while deciding to start tinygrad / tinygrad in the home?
+
+412
+02:57:52,230 --> 02:57:54,230
+ownsoft: multi-level
+
+413
+02:58:16,828 --> 02:58:18,828
+malateman: with tinygrad + openpilot, you could probably write code most future robotics use cases in very few lines of code with very little dependencies
+
+414
+02:58:18,977 --> 02:58:20,977
+UltraScientism: Anyone knows if it's possible to accelerate ML on an Android phone with Snapdragon 8 elite from termux? Or have they closed everything off for Android "userland"?
+
+415
+02:58:50,721 --> 02:58:52,721
+gliched_robot: i think it is: https://github.com/modular/modular?tab=License-1-ov-file#readme
+
+416
+02:59:40,758 --> 02:59:42,758
+Stim_Shot_: its fast python
+
+417
+02:59:43,134 --> 02:59:45,134
+chachitheghost: https://github.com/modular/modular/tree/main/mojo/stdlib
+
+418
+03:00:01,237 --> 03:00:03,237
+gliched_robot: The video goes in detail I think you will like it
+
+419
+03:00:42,332 --> 03:00:44,332
+uloop: Why were people so against depending on Z3? Looks OK at first glance.
+
+420
+03:00:45,989 --> 03:00:47,989
+ownsoft: does compiling tinygrad to MLIR make sense?
+
+421
+03:00:59,140 --> 03:01:01,140
+Thirsty4K: @UltraScientism Back in the day, I used SNPE engine to optimize/port all kinds of architectures on snapdragon processors. I do not know where things are now, but 7 years ago SNPE killed TFlite/TFMobile.
+
+422
+03:01:26,236 --> 03:01:28,236
+colonizethemoon: make it search
+
+423
+03:03:10,255 --> 03:03:12,255
+nuttyodin1: Is that seaweed?
+
+424
+03:03:12,869 --> 03:03:14,869
+nuttyodin1: Wow
+
+425
+03:03:17,473 --> 03:03:19,473
+Coraxxi: bro's just munching on seaweed
+
+426
+03:03:30,731 --> 03:03:32,731
+smurfd0: exo labs is cool tho
+
+427
+03:03:31,075 --> 03:03:33,075
+Temppus: whats your take on qualcom as a company
+
+428
+03:04:36,151 --> 03:04:38,151
+nuttyodin1: what about worldcoin, do we need to get authenticated as humans now?!
+
+429
+03:04:47,058 --> 03:04:49,058
+UltraScientism: Chinese are coming
+
+430
+03:05:05,377 --> 03:05:07,377
+gliched_robot: I do not trust a company who's chips are not sold on digikey or buynow.
+
+431
+03:05:09,779 --> 03:05:11,779
+EstrangedHD: @UltraScientism already here
+
+432
+03:05:13,531 --> 03:05:15,531
+uloop: QC is getting booted out of a good chunk of the modem business right now by Apple
+
+433
+03:05:22,885 --> 03:05:24,885
+Gadaros: lol
+
+434
+03:05:22,959 --> 03:05:24,959
+PlushMasta: laplanKEK
+
+435
+03:05:23,752 --> 03:05:25,752
+715209: LUL
+
+436
+03:05:35,956 --> 03:05:37,956
+m00rsecode: At this point idk why qcom tries to lock down HMX even now
+
+437
+03:05:38,831 --> 03:05:40,831
+malateman: who has had the best sales people/team you've dealt with? intel?
+
+438
+03:06:00,156 --> 03:06:02,156
+gliched_robot: "Circle back" to you in the next business day! Brother, go away!
+
+439
+03:06:04,234 --> 03:06:06,234
+UltraScientism: just reform it at least, so patents are actually readable
+
+440
+03:06:20,688 --> 03:06:22,688
+colonizethemoon: at least it's cheaper. for less than 10k$ you get 512gb of unified memory
+
+441
+03:06:23,495 --> 03:06:25,495
+ownsoft: intel is run by career board members
+
+442
+03:06:27,638 --> 03:06:29,638
+xuio1337: most of the western chip companies are a pain to deal with.
+
+443
+03:06:34,979 --> 03:06:36,979
+SteveOhBandito: well you see we need an MSA first, then we've gotta go for lunch, followed by two dinners that we get absolutely BLITZED at, then I'll go hit on some women half my age even though I have a wife and children. After all that, you can buy some chips but we're going to need to sell you support at 15% of your hardware purchase price
+
+444
+03:06:44,467 --> 03:06:46,467
+Toxicosmos: openvino LUL
+
+445
+03:06:45,066 --> 03:06:47,066
+gliched_robot: AMD has a high inertia, they are slow but they move.
+
+446
+03:06:47,870 --> 03:06:49,870
+uloop: The new Intel CEO may be able to avoid bankruptcy if V2 of 18A does not fail
+
+447
+03:06:56,733 --> 03:06:58,733
+Cinnabon2: I never thought of that. copyright is kind of old school in the age of LLMs
+
+448
+03:07:19,638 --> 03:07:21,638
+SteveOhBandito: Shit is wild out there
+
+449
+03:07:29,187 --> 03:07:31,187
+uloop: copyright should have died when Napster came out lol
+
+450
+03:07:39,195 --> 03:07:41,195
+roboboboto: you have what you voted for
+
+451
+03:07:47,154 --> 03:07:49,154
+gliched_robot: IP laws are shit!
+
+452
+03:07:51,113 --> 03:07:53,113
+svd_neo: @georgehotz How long until Chinese introduce first global chip they made from scratch
+
+453
+03:07:53,053 --> 03:07:55,053
+Cinnabon2: I'll admit China at the top level has common sense at least
+
+454
+03:08:00,829 --> 03:08:02,829
+Fredirecko: log cabins are op
+
+455
+03:08:06,357 --> 03:08:08,357
+djcodered__: lmaooo
+
+456
+03:08:09,287 --> 03:08:11,287
+pressOk: "done this"
+
+457
+03:08:12,479 --> 03:08:14,479
+colonizethemoon: it's like who is less worse'
+
+458
+03:08:14,963 --> 03:08:16,963
+roboboboto: I'm pretty sure you said on stream you voted for him
+
+459
+03:08:15,229 --> 03:08:17,229
+Toxicosmos: how you protect expensive R&D if not with IPs?
+
+460
+03:08:28,963 --> 03:08:30,963
+SirMaxMD: kinda felt like a lose - lose situation
+
+461
+03:08:31,343 --> 03:08:33,343
+benez1702: what about 2020
+
+462
+03:08:32,674 --> 03:08:34,674
+Temppus: why ios
+
+463
+03:08:36,741 --> 03:08:38,741
+malateman: Kamala would have just kept the status quo
+
+464
+03:08:38,966 --> 03:08:40,966
+skarmorysavvy: is it true his nickname in china is "nation builder"? as in trump is helping build other nations
+
+465
+03:09:31,343 --> 03:09:33,343
+Flotzdrue: OUR intellectual property
+
+466
+03:09:32,760 --> 03:09:34,760
+djcodered__: LOL how did you not? He was just as dum the first time.. Super erratic
+
+467
+03:09:32,907 --> 03:09:34,907
+klimentino: Then only Chinese will ship most of things
+
+468
+03:09:39,652 --> 03:09:41,652
+xSlye: @Toxicosmos we'd be colonizing planets rn if not for these burocratic shit, nobody put an IP on the wheel concept
+
+469
+03:09:46,228 --> 03:09:48,228
+UltraScientism: Without IP your lithographic masks become public after reaching the factory for example.
+
+470
+03:09:57,935 --> 03:09:59,935
+xSlye: stop trying to hunt in the zoo with IPs
+
+471
+03:09:59,219 --> 03:10:01,219
+Flotzdrue: i may or may not be reposessing some intellectual property rn with plex
+
+472
+03:10:00,325 --> 03:10:02,325
+zup_zup: The low character is Trump is very sad
+
+473
+03:10:01,471 --> 03:10:03,471
+Fredirecko: its been 100 days
+
+474
+03:10:08,747 --> 03:10:10,747
+Zeevo: IP law incentivizes expensive risk taking though
+
+475
+03:10:22,393 --> 03:10:24,393
+cursormover: should probably keep IP for pharma lol
+
+476
+03:10:29,947 --> 03:10:31,947
+Cinnabon2: it's possible though capital will sit around and wait for a good first movers to copy
+
+477
+03:10:39,850 --> 03:10:41,850
+nuttyodin1: But Trump did what he had been promising to do throughout his election campaign, to put tariffs!
+
+478
+03:10:45,478 --> 03:10:47,478
+Thirsty4K: Tariffs got us Amazon at 165$/huge opportunity boosts to our portfolios. Was this the plan?
+
+479
+03:10:47,284 --> 03:10:49,284
+beetrium: hey george - i love you! you have motivated me a lot. never caught a stream before, longtime YT viewer.
+
+480
+03:10:50,193 --> 03:10:52,193
+Temppus: yep, wars just siphons money from govt to pentagon contractors
+
+481
+03:10:57,171 --> 03:10:59,171
+xSlye: @Cinnabon2 capital sitting around is bad idea on its own
+
+482
+03:11:01,186 --> 03:11:03,186
+nwerd_gamer: Im working on trying to prevent VIZ from blocking GC of buffers, though serializing and pickle in place dont seem to be the right solution for this. Any ideas?
+
+483
+03:11:16,798 --> 03:11:18,798
+Carac_TV: are Snowden/Assange going to have a presidential pardon finally?
+
+484
+03:11:29,548 --> 03:11:31,548
+Cinnabon2: @xslye it depends cause it's mostly funny money that would be inflationary if spent
+
+485
+03:11:31,399 --> 03:11:33,399
+djcodered__: Trump was a president for 2 years and then 2 years everything was on lockdown and he gave up billions of dollars.
+
+486
+03:11:34,897 --> 03:11:36,897
+beetrium: Cheer100 Cheer100 Cheer100  thank you for everything George! <3 Cheer100
+
+487
+03:11:49,298 --> 03:11:51,298
+xSlye: @Cinnabon2 this is because you live in an inflationary money system
+
+488
+03:11:51,932 --> 03:11:53,932
+UltraScientism: Trump is bad at implementation and details for sure.
+
+489
+03:11:53,215 --> 03:11:55,215
+xSlye: Fix the money, fix the incentives
+
+490
+03:11:57,923 --> 03:11:59,923
+Cinnabon2: I think he could have started off slower with the tariffs
+
+491
+03:12:10,215 --> 03:12:12,215
+Cinnabon2: @xslye jokes on you I have no money
+
+492
+03:12:15,639 --> 03:12:17,639
+Cinnabon2: LUL
+
+493
+03:12:31,038 --> 03:12:33,038
+n30__x: American politicians are extremely stupid regardless of where they're standing on on the poetical spectrum
+
+494
+03:12:34,276 --> 03:12:36,276
+xSlye: of course you don't, you're getting scammed by the US Govt :D
+
+495
+03:12:41,462 --> 03:12:43,462
+djcodered__: But he didn't do anything great... nobody benefited from anything he did ... and then he came in in his second year and revoked majority of the shit he did in his first year
+
+496
+03:12:45,353 --> 03:12:47,353
+zup_zup: but look at all the investors that are investing in US!!
+
+497
+03:13:02,322 --> 03:13:04,322
+benez1702: doesnt he appoint them himself
+
+498
+03:13:05,160 --> 03:13:07,160
+malateman: no IP is probably better for society, but more stressful/competitive for engineers. you gotta do it for the love of the game. no resting on laurels or chilling on a yacht
+
+499
+03:13:17,697 --> 03:13:19,697
+UltraScientism: He's been talking/thinking about tariffs since the 80ies. Tariffs is all Trump
+
+500
+03:13:31,070 --> 03:13:33,070
+xSlye: @malateman I only want to see all these lawyers actually get a JOB
+
+501
+03:13:31,435 --> 03:13:33,435
+SteveOhBandito: the yes men sycophants are the people that have the worst ideas
+
+502
+03:13:35,547 --> 03:13:37,547
+zeroRepent: it is crazy how he listens to conspiracy theorists to a larger degree this time around, at least thats what it feels like
+
+503
+03:13:44,904 --> 03:13:46,904
+malateman: but i want to have a good idea and then chill
+
+504
+03:13:56,472 --> 03:13:58,472
+Ire2k7: i like buffett's import certificates Kappa
+
+505
+03:14:08,416 --> 03:14:10,416
+deepvision: if the goal is to destroy america it all makes sense KEKW
+
+506
+03:14:10,868 --> 03:14:12,868
+Zeevo: The modern right wing embody de-growth more than climate activists
+
+507
+03:14:12,317 --> 03:14:14,317
+rain_sd: Hi
+
+508
+03:14:24,710 --> 03:14:26,710
+droppinggems: trump wants amd to go to 0 smh
+
+509
+03:14:34,100 --> 03:14:36,100
+skarmorysavvy: if only we got more of things like the CHIPS act
+
+510
+03:14:37,971 --> 03:14:39,971
+nuttyodin1: i think the goal was to dip and buy the market
+
+511
+03:14:54,407 --> 03:14:56,407
+chill_kaiju: but I thought it the goal was to make it so china couldnt replace the us market with other coutries by putting tariffs on them too
+
+512
+03:14:56,983 --> 03:14:58,983
+zup_zup: All his buddies get rich
+
+513
+03:15:02,392 --> 03:15:04,392
+benez1702: he made 2 he made one for his wife too
+
+514
+03:15:11,690 --> 03:15:13,690
+devroyalty: lol
+
+515
+03:15:17,769 --> 03:15:19,769
+beetrium: could the goal be somewhat related to refinance/renegotiate national debt?
+
+516
+03:15:19,638 --> 03:15:21,638
+droppinggems: warren buffet retired everything is going to 0
+
+517
+03:15:31,520 --> 03:15:33,520
+arthurskylive: Are you not concerned about climate change?
+
+518
+03:15:38,329 --> 03:15:40,329
+Der0mega: wait till the shelves start emptying
+
+519
+03:15:40,794 --> 03:15:42,794
+benez1702: do you still have to pay taxes even if youre in hong kong
+
+520
+03:15:41,803 --> 03:15:43,803
+beetrium: @droppinggems buffett's remarks were pretty grim...
+
+521
+03:15:41,923 --> 03:15:43,923
+xSlye: US has been on a steady decline since they went off the gold standard
+
+522
+03:15:43,432 --> 03:15:45,432
+djcodered__: Well ... I can appreciate people realizing they was wrong... but to late now he's already in office
+
+523
+03:15:48,105 --> 03:15:50,105
+xSlye: so GL with turning the titanic around
+
+524
+03:15:50,408 --> 03:15:52,408
+NoGoodNick_: @beetrium nah the debt is less of a problem than this tariff situation
+
+525
+03:16:03,944 --> 03:16:05,944
+rain_sd: why were you just dancing
+
+526
+03:16:04,768 --> 03:16:06,768
+arthurskylive: You need policy
+
+527
+03:16:08,402 --> 03:16:10,402
+arthurskylive: For that to work
+
+528
+03:16:14,973 --> 03:16:16,973
+Fredirecko: I think it would be smart to wait a couple more months and see how it pans out
+
+529
+03:16:17,290 --> 03:16:19,290
+droppinggems: so tinybox is about to raise prices due to tariffs?
+
+530
+03:16:17,379 --> 03:16:19,379
+djcodered__: By time they impeach him the US going to need to lick the boot of every country
+
+531
+03:16:23,539 --> 03:16:25,539
+hexadecimal58: do you think Trump will try to stay in power?
+
+532
+03:16:32,021 --> 03:16:34,021
+deepvision: another theory is that someone told trump he cant do tarifs. and when somebody says he cant
+
+533
+03:16:39,502 --> 03:16:41,502
+deepvision: KEKW
+
+534
+03:16:41,073 --> 03:16:43,073
+leikowo: got back, what's going to happen to the intel chips you got ?
+
+535
+03:16:47,068 --> 03:16:49,068
+arthurskylive: is bro back in the states?
+
+536
+03:16:54,050 --> 03:16:56,050
+UltraScientism: @hexadecimal58 he'll hopefully be too old for such pursuits by then.
+
+537
+03:16:58,173 --> 03:17:00,173
+Fredirecko: LUL
+
+538
+03:17:04,197 --> 03:17:06,197
+paradox109: Trump streams almost every day
+
+539
+03:17:07,459 --> 03:17:09,459
+paradox109: fun times
+
+540
+03:17:09,789 --> 03:17:11,789
+SteveOhBandito: The completely empty ship ports are wild. Not surprising, just crazy to see nothing there
+
+541
+03:17:18,497 --> 03:17:20,497
+Ire2k7: riding in my roflcopter
+
+542
+03:17:22,069 --> 03:17:24,069
+xSlye: big brain play, tariffs actually plummet the interest rate
+
+543
+03:17:23,394 --> 03:17:25,394
+gliched_robot: big balls are still there!
+
+544
+03:17:23,490 --> 03:17:25,490
+beetrium: the most ironic outcome is most likely?
+
+545
+03:17:42,793 --> 03:17:44,793
+jawnming: @georgehotz can you have a neovim ricing stream please LUL
+
+546
+03:17:43,658 --> 03:17:45,658
+Cinnabon2: some guy said "tariffguysayswhat" and he said what and here we are
+
+547
+03:17:52,999 --> 03:17:54,999
+rain_sd: When do you plan to have a chip?
+
+548
+03:17:53,347 --> 03:17:55,347
+roboboboto: missed it, you're not in hong kong anymore?
+
+549
+03:17:56,443 --> 03:17:58,443
+devroyalty: we good
+
+550
+03:17:58,677 --> 03:18:00,677
+Silensrunners: yea, let's do that Kappa
+
+551
+03:18:00,999 --> 03:18:02,999
+Fredirecko: Kappa
+
+552
+03:18:05,502 --> 03:18:07,502
+plamp555: i got a doctors appt
+
+553
+03:18:07,899 --> 03:18:09,899
+bellicjamm: sure omw Kappa
+
+554
+03:18:12,732 --> 03:18:14,732
+blur11111: I'm good bro thanks
+
+555
+03:18:14,861 --> 03:18:16,861
+nwerd_gamer: yes on it
+
+556
+03:18:23,760 --> 03:18:25,760
+beetrium: yea, nah no thanks
+
+557
+03:18:32,395 --> 03:18:34,395
+skarmorysavvy: stream homework...
+
+558
+03:18:36,277 --> 03:18:38,277
+lBdCompanyl: i wold love to do it if U could
+
+559
+03:18:38,484 --> 03:18:40,484
+leikowo: so we remove all the functions which called the graph rewrites you pushed into the list ?
+
+560
+03:18:38,723 --> 03:18:40,723
+devroyalty: devroySigh homework
+
+561
+03:18:38,818 --> 03:18:40,818
+droppinggems: so a tiny box is 100k to import to china?
+
+562
+03:18:40,950 --> 03:18:42,950
+lBdCompanyl: I could*
+
+563
+03:18:41,022 --> 03:18:43,022
+Cinnabon2: sintSus
+
+564
+03:18:48,616 --> 03:18:50,616
+Fredirecko: MrDestructoid
+
+565
+03:18:49,033 --> 03:18:51,033
+715209: Kappa
+
+566
+03:18:53,219 --> 03:18:55,219
+pressOk: whats the pay
+
+567
+03:18:56,372 --> 03:18:58,372
+GoldenSunGod: slop coding
+
+568
+03:18:56,895 --> 03:18:58,895
+zup_zup: How would you know 4Head
+
+569
+03:18:58,218 --> 03:19:00,218
+DarkAdepti: what are you eating??
+
+570
+03:18:58,916 --> 03:19:00,916
+malateman: by the time a 5090 can fit inside a comma 3 size, will you need bigger  gpus/models by then or nah? how big of a model needed for best driving assist?
+
+571
+03:19:15,324 --> 03:19:17,324
+Zeevo: @georgehotz whats the most exciting tech company for you right now?
+
+572
+03:19:19,083 --> 03:19:21,083
+rain_sd: SeemsGood
+
+573
+03:19:19,666 --> 03:19:21,666
+leikowo: did you merge this stream's stuff ?
+
+574
+03:19:20,081 --> 03:19:22,081
+ordoven: you can always just ask AI to make it less AI Kappa
+
+575
+03:19:32,277 --> 03:19:34,277
+715209: gpu over usb wtf?
+
+576
+03:19:40,168 --> 03:19:42,168
+benez1702: george hotz podcast when
+
+577
+03:19:56,134 --> 03:19:58,134
+rain_sd: George， When do you plan to have a chip?
+
+578
+03:20:08,077 --> 03:20:10,077
+malateman: yeah, i know about the usb work. that stuff is super cool
+
+579
+03:20:28,463 --> 03:20:30,463
+Temppus: is there a really plan to sell comma with consumer grade GPU in car ? like consumer installation suff ?
+
+580
+03:21:04,020 --> 03:21:06,020
+GoldenSunGod: perfect ai-driven getaway car
+
+581
+03:21:21,689 --> 03:21:23,689
+lawlster_1337: can use older nvidia cards? say a 980
+
+582
+03:21:28,453 --> 03:21:30,453
+malateman: there's already separate gpu enclosures for laptops. they don't look that bad. and cars have compartments
+
+583
+03:21:36,452 --> 03:21:38,452
+Ire2k7: 5090 on the dash, yeah u know i got a comma
+
+584
+03:21:37,427 --> 03:21:39,427
+Tyakos: man, now I will have to upgrade the GPU in my car as well as the PC
+
+585
+03:22:01,945 --> 03:22:03,945
+Temppus: I am very interested where would you put/mount this card
+
+586
+03:22:04,832 --> 03:22:06,832
+Thirsty4K: Be gone the days where people were investing in cramming everything into a Jetson + Lidar.
+
+587
+03:22:07,120 --> 03:22:09,120
+nuttyodin1: i understand your philosoohy in marketing, but i really wish comma went mainstream, it still annoys me when tech pundits endorse or predict something big for other self-driving car companies
+
+588
+03:22:08,393 --> 03:22:10,393
+aalhendi: pasta?
+
+589
+03:22:11,181 --> 03:22:13,181
+UltraScientism: locating a gpu enclosure in on your dash comfortably might be problematic.
+
+590
+03:22:18,349 --> 03:22:20,349
+arthurskylive: u in the usa?
+
+591
+03:22:22,863 --> 03:22:24,863
+nwerd_gamer: red lobsta
+
+592
+03:22:26,089 --> 03:22:28,089
+xuio1337: also getting enough power might be hard
+
+593
+03:22:29,438 --> 03:22:31,438
+Fredirecko: drive to the beach and get some more seaweed
+
+594
+03:22:31,726 --> 03:22:33,726
+malateman: food variety in USA best part of USA?
+
+595
+03:22:33,515 --> 03:22:35,515
+DDemen: im programming a computer vision project for my businnes with raspberry pi and cameras inspired by you, im dumb but i can see the potential
+
+596
+03:22:45,078 --> 03:22:47,078
+aalhendi: pizza and python is as poetic as it gets
+
+597
+03:22:55,539 --> 03:22:57,539
+benez1702: just make sure its kosher
+
+598
+03:22:56,712 --> 03:22:58,712
+waena_: is it samsung fold?
+
+599
+03:23:22,837 --> 03:23:24,837
+715209: thick or thin
+
+600
+03:23:29,035 --> 03:23:31,035
+Gameplayer0618: is that trailer park reference?
+
+601
+03:23:56,822 --> 03:23:58,822
+malateman: RIP samsung CEO. he should have ran harvard
+
+602
+03:24:48,463 --> 03:24:50,463
+Fredirecko: RIP
+
+603
+03:24:56,334 --> 03:24:58,334
+vox_bony: yes yes yes
+
+604
+03:25:21,716 --> 03:25:23,716
+arthurskylive: why are you not building it in china?
+
+605
+03:25:27,795 --> 03:25:29,795
+leikowo: some of the tests use rewrite_shapetracker_with_index
+
+606
+03:25:38,358 --> 03:25:40,358
+arthurskylive: i cheap shit?
+
+607
+03:25:43,666 --> 03:25:45,666
+arthurskylive: *want
+
+608
+03:26:01,273 --> 03:26:03,273
+DDemen: u can attach a google coral or similar to it?
+
+609
+03:26:02,029 --> 03:26:04,029
+leikowo: then they would use all the other rewriters right ?
+
+610
+03:28:14,212 --> 03:28:16,212
+Gameplayer0618: do you have experience with cops not liking the comma device in middle of the front window? I wanted to buy it for my dad but Europe laws..
+
+611
+03:29:06,015 --> 03:29:08,015
+pronto_letterbox: a mi me gusta la torta de chocolate
+
+612
+03:29:55,847 --> 03:29:57,847
+Fredirecko: @Gameplayer0618 Europe laws WutFace
+
+613
+03:30:34,652 --> 03:30:36,652
+dramatemple: Did he completely move to Hong Kong?
+
+614
+03:31:12,865 --> 03:31:14,865
+UltraScientism: @dramatemple he's back, I think
+
+615
+03:31:19,815 --> 03:31:21,815
+imkuee: europe laws are worth breaking
+
+616
+03:31:40,571 --> 03:31:42,571
+Ire2k7: whats ur stance on btc
+
+617
+03:31:52,612 --> 03:31:54,612
+Fredirecko: chats fault
+
+618
+03:31:57,748 --> 03:31:59,748
+inceptiondev: its our fault :(
+
+619
+03:32:12,150 --> 03:32:14,150
+Temppus: we take that :D
+
+620
+03:32:13,758 --> 03:32:15,758
+snorlaxcantfly: :(
+
+621
+03:32:22,473 --> 03:32:24,473
+nuttyodin1: distracted with tariff talk
+
+622
+03:32:27,126 --> 03:32:29,126
+m4l4r100: can you give us kisses?
+
+623
+03:32:28,430 --> 03:32:30,430
+pronto_letterbox: deepsek help
+
+624
+03:32:57,009 --> 03:32:59,009
+nwerd_gamer: gave my cousin :p gave my cousin :p
+
+625
+03:33:36,999 --> 03:33:38,999
+Gameplayer0618: @imkuee yeah, some Europe countries are super strict on this
+
+626
+03:35:43,231 --> 03:35:45,231
+m4l4r100: when is tinysearch coming?
+
+627
+03:36:21,937 --> 03:36:23,937
+leikowo: test_tensor still passes when replacing rewrite_shapetracker_with_index with the new stuff directly
+
+628
+03:36:47,296 --> 03:36:49,296
+0xmalvee_: is this 10k monitor
+
+629
+03:39:09,097 --> 03:39:11,097
+reathal: !tinygrad
+
+630
+03:39:09,977 --> 03:39:11,977
+UltraScientism: Do you ever think "It would have been nice if I decided to write tinygrad in something statically typed like Ocaml" ?
+
+631
+03:39:39,246 --> 03:39:41,246
+dramatemple: Ocami?
+
+632
+03:40:15,680 --> 03:40:17,680
+m4l4r100: grow it, light it, blaze it
+
+633
+03:40:34,473 --> 03:40:36,473
+inceptiondev: @UltraScientism 🚀🚀 yo bro did you ever think of rewriting it in rust 🚀🚀🚀🌙
+
+634
+03:41:02,385 --> 03:41:04,385
+leikowo: @inceptiondev the rust stream was kinda nice
+
+635
+03:41:17,084 --> 03:41:19,084
+nwerd_gamer: rewrite in holy c
+
+636
+03:41:19,338 --> 03:41:21,338
+urnebeani: Is he back in the usa ?
+
+637
+03:41:20,312 --> 03:41:22,312
+nwerd_gamer: holy grad
+
+638
+03:41:23,478 --> 03:41:25,478
+UltraScientism: @inceptiondev Rust is too onerous and inflexible. Ocaml on the other hand is almost like python in experienced hands.
+
+639
+03:42:12,170 --> 03:42:14,170
+Zerotobeahero: The gpu for noobs stream that was in rust, was good I think I even learned something.
+
+640
+03:42:37,150 --> 03:42:39,150
+jnpl95: Yeah was a fun stream
+
+641
+03:42:38,689 --> 03:42:40,689
+dramatemple: If you write it in Ocaml, it is not a open source anymore
+
+642
+03:42:40,952 --> 03:42:42,952
+leikowo: except that the gpu noob ocl program you wrote doesn't find the number of parallel execution units on NVIDIA GPUs because of the register dependencies you can run twice the max amount you should be able to
+
+643
+03:42:50,367 --> 03:42:52,367
+UltraScientism: There are ML frameworks in Rust though: Candle and Burn
+
+644
+03:43:02,501 --> 03:43:04,501
+m4l4r100: I want the old kanye back
+
+645
+03:43:32,086 --> 03:43:34,086
+Fredirecko: thinking
+
+646
+03:43:33,862 --> 03:43:35,862
+urnebeani: yes
+
+647
+03:43:44,230 --> 03:43:46,230
+Zerwih: everything is framework nowadays
+
+648
+03:43:44,856 --> 03:43:46,856
+nwerd_gamer: what do you think chat
+
+649
+03:43:50,299 --> 03:43:52,299
+rain_sd: when are you going to do chip panicBasket panicBasket
+
+650
+03:43:57,613 --> 03:43:59,613
+ShatZ_: I think we transition to some front end development
+
+651
+03:44:06,080 --> 03:44:08,080
+rain_sd: yes
+
+652
+03:44:11,627 --> 03:44:13,627
+nwerd_gamer: reach next js stream
+
+653
+03:44:14,929 --> 03:44:16,929
+nwerd_gamer: react
+
+654
+03:44:19,929 --> 03:44:21,929
+ShatZ_: lets get some creativity flowing
+
+655
+03:44:25,243 --> 03:44:27,243
+Zerwih: or c
+
+656
+03:44:37,646 --> 03:44:39,646
+Fredirecko: these comments are def ending the stream when he gets back LUL
+
+657
+03:44:48,127 --> 03:44:50,127
+probability_man: thoughts on the new TPU ?
+
+658
+03:44:48,731 --> 03:44:50,731
+rain_sd: um
+
+659
+03:44:51,118 --> 03:44:53,118
+arthurskylive: @Fredirecko was about to say lol
+
+660
+03:44:52,632 --> 03:44:54,632
+ShatZ_: No no george seems to be in a designing type of mood
+
+661
+03:45:03,710 --> 03:45:05,710
+dramatemple: @Fredirecko I was thinking that, too
+
+662
+03:45:14,795 --> 03:45:16,795
+leikowo: tinygrad being written in a language with less overhead would have meant less weird  tricks to make it reasonably fast (eg: fast enum metaclass ...)
+
+663
+03:45:23,922 --> 03:45:25,922
+arthurskylive: @leikowo dude
+
+664
+03:45:35,068 --> 03:45:37,068
+rain_sd: MrDestructoid
+
+665
+03:45:37,318 --> 03:45:39,318
+arthurskylive: yeah hes gonna end it bc of you
+
+666
+03:45:38,039 --> 03:45:40,039
+m4l4r100: @Fredirecko I have a strong feeling, that I made him upset
+
+667
+03:45:42,983 --> 03:45:44,983
+vox_bony: time chair
+
+668
+03:45:44,834 --> 03:45:46,834
+dramatemple: Isn't the font size is quite small for the stream, why no one was complaining xD
+
+669
+03:45:55,387 --> 03:45:57,387
+arthurskylive: everybody shut up
+
+670
+03:46:28,932 --> 03:46:30,932
+jnpl95: @leikowo Casey Muratori showed how many assembly instructions  you had to do with just a single add instruction in python vs c, its crazy, the amount of overhead
+
+671
+03:46:29,939 --> 03:46:31,939
+inceptiondev: @dramatemple just get glasses lol
+
+672
+03:46:47,538 --> 03:46:49,538
+Zeevo: pizza review
+
+673
+03:46:51,806 --> 03:46:53,806
+Coraxxi: looking solid
+
+674
+03:46:52,395 --> 03:46:54,395
+dramatemple: @inceptiondev Dude I am in the monitor xD
+
+675
+03:46:53,281 --> 03:46:55,281
+DDemen: yes
+
+676
+03:46:53,399 --> 03:46:55,399
+PlushMasta: niiiice
+
+677
+03:46:53,422 --> 03:46:55,422
+Thirsty4K: Nice crust.
+
+678
+03:46:53,990 --> 03:46:55,990
+Fredirecko: looks good
+
+679
+03:46:54,141 --> 03:46:56,141
+cursormover: mamma mia
+
+680
+03:46:54,170 --> 03:46:56,170
+NoticabelyFAT: is there good pizza in China?
+
+681
+03:46:55,876 --> 03:46:57,876
+vox_bony: Kreygasm Kreygasm Kreygasm
+
+682
+03:46:56,989 --> 03:46:58,989
+rain_sd: yes
+
+683
+03:46:57,511 --> 03:46:59,511
+nwerd_gamer: fyre
+
+684
+03:46:58,929 --> 03:47:00,929
+Zerotobeahero: yoo that pizza is fire
+
+685
+03:46:59,118 --> 03:47:01,118
+arthurskylive: 11 dollars?
+
+686
+03:46:59,691 --> 03:47:01,691
+ShatZ_: Everyone knows the rules, one bite
+
+687
+03:47:01,137 --> 03:47:03,137
+Fredirecko: la vita bella
+
+688
+03:47:01,524 --> 03:47:03,524
+m4l4r100: too much olives
+
+689
+03:47:11,950 --> 03:47:13,950
+Martinni39: has anyone taking up your 10k a day startup review service?
+
+690
+03:47:18,291 --> 03:47:20,291
+inceptiondev: @dramatemple just get a bigger monitor then so it fits more stuff
+
+691
+03:47:19,923 --> 03:47:21,923
+nwerd_gamer: should i drop out of college and only study tinygrad
+
+692
+03:47:30,780 --> 03:47:32,780
+rain_sd: OK
+
+693
+03:47:35,550 --> 03:47:37,550
+urnebeani: yes
+
+694
+03:47:39,556 --> 03:47:41,556
+UltraScientism: how much for Pizza in San Diego?
+
+695
+03:47:44,902 --> 03:47:46,902
+arthurskylive: nah
+
+696
+03:47:56,445 --> 03:47:58,445
+leikowo: college is useful if you actually study ...
+
+697
+03:48:00,215 --> 03:48:02,215
+Zerotobeahero: that is expensive
+
+698
+03:48:02,965 --> 03:48:04,965
+Zeevo: rate it out of 10
+
+699
+03:48:06,889 --> 03:48:08,889
+Fredirecko: that's actually less than i would have thought
+
+700
+03:48:15,942 --> 03:48:17,942
+pronto_letterbox: the pipsas
+
+701
+03:48:16,529 --> 03:48:18,529
+m4l4r100: whats one thing that you value on a good pizza?
+
+702
+03:48:17,482 --> 03:48:19,482
+rain_sd: OK
+
+703
+03:48:40,078 --> 03:48:42,078
+leikowo: wait how much is a pizza here ?
+
+704
+03:48:40,150 --> 03:48:42,150
+Coraxxi: amateur score, no decimals
+
+705
+03:48:46,619 --> 03:48:48,619
+jawnming: hi geo! im going to cmu next year and was wondering if you had any advice other than drop out. also, how would i go about studying tinygrad with a crap base in linear algebra
+
+706
+03:48:58,577 --> 03:49:00,577
+dramatemple: I listened George 5 years ago while he was praising NVIDIA, all in and bought stocks. Happy life
+
+707
+03:49:02,809 --> 03:49:04,809
+nwerd_gamer: okay okay i will attend tinygrad university
+
+708
+03:49:17,954 --> 03:49:19,954
+Fredirecko: Storytime
+
+709
+03:50:55,751 --> 03:50:57,751
+rivetingco: true
+
+710
+03:51:21,206 --> 03:51:23,206
+m4l4r100: you either do something or you dont. 1 or 0
+
+711
+03:51:23,055 --> 03:51:25,055
+Fredirecko: is "bus-getter-onners" an offical morgan freeman word?
+
+712
+03:51:25,307 --> 03:51:27,307
+Zeevo: people imagine their problems as really complicated so they have an excuse not to fix it
+
+713
+03:51:26,703 --> 03:51:28,703
+7Locrian7: i dont like the bus
+
+714
+03:51:34,686 --> 03:51:36,686
+allcliffs: get a car :D
+
+715
+03:51:37,287 --> 03:51:39,287
+posthubris: Speaking of the hood your hoodie is fire
+
+716
+03:51:39,418 --> 03:51:41,418
+internal_static_void_: TRUE
+
+717
+03:51:45,140 --> 03:51:47,140
+leikowo: do your thing basically
+
+718
+03:51:46,821 --> 03:51:48,821
+skarmorysavvy: bring a horse to water something something
+
+719
+03:51:47,829 --> 03:51:49,829
+thomas_the_tank_engine: I'm working on the x86 backend, do we want to add the location of uops and spill/fill uops in viz?
+
+720
+03:51:48,510 --> 03:51:50,510
+rivetingco: ive never asked for advice, ever
+
+721
+03:52:04,257 --> 03:52:06,257
+internal_static_void_: Shout out to the literal army of people "how do I do a c++" in programming streams. Just go do it bro
+
+722
+03:52:17,190 --> 03:52:19,190
+thomas_the_tank_engine: its locked to me
+
+723
+03:52:20,634 --> 03:52:22,634
+jnpl95: So 95% of therapy issues boil down to execution friction?
+
+724
+03:52:24,878 --> 03:52:26,878
+thomas_the_tank_engine: not really its almost done
+
+725
+03:52:32,898 --> 03:52:34,898
+thomas_the_tank_engine: yeah
+
+726
+03:52:34,833 --> 03:52:36,833
+sw4rtz13: are you still working on the mi300x? how is it going?
+
+727
+03:52:41,457 --> 03:52:43,457
+arthurskylive: is there a riscv backend
+
+728
+03:53:10,786 --> 03:53:12,786
+colonizethemoon: pizza looks spicy
+
+729
+03:53:16,288 --> 03:53:18,288
+thomas_the_tank_engine: spill uops are stores and fill uops are loads. they are added after reg alloc
+
+730
+03:53:16,310 --> 03:53:18,310
+rain_sd: eating pizzzzzzzzza
+
+731
+03:53:24,677 --> 03:53:26,677
+uloop: BTW am I misremembering or is the OpenCL backend gone?
+
+732
+03:53:30,152 --> 03:53:32,152
+Fredirecko: i recently read an article from vitalik buterin and he referenced tinygrad
+
+733
+03:53:34,375 --> 03:53:36,375
+Str8_Vicious_: @georgehotz do you have plans to continue the NOOB lessons or creating that university you talked about?
+
+734
+03:53:36,273 --> 03:53:38,273
+internal_static_void_: Are you the guy working on a hypervisor in python?
+
+735
+03:53:48,450 --> 03:53:50,450
+uloop: Ah great
+
+736
+03:54:23,141 --> 03:54:25,141
+internal_static_void_: Madlad
+
+737
+03:54:29,216 --> 03:54:31,216
+rivetingco: tinycorp makes tinygrad
+
+738
+03:54:35,976 --> 03:54:37,976
+dramatemple: What if one person actually would get on the bus because of you? Isn't that awesome
+
+739
+03:54:39,825 --> 03:54:41,825
+m4l4r100: how is the crust?
+
+740
+03:54:40,078 --> 03:54:42,078
+Zeevo: I propose that we follow the lead of tinygrad, and have an explicit max line of code target for the long-term Ethereum specification, with the goal of making Ethereum consensus-critical code close to as simple as Bitcoin.
+
+741
+03:54:53,556 --> 03:54:55,556
+internal_static_void_: @dramatemple Can lead a horse to water, can't make them drink
+
+742
+03:54:57,072 --> 03:54:59,072
+internal_static_void_: Same analogy
+
+743
+03:55:02,512 --> 03:55:04,512
+oldtimergamedev: that's a very cynical view
+
+744
+03:55:28,966 --> 03:55:30,966
+UltraScientism: being a bus getteronner or not is likely a question of neurophisiology
+
+745
+03:55:34,069 --> 03:55:36,069
+allcliffs: but that does not apply to young people, you can change their ways :)
+
+746
+03:55:57,206 --> 03:55:59,206
+smarttties: @georgehotz What is your take on using LLMs for daily work (C++ and graphics)? I've tried using them myself but the results have been underwhelming, and I often feel like I’m not learning anything when I use/rely on them.
+
+747
+03:56:01,753 --> 03:56:03,753
+internal_static_void_: Dude if people want to get into programming they're going to get into it and be interested on their own or they're going to sink or swim in their career
+
+748
+03:56:05,161 --> 03:56:07,161
+Agression113: yep, excuses
+
+749
+03:56:06,518 --> 03:56:08,518
+leikowo: do you regret python having this much overhead ? (like having to do tricks like FastEnum which isn't clean nor of any value outside python)
+
+750
+03:56:58,807 --> 03:57:00,807
+7Locrian7: whoops i said a bad word
+
+751
+03:57:11,239 --> 03:57:13,239
+NoticabelyFAT: yes
+
+752
+03:57:16,271 --> 03:57:18,271
+Zeevo: @georgehotz have you ever read psychocybernetics?
+
+753
+03:57:28,363 --> 03:57:30,363
+DIUS3R: you can change, for instance by changing your environment. once you see people getting on the bus, the likelihood of  you getting on that fcking bus increases
+
+754
+03:57:41,111 --> 03:57:43,111
+dramatemple: @smarttties LLMs sucks with graphics
+
+755
+03:57:44,478 --> 03:57:46,478
+leikowo: okay yeah. though It's just sad that any algorithmic improvements you make are nerfed by the lang
+
+756
+03:57:58,743 --> 03:58:00,743
+Marvfinator: damn that pizza looks nice
+
+757
+03:58:07,559 --> 03:58:09,559
+nwerd_gamer: if you get on the bus when everyone else is, you're just going to another hood
+
+758
+03:58:16,858 --> 03:58:18,858
+lithiumx4900: Python type leniency lets you write things that are readable while optimizing in C when needed.
+
+759
+03:58:22,857 --> 03:58:24,857
+bigswimofficial: bigswimofficial subscribed with Prime.
+
+760
+03:58:23,753 --> 03:58:25,753
+internal_static_void_: @DIUS3R Real talk I think programmers should've done a better job of gatekeeping software dev
+
+761
+03:58:40,685 --> 03:58:42,685
+leikowo: pizza eating stream is up there with the hotel California concert one
+
+762
+03:58:52,057 --> 03:58:54,057
+arthurskylive: ppl in here be doing tricks on it
+
+763
+03:58:55,945 --> 03:58:57,945
+sw4rtz13: is the bus driven by openpilot?
+
+764
+03:59:20,877 --> 03:59:22,877
+rivetingco: how much has programming changed in 50 years
+
+765
+03:59:28,068 --> 03:59:30,068
+internal_static_void_: Watching this stream while hungry is a mistake
+
+766
+03:59:28,485 --> 03:59:30,485
+exb3r: hi george, hope you enjoy this food, how are you?
+
+767
+03:59:31,470 --> 03:59:33,470
+iq_map: bon appetito
+
+768
+03:59:47,107 --> 03:59:49,107
+adrianlmm: for how much long are tarrifs on China sustanciable?
+
+769
+03:59:51,376 --> 03:59:53,376
+quebono100: Hey George is in da house. I hope you doing well
+
+770
+03:59:56,218 --> 03:59:58,218
+uloop: yellow bad, also true for chemistry
+
+771
+04:00:05,073 --> 04:00:07,073
+protolambda: are you a mukbang streamer now?
+
+772
+04:00:10,061 --> 04:00:12,061
+m4l4r100: your stream is really like meditation without music
+
+773
+04:00:14,782 --> 04:00:16,782
+SC0d3r: Hey George you are like Messi in coding
+
+774
+04:00:40,739 --> 04:00:42,739
+dramatemple: More like C7 merged with Messi
+
+775
+04:00:42,065 --> 04:00:44,065
+2sin54: @SC0d3r Messi of coding wouldn't need to use LLM for advent of code
+
+776
+04:00:56,315 --> 04:00:58,315
+waena_: i wonder how many kcal in that
+
+777
+04:00:56,735 --> 04:00:58,735
+quebono100: Are you doing vibe coding :D
+
+778
+04:01:17,586 --> 04:01:19,586
+benez1702: did you see roy lee is hiring 50 interns in his new startup
+
+779
+04:01:40,986 --> 04:01:42,986
+sw4rtz13: too much freedom for today
+
+780
+04:02:15,925 --> 04:02:17,925
+leikowo: a single vibe coding query here would probably break half the tests ..
+
+781
+04:15:53,803 --> 04:15:55,803
+leikowo: what's math trait ?
+
+782
+04:20:37,354 --> 04:20:39,354
+leikowo: what does the UPat compiler do ? I remember how UPat were used with PM in the past but didn't see the compiler
+
+783
+04:21:24,652 --> 04:21:26,652
+leikowo: so you just exec it at the end ??
+
+784
+04:30:50,315 --> 04:30:52,315
+lovefoolish7: marketing
+
+785
+04:31:20,436 --> 04:31:22,436
+lovefoolish7: Look at mojo - the only thing that thing has going for it is Chris's name on it
+
+786
+04:31:28,758 --> 04:31:30,758
+mitchentv: Approach big hardware developers
+
+787
+04:31:33,979 --> 04:31:35,979
+NoticabelyFAT: build a cool library on top of it
+
+788
+04:31:35,304 --> 04:31:37,304
+CaffeinatedEdible: tru
+
+789
+04:31:54,607 --> 04:31:56,607
+CaffeinatedEdible: but my mba dad said so /s
+
+790
+04:32:03,380 --> 04:32:05,380
+lovefoolish7: chat suggesting to rebrand tinygrad into a b2b saas product
+
+791
+04:32:08,922 --> 04:32:10,922
+mitchentv: Fair enough. I don't know much about what you do but it fascinates me. Sorry.
+
+792
+04:32:09,007 --> 04:32:11,007
+zup_zup: rip cruise
+
+793
+04:32:14,665 --> 04:32:16,665
+UltraScientism: be faster, dominate benchmarks? Compile faster?
+
+794
+04:32:33,704 --> 04:32:35,704
+xardas_: dominate papers ?
+
+795
+04:32:39,058 --> 04:32:41,058
+uloop: TBH I am mostly interested in using it for non-ML purposes, as an abstraction layer for whatever parallel hardware is out there in the world
+
+796
+04:32:39,090 --> 04:32:41,090
+lovefoolish7: anything is faster than xla compile
+
+797
+04:34:08,565 --> 04:34:10,565
+TandeBoy: what are you most proud of with Tinygrad?
+
+798
+04:34:17,448 --> 04:34:19,448
+lovefoolish7: the problem with being faster than the speed of light is that you need to live in darkness
+
+799
+04:34:30,523 --> 04:34:32,523
+Fredirecko: white board time
+
+800
+04:35:25,014 --> 04:35:27,014
+lovefoolish7: special relativity still applies to sound waves
+
+801
+04:35:26,834 --> 04:35:28,834
+Gameplayer0618: cuz the vibration thru plane yeah
+
+802
+04:35:28,808 --> 04:35:30,808
+Joooooooooonas: Intake also
+
+803
+04:35:36,299 --> 04:35:38,299
+NoticabelyFAT: air stationary in plane. speed of sound faster in solid
+
+804
+04:35:42,305 --> 04:35:44,305
+arthurskylive: it wasnt loud inside
+
+805
+04:35:48,803 --> 04:35:50,803
+niteowl066: Isn't the sound mostly from air friction?
+
+806
+04:35:50,403 --> 04:35:52,403
+mitchentv: George are you back living in the USA now?
+
+807
+04:35:52,766 --> 04:35:54,766
+Fredirecko: i never been in a super sonic jet
+
+808
+04:35:55,287 --> 04:35:57,287
+IceLeo: The second you land it just catches up to you and then you go deaf Kappa
+
+809
+04:36:08,901 --> 04:36:10,901
+gliched_robot: you can just go higher.
+
+810
+04:36:15,149 --> 04:36:17,149
+lovefoolish7: no love for gemini
+
+811
+04:36:16,050 --> 04:36:18,050
+arthurskylive: the air sinside is stationary and the hull does propragate vibrations
+
+812
+04:36:53,778 --> 04:36:55,778
+uloop: I dont think so
+
+813
+04:36:54,430 --> 04:36:56,430
+arthurskylive: noise cancelling
+
+814
+04:36:58,772 --> 04:37:00,772
+gliched_robot: 787 dreamliner is good.
+
+815
+04:37:37,065 --> 04:37:39,065
+mitchentv: George are you back living usa now?
+
+816
+04:37:39,314 --> 04:37:41,314
+UltraScientism: metal frame also has speed of sound and it's very high
+
+817
+04:38:28,669 --> 04:38:30,669
+volteras: pleb chat :O
+
+818
+04:39:28,539 --> 04:39:30,539
+Fredirecko: you didn't zoom back in
+
+819
+04:39:33,609 --> 04:39:35,609
+rain_sd: ert
+
+820
+04:40:55,474 --> 04:40:57,474
+CaffeinatedEdible: is this the $200/month chatgbt?
+
+821
+04:41:07,798 --> 04:41:09,798
+teyeooe1: 200 dollas
+
+822
+04:44:35,508 --> 04:44:37,508
+wilsden: worth every penny
+
+823
+04:44:43,899 --> 04:44:45,899
+JosephKarroum17: Not in HK anymore?
+
+824
+04:46:03,154 --> 04:46:05,154
+Fredirecko: you'd have to be old or air force
+
+825
+04:46:50,666 --> 04:46:52,666
+teyeooe1: o lord
+
+826
+04:46:58,334 --> 04:47:00,334
+modalessi: bro, lets make our own country
+
+827
+04:46:59,332 --> 04:47:01,332
+arthurskylive: that what you did to me a few years ago
+
+828
+04:47:02,320 --> 04:47:04,320
+Fredirecko: accelerationists like sonic booms
+
+829
+04:47:04,390 --> 04:47:06,390
+DIAManti_1: im in im in
+
+830
+04:47:05,316 --> 04:47:07,316
+nuttyodin1: NGU party
+
+831
+04:47:08,314 --> 04:47:10,314
+rivetingco: the ++ party
+
+832
+04:47:13,110 --> 04:47:15,110
+nwerd_gamer: NGU RISE UP
+
+833
+04:47:19,048 --> 04:47:21,048
+rain_sd: yes
+
+834
+04:47:19,270 --> 04:47:21,270
+teyeooe1: same as fake money
+
+835
+04:47:24,075 --> 04:47:26,075
+teyeooe1: fake numbers
+
+836
+04:47:32,971 --> 04:47:34,971
+koliath21: yo
+
+837
+04:47:40,380 --> 04:47:42,380
+protolambda: inb4 goodharts law
+
+838
+04:47:43,348 --> 04:47:45,348
+kklisura: Is there a such thing as event horizon but for sound?
+
+839
+04:47:46,260 --> 04:47:48,260
+ALLcompressed: make numbers go up again
+
+840
+04:47:50,934 --> 04:47:52,934
+arthurskylive: https://www.godaddy.com/forsale/shutitdown.us?utm_source=TDFS_BINNS&utm_medium=parkedpages&utm_campaign=x_corp_tdfs-binns_base&traffic_type=TDFS_BINNS&traffic_id=binns&
+
+841
+04:47:58,310 --> 04:48:00,310
+CaffeinatedEdible: MAKE THE DEBT GO UP!
+
+842
+04:48:06,878 --> 04:48:08,878
+Tsoding: Should we make the number of numbers go up?
+
+843
+04:48:08,176 --> 04:48:10,176
+Fredirecko: @CaffeinatedEdible LUL
+
+844
+04:48:18,711 --> 04:48:20,711
+modalessi: I am in (not american)
+
+845
+04:48:20,189 --> 04:48:22,189
+script_sh: like the Cybernetic Culture Research Unit
+
+846
+04:48:22,117 --> 04:48:24,117
+script_sh: ?
+
+847
+04:48:26,196 --> 04:48:28,196
+Fredirecko: its been 100 days
+
+848
+04:48:34,878 --> 04:48:36,878
+rivetingco: if u had a country and u knew ud compete in war against another country, are u confident ud be able to outcompete them?
+
+849
+04:48:40,245 --> 04:48:42,245
+Toxicosmos: negative up LUL
+
+850
+04:48:47,502 --> 04:48:49,502
+Fredirecko: and busgetteronners
+
+851
+04:49:00,454 --> 04:49:02,454
+mafio1: where are you?
+
+852
+04:49:05,011 --> 04:49:07,011
+nuttyodin1: you have my vote
+
+853
+04:49:09,152 --> 04:49:11,152
+modalessi: i told you i am in
+
+854
+04:49:14,652 --> 04:49:16,652
+script_sh: voting in any case, makes a number go up
+
+855
+04:49:17,537 --> 04:49:19,537
+TaterPancky: whats the endgame for NGU
+
+856
+04:49:18,065 --> 04:49:20,065
+niekas: as long as it's my favorite numbers
+
+857
+04:49:19,468 --> 04:49:21,468
+modalessi: but i am not american
+
+858
+04:49:23,369 --> 04:49:25,369
+fullyro: do you believe in Europe tech sovereignty (means standing without US/China tech supremacy)?
+
+859
+04:49:25,329 --> 04:49:27,329
+arthurskylive: me
+
+860
+04:49:25,817 --> 04:49:27,817
+UltraScientism: I'm against number go up party. I don't want to live in an overpopulated artificial shithole without wild nature.
+
+861
+04:49:31,861 --> 04:49:33,861
+rain_sd: me
+
+862
+04:49:34,547 --> 04:49:36,547
+Gameplayer0618: who picks the number up numbers tho?
+
+863
+04:49:34,928 --> 04:49:36,928
+iq_map: if i get free pizza, i vote for you
+
+864
+04:49:36,913 --> 04:49:38,913
+PerkGuacamole: Depends on the numbers. I need BIG numbers.
+
+865
+04:49:37,050 --> 04:49:39,050
+CaffeinatedEdible: we want the homeless population to go up!
+
+866
+04:49:47,291 --> 04:49:49,291
+rottenpeacock: you got my vote if u pump up deep space tech funding
+
+867
+04:49:48,240 --> 04:49:50,240
+modalessi: numbers going up is always good, right ?
+
+868
+04:49:52,334 --> 04:49:54,334
+Fredirecko: number of trees go up
+
+869
+04:50:02,700 --> 04:50:04,700
+arthurskylive: i like european anti accelerationism
+
+870
+04:50:05,693 --> 04:50:07,693
+nwerd_gamer: make homeless rich again
+
+871
+04:50:07,401 --> 04:50:09,401
+Fredirecko: tree height go up
+
+872
+04:50:12,351 --> 04:50:14,351
+nuttyodin1: i think we need to build cheif bot first though, then you definately have my vote, next, AI GF
+
+873
+04:50:14,915 --> 04:50:16,915
+CaffeinatedEdible: okay, you sold me, I  AM IN
+
+874
+04:50:16,102 --> 04:50:18,102
+bitwaltz: brain farts go up
+
+875
+04:50:20,199 --> 04:50:22,199
+modalessi: number of buildings ? i want cyberpunk cities
+
+876
+04:50:29,662 --> 04:50:31,662
+niteowl066: Who decides which numbers should go up?
+
+877
+04:50:31,266 --> 04:50:33,266
+CaffeinatedEdible: number of billionares?
+
+878
+04:50:34,571 --> 04:50:36,571
+modalessi: lets gooo
+
+879
+04:50:35,126 --> 04:50:37,126
+rottenpeacock: lifespan go up
+
+880
+04:50:39,050 --> 04:50:41,050
+nuttyodin1: Give us AI GF
+
+881
+04:50:43,860 --> 04:50:45,860
+script_sh: manifesto of numbers that need to go up
+
+882
+04:50:58,912 --> 04:51:00,912
+zup_zup: good number go up, bad numbers go down duhhhh
+
+883
+04:51:02,393 --> 04:51:04,393
+roger_gasmas: what about inflation, up?
+
+884
+04:51:04,116 --> 04:51:06,116
+iq_map: deportations go up too?
+
+885
+04:51:06,493 --> 04:51:08,493
+CaffeinatedEdible: colleger tution, WAY UP
+
+886
+04:51:07,808 --> 04:51:09,808
+modalessi: number of girlfriends ?
+
+887
+04:51:08,878 --> 04:51:10,878
+lnau: tinygrad line count number go up?
+
+888
+04:51:11,085 --> 04:51:13,085
+rottenpeacock: main priority is pumping energy numbers up
+
+889
+04:51:13,230 --> 04:51:15,230
+lucyinthesky__: cheapETH go up
+
+890
+04:51:21,582 --> 04:51:23,582
+nuttyodin1: Give us AI chef bots
+
+891
+04:51:30,256 --> 04:51:32,256
+arthurskylive: whats the point of going up
+
+892
+04:51:33,458 --> 04:51:35,458
+antiCommun1st: What if tarrifs force manufacuring into the US and numbers go brrrr?
+
+893
+04:51:35,654 --> 04:51:37,654
+script_sh: energy efficiency
+
+894
+04:51:38,421 --> 04:51:40,421
+rivetingco: voting sucks ass, a skilled dictator beats voting all day
+
+895
+04:51:43,264 --> 04:51:45,264
+arthurskylive: i am european
+
+896
+04:51:45,106 --> 04:51:47,106
+modalessi: number of deportations going up is a result of bad border policy
+
+897
+04:51:45,271 --> 04:51:47,271
+9to5aintlife: are KPIs good now?
+
+898
+04:51:49,329 --> 04:51:51,329
+dopixelsexist: negative traffic accidents go up
+
+899
+04:51:49,668 --> 04:51:51,668
+roger_gasmas: number of states?
+
+900
+04:51:49,767 --> 04:51:51,767
+PerkGuacamole: How about the number of numbers? Should go up?
+
+901
+04:51:52,195 --> 04:51:54,195
+drtinybloom: E/acc to go up to see something more intelligent than us rules
+
+902
+04:51:52,986 --> 04:51:54,986
+iq_map: europoor will never understand
+
+903
+04:51:56,394 --> 04:51:58,394
+dontbeameme: either way like he said other countries wayyy ahead manufacturing
+
+904
+04:51:56,594 --> 04:51:58,594
+nwerd_gamer: im all the way upp
+
+905
+04:51:59,656 --> 04:52:01,656
+Toxicosmos: what goes up...
+
+906
+04:52:02,846 --> 04:52:04,846
+teyeooe1: sadge
+
+907
+04:52:06,479 --> 04:52:08,479
+drtinybloom: See how grok is a leftist
+
+908
+04:52:08,569 --> 04:52:10,569
+dontbeameme: nobody is running for America made products
+
+909
+04:52:11,727 --> 04:52:13,727
+protolambda: eu laws going up...
+
+910
+04:52:17,704 --> 04:52:19,704
+therollerblader: what is tinygrad i cant understand
+
+911
+04:52:19,434 --> 04:52:21,434
+antiCommun1st: The EU is a suicide. cult.
+
+912
+04:52:22,699 --> 04:52:24,699
+Tsoding: Ima go eat something. Make my number of pounds go up.
+
+913
+04:52:32,327 --> 04:52:34,327
+arthurskylive: did you not like europe when you visited?
+
+914
+04:52:33,352 --> 04:52:35,352
+fullyro: you guys are just good sellers
+
+915
+04:52:36,446 --> 04:52:38,446
+rivetingco: freedom is a scam, china is beating the fuck outta everyone
+
+916
+04:52:39,055 --> 04:52:41,055
+xardas_: Are you still doing the Hutter Prize ? :D
+
+917
+04:52:47,381 --> 04:52:49,381
+iq_map: @antiCommun1st i hate liberals so much its unreal
+
+918
+04:53:03,969 --> 04:53:05,969
+mafio1: Im from Portugal :d
+
+919
+04:53:05,907 --> 04:53:07,907
+mafio1: true
+
+920
+04:53:10,737 --> 04:53:12,737
+arthurskylive: portugal peaked 30 years ago
+
+921
+04:53:11,925 --> 04:53:13,925
+niteowl066: based Poland
+
+922
+04:53:16,561 --> 04:53:18,561
+kill53597: me too xd and you are right
+
+923
+04:53:17,410 --> 04:53:19,410
+nuttyodin1: go on joe rogan
+
+924
+04:53:17,758 --> 04:53:19,758
+zup_zup: portugal is a vacation place for the nordics
+
+925
+04:53:18,136 --> 04:53:20,136
+script_sh: ramp up Portugal
+
+926
+04:53:19,929 --> 04:53:21,929
+mafio1: you're not wrong
+
+927
+04:53:20,886 --> 04:53:22,886
+arthurskylive: im just trolling btw
+
+928
+04:53:22,682 --> 04:53:24,682
+Fredirecko: portugal has good sardines
+
+929
+04:53:25,741 --> 04:53:27,741
+Luccardi: Any Dutchies?
+
+930
+04:53:27,717 --> 04:53:29,717
+antiCommun1st: It's hard to beat slave labour.
+
+931
+04:53:33,931 --> 04:53:35,931
+thomas_the_tank_engine: portugal peaked 500 years ago
+
+932
+04:53:34,033 --> 04:53:36,033
+volteras: what about scandinavia ?
+
+933
+04:53:34,684 --> 04:53:36,684
+meta_eigen: Trump just said Biden is the worst thing that has happened to old people hahaha
+
+934
+04:53:39,040 --> 04:53:41,040
+dontbeameme: geo the realist
+
+935
+04:53:43,161 --> 04:53:45,161
+rottenpeacock: man, I just want India to follow dis principles. we going into authoritarian communism atp
+
+936
+04:53:43,162 --> 04:53:45,162
+mafio1: at least we have good internet, I can work
+
+937
+04:53:48,708 --> 04:53:50,708
+dontbeameme: he got no side he just go with the real
+
+938
+04:53:51,001 --> 04:53:53,001
+tbullshit: poland is great
+
+939
+04:53:54,220 --> 04:53:56,220
+rivetingco: yk that if u were to go on rogan and just talk about all kinds of shit it go crazy LUL
+
+940
+04:54:01,075 --> 04:54:03,075
+dontbeameme: 2 + 2 =4
+
+941
+04:54:07,724 --> 04:54:09,724
+Fredirecko: 4 +4 = 8
+
+942
+04:54:08,431 --> 04:54:10,431
+antiCommun1st: @dontbeameme BIGOT
+
+943
+04:54:18,198 --> 04:54:20,198
+bitwaltz: where in Asia do you chill?
+
+944
+04:54:29,532 --> 04:54:31,532
+akashtyo: hauwei ai chip is all it takes
+
+945
+04:54:31,018 --> 04:54:33,018
+modalessi: 2 + 2 = 5, big bro told me
+
+946
+04:54:33,119 --> 04:54:35,119
+iq_map: @antiCommun1st proof? what does LE REDDITD SCIENCE say?
+
+947
+04:54:41,727 --> 04:54:43,727
+arthurskylive: when I was in portugal I was shocked how little construction was going on
+
+948
+04:54:48,774 --> 04:54:50,774
+Luccardi: So are you running?
+
+949
+04:54:52,796 --> 04:54:54,796
+dontbeameme: people only do when forced
+
+950
+04:54:52,984 --> 04:54:54,984
+arthurskylive: none
+
+951
+04:54:54,829 --> 04:54:56,829
+uloop: speed of light go up
+
+952
+04:55:06,621 --> 04:55:08,621
+dontbeameme: expecting good to just happen is fairy tale
+
+953
+04:55:13,258 --> 04:55:15,258
+PlushMasta: there will be no more election in the Kingdom of Trump's Familly
+
+954
+04:55:15,457 --> 04:55:17,457
+synbleed: Intel is buying AI startups mostly Asian  to tackle nvidia dominance
+
+955
+04:55:15,871 --> 04:55:17,871
+dontbeameme: exactly geo gets it
+
+956
+04:55:20,183 --> 04:55:22,183
+nuttyodin1: wage your memetic war by going on to joe rogan
+
+957
+04:55:20,470 --> 04:55:22,470
+grizvok: terrance howard says 1x1 = 2...bro was on to something
+
+958
+04:55:27,270 --> 04:55:29,270
+antiCommun1st: Remember that little incident where the US released a global bioweapon and sold us to big pharma under police enforcement?
+
+959
+04:55:30,076 --> 04:55:32,076
+rivetingco: there are many people who dont wanna vote , they just wanna be told where to go, and they’ll follow, one skilled ruler conquers everything
+
+960
+04:55:40,041 --> 04:55:42,041
+dontbeameme: it’s not nobody is proud of there country it’s just a culture thing
+
+961
+04:55:42,617 --> 04:55:44,617
+Luccardi: First time the Chinese have large numbers...
+
+962
+04:55:43,770 --> 04:55:45,770
+gilga_m: Can't wait for China AI chips, they will be so cheap
+
+963
+04:55:44,848 --> 04:55:46,848
+PlushMasta: there will be no more election in the Kingdom of Trump's Familly mr @georgehotz sadface
+
+964
+04:55:45,996 --> 04:55:47,996
+rottenpeacock: do u think passport hording to good in case west fails
+
+965
+04:55:55,881 --> 04:55:57,881
+wilsden: i support this message
+
+966
+04:55:58,813 --> 04:56:00,813
+TentuTesla: A quick website or tutorial recomandation to learn python as a new programmer ?
+
+967
+04:55:59,956 --> 04:56:01,956
+dontbeameme: culturally when your country is washed up it is what it is
+
+968
+04:56:00,335 --> 04:56:02,335
+iq_map: vote george!
+
+969
+04:56:02,368 --> 04:56:04,368
+drtinybloom: lol NGU is so a neo trump way to put it... like this is being said by one of the most intellegent man in the planet, what a strange time bubble we live in... I'm with you tho
+
+970
+04:56:02,761 --> 04:56:04,761
+nwerd_gamer: NGU 2028
+
+971
+04:56:03,019 --> 04:56:05,019
+AndreB8: 1e99 + 20 = 1e99
+
+972
+04:56:04,039 --> 04:56:06,039
+rottenpeacock: LETSGO
+
+973
+04:56:08,897 --> 04:56:10,897
+Linux_____: yea I would vote for Hotz
+
+974
+04:56:08,938 --> 04:56:10,938
+jnpl95: Grok's only argument against is Resource Depletion
+
+975
+04:56:11,581 --> 04:56:13,581
+ordoven: you're pulling a kanye west with that one haha
+

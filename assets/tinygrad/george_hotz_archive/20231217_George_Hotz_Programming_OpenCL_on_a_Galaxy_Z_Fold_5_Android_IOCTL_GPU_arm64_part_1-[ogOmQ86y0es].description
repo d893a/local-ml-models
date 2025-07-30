@@ -1,0 +1,121 @@
+Date of the stream 16 Dec 2023.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/tinygrad
+tinygrad bounties:
+- https://docs.google.com/spreadsheets/d/1WKHbT-7KOgjEawq5h5Ic1qUWzpfAzuD_J06N1JwOCGs/
+Hardware:
+- Plugable BT-KEY3
+- Samsung Galaxy Z Fold5
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:00:55 Plugable BT-KEY3, Galaxy Z Fold5
+00:02:00 ssh server
+00:05:25 5G, eSIM
+00:07:43 talking to Alex, minister of AI dubai, visas, Miami, immigration policy
+00:12:50 vscode server, android
+00:18:00 labs.perplexity.ai mixtral-8x7b-instruct
+00:20:18 bionic libstdc++.so, node, vscode server android termux
+00:27:50 Donald Trump - Make America Great Again (Country Song) 
+00:29:40 Vivek Ramaswamy smart
+00:30:25 vscode in a browser
+00:32:25 reach on twitter, Elon did more for anti woke cultural movement
+00:35:00 tmux can't copy paste
+00:43:10 python plugin tab completion
+00:47:35 IOCTL_KGSL_DEVICE_WAITTIMESTAMP_CTXTID
+00:50:20 growth, accelerationism, decels, You may not be interested in politics, but politics is interested in you.
+00:53:13 replace opencl with driver that use IOCTLs, hook native function in python
+01:04:55 python frida
+01:06:05 IOCTL syscall attach to our process
+01:08:05 perplexity hallucinating
+01:10:30 bionic by google, libc, android
+01:18:05 apple, dumb comments
+01:19:05 python most beautiful programming language in the world, C
+01:21:59 chillin in my rover american empire is over, uni freshman
+01:24:20 illegal instruction, arm64 breakpoint instruction
+01:29:20 Ennaria - Monstarrr, internet in the 90's
+01:33:00 signal devide by zero signal, arm64 disassembler online
+01:39:50 aarch64 svc, ctypes callback
+01:41:05 j_blow raiding the stream, hooking iocal from python
+01:47:30 got plt python, dlsym
+01:51:40 symbols dylib, libdl github
+02:04:04 dl_iterate_phdr
+02:10:15 python dl_phdr_info
+02:11:38 beautiful libraries
+02:15:15 hooking ioctl universal, best toolset for debugging gpus
+02:22:05 python trampoline
+02:29:50 libc strstr, libc memmem
+02:36:00 restype = ctypes.c_void_p
+02:48:25 callback
+03:07:25 corrupting the wrong got, hotpatching a function
+03:10:10 aarch64 assembler, aarch74 abi
+03:20:35 getting callback
+03:29:55 segmentation fault, illegal instruction, python arm flush icache
+03:32:45 python call ioctl syscall
+03:39:40 IOCTL_KGSL_GPUOBJ_SYNC, iowr
+03:44:20 libc cache
+03:44:45 anyone paying attention? instruction cache?
+03:48:48 chat comment trigger, dancing monkey
+03:50:10 Logitech C920, python, calling from libc
+03:56:30 parsing the structs, ioctl command encoding
+03:59:40 z fold 5 kernel source
+04:02:00 qualcomm 8550 reference kernel
+04:04:00 file in user space in android that is gpu driver
+04:04:50 gpuctypes
+04:15:15 ctypes pretty print struct
+04:18:30 alloc(16) being called, page aligned
+04:19:20 so much of modern software development is completely wrong, leaky abstractions
+04:21:45 bar for writing software, do you understand what you are doing?
+04:23:25 javascript, softmax, jit, javascript engine
+04:28:40 communicating in english and communicating in programing are the same thing
+04:29:00 syscall, companies need to stop tolerating people who don't understand
+04:31:20 american salaries, skill, motivation
+04:33:00 people below and above API line
+04:34:15 choices, bad, good habits, productivity
+04:37:05 dream society, wireheaded
+04:37:50 stream overview
+04:38:40 making money at expense of other people
+04:39:05 frog infestation on island
+04:40:30 io_uring
+04:42:05 same chip for quest 3 and samsung phone
+04:42:50 make progress yourself before getting investors
+04:45:30 softskills, social cues
+04:46:50 integrating AI in everything
+04:48:05 HR, human resources background
+04:49:45 american empire, infrastructure, ivy league schools
+04:53:50 trump, right wing, left wing
+04:55:30 progress, faster plane is better
+04:57:40 money, scam, value, perception is not reality
+05:01:30 where are the viewers from
+05:06:15 france gdp per capita
+05:07:25 france vs singapore, china
+05:08:50 uk vs us
+05:10:45 foreign exchange reserves 100 years
+05:13:15 WTF Happened In 1971?
+05:14:30 raiding twitch.tv/lana_lux
+05:16:15 be better, you canchange your habits and your life philosophy
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

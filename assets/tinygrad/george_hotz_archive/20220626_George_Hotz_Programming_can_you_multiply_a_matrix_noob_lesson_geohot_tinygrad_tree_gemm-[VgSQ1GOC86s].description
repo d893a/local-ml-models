@@ -1,0 +1,142 @@
+Date of stream 25 Jun 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat).
+Stream title: can you multiply a matrix? (noob lesson)
+
+Source files:
+- https://github.com/geohot/tinygrad/tree/gemm
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+Compute computer
+- Ubuntu 20.04.4 LTS
+- AMD Ryzen 9 5950X
+- 64GB RAM
+- AMD Radeon RX 6900 XT
+Streaming computer
+- Apple MacBook M1
+- LG UltraFine 5K
+- Blue Yeti
+- Apple Magic Keyboard
+- HHKB
+- tmux & Vim & Visual Studio Code with Vim Key Bindings and other
+  https://github.com/geohot/configuration
+
+Chapters:
+00:00:00 intro
+00:01:10 quiet computer
+00:02:10 no adderall joke
+00:03:00 noob day
+00:04:00 how to multiply a matrix
+00:06:00 big matrix
+00:07:10 j_blow raid George
+00:07:45 how much compute is matrix multiplication
+00:08:25 how to do matrix multiplication
+00:09:50 FLOPS, time.monotonic
+00:11:50 SI prefixes
+00:14:00 hype titles, freedom units
+00:15:00 CPU TFLOP/S, threadripper, ryzen
+00:17:55 AMD Radeon RX 6900 XT 
+00:18:35 SGEMM, DGEMM, MADDNESS
+00:20:10 github.com/dblalock/bolt
+00:21:50 Theoretical GFLOPS
+00:23:30 Same performance in C
+00:26:30 multiply a matrix in C
+00:28:05 timer in C
+00:33:45 python,C performance, tiling
+00:35:00 today's lesson (cache aware algorithm)
+00:35:50 order of for loops
+00:37:30 still slow
+00:44:55 avx2 instructions c
+00:49:30 FMA3, VFMADD
+00:50:50 don't use strassen, cpu instructions, FMA
+00:56:00 avx2 only about integers, we need FMA, thank you @paranon1
+00:57:40 real
+00:59:00 segmentation fault, align(64)
+01:04:00 is that wrong?
+01:09:00 still slow, threads
+01:11:10 1 thread speed
+01:14:30 visualizing what is it doing
+01:15:20 _m256 init to 0, _mm256_fmadd_ps
+01:23:04 time for printf's
+01:26:00 short break, should we play wonderwall on a guitar
+01:27:20 tweet about downsizing apartments 
+01:27:50 gdb
+01:29:00 this is illegal, suing clang
+01:30:29 not suing clang
+01:31:30 that one is always 0 that can't be right
+01:33:30 whiteboard missing
+01:35:10 gemm tinygrad branch
+01:37:25 internet broken 
+01:38:10 extract _m256, a bit faster
+01:42:45 tracking down segmentation fault
+01:43:55 data not aligned, dumbass
+01:44:40 it's always your fault
+01:45:10 good speed, alignment bytes
+01:48:30 fan spinup
+01:50:20 zen microarchitecture
+01:54:30 something about this is slow
+01:58:00 another way to do this
+02:07:50 without and with ffast-math
+02:12:30 too early for optimization
+02:22:50 visualizing
+02:27:20 will work but stupid
+02:32:10 number of ymm registers, ymm matmul
+02:35:40 not getting the numpy performance
+02:38:20 slower, second fma unit, 
+02:39:40 it's faster now, don't trust -O3
+02:44:40 lag on stream, turning off the dryer
+02:47:15 hard to make faster
+02:52:20 profile cache stalls x86
+02:58:20 that loop looks fast
+03:06:05 cpu cache sizes
+03:15:50 cache coherence, how is it slower
+03:22:38 short break
+03:28:20 tweet about adderall, drug test, people without skills
+03:32:20 zen microarchitecture, optimization
+03:39:35 L1 only 32 kB
+03:46:40 we are trying to do fast matrix multiply
+03:54:40 openblas haswell gemm
+03:59:45 online whiteboard
+04:02:15 no sarcasm allowed subscriber get's a timeout
+04:02:50 removing code, _mm256_broadcast_ss
+04:16:45 just persistent
+04:19:00 whiteboard time, better understanding
+04:25:40 don't want to reorded matrix
+04:32:00 strassen = ban, wrong and slow
+04:38:25 coherent meaning, access memory in order better
+04:46:15 same number of fma as broadcasts
+04:48:20 it's fast now
+04:51:05 how to get the same fma adds
+04:54:15 beating numpy
+05:00:45 multithreading check, max clock, pragma
+05:06:35 theoretical maximum on cpu
+05:12:40 crushing numpy, real threads in C
+05:22:10 double the speed, even more speed 
+05:24:10 overhead, semaphore
+05:28:40 we cheated
+05:29:30 no TFLOP
+05:43:50 Alex is home, stupid question timeout
+05:49:00 beautiful htop, throttling
+05:51:40 theoretical maximum
+05:53:40 cpu power draw
+05:57:30 cpu temperature
+06:01:00 disable throttling
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

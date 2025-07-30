@@ -1,0 +1,113 @@
+Date of stream 6 May 2023.
+from $1499 buy https://comma.ai/shop/comma-three
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+
+Chapters:
+00:00:00 red vs green,rocm bugs
+00:01:30 7900xtx true flops,mojo,opencl
+00:03:00 bad assembler,v_dual_fnac_f32,ashrrev_i32_e32
+00:04:30 epyc,nice amd gpu,rocm-bandwith-test
+00:05:28 NULL pointer,reboot,cox modem 
+00:07:00 not optimized,cheapETH
+00:09:05 how gpu work,warps,simd,DSP,GPU,CPU,load,not a load
+00:10:55 WGP=2CU,warp,dual issue VALU
+00:12:10 assembly,extra,rdna3,enable_early_exec,kernel
+00:13:05 staging worse,compiling empty program,binary out,stuff to compile rocm
+00:14:55 llvm-objdump -d cc.elf,asm.py,llvm-mc,obj file,lld
+00:17:04 failed to get code object ISA,llvm-readelf cc.elf
+00:18:25 shader from RDNA3,tensor vs non tensor cores float32,llvm target to amdgpu
+00:19:45 llvm target triples,failed to get metadata
+00:21:55 wavefront_size,how wide simd path is,NT_AMDGPU_METADATA,MsgPack binary
+00:23:45 amd_comgr_get_data_metadata,kernel crash,rmmod amdgpu,reseting pci
+00:28:15 metadata,wavefront_size 128,failed to read ip discovery
+00:30:35 git assembler maybe,removing the bus,reboot
+00:32:20 dkms,stock ubuntu 22.04 kernel,connecting bmc
+00:33:50 connection not private,thisisunsafe
+00:35:20 event_log,pci serr critical error
+00:36:50 debugfs to restart gpu,bmc remote kvm
+00:43:30 case,pcie errors
+00:45:22 we buy Intel+Nvidia,want to like AMD
+00:46:00 asm.py OUT_OF_HOST_MEMORY,AMD_LOG_LEVEL=4,roadata
+00:54:20 llvm,gnu export symbol,.global
+00:57:50 symbol code.kd,word gnu assembler
+01:04:40 OBJECT FUNC symbol type assembler,.type code.kd,STT_OBJECT
+01:09:00 why AMD,creating a buffer
+01:11:25 args,running custom assembly
+01:15:00 memory access fault by GPU node-1
+01:26:30 working,test number 2,commit custom asm,crashed gpu
+01:28:00 reset gpu,echoing a string,one works one hangs
+01:33:40 GLOBAL_STORE_B32,S_LOAD_B64
+01:41:50 not one crash with CUDA
+01:42:55 bad mb,suggestion from chat
+01:46:30 frustrating AMD,now on quiet,kernel 5.15.0-71,single 7900
+01:47:50 rocm to 5.5,rocm_clone.sh,new pc,graveyard of gpus
+01:49:30 anyone from AMD is watching this
+01:50:35 AMD sponsor tinycorp, compute driver
+02:02:50 userspace should never pagefault in kernel
+02:03:20 dropping 0days on AMD, flags
+02:04:40 money, can't search twitter login why Elon
+02:04:55 I will fix drivers,LBTQ
+02:07:00 nvidia datacenter vs gaming,libamdoci-orca64
+02:13:35 AMD care,we love you, nvidia-nvlink
+02:19:40 bad pcie,not enough pci lanes
+02:23:20 product for tinycorp,home DGX, writing a fuzzer,fuzz.py
+02:31:55 same crash,rocm-smi gpureset
+02:36:30 map_queues_cpsch,dqm lock has to be locked
+02:45:40 gpu P2P disabled,cuda ioctl SM_ISSUE_RATE,FP16 vs FP32 accumulate
+02:53:00 new crash,using pyopencl,normal ubuntu,linux 6.3,kernel crashes
+02:57:00 build something better than they have,companies respond to fear,still use an iPhone
+03:04:45 Android spyware,write AMD driver,Jim Keller,tenstorrent
+03:07:00 marketcap show driver stability, apple value brand
+03:10:10 apple shader code clean
+03:12:55 advice to nvidia,,4080 stupid,Stevey's Google Platforms Rant, deal per TFLOP
+03:16:30 Alex home,qualcomm, kernel 6.3
+03:26:30 crashed,website driver
+03:36:15 rebuild initramfs,stable until it crashed
+03:43:46 normal install,RDNA2 card test,rocm 5.5
+03:49:30 Steve Jobs nvidia
+04:02:25 gpu-burn
+04:09:00 build kernel from source,menuconfig,Linus let this in kernel
+04:15:50 just building kernels and llvm
+04:19:30 last chance,opencl context, building kernel
+04:28:25 geohot rapping,tom delonge
+04:37:35 release documention,legacy,amd gpu psp
+04:49:15 alive,clinfo,pyopencl,kernel build
+04:57:18 crash again,failed to add hardware queue to MES
+05:07:00 swaping the GPUs,no crash, bandwidth test
+05:23:55 it's not the GPU crash reproduced on both
+05:26:10 going to NY,the benefit of the doubt
+05:30:10 appreciate open source,vbios 7900xtx,rocm smi reset gpu
+05:47:00 amd cards beloved by ML enthusiasts
+05:54:40 AMD MES, virtualisation enabled bios
+06:03:00 sending them back
+06:13:41 hsviewer keyboard
+06:16:51 vast.ai,buying 7900xtx stupid
+06:19:10 bios,boot delay,config.sys
+06:22:15 wait for bmc,clean driver for DL
+06:27:50 61 vs 34 FLOPS,AMD to mlperf,intel arc
+06:30:10 sign from AMD before R_DAY
+06:33:15 Jensen wins
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

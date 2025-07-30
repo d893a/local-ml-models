@@ -1,0 +1,136 @@
+Date of stream 5 Sep 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat).
+Stream title: stable diffusion, in tinygrad?!? can it happen? pt WHERE IT WORKS
+
+Source files:
+- https://github.com/geohot/tinygrad
+- https://github.com/CompVis/stable-diffusion
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+Music provided by http://spoti.fi/NCS
+https://youtu.be/5z_SPHwspo8 NCS Mashup
+https://youtu.be/oY7SfTpyRco Netrum & Halvorsen - Circle
+https://youtu.be/rf_fSzuom6o Netrum & Halvorsen - Shivers
+https://youtu.be/xMCXZj5zwBE Robin Hustin & Jessica Chertock - Burn it Down
+
+Chapters:
+00:00:00 intro
+00:01:50 sponsor for the channel
+00:02:25 cond_stage_model
+00:07:30 not a role model 
+00:11:00 blog post feedback
+00:12:55 copyright music, cloudflare, kiwifarms
+00:16:10 first they came for poem
+00:21:20 centralized, entities with power
+00:22:24 aws parler ban, ad friendly content, infrastructure deplatforming
+00:24:15 cloudflare statements, changing the content, net neutrality
+00:27:13 cloudflare defaced their website
+00:28:05 alternatives to cloudflare, ddos-guard
+00:29:20 harassment, patent troll, banned user on comma discord contacting comma investors
+00:30:46 rational power, psychotic power, doxing, never swatted
+00:32:15 axel nix, faulting the system, legal fees
+00:35:04 illusion of choice, curtis yarvin, neoreaction
+00:38:15 what you learn from hacking, quote from kiwifarms, tolerance
+00:41:03 christian, atheism, removing bad things, free speech
+00:42:50 internet freedom, good and evil, infrastructure layer
+00:44:15 the daily stormer, matt taibbi, destiny, consume product
+00:47:50 politics is interested in you
+00:48:33 declaration of independence of cyberspace, justice trigger
+00:51:00 abortion, ignoring politics, where is the line
+00:53:30 real political advice, shutitdown.us, taking rights from other people
+01:01:28 george hotz tonight
+01:02:08 cloudflare competitor stormspark
+01:03:40 raceism
+01:05:08 sorry about talking about politics
+01:07:05 in search of lost time
+01:09:15 lidar = sub only chat
+01:09:42 goal for today, people getting off topic
+01:13:19 labor day, karpathy email, things to work on, maxpool, gpu execution bug, test to fix
+01:16:03 boring and rational politics
+01:18:40 why we build technology
+01:19:38 idiots, can't have happy without sad
+01:22:55 clipmlp, clipattention 
+01:31:44 clipencoderlayer
+01:49:19 compare the outputs and make sure they are right
+01:53:39 lawsuits, sue, private investigators
+01:58:45 elon is ruthless
+02:02:33 axel nix
+02:04:27 wire, books, walls, dl slow
+02:09:15 tiktok
+02:12:35 song tomcr00se
+02:14:25 justice, AI safety, taylor swift
+02:22:30 stable_diffusion.md
+02:25:28 girlfriend
+02:31:40 making this work today
+02:39:40 it's not the same
+02:41:19 music
+02:49:25 nutella
+02:52:40 what to generate
+02:58:35 layernorm
+03:16:10 object has no attribute 
+03:19:00 struggle learning, john carmack lex, fake advice
+03:23:50 whole thing match?
+03:31:55 dark apple, code is law
+03:42:20 monopolies, daylight savings, spacex
+03:46:45 how to get rich quick
+03:49:10 a horse sized cat eating a bagel
+03:56:45 debugging time
+04:01:10 information hazard, offended, offending
+04:02:45 ubuntu site-packages
+04:04:29 music
+04:14:20 64?, black square
+04:29:20 models together not working
+05:03:20 unit tests, segfaults
+06:00:40 math by hand, router overheated
+06:07:08 bug in mps
+06:18:30 no bug in tinygrad
+06:26:30 two squares
+06:29:40 no plan
+06:50:55 noise
+07:03:15 good noise, cat
+07:16:15 resolve
+07:22:43 tinygrad horse
+07:34:10 faster inference
+07:35:33 tinygrad cat eating a bagel
+07:36:44 hard work, sampler, 10 steps
+07:39:35 chat generating prompt
+07:41:55 penguin with fire extinguisher
+07:45:08 the penguin image
+07:47:10 aptera
+07:47:40 understanding stable diffusion
+07:48:15 tinygrad libraries
+07:52:00 3 days, kafka, no safety
+07:53:20 dolly implementation
+07:53:45 serious concerns in ai
+07:55:00 can system prove it's aligned with you
+07:55:25 effective altruism
+07:56:25 next silicon valley
+07:57:12 china, culture influences, no rights
+08:00:03 immigration, tax, hiring, visa, value, text to video
+08:02:40 EU bureaucracy
+08:03:10 malaysia, singapore
+08:04:05 california, san francisco
+08:05:15 no remote, russia
+08:06:39 50 iterations, dubai, cyber, freedom
+08:15:25 end to end openpilot, agi, cbuffer, FSD, rotterdam
+08:17:15 horse eating bagel
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

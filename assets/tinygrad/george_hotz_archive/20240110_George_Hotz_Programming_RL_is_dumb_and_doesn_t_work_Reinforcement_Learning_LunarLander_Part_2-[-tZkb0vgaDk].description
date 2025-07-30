@@ -1,0 +1,129 @@
+Date of the stream 7 Jan 2024.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/geohot/dumbrl
+- https://stable-baselines3.readthedocs.io/en/master/
+- https://youtu.be/FVGQJM2MVNY (Deadliest Journeys - Congo: The Last Train in Katanga)
+- https://andyljones.com/posts/rl-debugging.html
+- https://spinningup.openai.com/en/latest/
+- https://arxiv.org/pdf/1912.02875.pdf (Reinforcement Learning Upside Down)
+tinygrad bounties:
+- https://docs.google.com/spreadsheets/d/1WKHbT-7KOgjEawq5h5Ic1qUWzpfAzuD_J06N1JwOCGs/
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:01:40 stream disclaimer, twitch ban
+00:02:45 only 50% of subscription money
+00:03:05 kick.com streaming
+00:04:45 kick reach out to George, twitch issues
+00:06:20 drugs banner, legal in california
+00:08:05 50% money to twitch too much, twitch remove the banner
+00:09:20 hyubsama food stream, twitch banned users
+00:12:00 streaming on X, negotiating power
+00:14:40 stream statistics, streaming schedule
+00:16:10 applying for twitch partner
+00:17:30 twitch revenue
+00:18:30 perplexity best way to get banned on twitch
+00:22:50 andrew tate impression
+00:23:50 stable baselines 3
+00:29:40 np.random.randint
+00:32:44 NoneType object does not support item assignment
+00:33:00 perplexity
+00:35:40 render mode defined human
+00:37:20 good play, size=10
+00:40:30 stable baselines 3 just works
+00:50:00 passed a tuple, array element with a sequence
+00:51:15 learning
+00:52:50 decision transformer stable baselines 3
+00:55:20 github.com/geohot/dumbrl
+00:56:30 cartpole, stable baselines decision transformer
+00:59:30 Jax, wrapper for vectorized environments
+01:00:30 deadliest journeys congo, ancestor pothole
+01:01:11 building infrastructure, fixing the road
+01:01:20 bugs, carefully building infrastructure, CI testing
+01:04:00 README
+01:05:40 deleting a lot of tinygrad, focusing on what needs to work well
+01:09:55 decision transformer repo
+01:13:10 beautiful_cartpole.py
+01:20:07 andy jones debugging rl
+01:24:00 if you are following along
+01:29:00 the problem are bugs
+01:32:00 asking perplexity, openai spining up and deep rl
+01:36:25 log_softmax
+01:39:00 broadcasting  bug, 2, 3, 5
+01:47:20 no detach(), ppo, exp
+02:02:00 why is my ppo not working
+02:07:40 fast cartpole
+02:11:50 banned user
+02:15:50 asking it to learn
+02:17:15 hyper parameter land
+02:25:45 lucky
+02:27:30 !!!LOUD WARNING!!! why it's not solving
+02:33:20 3 layer network
+02:41:30 value function
+02:42:50 writing pytorch
+02:48:10 if it works in pytorch shutting down tiny corp
+02:52:50 pytorch numeric stability
+02:55:10 frustrating, having faith in tiny grad
+02:56:00 very easy to make progress in tiny grad 
+02:57:18 tiny grad more numerically stable
+03:04:00 the most dead simple thing
+03:13:30 size 2, 3 solving
+03:14:35 going even simpler
+03:19:00 batch size = 4
+03:22:40 reward broken
+03:27:10 it becomes like an identity matrix over time
+03:28:40 this is fire, the gradient, single weight matrix
+03:33:00 so beautiful, love watching deep learning happen
+03:44:10 learning rate too high
+03:51:00 that one does not learn
+03:52:40 dying relu, 0xnan getting VIP
+04:00:40 advantage
+04:06:40 Alex on the phone
+04:08:45 no clips, taking out of context
+04:11:00 value funtion all noise
+04:18:10 graph go up
+04:24:00 messing with hyperparameters randomly
+04:26:10 slow graph drawing
+04:28:20 sampling bias
+04:29:10 lower discount factor, larger replay buffer
+04:32:45 no major bugs, ppo major bug
+04:36:20 entropy loss
+04:38:40 counter intuitive in deep learning, bigger learn better 
+04:40:40 overheads
+04:41:40 one good landing
+04:42:55 50, 51
+04:44:10 Alex home
+04:46:30 send this video to a doomer
+04:48:00 good enough landing
+04:50:40 expectations too high
+04:51:35 twitch won't contact George
+04:53:30 hope, upside down rl, juergen schmidhuber
+04:54:10 good reliable solution to everything
+04:54:40 Alex, no checkpoints
+04:55:10 last landing, end of the episode
+04:55:30 thank you for watching
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

@@ -1,0 +1,125 @@
+Date of the stream 8 Jan 2024.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://openreview.net/pdf?id=9pe38WpsbX
+- http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+tinygrad bounties:
+- https://docs.google.com/spreadsheets/d/1WKHbT-7KOgjEawq5h5Ic1qUWzpfAzuD_J06N1JwOCGs/
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 muted intro
+00:00:20 un-muted
+00:00:45 the incident
+00:05:10 not recording stream locally
+00:05:40 twitch vs twitter revenue
+00:07:00 why is RL difficult, data
+00:09:25 Richard S. Sutton rl book
+00:10:20 every bad thing about data
+00:11:35 deepmind soccer robot
+00:12:55 neurolink, changing monkeys data
+00:13:30 search always works
+00:14:20 things to consider when debugging rl pytorch
+00:14:50 beta in PPO
+00:17:10 cleanup
+00:20:50 episodes 40
+00:25:10 beta
+00:27:00 gamma discount factor
+00:28:48 openpilot does not use any RL
+00:30:55 committing changes to master
+00:31:25 combined experience replay (CER)
+00:33:50 go play with the code
+00:34:35 debugging RL
+00:35:05 don't try stuff and run to see if it works
+00:35:40 ML going dark, companies do not share secrets
+00:36:35 misguided belief, comma traning, compute
+00:37:30 your ability to execute
+00:38:10 5 year old reddit post
+00:39:20 private data, curating the data
+00:40:15 keeping tricks secret
+00:40:45 upstream code open source, MIT licence
+00:41:30 aixi, bellman equation
+00:42:50 bayesian optimization search
+00:43:40 ml empirical science
+00:44:05 data extraction pipeline, training pipeline
+00:44:55 human groundtruth
+00:46:20 minimal rl test environments
+00:48:00 batch size 256
+00:49:00 spam trying programming
+00:53:25 why it is so bad
+00:54:50 openai spinning up
+00:56:20 A Walk in the Park: Learning to Walk in 20 Minutes
+00:57:30 machine learning reddit
+00:59:20 rlhf
+01:05:30 latest from deepmind
+01:07:55 transformer reinforcement learning x
+01:09:18 Diffusion Policy: Visuomotor Policy Learning via Action Diffusion
+01:10:30 comma ai simulator
+01:12:10 failed to implement decision transformer
+01:13:25 running the nodes
+01:14:25 Decision Transformer: Reinforcement Learning via Sequence Modeling
+01:15:50 imitation learning better
+01:16:30 muzero, initialization
+01:17:50 atari 100k benchmark, dreamer v3
+01:18:30 tinybox, mastering atari games with limited data
+01:19:50 $1000 bounty for solving atari 100k in tinygrad
+01:20:35 CARL: Controllable Agent with Reinforcement Learning
+01:22:10 dreamer v3 vs efficentzero
+01:22:55 MuDreamer
+01:23:10 simillar what we are doing at comma
+01:23:50 MuDreamer, same problem as at comma
+01:26:20 value prediction network 
+01:28:15 want to solve mario, researcher at tiny corp
+01:28:50 wall training time, code short, tinygrad
+01:30:25 tinyboxes, pricing
+01:32:00 all basics should work on tinybox
+01:32:30 just love this stuff, excited
+01:32:40 did not delete the stream
+01:33:00 through frustration we more forward
+01:34:00 paying bounties
+01:36:00 not doing tiny problems
+01:36:38 hlb cifar
+01:38:10 dreamer v3, MuDreamer
+01:39:15 Alex
+01:41:20 MuDreamer
+01:42:05 twitch warning
+01:44:00 moving off twitch, onlygeorge.com
+01:46:40 instagram reels 
+01:48:30 twitch front page
+01:49:40 Linus Tech Tips reach out, entitled
+01:51:10 unroll multiple steps
+01:53:00 GRU
+01:54:30 i-jepa
+01:58:10 curiosity-driven exploration by self-supervised prediction
+02:00:00 language model beats diffusion
+02:01:20 Finite Scalar Quantization: VQ-VAE Made Simple
+02:03:25 MaskGIT: Masked Generative Image Transformer
+02:03:35 tinygrad research dream mario 64
+02:04:40 high fidelity simulation
+02:05:00 copyright game problem mario 64
+02:06:00 wayve simulator
+02:08:20 the bitter lesson
+02:09:11 research position on tiny corp
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

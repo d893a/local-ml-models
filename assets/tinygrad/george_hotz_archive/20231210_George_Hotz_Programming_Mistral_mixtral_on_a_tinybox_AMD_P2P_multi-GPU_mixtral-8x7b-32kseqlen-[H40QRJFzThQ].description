@@ -1,0 +1,130 @@
+Date of the stream 9 Dec 2023.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/tinygrad/tinygrad
+- https://arxiv.org/pdf/2101.03961.pdf
+- https://news.ycombinator.com/item?id=38570537
+- https://github.com/tinygrad/gpuctypes
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 muted intro
+00:01:12 un-muted intro
+00:01:25 tiny keyboards, feud with oneplus
+00:02:38 bought oneplus open via oneplus store
+00:03:16 bricked phone, fastboot set active slot, qdl mode, qdl data not available
+00:05:14 no images to restore, not honoring return policy
+00:06:50 oneplus destroyed their brand
+00:07:47 chargeback, buy oneplus buy from amazon
+00:08:20 comma return policy complete and true
+00:09:10 chargeback, apple late delivery
+00:11:40 processing emotions, do not buy it from oneplus store
+00:13:00 comma does not want you to have a bad time
+00:13:27 sending it back
+00:13:55 edl, unofficial qualcomm firehose
+00:16:50 phone market, why no images
+00:17:48 companies don't want you to own anything
+00:18:15 Apple consumer focused
+00:18:35 jailbreaking is not a solution
+00:19:05 forks of the software and hardware
+00:20:35 possible to make phones
+00:21:28 don't expect anything from oneplus
+00:21:38 oppositional defiance, great regrets in life
+00:23:05 oneplus release qdl files
+00:23:40 suing someone different
+00:24:55 2% of unreasonable people
+00:25:18 reading all the emails
+00:25:33 reading youtube comments
+00:25:50 oppressive powers, free market, apple web browser lock in
+00:27:48 anarcho capitalism
+00:28:27 interns pay $1400-$2000 week
+00:28:40 trans people, J. K. Rowling, transhumanism
+00:30:10 ssh to tinybox 8
+00:30:20 mixtral.py
+00:32:08 python mmap
+00:33:35 only 6 GPUs
+00:34:15 bigger font, glasses, astigmatism
+00:35:10 torch_load dynamically
+00:37:25 Scaling to Trillion Parameter Models
+00:37:41 HN Mixtral
+00:41:30 how GPT4 works
+00:42:00 StripedHyena-7B, mixtral-7b-8expert
+00:44:05 MixtureFeedForward
+00:58:25 AT&T feud, billy naming
+01:01:35 underlying buffer is not writable
+01:04:35 read only memoryview
+01:05:40 ctypes const pointer
+01:07:05 ctypes from buffer
+01:08:20 asking Quentin
+01:11:19 memoryview readonly
+01:14:10 get address from memoryview
+01:15:33 using a read-only buffer with ctypes from_buffer
+01:16:30 b partition in honor in oneplus phone
+01:16:44 worst customer experience
+01:19:05 HIP=1 DEBUG=2, realize() struggle
+01:24:50 output of a gate
+01:29:21 easy multigpu use with tinygrad 
+01:34:20 you need to run all the experts
+01:34:50 stupid questions about buying tinybox
+01:36:20 emotional regulation, don't be evil, us government
+01:38:20 only batch size 1
+01:42:30 print top, norm
+01:45:20 rocm-smi, htop
+01:48:50 bug in AMD gpu
+01:49:00 multiple $1k bounties in tinygrad
+01:51:00 libhsa-runtime64
+01:53:20 rude to blame people
+01:55:00 HIP runtime rewrite
+01:57:25 first token 330
+01:58:55 what is Mistral going to say
+02:00:00 GPU usage explained, letting it speak
+02:03:10 tinybox can run the model, mac can't
+02:04:00 pushing to github
+02:06:30 letting non-subs talk
+02:06:44 AMD bug
+02:07:15 real use of tinybox
+02:07:40 mistral getting attention
+02:08:00 how did we split them
+02:08:10 quantization performance
+02:08:20 Cmulator 50 gifted subs
+02:10:10 bug with errors with the micro engine scheduler
+02:10:32 bug hip compilation inexplicably takes 5x longer then CL compilation because of different code path
+02:10:40 open source, submiting pull requests and CI
+02:10:55 tinygrad beating cuda, mmap nvme copy in to gpu bug
+02:12:45 opinion on triton openai, delivering tinyboxes 
+02:13:50 best Mixtral content so far
+02:17:55 cross gpu overhead, copies between gpu
+02:22:45 working on synchronize things across gpus
+02:23:00 GO, C speed, fixing the algorithms for speed
+02:23:55 non-sub asking for moderator, tinygrad CEO
+02:26:18 gpuctypes, GPT2 below 2ms per token
+02:28:10 three new $1k bounties
+02:30:30 never buy anything on oneplus store
+02:31:40 Elon thoughts, famous, opinions, Taylor Swift, Sky Bri
+02:34:08 small tasks needed in tinygrad
+02:34:30 conferences, networking
+02:36:16 oneplus not open anymore, verified image programming
+02:37:00 contribute to tinygrad, where to start
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

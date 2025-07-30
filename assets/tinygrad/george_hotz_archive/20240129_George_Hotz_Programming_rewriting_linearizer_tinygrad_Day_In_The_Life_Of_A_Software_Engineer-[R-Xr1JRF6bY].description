@@ -1,0 +1,66 @@
+Date of the stream 27 Jan 2024.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/tinygrad/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:00:30 ASMR typing
+00:08:37 Lana_lux raid!
+00:10:10 context missing, real work accessibility
+00:12:50 linearizer
+00:14:40 tensorcore implementation
+00:15:10 tvm schedule
+00:20:30 upcastmid
+00:25:40 optuops
+00:28:20 tvm parallel vectorize 
+00:30:35 future design
+00:33:30 reorder
+00:37:20 option space searchability design
+00:41:40 git commit
+00:44:00 test_float32_unary
+00:46:00 fix_metal_tests
+00:50:20 UOptOps(Enum)
+00:54:00 group_for_reduce
+00:59:40 yellow and purple
+01:06:45 vin[0].arg out of range
+01:07:45 tensor cores nightmare
+01:10:40 metal_wmma
+01:12:10 tvm tensor cores
+01:15:40 problem
+01:16:35 tvm implementation
+01:17:30 thread_local_aliases
+01:19:20 can fix this
+01:25:00 device required
+01:26:20 TensorCore.__init__ missing
+01:27:00 specialize dataclass, perplexity
+01:28:20 dataclass inheritance
+01:30:00 dataclass child class with default properties
+01:36:50 git commit
+01:40:50 tvm flexible interface
+01:43:20 cool test
+01:45:00 that is how real work on tinygrad looks like
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

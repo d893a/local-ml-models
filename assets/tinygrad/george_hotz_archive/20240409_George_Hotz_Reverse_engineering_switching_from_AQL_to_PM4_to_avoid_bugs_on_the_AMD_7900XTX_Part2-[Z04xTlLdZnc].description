@@ -1,0 +1,122 @@
+Date of the stream 6 Apr 2024.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Source:
+- https://github.com/geohot/7900xtx
+- https://github.com/fail0verflow/radeon-tools
+- https://github.com/NationalSecurityAgency/ghidra
+- https://www.cs.sfu.ca/~ashriram/Courses/CS295/assets/notebooks/RISCV/RISCV_CARD.pdf
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/#tinybox)
+
+Chapters:
+00:00:00 intro
+00:01:50 meditation
+00:04:10 questions, AQL packets, radeon southern islands
+00:06:00 two code paths
+00:10:10 amd vulkan, dispatch_indirect
+00:18:30 packet queue = AQL packets, amdgpu eop
+00:22:10 AQL_CONTROL
+00:30:55 blog part 3
+00:37:00 resnet training job to crash
+00:40:00 DEBUG=2
+00:43:00 getting rid of AQL
+00:45:30 engineer wrote something specific and project manager changed the words
+00:47:10 selected pipe, queue does not matter
+00:48:10 different queues
+00:50:15 PM4, PGM_RSRC2 
+00:56:10 EVENT_WRITE.partial_flush comment
+00:58:40 more testing of KFD, moving away from AQL
+01:01:20 gpu_driver.cc
+01:05:30 does someone want's to write PM4?
+01:09:45 when I make the GPU
+01:10:20 nvidia and amd very similar
+01:10:50 firmware absolutely simple as possible, how easy is updating different tier of software
+01:11:20 why AQL exists?
+01:19:45 we got the crash
+01:29:00 double banned, umr, smc bits read_smc
+01:33:00 30% chance PM4 does not have bugs
+01:33:40 rosetta stone style translation F32 and RS64
+01:38:10 radeon_tools marcan
+01:38:20 is AMD going to open source anything useful
+01:40:40 ghost locomotion, argo ai
+01:42:40 argo the next thing, can everyone stop, cleaning solution
+01:44:30 can we all just be more honest
+01:45:35 AMD NDA, infringing patents, 
+01:52:15 being afraid of getting sued
+01:55:30 DISPATCH_DIRECT packet
+02:00:40 amd gpus codenames, fiji
+02:02:55 linux-firmware license, not a lawyer
+02:06:10 nvidia gsp license, cuda license no datacenter use
+02:07:55 risk averseness of people
+02:10:40 linux-firmware
+02:20:40 rosetta stone, F32, RS64
+02:37:00 launching specific kernel
+02:40:40 first GPU to support AQL
+02:46:50 NSA, Ghidra, IDA Pro, Russian tools
+02:48:30 respect NSA github
+02:48:50 NSA better at open source then AMD
+02:49:14 NSA more open source than AMD
+02:49:30 backdoors
+02:54:20 drake rosetta stone song
+02:57:30 credit marcan for writing the disassembler
+03:15:45 binvis
+03:19:30 fail0verflow radeon talk
+03:39:25 F32
+03:48:30 gfx1101
+03:53:20 amd rs64
+04:10:15 gfx rs64
+04:17:55 python os lseek
+04:23:15 amdgpu_regs, mmio
+04:34:35 decompiling now
+04:38:50 all the different addresses
+04:42:30 dump_ip.c, upset writing C
+04:48:25 c example mmap fd
+04:51:18 read without advancing file pointer
+05:03:20 bugs in the dispatch
+05:20:25 frequency analysis on code
+05:31:45 next 4 bytes are register
+05:47:00 amd_emu_mode
+05:57:35 we broke the gpu, what did we learn today?
+06:00:05 I have given you the tools you need to solve the problem
+06:05:40 switch to nvidia if you have AMD crashes
+06:09:05 risc-v opcode groups
+06:12:30 capstone risc-v disassembler
+06:18:20 skip instructions, CS_ARCH_RISCV mode
+06:22:20 bad at ghidra
+06:23:30 don't spoil the risc-v
+06:33:00 if labeled easier to read, launch instructions, almost just compile
+06:33:55 figuring out the first instruction
+06:38:30 load this register map
+06:52:00 ghidra load map file
+07:35:20 jump table that goes there, some CP function
+07:54:25 cmd 3 packets pm4
+08:05:00 it's cool that is risc-v
+08:23:40 now we can know if AMD open sources anything real
+08:29:50 I bet this did not support AQL
+08:33:50 we need to stup
+08:42:45 I have found why there is so many bugs in this
+08:49:15 back in the days of bonaire
+08:56:50 HSA was a marketing campaign
+08:57:30 internet issues
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

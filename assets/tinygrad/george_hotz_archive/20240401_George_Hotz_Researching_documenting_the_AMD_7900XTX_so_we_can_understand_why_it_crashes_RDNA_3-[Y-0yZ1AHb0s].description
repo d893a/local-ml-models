@@ -1,0 +1,109 @@
+Date of the stream 31 Mar 2024.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Source:
+- https://github.com/geohot/7900xtx
+- https://github.com/tinygrad/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:01:25 new KFD backend
+00:03:50 never give up
+00:05:20 tinybox
+00:07:00 looking for comment
+00:11:35 docs for 7900XTX
+00:13:40 university attendance over time us
+00:22:00 vscode markdown preview
+00:31:10 signature solar, solaredge optimizers
+00:45:45 solar per watt over time
+00:50:50 github.com/geohot/7900xtx, tenstorrent software
+00:58:20 ubuntu kernel build source don't use apt src
+01:01:00 AMD processes, Instinct MI 300, testing in isolation, crashes
+01:03:00 no CI for hardware
+01:05:50 planning, handling George as PR problem
+01:15:00 nvidia taking AMD talent
+01:15:50 old instinct cards
+01:17:00 test_sdma
+01:34:00 firmware file, registers dump
+01:37:55 all this docs might be wrong
+01:39:30 drivers from AND will not get better
+01:46:00 US government people
+01:48:10 product engineering, operations, engineering mindset manipulating things not people
+01:49:00 everybody who creates is an engineer, administrator not an engineer
+01:49:30 boeing, outsourcing, operations keeping systems running
+01:51:30 how do you get more gold, more fiat, bitcoin, people
+01:54:00 proof of work to proof of stake ethereum
+01:56:00 gold works
+02:09:00 diversity is our strength
+02:19:55 DRM debugging
+02:24:19 AMD brutal reviews
+02:28:40 4090 tracker
+02:39:05 hardware resources
+02:48:00 LSDMA, system DMA and other DMA
+03:00:00 codenames, UMR
+03:05:10 perplexity, searching, search engine
+03:09:50 RDNA 3
+03:28:50 compute unit
+03:35:50 gpu hang, crash, piano
+03:39:20 amd community forums
+03:41:10 AMD release register reference 79000 XTX
+03:42:40 George helping AMD
+04:01:35 plum bonito gfx1100
+04:03:15 RS64
+04:09:55 AMD gpu mailing list
+04:13:40 break, shower
+04:24:50 should you buy 79000 XTX
+04:25:35 AMD PR team, disparaging, George's experience with GPU
+04:27:50 the modern consumer
+04:30:00 open pilot CI, comma ai failure rate
+04:52:50 radeon f32 processor
+04:54:20 leak, leak is a public domain
+04:58:50 XML dump of bonaire register docs
+05:00:00 internet is under attack, remember when google worked
+05:01:00 2014
+05:06:00 free speech, hate speech, iq vs free speech absolutism
+05:17:40 MEC, amdgpu microengine compute
+05:46:50 how to power cycle pci device
+05:50:15 AMD I want the MEC
+06:24:10 error: object file empty git
+06:27:25 docs for 79000 XTX overview
+06:35:40 SDMA+RLC are F32, RS64
+06:38:10 AMD source about register access
+06:41:55 ibm rs64 32-bit
+06:46:10 rs64 soft core
+06:50:50 Alex, RDNA 4
+06:53:40 reading about workload managers
+06:55:30 the AMDGPU code base 
+06:56:30 job offer to github.com/gnif
+06:57:20 writing software, taping out chips
+06:58:40 prediction on AMD high end GPUs
+06:59:35 qualcomm reverse engineering
+07:01:30 openmax, OMX
+07:02:15 can people draw attention to this?
+07:03:40 looking glass
+07:05:35 internal AMD docs
+07:06:40 tinygrad new driver, new style of driver, CommandQueue
+07:07:20 $1000 to fix a reset of GPU for github.com/gnif
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

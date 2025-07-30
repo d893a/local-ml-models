@@ -1,0 +1,88 @@
+Date of the stream 11 Oct 2023.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/geohot/tinygrad
+- http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+- https://www.meta.com/quest/quest-3/
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro George getting Meta Quest 3
+00:01:45 don't call George 
+00:02:55 badly assembled Quest 3
+00:03:40 metaverse
+00:05:13 caution about buying Quest 3
+00:05:30 Quest 3 target audience
+00:07:05 banned topics, chinese
+00:08:15 where was Quest 3 made
+00:10:00 we stand with china
+00:10:25 one more look at Quest 3
+00:10:35 tariffs
+00:12:50 qualcomm chip, services
+00:14:15 what we respect and what we don't respect
+00:16:40 who is the bad art friend
+00:16:55 corporations behave psychopathically
+00:19:10 comfortable life
+00:21:50 example from last time
+00:25:55 optimizing resnet 50
+00:26:20 new kind of search
+00:28:25 test dataset of kernels, generate_dataset.sh
+00:29:12 get dictionary of all possible actions
+00:30:35 all about building infrastructure
+00:31:35 gifted subs = bigger font request granted
+00:32:35 benchmark code
+00:35:30 what we did overview
+00:36:15 print factor
+00:37:25 greedy search
+00:40:15 font size requests
+00:42:00 deep copy not working
+00:44:00 kernel speeds
+00:47:35 infrastructure for any kind of intelligent search
+00:47:55 anyone understands greedy search?
+00:52:15 infrastructure for fuzzers 
+00:56:45 variability of each run, correctness
+00:59:40 exercise for the reader
+01:02:50 how easy is to write searches in tinygrad
+01:03:55 old optimizer, bad code
+01:04:50 m1 macos runner for github actions
+01:05:40 GREEDY=0
+01:07:05 someone needs to write a fuzzer and improved search methodologies
+01:07:35 the bitter lesson
+01:08:00 double the speed, super universal
+01:08:15 searching the entire search space
+01:12:20 tflops of m1 max
+01:14:14 test on your hardware
+01:14:30 the beauty of RL
+01:14:55 slow searches in tensorrt, tvm
+01:15:10 small action space in tinygrad
+01:16:00 real benchmarks
+01:17:45 zig language
+01:18:00 rolls-royce
+01:19:15 space in between last word and exclamation mark
+01:20:50 watching ads on twitch
+01:21:19 lex metaverse
+01:21:35 raiding lana_lux
+01:22:05 watching lana_lux stream
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

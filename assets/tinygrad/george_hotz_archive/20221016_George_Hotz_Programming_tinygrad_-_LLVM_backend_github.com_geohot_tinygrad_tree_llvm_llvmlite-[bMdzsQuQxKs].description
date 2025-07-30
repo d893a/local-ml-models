@@ -1,0 +1,131 @@
+Date of stream 15 Oct 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat).
+Stream title: tinygrad: LLVM backend
+
+Source files:
+- https://github.com/geohot/tinygrad/tree/llvm
+- https://github.com/numba/llvmlite
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:01:00 LLVM=1, no ShapeTracker yet, ethernet wire
+00:02:30 defcon sux
+00:03:28 llvmlite, event's to replace defcon, Chaos Computer Club (CCC)
+00:04:05 code for implementing llvm backend, LLVM buffer, processing_op
+00:05:15 tinygrad low level operations
+00:07:14 add and sub could be the same op, could merge some
+00:08:15 4 core ops of tinygrad, matrix multiply, matmul, derivative of convolution
+00:09:36 why isn't tinygrad fast? memory access patterns
+00:10:10 ShapeTracker, segfault
+00:11:25 writing test_add_forward
+00:12:00 LLVM, memory, single thread system
+00:12:25 why it's not working, null pointer
+00:14:00 object has no attribute address
+00:18:26 segfault, cfunctype m1 ctypes
+00:22:18 checking llvmlite version
+00:23:13 cfunctiontype calling
+00:25:20 as_array requires a shape argument
+00:25:38 stupid argtypes
+00:27:45 doing an ADD, a MUL and an NOOP
+00:28:40 the first argument is the return type
+00:29:30 nejintejag get's VIP
+00:30:17 MUL should be OK, this NOOP doesn't work
+00:31:20 shapetracked objects, shape, stride, offset
+00:31:56 test_mul fails, strides 0's
+00:32:08 what to implement today, memory might not be contiguous
+00:32:53 break, more coffee 
+00:34:40 ShapeTracker object has not attribute shape_strides
+00:35:08 question about Shape tracker
+00:35:40 working on idx
+00:37:40 rewriting expr, expr junk code
+00:38:14 idx_to_llvm, idx_deref
+00:41:58 don't use print statements for debugging
+00:45:24 llvmlite fadd fmul, fneg
+00:46:55 easy implement sub op
+00:48:19 RELU not implemented
+00:48:30 segfault
+00:48:55 arm reciprocal instruction
+00:49:18 segfault, why not implemented error?
+00:53:50 WARNING HEADPHONE USERS
+00:54:40 not implemented error
+00:57:10 RELU not implemented
+00:58:35 shipping comma ai into car mirrors?
+01:03:30 chromecast for cars, just solve self driving
+01:05:28 new Blink-182 
+01:07:35 Axel Nix diss, nathan for you episode, this is going be the greatest thing you ever do with your life
+01:09:54 Axel Nix if you are watching this let that sink in
+01:11:10 you don't want to punch downpunching down
+01:14:08 Axel Nix business, reaching to his clients, don't hate the player hate the game
+01:17:50 never ever settle a lawsuit, barnacle on yacht, Peter Thiel on Gawker
+01:20:00 Alex Jones lawsuit
+01:20:30 send Axel Nix this video, George is real
+01:21:47 segfault
+01:22:14 does George censor himself on twitch
+01:25:00 taylor swift new album, nvidia unlaunching 4080
+01:25:40 writing idx_deref
+01:26:50 reason for ops_llvm
+01:28:29 explaining idx, writing idx_deref
+01:32:55 what is it doing, segfault
+01:35:30 llvmlite pow exp
+01:44:10 exp ops, no reduce ops
+01:45:12 ontologicaltofu suggests Asan to check segfault
+01:48:05 explaining ZeroView
+01:48:55 segfault in python gc
+01:50:45 segfault sometimes
+01:53:50 what is getting gc to segfault 
+01:55:13 python faulthandler
+02:02:18 python os exit
+02:06:32 something is not getting saved
+02:07:57 gc.set_debug(gc.DEBUG_COLLECTABLE)
+02:10:00 disabling gc
+02:17:35 segfault sometimes
+02:27:00 wrong info from chat about gc
+02:29:00 WARNING HEADPHONE USERS
+02:31:05 Bitcoin__ asks about font size
+02:33:10 George segfault rage
+02:35:35 it was too tiny
+02:40:20 loop was too long
+02:40:42 memory corruption can show up as any kind of bug, always add some padding
+02:44:05 Hailo-8 AI Processor
+02:48:30 michael scott yacht quote from money
+02:49:34 world without patents, copyright, we keep trademarks
+02:50:20 robot lawyers
+02:51:28 lesson about patents, copyright term extension act
+02:54:55 canceling cox services
+02:56:00 google duplex
+03:01:00 promise to Alex
+03:01:50 why video games, most movies sux 
+03:03:00 don't care about hacking
+03:03:40 hamster to panda
+03:04:05 cost of making movies, factorio
+03:05:20 outer wilds, elder scrolls sux
+03:06:05 WARNING HEADPHONE USERS
+03:07:05 web3, comma body cooking meals
+03:07:49 different between lot's ifs vs switch
+03:08:17 brothel idea
+03:09:35 google alpha tensor
+03:10:33 Meta AITemplate GPU framework
+03:11:00 Apple contacts Comma
+03:12:05 raiding lana_lux
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

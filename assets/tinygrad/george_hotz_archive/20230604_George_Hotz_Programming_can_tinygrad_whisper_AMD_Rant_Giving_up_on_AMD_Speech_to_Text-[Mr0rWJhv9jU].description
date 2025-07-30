@@ -1,0 +1,120 @@
+Date of stream 3 Jun 2023.
+from $1499 buy https://comma.ai/shop/comma-three
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:01:20 motherboard
+00:02:06 we giving up on AMD
+00:02:45 AMD drivers, bad AMD patch
+00:04:35 Intel vs AMD driver patches
+00:07:17 3 editions of tinybox
+00:07:53 AMD driver will never be good
+00:08:32 kernel panic not acceptable, contact at AMD, capture mindshare
+00:09:55 should I buy AMD or Intel for ML
+00:12:05 top priority for gpu division at AMD
+00:12:55 Intel stable kernel driver, ROCm
+00:13:25 did not expect running AMD demo app in loop to crash the system
+00:13:40 Lisa Su respond to email, Jensen Huang
+00:14:10 would fix AMD, no docs, short AMD
+00:16:35 AMD does not care about their driver
+00:17:37 Pat Gelsinger trying to turn around Intel
+00:18:25 plan what to do, get tinygrad on mlperf
+00:19:13 3090 vs 4090, NVLink, price/perf/power, jetson orin
+00:20:25 how to fix AMD graphic division, callture
+00:21:20 Lisa Su do you want to compete against Nvidia
+00:22:05 meditation, Linus adding AMD GPU driver in kernel
+00:25:54 user space, driver need to be stable, internship at AMD
+00:27:23 bad culture, mediocre work not accepted, middle management
+00:28:25 pytorch team, facebook, fb product stupid, twitter bad development environment
+00:29:25 fire middle management tomorrow, Yann LeCun, Geoffrey Hinton
+00:30:12 whisper openai, ai safety, open ai bad practices, Sam Altman
+00:31:22 brand vs performance advertising, do not work at open ai Andrej Karpathy
+00:34:00 whisper.py, locked tinygrad bounties, Twitter needed help, trust Elon, neurolink
+00:36:00 AMD kernel driver 3 people team, hundred middle management, comma IPO
+00:38:45 finding the whisper model
+00:44:18 apology for Nvidia, how much we love Nvidia
+00:45:50 no safety checker, no alignment, don't talk to the government
+00:54:00 writing whisper.py
+00:59:00 AI Drake, Lil Mabu, Lil Windex, music generator
+01:14:40 attention blocks
+01:25:40 class Whisper, bach, chiptune
+01:37:20 load, prep audio
+01:41:37 goal by the end of the weekend, talking and words on screen
+01:43:00 friendship with computers, 2030 girlfriend company, ai safety
+01:47:50 Sam Altman vibe, normies thoughts on ai
+01:49:00 Ford Foundation, inequality, power
+01:52:23 Industrial Society and Its Future
+02:03:00 life of homeless, oligarchy and not the oligarchy, us gov budget
+02:07:30 pizza, west needs god, jina, conspiracy theories, NGOs
+02:14:00 getting cancelled, military, taxation
+02:17:15 colonies on mars, moon, fusion, hyperloops, homeless
+02:20:20 challenging social contract, better soda, eugenics
+02:25:00 tinygrad welcomes good pull requests, good genes
+02:30:15 based department, being on plane guided by morons
+02:38:00 reading the bible, cultural catholic, quran
+02:45:45 pizza, power over nature, people
+02:50:55 England, losing all the money
+02:52:55 why Elon got so rich, worked hard, smart, did what it takes
+02:54:30 targeted campaign attack against Elon, Kanye West, Biden, Podcasts
+03:05:00 the primagen, dr disrespect, Martin Shkreli
+03:11:00 ADHD, tweakers, alcoholics
+03:17:00 sine wave, mozart
+03:21:00 qkv_attention
+03:39:30 TextDecoder
+03:46:45 languages
+03:54:20 tiktoken
+03:59:35 good contributors in tinygrad
+04:00:50 using comma three whisper llama
+04:02:20 attention block
+04:03:20 disktensor speed on mac
+04:06:45 dataset audio
+04:11:30 visualizing sound
+04:12:45 load_state_dict
+04:18:00 AssertionError can't expand
+04:19:30 code working, love transformers
+04:21:10 commit whispering
+04:23:30 python capture audio
+04:31:10 hello twitch can you hear me
+04:32:35 how great is whisper
+04:43:20 pyaudio buffer size
+04:47:00 can't pickle local object
+04:48:45 real time speech test, changing offset
+04:54:35 true dat, working, laggy
+04:55:20 key value cache
+04:57:45 testing and finding bugs 
+05:04:44 not working anymore 
+05:10:00 it works
+05:11:25 ai safety
+05:12:40 piping whisper into llama, output llama into say, sexy gan
+05:13:40 fixing bugs
+05:24:40 multiple times decoding
+05:31:00 need to merge speedups for realtime
+05:31:40 thank you for watching
+05:32:00 prison hierarchy
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

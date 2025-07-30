@@ -1,0 +1,123 @@
+Date of stream 18 Jun 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat).
+Stream title: can tinygrad run the openpilot model FAST?
+
+Source files:
+- https://github.com/geohot/tinygrad/tree/lazy
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro Charron vs. Pat Stay - Battle Rap
+00:01:00 reading youtube comments
+00:02:13 convolution
+00:04:10 new place, openpilot model, ops, data flow
+00:05:18 shapetracker
+00:06:33 ops_lazy, explaining the graph, nodes
+00:08:30 idea, power of tinygrad, reducing the nodes
+00:11:20 SHUFFLE_MOVMENT_OPS
+00:12:10 REMOVE_MOVMENT_NOPS
+00:12:55 MERGE_ELEMENTWISE_INTO_CONV_OUTPUT
+00:15:20 plan for today
+00:16:30 python typing using class type inside class
+00:17:50 real op
+00:21:00 thinking, writing the right thing
+00:25:25 love types, python the best language
+00:26:05 LazyBuffer object has no attribute arg
+00:26:30 NoneType object has no attribute name
+00:28:00 long variable names, bad behavior editor
+00:28:45 why is that wrong, we got that all right on the first try
+00:31:15 running in 799.61 ms, what is slow
+00:33:25 moving self realize out of toCPU 
+00:34:39 it should be a lot faster, running in 464 ms
+00:35:30 optimization back on and see what breaks, bad investment gbtc
+00:36:28 MERGE_MOVMENT_OPS breaking
+00:43:40 lazy branch of tinygrad
+00:44:20 SHUFFLE_MOVMENT_OPS slow, REMOVE_MOVMENT_NOPS wrong
+00:46:20 can anyone fix this bug
+00:46:40 mind thinking in currently working projects
+00:47:40 optimization without changing the graph
+00:52:00 if you have a binary op, can't have larger text
+00:56:35 this isn't acually right
+01:01:30 python double slash, respect shapetracker slower
+01:02:00 fixing bugs
+01:09:00 379 ms with shapetracked kernels
+01:10:00 unary op shapetracked
+01:17:20 tricky, the big gray combiner hard to write code, graph breaking, goal 10 ms
+01:23:10 color speed explanation (red, green, gray)
+01:30:50 unhashable type
+01:40:20 np.int32 really slow (copied to CPU) win for tinygrad
+01:41:25 autocorrect extension comment
+01:42:00 writing the fix
+01:51:18 107 ms big improvement
+01:52:00 stupid sort by name, there should be no NumPy
+01:58:40 24 ms to run the python, can't beat this, conv.cl
+02:01:35 realize explanation
+02:03:20 DEBUG=1
+02:05:10 making this operations work
+02:07:20 the problem was
+02:08:00 python the best language
+02:08:50 print(len(srcs)
+02:10:20 writing some types, writing more code
+02:25:30 checking for stupid code, ready to write ast traversal
+02:28:00 short break, singing
+02:29:00 ast traversal
+02:36:00 it's slower and wrong
+02:45:00 opencl not type checking anything
+02:46:30 working with ast builder commit
+02:47:00 let's move this out
+02:48:40 65 ms in python brutal, lol slower commit
+02:51:50 fix float speedup commit
+02:55:10 needs valid commit, unfortunately it's slower
+03:01:30 list comprehension, it's wrong
+03:06:50 create_built_program_from_source_cached
+03:07:20 cache misses
+03:09:10 lru_cache 128 default value is a joke, easy fix
+03:12:31 most of the time in shapetracker.py
+03:20:55 things get slower
+03:22:30 cloud scam
+03:23:15 all that did nothing, commit not working
+03:25:00 local workgroup matters a ton on qualcomm
+03:27:55 57 ms commit
+03:28:50 convolution that we can use
+03:30:40 trying different things
+03:37:55 this shouldn't be void
+03:42:55 undeclared identifier conv_output
+04:01:30 gray one appearing when I disable that, 
+04:06:40 all waiting for the kernels now
+04:14:35 shapetracker needs to be improved
+04:19:40 wrong but look at that speed
+04:24:30 42 ms is actually fast?
+04:30:50 running on batman 
+04:36:00 George doing an ad
+04:37:10 fine we are going to do it
+04:57:30 bunch of things we can still do
+05:05:20 actually running on the comma three
+05:13:30 it worked on the comma three 1.5 s
+05:20:35 some questions, comments from non-subs
+05:24:05 cheapeth, scams, community, langue de bois, recession
+05:27:00 bailing people out, printing money, Kim Dotcom twitter thread US is beyond bankrupt
+05:30:20 shut it down party, democracy, government solutions, infrastructure, taxes, state governments
+05:36:20 when to move out of US, where to live, comments on a lot of countries
+05:40:40 America export the world culture, corrections, infinite jest book, three body problem book
+05:42:35 China, chinese content, thank you for watching
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

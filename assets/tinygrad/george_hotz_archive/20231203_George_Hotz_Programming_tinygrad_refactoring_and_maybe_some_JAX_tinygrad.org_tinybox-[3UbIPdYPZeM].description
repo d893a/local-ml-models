@@ -1,0 +1,133 @@
+Date of the stream 2 Dec 2023.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/tinygrad/tinygrad
+- https://tinygrad.org/ (The tinybox)
+Hardware:
+- Apple M3 MAX
+- Logitech MX Anywhere
+- HHKB Professional 2
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:01:35 responding to youtube comments
+00:02:05 C. S. Lewis quote
+00:03:05 physiology and sociology, wokeism, trans people
+00:04:35 harvard, ivy league educational institutions
+00:07:15 tesla cybertruck
+00:08:40 communism, anarchy
+00:10:15 based elon
+00:10:40 Amouranth,  Sky Bri
+00:12:20 love, hate
+00:13:35 refactor stream
+00:14:05 beautiful.py
+00:14:50 memory objects in opencl, buffers and images
+00:16:00 dtype, cast_image, device hack
+00:17:35 LRUAllocator
+00:22:18 Clang operations, MallocAllocator
+00:23:20 missing 1 required positional argument
+00:27:40 this is the actual George's work
+00:28:45 LazyBuffer problem
+00:32:00 numpy
+00:32:45 Alex
+00:33:20 auto generated program, float
+00:35:00 tinycorp second intern
+00:36:40 TORCH=1 test_ops.py
+00:38:15 adding cast
+00:38:30 unreadable code
+00:41:00 UnaryOps_CAST
+00:42:10 DiskAllocator dtype
+00:46:20 git push
+00:47:00 letting everyone chat
+00:47:30 be nice to people
+00:47:50 what is AGI
+00:48:20 why care about views
+00:49:00 beautiful.py, tinygrad is a tensor library
+00:51:00 ask good questions, anyone understand this?
+00:54:45 memoryview cast
+01:00:00 copyin function
+01:03:50 buffer, JITRunner
+01:05:00 The Device, LazyOp
+01:10:40 renderer 
+01:12:25 current line count of tinygrad, hiball energy
+01:18:00 questions? does this make sense?
+01:20:40 FROM_BUFFER=1 examples coder.py
+01:22:10 10 runtimes in tinygrad
+01:26:50 computation, memory
+01:31:40 where you call the kernels, ClangProgram, to_program, CompiledASTRunner
+01:33:20 abstractions.py outdated use beautiful.py instead
+01:33:50 MULACC trigger, matmul
+01:37:35 git push improve docs
+01:38:30 t8 tinybox spec
+01:39:00 jax_pmatmul.py
+01:39:35 WD_BLACK 1TB SN850X
+01:40:30 bidirectional copy peak bandwidth GB/s
+01:42:00 infiniband connection between two tinyboxes
+01:44:10 up to 18 monitors into your tinybox
+01:44:40 shipping to EU
+01:45:20 preorder tinybox today
+01:46:20 stupid question from non-sub
+01:46:35 mlperf, how fast you can train the models
+01:47:50 15k GPU hours
+01:49:20 the cloud, low priority CPU
+01:50:10 tinybox for common user or business, secret price
+01:51:10 tinybox wattage
+01:55:20 Alex brining tea
+01:57:10 hashcat example
+02:06:25 4090 vs tinybox hashcat
+02:09:40 Alex bringing lunch
+02:11:45 hip for hashcat bug
+02:12:20 best coin to mine with gpus
+02:13:35 amd 8000
+02:14:30 advent of code day one speedrun
+02:19:20 AoC part 2, asking Quentin for help
+02:26:00 write a regex to replace
+02:30:20 good programming style
+02:31:00 struggle in python console
+02:37:15 reducing the lines of code
+02:50:55 compiling
+02:57:50 memory usage bug
+03:06:00 external_test_alloc_all.py
+03:11:40 analyze the issue in the comments
+03:13:55 why tinygrad has to be so tiny
+03:14:30 changing culture, gpt-fast
+03:17:05 27 tinyboxes = person
+03:17:25 teenyboxes = gaming computer
+03:18:20 pro esports player
+03:19:10 1Torch, unspecified launch failure
+03:24:30 ???, OpenLLaMA, Nvidia
+03:27:50 if George was CEO of OpenAI
+03:30:25 opensource weights
+03:30:50 company that lasts 1000 years
+03:31:30 top 10 biggest companies
+03:32:15 Apple M3 fastest single thread cpu
+03:33:30 Apple GPU
+03:35:50 high end M3 Max, don't buy low end M3
+03:37:25 5 M3 Max or 1 tinybox 
+03:38:20 based Apple getting rid of touchbar
+03:38:45 spec of tinybox
+03:39:10 wokism, truth crime interrogation footage
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

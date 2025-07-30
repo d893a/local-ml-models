@@ -1,0 +1,130 @@
+Date of the stream 20 Jan 2024.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://rocm.docs.amd.com/projects/HIP/en/latest/user_guide/hip_porting_guide.html#threadfence-system
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:02:40 HIP P2P copy slow
+00:15:20 hipDeviceEnablePeerAccess fast
+00:17:30 synchronization mechanism
+00:21:50 dumb questions = banned
+00:23:20 no idea if this is working
+00:25:40 hip c++ 11 atomics
+00:29:10 cuda atomic sync
+00:31:20 global cache flush hip
+00:34:20 glc dlc
+00:42:00 no idea if access is correct
+00:43:00 hip atomic and system example
+00:48:10 deep dive in spinlocks
+00:49:00 hip cache flush
+00:52:10 global_atomic_and_b32
+00:56:30 hipDeviceSetCacheConfig
+00:58:10 threadfence system
+01:03:00 block
+01:04:40 D0, D1
+01:07:00 events are slow because syscalls
+01:10:40 answering smart questions
+01:11:25 bad athomics understanding
+01:11:45 x86 vs arm difference
+01:12:20 HIP event API slow
+01:12:50 tinybox vs 8xA100
+01:13:40 radeon pro benefit 48GB RAM
+01:14:20 H100 price, MI300
+01:15:00 buy gaming PC in $1000 range
+01:16:25 6x7900 XTX
+01:16:45 nvidia software support
+01:17:25 tinybox power efficiency
+01:18:20 lamma2 70b unquantized on tinybox
+01:19:00 tinybox V2 same case, GPU refresh
+01:20:00 6 tinyboxes a day factory
+01:20:35 nvidia blackwell release timeline
+01:26:10 never shipping anything in your life
+01:32:30 removing lines
+01:40:30 test_multitensor
+01:48:20 deeper problems, good abstractions 
+01:50:55 does not work and it's slow
+01:55:00 Hello nobody is talking
+02:01:30 event 4
+02:03:15 Lana_Lux raid!
+02:03:50 introduction to new people, tinygrad
+02:04:15 beautiful_mnist.py
+02:05:30 tinygrad operations
+02:06:40 matrix multiplication in tinygrad
+02:07:10 convolution
+02:07:55 pytorch difference, dtypes code
+02:08:45 the bitter lesson, search machine
+02:09:30 DEBUG=2
+02:10:20 convolution custom op
+02:10:50 tinygrad long term vision
+02:11:10 tiny corp business model
+02:11:40 tinybox
+02:12:00 getting AMD on MLPerf
+02:12:15 synchronization between GPUs
+02:12:30 international forwarding
+02:13:20 tinybox HIP support, full 16 lane pcie 4 GPU multi GPU connectivity
+02:14:40 ocp 3.0 slot
+02:15:20 tinybox infiniband
+02:16:25 direct AMD support
+02:16:50 traning over internet
+02:17:05 synchronous gradient descent
+02:17:50 best chip nvidia H100
+02:18:50 tinybox launch apps, tinygrad bounties
+02:20:10 no secret software
+02:20:45 tinygrad master under 5k lines of code
+02:21:30 9x 140mm noctua fans
+02:22:30 custom cables, demos on pc
+02:24:30 line count
+02:25:15 4090 price tracker
+02:25:40 decision transformers
+02:28:25 small font
+02:31:15 python no C
+02:36:50 zyn
+02:40:30 semaphores for 6 GPUs, thread_sync_global
+02:47:10 writing GPU program
+02:51:20 DEBUG=2 synchronization points
+02:55:00 tiny9, hip cache flush
+03:00:40 hip coherent memory
+03:03:30 amd_cocclr_copyBuffer
+03:06:00 amdgcn sleep
+03:11:40 hipEventRecord fix
+03:23:05 we do things because we can
+03:26:30 hipSyncAndResolveStream
+03:28:15 HSA_DISABLE_CACHE=1
+03:31:25 sending GPUs back to AMD
+03:31:54 it compiles but it does not do anything piano musical
+03:32:20 no boost, no cache
+03:33:10 whiteboard idea
+03:36:00 memory-fence instructions, no HIP rebuild
+03:38:50 cache vs no cache
+03:42:30 whiteboard
+03:44:25 hsa_disable_cache definition
+03:48:30 HSA amd flush l2 cache
+03:52:00 tinybox not responding
+03:53:20 tinybox piano comeback music, HSA driver, fences
+03:56:25 tinybox back
+03:59:40 need to write GPU driver, threadfence_system
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

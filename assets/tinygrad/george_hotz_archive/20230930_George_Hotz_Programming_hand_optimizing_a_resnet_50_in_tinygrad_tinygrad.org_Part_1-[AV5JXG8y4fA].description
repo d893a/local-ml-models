@@ -1,0 +1,110 @@
+Date of the stream 29 Sep 2023.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/geohot/tinygrad
+- http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 muted intro
+00:00:40 un-muted intro
+00:00:50 taiwan and india
+00:01:50 how free is taiwan, china, check in hotel
+00:03:20 free internet in taiwan
+00:04:00 wechat in china
+00:05:55 story time, iceland
+00:07:00 safe singapur
+00:09:20 brazil, south africa
+00:11:10 George trying not be controversial
+00:12:10 grants, fixing the empire
+00:13:45 dismantling our late-stage capitalist society
+00:14:40 George stating his political preference 
+00:15:30 Elon Musk the next Caesar, bike trip
+00:17:00 Ukraine gdp per capita, taiwan gdp per capita
+00:17:50 progressive, can't make everyone happy in politics
+00:18:20 sarcasm
+00:19:00 eastern europe bike trip, andrew tate
+00:20:10 countries to avoid
+00:23:05 shipping for non-US citizens for tinybox
+00:23:45 sweden, dubai
+00:28:25 direction of tinygrad
+00:30:30 building a wall
+00:31:00 declining empires
+00:32:50 china spending power, kenya poor
+00:35:00 favorite countries in europe, dubai
+00:36:15 libertarian india
+00:36:50 hand coding resnet 50
+00:40:10 kernels in resnet
+00:43:05 operations for the resnet, the power of the new tinygrad abstractions
+00:46:10 simple abstractions in tinygrad = fast
+00:46:20 init does lots of adds
+00:47:25 renderer, kernel code
+00:48:55 cleanest abstractions anywhere nn
+00:49:20 not optmized kernel, optimization
+00:49:50 benchmarking
+00:58:40 kind of wrong, some kernels bad
+01:01:35 how nice is tinygrad
+01:08:40 love for python
+01:09:30 faster
+01:11:20 MadDogNation is gifting 34 subs!
+01:12:40 focusing on slowest
+01:21:25 multiview shapetracker
+01:25:40 lin.upcast
+01:27:10 reshaping to real size
+01:27:40 very happy with this infrastructure
+01:31:35 let's make it faster
+01:35:25 metal max fmax
+01:39:25 gated loads, finding bugs
+01:41:30 108 GFLOPS
+01:43:30 we have to start thinking
+01:47:30 we build an optimizer
+01:49:30 upcast, search and optimization is amazing
+01:52:25 out of ideas
+01:59:50 that kernel just looks fast it just isn't
+02:03:20 that kernel was not the problem
+02:04:45 automatic optimizer
+02:07:25 10% faster, we learn, knowledge is power
+02:08:15 running this anywhere
+02:08:50 4416 lines, 1000 lines, new goal 5000 lines
+02:09:10 thank you for gifting subs!
+02:09:40 on topic questions only for non-subs
+02:10:03 up to the front tinygrad, short and generic
+02:10:55 every part of a full deep learning stack
+02:11:05 resnet 50 pytorch like code
+02:11:25 tinygrad is a waste of time?
+02:12:00 why is pytorch faster? pytorch less capable library
+02:12:20 cudnn hand optimized by 20 nvidia engineers for 10 years
+02:13:00 the bitter lesson
+02:13:10 can't I just call CUDNN?
+02:14:05 generic optimizer so much simpler to reason about
+02:14:20 learn a model that look at shapetracker to optimize
+02:14:40 recursive self-improvement
+02:14:50 AGI inside tinygrad
+02:15:20 AGI will run in 4k lines
+02:15:40 every piece of tinygrad you can reason about
+02:16:15 no more debates, heat death of the universe
+02:16:45 AIs will come, monkey civilization
+02:17:15 why people think AI is dangerous
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

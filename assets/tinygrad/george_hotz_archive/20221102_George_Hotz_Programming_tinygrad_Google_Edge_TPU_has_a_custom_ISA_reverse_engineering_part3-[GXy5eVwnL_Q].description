@@ -1,0 +1,120 @@
+Date of stream 1 Nov 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/edgetpuxray
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:01:10 summary yesterday 
+00:04:00 Edge TPU Compiler
+00:07:58 reverse engineering custom instructions set inside edge tpu, invite for google employees
+00:08:35 college, Edge TPU custom instructions set
+00:18:08 compare the two things
+00:22:40 first year of tiny corp, think that is the output
+00:26:45 inputs, outputs, customOptions, edgetpu-custom-op
+00:30:05 phrased the whole structure last night, no logging, on our own
+00:32:45 apple iOS version 3 audio dsp
+00:35:55 one instruction documented, how architectures usually work, isa
+00:38:30 crappy code, simple little programs without data
+00:44:30 no debug mode, 0 read, 40 write
+00:48:05 blinking light, sending 8 bytes, got response
+00:51:45 cleanup, omc0, rambist_ctrl_1, program that divide's by 2
+01:03:30 only running parse, program doing nothing, identity
+01:12:30 Lambda, ReLU, keras layer, how anybody use tensorflow
+01:15:50 confirming identity, tf.lite.TFLiteConverter
+01:20:22 great tensorflow options, divide's by 2
+01:24:55 bad non sub chat, trying to be a meme
+01:26:59 what registers
+01:30:55 writing simple thing, TF weird scaling
+01:38:35 reading cool registers, PC program counter
+01:43:29 genomics studies on programs, Efuse00
+01:47:55 breakpoints, executeControl, instruction_queue_size, scu_ctrl
+02:12:00 kHalted, kIdle, Alex, single step mode goes to Halted mode
+02:17:48 scalarCore_BreakPoint, breakpoints work
+02:33:55 ordering food, memory dump idea
+02:37:20 happier doing this, great team at comma, the verge
+02:40:35 moving the world forward, the users, learning
+02:45:20 ScalarRegisterFile
+03:02:00 disabled, when to give tip for food delivery
+03:06:00 edgetpu_compiler, overclock
+03:18:40 google team that made this, real tpu instructions
+03:23:30 finding the ones with debug symbols, no value to any nation state
+03:28:00 edgetpu_compiler_old
+03:32:50 long instructions, apple neural engine
+03:45:30 lot's of code for add, possible scaling
+03:53:00 jackpot
+04:03:40 tpu scalar unit
+04:08:15 custom program running on edge tpu, next steps
+04:09:19 playing piano, life coach, white lotus end of world
+04:14:18 python bit manipulation, struct.pack_into, BitStruct
+04:36:25 python magic
+04:38:46 real Martin Shkreli in the chat
+04:44:20 loading ScalarRegister 1,2,3
+04:46:40 anyone out there running custom code on coral?
+04:57:30 thank you suggestion from chat
+04:59:35 $100 for list of scalar op codes
+05:09:15 XOR, reverse engineering scalar unit
+05:34:30 same as on big tpu
+05:39:10 first bit for scalar or not, twatter
+05:43:55 flag how to interpret
+05:47:00 programs that take in weights
+05:48:30 back to div2 program, compare div2 to relu
+06:12:00 scalar register
+06:24:30 pushing on usb, 4 bytes 
+06:36:40 fancy 
+06:48:30 big font, the limit is only you
+06:53:00 needed that instruction, addictive
+07:07:15 code not executing
+07:17:57 dma is really hard
+07:22:12 trying something, big stuff, 10
+07:37:12 what are we trying to achieve, inference chip
+07:39:55 bootcamp, sit down and so something, buy coral
+07:40:40 tensorflow lite rant, 4 TOPS, running linux on coral
+07:42:40 time for matrix multiplies, 8MB RAM
+07:47:30 weight_copy
+07:51:00 almost fully understand this program
+08:04:10 Dell U3219Q
+08:04:30 doing some experiments
+08:16:58 dumb rename
+08:19:40 pred_reg
+08:25:10 run_flag=1 means 
+08:36:20 run_flag real?
+08:39:50 all 40 prefix
+08:43:15 v_op
+08:45:45 reverse engineering, security losers, hacker culture, evolution of subculture
+08:47:25 weaponized exploits, red teaming pen testing, security audits, bug bounties
+08:47:55 cool console hacking, pokemon yellow, main source of income, pimps
+08:52:20 clear mind, 9-5 jobs, chess rating, scamming people
+08:55:40 not tolerating people lying to themself
+08:56:57 FF 00 FF 00
+08:57:45 social media destroying attention spans, reading is hard
+08:59:04 people exposed to people they did not agree with them
+08:59:40 twitter hate comment
+09:04:30 0x10, 0x20 send
+09:10:40 dev2 vs relu vs add
+09:27:20 compiler for edge tpu open source
+09:27:50 overview of progress, google send docs
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

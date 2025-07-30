@@ -1,0 +1,129 @@
+Date of stream 8 Nov 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad/tree/chonker
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:00:35 plan for today using amx 
+00:02:10 no sponsors on the channel
+00:03:08 no copyrighted music
+00:03:20 appreciate pull requests on tinygrad
+00:04:00 Fix this, $50. MAX is not auto-vectorizing in LLVM
+00:05:15 target for today, cleanup
+00:07:20 fma solved?
+00:08:05 llvmlite inline asm
+00:12:00 crypto crash
+00:12:40 llvmlite amx m1
+00:13:48 has been done inMLIR
+00:14:55 Inline asm not supported by this streamer
+00:15:40 aarch64 llvmlite
+00:17:00 probably not specifying something right
+00:19:08 should we just write by hand? should we just start coding in assembly
+00:20:13 smurfd0 posts the solution
+00:23:10 value doesn't match function result type void
+00:26:04 George singing
+00:27:30 thank you github.com/corsix for reverse engineering this
+00:27:55 pull requests for tinygrad, edited tinygrad website, investor reached out
+00:28:25 internship for George
+00:29:59 Twitch DMCA service muted the VOD for no reason. Only George can fix it https://help.twitch.tv/s/article/how-to-appeal-flagged-content
+00:36:00 amx_op_gpr, amx_nop_op_imn5
+00:41:00 should I do this automatically?
+00:44:48 fma32
+00:48:35 apple so good that people are writing docs for them
+00:48:45 apple useless docs
+00:49:05 spam email
+00:51:33 possible the registers wrong
+00:53:28 numpy set_printoptions
+00:54:35 80 char wide terminal
+00:55:35 did not work before?
+01:02:05 we just multiplied a matrix using amx
+01:03:45 nejintejag https://pastebin.com/c9DhHYU1 
+01:05:00 Willem blog post
+01:06:30 how will tiny corp make money
+01:08:00 people are not serious
+01:08:25 companies have 0 integrity
+01:08:40 dealing with qualcomm, price discrimination, free market
+01:10:40 hypetrain breaking George's safari
+01:11:40 mtasic85 gifted 50 subs
+01:12:15 business model for tiny corp
+01:12:50 equity, dividends, stock buybacks
+01:14:20 tenstorrent removing coming soon, price information
+01:16:15 buy now on comma.ai
+01:17:30 tenstorrent web archive, holding people accountable
+01:19:00 tenstorrent series c funding without product
+01:20:00 not voting, what the system is, news lies
+01:24:15 how much power the system has
+01:25:30 money printing
+01:26:30 Keen Technologies John Carmack internship
+01:26:50 really don't want to make hardware
+01:27:05 gov diminished power, budget too large
+01:27:25 not anarchist
+01:29:25 cleaning up code
+01:31:15 not taking money from comma, don't want to sell equity
+01:32:30 make devs love tinygrad, sell tinygrad ports to businesses
+01:33:15 setattr global
+01:45:20 python functools
+01:47:35 16 lines for AMX support
+01:58:40 DY, DX = 16, 16
+02:00:05 loop over one of this
+02:01:25 YyXxK - YXKyx
+02:04:25 this generates the indexes
+02:06:20 thinking
+02:08:40 explaining 4, 4, amx
+02:12:50 very hacky at first
+02:16:45 not interested in code golf
+02:19:35 don't know if anyone is following what I am doing
+02:22:20 clear the z register
+02:30:20 sometimes want generate c code
+02:36:00 why multiplied by 4
+02:41:40 7 times slower
+02:44:10 304 GFLOPS
+02:49:00 does not work but fast
+02:53:40 amx working commit
+03:02:15 AMX_SZ to 2 not correct
+03:04:20 George fma animation
+03:10:35 np.set_printoptions
+03:15:50 slower
+03:25:45 is this? look at that 
+03:29:15 this could be wrong
+03:31:50 x, y offset
+03:36:15 magic to come
+03:39:10 how it pytorch faster
+03:40:25 not voting
+03:41:25 how to get promoted
+03:42:18 visa, open border for salary over 100k
+03:44:18 1.89x slower
+03:50:18 llvm-mca
+03:54:50 M1 L2 cache
+03:57:20 llvm amx intrinsics
+04:04:10 mac os x cache misses M1
+04:13:40 lldb list loaded files
+04:21:30 how to think about matrix
+04:26:15 when this works for convolutions
+04:28:15 Alex on phone
+04:34:05 chonker branch
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

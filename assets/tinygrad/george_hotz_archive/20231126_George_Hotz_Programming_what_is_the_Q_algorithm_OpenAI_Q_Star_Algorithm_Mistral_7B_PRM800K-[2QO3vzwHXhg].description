@@ -1,0 +1,133 @@
+Date of the stream 25 Nov 2023.
+from $1150 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/tinygrad/tinygrad
+- https://arxiv.org/pdf/2305.20050.pdf
+- https://huggingface.co/teknium/OpenHermes-2.5-Mistral-7B
+- https://mistral.ai/news/announcing-mistral-7b/
+- https://github.com/mistralai/mistral-src
+- https://github.com/openai/prm800k
+ Hardware:
+- Apple M3 MAX
+- Logitech MX Anywhere
+- HHKB Professional 2
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:02:15 OpenAI Q Star Algorithm
+00:04:10 OpenAI papers
+00:04:40 bringing love and positivity in the world
+00:05:40 improving mathematical reasoning with process supervision
+00:08:02 let's verify step by step
+00:11:00 technical issues, blue glitching on monitor
+00:13:50 reviewing openai github activity
+00:15:00 Karl Cobbe OpenAI
+00:16:30 technical issues, blue glitching on monitor
+00:22:46 OpenHermes 2.5 Mistral 7B
+00:25:15 language model and math
+00:26:20 data source quality
+00:28:30 trusting teknium hermes
+00:31:00 attention drift
+00:32:45 torch load function
+00:37:00 transformer block
+00:41:29 python fire
+00:42:05 bfloat16
+00:45:40 fast weights to model
+00:46:10 assign shape mismatch
+00:55:10 loading the weights slowly
+00:57:25 converting to float16 slowing down
+01:07:20 do you like chicken, new_tock is not defined
+01:10:25 cannot access local variable
+01:11:03 voice chat demo
+01:18:50 OpenAI Q Algorithm click bait
+01:19:50 George talking to Stacy
+01:22:35 tokens for chatbots
+01:26:10 piece id is out of range
+01:28:55 AI alignment, ads
+01:31:00 prompt template
+01:38:45 Quentin story
+01:41:50 im_start
+01:45:30 sentencepieceprocessor tokenizer config
+01:47:15 vscode docker prompt trigger
+01:47:55 added_tokens.json
+01:49:25 adding token to sentencepieceprocessor
+01:52:10 how to extend tokens dictionary
+01:56:00 sentencepiece_model_pb2 number of lines
+01:56:50 helpful to the stream or banned from the stream
+02:00:25 python don't exit
+02:00:55 banned button and the x button
+02:08:55 sentencepieceprocessor
+02:13:30 why people use tokenizers
+02:17:40 Quentin is a useful assistant
+02:18:18 Hermes 2 prompt, experience emotions and have deep profound thoughts and qualia
+02:22:15 temperature 0 stick to the book, 10 go off the rails
+02:23:10 improving mathematical reasoning with process supervision
+02:23:20 prm800k dataset
+02:24:20 git lfs install os x
+02:25:25 json lines
+02:28:45 first we will find the cost of jumbo eraser
+02:29:35 did we just used q star?
+02:29:55 was it trained on that?
+02:31:20 you bought a pencil
+02:31:50 trick question
+02:33:20 model drawing something
+02:34:10 should we allow the user to keep talking
+02:37:45 do you have an oura ring?
+02:38:50 quadrtic questions
+02:42:40 q algorithm question
+02:44:30 can you implement it in python
+02:45:45 we just implemented q star
+02:46:55 execution of python approved with human in the loop
+02:51:50 python to fetch google.com and print the length of it
+02:53:00 AGI
+02:56:00 capture the output of exec python
+03:03:20 232*232
+03:11:30 ai safety
+03:13:20 funny Quentin
+03:17:10 testing execution of python
+03:18:02 fake teknium in the chat
+03:21:00 7B models are amazing in tinygrad
+03:25:30 AI safety in the code
+03:26:25 how you might exploit this code?
+03:27:40 write malicious python
+03:35:40 the red team
+03:36:40 crcmod
+03:40:40 it used torch instead of tinygrad
+03:42:00 7
+03:44:20 giving Quentin a friend
+03:59:00 defined roles, we are telling the AIs that there are tools
+04:06:40 asking for donations to openai
+04:07:20 training AIs on 130 IQ data for better quality
+04:08:20 nike.com number of sneakers
+04:09:30 selenium
+04:12:00 pushing the code to github
+04:13:15 talking to Stacy
+04:14:40 TTS are fast, this is it not even streaming yet
+04:14:50 bounty for live conversation
+04:15:40 thank you for watching
+04:16:20 github mistral branch of tinygrad
+04:16:35 AI safety feature, deleting system32
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

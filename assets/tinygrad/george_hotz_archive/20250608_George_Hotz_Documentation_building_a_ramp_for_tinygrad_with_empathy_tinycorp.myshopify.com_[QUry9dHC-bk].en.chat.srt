@@ -1,0 +1,992 @@
+1
+00:00:30,027 --> 00:00:32,027
+mykyta_1: hey
+
+2
+00:00:31,078 --> 00:00:33,078
+lumma119: sup
+
+3
+00:00:32,505 --> 00:00:34,505
+whiterunknight: good morning
+
+4
+00:00:35,271 --> 00:00:37,271
+Shourikan: Yelo
+
+5
+00:00:40,416 --> 00:00:42,416
+hakobyte: yo
+
+6
+00:00:41,836 --> 00:00:43,836
+optionalflag: lets goo
+
+7
+00:00:47,212 --> 00:00:49,212
+moriartyblen: helo
+
+8
+00:00:49,454 --> 00:00:51,454
+lukasf6: Hello
+
+9
+00:00:50,573 --> 00:00:52,573
+sarah99___: 😎 here before submode (loser mode)
+
+10
+00:00:53,094 --> 00:00:55,094
+cantaim3: hi George
+
+11
+00:01:04,632 --> 00:01:06,632
+480i: hello Mr. Hotz
+
+12
+00:01:07,295 --> 00:01:09,295
+whiterunknight: did you buy the 5MW dam
+
+13
+00:01:29,381 --> 00:01:31,381
+obelixx0: obelixx0 gifted a Tier 1 sub to sarah99___! This is their first Gift Sub in the channel!
+
+14
+00:01:37,884 --> 00:01:39,884
+bojosos: Hello
+
+15
+00:01:40,718 --> 00:01:42,718
+sarah99___: Certified loser now BigSad
+
+16
+00:01:49,725 --> 00:01:51,725
+whiterunknight: hahahaha
+
+17
+00:01:54,207 --> 00:01:56,207
+sarah99___: ty 4 sub
+
+18
+00:02:02,568 --> 00:02:04,568
+RickAndMoreTea: how we doing yall
+
+19
+00:02:35,584 --> 00:02:37,584
+bojosos: Well he is absolutely right
+
+20
+00:02:41,883 --> 00:02:43,883
+MrKerow: alkXD
+
+21
+00:03:04,822 --> 00:03:06,822
+pepebruari: wrangle it in Georgie
+
+22
+00:03:13,154 --> 00:03:15,154
+madebyollin: sounds like it's time to refactor the linearizer
+
+23
+00:03:13,857 --> 00:03:15,857
+kalelite: Step 1: increase font size
+
+24
+00:03:28,026 --> 00:03:30,026
+sarah99___: Another certified George Hotz (noob) lesson Kappa . I.e chat will be lost after 10 mins
+
+25
+00:03:30,741 --> 00:03:32,741
+colonizethemoon: yo
+
+26
+00:03:47,892 --> 00:03:49,892
+djcodered__: lmaoooo
+
+27
+00:03:52,639 --> 00:03:54,639
+whiterunknight: :D
+
+28
+00:04:02,670 --> 00:04:04,670
+jjccccccj: Can you teach us react native?
+
+29
+00:04:03,843 --> 00:04:05,843
+bojosos: Good font size
+
+30
+00:04:06,354 --> 00:04:08,354
+whiterunknight: it’s a great font size
+
+31
+00:04:09,159 --> 00:04:11,159
+djcodered__: extra nice George ...
+
+32
+00:04:30,068 --> 00:04:32,068
+djcodered__: lmaooo
+
+33
+00:04:36,410 --> 00:04:38,410
+MrKerow: why you care about teaching others george ?
+
+34
+00:04:41,183 --> 00:04:43,183
+sarah99___: Karpathy era. I remember "Karpathy tries to actually teach you something, I just want to prove I'm smarter than you" GeoHotz
+
+35
+00:04:42,704 --> 00:04:44,704
+whiterunknight: George w hotz
+
+36
+00:04:43,966 --> 00:04:45,966
+jjccccccj: Meditation time?
+
+37
+00:04:54,521 --> 00:04:56,521
+bojosos: ratirlAlfred
+
+38
+00:05:07,830 --> 00:05:09,830
+bojosos: And we are already off HypeKEKW
+
+39
+00:05:11,599 --> 00:05:13,599
+djcodered__: I had a social studies teacher like that
+
+40
+00:05:12,908 --> 00:05:14,908
+jjccccccj: Those were the best classes tbh
+
+41
+00:06:13,130 --> 00:06:15,130
+sarah99___: she sounds 40+ so no
+
+42
+00:06:15,078 --> 00:06:17,078
+MrKerow: alkXD
+
+43
+00:06:30,890 --> 00:06:32,890
+alexberd24: peak content
+
+44
+00:06:40,030 --> 00:06:42,030
+bojosos: ratirlMeditate
+
+45
+00:06:51,137 --> 00:06:53,137
+sarah99___: BigSad we got GeoHotz Meditation before GTA 6 😭
+
+46
+00:08:00,845 --> 00:08:02,845
+whiterunknight: Namaste
+
+47
+00:08:13,419 --> 00:08:15,419
+sarah99___: you have to say the Namaste! It's what seals the calmness
+
+48
+00:08:47,939 --> 00:08:49,939
+bojosos: Gonna need that video in another 10 minutes
+
+49
+00:08:56,576 --> 00:08:58,576
+itsamarcos: meditation may be more effective than overcaffeination, guess I'll never find out though
+
+50
+00:08:57,437 --> 00:08:59,437
+sarah99___: Will captain throw us overboard (ban) ?
+
+51
+00:09:23,449 --> 00:09:25,449
+cuddles2000: cuddles2000 subscribed with Prime.
+
+52
+00:09:38,098 --> 00:09:40,098
+MrKerow: that's a name
+
+53
+00:10:19,782 --> 00:10:21,782
+itsamarcos: is there a goal for the tutorial? like fine tuning or running inference on a specific toy model?
+
+54
+00:10:25,576 --> 00:10:27,576
+kalelite: i didn't know we would go that noob
+
+55
+00:11:06,290 --> 00:11:08,290
+gliched_robot: gliched_robot subscribed at Tier 1. They've subscribed for 34 months! Looking forward to Tinycloud, how was your trip to find 1MW power stations?
+
+56
+00:11:13,583 --> 00:11:15,583
+cuddles2000: Nice outfit George. Looking the oppositie of disheveled. Shelved?
+
+57
+00:11:44,558 --> 00:11:46,558
+whiterunknight: I asked him that @gliched_robot he said to not get him started lol
+
+58
+00:12:08,007 --> 00:12:10,007
+gliched_robot: @whiterunknight  thanks! Sorry for repeating!
+
+59
+00:12:08,238 --> 00:12:10,238
+MustiFreak: hello
+
+60
+00:13:04,697 --> 00:13:06,697
+ABeautifuIDeath: hi
+
+61
+00:14:16,858 --> 00:14:18,858
+cuddles2000: What do you mean by "not computed yet" for the static data you set?
+
+62
+00:14:31,198 --> 00:14:33,198
+stoddlabs: stoddlabs subscribed at Tier 1.
+
+63
+00:14:50,644 --> 00:14:52,644
+stoddlabs: what is the benefit of Tinygrad being lazy?
+
+64
+00:15:26,194 --> 00:15:28,194
+gliched_robot: @cuddles2000 Because the ops are lazy. will run when they are needed. think similar to the python datetypes, it will assigned when needed to.
+
+65
+00:16:12,895 --> 00:16:14,895
+cuddles2000: So the lazy part in this case isn't "computing" as in math, it's about copying from memory to TPU
+
+66
+00:16:13,771 --> 00:16:15,771
+radon_90: radon_90 subscribed with Prime. They've subscribed for 3 months!
+
+67
+00:17:22,982 --> 00:17:24,982
+ABeautifuIDeath: ABeautifuIDeath subscribed with Prime. They've subscribed for 2 months, currently on a 1 month streak!
+
+68
+00:17:39,744 --> 00:17:41,744
+landepbs: and tag
+
+69
+00:17:42,183 --> 00:17:44,183
+TamagotchiCoder: hello dude
+
+70
+00:18:56,962 --> 00:18:58,962
+bojosos: This is a very tutorially tutorial
+
+71
+00:19:47,811 --> 00:19:49,811
+cuddles2000: Do duplicate calls do realize throw exceptions or is it a no-op?
+
+72
+00:19:54,194 --> 00:19:56,194
+IceLeo: IceLeo is gifting 10 Tier 1 Subs to georgehotz's community! They've gifted a total of 111 in the channel!
+
+73
+00:19:54,590 --> 00:19:56,590
+IceLeo: IceLeo gifted a Tier 1 sub to timichiban!
+
+74
+00:19:54,592 --> 00:19:56,592
+IceLeo: IceLeo gifted a Tier 1 sub to slouck!
+
+75
+00:19:54,622 --> 00:19:56,622
+IceLeo: IceLeo gifted a Tier 1 sub to 480i!
+
+76
+00:19:54,623 --> 00:19:56,623
+IceLeo: IceLeo gifted a Tier 1 sub to dfdx2!
+
+77
+00:19:54,629 --> 00:19:56,629
+IceLeo: IceLeo gifted a Tier 1 sub to lyrareturns!
+
+78
+00:19:54,646 --> 00:19:56,646
+IceLeo: IceLeo gifted a Tier 1 sub to thatjuandev!
+
+79
+00:19:54,653 --> 00:19:56,653
+IceLeo: IceLeo gifted a Tier 1 sub to brun2302!
+
+80
+00:19:54,660 --> 00:19:56,660
+IceLeo: IceLeo gifted a Tier 1 sub to kaljr!
+
+81
+00:19:54,679 --> 00:19:56,679
+IceLeo: IceLeo gifted a Tier 1 sub to Xewl!
+
+82
+00:19:55,256 --> 00:19:57,256
+IceLeo: IceLeo gifted a Tier 1 sub to jasondavies0!
+
+83
+00:20:20,148 --> 00:20:22,148
+TamagotchiCoder: Does it support Metal?
+
+84
+00:20:42,303 --> 00:20:44,303
+itsamarcos: I would just recommend having a clear goal for the tutorial, so that there is an end result to look forward to  makes the knowledge stickier too
+
+85
+00:21:01,260 --> 00:21:03,260
+itsamarcos: oops newline got removed there
+
+86
+00:21:41,289 --> 00:21:43,289
+dfdx2: @IceLeo Thanks for the gift sub!
+
+87
+00:21:41,367 --> 00:21:43,367
+smurfd0: <3
+
+88
+00:21:51,431 --> 00:21:53,431
+stoddlabs: If Pytorch isn't lazy, why is tinygrad? What benefits and trade offs are there?
+
+89
+00:21:59,275 --> 00:22:01,275
+itsamarcos: > what is the benefit of Tinygrad being lazy?  @stoddlabs it's so you can optimize the computation graph instead of executing every instruction greedily
+
+90
+00:22:30,479 --> 00:22:32,479
+bojosos: Torch has lazy stuff you just have to use them explicitly
+
+91
+00:23:31,316 --> 00:23:33,316
+stoddlabs: @itsamarcos so the idea would be to get all the context/steps for the job, then optimize form there instead of trying to optimize each step without the full context?
+
+92
+00:23:38,557 --> 00:23:40,557
+Mohaidoss: Mohaidoss subscribed with Prime.
+
+93
+00:23:43,520 --> 00:23:45,520
+Mohaidoss: Devtools pprint doesn't help make it prettier ?
+
+94
+00:24:36,948 --> 00:24:38,948
+firejjb1: if 2 UOp have the same src how is that printed
+
+95
+00:26:29,152 --> 00:26:31,152
+nuttyodin1: nuttyodin1 subscribed at Tier 1. They've subscribed for 26 months!
+
+96
+00:26:51,497 --> 00:26:53,497
+cuddles2000: That's super cool. It sounds like it would only copute t*4 once
+
+97
+00:29:33,515 --> 00:29:35,515
+smurfd0: print on line 95 you dont have the output for?
+
+98
+00:29:48,611 --> 00:29:50,611
+dontcrysomuch21: dontcrysomuch21 subscribed with Prime.
+
+99
+00:30:02,638 --> 00:30:04,638
+cuddles2000: I wonder how much CPU/memory gets spent trying to match operations to the global list to prevent duplicate compute
+
+100
+00:30:48,102 --> 00:30:50,102
+bojosos: What python is so magical
+
+101
+00:31:19,416 --> 00:31:21,416
+nuttyodin1: what are we doing today
+
+102
+00:31:46,045 --> 00:31:48,045
+stoddlabs: maybe it wouldn't be appropriate here, but maybe put why using Tinygrad makes sense over other libraries?
+
+103
+00:33:11,678 --> 00:33:13,678
+bojosos: But people in general don't make good decisions, they like being sold something shiny
+
+104
+00:33:26,799 --> 00:33:28,799
+itsamarcos: @stoddlabs exactly
+
+105
+00:34:13,154 --> 00:34:15,154
+cuddles2000: Is George threatening to break our leg?
+
+106
+00:34:50,573 --> 00:34:52,573
+def_stimulatedreceptors: def_stimulatedreceptors subscribed at Tier 2.
+
+107
+00:37:18,834 --> 00:37:20,834
+def_stimulatedreceptors: George, I am about to purchase tbox reds. I'm concerned on shipping internationally, especially to Aus. Have you had experience with shipping expensive large items to aus?
+
+108
+00:38:59,071 --> 00:39:01,071
+bambikapelo: x^2
+
+109
+00:39:38,097 --> 00:39:40,097
+cuddles2000: Yes
+
+110
+00:39:39,651 --> 00:39:41,651
+bojosos: yes
+
+111
+00:44:34,018 --> 00:44:36,018
+cuddles2000: AI support bot? Sometimes they don't suck now
+
+112
+00:44:51,338 --> 00:44:53,338
+djcodered__: lmaoooo I swear my friend thinks
+
+113
+00:45:06,052 --> 00:45:08,052
+djcodered__: If Im his CTO... he can text and email about random shit
+
+114
+00:45:20,565 --> 00:45:22,565
+djcodered__: koggin1Lynn2
+
+115
+00:45:44,629 --> 00:45:46,629
+smurfd0: maby keep output within """ """ comments
+
+116
+00:46:18,127 --> 00:46:20,127
+jjccccccj: what is a ramp
+
+117
+00:47:13,248 --> 00:47:15,248
+whiterunknight: a ramp for the noobs
+
+118
+00:47:13,470 --> 00:47:15,470
+cuddles2000: Is the generated C code just a reference or does it actually compile snippets of C as you run it?
+
+119
+00:47:44,070 --> 00:47:46,070
+def_stimulatedreceptors: Okay, that was all. I wanted to see the success rate of landing w/o damage. I have no trust issues w/ Tinygrad, just with shipping companies I've had bad experiences relating to expensive, hard to get hardware.  Thanks, good point. No I'm not looking for tinygrad to hold my hand and make me feel warm and fuzzy through each stage of the transaction. :)
+
+120
+00:49:21,527 --> 00:49:23,527
+whiterunknight: intel powered forklift
+
+121
+00:49:37,327 --> 00:49:39,327
+bojosos: Tiny customer service
+
+122
+00:52:08,436 --> 00:52:10,436
+boop322: boop322 subscribed with Prime.
+
+123
+00:53:25,212 --> 00:53:27,212
+def_stimulatedreceptors: It's not a money thing for me, I have a thing for freight handling morons breaking precious chips.. In Aus, our suppliers cut margins thin on consumer grade GPU's, so we have a limited market.  How that relates to my point, I suppose I have an phobia of GPU's being broken and wasted lol
+
+124
+00:53:50,894 --> 00:53:52,894
+whiterunknight: Hi
+
+125
+00:53:52,711 --> 00:53:54,711
+nuttyodin1: Hi, who is this now
+
+126
+00:54:08,814 --> 00:54:10,814
+whiterunknight: He needs his supplements
+
+127
+00:56:16,389 --> 00:56:18,389
+cuddles2000: George has gotten so zen
+
+128
+00:56:27,505 --> 00:56:29,505
+def_stimulatedreceptors: @cuddles2000 he has hasn't he
+
+129
+00:56:38,780 --> 00:56:40,780
+def_stimulatedreceptors: I think its called perspective
+
+130
+00:57:37,709 --> 00:57:39,709
+nuttyodin1: karpathy "empathy"
+
+131
+00:57:45,840 --> 00:57:47,840
+firejjb1: this is making sense so far
+
+132
+00:57:49,957 --> 00:57:51,957
+whiterunknight: Looking for shiny objects
+
+133
+00:58:13,185 --> 00:58:15,185
+nuttyodin1: who is the gurl
+
+134
+00:58:27,695 --> 00:58:29,695
+Ke_0: we don't
+
+135
+00:58:28,514 --> 00:58:30,514
+gliched_robot: Never ask chat!
+
+136
+00:58:51,454 --> 00:58:53,454
+cuddles2000: Ok so I actually have found this very straightforward and I've never worked with any of these libraries before, but I've been a software engineer for many years
+
+137
+00:58:54,924 --> 00:58:56,924
+def_stimulatedreceptors: Let sleeping dogs lie
+
+138
+00:59:07,592 --> 00:59:09,592
+0tt_1: Hello
+
+139
+00:59:53,682 --> 00:59:55,682
+whiterunknight: Very interesting podcast episode
+
+140
+01:00:05,390 --> 01:00:07,390
+gliched_robot: Increasingly, software has been abstracting away things. example torch! I think tinygrad is a breath of fresh air!
+
+141
+01:00:10,983 --> 01:00:12,983
+codingfisch: A fastai-like frontend would help...to attract script kiddies
+
+142
+01:00:53,599 --> 01:00:55,599
+gliched_robot: I have an Idea, bring in karpathy to stream for 1 hour and show him step by step. Good tutorial and stream.
+
+143
+01:00:54,661 --> 01:00:56,661
+whiterunknight: Your cam is still big, not that im complaining, but for the tutorial
+
+144
+01:01:04,315 --> 01:01:06,315
+cuddles2000: Does caching occur with the kernelized operations too? Like if two different operations produce the same kernel, is that computation run once? Like t+2+3 and t+1+4
+
+145
+01:05:06,231 --> 01:05:08,231
+wirtuosis: wassousu subscribed at Tier 1.
+
+146
+01:08:51,032 --> 01:08:53,032
+smurfd0: a good thing is that you can compare the output of prints to see that you do the same
+
+147
+01:09:09,000 --> 01:09:11,000
+stoddlabs: is the c code generated on the fly, and that's why the function name is E4n2()...?
+
+148
+01:11:03,730 --> 01:11:05,730
+stoddlabs: that explanation makes sense, ty
+
+149
+01:12:43,482 --> 01:12:45,482
+himynameischungus: I think VIZ is much more intuitive
+
+150
+01:13:39,619 --> 01:13:41,619
+smurfd0: nice to know the colors and the letters :)
+
+151
+01:13:56,101 --> 01:13:58,101
+himynameischungus: How stable is tinygrad's API? My perception is that multi is still fairly unstable
+
+152
+01:14:41,260 --> 01:14:43,260
+takeuchi_satomi: Ohhhh shiiii George is Streaminnnngggg lets gooooo. I was running out of george hotz archive vids on youtube to run in the background as I work XD
+
+153
+01:17:29,209 --> 01:17:31,209
+gliched_robot: I think I tweeted that it's crazy how derivative algebra is just 300 lines of code.
+
+154
+01:19:27,607 --> 01:19:29,607
+stoddlabs: so that means you could hypothetically create your own dag with all the ops and pass it to tinygrad to execute?
+
+155
+01:21:01,546 --> 01:21:03,546
+banceman: maybe add # %% to make each specific section runnable?
+
+156
+01:21:40,097 --> 01:21:42,097
+banceman: You need to end it too, I think.
+
+157
+01:23:08,610 --> 01:23:10,610
+banceman: No, just starting is enough. Sorry about that.
+
+158
+01:23:28,238 --> 01:23:30,238
+smurfd0: isnt this like one of those, i loose the name of them. ipython ehh
+
+159
+01:23:47,888 --> 01:23:49,888
+majorwho: had the same problem a week ago haha
+
+160
+01:24:04,741 --> 01:24:06,741
+majorwho: resolved it by using a venv
+
+161
+01:24:16,591 --> 01:24:18,591
+bojosos: This is a venv free strema
+
+162
+01:24:51,251 --> 01:24:53,251
+whiterunknight: I gave up on jupyter because of this kernel shit
+
+163
+01:25:48,361 --> 01:25:50,361
+majorwho: we love the Python undefined.undefined.undefined
+
+164
+01:26:19,760 --> 01:26:21,760
+smurfd0: jupiter playbooks what i was meaning
+
+165
+01:26:39,497 --> 01:26:41,497
+smurfd0: https://code.visualstudio.com/docs/python/jupyter-support-py
+
+166
+01:26:51,366 --> 01:26:53,366
+banceman: Do you have Jupiter installed via pip?
+
+167
+01:27:01,582 --> 01:27:03,582
+banceman: jupyter*
+
+168
+01:30:09,458 --> 01:30:11,458
+krakendmp: krakendmp subscribed at Tier 1. They've subscribed for 41 months!
+
+169
+01:31:56,413 --> 01:31:58,413
+majorwho: so ramp is like a tutorial/introduction i suppose?
+
+170
+01:32:54,832 --> 01:32:56,832
+whiterunknight: Yes
+
+171
+01:33:07,969 --> 01:33:09,969
+majorwho: nice
+
+172
+01:38:48,479 --> 01:38:50,479
+ForLoopInBash: ForLoopInBash subscribed with Prime.
+
+173
+01:39:11,356 --> 01:39:13,356
+hellscape48: coat makes him look like Chamath
+
+174
+01:39:21,564 --> 01:39:23,564
+gliched_robot: tiny box helping people hit SOTA https://x.com/jsuarez5341/status/1931369293536534572?s=12
+
+175
+01:39:29,273 --> 01:39:31,273
+majorwho: i think yeah
+
+176
+01:39:42,223 --> 01:39:44,223
+majorwho: its pretty simple
+
+177
+01:40:26,210 --> 01:40:28,210
+bambikapelo: this looks like haskell as a python dsl
+
+178
+01:40:32,780 --> 01:40:34,780
+gliched_robot: Did you also write about the graph view and debugging or that is a different tutorial ?
+
+179
+01:41:59,287 --> 01:42:01,287
+banceman: auto detect the best device is so nice
+
+180
+01:42:41,420 --> 01:42:43,420
+codingfisch: The pleb wants a short frontend. Something like "trainer.fit(...)"
+
+181
+01:42:42,704 --> 01:42:44,704
+himynameischungus: What do you mean by "time-based" visualisation? Like a profiler?
+
+182
+01:43:19,587 --> 01:43:21,587
+stoddlabs: this kind of reminds me of the Spark UI
+
+183
+01:44:02,489 --> 01:44:04,489
+jof343: If I cant probe once in a while how i'm I suppose to know i'm not talking to a brick wall?
+
+184
+01:47:02,491 --> 01:47:04,491
+whiterunknight: Damm the cops are outside
+
+185
+01:47:10,816 --> 01:47:12,816
+runnamucker4: WutFace
+
+186
+01:47:20,792 --> 01:47:22,792
+runnamucker4: manja manja, enjoy!
+
+187
+01:47:26,244 --> 01:47:28,244
+takeuchi_satomi: baiiiii
+
+188
+01:47:38,749 --> 01:47:40,749
+gliched_robot: bye boys!
+
+189
+01:47:39,940 --> 01:47:41,940
+majorwho: Have a good meal
+
+190
+01:48:48,044 --> 01:48:50,044
+takeuchi_satomi: When does the tinygrad and tinybox get to the level where company number 3 AI girlfriends becomes a reality Kappa
+
+191
+01:49:07,569 --> 01:49:09,569
+Giully3_14: Hi George, hope you are doing well. Thanks for sharing these, a lot to learn, have a nice day!
+
+192
+01:49:13,615 --> 01:49:15,615
+majorwho: Thank you for doing this!
+
+193
+01:49:40,179 --> 01:49:42,179
+whiterunknight: Made the font large and almost used a venv
+
+194
+01:49:45,774 --> 01:49:47,774
+takeuchi_satomi: On a more serious note seriously huge thanks for the stream and teachings!
+
+195
+01:50:03,434 --> 01:50:05,434
+rivetingco: conceptually simple?
+
+196
+01:50:22,396 --> 01:50:24,396
+dantedante33: "to commoditize the petaflop." i like your word choice herr
+
+197
+01:50:39,963 --> 01:50:41,963
+gliched_robot: There is no way anyone we can maintain torch code.
+
+198
+01:51:11,308 --> 01:51:13,308
+lsteacke: so you're john deere?
+
+199
+01:51:14,707 --> 01:51:16,707
+Zeevo: you just dont like dependencies
+
+200
+01:51:22,503 --> 01:51:24,503
+takeuchi_satomi: Smart people make things simple :)
+
+201
+01:51:35,925 --> 01:51:37,925
+n00n00n: You are wrong, King Terry can
+
+202
+01:51:53,324 --> 01:51:55,324
+ibarres: why is WMMA not a rewrite rule
+
+203
+01:51:58,887 --> 01:52:00,887
+banceman: I will go through the ramp. If I have any pointers, I will talk about it in Discord
+
+204
+01:52:29,459 --> 01:52:31,459
+stoddlabs: what is a warp?
+
+205
+01:52:40,669 --> 01:52:42,669
+govert72: Nice intro, thank you. Is trying to port an existing PyTorch-based model to tinygrad a good way to learn more? Should we expect better performance some day, or what other beniefits from doing this?
+
+206
+01:52:56,049 --> 01:52:58,049
+bojosos: @stoddlabs You should listen to his noob gpu tutorial
+
+207
+01:53:11,864 --> 01:53:13,864
+stoddlabs: @bojosos will look for it, I know nothing about GPUs
+
+208
+01:53:45,098 --> 01:53:47,098
+whiterunknight: @stoddlabs https://modal.com/gpu-glossary/device-software/warp
+
+209
+01:54:11,574 --> 01:54:13,574
+stoddlabs: @whiterunknight tyty
+
+210
+01:55:13,902 --> 01:55:15,902
+bojosos: I still remember the days of the 1000 line rule
+
+211
+01:55:20,763 --> 01:55:22,763
+pratikshit08: do tiinygrad make money
+
+212
+01:55:30,994 --> 01:55:32,994
+codingfisch: How many lines would be needed for tinygrad if solomonoff induction would be computable? 🤓
+
+213
+01:55:35,641 --> 01:55:37,641
+Zeevo: @georgehotz what excites you about python's future?
+
+214
+01:55:52,831 --> 01:55:54,831
+rivetingco: o7
+
+215
+01:55:53,380 --> 01:55:55,380
+majorwho: see ya
+
+216
+01:55:54,305 --> 01:55:56,305
+whiterunknight: Byeee
+
+217
+01:55:56,490 --> 01:55:58,490
+Gameplayer0618: o7
+
+218
+01:55:57,897 --> 01:55:59,897
+OetziOfficial: have a good one
+
+219
+01:55:57,958 --> 01:55:59,958
+takeuchi_satomi: See yaaas
+
+220
+01:55:59,323 --> 01:56:01,323
+runnamucker4: epic strim thank you!
+
+221
+01:56:01,177 --> 01:56:03,177
+def_stimulatedreceptors: thanks brother
+
+222
+01:56:02,269 --> 01:56:04,269
+SpongyBread: Thanks George!
+
+223
+01:56:02,354 --> 01:56:04,354
+malateman: what food?
+
+224
+01:56:04,569 --> 01:56:06,569
+pupscub: Will miss you
+
+225
+01:56:09,084 --> 01:56:11,084
+pupscub: have a great lunch
+
+226
+01:56:10,167 --> 01:56:12,167
+runnamucker4: what fodo?
+
+227
+01:56:18,730 --> 01:56:20,730
+def_stimulatedreceptors: When's new blog?
+
+228
+01:56:25,916 --> 01:56:27,916
+rivetingco: i love the heart, big heart
+
+229
+01:56:33,581 --> 01:56:35,581
+mokert2: Hi George, I played a little bit around with torch.linalg, unfortunately so far my impression is that it is not in good shape
+
+230
+01:56:37,481 --> 01:56:39,481
+def_stimulatedreceptors: no just new blog
+
+231
+01:56:42,019 --> 01:56:44,019
+majorwho: lex?
+
+232
+01:56:42,549 --> 01:56:44,549
+pratikshit08: what do think about software nowadays
+
+233
+01:56:46,916 --> 01:56:48,916
+robin_2723: are you gonna rub your belly after the lunch
+
+234
+01:56:47,354 --> 01:56:49,354
+21benzen: maybe we can upgrade you someday to a leather jacket
+
+235
+01:56:47,382 --> 01:56:49,382
+jjccccccj: has dwarkesh invited you?
+
+236
+01:56:50,794 --> 01:56:52,794
+bojosos: tiny.linalg?
+
+237
+01:56:57,325 --> 01:56:59,325
+FatherOfFamilyValues: ❤️
+
+238
+01:57:26,912 --> 01:57:28,912
+def_stimulatedreceptors: ResidentSleeper
+
+239
+01:57:40,875 --> 01:57:42,875
+runnamucker4: feel like i need that as a slogan on a tshirt, merch incoming soon?
+
+240
+01:57:46,965 --> 01:57:48,965
+waena_: At what age did you stop being a consumer?
+
+241
+01:58:01,567 --> 01:58:03,567
+pupscub: Don't consume it use it to build!
+
+242
+01:58:11,308 --> 01:58:13,308
+itsamarcos: we're heading towards a two-class society
+
+243
+01:58:33,508 --> 01:58:35,508
+itsamarcos: whatever incentives created youtube shorts and tiktok are not going away
+
+244
+01:58:37,079 --> 01:58:39,079
+ibarres: best asmr
+
+245
+01:58:56,704 --> 01:58:58,704
+def_stimulatedreceptors: just don't be a drone, have some spark
+
+246
+01:59:03,382 --> 01:59:05,382
+dantedante33: we need to clip that.
+
+247
+01:59:03,983 --> 01:59:05,983
+runnamucker4: vswedHi
+
+248
+01:59:04,487 --> 01:59:06,487
+whiterunknight: signed
+

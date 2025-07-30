@@ -1,0 +1,133 @@
+Date of stream 08 Mar 2023.
+from $1499 buy https://comma.ai/shop/comma-three
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad/blob/llama/examples/llama.py
+- https://github.com/geohot/tinygrad/tree/llama
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:01:30 guitar tuning and playing
+00:04:30 giving advice to elon, woke
+00:07:25 llama, trip to india, bengaluru, bike to mumbai
+00:08:40 when software was cool
+00:11:20 llama, privilege
+00:13:45 discord ban, pressure, power
+00:16:05 prime, blue crown, money
+00:18:00 tiny corp, making value, food
+00:22:25 capitalism
+00:23:50 facebook LLaMA, apply for access, torrent
+00:25:10 ai safety, enjoy the decline
+00:28:00 deepmind, google, rants
+00:28:40 thinking for yourself, jesus, george is christian, god
+00:30:30 a progression to christian
+00:31:50 big text, copilot
+00:35:10 running on gpu m1
+00:39:30 using tinygrad tiny ram usage, float16
+00:46:00 METAL=1
+00:47:25 numpy size of datatype
+00:49:12 interesting, np.frombuffer
+00:52:10 problem raw buffers to have a datatype?
+00:52:55 python read into buffer, not making copies = fast
+00:59:40 loading from disk, making it lazy
+01:00:50 tinygrad is the future, replacing programing with dsp paradigm  
+01:02:17 tinygrad has grown
+01:03:50 metal buffer, float16 hard
+01:05:20 interview question how big is a float
+01:06:40 making metal buffer, supporting dtypes
+01:09:40 tinygrad recognize llama
+01:10:25 facebook llama arxiv, unbiased model
+01:13:25 class Attention, FeedForward
+01:21:40 washed heads
+01:24:00 class RMSNorm
+01:30:25 testing inference
+01:35:30 error and slow loading because torch
+01:39:00 wasting 0.6 seconds
+01:40:45 how transformers work, Linear
+01:47:20 torch not defined, if you are slow you get undefined
+01:48:00 fstrings, shapes matching
+01:48:45 writing calls
+01:55:00 class Attention
+02:02:00 missing position
+02:05:10 not matching
+02:13:00 why did that happen?
+02:18:10 memory should not be 0
+02:19:50 just creating the weights is breaking it
+02:24:30 why so much memory?
+02:25:15 getting dtype in inference editor
+02:26:15 WEIGHTS=1
+02:29:30 number of ops and memory use
+02:31:10 9 seconds = 1 character, tensor cores
+02:32:40 fastest metal_matmul.py on M1 = fastest llama on M1
+02:36:10 stable diffusion interesting ops
+02:37:10 dynamically loading the weights from zip file
+02:37:30 biggest llama on M1
+02:39:50 full tiny llama grid
+02:42:20 looking at the paper, thank you to facebook
+02:43:55 dollars are arbitrary
+02:44:50 licence for ai safety, mmap
+02:47:40 tiny corp no money
+02:51:20 making the compiler running less
+02:52:50 bought land, rolls-royce and meta stock
+02:54:10 sam bankman-fried
+02:56:30 little people
+02:58:00 andrew tate making money, kiwi farms, coffeezilla
+03:00:20 entire economy is a fraudulent scam
+03:01:50 AGI
+03:06:30 how would George do in prison
+03:10:00 un focused today
+03:18:00 floats should not be floats
+03:22:30 generated c files
+03:23:10 openpilot compile
+03:32:00 missing 1 required positional argument x
+03:34:10 faster
+03:36:00 terrible support for halves
+03:38:00 numpy bad chat suggestion
+03:38:45 bugs in the training
+03:42:30 ENABLE_METHOD_CACHE=1 should be default
+03:43:30 when you make something 0, page and copy on write, take operating system class
+03:45:40 not ready to generate a word 
+03:46:00 using tinyjit for training 
+03:47:15 rope is hard
+03:49:35 importing SentencePiece
+03:51:35 cheapeth, how does anyone take anything seriously
+03:55:00 list must contain integers
+04:02:10 offensive code because it uses complex numbers
+04:08:00 can't trust anybody
+04:11:30 macbook pro m1 max ssd read speed
+04:14:50 dealing with company problems
+04:15:20 not starting a company
+04:16:25 complex multiplication, the moment
+04:17:20 what we missed off stream
+04:18:35 never start a company, llama is working
+04:24:30 SentencePieceProcessor
+04:32:10 Kristen Rengren
+04:34:50 temperature sampling numpy
+04:41:25 TechQuest Laser Tag Gun
+04:44:20 singularity
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

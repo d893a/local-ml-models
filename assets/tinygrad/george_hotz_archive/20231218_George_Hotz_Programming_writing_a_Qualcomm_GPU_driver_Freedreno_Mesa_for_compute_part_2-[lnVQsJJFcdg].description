@@ -1,0 +1,135 @@
+Date of the stream 16 Dec 2023.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/tinygrad
+tinygrad bounties:
+- https://docs.google.com/spreadsheets/d/1WKHbT-7KOgjEawq5h5Ic1qUWzpfAzuD_J06N1JwOCGs/
+Hardware:
+- Plugable BT-KEY3
+- Samsung Galaxy Z Fold5
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:01:02 writing a GPU driver
+00:01:54 ssh to the phone, code server, vs code server
+00:02:22 user space GPU driver, graphics kernel
+00:05:10 asking Quentin, Perplexity
+00:13:00 regex pattern allow spaces
+00:21:30 parsing struct
+00:25:45 GPU driver, how long in C
+00:31:05 tinygrad import Tensor
+00:35:40 init, GPU not controlled in kernel space, single layer pointers
+00:36:55 replay this GPU command
+00:38:10 TinyJit, tinygrad prints
+00:44:30 kgsl_gpu_command, msm_kgsl.py
+00:49:10 Galaxy Z Fold5
+00:49:45 who knows that green is executable +x
+00:50:18 linux dma-fence.h
+00:53:00 offset gpuaddr size flags id
+00:58:20 struct_kgsl_command_object
+01:06:25 building a driver before building a chip
+01:07:00 jobs creation, comma lesson
+01:08:25 thneed openpilot, mmap64
+01:12:30 gpu command, parsing the command buffer
+01:19:45 freedreno driver, freedreno cffdump
+01:23:05 Perplexity hallucinating
+01:25:40 rnndb database 404 link
+01:28:25 real command buffer
+01:31:00 PM4
+01:35:20 pkt_is_type7
+01:41:44 alloc memoryview writable
+01:46:55 type 7 and type 4 packets
+01:48:40 very cool freedreno people
+01:49:05 qualcomm switching to opensource driver
+01:50:00 writing registers, opcode
+01:52:40 number of globals, and total number
+01:54:40 adreno_pm4_type3,7_packets, 7 commands, 4 write registers
+01:56:50 python format string add 0x to hex
+01:57:55 opcode 17, CP_THREAD_CONTROL or IN_IB_PREFETCH_END
+01:59:53 python parse xml, xml to json
+02:07:15 not a real name, no leak for qualcomm driver, amd, nvidia open source
+02:08:30 HLSQ_CONTROL_2_REG
+02:09:25 nvidia open source kernel stub gsp
+02:11:20 CP_CONTEXT_REG_BUNCH2
+02:13:45 CP_REG_TO_MEM
+02:14:50 GPU performance counter to GPU memory
+02:17:30 SP_CS_INSTRLEN, HLSQ_CS_NDRANGE_0
+02:20:40 the simplest drivers that can dispatch compute kernels
+02:23:00 copy out, unified memory space between CPU and GPU
+02:26:00 objlist cmdlist, pkt types
+02:36:00 stuct_kgsl_cmdbatch_profiling_buffer 
+02:42:20 printing hex
+02:45:20 python address of bytearray
+02:47:00 making another copy
+02:48:40 strace, copyin
+02:52:30 two CP_RUN_OPENCL
+03:01:00 CP_LOAD_STATE6_FRAG
+03:04:20 a, 9
+03:08:00 python hexdump
+03:11:40 GPU drivers can be written in python
+03:12:50 dumping shader
+03:21:25 freedreno shader registers r51
+03:26:40 c20 hex 14
+03:30:00 CP_LOAD_STATE6_0_STATE_TYPE
+03:37:50 adreno registers
+03:38:10 replacing shader compilers, mesa for compute
+03:41:30 replaying command buffers
+03:44:25 overview, bath, meditation
+03:45:00 when tinygrad can run without dependencies
+03:46:15 remote work, there is something missing
+03:47:20 removing numpy from tinygrad
+03:48:35 hiring entire stack for tiny corp
+03:51:00 high equity, contribute
+03:53:15 trolls on twitter
+03:54:00 comma is doing well, san diego
+03:55:20 the dream of the internet, Elon is accessible
+03:56:30 work major source of value in your life
+03:57:40 sustainable business open source
+03:58:40 clear blog post about AI space, not trying to be understood
+03:59:00 AMD mindshare, people at AMD, bugs, issues
+04:02:05 thinking longer term
+04:04:33 college majors by iq
+04:05:10 it doesn't change. if you are 30 your life is what it is, limitations forever
+04:07:55 your passion, singularity
+04:12:10 against education, the elephant in the brain
+04:19:30 religion, bible, game over screen
+04:21:55 the invisible rainbow, 5G
+04:25:45 10 books
+04:29:40 not debating destiny
+04:30:00 tiny keyboard
+04:32:15 general science questions
+04:41:20 human brain compute, wormhole
+04:44:10 time dilation, sr vs jk flip flop
+04:46:30 attention mechanism in transformers
+04:47:40 e minor, supernova
+04:48:50 Ra by qntm
+04:50:10 milky way galaxy
+04:52:34 power companies high voltage, black hole
+04:55:20 polaritiazon in electro mechanics, einstein nobel prize
+05:00:00 metal rod in space
+05:01:20 universe not locally real
+05:02:40 thank you for watching, human nature
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

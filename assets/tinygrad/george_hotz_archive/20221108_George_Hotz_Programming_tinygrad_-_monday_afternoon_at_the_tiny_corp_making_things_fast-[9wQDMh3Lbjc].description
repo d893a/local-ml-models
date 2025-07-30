@@ -1,0 +1,106 @@
+Date of stream 8 Nov 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad/tree/chonker
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:00:25 not voting
+00:03:00 overview of work (tests)
+00:03:39 whiteboard
+00:03:00 running tests
+00:05:35 what makes things fast, slow
+00:08:10 review of pull requests
+00:09:26 chonker
+00:11:00 bug 1, 50$, 15 min phone call
+00:12:20 bug 2, test_max
+00:13:10 price only if solved live
+00:14:25 full time at tiny corp
+00:14:59 call llvm.maximum
+00:19:30 current results
+00:20:30 amx coprocessor
+00:24:40 stable diffusion 3x faster on M1
+00:25:20 don't want to talk about chess
+00:26:45 checkers
+00:27:10 stability founding
+00:27:40 working with tiny corp
+00:28:20 dumb questions, andrew tate
+00:29:00 cache coherency, order of computation
+00:30:15 no more edge tpu
+00:30:40 messy first clean later
+00:35:00 cache aware, order
+00:35:30 theoretical maximum
+00:37:15 Auto-Vectorization in LLVM, doing by hand
+00:42:35 50$ for max or fma
+00:42:53 llvmlite
+00:46:00 llvm unsafe-fp-math
+00:52:10 enable-unsafe-fp-math llvmlite
+00:59:40 not voting
+01:01:18 llvmlite create_module_pass_manager
+01:02:13 add_instruction_combining_pass
+01:03:40 llvm 11 download
+01:07:00 InstructionMix llvm
+01:07:25 somewhere in there
+01:09:00 llvm 14
+01:11:30 ffp-contract clang argument
+01:15:25 auto vectorising
+01:17:05 raining outside in San Diego, crazy emails from people
+01:18:25 tbaa llvm
+01:23:16 not ir problem 
+01:34:10 brew install llvm 11
+01:34:57 aarch-64-use-aa
+01:35:59 llvm 11 configuration not correct
+01:36:50 don't like llvmlite
+01:37:30 polyhedral loop optimizer
+01:41:05 debug only
+01:44:02 not a debug build
+01:52:25 numba output llvm bytecode
+01:54:40 numba dump assembly code
+02:02:00 llvm release notes
+02:12:20 features an empty obj
+02:15:10 recompile llvme to add print statements
+02:17:35 let's do it
+02:21:10 cmake DCMAKE_BUILD_TYPE=Debug
+02:25:00 M1 fastest cpu in the world
+02:28:00 llvmlite problem
+02:35:10 build done
+02:45:40 llvm that doesn't get fused
+02:51:30 50$ could of been yours
+02:53:50 stupid waste of time
+02:55:25 75.50 GFLOPS
+02:59:00 stream for today
+03:00:00 how to get the max to fuse
+03:04:15 imagine watching streams in the future
+03:05:05 mulsum
+03:08:00 whiteboard
+03:10:10 running on gpu
+03:16:40 fastest opencl
+03:17:05 shared memory space on M1
+03:17:50 boring stuff to do
+03:22:00 hacks to clean up
+03:22:35 add amx support
+03:22:50 gpu backend
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

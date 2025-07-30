@@ -1,0 +1,121 @@
+Date of stream 31 Oct 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/edgetpuxray
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:01:18 HN thread, be able to talk about ideas
+00:02:00 plugging TPU, appreciate good emails, verge fake news
+00:04:09 100M+ revenue person
+00:04:50 George's limitations
+00:06:12 python 3.11, comma 20-person company
+00:07:02 comma trajectory good, not much for George to do
+00:07:30 10x software engineers, why bored
+00:08:40 not driven by other people using it, open-source reason
+00:09:15 potential for growth
+00:10:00 keeping board seat
+00:10:50 banana picture
+00:11:01 meta stock, Karpathy lex podcast
+00:11:50 respect to Zuckerberg, fan of Elon buying twitter
+00:12:03 George's a moderate person, politically Elon will make twitter fair
+00:12:25 Elon calling out New York Times, monopoly on information, not a China puppet
+00:13:18 no AGI in next 5 years, amazon warehouse fixed burnout
+00:14:25 no OpenAI, DM internship, influencing people
+00:15:42 comma body, tiny corp
+00:16:30 HN thread, Karpathy at comma, shipping products
+00:18:03 Taylor Swift Anti-Hero, 4chan, Kanye, ye
+00:19:04 words taken too serious, reporter, friend reached out
+00:20:35 twitter improve, not optimize for engagement, optimize for quality
+00:21:17 unreleased song, Alex still at comma
+00:21:57 Trump ban, blue and red box explaining
+00:23:25 tomcr00se show
+00:24:05 Tiny Corp
+00:25:04 wartime CEO, Rick got bored
+00:27:13 still own comma, the board, explaining once more
+00:28:47 Jim Keller, idea of tiny corp, programming languages history
+00:30:25 new ML Framework, DSP, transformers, ResNet
+00:32:30 openpilot uses tinygrad
+00:33:25 tensorflow, PyTorch complexity, effort to add new accelerator
+00:34:08 tinygrad simple API, tinygrad operations, lazy.py, tensor.py
+00:35:45 nice syntax, stable_diffusion.py
+00:36:35 Cherry on FPGA, accelerators
+00:36:57 not making chips, getting to FPGA level
+00:37:42 Only 3 people, Philippe Tillet, openai/triton
+00:38:23 AI chip company contact George for good software
+00:39:40 CEO with skill, humility, skill, Zuckerberg stupid move, Carmack
+00:41:30 Polyhedral computation, Triton’s docs, AMX
+00:43:58 new ML chip, good software first, NVDLA
+00:45:10 tinygrad 3090 speed, lazy.py refactor, AST, realize
+00:47:08 M1 Max, benchmark, triton, relu
+00:52:30 comma not over
+00:53:00 explaining tinygrad calls
+00:55:44 Jax complexity, Levandowski law, Google bloated, Kubernetes
+00:57:50 no pypi, goals for tinygrad 1.0 
+00:58:40 wanted to talk today, verge hit piece, metaseq
+01:00:53 reach out from Nvidia, AMD sponsor tinygrad
+01:02:10 tinygrad for companies, Theano 
+01:05:05 techcrunch reach out, reverse engineering the API
+01:07:55 the goal of tinygrad LLVM backend, nnfs
+01:15:20 strategy, stable diffusion support 
+01:26:43 google ruy, writing custom model
+01:35:50 output 6
+01:42:10 proof it runs
+01:45:00 RetireInProgress raid, exploring, writing driver
+01:50:30 single operation
+01:57:10 smurfd0 helping, git clone tensorflow
+02:04:45 break 25 min
+02:28:35 building TfLite bazel
+02:35:35 wishing to be better
+02:36:15 trying to make it work
+02:42:50 Porsche, carfax
+02:48:40 sarcastic George about government control
+02:49:30 modifying driver to see if can be parsed
+02:56:40 culture at remote organization
+03:03:35 monetize advice
+03:11:15 still involved, shipping 100k product, supply chain, real engineering
+03:18:00 mimic C, edge tpu complier, driver
+03:23:20 structuring society not capitalism, economics, being public
+03:27:10 edgetpu_compiler
+03:32:45 docker, tinygrad for startup or Nvidia
+03:36:00 platform flag, amazing docker
+03:42:00 .tflite files, using Ghidra
+03:52:40 META stock
+04:01:25 intelligence, brain machine interfaces
+04:04:50 edge tpu decomplier
+04:07:55 Google sponsor
+04:10:10 AMD sponsor
+04:11:20 simple TPU use, apple image
+04:13:45 Coral only ints, HBO season 2 white lotus
+04:14:45 comma.ai archive about doing only things you enjoy
+04:15:20 tiny corp is real, engineer 1 insane experience,
+04:18:10 hen
+04:19:44 turn debugging on
+04:32:32 edgetpu compiler output logs, profiling
+04:44:00 all hacking is strings, dumping firmware, DEBUG=1
+04:49:25 close to the solution, strings Unicode
+04:53:40 missed this
+04:59:35 get VIP
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://instagram.com/georgehotz
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+- https://twitter.com/realGeorgeHotz
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

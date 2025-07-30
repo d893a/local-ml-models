@@ -1,0 +1,130 @@
+Date of the stream 20 Jan 2024.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://hsafoundation.com/wp-content/uploads/2021/02/HSA-PRM-1.2.pdf
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 intro
+00:00:20 no warning, linkedin ban, child prodigy
+00:02:25 torchrl
+00:03:20 tinybox pre-order, AI computer, lambda labs
+00:05:20 lambdalabs vs tinybox
+00:12:20 7302p vs 7532 epyc
+00:15:00 tinybox raspberry pi for ML
+00:16:10 not buying Apple Vision Pro
+00:16:45 fastdd github, Meta buying H100
+00:18:10 twitch removing content warning, linkedin post
+00:20:15 linkedin worst dating site
+00:20:35 selling rolls royce, money
+00:21:25 George not a good fit for twitter, culture war
+00:23:00 Peter Thiel dinner party, e/acc
+00:25:55 better processor and it got slower
+00:27:35 drive faster than dev 0
+00:30:00 boost frequency, perplexity 
+00:33:50 bios, ipmi, epyc boost, not boosting
+00:44:40 btop, pcie 4 vs 5
+00:46:25 direct democracy
+00:47:40 boost speed
+00:50:10 hip graph is not fast
+00:52:20 ROCm 6.0, Llama-2-70b slow, single thread
+00:52:55 single thread, multithread, multiprocess tinygrad
+00:53:55 ggml, tinygrad long term goal, universal
+00:55:00 event, block slow
+00:56:40 GPU queue sync, multiprocess
+00:58:35 writing your own GPU driver, userspace
+00:58:54 AMD HIP, clone of CUDA
+01:00:30 finding HIP graph code
+01:02:50 spinlocks, multiprocessing, GPU driver 
+01:03:25 how do GPUs work?
+01:06:00 prebuilding the queues, hip semaphores
+01:09:20 rdna 3 instruction set
+01:12:40 so much complexity, micro engine scheduler
+01:14:40 Alex
+01:19:55 reading the code to send packets
+01:22:45 hate free stream
+01:23:30 amd gpu scheduling
+01:32:50 perplexity valuation, how to value a company
+01:34:00 HSA queue
+01:35:30 perplexity fast, GPT4 slow, anthropic
+01:39:00 HSA level 0
+01:41:30 HSA runtime book, anna's archive
+01:45:30 no copyright infringement intended
+01:46:20 AQL packets
+01:52:55 piano
+01:53:20 AMD is for people who likes to get twice as much GPUs for their money
+01:54:50 tinygrad pay per token API 
+01:58:30 replacing HIP support with HSA support
+02:00:20 Nvdia vs AMD datacenter, customer GPU architecture
+02:02:30 secret good version of openpilot joke
+02:03:40 HIP does not use DMA engine
+02:05:00 bit blit
+02:14:20 rocm-bandwidth-test
+02:17:00 hca kmt api amd
+02:17:55 Alex
+02:20:08 the hidden song
+02:23:30 going on a journey
+02:27:55 real completion events
+02:31:30 hsa example of kernel dispatch
+02:32:00 cool that AMD is so open
+02:35:40 just using HSA, HSA rabbit hole, hsa foundation
+02:37:50 the chapel language with 0 github stars
+02:39:40 HSA Programmer's Reference Manual
+02:40:20 linkedin post
+02:42:40 the weather people, if you could design a country, deep state
+02:45:45 conservatism, progressivism quote
+02:49:00 Alex
+02:50:00 thinking from first principles, experiments hard
+02:50:20 has anyone heard about HSA foundation
+02:52:50 scientific computing people, OpenMP, OpenACC
+02:55:20 AMD extensions
+02:56:15 traveling salesman, 2^n algorithm, scientific computing funding
+02:59:10 leslie greengard
+02:59:40 deep learning revolution
+03:01:00 tinygrad experiment, complexity dysfunction of governance
+03:01:38 misunderstanding of how software is developed today
+03:02:00 compression is intelligence
+03:02:20 complexity management instead complexity reduction 
+03:02:40 spacex rocket landing controls genius
+03:05:10 complex systems, twitter
+03:06:10 software 0 cost to replication
+03:07:40 twitter acquisition best political dollar ever spend
+03:09:30 making the tinybox good
+03:09:46 making money off OSS
+03:10:10 pre-order tinyboxes
+03:11:10 etched.com, tenstorrent.com
+03:13:50 tenstorrent offering a card to George
+03:14:15 respect to tenstorrent, intel tier
+03:15:05 extropic.ai
+03:16:40 science grants, fundamental research that needs to be done
+03:17:40 bullish on perplexity
+03:18:40 atomicsemi.com
+03:19:30 ranking startups, tenstorrent open source
+03:21:00 tinygrad factorization
+03:23:30 hammer.lol, berkshirehathaway.com
+03:24:40 stop using javascript
+03:27:20 apple.com website, feross.org
+03:30:10 lana_lux 5k viewers
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

@@ -1,0 +1,1 @@
+yt-dlp --restrict-filenames --skip-download --write-description --write-subs --write-auto-subs --sub-langs "en,en-en,en-orig" -k --sub-format "srt" --convert-subs "srt" -o "%%(upload_date>%%Y%%m%%d)s_%%(title)s-[%%(id)s]" %*

@@ -1,0 +1,128 @@
+Date of stream 27 May 2023.
+from $1499 buy https://comma.ai/shop/comma-three
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+
+Chapters:
+00:00:00 intro
+00:00:45 tiny corp raised money, tinybox
+00:01:40 goals, developer experience
+00:02:15 tiny corp programming challenge
+00:03:00 don't waste George's time
+00:04:15 tinybox almost 100 preorders
+00:04:45 $100 preorder, $15,000 total price
+00:05:25 tutorial.ipynb
+00:08:40 set_debug does not work, python import global variable
+00:16:30 lazy by default, should not lazy forever, enqueue
+00:17:00 debug problem, global variable python
+00:17:45 class debug, magic methods
+00:26:05 inherit from int python
+00:28:50 1000 lines guideline
+00:29:15 class debug
+00:31:30 new debug behavior, clean clode
+00:34:00 logging modules
+00:34:15 contiguous
+00:35:15 matrices, Tensor.eye
+00:36:45 llama.py, debug on llama.py
+00:38:15 quantization support, contribute
+00:38:42 Conv2d, stable diffusion
+00:39:25 $10000 bounty for sd on M1 faster
+00:40:35 a cat in a hat
+00:40:47 bounty taxes
+00:41:00 stable_diffusion.py and llama.py code
+00:41:20 unit tests, ONNX tests
+00:41:54 TORCH=1, external_text_onnx_backend.py, pytest
+00:42:40 great way to good started
+00:43:20 complexity, self driving people dumb 
+00:43:46 revenue company, waymo and cruise, growth, investment, referral
+00:47:25 smart pytorch people, not managing complexity 
+00:48:45 implement every op, conv_transpose2d
+00:49:50 conv, reshape, sum
+00:50:10 competing against smart people, developer experience
+00:50:50 jit.py, $500 bounty LLaMA python code without jit under 100ms
+00:51:50 triton tutorials, conv2d example
+00:56:55 mojo, einops-style API, $200 bounty Zero dim Tensor support
+00:57:25 zero dimension tensors
+00:57:50 haters on HN, uncountable infinities, cardinality
+01:01:25 matrix multiplication, a@b, cube
+01:03:55 different matrix multiplication
+01:05:20 kernel logs are so beautiful, colors
+01:05:55 efficientnet.py, NUM=0, NUM=4, sd cat, cowboy hat
+01:07:05 DEBUG=2, OPTLOCAL=1, kernel that are running
+01:07:40 .realize ending the laziness, NUM=4 kernel
+01:08:15 r = reduce kernels, e = element wise kernels
+01:08:50 George friendly to noobs
+01:10:00 autotune stuff, add mlperf bert model pr
+01:11:30 huggingface
+01:11:50 contributing, fix ONNX tests
+01:12:15 AMD driver stack, emailing AMD, intel amazing chip docs
+01:12:30 intel a770 $349, XMX AI capabilities
+01:14:55 fp16 flops on a770 vs 7900 xtx
+01:15:24 I like AMD, driver is so bad
+01:15:38 prototype tinybox, two gpus and driver crashes, intel
+01:16:55 QLoRA, Falcon 40B model, Nvidia
+01:18:25 max 137 tokens per seconds
+01:19:05 free work, writing open source code
+01:19:55 more AMD docs, memory architecture, scheduler, copy engine
+01:20:30 why isn't AMD doing that?
+01:21:25 composable kernel, leapfrog nvidia, consumer hardware without gpu, m1
+01:22:50 tinybox RAM bandwidth, EPYC
+01:24:00 RWKV, infinity fabric
+01:25:15 how backends are implemented
+01:34:00 transferring kernels to device
+01:39:40 DCGAN
+01:42:30 transfering img_align_celeba.zip
+01:45:00 pre-commit hooks, zip and folder, jpeg
+01:48:00 writing dcgan.py class Generator
+01:50:50 class Discriminator
+01:53:40 celeba_iterate
+02:10:35 training tested very little
+02:16:00 it uses a stride
+02:17:20 training something, tensor object has no attribute _ctx
+02:24:00 in theory should work
+02:30:35 need strides
+02:31:00 simple code, does not work
+02:33:30 time on GPU, OPTLOCAL
+02:40:15 do people like gan's?
+02:42:42 fix strides by tomorrow George will stream and finish dcgan
+02:43:30 ugly permute, test_nn.py test_ops.py
+02:44:20 big font today, depthwise convs
+02:45:00 matrix decompositions
+02:46:00 no sorting, no scatter gather, if it's easy to implement
+02:46:35 ops, work together collaborate
+02:47:20 discord
+02:47:30 how to deploy $5 million
+02:48:25 tinybox prototype
+02:49:15 limiting the hiring pool
+02:50:40 bad submissions for challenge
+02:51:44 remote work, budget of tiny crop
+02:52:20 MLPerf, how Elon feels
+02:53:10 sponsor visa, rolls-royce, lost money on cheapETH
+02:54:30 Lana_Lux raid, DCGAN tomorrow if someone fixes strides
+02:55:45 enjoyed Lana stream, unity
+02:57:05 overview of tiny corp, cow farms, chicken farms
+03:04:30 monopolies on compute, ai safety
+03:10:05 Alex, tiny corp open source ml software
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

@@ -1,0 +1,96 @@
+Date of the podcast 20 Jun 2023.
+Follow, Subscribe to Latent Space: - https://latent.space/p/geohot (writeup and show notes)
+- https://youtube.com/@LatentSpace-podcast/
+- https://twitter.com/latentspacepod
+- https://twitter.com/swyx (Shawn Wang)
+- https://twitter.com/fanahova (Alessio Fanelli)
+
+Source of this video:
+- https://youtu.be/K5iDUZPx60E
+
+We got permission (https://twitter.com/swyx/status/1671261099528982528) from Shawn Wang (of Latent Space) for uploading this video. All material displayed in this video belongs to their respectable owners. We uploaded this video in good faith to share the work and progress of George Hotz, tiny corp and comma.ai.
+
+Chapters:
+00:00:00 intro
+00:00:55 devkit, gatekeeping
+00:01:35 the hero's journey, the portal
+00:02:15 sam altman ml compute, nvidia, qualcomm
+00:03:24 CISC, Arm, RISC-V
+00:04:15 AMD stack, TPU, Google ML framework
+00:06:05 turing completeness, re-order buffer, speculative execution, branch predictions, halting problem
+00:07:40 clockless, analog computing, changing cache hierarchy, removing branch predictions, warp schedulers
+00:08:20 turing completeness, CUDA, TPU, systolic arrays
+00:10:05 systolic arrays visualization, TPU closed source, Trainium
+00:11:25 lines of code, pytorch, tensorflow code
+00:12:34 developer experience, ONNX, ONNX runtime, compliance tests, core ML
+00:13:25 unnecessary memory operations, pytorch lightning, pytorch relu a class
+00:16:05 laziness, eager, graph compute model
+00:17:30 pytorch smart people, less complexity
+00:18:15 fusing, lazy.py
+00:19:10 GRAPH=1, DEBUG=2, John Carmack
+00:21:05 uncompetitive on nvidia, x86, slower
+00:21:32 competitive on qualcomm gpu's
+00:22:25 tensors, AMD bugs, opencl, ml perf
+00:23:45 kernel driver, ml framework, user space runtime, cuda_ioctl_sniffer
+00:24:30 kernel panic, intel GPUs, AMD Lisa Su
+00:26:35 open source culture, nvidia P2P, cuda memcpy
+00:28:00 building in public, contributing to open source
+00:28:32 ggml, M1 pytorch, AMD pytorch
+00:30:00 test_ops.py, CI, good tests, mojo, pytorch compatibility
+00:31:35 replicating python hard
+00:32:08 tiny box red, limited by GPUs, luxury ai computers, fp16 llama
+00:33:22 ggml quantization, compressing the weights, memory bandwidth
+00:35:32 int8 support, weights in int8,  fp16 to int8 to fp16
+00:37:45 tiny box challenges, 6 GPUs, blowers or watercooling, pcie 4 extenders, pci redrivers
+00:39:10 silent tiny box, 45-50 dB, one outlet of power, limit the power on GPU
+00:40:30 AI hub for the home, personal computer cluster, pci bandwidth
+00:41:50 training limit on tiny box, 7B, interconnect bandwidth
+00:43:05 training longer, making bigger model, inference on cloud
+00:44:30 on device training, fine-tuning
+00:45:25 mining FLOPCoin, how to tell crypto is a scam
+00:45:45 ensuring data is correct, tiny net
+00:46:25 federated training, distributed training
+00:47:42 enterprise use, flops per dollar, watt, person = 20 PFLOPS
+00:49:32 Tampa of compute, GPT 4 mixture model, 16 inferences
+00:50:40 secretive companies
+00:51:10 better training, batch norm, flash attention
+00:52:50 Rich Sutton The Bitter Lesson, computers all you need
+00:53:40 Hutter Prize, RNN, MDL, OpenAI vs working at Facebook
+00:55:38 hiring people when computer can do everything
+00:56:20 model doing a simple pull request
+00:57:05 unimpressed language models, subpar rap lyrics generation
+00:58:04 10 LLMs in a room to discuss the answer, program generation
+00:58:45 tiny corp remote company, programming challenges
+00:59:30 tiny grad pull requests, stipend
+01:00:45 coding tool complete (above API line), driving not tool complete (under API line)
+01:01:40 artists, tools getting better
+01:02:30 full time at tiny corp, proposing bounties 
+01:03:16 separation in company
+01:04:05 comma body
+01:05:40 large YOLOs, talking to LLMs, latency
+01:06:12 LLaMA vs ChatGPT
+01:06:40 computer vision and language
+01:07:30 AI girlfriend, merging with a machine
+01:08:50 brain upload
+01:09:30 living forever, how many weights a human has
+01:11:05 the goddess of everything else, AI is not going to kill us
+01:11:35 alignment problem, complexity will continue, paperclipers do not exist
+01:12:25 grateful for AI, math to understand ML
+01:13:54 John Carmack six insights, Elon's methodology
+01:14:25 accessibility, tiny corp building computers, luck
+01:15:25 why transformers work, semi weight sharing
+01:16:25 the weights can change dynamically based on context
+01:17:10 attention is all you need
+01:17:50 Elon fundamental science physics, George fundamental science information theory
+01:18:55 e/acc, Mark Andreessen
+01:20:25 why avatar 2 bad, Jake Sully
+01:21:35 ChatGPT level pull request
+01:22:00 impact of chat bots, spam bots
+01:22:40 go try tinygrad
+01:22:55 building chips, silicone mines, self reproducing robot
+
+We archive George Hotz and comma.ai videos for fun.
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

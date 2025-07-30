@@ -1,0 +1,131 @@
+Date of stream 30 Apr 2023.
+from $1499 buy https://comma.ai/shop/comma-three
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - three-dot menu icon - Show transcript
+
+Source files:
+- https://github.com/geohot/tinygrad
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+
+Chapters:
+00:00:00 intro
+00:00:48 Alex
+00:02:30 light setup
+00:04:25 horizontal stream
+00:05:15 ROMED8-2T/BCM EPYC 7662
+00:05:50 Samsung RDIMM 8GB DDR4-3200
+00:06:07 AMD ROCm, goal of tinycorp, bad Nvidia
+00:06:25 MLPerf, competitor to Nvidia, AMD developer friendly
+00:06:48 RDNA 3 open source,
+00:07:15 bitcoin mining case, pcie x16 extenders
+00:07:40 motherboard price, cheap gen2 epyc cpus
+00:08:18 tinygrad discord, $6000 2019 CPU for $800
+00:08:40 $38 8GB RAM sticks
+00:09:25 no sponsors, it's not about money
+00:10:30 good mood George
+00:10:45 220-T2-1600-X1 PSU
+00:11:30 Noctua fans secret 12V fans runs on 5V
+00:12:45 no twitch or comma technical support
+00:13:00 airflow direction
+00:13:30 missed installing the cpu
+00:14:40 Noctua fan color
+00:15:50 fully modular
+00:16:50 overview of the stream
+00:18:15 tinycorp headquarters
+00:18:30 Alex's favorite pokemon
+00:18:50 pirate flag
+00:19:30 work for tinycorp
+00:19:55 tinygrad competitive with pytorch on AMD
+00:20:05 $5000 computer, 5 more GPUs, multimachine mellanox
+00:20:57 advantage by using AMD GPUs, nvidia no P2P support
+00:21:20 sponsorship from AMD
+00:22:00 feuds
+00:22:35 $350 EVGA, Dell PSU $55
+00:23:08 rubber feet
+00:24:10 Alex's favorite feud, jack in the box
+00:24:55 gucci candle
+00:25:20 always kind to service people
+00:26:20 haircut, barber
+00:28:05 Alex distracted by chat
+00:28:40 first computer
+00:29:30 Hiball Lemon Lime
+00:30:40 good planes 787, Airbus A350, A380
+00:31:35 video update, being famous, wealth, india
+00:31:15 pc overview, 128 lanes of PCIe Gen 4
+00:33:50 bad nvidia, price gouging
+00:34:30 AMD P2P 
+00:35:00 computer on
+00:36:10 quiet computer, hotswap 990 Pro 2TB
+00:38:25 real facts George's height
+00:38:35 correct M2 slot
+00:39:05 desk setup
+00:40:28 not on drugs, Alex showing George's stuff 
+00:45:00 PC starting up, connecting monitor, keyboard, mouse
+00:50:50 finally boot screen on monitor
+00:53:50 tarallini snack, looking for usb stick, maple almond butter filled
+00:57:15 $100 paypal to George gmail for drug test to take on stream
+00:59:10 computer for crypto
+01:01:45 will George use HIP on AMD
+01:04:05 Ubuntu 20.04, 22.04?
+01:06:00 book shelf - Thank you Alex!
+01:07:09 bootable Ubuntu 22.04.2 LTS on 870 QVO 8TB, Richard Stallman, GNU
+01:14:30 booting from USB
+01:18:00 wrong click, installing ubuntu
+01:22:00 pc name, no ubuntu pro, meta stock loss
+01:25:25 distorting the camera, ai regulation, bios/boot delay
+01:31:00 Alex bringing pizza
+01:33:00 update-pciids, lspci, uname -a, cpuinfo, meminfo
+01:37:30 6 GPU cards, LLM on AMD, 1 pcie for network
+01:40:00 ROCm vs Cuda, 7GB LLaMA, dma weights from nvme, data parallel
+01:41:10 goal 13GB LLaMA float16
+01:41:40 stream from macbook
+01:43:35 securing the PC, disable ssh password, 50-cloud-init.conf, sudoers
+01:53:30 APEI Generic Hardware Error
+01:55:08 amdgpu-pro
+01:59:00 will make amd drivers good, install amdgpu, amdgpu rocm
+02:05:35 number of devices 0 opencl
+02:10:30 PCI-E P2P 3090, researching ROCm
+02:14:45 tmux config, rocm with open amdgpu
+02:19:10 ROCclr, hsa-runtime64, AMD biggest fan, friends with George
+02:31:40 libhsa-runtime-dev, AMD GPU user experience vs nvidia, clang
+02:45:15 mi300, custom llvm needed to build rocm
+02:48:10 GPT4 rant, openai lame
+02:52:00 building clang, big htop, lag
+02:57:00 need more ram, AMD uProf
+03:05:00 make install, ld.lld doesn't exist
+03:19:45 hsakmt.h error
+03:23:00 readme, ROCclr, amd_comgr, rpm package requires rpmbuild, dpkg see files
+03:35:10 hsakmt error, X11/Xlib.h error, comgr not installed, ROCm-CompilerSupport
+03:54:35 docker container, amd kernel module
+04:03:10 amdgpu-dkms, build amdgpu driver module
+04:05:22 repo.radeon.com
+04:10:40 ubuntu 23.04, updating kernel
+04:18:50 it was the kernel issue
+04:22:30 add to group ubuntu
+04:23:10 tinygrad, llama.py 
+04:25:30 it did not build, kernel upgrade worked
+04:28:25 tinygrad needs only opencl
+04:28:40 90% of a problem was the old kernel, chatbots inside llama, 10g net adapter
+04:34:25 llama running on amd, optimization needed
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://twitch.tv/georgehotz
+- https://github.com/geohot
+- https://youtube.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

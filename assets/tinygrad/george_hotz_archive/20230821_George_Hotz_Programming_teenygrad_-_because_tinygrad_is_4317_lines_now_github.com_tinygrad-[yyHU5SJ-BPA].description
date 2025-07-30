@@ -1,0 +1,93 @@
+Date of the stream 20 Aug 2023.
+from $1250 buy https://comma.ai/shop/comma-3x & best ADAS system in the world https://openpilot.comma.ai
+Live-stream chat added as Subtitles/CC - English (Twitch Chat) - at the bottom - Show Transcript
+
+Sources:
+- https://github.com/tinygrad/teenygrad
+- https://github.com/geohot/tinygrad
+- http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+- https://en.wikipedia.org/wiki/Heat_death_of_the_universe
+- https://users.ece.cmu.edu/~gamvrosi/thelastq.html
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Pre-order tinybox:
+- https://buy.stripe.com/5kAaGL6lk9uX9nW144 (https://tinygrad.org/)
+
+Chapters:
+00:00:00 muted intro
+00:00:35 un-muted
+00:01:23 teenygrad
+00:01:44 staying on topic
+00:02:15 tensor.py
+00:04:55 renaming to teenygrad
+00:08:55 DType out of control
+00:12:08 bad chat comment trigger
+00:12:50 teenygrad.mlops
+00:17:50 teenygrad.state
+00:19:50 better ways to write software
+00:23:00 intro for new people, factor graph, clean APIs
+00:23:33 the most beautiful file in tinygrad mlops
+00:24:45 bad files in tinygrad
+00:26:20 object has no attribute reshape
+00:29:20 lazybuffer object has no attribute dtype
+00:33:40 pretty-errors
+00:40:40 humans bad at software development
+00:46:05 object lazybuffer has no attribute fromcpu
+00:51:35 intro for new people again
+00:53:15 python max magic method
+00:57:50 pretty syntactic sugar
+01:00:05 flag to error fast
+01:02:10 main, master
+01:08:05 coin boys
+01:09:15 world always trying to exploit, manipulate you
+01:11:10 tensor has no attribute cpu
+01:11:48 loss nan
+01:14:42 accuracy going up
+01:15:35 830 lines
+01:17:40 can we make llama work?, stable diffusion
+01:19:43 do we even need flip
+01:22:05 it's cheating if you use pytorch
+01:22:50 llama needs float16
+01:30:24 bug in tinygrad
+01:36:10 math imports
+01:37:01 google engineers
+01:38:25 can someone write this in tinygrad that does not use numpy
+01:40:10 cifar 10
+01:42:15 spending lines on speed
+01:43:10 teenygrad tinygrad front end used independently of everything else
+01:44:43 web gpu kernels
+01:45:03 The bitter lesson by Rich Sutton
+01:46:10 Rich Sutton technical, Robin Hanson economics, AI doom
+01:46:30 climate doom
+01:47:20 heat death of the universe
+01:47:30 The last question Isaac Asimov
+01:49:30 if you understand teenygrad you are on your way to understand tinygrad
+01:51:40 letting nun subs talk
+01:53:17 what is the point?
+02:00:40 lies in the read me
+02:03:45 you just do not undestand
+02:04:49 where is my hurricane
+02:05:50 thank you for watching the stream
+02:06:55 manifold george yudkowsky
+02:08:04 the beginning of infinity David Deutsch
+02:08:14 doomers, yudkowsky smart
+02:08:40 people played this game before
+02:10:10 new addition on geohot.com
+
+Official George Hotz communication channels:
+- https://geohot.com
+- https://twitter.com/realGeorgeHotz
+- https://instagram.com/georgehotz
+- https://tinygrad.org
+- https://geohot.github.io/blog
+- https://github.com/geohot
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.

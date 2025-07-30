@@ -1,0 +1,159 @@
+Date of stream 11 Jun 2022.
+Live-stream chat added as Subtitles/CC - English (Twitch Chat).
+Stream title: can tinygrad run the openpilot model?
+
+Source files:
+- https://github.com/geohot/tinygrad
+- https://github.com/geohot/cuda_ioctl_sniffer
+Follow for notifications:
+- https://twitch.tv/georgehotz
+Support George:
+- https://twitch.tv/subs/georgehotz
+Programming playlist:
+- https://www.youtube.com/playlist?list=PLzFUMGbVxlQs5s-LNAyKgcq5SL28ZLLKC
+Gaming computer
+- Ubuntu 20.04.4 LTS
+- AMD Ryzen 9 5950X
+- 64GB RAM
+- Nvidia GeForce RTX 3080 Ti
+Streaming computer
+- Apple 13-inch MacBook Air M1
+- LG UltraFine 5K
+- Blue Yeti
+- Apple Magic Keyboard
+- HHKB
+- tmux & Vim & Visual Studio Code with Vim Key Bindings and other
+  https://github.com/geohot/configuration
+
+Chapters:
+00:00:00 intro
+00:00:38 quotes
+00:02:17 George moving out of apartment 
+00:02:42 refactor of tinygrad
+00:04:15 how does data move, facts over feelings, Ben Shapiro
+00:05:18 more info about refactor of tinygrad
+00:09:10 we are going to make tinygrad lazy
+00:11:25 pull requests tinygrad
+00:12:35 fetching the openpilot model
+00:14:00 error could not find pythonlibs
+00:19:45 beautiful tinygrad graphs
+00:21:05 not a safe space for off topic questions
+00:21:35 tinygrad lazy branch
+00:24:05 1000 lines
+00:25:10 permute object has no attribute op
+00:27:00 all the ops
+00:29:20 the power of tinygrad
+00:32:20 back to trying to install onnx
+00:42:30 node
+00:45:25 trying to setup twitch soundtrack
+00:49:38 airpods music
+00:51:30 green squirrel in pretty bad shape
+00:56:30 George is feeling calm, questions
+00:57:30 simple modes
+01:14:10 TestOps.test_elu
+01:24:40 split
+01:29:00 graph of openpilot model
+01:33:30 running model on gpu, torch cpu
+01:36:30 flatten, MultiCAD support
+01:49:15 onnx runtime
+01:58:58 tests failing
+02:15:40 asking for help on +=
+02:20:35 stream for the weekend, land, export to onnx
+02:21:45 idea of tinygrad
+02:23:05 breaking of CI
+02:31:05 idea
+02:34:30 stream slogan keep hacking elite
+02:36:40 non-sub chat quality, computer questions
+02:37:55 food time
+02:39:10 sub only society, taxes
+02:40:00 always write tests, I love tests
+02:40:31 people with skills
+02:44:40 onnx resnet
+02:52:10 working with food
+03:00:15 onnx GlobalAveragePool
+03:22:20 that fixed it
+03:24:55 Converter is not implemented
+03:39:50 bringing in the chicken image
+03:54:50 looking up the chicken image
+03:57:00 we should write more tests, piano
+03:59:40 Unsupported Transpose
+04:05:35 replacing onnx with better onnx
+04:09:10 it's a lighter
+04:12:15 incompatible constructor arguments
+04:19:15 more errors
+04:26:00 it's totally wrong
+04:33:00 ShuffleNet
+04:39:45 how much wrong could it be
+04:40:58 explaining the problem with maxpool
+04:53:30 hen
+04:58:00 overview of the stream
+04:59:00 recap
+05:01:45 questions from subs
+05:02:35 lot's of gifted subs
+05:03:08 PRINT_LLOPS=1, optimization
+05:04:30 tinygrad is a risc instruction set for neural networks
+05:08:17 more gifted subs
+05:08:45 tinyvoice, tinygrad, tinycuda = tinyfast
+05:12:15 why pytorch can't load onnx models
+05:13:45 the beauty of tinygrad
+05:15:40 more gifted subs
+05:16:40 strided max pool implementation
+05:20:40 thank you for watching
+
+We are not affiliated with comma.ai.
+Official communication channels:
+- https://comma.ai
+- https://twitter.com/comma_ai
+- https://youtube.com/commaai
+- https://medium.com/@comma_ai
+- https://github.com/commaai
+- https://discord.comma.ai
+
+How to get a job:
+- https://comma.ai/jobs
+How to collaborate:
+- https://comma.ai/services
+Buy things to support comma.ai:
+- https://comma.ai/shop
+
+Are you interested in openpilot?
+Knowledge base:
+- https://wiki.comma.ai
+Check out the code:
+- https://openpilot.comma.ai
+Is my car supported?
+- https://comma.ai/vehicles
+Frequently Asked Questions:
+- https://comma.ai/faq
+How to setup openpilot:
+- https://comma.ai/setup
+Comma Secure Shell:
+- https://ssh.comma.ai
+API Documentation:
+- https://api.comma.ai
+CAN analysis tool: 
+- https://cabana.comma.ai
+Review and annotate your driving data:
+- https://my.comma.ai
+Leaderboard
+- https://my.comma.ai/leaderboard
+Comma Connect App:
+- https://apps.apple.com/us/app/comma-connect/id1456551889
+- https://play.google.com/store/apps/details?id=ai.comma.connect
+Research:
+- https://github.com/commaai/comma2k19
+- https://github.com/commaai/comma10k
+- https://github.com/commaai/research
+
+We archive George Hotz and comma.ai videos for fun.
+Follow for notifications:  
+- https://twitter.com/geohotarchive
+Unofficial communities and resources:
+- https://reddit.com/r/comma_ai
+- https://reddit.com/r/geohot
+- https://community.comma.ai/wiki
+- https://commasupport.zendesk.com
+
+Thank you for reading and using the SHOW MORE button.
+We hope you enjoy watching George's videos as much as we do.
+See you at the next video.
