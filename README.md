@@ -9,30 +9,92 @@ Running machine learning models requires:
 - Models
 - Software
 
+
 ## Hardware
 
 Different use cases require different hardware. The following hardware categories are considered.
 
-|                        | **Consumer<br>CPU only**      | **Workstation<br>CPU only**      | **Server<br>CPU only**      | **Embedded CPU + NPU** | **Consumer CPU+<br>Consumer GPU**      | **Workstation<br>GPU**      | **Server<br>GPU**      | **Edge<br>AI Accelerator** |
-|------------------------|--------------------------|-----------------------------|------------------------|-------------------------|-----------------------------|------------------------|------------------------|---------------------------|
-| **CPU [AMD]**          | Ryzen                    | Threadripper /<br> Threadripper Pro | EPYC | Ryzen<br>AI 5 330 --<br>AI MAX+ 395 | Threadripper /<br> Threadripper Pro / EPYC | EPYC 8004/9005         | N/A                      |
-| **Cores**              | 4-16                     | 16-64                       | 64-128                 | 4-16                     | 16-64                       | 64-128                 | 4-16                      |
-| **FCLK**              | 4-16                     | 16-64                       | 64-128                 | 4-16                     | 16-64                       | 64-128                 | 4-16                      |
-| **Number of CCDs**              | 4-16                     | 16-64                       | 64-128                 | 4-16                     | 16-64                       | 64-128                 | 4-16                      |
-| **L1 cache [kB / core]**           | 16-64 MB                 | 64-128 MB                   | 128-256 MB             | 16-64 MB                 | 64-128 MB                   | 128-256 MB             | 8-32 MB                   |
-| **L3 cache [MB / CPU]**           | 16-64 MB                 | 64-128 MB                   | 128-256 MB             | 16-64 MB                 | 64-128 MB                   | 128-256 MB             | 8-32 MB                   |
-| **PCIe lanes**         | 16-64                    | 64-128                      | 128-256                | 16-64                    | 64-128                      | 128-256                | 4-16                       |
-| **Number of CPUs**         | 1                    | 1                      | 1-2                | 1                    | 1                      | 128-256                | 4-16                       |
-|                        |                          |                             |                        |                          |                             |                        |                        |                           |
-| **RAM**                | 16-64 GB                 | 64-256 GB                   | 256-1024 GB            | 16-64 GB                 | 64-256 GB                   | 256-1024 GB            | 4-32 GB                    |
-| **RAM type**           | DDR4                     | DDR4                        | DDR4                   | GDDR6                    | GDDR6                       | GDDR6                  | LPDDR4/<br>LPDDR5               |
-| **RAM channels**      | 1-2                       | 2-4                         | 4-8                    | 1-2                       | 2-4                         | 4-8                    | 1-2                         |
-| **RAM speed [MT/s]**           | DDR4                     | DDR4                        | DDR4                   | GDDR6                    | GDDR6                       | GDDR6                  | LPDDR4/<br>LPDDR5               |
-| **RAM Bandwidth**   | ~50 GB/s                 | ~100 GB/s                   | ~200 GB/s              | ~50 GB/s                 | ~100 GB/s                   | ~200 GB/s              | ~10-50 GB/s                 |
-|                        |                          |                             |                        |                          |                             |                        |                        |                           |
-| **Number of GPUs**     | 0                        | 0                           | 0                      | 1                        | 1-2                         | 1-8                    | 1-4                         |
-| **VRAM per GPU**       | 0                        | 0                           | 0                      | 8-24 GB                  | 16-48 GB                    | 32-96 GB               | 2-16 GB                     |
-| **Total VRAM**         | 0                        | 0                           | 0                      | 8-24 GB                  | 16-96 GB                    | 32-768 GB              | 2-64 GB                     |
+LLM inference:
+-   CPU only
+-   CPU + GPU (The model plus context fits into the GPU memory)
+-   Hybrid CPU + GPU, including embedded (Mini PC) solutions
+    The model plus context fits into the CPU memory, but does not fit into the GPU VRAM
+
+
+### CPU only
+
+|                        | **Consumer<br>CPU only**      | **Workstation<br>CPU only**      | **Server<br>CPU only**      |
+|------------------------|------------------------------|----------------------------------|-----------------------------|
+| **CPU [AMD]**          | Ryzen                        | Threadripper /<br>Threadripper Pro | EPYC                        |
+| **Cores**              | 4-16                         | 16-64                            | 64-128                      |
+| **FCLK**               | 4-16                         | 16-64                            | 64-128                      |
+| **Number of CCDs**     | 4-16                         | 16-64                            | 64-128                      |
+| **L1 cache [MB]**      | 16-64                        | 64-128                           | 128-256                     |
+| **L3 cache [MB]**      | 16-64                        | 64-128                           | 128-256                     |
+| **PCIe lanes**         | 16-64                        | 64-128                           | 128-256                     |
+| **Number of CPUs**     | 1                            | 1                                | 1-2                         |
+|                        |                              |                                  |                             |
+| **RAM**                | 16-64 GB                     | 64-256 GB                        | 256-1024 GB                 |
+| **RAM type**           | DDR4                         | DDR4                             | DDR4                        |
+| **RAM channels**       | 1-2                          | 2-4                              | 4-8                         |
+| **RAM speed [MT/s]**   | DDR4                         | DDR4                             | DDR4                        |
+| **RAM Bandwidth**      | ~50 GB/s                     | ~100 GB/s                        | ~200 GB/s                   |
+|                        |                              |                                  |                             |
+| **Number of GPUs**     | 0                            | 0                                | 0                           |
+| **VRAM per GPU**       | 0                            | 0                                | 0                           |
+| **Total VRAM**         | 0                            | 0                                | 0                           |
+
+---
+
+### CPU + GPU
+
+|                        | **Consumer CPU+<br>Consumer GPU**      | **Workstation<br>GPU**      | **Server<br>GPU**      |
+|------------------------|-----------------------------|------------------------|------------------------|
+| **CPU [AMD]**          | Threadripper /<br> Threadripper Pro / EPYC | EPYC 8004/9005         | N/A                      |
+| **Cores**              | 16-64                       | 64-128                 | 4-16                      |
+| **FCLK**               | 16-64                       | 64-128                 | 4-16                      |
+| **Number of CCDs**     | 16-64                       | 64-128                 | 4-16                      |
+| **L1 cache [kB / core]** | 64-128 MB                   | 128-256 MB             | 8-32 MB                   |
+| **L3 cache [MB / CPU]** | 64-128 MB                   | 128-256 MB             | 8-32 MB                   |
+| **PCIe lanes**         | 64-128                      | 128-256                | 4-16                       |
+| **Number of CPUs**     | 1                            | 128-256                | 4-16                       |
+|                        |                             |                        |                           |
+| **RAM**                | 64-256 GB                   | 256-1024 GB            | 4-32 GB                    |
+| **RAM type**           | GDDR6                       | GDDR6                  | LPDDR4/<br>LPDDR5               |
+| **RAM channels**       | 2-4                         | 4-8                    | 1-2                         |
+| **RAM speed [MT/s]**   | GDDR6                       | GDDR6                  | LPDDR4/<br>LPDDR5               |
+| **RAM Bandwidth**      | ~100 GB/s                   | ~200 GB/s              | ~10-50 GB/s                 |
+|                        |                             |                        |                           |
+| **Number of GPUs**     | 1-2                         | 1-8                    | 1-4                         |
+| **VRAM per GPU**       | 16-48 GB                    | 32-96 GB               | 2-16 GB                     |
+| **Total VRAM**         | 16-96 GB                    | 32-768 GB              | 2-64 GB                     |
+
+---
+
+### Hybrid CPU + GPU (Embedded)
+
+|                        | **Embedded CPU + NPU** |
+|------------------------|------------------------|
+| **CPU [AMD]**          | Ryzen<br>AI 5 330 --<br>AI MAX+ 395 |
+| **Cores**              | 4-16                   |
+| **FCLK**               | 4-16                   |
+| **Number of CCDs**     | 4-16                   |
+| **L1 cache [kB / core]** | 16-64 MB             |
+| **L3 cache [MB / CPU]** | 16-64 MB              |
+| **PCIe lanes**         | 16-64                  |
+| **Number of CPUs**     | 1                      |
+|                        |                        |
+| **RAM**                | 16-64 GB               |
+| **RAM type**           | GDDR6                  |
+| **RAM channels**       | 1-2                    |
+| **RAM speed [MT/s]**   | GDDR6                  |
+| **RAM Bandwidth**      | ~50 GB/s               |
+|                        |                        |
+| **Number of GPUs**     | 1                      |
+| **VRAM per GPU**       | 8-24 GB                |
+| **Total VRAM**         | 8-24 GB                |
+
+
 
 Notes:
 1.  FCLK: Fabric clock speed - clock speed on the CPU side. AMD Zen 4: 1.8 GHz; Zen 5: 2.0 GHz.
