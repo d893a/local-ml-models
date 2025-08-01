@@ -12,16 +12,64 @@ Running machine learning models requires:
 
 ## Hardware
 
-Different use cases require different hardware. The following hardware categories are considered.
-
-LLM inference:
+The following hardware configurations are considered:
 -   CPU only
--   CPU + GPU (The model plus context fits into the GPU memory)
--   Hybrid CPU + GPU, including embedded (Mini PC) solutions
-    The model plus context fits into the CPU memory, but does not fit into the GPU VRAM
+-   CPU + GPU (The model plus context fits into the GPU VRAM)
+-   Hybrid CPU + GPU, including embedded (Mini PC) solutions. The model plus
+    context fits into the CPU memory, but does not fit into the GPU VRAM.
+
+General notes:
+-   CPU RAM: In all cases the CPU RAM needs to be large enough to hold the model and context.
 
 
 ### CPU only
+
+Notes for CPU-only configurations:
+-   Only AMD CPUs are considered in this assessment.
+-   CPU Architecture: bfloat16 format is needed for LLM inference. This was introduced with the
+    AMD Zen 4 architecture's AVX-512 instruction set.
+    -   [Zen 4/4c](https://en.wikipedia.org/wiki/Zen_4) CPUs:
+        -   Desktop:
+            -   Ryzen 7700/7900/7950/7040/7045/8000F/8000G (AM5 socket)
+        -   Workstation:
+            -   Ryzen Threadripper 7000X / Threadripper Pro 7000WX (sTR5 socket)
+        -   Server:
+            -   EPYC 4004 (AM5)
+            -   EPYC 8004 (SP6)
+            -   EPYC 9004 (SP5)
+        -   Mobile:
+            -   Ryzen 7040/7045/8040/8045/200 (FP7/FP7r2/FP8/FL1)
+            -   Ryzen 200 (BGA FP7/FP7r2/FP8)
+    -   [Zen 5/5c](https://en.wikipedia.org/wiki/Zen_5) CPUs: , Threadripper (Pro) 9000, Ryzen AI (MAX,MAX+) 3xx, EPYC 9005
+        -   Desktop:
+            -   Ryzen 9000 (AM5 socket)
+        -   Workstation:
+            -   Ryzen Threadripper 9000X / Threadripper Pro 9000WX (sTR5 socket)
+        -   Server:
+            -   EPYC 4004 (AM5)
+            -   EPYC 8004 (SP6)
+            -   EPYC 9004 (SP5)
+        -   Mobile:
+            -   Ryzen AI 300 (BGA FP8)
+-   CPU core count:
+-   CPU socket:
+    -   Consumer CPUs use the AM5 socket. Wide motherboard support.
+    -   Workstation CPU sockets:
+        -   sTR5: Threadripper, Threadripper Pro
+        -   SP6: AMD EPYC 8004 series
+    -   Server CPUs: SP5 socket
+-   CPU Cache size:
+    -   Zen 4/4c CPUs:
+        -   Ryzen 7000/8000, Hawk Point Refresh (2xx), Threadripper (Pro) 7000, EPYC 4004/8004/9004
+        -   L1 cache: 32+32 kB, L2: 1MB, L3: 32 MB
+    -   Zen 5/5c CPUs:
+        -   Ryzen 9000, Threadripper (Pro) 9000, Ryzen AI (MAX,MAX+) 3xx, EPYC 9005
+        -   L1 cache: 32+48 kB, L2: 1MB, L3: 32 MB
+
+1.  FCLK: Fabric clock speed - clock speed on the CPU side. AMD Zen 4: 1.8 GHz; Zen 5: 2.0 GHz.
+2.  CCD: Core complex Die - contains the memory controller and caches in the CPU.
+3.  RAM Bandwidth B = min(RAM channels * 8 * RAM speed [MT/s] / 1000, Number of CCDs * 32 * FCLK [GHz]) where FCLK is the fabric clock speed.
+
 
 |                        | **Consumer<br>CPU only**      | **Workstation<br>CPU only**      | **Server<br>CPU only**      |
 |------------------------|------------------------------|----------------------------------|-----------------------------|
@@ -44,7 +92,7 @@ LLM inference:
 | **VRAM per GPU**       | 0                            | 0                                | 0                           |
 | **Total VRAM**         | 0                            | 0                                | 0                           |
 
----
+
 
 ### CPU + GPU
 
@@ -97,14 +145,3 @@ LLM inference:
 
 
 Notes:
-1.  FCLK: Fabric clock speed - clock speed on the CPU side. AMD Zen 4: 1.8 GHz; Zen 5: 2.0 GHz.
-1.  The bfloat16 format for LLM inference is supported by the AMD CPUs in the
-    AVX-512 instruction set starting with the Zen 4 architecture.
-    -   Zen 4/4c CPUs:
-        -   Ryzen 7000/8000, Hawk Point Refresh (2xx), Threadripper (Pro) 7000, EPYC 4004/8004/9004
-        -   L1 cache: 32+32 kB, L2: 1MB, L3: 32 MB
-    -   Zen 5/5c CPUs:
-        -   Ryzen 9000, Threadripper (Pro) 9000, Ryzen AI (MAX,MAX+) 3xx, EPYC 9005
-        -   L1 cache: 32+48 kB, L2: 1MB, L3: 32 MB
-2.  CCD: Core complex Die - contains the memory controller and caches in the CPU.
-4.  RAM Bandwidth B = min(RAM channels * 8 * RAM speed [MT/s] / 1000, Number of CCDs * 32 * FCLK [GHz]) where FCLK is the fabric clock speed.
