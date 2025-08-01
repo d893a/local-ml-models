@@ -43,6 +43,7 @@ Where:
 -   RAM speed: 4.8 GT/s to 8 GT/s.
 -   RAM channels: 2-12 (24 for 2-CPU setups). RAM sizes vary between 4-128 GB
     modules, resulting in total memory size of 8 GB to 3072 GB.
+-   See also: https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/
 
 Examples:
 -   AMD Ryzen 5 7400F: n_CCD = 1, FCLK = 1.8 GHz, ch = 2.
@@ -57,32 +58,6 @@ The following CPU categories are considered:
 -   Workstation CPUs
 -   Server CPUs
 -   Mobile CPUs
-
-
-|                        | **Consumer<br>CPU only**     | **Workstation<br>CPU only**      | **Server<br>CPU only**      |
-|------------------------|------------------------------|----------------------------------|-----------------------------|
-| **CPU [AMD]**          | Ryzen                        | Threadripper /<br>Threadripper Pro | EPYC                      |
-| **Cores**              | 4-16                         | 16-64                            | 64-128                      |
-| **FCLK**               | 4-16                         | 16-64                            | 64-128                      |
-| **Number of CCDs**     | 4-16                         | 16-64                            | 64-128                      |
-| **L1 cache [MB]**      | 16-64                        | 64-128                           | 128-256                     |
-| **L3 cache [MB]**      | 16-64                        | 64-128                           | 128-256                     |
-| **PCIe lanes**         | 16-64                        | 64-128                           | 128-256                     |
-| **Number of CPUs**     | 1                            | 1                                | 1-2                         |
-|                        |                              |                                  |                             |
-| **RAM**                | 16-64 GB                     | 64-256 GB                        | 256-1024 GB                 |
-| **RAM type**           | DDR4                         | DDR4                             | DDR4                        |
-| **RAM channels**       | 1-2                          | 2-4                              | 4-8                         |
-| **RAM speed [MT/s]**   | DDR4                         | DDR4                             | DDR4                        |
-| **RAM Bandwidth**      | ~50 GB/s                     | ~100 GB/s                        | ~200 GB/s                   |
-|                        |                              |                                  |                             |
-| **Number of GPUs**     | 0                            | 0                                | 0                           |
-| **VRAM per GPU**       | 0                            | 0                                | 0                           |
-| **Total VRAM**         | 0                            | 0                                | 0                           |
-
-
-
-
 
 ### Desktop CPUs
 
@@ -144,7 +119,7 @@ This includes the Ryzen Threadripper and EPYC 8004 processors.
     -   [SP5](https://en.wikipedia.org/wiki/Socket_SP5):
         -   EPYC 9004: 12-channel DDR5-4800 (Zen 4) (24 for 2-CPU config)
         -   EPYC 9005: 12-channel DDR5-5600 (Zen 5) (24 for 2-CPU config)
--   Maximum RAM: 1526 GB (3072 GB for 2-CPU config)
+-   Maximum RAM: 3 TB (6 TB for 2-CPU config)
 -   Maximum cores: 192 (counts at prefill throughput)
 -   Cache:
     -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
@@ -154,29 +129,53 @@ This includes the Ryzen Threadripper and EPYC 8004 processors.
 -   Maximum number of CCDs per CPU: 16 (minimum 8 CCD is required to serve RAM BW)
 -   Maximum theoretical memory bandwidth: 460.8 to 1075.2 GB/s
     -   Caps topen generation throughput of 10 GB LLM model at 46 to 100 token/s
+    -   From the Genoa platform on, [single-rank memory modules will perform
+        well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
+        > The other important feature is dual rank versus single rank memory.
+        > With Milan and most Intel platforms, dual-rank memory is crucial to
+        > maximizing performance. There’s a 25% performance delta on Milan,
+        > for example. With Genoa, this is brought down to 4.5%. This is
+        > another considerable cost improvement because cheaper single-rank
+        > memory can be used.
+
+        See [Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1)
 
 | Series                | Cores         | Max RAM<br>(1/2-CPU) | Max RAM BW<br>(1/2-CPU) |
-|-----------------------|---------------|----------------------|------------------------:|
+|-----------------------|--------------:|---------------------:|------------------------:|
 | [EPYC 9004][9004]     | 16-128        | 3 / 6 TB             | 460.8 / 921.6 GB/s      |
 | [EPYC 9005][9005]     | 6-192         | 3 / 6 TB             | 537.6 / 1075.2 GB/s     |
 
 [9004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
 [9005]: https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)
 
-###  Mobile CPUs
 
-| Series                | Cores         | L3 Cache   | Arch    | Socket      | PCIe Lanes | Max RAM      |
-|-----------------------|---------------|------------|---------|-------------|------------|--------------|
-| Ryzen 7040/7045/8040/8045/200 | 4-8   | 16 MB      | Zen 4   | FP7/FP7r2/FP8/FL1 | 20   | 64 GB        |
-| Ryzen 200             | 4-8           | 16 MB      | Zen 4   | FP7/FP7r2/FP8 | 20       | 64 GB        |
-| Ryzen AI MAX/MAX+ 300 | 4-12          | 24 MB      | Zen 5c  | FP8         | 20         | 64 GB        |
+###  Mobile CPUs with integrated NPU
+
+-   Sockets: FL1, FP7, FP7r2 or FP8 type packages
+    -   200: All models support DDR5-5600 or LPDDR5X-7500 in 128-bit "dual-channel" mode.
+    -   300: All models support DDR5-5600 or LPDDR5X-8000 in dual-channel mode.
+-   Maximum RAM: 128 GB
+-   Maximum cores: 4-12 (counts at prefill throughput)
+-   Cache:
+    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
+    -   L2: 1 MB per core
+    -   L3: 8-64 MB
+-   Maximum PCIe lanes: 16-20
+-   Maximum theoretical memory bandwidth: 128 GB/s
+    -   Caps topen generation throughput of 10 GB LLM model at 12 token/s
 
 
-**Notes:**
-- See
+| Series                   | Cores  | Max RAM    | Max RAM BW   |
+|--------------------------|-------:|-----------:|-------------:|
+| [Ryzen 8040][8040]       | 4-8    | 128 GB     | 89.6 GB/s    |
+| [Ryzen AI 200][200]      | 4-8    | 256 GB     | 128 GB/s     |
+| [Ryzen AI 300][300]      | 4-12   | 256 GB     | 128 GB/s     |
+| [Ryzen AI MAX/MAX+][MAX] | 6-16   | 128 GB     | 128 GB/s     |
 
-
-Notes for CPU-only configurations:
+[8040]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_(8040_series,_Zen_4/RDNA3/XDNA_based)
+[200]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_Refresh_(200_series,_Zen_4/RDNA3/XDNA_based)
+[300]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Point_and_Krackan_Point_(Zen_5/RDNA3.5/XDNA2_based)
+[MAX]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Halo_(Zen_5/RDNA3.5/XDNA2_based)
 
 
 
@@ -207,7 +206,7 @@ Notes for CPU-only configurations:
 
 ### Hybrid CPU + GPU (Embedded)
 
-|                        | **Embedded CPU + NPU** |
+|                        | **Mobile CPU + NPU** |
 |------------------------|------------------------|
 | **CPU [AMD]**          | Ryzen<br>AI 5 330 --<br>AI MAX+ 395 |
 | **Cores**              | 4-16                   |
@@ -227,7 +226,3 @@ Notes for CPU-only configurations:
 | **Number of GPUs**     | 1                      |
 | **VRAM per GPU**       | 8-24 GB                |
 | **Total VRAM**         | 8-24 GB                |
-
-
-
-Notes:
