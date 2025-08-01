@@ -12,25 +12,51 @@ Running machine learning models requires:
 ## Hardware
 
 The following hardware configurations are considered:
-- [Introduction](#introduction)
-- [Hardware](#hardware)
-    - [CPU only](#cpu-only)
-    - [CPU + GPU](#cpu--gpu)
-    - [Hybrid CPU + GPU (Embedded)](#hybrid-cpu--gpu-embedded)
-
-General notes:
--   CPU RAM: In all cases the CPU RAM needs to be large enough to hold the model and context.
-
+-   CPU only
+-   CPU + GPU (The model plus context fits into the GPU VRAM)
+-   Hybrid CPU + GPU, including embedded (Mini PC) solutions. The model plus
+    context fits into the CPU memory, but does not fit into the GPU VRAM.
 
 
 ### CPU only
 
-The following CPU categories are considered:
--   Consumer CPU
--   Workstation CPU
--   Server CPU
+In CPU inference prefill (preprocessing) is compute-bound: The number or cores
+matter most, then CPU clock frequency, then the L3 and L1 cache size. Token
+generation is memory bandwidth-bound: higher memory throughput results in
+faster token generation. The RAM should be large enough to accommodate the
+model plus the context.
 
-Only AMD CPUs are considered in this assessment.
+In this assessment only AMD CPUs are examined.
+
+For LLM inference the CPU needs to support the AVX-512 instruction set's
+bfloat16 format. It is available in the [Zen 4](https://en.wikipedia.org/wiki/Zen_4)
+and [Zen 5](https://en.wikipedia.org/wiki/Zen_5) architectures.
+
+**Maximum theoretical memory bandwidth calculation**
+
+> BW = min(RAM channels * 8 * RAM speed [GT/s], n_CCDs per core * 32 * FCLK [GHz]) where FCLK is the fabric clock speed.
+
+Where:
+-   BW: Theoretical RAM Bandwidth. Actual values are measured between 30 to 95% of the theoretical maximum.
+-   FCLK: Fabric clock speed - clock speed on the CPU side. Zen 4: 1.8 Ghz, Zen 5: 2.0 GHz.
+-   CCD: Core complex Die - contains the memory controller in the CPU. Ranges from 1 to 16 per CPU core.
+-   RAM speed: 4.8 GT/s to 8 GT/s.
+-   RAM channels: 2-12 (24 for 2-CPU setups). RAM sizes vary between 4-128 GB
+    modules, resulting in total memory size of 8 GB to 3072 GB.
+
+Examples:
+-   AMD Ryzen 5 7400F: n_CCD = 1, FCLK = 1.8 GHz, ch = 2.
+    -   BW = min(2 ch * 8 * 5.2 GT/s, 1 CCD * 32 * 1.8 GHz) = min(83.2, 57.6) GB/s = 57.6 GB/s
+    -   If the model size plus context is 10 GB, then the generation throughput is less than 5.8 token/s.
+-   AMD EPYC 9755: n_CCD = 16, FCLK = 2.0 GHz, ch = 12.
+    -   BW = min(12 ch * 8 * 5.6 GT/s, 16 CCD * 32 * 2.0 GHz) = min(537.6, 1024) GB/s = 537.6 GB/s
+    -   If the model size plus context is 10 GB, then the generation throughput is less than 53.8 token/s.
+
+The following CPU categories are considered:
+-   Desktop CPUs
+-   Workstation CPUs
+-   Server CPUs
+-   Mobile CPUs
 
 
 |                        | **Consumer<br>CPU only**     | **Workstation<br>CPU only**      | **Server<br>CPU only**      |
@@ -55,85 +81,88 @@ Only AMD CPUs are considered in this assessment.
 | **Total VRAM**         | 0                            | 0                                | 0                           |
 
 
-bfloat16 format is needed for LLM inference, supported by the AVX-512
-instruction set, available in the [Zen 4](https://en.wikipedia.org/wiki/Zen_4)
-and [Zen 5](https://en.wikipedia.org/wiki/Zen_5) architecture.
 
+
+
+### Desktop CPUs
+
+-   Socket: [AM5](https://en.wikipedia.org/wiki/Socket_AM5) (dual-channel RAM)
+-   Maximum RAM: 192 GB (limits LLM model + context size to ~100 GB)
+-   Maximum cores: 16 (limits prefill throughput)
+-   Maximum L3 cache: 32-128 MB (limits prefill throughput)
+-   Maximum available PCIe lanes: 24 (enough to add only one CPIe 5.0 x16 GPU)
+-   Maximum theoretical memory bandwidth: 89.6 GB/s (caps 10 GB LLM model at 9 token/s generation)
+
+- L1 cache (Zen 4/4c): 32+32 kB, L2: 1 MB, L3: 32 MB per CCD.
+- L1 cache (Zen 5/5c): 32+48 kB, L2: 1 MB, L3: 32 MB per CCD.
+
+| Series                | Cores      | Max RAM  | Max RAM BW |
+|-----------------------|------------|----------|------------|
+| Ryzen 7700/7900/7950  | 6-16       | 128 GB   | 83.2 GB/s  |
+| Ryzen 7040/7045/8000F/8000G | 6-16 | 128 GB   | 83.2 GB/s  |
+| [EPYC 4004][4004]             | 4-16       | 128 GB   | 83.2 GB/s  |
+| [Ryzen 9000][9000]            | 6-16       | 192 GB   | 89.6 GB/s  |
+
+[4004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
+[9000]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Granite_Ridge_(9000_series,_Zen_5_based)
+
+
+### Workstation CPUs
+
+This includes the Ryzen Threadripper and EPYC 8004 processors.
+
+-   Sockets:
+    -   [sTR5](https://en.wikipedia.org/wiki/Socket_sTR5):
+        -   Threadripper: quad-channel DDR5-5200/6400 (Zen 4/5)
+        -   Threadripper Pro: octa-channel DDR5-5200/6400 (Zen 4/5)
+    -   [SP6](https://en.wikipedia.org/wiki/Socket_SP6):
+        -   EPYC 8004: hexa-channel DDR5-4800 (Zen 4 only)
+-   Maximum RAM: 1024 GB (limits LLM model + context size to ~500 GB)
+-   Maximum cores: 96 (counts at prefill throughput)
+-   Cache:
+    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
+    -   L2: 1 MB per core
+    -   L3: 64-384 MB per CPU
+-   Maximum PCIe lanes: 128 (enough to add 6 CPIe 5.0 x16 GPUs)
+-   Maximum number of CCDs per CPU: 12
+-   Maximum theoretical memory bandwidth: 409.6 GB/s (caps 10 GB LLM model at 40 token/s generation)
+
+
+| Series                | Cores         | L3 Cache   | PCIe Lanes | Max RAM      |
+|-----------------------|---------------|------------|------------|--------------|
+| Threadripper 7000X    | 24-64         | 128 MB     | 48         | 512 GB       |
+| Threadripper Pro 7000WX | 12-96       | 384 MB     | 128        | 2 TB         |
+| EPYC 8004             | 8-64          | 128 MB     | 96         | 768 GB       |
+| Threadripper 9000X    | 24-64         | 128 MB     | 48         | 512 GB       |
+| Threadripper Pro 9000WX | 12-96       | 384 MB     | 128        | 2 TB         |
+
+### Server CPUs
 
 | Series                | Cores         | L3 Cache   | Arch    | Socket      | PCIe Lanes | Max RAM      |
 |-----------------------|---------------|------------|---------|-------------|------------|--------------|
-| Ryzen 7700/7900/7950  | 8-16          | 32 MB      | Zen 4   | AM5         | 24         | 128 GB       |
-| Ryzen 7040/7045/8000F/8000G | 8-16   | 32 MB      | Zen 4   | AM5         | 24         | 128 GB       |
-| Threadripper 7000X    | 24-64         | 128 MB     | Zen 4   | sTR5        | 48         | 512 GB       |
-| Threadripper Pro 7000WX | 12-96       | 384 MB     | Zen 4   | sTR5        | 128        | 2 TB         |
-| EPYC 4004             | 8-16          | 32 MB      | Zen 4   | AM5         | 24         | 128 GB       |
-| EPYC 8004             | 8-64          | 128 MB     | Zen 4c  | SP6         | 96         | 768 GB       |
 | EPYC 9004             | 16-96         | 384 MB     | Zen 4   | SP5         | 128        | 6 TB         |
-| Ryzen 9000            | 6-16          | 32 MB      | Zen 5   | AM5         | 24         | 192 GB       |
-| Threadripper 9000X    | 24-64         | 128 MB     | Zen 5   | sTR5        | 48         | 512 GB       |
-| Threadripper Pro 9000WX | 12-96       | 384 MB     | Zen 5   | sTR5        | 128        | 2 TB         |
 | EPYC 9005             | 16-128        | 384 MB     | Zen 5   | SP5         | 128        | 6 TB         |
+
+###  Mobile CPUs
+
+| Series                | Cores         | L3 Cache   | Arch    | Socket      | PCIe Lanes | Max RAM      |
+|-----------------------|---------------|------------|---------|-------------|------------|--------------|
+| Ryzen 7040/7045/8040/8045/200 | 4-8   | 16 MB      | Zen 4   | FP7/FP7r2/FP8/FL1 | 20   | 64 GB        |
+| Ryzen 200             | 4-8           | 16 MB      | Zen 4   | FP7/FP7r2/FP8 | 20       | 64 GB        |
 | Ryzen AI MAX/MAX+ 300 | 4-12          | 24 MB      | Zen 5c  | FP8         | 20         | 64 GB        |
-| Ryzen 7040/7045/8040/8045/200 | 4-8  | 16 MB      | Zen 4   | FP7/FP7r2/FP8/FL1 | 20   | 64 GB        |
-| Ryzen 200             | 4-8           | 16 MB      | Zen 4   | FP7/FP7r2/FP8 | 20      | 64 GB        |
+
 
 **Notes:**
-- L1 cache (Zen 4/4c): 32+32 kB, L2: 1 MB, L3: 32 MB per CCD.
-- L1 cache (Zen 5/5c): 32+48 kB, L2: 1 MB, L3: 32 MB per CCD.
 - See
 
 
 Notes for CPU-only configurations:
--   Only AMD CPUs are considered in this assessment.
--   CPU Architecture: bfloat16 format is needed for LLM inference. This was introduced with the
-    AMD Zen 4 architecture's AVX-512 instruction set.
-    -   [Zen 4/4c](https://en.wikipedia.org/wiki/Zen_4) CPUs:
-        -   Desktop:
-            -   Ryzen 7700/7900/7950/7040/7045/8000F/8000G (AM5 socket)
-        -   Workstation:
-            -   Ryzen Threadripper 7000X / Threadripper Pro 7000WX (sTR5 socket)
-        -   Server:
-            -   EPYC 4004 (AM5)
-            -   EPYC 8004 (SP6)
-            -   EPYC 9004 (SP5)
-        -   Mobile:
-            -   Ryzen 7040/7045/8040/8045/200 (FP7/FP7r2/FP8/FL1)
-            -   Ryzen 200 (BGA FP7/FP7r2/FP8)
-    -   [Zen 5/5c](https://en.wikipedia.org/wiki/Zen_5) CPUs: Ryzen AI () 3xx,
-        -   Desktop:
-            -   Ryzen 9000 (AM5 socket)
-        -   Workstation:
-            -   Ryzen Threadripper 9000X / Threadripper Pro 9000WX (sTR5 socket)
-        -   Server:
-            -   EPYC 4004 (AM5)
-            -   EPYC 8004 (SP6)
-            -   EPYC 9004 (SP5)
-            -   EPYC 9005 (SP5)
-        -   Mobile:
-            -   Ryzen AI MAX/MAX+ 300 (BGA FP8)
--   CPU core count:
--   CPU socket:
-    -   Consumer CPUs use the AM5 socket. Wide motherboard support.
-    -   Workstation CPU sockets:
-        -   sTR5: Threadripper, Threadripper Pro
-        -   SP6: AMD EPYC 8004 series
-    -   Server CPUs: SP5 socket
--   CPU Cache size:
-    -   Zen 4/4c CPUs:
-        -   Ryzen 7000/8000, Hawk Point Refresh (2xx), Threadripper (Pro) 7000, EPYC 4004/8004/9004
-        -   L1 cache: 32+32 kB, L2: 1MB, L3: 32 MB
-    -   Zen 5/5c CPUs:
-        -   Ryzen 9000, Threadripper (Pro) 9000, Ryzen AI (MAX,MAX+) 3xx, EPYC 9005
-        -   L1 cache: 32+48 kB, L2: 1MB, L3: 32 MB
 
-1.  FCLK: Fabric clock speed - clock speed on the CPU side. AMD Zen 4: 1.8 GHz; Zen 5: 2.0 GHz.
-2.  CCD: Core complex Die - contains the memory controller and caches in the CPU.
-3.  RAM Bandwidth B = min(RAM channels * 8 * RAM speed [MT/s] / 1000, Number of CCDs * 32 * FCLK [GHz]) where FCLK is the fabric clock speed.
 
 
 ### CPU + GPU
 
-|                        | **Consumer CPU+<br>Consumer GPU**      | **Workstation<br>GPU**      | **Server<br>GPU**      |
+|                        | **Desktop CPU+<br>Consumer GPU**      | **Workstation<br>GPU**      | **Server<br>GPU**      |
 |------------------------|-----------------------------|------------------------|------------------------|
 | **CPU [AMD]**          | Threadripper /<br> Threadripper Pro / EPYC | EPYC 8004/9005         | N/A                      |
 | **Cores**              | 16-64                       | 64-128                 | 4-16                      |
