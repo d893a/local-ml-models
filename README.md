@@ -96,12 +96,12 @@ The following CPU categories are considered:
 - L1 cache (Zen 4/4c): 32+32 kB, L2: 1 MB, L3: 32 MB per CCD.
 - L1 cache (Zen 5/5c): 32+48 kB, L2: 1 MB, L3: 32 MB per CCD.
 
-| Series                | Cores      | Max RAM  | Max RAM BW |
-|-----------------------|------------|----------|------------|
-| Ryzen 7700/7900/7950  | 6-16       | 128 GB   | 83.2 GB/s  |
-| Ryzen 7040/7045/8000F/8000G | 6-16 | 128 GB   | 83.2 GB/s  |
-| [EPYC 4004][4004]             | 4-16       | 128 GB   | 83.2 GB/s  |
-| [Ryzen 9000][9000]            | 6-16       | 192 GB   | 89.6 GB/s  |
+| CPU Series                       | Cores | Max RAM | Max RAM BW |
+|----------------------------------|-------|---------|------------|
+| Ryzen 7700/7900/7950             | 6-16  | 128 GB  | 83.2 GB/s  |
+| Ryzen 7040/7045/8000F/8000G      | 6-16  | 128 GB  | 83.2 GB/s  |
+| [EPYC 4004][4004]                | 4-16  | 128 GB  | 83.2 GB/s  |
+| [Ryzen 9000][9000]               | 6-16  | 192 GB  | 89.6 GB/s  |
 
 [4004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
 [9000]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Granite_Ridge_(9000_series,_Zen_5_based)
@@ -117,31 +117,51 @@ This includes the Ryzen Threadripper and EPYC 8004 processors.
         -   Threadripper Pro: octa-channel DDR5-5200/6400 (Zen 4/5)
     -   [SP6](https://en.wikipedia.org/wiki/Socket_SP6):
         -   EPYC 8004: hexa-channel DDR5-4800 (Zen 4 only)
--   Maximum RAM: 1024 GB (limits LLM model + context size to ~500 GB)
+-   Maximum RAM: 1024 GB (2048 GB?)
 -   Maximum cores: 96 (counts at prefill throughput)
 -   Cache:
     -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
     -   L2: 1 MB per core
     -   L3: 64-384 MB per CPU
--   Maximum PCIe lanes: 128 (enough to add 6 CPIe 5.0 x16 GPUs)
+-   Maximum PCIe lanes: 128 (Pro only; enough to add 6 CPIe 5.0 x16 GPUs)
 -   Maximum number of CCDs per CPU: 12
--   Maximum theoretical memory bandwidth: 409.6 GB/s (caps 10 GB LLM model at 40 token/s generation)
+-   Maximum theoretical memory bandwidth: 166.4 to 409.6 GB/s
+    -   Caps token generation throughput of 10 GB LLM model at 16 to 40 token/s
+    -   See also: https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/
 
+| CPU Series               | Cores   | Max RAM   | Max RAM BW   |
+|--------------------------|--------:|----------:|-------------:|
+| Threadripper 7000X       | 24-64   | 512 GB    | 166.4 GB/s   |
+| Threadripper Pro 7000WX  | 12-96   | 1024 GB   | 332.8 GB/s   |
+| EPYC 8004                | 8-64    | 768 GB    | 230.4 GB/s   |
+| Threadripper 9000X       | 24-64   | 512 GB    | 409.6 GB/s   |
+| Threadripper Pro 9000WX  | 12-96   | 2048 GB   | 204.8 GB/s   |
 
-| Series                | Cores         | L3 Cache   | PCIe Lanes | Max RAM      |
-|-----------------------|---------------|------------|------------|--------------|
-| Threadripper 7000X    | 24-64         | 128 MB     | 48         | 512 GB       |
-| Threadripper Pro 7000WX | 12-96       | 384 MB     | 128        | 2 TB         |
-| EPYC 8004             | 8-64          | 128 MB     | 96         | 768 GB       |
-| Threadripper 9000X    | 24-64         | 128 MB     | 48         | 512 GB       |
-| Threadripper Pro 9000WX | 12-96       | 384 MB     | 128        | 2 TB         |
 
 ### Server CPUs
 
-| Series                | Cores         | L3 Cache   | Arch    | Socket      | PCIe Lanes | Max RAM      |
-|-----------------------|---------------|------------|---------|-------------|------------|--------------|
-| EPYC 9004             | 16-96         | 384 MB     | Zen 4   | SP5         | 128        | 6 TB         |
-| EPYC 9005             | 16-128        | 384 MB     | Zen 5   | SP5         | 128        | 6 TB         |
+-   Socket:
+    -   [SP5](https://en.wikipedia.org/wiki/Socket_SP5):
+        -   EPYC 9004: 12-channel DDR5-4800 (Zen 4) (24 for 2-CPU config)
+        -   EPYC 9005: 12-channel DDR5-5600 (Zen 5) (24 for 2-CPU config)
+-   Maximum RAM: 1526 GB (3072 GB for 2-CPU config)
+-   Maximum cores: 192 (counts at prefill throughput)
+-   Cache:
+    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
+    -   L2: 1 MB per core
+    -   L3: 16-1152 MB per CPU
+-   Maximum PCIe lanes: 128 (160 in 2-CPU config; enough to add 8 CPIe 5.0 x16 GPUs)
+-   Maximum number of CCDs per CPU: 16 (minimum 8 CCD is required to serve RAM BW)
+-   Maximum theoretical memory bandwidth: 460.8 to 1075.2 GB/s
+    -   Caps topen generation throughput of 10 GB LLM model at 46 to 100 token/s
+
+| Series                | Cores         | Max RAM<br>(1/2-CPU) | Max RAM BW<br>(1/2-CPU) |
+|-----------------------|---------------|----------------------|------------------------:|
+| [EPYC 9004][9004]     | 16-128        | 3 / 6 TB             | 460.8 / 921.6 GB/s      |
+| [EPYC 9005][9005]     | 6-192         | 3 / 6 TB             | 537.6 / 1075.2 GB/s     |
+
+[9004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
+[9005]: https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)
 
 ###  Mobile CPUs
 
