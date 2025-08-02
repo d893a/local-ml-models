@@ -44,7 +44,8 @@ and [Zen 5](https://en.wikipedia.org/wiki/Zen_5) architectures.
 
 Where:
 -   BW: Theoretical RAM Bandwidth. Actual values are measured between 30 to 95% of the theoretical maximum.
--   FCLK: Fabric clock speed - clock speed on the CPU side. Zen 4: 1.8 Ghz, Zen 5: 2.0 GHz.
+-   FCLK: Fabric Clock Speed - clock speed of the memory controller in the
+    CPU. Zen 4: 1.8 Ghz, Zen 5: 2.0 GHz. Some models can be overclocked.
 -   CCD: Core complex Die - contains the memory controller in the CPU. Ranges from 1 to 16 per CPU core.
 -   RAM speed: 4.8 GT/s to 8 GT/s.
 -   RAM channels: 2-12 (24 for 2-CPU setups). RAM sizes vary between 4-128 GB
@@ -59,20 +60,22 @@ Examples:
     -   BW = min(12 ch * 8 * 5.6 GT/s, 16 CCD * 32 * 2.0 GHz) = min(537.6, 1024) GB/s = 537.6 GB/s
     -   If the model size plus context is 10 GB, then the generation throughput is less than 53.8 token/s.
 
-The following CPU categories are considered:
+In the next sections the following CPU categories are detailed:
 -   Desktop CPUs
 -   Workstation CPUs
 -   Server CPUs
 -   Mobile CPUs
 
+
 ### Desktop CPUs
 
 -   Socket: [AM5](https://en.wikipedia.org/wiki/Socket_AM5) (dual-channel RAM)
 -   Maximum RAM: 192 GB (limits LLM model + context size to ~100 GB)
--   Maximum cores: 16 (limits prefill throughput)
+-   Maximum cores: 16 (determines prefill throughput)
 -   Maximum L3 cache: 32-128 MB (limits prefill throughput)
--   Maximum available PCIe lanes: 24 (enough to add only one CPIe 5.0 x16 GPU)
--   Maximum theoretical memory bandwidth: 89.6 GB/s (caps 10 GB LLM model at 9 token/s generation)
+-   Maximum available PCIe lanes: 24 (enough to handle only one CPIe 5.0 x16 GPU)
+-   Maximum theoretical memory bandwidth: 89.6 GB/s
+    -   This caps token generation for a 10 GB LLM model at 9 token/s.
 
 - L1 cache (Zen 4/4c): 32+32 kB, L2: 1 MB, L3: 32 MB per CCD.
 - L1 cache (Zen 5/5c): 32+48 kB, L2: 1 MB, L3: 32 MB per CCD.
@@ -87,6 +90,7 @@ The following CPU categories are considered:
 [4004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
 [9000]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Granite_Ridge_(9000_series,_Zen_5_based)
 
+Prices are in the 1000--5000 EUR range.
 
 ### Workstation CPUs
 
@@ -117,6 +121,8 @@ This includes the Ryzen Threadripper and EPYC 8004 processors.
 | EPYC 8004                | 8-64    | 768 GB    | 230.4 GB/s   |
 | Threadripper 9000X       | 24-64   | 512 GB    | 409.6 GB/s   |
 | Threadripper Pro 9000WX  | 12-96   | 2048 GB   | 204.8 GB/s   |
+
+Prices for a complete computer are in the 10,000--20,000 EUR range.
 
 
 ### Server CPUs
@@ -154,6 +160,8 @@ This includes the Ryzen Threadripper and EPYC 8004 processors.
 [9004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
 [9005]: https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)
 
+Prices for a complete computer are in the 2,500--7,000 EUR range.
+
 
 ###  Mobile CPUs with integrated NPU
 
@@ -168,7 +176,7 @@ This includes the Ryzen Threadripper and EPYC 8004 processors.
     -   L3: 8-64 MB
 -   Maximum PCIe lanes: 16-20
 -   Maximum theoretical memory bandwidth: 128 GB/s
-    -   Caps topen generation throughput of 10 GB LLM model at 12 token/s
+    -   Caps topen generation throughput of a 10 GB LLM model at 12 token/s
 
 
 | Series                   | Cores  | Max RAM    | Max RAM BW   |
@@ -183,6 +191,7 @@ This includes the Ryzen Threadripper and EPYC 8004 processors.
 [300]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Point_and_Krackan_Point_(Zen_5/RDNA3.5/XDNA2_based)
 [MAX]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Halo_(Zen_5/RDNA3.5/XDNA2_based)
 
+Prices for a complete computer are in the 1000--2,500 EUR range.
 
 
 ### CPU + GPU
