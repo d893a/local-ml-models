@@ -73,12 +73,11 @@ In the next sections the following CPU categories are detailed:
 -   Maximum RAM: 192 GB (limits LLM model + context size to ~100 GB)
 -   Maximum cores: 16 (determines prefill throughput)
 -   Maximum L3 cache: 32-128 MB (limits prefill throughput)
+    -   L1 cache (Zen 4/4c): 32+32 kB, L2: 1 MB, L3: 32 MB per CCD.
+    -   L1 cache (Zen 5/5c): 32+48 kB, L2: 1 MB, L3: 32 MB per CCD.
 -   Maximum available PCIe lanes: 24 (enough to handle only one CPIe 5.0 x16 GPU)
 -   Maximum theoretical memory bandwidth: 89.6 GB/s
     -   This caps token generation for a 10 GB LLM model at 9 token/s.
-
-- L1 cache (Zen 4/4c): 32+32 kB, L2: 1 MB, L3: 32 MB per CCD.
-- L1 cache (Zen 5/5c): 32+48 kB, L2: 1 MB, L3: 32 MB per CCD.
 
 | CPU Series                       | Cores | Max RAM | Max RAM BW |
 |----------------------------------|-------|---------|------------|
@@ -90,7 +89,7 @@ In the next sections the following CPU categories are detailed:
 [4004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
 [9000]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Granite_Ridge_(9000_series,_Zen_5_based)
 
-Prices are in the 1000--5000 EUR range.
+Prices for a complete computer are in the 1000--5000 EUR range.
 
 ### Workstation CPUs
 
@@ -112,7 +111,6 @@ This includes the Ryzen Threadripper and EPYC 8004 processors.
 -   Maximum number of CCDs per CPU: 12
 -   Maximum theoretical memory bandwidth: 166.4 to 409.6 GB/s
     -   Caps token generation throughput of 10 GB LLM model at 16 to 40 token/s
-    -   See also: https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/
 
 | CPU Series               | Cores   | Max RAM   | Max RAM BW   |
 |--------------------------|--------:|----------:|-------------:|
@@ -127,10 +125,9 @@ Prices for a complete computer are in the 10,000--20,000 EUR range.
 
 ### Server CPUs
 
--   Socket:
-    -   [SP5](https://en.wikipedia.org/wiki/Socket_SP5):
-        -   EPYC 9004: 12-channel DDR5-4800 (Zen 4) (24 for 2-CPU config)
-        -   EPYC 9005: 12-channel DDR5-5600 (Zen 5) (24 for 2-CPU config)
+-   Socket:[SP5](https://en.wikipedia.org/wiki/Socket_SP5):
+    -   EPYC 9004: 12-channel DDR5-4800 (Zen 4) (24 for 2-CPU config)
+    -   EPYC 9005: 12-channel DDR5-5600 (Zen 5) (24 for 2-CPU config)
 -   Maximum RAM: 3 TB (6 TB for 2-CPU config)
 -   Maximum cores: 192 (counts at prefill throughput)
 -   Cache:
@@ -140,8 +137,8 @@ Prices for a complete computer are in the 10,000--20,000 EUR range.
 -   Maximum PCIe lanes: 128 (160 in 2-CPU config; enough to add 8 CPIe 5.0 x16 GPUs)
 -   Maximum number of CCDs per CPU: 16 (minimum 8 CCD is required to serve RAM BW)
 -   Maximum theoretical memory bandwidth: 460.8 to 1075.2 GB/s
-    -   Caps topen generation throughput of 10 GB LLM model at 46 to 100 token/s
-    -   From the Genoa platform on, [single-rank memory modules will perform
+    -   Caps token generation throughput of 10 GB LLM model at 46 to 100 token/s
+    -   Note that from the Genoa platform on, [single-rank memory modules will perform
         well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
         > The other important feature is dual rank versus single rank memory.
         > With Milan and most Intel platforms, dual-rank memory is crucial to
