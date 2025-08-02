@@ -11,20 +11,26 @@ Running machine learning models requires:
 
 ## Hardware
 
+LLM inference prefill (preprocessing) is compute-bound: The number of
+processing cores matter most. In case of CPU inference CPU clock frequency,
+then the L3 and L1 cache size. Token generation is memory bandwidth-bound:
+Higher memory throughput results in faster token generation.
+
+GPUs have both high computing power and high memory bandwidth. A GPU with even
+a small amount of memory can accelerate inference speeds considerably.
+
+The system RAM should be large enough to accommodate the model plus the
+context. If the system RAM is insufficient, then swapping to (relatively slow)
+SSD will degrade overall performance.
+
 The following hardware configurations are considered:
 -   CPU only
--   CPU + GPU (The model plus context fits into the GPU VRAM)
--   Hybrid CPU + GPU, including embedded (Mini PC) solutions. The model plus
+-   CPU + GPU: The model plus context fits into the GPU VRAM
+-   Hybrid CPU + GPU, including mobile (laptop, mini PC) solutions. The model plus
     context fits into the CPU memory, but does not fit into the GPU VRAM.
 
 
 ### CPU only
-
-In CPU inference prefill (preprocessing) is compute-bound: The number or cores
-matter most, then CPU clock frequency, then the L3 and L1 cache size. Token
-generation is memory bandwidth-bound: higher memory throughput results in
-faster token generation. The RAM should be large enough to accommodate the
-model plus the context.
 
 In this assessment only AMD CPUs are examined.
 
