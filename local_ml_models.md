@@ -34,6 +34,50 @@
     - [Text-to-speech](#text-to-speech)
     - [Visual analysis](#visual-analysis)
     - [OCR](#ocr)
+- [Performance](#performance)
+- [Models](#models)
+- [Benchmark](#benchmark)
+    - [CPU benchmark](#cpu-benchmark)
+    - [GPU benchmark](#gpu-benchmark)
+    - [Model benchmark](#model-benchmark)
+    - [CPU + NPU benchmark](#cpu--npu-benchmark)
+- [Hardware](#hardware-1)
+    - [CPU](#cpu)
+        - [Embedded CPU](#embedded-cpu)
+        - [Desktop CPU](#desktop-cpu)
+        - [Workstation CPU](#workstation-cpu)
+        - [Server CPU](#server-cpu)
+    - [CPU cooler](#cpu-cooler)
+    - [Memory](#memory)
+- [Performance](#performance-1)
+    - [Motherboard](#motherboard)
+    - [SSD](#ssd)
+    - [PSU](#psu)
+    - [GPU](#gpu)
+        - [NVIDIA GPU](#nvidia-gpu)
+        - [AMD GPU](#amd-gpu)
+    - [GPU link](#gpu-link)
+    - [Case](#case)
+    - [Mini PC](#mini-pc)
+    - [Mini PC + eGPU](#mini-pc--egpu)
+    - [tinybox](#tinybox)
+    - [PIM](#pim-1)
+- [Survey](#survey-1)
+- [Software](#software-1)
+    - [AMD CPU](#amd-cpu)
+    - [AMD GPU](#amd-gpu-1)
+    - [NVIDIA GPU](#nvidia-gpu-1)
+    - [Multi-GPU](#multi-gpu)
+- [Library](#library)
+- [Framework](#framework)
+    - [tinygrad](#tinygrad)
+    - [TextSynth Server](#textsynth-server-1)
+    - [Text](#text)
+    - [Images](#images)
+    - [Voice](#voice)
+    - [OCR](#ocr-1)
+    - [Embedding](#embedding-1)
+- [Papers](#papers)
 
 ## Introduction
 
@@ -708,32 +752,17 @@ Time to First Token:     370377.41 ms
 
 ## Hardware
 
-### PIM
-
--   https://semiconductor.samsung.com/technologies/memory/pim/
--   https://semiconductor.samsung.com/news-events/tech-blog/hbm-pim-cutting-edge-memory-technology-to-accelerate-next-generation-ai/
--   https://www.techpowerup.com/278586/samsung-develops-industrys-first-high-bandwidth-memory-with-ai-processing-power
--   https://www.techpowerup.com/328510/samsung-hopes-pim-memory-technology-can-replace-hbm-in-next-gen-ai-applications
--   https://www.upmem.com/technology/
--   https://www.upmem.com/
--   https://sdk.upmem.com/master/00_ToolchainAtAGlance.html
--   https://resources.sw.siemens.com/en-US/white-paper-innovative-upmem-pim-dram-requires-innovative-power-integrity-analysis/
--   https://github.com/CMU-SAFARI/prim-benchmarks
--   https://people.inf.ethz.ch/omutlu/pub/PrIM-UPMEM-Tutorial-Analysis-Benchmarking-SAFARI-Live-Seminar-2021-07-12-talk.pdf
--   https://arxiv.org/html/2308.00846v3
 
 ### GPUs
 
 #### AMD RX 7900 XTX vs NVIDIA RTX 5090
 
--   [George Hotz | Exploring | Tenstorrent Blackhole on Arch Linux |
-    tinycorp.myshopify.com | Part
-    2](https://www.youtube.com/watch?v=lNGFAI7R0PE&t=10690s)
+-   [George Hotz | Exploring | Tenstorrent Blackhole on Arch Linux | tinycorp.myshopify.com | Part 2](https://www.youtube.com/watch?v=lNGFAI7R0PE&t=10690s)
     > Um so this is the tiny reimplementation of HLBC. 19 seconds. Okay. So,
     > it's it's this 7900 XTX is 4x slower than a 5090, which yeah, it's about
     > it's about a quarter the price. Yo, you know what? I'm half tempted to
     > get rid of the discount on the red boxes. Like this is actually really
-    > usable. What is NV back end? Yeah, it's Nvidia without CUDA.
+    > usable.
 
 -   [Phoronix: Tiny Corp Closing In On "Completely Sovereign" Compute Stack
     For AMD GPUs With Tinygrad](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/1519271-tiny-corp-nearing-completely-sovereign-compute-stack-for-amd-gpus-with-tinygrad/page2)
@@ -742,20 +771,254 @@ Time to First Token:     370377.41 ms
     > where each piece needs to work together. End of the year, you can hold
     > me to that.
 
--   [George Hotz blog - Nobody
-    Profits](https://geohot.github.io/blog/jekyll/update/2025/02/19/nobody-will-profit.html)
-    > The best outcome of AI is if it delivers huge amounts of value to
-    > society but no profit to anyone.
 
-    > Spin up open source projects in every sector to eliminate all the
-    > capturable value. This is what I’m trying to do with comma.ai and
-    > tinygrad.
 
+xxxxx
+
+
+## Performance
+
+-   https://scicomp.stackexchange.com/questions/36306/how-to-properly-calculate-cpu-and-gpu-flops-performance
+-   https://forums.developer.nvidia.com/t/how-to-measure-tensor-flops/292765
+-   https://docs.nvidia.com/deeplearning/performance/dl-performance-gpu-background/index.html
+-   https://medium.com/@shashanka_b_r/gpu-compute-performance-estimation-the-mathematical-foundation-behind-ai-hardware-benchmarks-7da221bcc9a4
+-   https://www.reddit.com/r/NintendoSwitch/comments/5urua3/explanation_of_flops_and_fp32_and_fp16/
+-   https://stackoverflow.com/questions/75853139/how-to-estimate-gpu-performance-using-clgetdeviceinfo
+-   https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/
+-   https://qwen.readthedocs.io/en/latest/getting_started/quantization_benchmark.html
+-   https://www.reddit.com/r/LocalLLaMA/comments/162pgx9/what_do_yall_consider_acceptable_tokens_per/
+-   https://www.reddit.com/r/ROCm/comments/1jfltc7/70b_llm_ts_speed_on_windows_rocm_using_24gb_rx/
+
+## Models
+
+-   https://arxiv.org/html/2409.12186v2#S2
+-   https://github.com/deepseek-ai/DeepSeek-V3
+
+##  Benchmark
+
+### CPU benchmark
+
+-   https://openbenchmarking.org/result/2311131-NE-SIENAEPYC16%26sor%26sgm%3D1%26ppd_RVBZQyA4NTM0UA%3D5850%26ppd_RVBZQyA4NTM0UCAtIDE1NVc%3D5850%26ppd_RVBZQyA4NTM0UCAtIDIyNVcgUG93ZXI%3D5850%26ppd_RVBZQyA4NTM0UCAtIFBvd2Vy%3D5850%26ppd_RVBZQyA4NTM0UE4%3D6350%26ppd_RVBZQyA4NTM0UE4gLSBQb3dlcg%3D6350%26ppd_WGVvbiBQbGF0aW51bSA4NDY4%3D8024%26ppd_WGVvbiBQbGF0aW51bSA4NDY4IC0gNmMgUkFN%3D8324%26ppt%3DD%26sgm%3D1%26ppd_RVBZQyA4NTM0UA%3D5850%26ppd_RVBZQyA4NTM0UCAtIDE1NVc%3D5850%26ppd_RVBZQyA4NTM0UCAtIDIyNVcgUG93ZXI%3D5850%26ppd_RVBZQyA4NTM0UCAtIFBvd2Vy%3D5850%26ppd_RVBZQyA4NTM0UE4%3D6350%26ppd_RVBZQyA4NTM0UE4gLSBQb3dlcg%3D6350%26ppd_WGVvbiBQbGF0aW51bSA4NDY4%3D8324%26ppd_WGVvbiBQbGF0aW51bSA4NDY4IC0gNmMgUkFN%3D8024%26ppt%3DD
+-   https://openbenchmarking.org/s/2+x+AMD+EPYC+9175F+16-Core
+-   https://www.reddit.com/r/LocalLLaMA/comments/1iyztni/dual_9175f_amd_epyc_9005_a_new_trend/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1jq13ik/comment/ml6hg70/?context=3
+-   https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/
+-   https://openbenchmarking.org/s/AMD+EPYC+8534PN+64-Core
+-   https://www.servethehome.com/amd-epyc-genoa-gaps-intel-xeon-in-stunning-fashion/3/
+-   https://superuser.com/questions/1815148/expected-results-of-a-stream-memory-bandwidth-benchmark
+
+### GPU benchmark
+
+-   https://llm-tracker.info/_TOORG/RTX-3090-vs-7900-XTX-Comparison
+-   https://cprimozic.net/notes/posts/machine-learning-benchmarks-on-the-7900-xtx/
+-   https://espadrine.github.io/blog/posts/recomputing-gpu-performance.html
+-   https://www.reddit.com/r/LocalLLaMA/comments/191srof/amd_radeon_7900_xtxtx_inference_performance/
+-   https://embeddedllm.com/blog/vllm-now-supports-running-gguf-on-amd-radeon-gpu
+-   https://www.reddit.com/r/LocalLLaMA/comments/1atvxu2/current_state_of_training_on_amd_radeon_7900_xtx/
+-   https://www.tomshardware.com/reviews/gpu-hierarchy,4388.html#section-content-creation-gpu-benchmarks-rankings-2025
+-   https://public.tableau.com/app/profile/data.visualization6666/viz/MLCommons-Training_16993769118290/MLCommons-Training
+
+### Model benchmark
+
+-   https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard#/?official=true
+-   https://www.reddit.com/r/LocalLLaMA/comments/144rg6a/all_model_leaderboards_that_i_know/
+-   https://qwen.readthedocs.io/en/latest/getting_started/speed_benchmark.html
+
+### CPU + NPU benchmark
+
+-   https://www.reddit.com/r/LocalLLaMA/comments/1kmi3ra/amd_strix_halo_ryzen_ai_max_395_gpu_llm/
+-   https://old.chipsandcheese.com/2024/11/24/pushing-amds-infinity-fabric-to-its-limits/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1ghvwsj/llamacpp_compute_and_memory_bandwidth_efficiency/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1ghvwsj/comment/lv4sx1e/
+-   https://www.localscore.ai/
+-   https://wandb.ai/augmxnt/train-bench/reports/torchtune-vs-axolotl-vs-unsloth-Trainer-Comparison--Vmlldzo4MzU3NTAx
+-   https://github.com/underlines/awesome-ml/blob/master/llm-tools.md#benchmarking
+-   https://openbenchmarking.org/test/pts/llama-cpp-2.1.1
+
+## Hardware
+
+### CPU
+
+#### Embedded CPU
+
+-   https://www.techpowerup.com/cpu-specs/ryzen-ai-max-pro-395.c3998
+-   https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-plus-pro-395.html
+-   https://www.amd.com/en/blogs/2025/amd-ryzen-ai-max-395-processor-breakthrough-ai-.html
+-   https://www.tomshardware.com/pc-components/cpus/more-affordable-strix-halo-model-emerges-early-ryzen-ai-max-385-geekbench-result-reveals-an-eight-core-option
+
+#### Desktop CPU
+
+-   https://www.anandtech.com/show/21524/the-amd-ryzen-9-9950x-and-ryzen-9-9900x-review/10
+-   https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html
+-   https://www.amd.com/en/products/processors/chipsets/am5.html
+-   https://skatterbencher.com/2025/03/11/skatterbencher-85-ryzen-9-9950x3d-overclocked-to-5900-mhz/
+
+#### Workstation CPU
+
+-   https://www.amd.com/en/products/processors/workstations/ryzen-threadripper.html
+
+#### Server CPU
+
+-   https://www.amd.com/en/products/specifications/server-processor.html
+-   https://forum.level1techs.com/t/amd-epyc-9005-series-sp5-single-slot-or-dual-slot-motherboard-suggestion/229954
+-   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-48-core-2-0ghz-sp6-tray-100-000001174-p1019326387/#termek-leiras
+-   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-64-core-2-0ghz-sp6-tray-100-000001172-p1019325790/#termek-leiras
+-   https://www.arukereso.hu/processzor-c3139/f:amd-socket-sp6,amd-epyc/?orderby=1
+-   https://www.techpowerup.com/cpu-specs/epyc-8024pn.c3295
+-   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-64-core-2-0ghz-sp6-tray-100-000001172-p1019325790/
+-   https://smicro.hu/amd-epyc-genoa-9554-dp-up-64c-128t-3-1g-256mb-360w-sp5-100-000000790-5
+-   https://smicro.hu/amd-epyc-genoa-9534-dp-up-64c-128t-2-45g-256mb-280w-sp5-100-000000799-5
+-   https://smicro.hu/amd-epyc-genoa-9554-dp-up-64c-128t-3-1g-256mb-360w-sp5-100-000000790-5
+-   https://www.reddit.com/r/LocalLLaMA/comments/1fcy8x6/memory_bandwidth_values_stream_triad_benchmark/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1h3doy8/stream_triad_memory_bandwidth_benchmark_values/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1k57b1o/comment/moftfs0/?context=3
+-   https://www.senetic.hu/category/amd-cpu-epyc-9004-11151/?cat=amd_cpu_epyc_9004_tray_64848&f_page=1&f_size=48&f_order=price_asc
+-   https://www.senetic.hu/product/100-000000799
+-   https://www.senetic.hu/product/100-000000790
+-   https://kontaktor.hu/amd_epyc_9354_processor_325_ghz_256_mb_l3_380246
+-   https://kontaktor.hu/amd_epyc_9354p_processor_325_ghz_256_mb_l3_380250
+-   https://kontaktor.hu/amd_epyc_9274f_processor_405_ghz_256_mb_l3_400359
+-   https://kontaktor.hu/amd_epyc_9534_processor_245_ghz_256_mb_l3_408366
+-   https://kontaktor.hu/amd_epyc_9554_processor_31_ghz_256_mb_l3_380268
+-   https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Ryzen_AI_300_series
+-   https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Turin_and_Turin_Dense)
+-   https://en.wikipedia.org/wiki/Threadripper#Shimada_Peak_(Threadripper_9000_series,_Zen_5_based)
+-   https://www.amd.com/en/products/specifications/processors.html
+-   https://www.techpowerup.com/cpu-specs/
+-   https://www.techpowerup.com/327388/amd-granite-ridge-zen-5-processor-annotated
+-   https://www.thomas-krenn.com/en/wiki/Optimize_memory_performance_of_Intel_Xeon_Scalable_systems
+-   https://www.servethehome.com/memory-bandwidth-per-core-and-per-socket-for-intel-xeon-and-amd-epyc/
+-   https://smicro.hu/epyc-genoa-9004-5
+
+### CPU cooler
+
+-   https://noctua.at/en/products/fan/nf-a12x25-ls-pwm
+-   https://www.thermaltake.com/aw420-aio-liquid-cooler.html
+-   https://thermaltakeusa.com/products/aw360-aio-liquid-cooler-cl-w450-pl12bl-a
+-   https://www.arukereso.hu/szamitogep-huto-c3094/noctua/nh-u14s-tr5-sp6-p1054940377/
+-   https://www.silverstonetek.com/en/product/info/coolers/xed120s_ws/
+-   https://www.silverstonetek.com/en/product/info/coolers/xe04_sp5/
+-   https://forums.servethehome.com/index.php?threads/cooler-recommendations-for-400w-sp5.43530/
+-   https://noctua.at/en/nh-d9-tr5-sp6-4u/specification
+-   https://smicro.hu/supermicro-snk-p0084ap4
+-   https://www.coolserver.com.cn/en/product_view_397_283.html
+-   https://www.arctic.de/en/Freezer-4U-SP5/ACFRE00158A
+-   https://www.phoronix.com/review/arctic-freezer-4u-sp5
+-   https://www.aliexpress.com/item/1005006621774992.html
+-   https://www.coolserver.com.cn/en/product_view_598_283.html
+
+### Memory
+
+## Performance
+
+-   https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/
+-   https://dev.to/maximsaplin/ddr5-speed-and-llm-inference-3cdn
+-   https://www.servethehome.com/guide-ddr-ddr2-ddr3-ddr4-and-ddr5-bandwidth-by-generation/
+-   https://www.hardware-corner.net/ddr-9000-ddr-8000-for-llm/
+-   https://www.techpowerup.com/review/ddr5-memory-performance-scaling-with-amd-zen-5/2.html
+-   https://blog.cloudflare.com/ddr4-memory-organization-and-how-it-affects-memory-bandwidth/#:~:text=Memory%20rank%20is%20a%20term,address%2C%20command%20and%20control%20signals.
+-   https://www.techpowerup.com/review/ddr5-memory-performance-scaling-with-amd-zen-5/22.html
+-   https://www.arukereso.hu/memoria-modul-c3577/kingston/fury-renegade-pro-32gb-ddr5-4800mhz-kf548r36rb-32-p943389321/
+
+### Motherboard
+
+-   https://www.asrockrack.com/general/productdetail.asp?Model=TURIN2D16-2T#Specifications
+-   https://pcpartpicker.com/products/motherboard/#s=41&mt=ddr5&sort=-rammax&E=2,7&m=7,8,46&f=2&c=167
+-   https://pangoly.com/en/browse/motherboard?extra=Socket%3AAM5;FormFactor%3AATX;Chipset%3AAMD%20X870E;M2Ports%3A2,8&sort=low
+-   https://www.arukereso.hu/alaplap-c3128/asrock/sienad8-2l2t-p1050062953/
+-   https://www.arukereso.hu/alaplap-c3128/asrock/sienad8-2l2t-p1050062953/
+-   https://www.gigabyte.com/Enterprise/Server-Motherboard/ME03-CE0-rev-10
+-   https://www.storagereview.com/news/asrock-rack-server-motherboards-with-amd-epyc-8004-series-processors-support-announced
+-   https://www.supermicro.com/en/products/motherboard/H13SSL-NT
+-   https://www.supermicro.com/en/products/motherboard/H13SSL-N
+-   https://www.asrockrack.com/general/productdetail.asp?Model=SIENAD8-2L2T#Specifications
+-   https://www.gigabyte.com/Enterprise/Server-Motherboard/ME03-CE1-rev-10
+-   https://www.reddit.com/r/homelab/comments/1aeio2n/amd_epyc_siena_cpus_6_memory_channels_and_asrock/
+-   https://www.senetic.hu/product/SIENAD8-2L2T
+-   https://www.asrockrack.com/general/productdetail.pl.asp?Model=GENOA2D24G-2L%2B#Specifications
+-   https://www.reddit.com/r/LocalLLaMA/comments/1e5g65f/i_found_a_nice_motherboard_for_an_imaginary_gpu/
+
+### SSD
+
+-   https://ezdiy-fab.com/products/m-2-nvme-ssd-pcie-4-0-adapter
+-   https://ezdiy-fab.com/products/m-2-nvme-ssd-pcie-4-0-adapter
+
+### PSU
+
+### GPU
+
+#### NVIDIA GPU
+
+-   https://smicro.hu/nvidia-blackwell-5
+-   https://www.techpowerup.com/gpu-specs/geforce-rtx-5060-ti-16-gb.c4292
+-   https://bizon-tech.com/gpu-benchmarks/NVIDIA-RTX-4090-vs-NVIDIA-RTX-4500-Ada/637vs697
+-   https://www.arukereso.hu/videokartya-c3142/?st=RTX+5060+Ti
+-   https://www.tomshardware.com/pc-components/gpus/nvidia-geforce-rtx-5060-ti-16gb-review
+-   https://www.techpowerup.com/review/pny-geforce-rtx-5070-ti-epic-x-rgb-plus-oc/39.html
+-   https://www.arukereso.hu/videokartya-c3142/?st=RTX+5070+Ti
+-   https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-pro-6000-blackwell-gpu-is-listed-for-usd8-565-at-us-retailer-26-percent-more-expensive-than-the-last-gen-rtx-6000-ada
+-   https://www.tomshardware.com/pc-components/gpus/rtx-5080-super-rumored-with-24gb-of-memory-same-10-752-cuda-cores-as-the-vanilla-variant-with-a-400w-tgp
+-   https://www.reddit.com/r/LocalLLaMA/comments/1lhd1j0/some_observations_using_the_rtx_6000_pro_blackwell/
+-   https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-pro-6000-up-close-blackwell-rtx-workstation-max-q-workstation-and-server-variants-shown
+-   https://smicro.hu/nvidia-rtx-pro-6000-blackwell-max-q-ws-900-5g153-2200-000-4
+-   https://smicro.hu/pny-nvidia-rtx-pro-6000-server-edition-tcsrtxpro6000se-pb-4
+-   https://smicro.hu/nvidia-rtx-pro-6000-blackwell-server-edition-96gb-gddr7-ecc-passive-fhfl-600w-900-2g153-0000-000-4
+-   https://smicro.hu/pny-nvidia-rtx-pro-6000-blackwell-workstation-edition-vcnrtxpro6000-sb-4
+-   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell-max-q.c4273
+-   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272
+-   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell-server.c4274
+
+#### AMD GPU
+
+-   https://www.techpowerup.com/gpu-specs/asrock-rx-7900-xtx-creator.b11871
+-   https://www.techpowerup.com/gpu-specs/sapphire-ultimate-r7-250.b2751
+-   https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/gpu-partitioning/mi300a/overview.html
+-   https://www.reddit.com/r/LocalLLaMA/comments/1g0nrr0/experiences_on_running_7900xtx_to_run_llm_workload/
+-   https://www.newegg.com/xfx-speedster-merc310-rx-79xmercb9-radeon-rx-7900-xtx-24gb-graphics-card-triple-fans/p/N82E16814150878
+-   https://www.techpowerup.com/gpu-specs/
+
+### GPU link
+
+-   AMD GPUs support PCIe peer‑to‑peer out of the box, making it ideal for LLM training workloads that require tight coupling across multiple GPUs.
+-   https://c-payne.com/products/slimsas-sff-8654-to-sff-8654lp-low-profile-8i-cable-pcie-gen4
+-   https://en.wikipedia.org/wiki/List_of_interface_bit_rates
+
+### Case
+
+### Mini PC
+-   https://store.minisforum.com/products/elitemini-ai370
+-   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?_pos=1&_psq=ai370&_ss=e&_v=1.0&variant=51875206496622
+-   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?_pos=1&_psq=ai370&_ss=e&_v=1.0&variant=51875206496622
+-   https://minisforumpc.eu/en
+-   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?variant=51875206496622
+-   https://www.hp.com/us-en/workstations/z2-mini-a.html
+-   https://www.techpowerup.com/333983/sapphire-develops-edge-ai-mini-pc-series-with-amd-ryzen-ai-300-targeting-gamers-and-creatives
+-   https://www.techpowerup.com/333983/sapphire-develops-edge-ai-mini-pc-series-with-amd-ryzen-ai-300-targeting-gamers-and-creatives
+-   https://www.reddit.com/r/LocalLLaMA/comments/1judxsq/gmktec_evox2_powered_by_ryzen_ai_max_395_to/
+-   https://frame.work/hu/en/products/framework-desktop-mainboard-amd-ryzen-ai-max-300-series?v=FRAFMK0006
+-   https://de.gmktec.com/en/products/gmktec-evo-x2-amd-ryzen%E2%84%A2-ai-max-395-mini-pc-1?variant=51106344992952
+
+### Mini PC + eGPU
+
+-   https://www.reddit.com/r/LocalLLaMA/comments/1kedbv7/ryzen_ai_max_395_a_gpu/
+
+### tinybox
+
+-   https://tinygrad.org/#tinybox
+-   https://docs.tinygrad.org/tinybox/
+-   https://tinycorp.myshopify.com/products/tinybox-red
+-   https://www.reddit.com/r/LocalLLaMA/comments/1gcn3w9/a_glance_inside_the_tinybox_pro_8_x_rtx_4090/
+-   https://news.ycombinator.com/item?id=41365637
+-   https://archive.md/RTvI8
+-   https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-accelerator-tinybox-pro-goes-up-for-preorder-for-usd40-000-the-device-features-eight-rtx-4090s-and-two-amd-genoa-epyc-processors
+-   https://www.tweaktown.com/news/97110/tinycorps-new-tinybox-ai-system-amd-gpu-starts-at-15k-nvidia-25k/index.html
+-   https://www.tomshardware.com/pc-components/gpus/tinybox-ai-accelerator-now-available-starting-at-dollar15k-available-in-7900xtx-and-rtx-4090-variants
 -   [George Hotz | AMD PC Build | tinygrad: building the new tinygrad computer | EPYC 7662 RX 7900 | ROCm]((https://www.youtube.com/watch?v=IhkXxFJ_qeI)):
     ([Subtitles](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt))
     ([Transcript](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt.txt))
+    ([Summary](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt.txt.technical_details.md))
     -   Date of stream 30 Apr 2023.
-    -   Excerpt from the [technical summary](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt.txt.technical_details.md):
+    -   Excerpt from the technical summary:
         -   Motherboard: ASRock Rack Rome a2t/BCM, 7 full bandwidth PCIe ports, $649 retail
         -   CPU: AMD EPYC 7662 64-core processor, Gen 2 EPYC, $6,000 CPU from 2019, purchased for $800
         -   RAM: 64GB Samsung (made in Philippines), 8GB sticks, single rank, 3200 MHz, ~$38 per stick, total around $300
@@ -769,62 +1032,20 @@ Time to First Token:     370377.41 ms
         -   Software: Ubuntu Server 22.04 "Jammy Jellyfish", tinygrad, LLAMA model testing, ROCm stack for AMD GPUs
         -   Approximately $5,000 total for the build
 
--   AMD GPUs support PCIe peer‑to‑peer out of the box, making it ideal for LLM training workloads that require tight coupling across multiple GPUs.
 
-### Other hardware
+### PIM
 
--   https://en.wikipedia.org/wiki/List_of_interface_bit_rates
--   https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Ryzen_AI_300_series
--   https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Turin_and_Turin_Dense)
--   https://en.wikipedia.org/wiki/Threadripper#Shimada_Peak_(Threadripper_9000_series,_Zen_5_based)
--   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?_pos=1&_psq=ai370&_ss=e&_v=1.0&variant=51875206496622
--   https://store.minisforum.com/products/elitemini-ai370
--   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?_pos=1&_psq=ai370&_ss=e&_v=1.0&variant=51875206496622
--   https://minisforumpc.eu/en
--   https://minisforumpc.eu/en/products/ai-x1-pro-mini-pc?variant=51875206496622
--   https://www.hp.com/us-en/workstations/z2-mini-a.html
--   https://www.techpowerup.com/333983/sapphire-develops-edge-ai-mini-pc-series-with-amd-ryzen-ai-300-targeting-gamers-and-creatives
--   https://www.techpowerup.com/333983/sapphire-develops-edge-ai-mini-pc-series-with-amd-ryzen-ai-300-targeting-gamers-and-creatives
--   https://www.techpowerup.com/cpu-specs/ryzen-ai-max-pro-395.c3998
--   https://noctua.at/en/products/fan/nf-a12x25-ls-pwm
--   https://www.anandtech.com/show/21524/the-amd-ryzen-9-9950x-and-ryzen-9-9900x-review/10
--   https://www.amd.com/en/products/specifications/server-processor.html
--   https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-plus-pro-395.html
--   https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html
--   https://www.amd.com/en/blogs/2025/amd-ryzen-ai-max-395-processor-breakthrough-ai-.html
--   https://bizon-tech.com/gpu-benchmarks/NVIDIA-RTX-4090-vs-NVIDIA-RTX-4500-Ada/637vs697
--   https://www.techpowerup.com/gpu-specs/geforce-rtx-5060-ti-16-gb.c4292
--   https://www.techpowerup.com/review/pny-geforce-rtx-5070-ti-epic-x-rgb-plus-oc/39.html
--   https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-pro-6000-blackwell-gpu-is-listed-for-usd8-565-at-us-retailer-26-percent-more-expensive-than-the-last-gen-rtx-6000-ada
--   https://www.techpowerup.com/gpu-specs/
--   https://www.techpowerup.com/327388/amd-granite-ridge-zen-5-processor-annotated
--   https://www.techpowerup.com/review/ddr5-memory-performance-scaling-with-amd-zen-5/2.html
--   https://www.techpowerup.com/review/ddr5-memory-performance-scaling-with-amd-zen-5/22.html
--   https://docs.tinygrad.org/tinybox/
--   https://tinycorp.myshopify.com/products/tinybox-red
--   https://tinygrad.org/#tinygrad
--   https://www.tomshardware.com/pc-components/gpus/rtx-5080-super-rumored-with-24gb-of-memory-same-10-752-cuda-cores-as-the-vanilla-variant-with-a-400w-tgp
--   https://www.thomas-krenn.com/en/wiki/Optimize_memory_performance_of_Intel_Xeon_Scalable_systems
--   https://www.servethehome.com/memory-bandwidth-per-core-and-per-socket-for-intel-xeon-and-amd-epyc/
--   https://www.servethehome.com/guide-ddr-ddr2-ddr3-ddr4-and-ddr5-bandwidth-by-generation/
--   https://www.asrockrack.com/general/productdetail.asp?Model=TURIN2D16-2T#Specifications
--   https://blog.cloudflare.com/ddr4-memory-organization-and-how-it-affects-memory-bandwidth/#:~:text=Memory%20rank%20is%20a%20term,address%2C%20command%20and%20control%20signals.
--   https://www.amd.com/en/products/processors/workstations/ryzen-threadripper.html
--   https://www.tomshardware.com/pc-components/cpus/more-affordable-strix-halo-model-emerges-early-ryzen-ai-max-385-geekbench-result-reveals-an-eight-core-option
--   https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/gpu-partitioning/mi300a/overview.html
--   https://www.tomshardware.com/pc-components/gpus/nvidia-rtx-pro-6000-up-close-blackwell-rtx-workstation-max-q-workstation-and-server-variants-shown
--   https://smicro.hu/nvidia-rtx-pro-6000-blackwell-max-q-ws-900-5g153-2200-000-4
--   https://smicro.hu/nvidia-blackwell-5
--   https://smicro.hu/pny-nvidia-rtx-pro-6000-server-edition-tcsrtxpro6000se-pb-4
--   https://smicro.hu/nvidia-rtx-pro-6000-blackwell-server-edition-96gb-gddr7-ecc-passive-fhfl-600w-900-2g153-0000-000-4
--   https://smicro.hu/pny-nvidia-rtx-pro-6000-blackwell-workstation-edition-vcnrtxpro6000-sb-4
--   https://www.reddit.com/r/LocalLLaMA/comments/1judxsq/gmktec_evox2_powered_by_ryzen_ai_max_395_to/
--   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell-max-q.c4273
--   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272
--   https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell-server.c4274
--   https://frame.work/hu/en/products/framework-desktop-mainboard-amd-ryzen-ai-max-300-series?v=FRAFMK0006
--   https://de.gmktec.com/en/products/gmktec-evo-x2-amd-ryzen%E2%84%A2-ai-max-395-mini-pc-1?variant=51106344992952
--   https://skatterbencher.com/2025/03/11/skatterbencher-85-ryzen-9-9950x3d-overclocked-to-5900-mhz/
+-   https://semiconductor.samsung.com/technologies/memory/pim/
+-   https://semiconductor.samsung.com/news-events/tech-blog/hbm-pim-cutting-edge-memory-technology-to-accelerate-next-generation-ai/
+-   https://www.techpowerup.com/278586/samsung-develops-industrys-first-high-bandwidth-memory-with-ai-processing-power
+-   https://www.techpowerup.com/328510/samsung-hopes-pim-memory-technology-can-replace-hbm-in-next-gen-ai-applications
+-   https://www.upmem.com/technology/
+-   https://www.upmem.com/
+-   https://sdk.upmem.com/master/00_ToolchainAtAGlance.html
+-   https://resources.sw.siemens.com/en-US/white-paper-innovative-upmem-pim-dram-requires-innovative-power-integrity-analysis/
+-   https://github.com/CMU-SAFARI/prim-benchmarks
+-   https://people.inf.ethz.ch/omutlu/pub/PrIM-UPMEM-Tutorial-Analysis-Benchmarking-SAFARI-Live-Seminar-2021-07-12-talk.pdf
+-   https://arxiv.org/html/2308.00846v3
 
 ## Survey
 
@@ -863,12 +1084,8 @@ Time to First Token:     370377.41 ms
 -   https://www.hardware-corner.net/dual-rtx-5060-ti-price-for-llm-build-20250415/
 -   https://www.hardware-corner.net/the-rtx-5060-ti-price-20250416/
 -   https://www.hardware-corner.net/ai-playground-oss-arc-gpu-inference-20250418/
--   https://www.arukereso.hu/videokartya-c3142/?st=RTX+5060+Ti
--   https://www.arukereso.hu/videokartya-c3142/?st=RTX+5070+Ti
 -   https://www.nvidia.com/en-us/geforce/news/ultimate-guide-to-5060/
--   https://www.tomshardware.com/pc-components/gpus/nvidia-geforce-rtx-5060-ti-16gb-review
 -   https://www.hardware-corner.net/meta-releases-llama-4-what-hardware/
--   https://www.hardware-corner.net/ddr-9000-ddr-8000-for-llm/
 -   https://www.hardware-corner.net/guides/install-llama-2-windows-pc/
 -   https://www.kitguru.net/channel/generaltech/joao-silva/amd-ryzen-ai-300-series-shows-impressive-llm-performance/
 -   https://i0.wp.com/timdettmers.com/wp-content/uploads/2023/01/gpu_recommendations.png?w=845&ssl=1
@@ -884,7 +1101,6 @@ Time to First Token:     370377.41 ms
 -   https://blogs.nvidia.com/blog/ai-decoded-lm-studio/
 -   https://dev.to/maximsaplin/running-local-llms-cpu-vs-gpu-a-quick-speed-test-2cjn
 -   https://dev.to/maximsaplin/llamacpp-cpu-vs-gpu-shared-vram-and-inference-speed-3jpl
--   https://dev.to/maximsaplin/ddr5-speed-and-llm-inference-3cdn
 -   https://dev.to/maximsaplin/fine-tuning-llm-on-a-laptop-vram-shared-memory-gpu-load-performance-4agj
 -   https://x-dev.pages.jsc.fz-juelich.de/2022/08/01/mi250-first-performances.html
 -   https://github.com/stas00/ml-engineering/blob/master/compute/accelerator/README.md
@@ -896,16 +1112,52 @@ Time to First Token:     370377.41 ms
 -   https://www.hyperstack.cloud/technical-resources/tutorials/how-to-choose-the-right-gpu-for-llm-a-practical-guide
 -   https://www.reddit.com/r/LocalLLaMA/comments/1iyztni/dual_9175f_amd_epyc_9005_a_new_trend/
 -   https://www.reddit.com/r/LocalLLaMA/comments/1k57b1o/what_workstationrack_should_i_buy_for_offline_llm/
--   https://www.reddit.com/r/LocalLLaMA/comments/1lhd1j0/some_observations_using_the_rtx_6000_pro_blackwell/
-
+-   https://chipsandcheese.com/p/amds-cdna-3-compute-architecture
 
 ## Software
 
-### Frameworks
+### AMD CPU
+
+-   https://www.amd.com/en/developer/resources/technical-articles/zendnn-5-0-supercharge-ai-on-amd-epyc-server-cpus.html
+-   https://github.com/ggml-org/llama.cpp/issues/11744
+-   https://github.com/ggml-org/llama.cpp/discussions/11733
+
+### AMD GPU
+
+-   https://github.com/ROCm/flash-attention/tree/howiejay/navi_support
+-   https://github.com/ROCm/flash-attention
+-   https://llm-tracker.info/howto/AMD-GPUs
+-   https://www.youtube.com/watch?v=yCCoQ72DBpM
+
+### NVIDIA GPU
+
+-   https://developer.nvidia.com/nccl
+
+### Multi-GPU
+
+-   https://medium.com/@geronimo7/llms-multi-gpu-inference-with-accelerate-5a8333e4c5db
+-   https://docs.vllm.ai/en/v0.8.0/serving/distributed_serving.html
+
+## Library
+
+-   https://nn-512.com/
+-   https://github.com/explosion/thinc/tree/main
+
+## Framework
 
 -   [llamafile](https://github.com/Mozilla-Ocho/llamafile) - Lets you distribute and run LLMs with a single file.
     -   [LLaMA 3.2 3B Instruct - llamafile](https://huggingface.co/Mozilla/Llama-3.2-3B-Instruct-llamafile) -
         -   A large language model small enough to run on most computers with 8GB+ of RAM.
+
+### tinygrad
+
+-   https://tinygrad.org/#tinygrad
+-   https://news.ycombinator.com/item?id=33462337
+-   https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/1519271-tiny-corp-nearing-completely-sovereign-compute-stack-for-amd-gpus-with-tinygrad/page2
+-   https://www.youtube.com/@geohotarchive/videos
+-   https://docs.tinygrad.org/showcase/
+-   https://github.com/tinygrad/tinygrad
+-   https://www.youtube.com/watch?v=Xtws3-Pk69o&list=PLzFUMGbVxlQsh0fFZ2QKOBY25lz04A3hi
 
 ### TextSynth Server
 
@@ -914,37 +1166,34 @@ Time to First Token:     370377.41 ms
 -   https://textsynth.com/documentation.html#embeddings
 -   https://textsynth.com/documentation.html#engines
 -   https://huggingface.co/fbellard/ts_server/tree/main
--   https://developer.nvidia.com/nccl
--   https://lightning.ai/pages/community/serve-stable-diffusion-three-times-faster/
+-   https://github.com/sgl-project/sglang
+-   https://docs.sglang.ai/index.html
+-   https://dlib.net/ml.html#add_layer
+-   https://github.com/sony/nnabla
+-   https://www.nomic.ai/gpt4all
+-   https://www.phoronix.com/news/Red-Hat-llm-d-AI-LLM-Project
+-   https://github.com/unslothai/unsloth
+-   https://moondream.ai/
+-   https://llava-vl.github.io/
 -   https://github.com/bitsandbytes-foundation/bitsandbytes
--   https://medium.com/@geronimo7/llms-multi-gpu-inference-with-accelerate-5a8333e4c5db
--   https://docs.vllm.ai/en/v0.8.0/serving/distributed_serving.html
--   https://www.amd.com/en/developer/resources/technical-articles/zendnn-5-0-supercharge-ai-on-amd-epyc-server-cpus.html
--   https://github.com/ggml-org/llama.cpp/issues/11744
--   https://github.com/ggml-org/llama.cpp/discussions/11733
--   https://documentation.suse.com/sbp/tuning-performance/html/SBP-AMD-EPYC-5-SLES15SP6/index.html
 
+### Text
 
-### Embedding
+### Visual analysis and generation
 
--   https://radimrehurek.com/gensim/auto_examples/core/run_core_concepts.html
--   https://github.com/piskvorky/gensim
--   https://radimrehurek.com/gensim/#
--   https://en.wikipedia.org/wiki/ELMo
--   https://en.wikipedia.org/wiki/Cosine_similarity
--   https://en.wikipedia.org/wiki/Word2vec
--   https://en.wikipedia.org/wiki/FastText
--   https://en.wikipedia.org/wiki/Gensim
-
-
-### Text-to-speech
-
--   [Piper](https://github.com/rhasspy/piper) - A fast, local neural TTS optimized for the Raspberry Pi 4.
-
-### Visual analysis
-
+-   https://lightning.ai/pages/community/serve-stable-diffusion-three-times-faster/
 -   [Moondream](https://moondream.ai/) - Open-source visual language model that understands images using simple text prompts. Fast and wildly capable.
 -   [LLaVA](https://llava-vl.github.io/) - Large Language and Vision Assistant
+
+
+### Voice
+
+-   https://huggingface.co/mistralai/Voxtral-Mini-3B-2507
+-   https://huggingface.co/mistralai/Voxtral-Mini-3B-2507#vllm-recommended
+-   https://mistral.ai/news/voxtral
+-   https://github.com/mozilla/DeepSpeech
+-   [Piper](https://github.com/rhasspy/piper) - A fast, local neural TTS optimized for the Raspberry Pi 4.
+
 
 ### OCR
 
@@ -974,3 +1223,29 @@ Time to First Token:     370377.41 ms
 -   https://github.com/zacharywhitley/awesome-ocr
 -   https://en.wikipedia.org/wiki/OCRopus
 -   https://en.wikipedia.org/wiki/Tesseract_(software)
+-   https://upmath.me/
+
+### Embedding
+
+-   https://radimrehurek.com/gensim/auto_examples/core/run_core_concepts.html
+-   https://github.com/piskvorky/gensim
+-   https://radimrehurek.com/gensim/#
+-   https://en.wikipedia.org/wiki/ELMo
+-   https://en.wikipedia.org/wiki/Cosine_similarity
+-   https://en.wikipedia.org/wiki/Word2vec
+-   https://en.wikipedia.org/wiki/FastText
+-   https://en.wikipedia.org/wiki/Gensim
+
+## Papers
+
+-   https://arxiv.org/html/2505.07203v1
+-   https://github.com/d893a/localscore-leaderboard
+-   https://github.com/d893a/local-ml-models/blob/main/local_ml_models.md
+-   [George Hotz blog - Nobody Profits](https://geohot.github.io/blog/jekyll/update/2025/02/19/nobody-will-profit.html)
+    > The best outcome of AI is if it delivers huge amounts of value to
+    > society but no profit to anyone.
+
+    > Spin up open source projects in every sector to eliminate all the
+    > capturable value. This is what I’m trying to do with comma.ai and
+    > tinygrad.
+
