@@ -1,4 +1,4 @@
-# Running machine learning and large language models locally <!-- omit from toc -->
+# Running machine learning models locally <!-- omit from toc -->
 
 ## Introduction
 
@@ -431,6 +431,7 @@ Typical values/ranges for $F_{cpu}$: "Floating-point operations per second", and
                     | AMD Ryzen 7 7840HS                 | 27th            | 79                                  |
                     | AMD Ryzen AI 9 365                 | 18th            | 61 +/- 1                            |
 
+
                     | Component                          | Percentile Rank | Time To First Token - ms (Average)  |
                     |------------------------------------|-----------------|-------------------------------------|
                     | AMD Ryzen 9 9950X 16-Core          | 68th            | 5660 +/- 2                          |
@@ -440,6 +441,7 @@ Typical values/ranges for $F_{cpu}$: "Floating-point operations per second", and
                     | AMD EPYC 4545P 16-Core             | 35th            | 12093 +/- 927                       |
                     | AMD Ryzen 7 7840HS                 | 27th            | 17516 +/- 122                       |
                     | AMD Ryzen AI 9 365                 | 21st            | 22242 +/- 499                       |
+
 
                     | Component                          | Percentile Rank | Token Generation - tok/s (Average)  |
                     |------------------------------------|-----------------|-------------------------------------|
@@ -464,6 +466,7 @@ Typical values/ranges for $F_{cpu}$: "Floating-point operations per second", and
                     | AMD EPYC 4465P 12-Core             | 49th            | 83                                  |
                     | AMD RYZEN AI MAX PRO 390           | 42nd            | 71 +/- 3                            |
 
+
                     | Component                          | Percentile Rank | Time To First Token - ms (Average) |
                     |------------------------------------|-----------------|------------------------------------|
                     | AMD Ryzen 9 9950X 16-Core          | 69th            | 11190 +/- 15                       |
@@ -471,6 +474,7 @@ Typical values/ranges for $F_{cpu}$: "Floating-point operations per second", and
                     | AMD RYZEN AI MAX+ PRO 395          | 53rd            | 16158 +/- 467                      |
                     | AMD EPYC 4465P 12-Core             | 47th            | 16717 +/- 23                       |
                     | AMD RYZEN AI MAX PRO 390           | 41st            | 18981 +/- 334                      |
+
 
                     | Component                          | Percentile Rank | Token Generation - tok/s (Average) |
                     |------------------------------------|-----------------|------------------------------------|
@@ -493,6 +497,7 @@ Typical values/ranges for $F_{cpu}$: "Floating-point operations per second", and
                     | AMD RYZEN AI MAX PRO 390    | 28th            | 30 +/- 1                            |
                     | AMD EPYC 4545P 16-Core      | 21st            | 25 +/- 1                            |
 
+
                     | Component                   | Percentile Rank | Time To First Token - ms (Average) |
                     |-----------------------------|-----------------|------------------------------------|
                     | AMD Ryzen 9 9950X 16-Core   | 51st            | 26,414 +/- 49                      |
@@ -500,6 +505,7 @@ Typical values/ranges for $F_{cpu}$: "Floating-point operations per second", and
                     | AMD RYZEN AI MAX+ PRO 395   | 38th            | 38,082 +/- 959                     |
                     | AMD RYZEN AI MAX PRO 390    | 27th            | 43,996 +/- 273                     |
                     | AMD EPYC 4545P 16-Core      | 20th            | 56,061 +/- 3,460                   |
+
 
                     | Component                   | Percentile Rank | Token Generation - tok/s (Average) |
                     |-----------------------------|-----------------|------------------------------------|
@@ -518,29 +524,29 @@ Typical values/ranges for $F_{cpu}$: "Floating-point operations per second", and
             the 143 test profiles the overall rank was approximately in the
             80th percentile.
     -   [2 x AMD EPYC 9175F 16-Core](https://openbenchmarking.org/s/2+x+AMD+EPYC+9175F+16-Core)
--   [LocalScore](https://www.localscore.ai/) - Benchmarks for LLMs and a
+-   [LocalScore](https://www.localscore.ai/about) - Benchmarks for LLMs and a
     repository for the results.
 
-    A LocalScore is a measure of three key performance metrics that matter for
-    local LLM performance: Prompt Processing Speed, Generation Speed, and Time
-    to First Token. These metrics are combined into a single LocalScore which
-    gives you a straightforward way to compare different hardware
-    configurations. A score of 1,000 is excellent, 250 is passable, and below
-    100 will likely be a poor user experience in some regard.
+    >   A LocalScore is a measure of three key performance metrics that matter for
+    >   local LLM performance: Prompt Processing Speed, Generation Speed, and Time
+    >   to First Token. These metrics are combined into a single LocalScore which
+    >   gives you a straightforward way to compare different hardware
+    >   configurations. A score of 1,000 is excellent, 250 is passable, and below
+    >   100 will likely be a poor user experience in some regard.
 
-    Tests:
+    Use cases:
 
-    | Prompt Tokens | Text Generation Tokens | Sample Use Cases                                                     |
-    |---------------|-----------------------|-----------------------------------------------------------------------|
-    | 1024          | 16                    | Classification, sentiment analysis, keyword extraction                |
-    | 4096          | 256                   | Long document Q&A, RAG, short summary of extensive text               |
-    | 2048          | 256                   | Article summarization, contextual paragraph generation                |
-    | 2048          | 768                   | Drafting detailed replies, multi-paragraph generation, content sections|
-    | 1024          | 1024                  | Balanced Q&A, content drafting, code generation based on long sample  |
-    | 1280          | 3072                  | Complex reasoning, chain-of-thought, long-form creative writing, code generation |
-    | 384           | 1152                  | Prompt expansion, explanation generation, creative writing, code generation |
-    | 64            | 1024                  | Short prompt creative generation (poetry/story), Q&A, code generation |
-    | 16            | 1536                  | Creative text writing/storytelling, Q&A, code generation              |
+    | Prompt<br>Tokens | Text Generation<br>Tokens | Sample Use Cases                                                      |
+    |-----------------:|--------------------------:|-----------------------------------------------------------------------|
+    | 1024             | 16                        | Classification, sentiment analysis, keyword extraction                |
+    | 4096             | 256                       | Long document Q&A, RAG, short summary of extensive text               |
+    | 2048             | 256                       | Article summarization, contextual paragraph generation                |
+    | 2048             | 768                       | Drafting detailed replies, multi-paragraph generation, content sections|
+    | 1024             | 1024                      | Balanced Q&A, content drafting, code generation based on long sample  |
+    | 1280             | 3072                      | Complex reasoning, chain-of-thought, long-form creative writing, code generation |
+    | 384              | 1152                      | Prompt expansion, explanation generation, creative writing, code generation |
+    | 64               | 1024                      | Short prompt creative generation (poetry/story), Q&A, code generation |
+    | 16               | 1536                      | Creative text writing/storytelling, Q&A, code generation              |
 
     Models:
 

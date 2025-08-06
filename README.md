@@ -125,7 +125,7 @@ Prices for a complete computer are in the 10,000--20,000 EUR range.
 
 ### Server CPUs
 
--   Socket:[SP5](https://en.wikipedia.org/wiki/Socket_SP5):
+-   Socket: [SP5](https://en.wikipedia.org/wiki/Socket_SP5):
     -   EPYC 9004: 12-channel DDR5-4800 (Zen 4) (24 for 2-CPU config)
     -   EPYC 9005: 12-channel DDR5-5600 (Zen 5) (24 for 2-CPU config)
 -   Maximum RAM: 3 TB (6 TB for 2-CPU config)
