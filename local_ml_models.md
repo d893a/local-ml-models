@@ -1,84 +1,5 @@
 # Running machine learning and large language models locally <!-- omit from toc -->
 
-**Table of contents**
-- [Introduction](#introduction)
-    - [LLM system characteristics](#llm-system-characteristics)
-        - [Model Size](#model-size)
-        - [Quantization](#quantization)
-        - [Prompt Length](#prompt-length)
-        - [Batch Size](#batch-size)
-        - [CPU Performance](#cpu-performance)
-            - [Example](#example)
-        - [Thread/Parallelism Efficiency](#threadparallelism-efficiency)
-        - [GPU parameters](#gpu-parameters)
-- [Additional Important Parameters](#additional-important-parameters)
-        - [Memory Bandwidth and Latency](#memory-bandwidth-and-latency)
-        - [Required operations per token](#required-operations-per-token)
-        - [Software Optimization](#software-optimization)
-        - [Hyperthreading: Use one thread per CPU core](#hyperthreading-use-one-thread-per-cpu-core)
-    - [LLM inference performance indicators](#llm-inference-performance-indicators)
-        - [Prompt Processing Throughput](#prompt-processing-throughput)
-        - [Time to First Token](#time-to-first-token)
-        - [Token Generation Throughput](#token-generation-throughput)
-- [Benchmarks](#benchmarks)
-- [Hardware](#hardware)
-    - [PIM](#pim)
-    - [GPUs](#gpus)
-        - [AMD RX 7900 XTX vs NVIDIA RTX 5090](#amd-rx-7900-xtx-vs-nvidia-rtx-5090)
-    - [Other hardware](#other-hardware)
-- [Survey](#survey)
-- [Software](#software)
-    - [Frameworks](#frameworks)
-    - [TextSynth Server](#textsynth-server)
-    - [Embedding](#embedding)
-    - [Text-to-speech](#text-to-speech)
-    - [Visual analysis](#visual-analysis)
-    - [OCR](#ocr)
-- [Performance](#performance)
-- [Models](#models)
-- [Benchmark](#benchmark)
-    - [CPU benchmark](#cpu-benchmark)
-    - [GPU benchmark](#gpu-benchmark)
-    - [Model benchmark](#model-benchmark)
-    - [CPU + NPU benchmark](#cpu--npu-benchmark)
-- [Hardware](#hardware-1)
-    - [CPU](#cpu)
-        - [Embedded CPU](#embedded-cpu)
-        - [Desktop CPU](#desktop-cpu)
-        - [Workstation CPU](#workstation-cpu)
-        - [Server CPU](#server-cpu)
-    - [CPU cooler](#cpu-cooler)
-    - [Memory](#memory)
-- [Performance](#performance-1)
-    - [Motherboard](#motherboard)
-    - [SSD](#ssd)
-    - [PSU](#psu)
-    - [GPU](#gpu)
-        - [NVIDIA GPU](#nvidia-gpu)
-        - [AMD GPU](#amd-gpu)
-    - [GPU link](#gpu-link)
-    - [Case](#case)
-    - [Mini PC](#mini-pc)
-    - [Mini PC + eGPU](#mini-pc--egpu)
-    - [tinybox](#tinybox)
-    - [PIM](#pim-1)
-- [Survey](#survey-1)
-- [Software](#software-1)
-    - [AMD CPU](#amd-cpu)
-    - [AMD GPU](#amd-gpu-1)
-    - [NVIDIA GPU](#nvidia-gpu-1)
-    - [Multi-GPU](#multi-gpu)
-- [Library](#library)
-- [Framework](#framework)
-    - [tinygrad](#tinygrad)
-    - [TextSynth Server](#textsynth-server-1)
-    - [Text](#text)
-    - [Images](#images)
-    - [Voice](#voice)
-    - [OCR](#ocr-1)
-    - [Embedding](#embedding-1)
-- [Papers](#papers)
-
 ## Introduction
 
 This is a collection of links and information to assess the viability of
@@ -143,7 +64,7 @@ preserves precision but uses more resources.
 
 Typical quantization values used in local LLMs are 4-bit (int4), 8-bit (int8),
 and sometimes 16-bit (fp16 or bfloat16).
-[bfloat](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) (Google
+[bfloat16](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format) (Google
 Brain floating point) has the same exponent size as float32 but fewer mantissa
 bits; it has a wide dynamic range and reduced precision. Processors with
 [AVX-512](https://en.wikipedia.org/wiki/AVX-512) extensions support this data
@@ -342,7 +263,9 @@ workloads, GPU bandwidth is usually the bottleneck.
 $O_{token}$: Number of floating point operations needed to
 process/generate one token [FLOP/token]. As a rule of thumb:
 
-$O_{token} [FLOP/token] \approx 2 \times N \times d_{model}^2$,
+$$
+O_{token} [FLOP/token] \approx 2 \times N \times d_{model}^2,
+$$
 
 where \
 $N$: Number of transformer layers, and \
@@ -410,13 +333,13 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
 
 $PP$: Number of input tokens processed in a second. The model attends to all
 prompt tokens (full attention over the entire prompt). Computational cost
-grows with prompt length ((O(L_{prompt}^2)) for attention). More memory and
+grows with prompt length ($O(L_{prompt}^2)$ for attention). More memory and
 compute required for long prompts.
 
 The formula for prompt processing speed (token/s) is:
 
 $$
-PP [token/s] = \frac{F_{cpu} \times E_{par}}{O_{token}}
+PP [token/s] = \dfrac{F_{cpu} \times E_{par}}{O_{token}}
 $$
 
 Where:
@@ -437,7 +360,7 @@ $T_{first}$: The time from submitting a prompt to receiving the first output tok
 A simplified formula:
 
 $$
-T_{first} [s] \approx \frac{L_{prompt}}{PP} + \frac{S_{model}}{BW_{mem}}
+T_{first} [s] \approx \dfrac{L_{prompt}}{PP} + \dfrac{S_{model}}{BW_{mem}}
 $$
 
 -   The first term is the compute time for the prompt.
@@ -463,10 +386,7 @@ For most large LLMs on CPUs, memory bandwidth and model size are the main
 determinants for token generation throughput. Prompt processing (time to first
 token) is more compute-bound and depends on prompt length and CPU speed.
 
-Typical values/ranges for (( F_{cpu} )): "Floating-point operations per second", and (( O_{token} )): "Number of FLOPs needed to process/generate one token"?
-
-
-
+Typical values/ranges for $F_{cpu}$: "Floating-point operations per second", and $O_{token}$: "Number of FLOPs needed to process/generate one token"?
 
 
 ## Benchmarks
