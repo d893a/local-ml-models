@@ -182,7 +182,12 @@ Prices for a complete workstation computer are in the 10,000--20,000 EUR range.
 [9004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
 [9005]: https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)
 
+Test results at [OpenBenchmarking.org](https://openbenchmarking.org/) for
+[llama.cpp](https://openbenchmarking.org/test/pts/llama-cpp&eval=528957f347896758ab932a93b883fc633206e394#metrics) and
+[LocalScore](https://openbenchmarking.org/test/pts/localscore&eval=b2ce18055004793cb1bdfa1d826b3ab6666d1756#metrics).
+
 Prices for a complete computer with SP5 CPU socket are in the 2,500--7,000 EUR range.
+
 
 
 ###  Mobile CPUs with integrated NPU
