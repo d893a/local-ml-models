@@ -34,6 +34,7 @@ The following hardware configurations are considered:
 -   Hybrid CPU + GPU, including mobile (laptop, mini PC) solutions. The model plus
     context fits into the CPU memory, but does not fit into the GPU VRAM.
 
+<div class="page"/>
 
 ### CPU only
 
@@ -82,6 +83,7 @@ In the next sections the following CPU categories are detailed:
 -   Server CPUs
 -   Mobile CPUs
 
+<div class="page"/>
 
 ### Desktop CPUs
 
@@ -107,6 +109,8 @@ In the next sections the following CPU categories are detailed:
 [9000]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Granite_Ridge_(9000_series,_Zen_5_based)
 
 Prices for a complete desktop computer are in the 1000--5000 EUR range.
+
+<div class="page"/>
 
 ### Workstation CPUs
 
@@ -145,6 +149,7 @@ This includes the AMD Ryzen Threadripper and EPYC 8004 processors.
 
 Prices for a complete workstation computer are in the 10,000--20,000 EUR range.
 
+<div class="page"/>
 
 ### Server CPUs
 
@@ -191,6 +196,8 @@ Test results at [OpenBenchmarking.org](https://openbenchmarking.org/) for
 
 Prices for a complete computer with SP5 CPU socket are in the 2,500--7,000 EUR range.
 
+<div class="page"/>
+
 ###  Mobile CPUs with integrated NPU
 
 -   Sockets: FL1, FP7, FP7r2 or FP8 type packages
@@ -221,8 +228,9 @@ Prices for a complete computer with SP5 CPU socket are in the 2,500--7,000 EUR r
 
 Prices for a complete computer are in the 1,000--2,500 EUR range.
 
+<div class="page"/>
 
-### LLM system characteristics
+## LLM system characteristics
 
 A large language model takes a sequence of tokens as input (called prompt) and produces a
 sequence of tokens as output. The performance of the LLM is a combination of
