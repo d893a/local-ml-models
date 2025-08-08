@@ -1,8 +1,42 @@
 ## Introduction
 
-This is a collection of links and information to assess the viability of running machine learning models and large language models locally.
+This is a collection of links and information to assess the viability of
+running machine learning models and large language models locally. The aim is
+to support engineers and stakeholders to make a well-informed decision when
+procuring LLM infrastructure.
 
-The aim is to support engineers and stakeholders to make a well-informed decision when procuring LLM infrastructure.
+The following use cases are considered, based on [LocaScore](https://www.localscore.ai/about):
+
+| Use<br>case | Description                                                                      | Prompt<br>Tokens | Text Generation<br>Tokens |
+|-------------|----------------------------------------------------------------------------------|-----------------:|--------------------------:|
+| UC1         | Classification, sentiment analysis, keyword extraction                           | 1024             | 16                        |
+| UC2         | Long document Q&A, RAG, short summary of extensive text                          | 4096             | 256                       |
+| UC3         | Complex reasoning, chain-of-thought, long-form creative writing, code generation | 1280             | 3072                      |
+| UC4         | Prompt expansion, explanation generation, creative writing, code generation      | 384              | 1152                      |
+
+The following hardware configurations are examined. We expect the large language model to finish processing the input in 10 seconds, and then produce output at a minimum of 10 token/s.
+
+| AMD CPU example       | Cores | RAM<br>channels | RAM<br>[GB] | RAM WB<br>[GB/s] | NVIDIA GPU type                 | GPU VRAM<br>[GB] | ML model size<br>[GB] | Prompt<br>processing<br>[token/s] | Token<br>generation<br>[token/s] | UC1 | UC2 | UC3 | UC4 |
+|-----------------------|------:|----------------:|------------:|-----------------:|---------------------------------|-----------------:|----------------------:|----------------------------------:|---------------------------------:|-----|-----|-----|-----|
+| Ryzen AI MAX+ PRO 395 | 16    | 2               | 128         | 128              |        -                        |                - |                    10 |  84                               | 11                               | ✅ | ❌ | ❌ | ❓ |
+| Ryzen 9 9950X         | 16    | 2               | 192         | 89.6             |        -                        |                - |                    10 |  125                              | 8                                | ✅ | ❌ | ❓ | ❓ |
+| Ryzen 9 9950X         | 16    | 2               | 192         | 89.6             | [RTX 5080][ls754]               |               16 |                    10 |  2291                             | 24                               | ✅ | ✅ | ❓ | ❓ |
+| Ryzen 9 9950X         | 16    | 2               | 192         | 89.6             | [RTX 5090][ls175]               |               32 |                    10 |  4787                             | 65                               | ✅ | ✅ | ✅ | ✅ |
+| Threadripper 7970X    | 32    | 4               | 256         | 166.4            |        -                        |                - |                    10 |  223                              | 14                               | ✅ | ❌ | ✅ | ❓ |
+| Threadripper 7970X    | 32    | 4               | 256         | 166.4            | [RTX PRO 6000 Blackwell][ls939] |               96 |                    10 |  5126                             | 81                               | ✅ | ✅ | ✅ | ✅ |
+| Threadripper 7970X    | 32    | 4               | 256         | 166.4            | 2 x RTX PRO 6000 Blackwell      |              192 |                max 96 |  ?                                | ?                                | ✅ | ✅ | ✅ | ✅ |
+| EPYC 9554P            | 64    | 12              | 384         | 460.8            |        -                        |                - |                    10 |  295?                             | 20?                              | ✅ | ❌ | ✅ | ❓ |
+| EPYC 9554P            | 64    | 12              | 768         | 460.8            | 4 x RTX PRO 6000 Blackwell      |              384 |               max 192 |  ?                                | ?                                | ✅ | ✅ | ✅ | ✅ |
+
+A workflow is considered -
+-   *interactive*, if input processing takes less than 3 seconds, and the output it produced at more than 10 tokens/s
+-   *background task*, if input processing + output generation finishes within 300 seconds (5 minutes)
+-   *off-line*, if input processing + output generation finishes within a few hours (progress indicator is necessary)
+-   *non-viable*, if takes prohibitively long
+
+[ls754]: https://www.localscore.ai/result/754
+[ls175]: https://www.localscore.ai/result/175
+[ls939]: https://www.localscore.ai/result/939
 
 Running machine learning models requires:
 - Hardware
@@ -187,8 +221,6 @@ Test results at [OpenBenchmarking.org](https://openbenchmarking.org/) for
 [LocalScore](https://openbenchmarking.org/test/pts/localscore&eval=b2ce18055004793cb1bdfa1d826b3ab6666d1756#metrics).
 
 Prices for a complete computer with SP5 CPU socket are in the 2,500--7,000 EUR range.
-
-
 
 ###  Mobile CPUs with integrated NPU
 

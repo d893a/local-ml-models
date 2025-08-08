@@ -382,13 +382,16 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
     >   configurations. A score of 1,000 is excellent, 250 is passable, and below
     >   100 will likely be a poor user experience in some regard.
     -   [Models](https://www.localscore.ai/download):
+
         | Model Size           | Tiny      | Small     | Medium    |
         |----------------------|-----------|-----------|-----------|
         | # Params             | 1B        | 8B        | 14B       |
         | Model                | Llama 3.2 | Llama 3.1 | Qwen 2.5  |
         | Quantization         | Q4_K_M    | Q4_K_M    | Q4_K_M    |
         | Approx VRAM Required | 2 GB      | 6 GB      | 10 GB     |
+
     -   [Use cases](https://www.localscore.ai/about):
+
         | Prompt<br>Tokens | Text Generation<br>Tokens | Sample Use Cases                                                      |
         |-----------------:|--------------------------:|-----------------------------------------------------------------------|
         | 1024             | 16                        | Classification, sentiment analysis, keyword extraction                |
@@ -400,6 +403,7 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
         | 384              | 1152                      | Prompt expansion, explanation generation, creative writing, code generation |
         | 64               | 1024                      | Short prompt creative generation (poetry/story), Q&A, code generation |
         | 16               | 1536                      | Creative text writing/storytelling, Q&A, code generation              |
+
     -   Discussions:
         -   https://www.reddit.com/r/LocalLLaMA/comments/1iyztni/dual_9175f_amd_epyc_9005_a_new_trend/
         -   https://www.reddit.com/r/LocalLLaMA/comments/1jq13ik/comment/ml6hg70/?context=3
