@@ -36,16 +36,17 @@ The following hardware configurations are examined.
 |-----------------------|---------------------------------|-----------------:|----------------------:|----------------------------------:|---------------------------------:|-----|-----|-----|-----|
 | Ryzen AI MAX+ PRO 395 |        -                        |                - |                    10 |  84                               | 11                               | ✅ | ❌ | ❌ | ❓ |
 | Ryzen 9 9950X         |        -                        |                - |                    10 |  125                              | 8                                | ✅ | ❌ | ❓ | ❓ |
-| Ryzen 9 9950X         | [RTX 5080][ls754]               |               16 |                    10 |  2291                             | 24                               | ✅ | ✅ | ❓ | ❓ |
-| Ryzen 9 9950X         | [RTX 5090][ls175]               |               32 |                    10 |  4787                             | 65                               | ✅ | ✅ | ✅ | ✅ |
+| Ryzen 9 9950X         | RTX 5080                        |               16 |                    10 |  [2291][ls754]                    | 24                               | ✅ | ✅ | ❓ | ❓ |
+| Ryzen 9 9950X         | RTX 5090                        |               32 |                    10 |  [4787][ls175]                    | 65                               | ✅ | ✅ | ✅ | ✅ |
 | Threadripper 7970X    |        -                        |                - |                    10 |  223                              | 14                               | ✅ | ❌ | ✅ | ❓ |
-| Threadripper 7970X    | [RTX PRO 6000 Blackwell][ls939] |               96 |                    10 |  5126                             | 81                               | ✅ | ✅ | ✅ | ✅ |
+| Threadripper 7970X    | RTX PRO 6000 Blackwell          |               96 |                    10 |  [5126][ls939]                    | 81                               | ✅ | ✅ | ✅ | ✅ |
 | Threadripper 7970X    | 2 x RTX PRO 6000 Blackwell      |              192 |                max 96 |  ?                                | ?                                | ✅ | ✅ | ✅ | ✅ |
-| EPYC 9554P            |        -                        |                - |                    10 |  295?                             | 20?                              | ✅ | ❌ | ✅ | ❓ |
+| EPYC 9554P            |        -                        |                - |                    10 |  223?                             | 21?                              | ✅ | ❌ | ✅ | ❓ |
 | EPYC 9554P            | 4 x RTX PRO 6000 Blackwell      |              384 |               max 192 |  ?                                | ?                                | ✅ | ✅ | ✅ | ✅ |
 
 [ls754]: https://www.localscore.ai/result/754
 [ls175]: https://www.localscore.ai/result/175
 [ls939]: https://www.localscore.ai/result/939
+
 
 See the detailed analysis in [local_ml_models.md](local_ml_models.md)
