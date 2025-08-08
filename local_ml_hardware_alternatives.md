@@ -77,7 +77,7 @@ Discussion about adding an eGPU to the main board:
     -   AMD Ryzen™ AI Max+ PRO 395 (up to 5.1 GHz max boost clock, 64 MB L3 cache, 16 cores, 32 threads)[6,7]
     -   128 GB LPDDR5x-8533 MT/s (onboard)
     -   Graphics: Integrated: AMD Radeon™ 8060S Graphics
-    -   SSD: 2 TB PCIe® Gen4 NVMe™ TLC SSD
+    -   SSD: 2 TB PCIe Gen4 NVMe™ TLC SSD
     -   Display: 14" diagonal, 2.8K (2880 x 1800), OLED, touch, IPS, BrightView, Low Blue Light, 400 nits, 100% DCI-P3
 -   [Price](https://www.hp.com/us-en/shop/pdp/hp-zbook-ultra-14-inch-g1a-mobile-workstation-pc-wolf-pro-security-edition-p-bn2v3ua-aba-1):
     -   4200 USD = 3600 EUR
@@ -101,15 +101,23 @@ Expected CPU-only performance for a 10 GB LLM model:
 
 Supports 1 CPIe x16 GPU, or 2 CPIe x8 GPUs
 
-### AMD Ryzen 9 9950X
+### AMD Ryzen 9 9950X3D
 
 Specs:
--   CPU: AMD Ryzen 9 9950X
-    ([AMD](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x.html))
-    (TechPowerUp)
--   [Chipsets](https://www.amd.com/en/products/processors/chipsets/am5.html),
-    [TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-9-9950x.c3649#gallery-6):
-    -   X870E
+-   CPU: AMD Ryzen 9 9950X3D
+    ([Wikipedia](https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Granite_Ridge_(9000_series,_Zen_5_based)))
+    ([AMD](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html))
+    ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-9-9950x3d.c3993))
+    -   128GB L3 cache
+-   Chipsets
+    ([AMD doc](https://www.amd.com/en/products/processors/chipsets/am5.html))
+    ([Image](assets/amd-am5.png))
+    ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-9-9950x3d.c3993#gallery-5)):
+    -   X870E:
+        -   USB 4.0
+        -   2 SUPERSPEED USB 20Gbps
+        -   PCIe 5.0 1x16 or 2x8
+        -   1x4 PCIe 5.0 plus 4x PCIe GPP
 -   RAM:
 -   Motherboard:
     -   ASRock X870E Taichi
