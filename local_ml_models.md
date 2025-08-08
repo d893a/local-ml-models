@@ -85,6 +85,38 @@ In the next sections the following CPU categories are detailed:
 
 <div class="page"/>
 
+###  Mobile CPUs with integrated NPU
+
+-   Sockets: FL1, FP7, FP7r2 or FP8 type packages
+    -   200: All models support DDR5-5600 or LPDDR5X-7500 in 128-bit "dual-channel" mode.
+    -   300: All models support DDR5-5600 or LPDDR5X-8000 in dual-channel mode.
+-   Maximum RAM: 128 GB
+-   Maximum cores: 4-12 (counts at prefill throughput)
+-   Cache:
+    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
+    -   L2: 1 MB per core
+    -   L3: 8-64 MB
+-   Maximum PCIe lanes: 16-20
+-   Maximum theoretical memory bandwidth: 128 GB/s
+    -   This caps token generation throughput of a 10 GB LLM model at 12 token/s
+
+
+| CPU Series (embedded)    | Cores<br>type  | Max RAM    | Max RAM BW   | Token<br>generation |
+|--------------------------|---------------:|-----------:|-------------:|--------------------:|
+| [Ryzen 8040][8040]       | 4-8            | 128 GB     | 89.6 GB/s    |         3-9 token/s |
+| [Ryzen AI 200][200]      | 4-8            | 256 GB     | 128 GB/s     |        4-12 token/s |
+| [Ryzen AI 300][300]      | 4-12           | 256 GB     | 128 GB/s     |        4-12 token/s |
+| [Ryzen AI MAX/MAX+][MAX] | 6-16           | 128 GB     | 128 GB/s     |        4-12 token/s |
+
+[8040]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_(8040_series,_Zen_4/RDNA3/XDNA_based)
+[200]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_Refresh_(200_series,_Zen_4/RDNA3/XDNA_based)
+[300]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Point_and_Krackan_Point_(Zen_5/RDNA3.5/XDNA2_based)
+[MAX]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Halo_(Zen_5/RDNA3.5/XDNA2_based)
+
+Prices for a complete computer are in the 1,000--2,500 EUR range.
+
+<div class="page"/>
+
 ### Desktop CPUs
 
 -   Socket: [AM5](https://en.wikipedia.org/wiki/Socket_AM5) (dual-channel RAM)
@@ -195,38 +227,6 @@ Test results at [OpenBenchmarking.org](https://openbenchmarking.org/) for
 [LocalScore](https://openbenchmarking.org/test/pts/localscore&eval=b2ce18055004793cb1bdfa1d826b3ab6666d1756#metrics).
 
 Prices for a complete computer with SP5 CPU socket are in the 2,500--7,000 EUR range.
-
-<div class="page"/>
-
-###  Mobile CPUs with integrated NPU
-
--   Sockets: FL1, FP7, FP7r2 or FP8 type packages
-    -   200: All models support DDR5-5600 or LPDDR5X-7500 in 128-bit "dual-channel" mode.
-    -   300: All models support DDR5-5600 or LPDDR5X-8000 in dual-channel mode.
--   Maximum RAM: 128 GB
--   Maximum cores: 4-12 (counts at prefill throughput)
--   Cache:
-    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
-    -   L2: 1 MB per core
-    -   L3: 8-64 MB
--   Maximum PCIe lanes: 16-20
--   Maximum theoretical memory bandwidth: 128 GB/s
-    -   This caps token generation throughput of a 10 GB LLM model at 12 token/s
-
-
-| CPU Series (embedded)    | Cores<br>type  | Max RAM    | Max RAM BW   | Token<br>generation |
-|--------------------------|---------------:|-----------:|-------------:|--------------------:|
-| [Ryzen 8040][8040]       | 4-8            | 128 GB     | 89.6 GB/s    |         3-9 token/s |
-| [Ryzen AI 200][200]      | 4-8            | 256 GB     | 128 GB/s     |        4-12 token/s |
-| [Ryzen AI 300][300]      | 4-12           | 256 GB     | 128 GB/s     |        4-12 token/s |
-| [Ryzen AI MAX/MAX+][MAX] | 6-16           | 128 GB     | 128 GB/s     |        4-12 token/s |
-
-[8040]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_(8040_series,_Zen_4/RDNA3/XDNA_based)
-[200]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_Refresh_(200_series,_Zen_4/RDNA3/XDNA_based)
-[300]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Point_and_Krackan_Point_(Zen_5/RDNA3.5/XDNA2_based)
-[MAX]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Halo_(Zen_5/RDNA3.5/XDNA2_based)
-
-Prices for a complete computer are in the 1,000--2,500 EUR range.
 
 <div class="page"/>
 
