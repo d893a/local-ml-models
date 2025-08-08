@@ -1,4 +1,4 @@
-## Introduction
+## Running machine learning models locally
 
 This is a collection of links and information to assess the viability of
 running machine learning models and large language models locally. The aim is
