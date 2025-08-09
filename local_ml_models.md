@@ -67,7 +67,12 @@ Where:
 -   RAM channels: 2-12 (24 for 2-CPU setups).
     -   RAM sizes vary between 4-128 GB
     -   Viable total memory size: 8 GB to 1536 GB. (3072 GB in the case of 24 x 128 GB modules.)
--   See also: https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/
+-   See also [fairydreaming's recommendation on Reddit](https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/):
+    >   To get the best memory bandwidth, (theoretically) you should:
+    >   -   Increase FCLK for 8-channel configurations with 2 or 4 CCDs (7945WX, 7955WX, 7965WX, 7975WX),
+    >   -   Use overclocked memory in all remaining Threadripper models,
+    >   -   For Epyc, purchase a motherboard with 12 memory slots and an Epyc 9004 processor with at least 8 CCDs. Fill all memory slots.
+
 
 Examples:
 -   AMD Ryzen 5 7400F: n_CCD = 1, FCLK = 1.8 GHz, ch = 2.
@@ -205,12 +210,12 @@ Prices for a complete workstation computer are in the 10,000--20,000 EUR range.
     -   Caps token generation throughput of 10 GB LLM model at 46 to 100 token/s
     -   Note that from the Genoa platform on, [single-rank memory modules will perform
         well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
-        > The other important feature is dual rank versus single rank memory.
-        > With Milan and most Intel platforms, dual-rank memory is crucial to
-        > maximizing performance. There’s a 25% performance delta on Milan,
-        > for example. With Genoa, this is brought down to 4.5%. This is
-        > another considerable cost improvement because cheaper single-rank
-        > memory can be used.
+        >   The other important feature is dual rank versus single rank memory.
+        >   With Milan and most Intel platforms, dual-rank memory is crucial to
+        >   maximizing performance. There’s a 25% performance delta on Milan,
+        >   for example. With Genoa, this is brought down to 4.5%. This is
+        >   another considerable cost improvement because cheaper single-rank
+        >   memory can be used.
         ([Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1))
 
 
