@@ -2,8 +2,8 @@
 
 -   [Embedded / mobile CPU](#embedded--mobile-cpu)
 -   [Desktop PC](#desktop-pc)
--   Workstation
--   Server
+-   [Workstation](#workstation)
+-   [Server](#server)
 
 The following GPU alternatives are listed:
 -   NVIDIA RTX PRO 6000 Blackwell (96GB)
@@ -11,14 +11,19 @@ The following GPU alternatives are listed:
 -   NVIDIA GeForce RTX 5070 Ti SUPER (24GB)
 -   NVIDIA GeForce RTX 5080 SUPER (24GB)
 -   AMD Radeon RX 7900 XTX (24GB)
+-   AMD Radeon AI PRO R9700
+
+PLease refer to the '[Which GPU(s) to Get for Deep Learning: My Experience
+and Advice for Using GPUs in Deep Learning](https://timdettmers.com/2023/01/30/which-gpu-for-deep-learning/)'
+blog post by Tim Dettmers.
+>   Tensor Cores are most important, followed by memory bandwidth of a GPU,
+>   the cache hierarchy, and only then FLOPS of a GPU
+
+See also the [Build your own machine](https://huggingface.co/docs/transformers/perf_hardware) guide on HuggingFace.
 
 ## Embedded / mobile CPU
 
 <details><summary>Details</summary>
-
-Expected performance for a 10 GB LLM model:
--   Prompt processing: 84 token/s
--   Token generation: 11 token/s
 
 Technical information:
 -   https://www.techpowerup.com/cpu-specs/ryzen-ai-max-pro-395.c3998
@@ -31,6 +36,10 @@ Technical information:
 Discussion about adding an eGPU to the main board:
 -   https://www.reddit.com/r/LocalLLaMA/comments/1kedbv7/ryzen_ai_max_395_a_gpu/
 -   Note that the Framework mainboard has [only 1 x PCIe x4 slot](https://frame.work/hu/en/products/framework-desktop-mainboard-amd-ryzen-ai-max-300-series?v=FRAFMK0006)
+
+Expected performance for a 10 GB LLM model:
+-   Prompt processing: 84 token/s
+-   Token generation: 11 token/s (100-200 GB/s RAM throughput)
 
 ### GMKtec EVO-X2 AMD Ryzen™ AI Max+ 395 Mini PC - 2000 EUR
 
@@ -88,9 +97,9 @@ Discussion about adding an eGPU to the main board:
     -   SSD: 2 TB PCIe Gen4 NVMe™ TLC SSD
     -   Display: 14" diagonal, 2.8K (2880 x 1800), OLED, touch, IPS, BrightView, Low Blue Light, 400 nits, 100% DCI-P3
 -   [Price](https://www.hp.com/us-en/shop/pdp/hp-zbook-ultra-14-inch-g1a-mobile-workstation-pc-wolf-pro-security-edition-p-bn2v3ua-aba-1):
-    -   4200 USD = 3600 EUR
+    -   4200 USD ~= 3600 EUR
 
-### Other options
+### Other embedded/mobile options
 
 Some other links:
 -   https://store.minisforum.com/products/elitemini-ai370
@@ -144,6 +153,8 @@ Some other links:
     ([Image](assets/amd-am5.png))
     ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-9-9950x3d.c3993#gallery-5)):
     ([Wikipedia](https://en.wikipedia.org/wiki/List_of_AMD_chipsets#AM5_chipsets))
+    -   Has 24 PCIe 5.0 lanes: X870E, X870, X670E, B650E
+    -   Has USB 4.0: X870E, X870
     -   X870E:
         -   USB 4.0
         -   2 SUPERSPEED USB 20Gbps
@@ -182,7 +193,7 @@ Some other links:
                 Supplemental Power"); best-in-class choice for dual high-power
                 GPUs.
 -   RAM:
-    -   CPU max RAM: 192 GB
+    -   CPU max RAM: [192 GB](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html)
     -   Motherboard: 2x/4x DDR5 DIMM slots
     -   [128 GB](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-128-gb,tipus-pc-memoria/?orderby=1): 360 EUR
         -   RAM BW upper limit: 2 x 8 x 5.6 = 89.6 GB/s
@@ -192,9 +203,8 @@ Some other links:
             -   ❗**Note:** 192 GB (vs 128 GB) system RAM will **reduce** 10 GB
                 LLM model CPU-only token generation speed from 8 token/s down
                 to 5 token/s maximum. Overclocking may improve a few token/s,
-                no substantial change.
-            -   ❗**Note:** This practically limits the system RAM to 128 GB,
-                which puts the **maximum combined GPU VRAM size to ~64 GB**.
+                but no substantial improvement.
+            -   ❗**Note:** This practically limits the system RAM to 128 GB.
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
 -   PSU:
@@ -262,6 +272,8 @@ Some other links:
     -   700 + 180 + 360 + 300 + 490 + 550 + 240 = 2820 EUR minimum.
     -   2520 + 300 ~= 3100 EUR with Gigabyte X870E Aorus Xtreme AI TOP motherboard.
 
+
+
 Desktop CPU Links:
 -   https://www.anandtech.com/show/21524/the-amd-ryzen-9-9950x-and-ryzen-9-9900x-review/10
 -   https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x.html
@@ -272,11 +284,11 @@ Desktop CPU Links:
 </details>
 <div class="page"/>
 
+## Workstation
+
 ## Server
 
-<details><summary>Details</summary>
-
-### Requirements
+<details><summary>Requirements</summary>
 
 -   The target system must support at least 2 NVIDIA RTX PRO 6000 Blackwell (96GB) GPUs
     -   Required system RAM: 1-2 x total GPU VRAM
@@ -306,9 +318,10 @@ Desktop CPU Links:
     -   CPU: AMD EPYC 9004 / 9005 (SP5 socket)
         -   Minimum 12 x DDR5 4800 MT/s RAM
             -   RAM module side memory bandwidth:
-                -   1-CPU config: 12 x 8 x 4.8 GT/s = 460.8 GB/s
+                -   [1-CPU config](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-memory-capabilities.jpg):
+                    12 x 8 x 4.8 GT/s = 460.8 GB/s
                     -   Supports 6x PCIe 5.0 x16 GPUs
-                -   2-CPU config: 24 x 8
+                -   2-CPU config: 24 x 8 x 4.8 GT/s = 921.6 GB/s
         -   Minimum 8 CCDs per processor:
             -   CPU side memory bandwidth:
                 -   Zen 4: 8 x 32 x 1.8 GHz = 460.8 GB/s
@@ -319,6 +332,8 @@ Desktop CPU Links:
                 Any AMD EPYC 9004 CPU, except 9124, 9224, 9254, 9334, because n_CCD < 8
             -   [Zen 5](https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)):
                 Any AMD EPYC 9005 CPU, except 9015, 9115, 9135, 9255, 9335, 9365, because n_CCD < 8
+            -   [EPYC 9004 Series CPU Positioning](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-positioning.jpg)
+                ![EPYC 9004 Series CPU Positioning.png](<assets/EPYC 9004 Series CPU Positioning.png>)
             -   Complete list of CPU candidates:
                 -   9354, 9354P, 9174F, 9184X, 9274F, 9374F, 9384X, 9474F,
                     9454, 9454P, 9534, 9554, 9554P, 9634, 9654, 9654P, 9684X,
@@ -327,12 +342,16 @@ Desktop CPU Links:
                     9555P, 9555, 9575F, 9565, 9655P, 9655, 9755, 4245P, 4345P,
                     4465P, 4545P, 4565P, 4585PX
             -   If CPU inference is not a priority, then lower core count and
-                thus lower DTP/cDTP is sufficient. CPU candidates whose
-                configurable TDP (cTDP) is [in the 240-300 W range](https://www.amd.com/en/products/specifications/server-processor.html):
+                thus lower DTP/cDTP is sufficient.
+            -   All CPUs below the 240 TDP line have less than 8 CCDs, so they cannot utilize the available RAM bandwidth.
+            -   CPU candidates whose configurable TDP (cTDP) is
+                [in the 240-300 W range](https://www.amd.com/en/products/specifications/server-processor.html):
                 -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
                 -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
 
-### Specs
+</details> <!-- Requirements -->
+
+<details><summary>Specs</summary>
 
 -   CPU: AMD EPYC 9354
     ([Wikipedia](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena))))
@@ -476,6 +495,20 @@ Desktop CPU Links:
             >   -   Cons:
             >       -   they don't plan to release BIOS upgrade for Epyc Turin (I asked)
 -   RAM:
+    -   [AMD EPYC 9004 Series Memory Population Recommendations](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
+    -   4th Gen AMD EPYC processors support memory with the following characteristics:
+        -   RDIMM: 16GB 1Rx8, 24GB 1Rx8, 32GB 1Rx4, 32GB 2Rx8, 40GB 2Rx8, 48GB 1Rx4, 48GB 2Rx8, 64GB 2Rx4, 80GB 2Rx4, 96GB 2Rx4
+        -   3DS RDIMM: 128GB 2S2Rx4, 192GB 2S2Rx4, 256GB 2S4Rx4, 384GB 2S4Rx4, 512GB 2S8R (pending ecosystem enablement)
+        -   ECC: 80b x4, 80b x8, 72b x4.
+        -   Optimized Bounded Fault ECC DRAM: 80b x4 AMDC, 80b x8, 72b x4
+        -   Use the same memory configuration for all NUMA domains in a single processor socket when using NPS=2 or NPS=4. “NPS” = NUMA node(s) per socket.
+        -   [Table 2-1 shows recommended memory speeds for a variety of memory types](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
+            ![alt text](<assets/AMD EPYC 9004 Processor Memory Population Recommendations.Recommended memory speeds.png>)
+            >   RDIMMs built from x4 and x8 devices are supported. The
+            >   frequencies shown apply to both. The capacities listed only
+            >   represent those of x4 DIMMs. RDIMMs built with x8 devices have
+            >   half the capacity of the x4 RDIMMs with an equal number of
+            >   ranks.
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
 -   PSU:
@@ -523,8 +556,9 @@ Desktop CPU Links:
 [3.12]: https://www.newegg.com/p/pl?N=100007629+601411369&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
 [3.13]: https://www.reddit.com/r/homelab/comments/1h1iprj?utm_source=chatgpt.com "Epyc 97x4 Genoa Motherboard"
 
+</details> <!-- Specs -->
 
-#### Prices
+<details><summary>Prices</summary>
 
 AMD EPYC Zen 4 / Zen 5 processors with a TDP of less than 300 W, as of 2025.08.09
 
@@ -561,11 +595,14 @@ Vendor sites:
 -   Motherboards:
     -   https://smicro.hu/amd-sp5-5?filtrPriceFrom=&filtrPriceTo=&filter%5B2294%5D%5B%5D=39137&filter%5B2424%5D%5B%5D=42927&filter%5B2317%5D%5B%5D=38124&filter%5B2316%5D%5B%5D=38705&filter%5B2316%5D%5B%5D=39193&filter%5B2315%5D%5B%5D=40251&filter%5B2315%5D%5B%5D=43437&filter%5B2360%5D%5B%5D=39223
 
-
 Prices:
 -   CPU:
 -   CPU cooler:
 -   RAM:
+    -   DDR5 RDIMM 1Rx4 or 2Rx8
+    -   12 x [Samsung 32GB DDR5 4800MHz M323R4GA3BB0-CQK](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m323r4ga3bb0-cqk-p818973822/): 12 x 150 = 1800 EUR
+    -   For 2-CPU architecture:
+        -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://belso-ssd-meghajto.arukereso.hu/samsung/990-pro-4tb-mz-v9p4t0bw-p1002242350/): 300 EUR
 -   Motherboard:
@@ -579,7 +616,9 @@ Prices:
 -   Case
 -   Total price without GPU:
 
-### Links
+</details> <!-- Server prices -->
+
+<details><summary>Links</summary>
 
 -   [Reddit discussion](https://www.reddit.com/r/LocalLLaMA/comments/1gcn3w9/a_glance_inside_the_tinybox_pro_8_x_rtx_4090/) on building an 8x 4090 configuration
     >   I've built much the same thing here with 8x 4090, only mine lives in
@@ -602,18 +641,27 @@ Prices:
     >   -   Data drive cable set: 2x C-Payne SlimSAS SFF-8654 to SFF-8654LP (Low Profile) 8i cable - PCIe gen4
     >   -   Case: Custom open air miner frame built from 2020 alu extrusions
 -   [Smallest RTX Pro 6000 rig | OVERKILL](https://www.youtube.com/watch?v=JbnBt_Aytd0)
-    -   Parts used in this video
-        -   Low profile (quiet) Noctua fans: https://amzn.to/4nIXWM4
-        -   Water CPU cooler: https://amzn.to/4nDQUbj
-        -   New tiny case NR200P V3: https://amzn.to/4lnMROM
-        -   Extremely fast NVMe SSD: https://amzn.to/4kzaCCn
-        -   AMD CPU: https://amzn.to/3IkD7pV
-        -   Fast RAM: https://amzn.to/40Dyr4z
-        -   Mini-ITX Motherboard with EVERYTHING!: https://amzn.to/4eIVgd6
-        -   Tiny 1000W power supply: https://amzn.to/4lF471z
-        -   RTX Pro 6000 GPU: https://amzn.to/4eIUnRZ
+    >   -   Low profile (quiet) Noctua fans: https://amzn.to/4nIXWM4
+    >   -   Water CPU cooler: https://amzn.to/4nDQUbj
+    >   -   New tiny case NR200P V3: https://amzn.to/4lnMROM
+    >   -   Extremely fast NVMe SSD: https://amzn.to/4kzaCCn
+    >   -   AMD CPU: https://amzn.to/3IkD7pV
+    >   -   Fast RAM: https://amzn.to/40Dyr4z
+    >   -   Mini-ITX Motherboard with EVERYTHING!: https://amzn.to/4eIVgd6
+    >   -   Tiny 1000W power supply: https://amzn.to/4lF471z
+    >   -   RTX Pro 6000 GPU: https://amzn.to/4eIUnRZ
+-   [Building an Efficient GPU Server with NVIDIA GeForce RTX 4090s/5090s](https://a16z.com/building-an-efficient-gpu-server-with-nvidia-geforce-rtx-4090s-5090s/)
+    >   -   Server model: ASUS ESC8000A-E12P
+    >   -   GPUs: 8x NVIDIA RTX 4090
+    >   -   CPU: 2x AMD EPYC 9254 Processor (24-core, 2.90GHz, 128MB Cache)
+    >   -   RAM: 24x 16GB PC5-38400 4800MHz DDR5 ECC RDIMM (384GB total)
+    >   -   Storage: 1.92TB Micron 7450 PRO Series M.2 PCIe 4.0 x4 NVMe SSD (110mm)
+    >   -   Operating system: Ubuntu Linux 22.04 LTS Server Edition (64-bit)
+    >   -   Networking: 2 x 10GbE LAN ports (RJ45, X710-AT2), one utilized at 10Gb
+    >   -   Additional PCIe 5.0 card: ASUS 90SC0M60-M0XBN0
 
-</details>
+</details> <!-- Server links -->
+
 <div class="page"/>
 
 ## GPUs
@@ -670,10 +718,63 @@ Specs ([TechPowerUp](https://www.techpowerup.com/gpu-specs/radeon-rx-7900-xtx.c3
 -   Bandwidth: 960.0 GB/s
 -   Shading Units: 6144
 -   Compute Units: 96
--   61.39 FP32 TFLOPS
+-   FP16 (half): 122.8 TFLOPS (2:1)
+-   FP32 (float): 61.39 TFLOPS
+-   FP64 (double): 1.918 TFLOPS (1:32)
+-   TDP: 355 W
+-   Suggested PSU: 750 W
 
 Price:
 -   [Árukereső](https://www.arukereso.hu/videokartya-c3142/f:amd-radeon-video-chipset,rx-7900-xtx/?orderby=1)
     -   341,000 to 419,000 HUF (860 to 1100 EUR)
+
+### AMD Radeon™AI PRO R9700
+
+Specs
+([TechPowerUp](https://www.techpowerup.com/gpu-specs/radeon-ai-pro-r9700.c4290))
+([AMD](https://www.amd.com/en/products/graphics/workstations/radeon-ai-pro/ai-9000-series/amd-radeon-ai-pro-r9700.html))
+-   GPU Architecture: AMD RDNA™ 4
+-   Memory Size:    32 GB
+-   Memory Type:    GDDR6
+-   Memory Bus:    256 bit
+-   Bandwidth:    644.6 GB/s
+-   Shading Units: 4096
+-   Compute Units:    64
+-   Matrix Cores:     128
+-   TDP:    300 W
+-   Suggested PSU: 700 W
+-   Peak Single Precision (FP32 Vector) Performance:    47.8 TFLOPs
+-   Peak Half Precision (FP16 Vector) Performance:    95.7 TFLOPs
+-   Peak Half Precision (FP16 Matrix) Performance:    191 TFLOPs
+-   Peak Half Precision (FP16 Matrix) Performance with Structured Sparsity:     383 TFLOPs
+-   Peak 8-bit Precision (FP8 Matrix) Performance (E5M2, E4M3):     383 TFLOPs
+-   Peak 8-bit Precision (FP8 Matrix) Performance with Structured Sparsity (E5M2, E4M3):     766 TFLOPs
+-   Peak 8-bit Precision (INT8 Matrix) Performance:     383 TOPs
+-   Peak 8-bit Precision (INT8 Matrix) Performance with Structured Sparsity:    766 TOPs
+-   Peak 4-bit Precision (INT4 Matrix) Performance:     766 TOPs
+-   Peak 4-bit Precision (INT4 Matrix) Performance with Structured Sparsity:     1531 TOPs
+
+Variants:
+-   [ASUS Turbo Radeon AI PRO R9700](https://www.techpowerup.com/gpu-specs/asus-turbo-radeon-ai-pro-r9700.b12819)
+    -   [TURBO-AI-PRO-R9700-32G](https://www.asus.com/uk/motherboards-components/graphics-cards/turbo/turbo-ai-pro-r9700-32g/)
+-   [GIGABYTE Radeon AI PRO R9700 AI TOP](https://www.techpowerup.com/gpu-specs/gigabyte-radeon-ai-pro-r9700-ai-top.b12619)
+    -   [GV-R9700AI TOP-32GD](https://www.gigabyte.com/Graphics-Card/GV-R9700AI-TOP-32GD)
+-   [PowerColor Radeon AI PRO R9700](https://www.techpowerup.com/gpu-specs/powercolor-radeon-ai-pro-r9700.b12666)
+    -   [AI PRO R9700 32G](https://www.powercolor.com/product-detail258.htm)
+-   [Sapphire AMD RADEON AI PRO R9700 32GB](https://www.sapphiretech.com/en/commercial/radeon-ai-pro-r9700)
+
+### eGPU Dock
+
+#### Peladn Link S-3
+
+[Specs](https://peladn.com/products/graphics-card-docking-station-1)
+-   I/O:    Thunderbolt3*2[(1),75W (2),25W]
+-   Power:  ATX/SFX
+-   Size:   300*220*180mm
+-   Support:    Basically meet most existing models of graphics cards(It is recommended that AMD graphics card use RX570 or above, and NVIDIA graphics card use GTX 1060 or above)
+-   System Requirement: Windows 10 64 Bit(Support AMD&NVIDIA graphics cards) MacOS > 10.13.4(Only AMD graphics cards are supported)
+-   Computer Requirement:   Thunderbolt 3 port and support external GPU
+-   Transfer Speed: 40 Gbps
+
 
 </details>
