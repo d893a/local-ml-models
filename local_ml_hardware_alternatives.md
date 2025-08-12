@@ -13,8 +13,8 @@ The following GPU alternatives are listed:
 -   AMD Radeon RX 7900 XTX (24GB)
 -   AMD Radeon AI PRO R9700
 
-PLease refer to the '[Which GPU(s) to Get for Deep Learning: My Experience
-and Advice for Using GPUs in Deep Learning](https://timdettmers.com/2023/01/30/which-gpu-for-deep-learning/)'
+Refer to the *[Which GPU(s) to Get for Deep Learning: My Experience
+and Advice for Using GPUs in Deep Learning](https://timdettmers.com/2023/01/30/which-gpu-for-deep-learning/)*
 blog post by Tim Dettmers.
 >   Tensor Cores are most important, followed by memory bandwidth of a GPU,
 >   the cache hierarchy, and only then FLOPS of a GPU
