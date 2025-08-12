@@ -4,6 +4,7 @@
 -   [Desktop PC](#desktop-pc)
 -   [Workstation](#workstation)
 -   [Server](#server)
+    -   [Requirements](#server-requirements)
 
 The following GPU alternatives are listed:
 -   NVIDIA RTX PRO 6000 Blackwell (96GB)
@@ -286,9 +287,44 @@ Desktop CPU Links:
 
 ## Workstation
 
+
 ## Server
 
-<details><summary>Requirements</summary>
+
+1-CPU server configuration
+| Component   | Model                    | TDP | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|--------------------------|---|--------------------:|------------------------:|
+| CPU         | [AMD EPYC 9354][pr9354]  | 280 W |            601,460  |               601,460   |
+| CPU cooler  | [Samsung 32GB DDR5 4800MHz M323R4GA3BB0-CQK]                         |  |                     |                         |
+| RAM         |                          |  |                     |                         |
+| SSD         |                          |  |                     |                         |
+| Motherboard |                          |  |                     |                         |
+| PSU         |                          |  |                     |                         |
+| Case        |                          |  |                     |                         |
+
+
+
+-   CPU:
+-   CPU cooler:
+-   RAM:
+    -   DDR5 RDIMM 1Rx4 or 2Rx8
+    -   12 x [Samsung 32GB DDR5 4800MHz M323R4GA3BB0-CQK](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m323r4ga3bb0-cqk-p818973822/): 12 x 150 = 1800 EUR
+    -   For 2-CPU architecture:
+        -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
+-   SSD:
+    -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://belso-ssd-meghajto.arukereso.hu/samsung/990-pro-4tb-mz-v9p4t0bw-p1002242350/): 300 EUR
+-   Motherboard:
+    -   CEB:
+        -   [Asus K14PA-U12](https://smicro.hu/asus-k14pa-u12-90sb0ci0-m0uay0-4?aku=db3621a52f6055ee636a6fee6ff8a353): 800 EUR
+        -   [GENOAD8QM3‑2T/BCM](https://smicro.hu/asrock-rack-genoad8qm3-2t-bcm-5): 1700 EUR
+    -   ATX:
+        -   [Supermicro MBD-H13SSL-NT-O](https://smicro.hu/supermicro-mbd-h13ssl-nt-o-4): 830 EUR
+        -   [GIGABYTE MZ33-AR0](https://www.arukereso.hu/alaplap-c3128/gigabyte/mz33-ar0-p1005435430/): 1100 EUR
+-   PSU
+-   Case
+-   Total price without GPU:
+
+<details><summary><a id="server-requirements">Requirements</a></summary>
 
 -   The target system must support at least 2 NVIDIA RTX PRO 6000 Blackwell (96GB) GPUs
     -   Required system RAM: 1-2 x total GPU VRAM
@@ -375,6 +411,65 @@ Desktop CPU Links:
         -   RAM clearance in dual fan mode:
             -   32mm with 140mm fan [168mm total height]
             -   52mm with 120mm fan [168mm total height]
+-   RAM:
+    -   [AMD EPYC 9004 Series Memory Population Recommendations](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
+    -   4th Gen AMD EPYC processors support memory with the following characteristics:
+        -   RDIMM: 16GB 1Rx8, 24GB 1Rx8, 32GB 1Rx4, 32GB 2Rx8, 40GB 2Rx8, 48GB 1Rx4, 48GB 2Rx8, 64GB 2Rx4, 80GB 2Rx4, 96GB 2Rx4
+        -   3DS RDIMM: 128GB 2S2Rx4, 192GB 2S2Rx4, 256GB 2S4Rx4, 384GB 2S4Rx4, 512GB 2S8R (pending ecosystem enablement)
+        -   ECC: 80b x4, 80b x8, 72b x4.
+        -   Optimized Bounded Fault ECC DRAM: 80b x4 AMDC, 80b x8, 72b x4
+        -   Use the same memory configuration for all NUMA domains in a single processor socket when using NPS=2 or NPS=4. “NPS” = NUMA node(s) per socket.
+        -   [Table 2-1 shows recommended memory speeds for a variety of memory types](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
+            ![alt text](<assets/AMD EPYC 9004 Processor Memory Population Recommendations.Recommended memory speeds.png>)
+            >   RDIMMs built from x4 and x8 devices are supported. The
+            >   frequencies shown apply to both. The capacities listed only
+            >   represent those of x4 DIMMs. RDIMMs built with x8 devices have
+            >   half the capacity of the x4 RDIMMs with an equal number of
+            >   ranks.
+            >
+            >   The following DIMM types are not supported: LRDIMM, UDIMM, NVDIMM-N, NVDIMM-P
+            >
+            >   All DIMM modules must be RDIMM or RDIMM 3DS module types with
+            >   the same ECC configuration. Do not mix DIMM module types
+            >   within a memory channel. Do not mix x4 and x8 DIMMs within a
+            >   memory channel. Do not mix 3DS and non-3DS memory modules in a
+            >   2DPC system.
+    -   [Samsung candidates](https://semiconductor.samsung.com/dram/module/rdimm/#finder): RDIMM, DDR5, 32GB
+        | Part Number      | Speed      | Org      | Density             |
+        |------------------|------------|----------|---------------------|
+        | M321R4GA0BB0-CQK | 4800 Mbps  | 1R x 4   | (4G x 4) x 20       |
+        | M321R4GA3BB6-CQK | 4800 Mbps  | 2R x 8   | (2G x 8) x 20       |
+        | M329R4GA0BB0-CQK | 4800 Mbps  | 1R x 4   | (4G x 4) x 18 (9x4) |
+        | M321R4GA0EB2-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
+        | M321R4GA3EB2-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
+        | M321R4GA0EB0-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
+        | M321R4GA3EB0-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
+        | M321R4GA0PB0-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
+        | M321R4GA3PB0-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
+        | M321R4GA0EB2-CCP | 6400 Mbps  | 1R x 4   | (4G x 4) x 20       |
+        | M321R4GA3EB2-CCP | 6400 Mbps  | 2R x 8   | (2G x 8) x 20       |
+        | M321R4GA0PB2-CCP | 6400 Mbps  | 1R x 4   | (4G x 4) x 20       |
+        | M321R4GA3PB2-CCP | 6400 Mbps  | 2R x 8   | (2G x 8) x 20       |
+    -   [Kingston candidates](https://www.kingston.com/en/memory/server-premier?memory=ddr5&dimmtype=registered&capacity=32)
+        | Part Number           | Capacity | Org | Ranking | DRAM MFR | Speed MT/s |
+        |-----------------------|----------|-----|---------|----------|-----------:|
+        | KSM48R40BD8-32HA      | 32GB     | X8  | 2R      | Hynix    | 4800       |
+        | KSM48R40BD8-32MD      | 32GB     | X8  | 2R      | Micron   | 4800       |
+        | KSM56R46BD8-32HA      | 32GB     | X8  | 2R      | Hynix    | 5600       |
+        | KSM56R46BD8-32MD      | 32GB     | X8  | 2R      | Micron   | 5600       |
+        | KSM56R46BD8PMI-32HAI  | 32GB     | X8  | 2R      | Hynix    | 5600       |
+        | KSM56R46BD8PMI-32MDI  | 32GB     | X8  | 2R      | Micron   | 5600       |
+        | KSM56R46BS4PMI-32HAI  | 32GB     | X4  | 1R      | Hynix    | 5600       |
+        | KSM56R46BS4PMI-32MDI  | 32GB     | X4  | 1R      | Micron   | 5600       |
+        | KSM64R52BD8-32MD 	    | 32GB     | X8  | 2R      | 16Gbit   | 6400       |
+    -   [Micron candidates](https://www.crucial.com/catalog/memory/server?selectedValues=DDR5-4800@speed--DDR5-5600@speed--DDR5-6400@speed--RDIMM@module_type--DDR5@technology--32GB@density)
+        | Part Number        | Model                       | Capacity | Speed | Type   | Rank | CL  |
+        |--------------------|-----------------------------|----------|-------|--------|------|-----|
+        | MTC20F2085S1RC48BR | Micron DDR5-4800 RDIMM 2Rx8 | 32 GB    | 4800  | RDIMM  | 2Rx8 | 40  |
+        | MTC20F1045S1RC48BR | Micron DDR5-4800 RDIMM 1Rx4 | 32 GB    | 4800  | RDIMM  | 1Rx4 | 40  |
+        | MTC20F2085S1RC56BR | Micron DDR5-5600 RDIMM 2Rx8 | 32 GB    | 5600  | RDIMM  | 2Rx8 | 46  |
+        | MTC20F1045S1RC56BR | Micron DDR5-5600 RDIMM 1Rx4 | 32 GB    | 5600  | RDIMM  | 1Rx4 | 46  |
+
 -   Motherboard:
     -   Supermicro
         [H13SSL‑NT](https://www.supermicro.com/en/products/motherboard/H13SSL-NT) /
@@ -494,21 +589,6 @@ Desktop CPU Links:
             >       -   relatively compact form factor
             >   -   Cons:
             >       -   they don't plan to release BIOS upgrade for Epyc Turin (I asked)
--   RAM:
-    -   [AMD EPYC 9004 Series Memory Population Recommendations](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
-    -   4th Gen AMD EPYC processors support memory with the following characteristics:
-        -   RDIMM: 16GB 1Rx8, 24GB 1Rx8, 32GB 1Rx4, 32GB 2Rx8, 40GB 2Rx8, 48GB 1Rx4, 48GB 2Rx8, 64GB 2Rx4, 80GB 2Rx4, 96GB 2Rx4
-        -   3DS RDIMM: 128GB 2S2Rx4, 192GB 2S2Rx4, 256GB 2S4Rx4, 384GB 2S4Rx4, 512GB 2S8R (pending ecosystem enablement)
-        -   ECC: 80b x4, 80b x8, 72b x4.
-        -   Optimized Bounded Fault ECC DRAM: 80b x4 AMDC, 80b x8, 72b x4
-        -   Use the same memory configuration for all NUMA domains in a single processor socket when using NPS=2 or NPS=4. “NPS” = NUMA node(s) per socket.
-        -   [Table 2-1 shows recommended memory speeds for a variety of memory types](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
-            ![alt text](<assets/AMD EPYC 9004 Processor Memory Population Recommendations.Recommended memory speeds.png>)
-            >   RDIMMs built from x4 and x8 devices are supported. The
-            >   frequencies shown apply to both. The capacities listed only
-            >   represent those of x4 DIMMs. RDIMMs built with x8 devices have
-            >   half the capacity of the x4 RDIMMs with an equal number of
-            >   ranks.
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
 -   PSU:
@@ -595,12 +675,58 @@ Vendor sites:
 -   Motherboards:
     -   https://smicro.hu/amd-sp5-5?filtrPriceFrom=&filtrPriceTo=&filter%5B2294%5D%5B%5D=39137&filter%5B2424%5D%5B%5D=42927&filter%5B2317%5D%5B%5D=38124&filter%5B2316%5D%5B%5D=38705&filter%5B2316%5D%5B%5D=39193&filter%5B2315%5D%5B%5D=40251&filter%5B2315%5D%5B%5D=43437&filter%5B2360%5D%5B%5D=39223
 
+
 Prices:
 -   CPU:
 -   CPU cooler:
 -   RAM:
-    -   DDR5 RDIMM 1Rx4 or 2Rx8
-    -   12 x [Samsung 32GB DDR5 4800MHz M323R4GA3BB0-CQK](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m323r4ga3bb0-cqk-p818973822/): 12 x 150 = 1800 EUR
+    -   [DDR5 RDIMM 1Rx4 or 2Rx8](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-32-gb,memoria-tipusa-ddr5,tipus-szerver-memoria,sebesseg=4800-9200/?orderby=1&st=RDIMM)
+    -   For 1-CPU architecture: 12 x 32 GB RDIMM 1Rx4 or 2Rx8 (384 GB in total)
+        -   Vendors:
+            -   [Kontaktor](https://kontaktor.hu/muszaki_cikkek_357/szamitastechnika_1797/alkatreszek_11508/memoriak_11224/ddr5_szerver_memoriak_11690?sort=p.price&order=ASC&page=1#content)
+            -   [Micron RDIMM memory part catalog](https://www.micron.com/products/memory/dram-modules/rdimm/part-catalog)
+        -   Candidates:
+            -   12 x [Micron RDIMM DDR5 32GB 4800MHz MTC20F2085S1RC48BA1R](https://kontaktor.hu/micron_rdimm_ddr5_32gb_4800mhz_mtc20f2085s1rc48ba1r_376749): 12 x 170 = 2040 EUR
+            -   12 x [Micron RDIMM DDR5 32GB 2Rx8 6400MHz PC5-51200 ECC REGISTERED | MTC20F2085S1RC64BR](https://www.senetic.hu/product/MTC20F2085S1RC64BR): 12 x 225 = 2700 EUR
+            -   12 x [Micron 32GB DDR5 4800MHz MTC20F2085S1RC48BR](https://www.arukereso.hu/memoria-modul-c3577/micron/32gb-ddr5-4800mhz-mtc20f2085s1rc48br-p1004252032/) 12 x 200 = 2400 EUR
+            -   12 x [Samsung 32GB DDR5 5600MHz M321R4GA3PB0-CWM](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3pb0-cwm-p1051234201/): 12 x 200 = 2400 EUR
+            -   12 x [M321R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga0bb0-cqk/),
+                [Árukereső](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m321r4ga0bb0-cqk-p921898419/): 12 x 316 = 3800 EUR
+            -   12 x [M321R4GA3BB6-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga3bb6-cqk/),
+                [Árukereső](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m321r4ga3bb6-cqk-p872096736/): 12 x 255 = 3000 EUR
+            -   12 x [M329R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m329r4ga0bb0-cqk/)
+            -   Kingston
+                | Memory Module            | Price (HUF)            | Notes / Source                                         |
+                | ------------------------ | ---------------------- | ------------------------------------------------------ |
+                | **KSM48R40BD8-32HA**     | from 77 175 Ft         | Árukereső listings ([Árukereső.hu][ram_kingston_1])                 |
+                | **KSM48R40BD8-32MD**     | from 77 175 Ft         | Same listing covers both HA and MD ([Árukereső.hu][ram_kingston_1]) |
+                | **KSM56R46BD8-32MD**     | 76 590 Ft              | Direct offer ([Árukereső.hu][ram_kingston_2])                       |
+                | **KSM56R46BD8PMI-32MDI** | from 93 900 Ft         | Árukereső comparison ([Árukereső.hu][ram_kingston_3])               |
+                | **KSM64R52BD8-32MD**     | 161 890 Ft             | Direct listing ([Árukereső.hu][ram_kingston_4])                     |
+
+                [ram_kingston_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Ctipus-szerver-memoria/?start=75&utm_source=chatgpt.com "Vásárlás: Kingston Memória modul árak összehasonlítása - Típus"
+                [ram_kingston_2]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5600mhz-ksm56r46bd8-32md-p1128575413/?utm_source=chatgpt.com "Kingston 32GB DDR5 5600MHz KSM56R46BD8 ... - Árukereső.hu"
+                [ram_kingston_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Cmemoriakesleltetes-cl-46/?orderby=1&utm_source=chatgpt.com "Vásárlás: Kingston Memória modul árak ... - Árukereső.hu"
+                [ram_kingston_4]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5200mhz-ksm64r52bd8-32md-p1190480737/?utm_source=chatgpt.com "Kingston 32GB DDR5 5200MHz KSM64R52BD8-32MD memória ..."
+            -   Samsung
+                | Memory Module        | Price (HUF)         | Notes                                       |
+                |----------------------|---------------------|---------------------------------------------|
+                | **M321R4GA0BB0-CQK** | from **126 105 Ft** | Listed on Árukereső ([Árukereső.hu][ram_samsung_1])  |
+                | **M321R4GA3BB6-CQK** | from **91 900 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_1])  |
+                | **M321R4GA3EB0-CWM** | from **78 272 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_2])  |
+                | **M321R4GA3PB0-CWM** | from **74 580 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_3])  |
+
+                [ram_samsung_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoria-tipusa-ddr5/?orderby=1&utm_source=chatgpt.com "Olcsó DDR5 Samsung memória - Árukereső.hu"
+                [ram_samsung_2]: https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3eb0-cwm-p1194855955/?utm_source=chatgpt.com "Samsung 32GB DDR5 5600MHz M321R4GA3EB0-CWM memória ..."
+                [ram_samsung_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoriakesleltetes-cl-46/?utm_source=chatgpt.com "Vásárlás: Samsung Memória modul árak ... - Árukereső.hu"
+            -   Micron
+                | Memory Module                                 | Price (HUF)                                       | Availability |
+                | --------------------------------------------- | ------------------------------------------------- | ------------ |
+                | **MTC20F2085S1RC48BR** (32 GB, DDR5 4800 MHz) | from **82 648 Ft** ([Árukereső.hu][ram_micron_1]) | Available    |
+                | **MTC20F2085S1RC56BR** (32 GB, DDR5 5600 MHz) | from **69 602 Ft** ([Árukereső.hu][ram_micron_2]) | Available    |
+
+                [ram_micron_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Ckapacitas-32-gb/?utm_source=chatgpt.com "Vásárlás: Micron Memória modul árak összehasonlítása - Kapacitás ..."
+                [ram_micron_2]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Cmemoria-tipusa-ddr5/?utm_source=chatgpt.com "Micron Memória modul árak összehasonlítása - DDR5 - Árukereső.hu"
     -   For 2-CPU architecture:
         -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
 -   SSD:
