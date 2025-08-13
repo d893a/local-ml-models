@@ -291,17 +291,15 @@ Desktop CPU Links:
 ## Server
 
 
-1-CPU server configuration
-| Component   | Model                    | TDP | Price each<br>[HUF] | Price subtotal<br>[HUF] |
-|-------------|--------------------------|---|--------------------:|------------------------:|
-| CPU         | [AMD EPYC 9354][pr9354]  | 280 W |            601,460  |               601,460   |
-| CPU cooler  | [Samsung 32GB DDR5 4800MHz M323R4GA3BB0-CQK]                         |  |                     |                         |
-| RAM         |                          |  |                     |                         |
-| SSD         |                          |  |                     |                         |
-| Motherboard |                          |  |                     |                         |
-| PSU         |                          |  |                     |                         |
-| Case        |                          |  |                     |                         |
-
+| Component   | Model                      |   TDP   | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|----------------------------|---------|--------------------:|------------------------:|
+| CPU         | [AMD EPYC 9354][pr9354]    | 280 W   |           601,460   |              601,460    |
+| CPU cooler  |                            |         |                     |                        |
+| RAM         |                            |         |                     |                        |
+| SSD         |                            |         |                     |                        |
+| Motherboard |                            |         |                     |                        |
+| PSU         |                            |         |                     |                        |
+| Case        |                            |         |                     |                        |
 
 
 -   CPU:
@@ -324,94 +322,83 @@ Desktop CPU Links:
 -   Case
 -   Total price without GPU:
 
-<details><summary><a id="server-requirements">Requirements</a></summary>
-
--   The target system must support at least 2 NVIDIA RTX PRO 6000 Blackwell (96GB) GPUs
-    -   Required system RAM: 1-2 x total GPU VRAM
-        -   2x 96 GB GPUs: 192 GB minimum, 384 GB ideally
-        -   4x 96 GB GPUs: 384 GB minimum, 768 GB ideally
-        -   6x 96 GB GPUs: 576 GB minimum, 1152 GB ideally
-    -   Memory modules:
-        -   Note that from the Genoa (AMD EPYC 4004, 8004, 9004) platform on,
-            [single-rank memory modules will perform well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
-            >   The other important feature is dual rank versus single rank memory.
-            >   With Milan and most Intel platforms, dual-rank memory is crucial to
-            >   maximizing performance. There’s a 25% performance delta on Milan,
-            >   for example. With Genoa, this is brought down to 4.5%. This is
-            >   another considerable cost improvement because cheaper single-rank
-            >   memory can be used.
-        ([Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1))
-    -   Required system RAM bandwidth: min 63 GB/s per GPU (due to PCIe x16 bus bandwidth)
-        -   2 GPUs: min. 126 GB/s
-        -   4 GPUs: min. 252 GB/s
-        -   6 GPUs: min. 378 GB/s
-        -   Lower RAM bandwidth will work, but not at full performance
-    -   PSU:
-        -   2 GPUs: min. 2000 W
-        -   4 GPUs: min. 4000 W
-        -   6 GPUs: min. 6000 W
-        -   plus the system requirement (motherboard + CPU + cooler + RAM + SSD)
-    -   CPU: AMD EPYC 9004 / 9005 (SP5 socket)
-        -   Minimum 12 x DDR5 4800 MT/s RAM
-            -   RAM module side memory bandwidth:
-                -   [1-CPU config](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-memory-capabilities.jpg):
-                    12 x 8 x 4.8 GT/s = 460.8 GB/s
-                    -   Supports 6x PCIe 5.0 x16 GPUs
-                -   2-CPU config: 24 x 8 x 4.8 GT/s = 921.6 GB/s
-        -   Minimum 8 CCDs per processor:
-            -   CPU side memory bandwidth:
-                -   Zen 4: 8 x 32 x 1.8 GHz = 460.8 GB/s
-                -   Zen 5: 8 x 32 x 2.0 GHz = 512.0 GB/s
-                -   Supports 6x PCIe 5.0 x16 GPUs (6 x 63 = 378 GB/s)
-        -   CPU candidates which support PCIe 5.0 x16:
-            -   [Zen 4](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)):
-                Any AMD EPYC 9004 CPU, except 9124, 9224, 9254, 9334, because n_CCD < 8
-            -   [Zen 5](https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)):
-                Any AMD EPYC 9005 CPU, except 9015, 9115, 9135, 9255, 9335, 9365, because n_CCD < 8
-            -   [EPYC 9004 Series CPU Positioning](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-positioning.jpg)
-                ![EPYC 9004 Series CPU Positioning.png](<assets/EPYC 9004 Series CPU Positioning.png>)
-            -   Complete list of CPU candidates:
-                -   9354, 9354P, 9174F, 9184X, 9274F, 9374F, 9384X, 9474F,
-                    9454, 9454P, 9534, 9554, 9554P, 9634, 9654, 9654P, 9684X,
-                    9734, 9754S, 9754, 9645, 9745, 9825, 9845, 9965, 9175F,
-                    9275F, 9355P, 9355, 9375F, 9455P, 9455, 9475F, 9535,
-                    9555P, 9555, 9575F, 9565, 9655P, 9655, 9755, 4245P, 4345P,
-                    4465P, 4545P, 4565P, 4585PX
-            -   If CPU inference is not a priority, then lower core count and
-                thus lower DTP/cDTP is sufficient.
-            -   All CPUs below the 240 TDP line have less than 8 CCDs, so they cannot utilize the available RAM bandwidth.
-            -   CPU candidates whose configurable TDP (cTDP) is
-                [in the 240-300 W range](https://www.amd.com/en/products/specifications/server-processor.html):
-                -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
-                -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
-
-</details> <!-- Requirements -->
-
 <details><summary>Specs</summary>
 
--   CPU: AMD EPYC 9354
-    ([Wikipedia](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena))))
-    ([AMD](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9354.html))
-    ([TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-9354.c2923))
-    -   Cores: 32
-    -   TDP: 280 W
-    -   Configurable TDP: 240-300 W
-    -   Max. Memory: 12 x 128 = 1536 GB
-    -   PCI-Express: Gen 5, 128 Lanes (CPU only)
-    -   Rated Memory Speed: 4800 MT/s
-    -   Max memory bandwidth:
-        -   12 channels x 8 x 4.8 = 460.8 GB/s,
-        -   8 CCD x 32 x 1.8 GHz FCLK = 460.8 GB/s
-    -   Cache L3: 256 MB (shared)
--   CPU cooler
-    -   [Noctua NH-D15 G2](https://noctua.at/en/nh-d15-g2/specification)
-        -   [CPU compatibility](https://ncc.noctua.at/cpus/model/AMD-Ryzen-9-9950X3D-1864): OK
-        -   Height (with fan): 168 mm
-            -   OK with [Fractal Design Define 7](https://www.fractal-design.com/products/cases/define/define-7/) case
-        -   RAM clearance in dual fan mode:
-            -   32mm with 140mm fan [168mm total height]
-            -   52mm with 120mm fan [168mm total height]
+-   CPU: AMD EPYC 9004 / 9005 (SP5 socket)
+    -   Minimum 12 x DDR5 4800 MT/s RAM
+        -   RAM module side memory bandwidth:
+            -   [1-CPU config](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-memory-capabilities.jpg):
+                12 x 8 x 4.8 GT/s = 460.8 GB/s
+                -   Supports 6x PCIe 5.0 x16 GPUs
+            -   2-CPU config: 24 x 8 x 4.8 GT/s = 921.6 GB/s
+    -   Minimum 8 CCDs per processor:
+        -   CPU side memory bandwidth:
+            -   Zen 4: 8 x 32 x 1.8 GHz = 460.8 GB/s
+            -   Zen 5: 8 x 32 x 2.0 GHz = 512.0 GB/s
+            -   Supports 6x PCIe 5.0 x16 GPUs (6 x 63 = 378 GB/s)
+    -   CPU candidates which support PCIe 5.0 x16:
+        -   [Zen 4](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)):
+            Any AMD EPYC 9004 CPU, except 9124, 9224, 9254, 9334, because n_CCD < 8
+        -   [Zen 5](https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)):
+            Any AMD EPYC 9005 CPU, except 9015, 9115, 9135, 9255, 9335, 9365, because n_CCD < 8
+        -   [EPYC 9004 Series CPU Positioning](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-positioning.jpg)
+            ![EPYC 9004 Series CPU Positioning.png](<assets/EPYC 9004 Series CPU Positioning.png>)
+        -   Complete list of CPU candidates:
+            -   Zen 4: 9174F, 9184X, 9274F, 9354, 9354P, 9374F, 9384X,
+                9454, 9454P, 9474F, 9534, 9554, 9554P, 9634, 9654, 9654P,
+                9684X, 9734, 9754, 9754S
+            -   Zen 5: 4245P, 4345P, 4465P, 4545P, 4565P, 4585PX, 9175F,
+                9275F, 9355, 9355P, 9375F, 9455, 9455P, 9475F, 9535, 9555,
+                9555P, 9565, 9575F, 9645, 9655, 9655P, 9745, 9755, 9825,
+                9845, 9965
+        -   If CPU inference is not a priority, then lower core count and
+            thus lower DTP/cDTP is sufficient.
+        -   All CPUs below the 240 TDP line have less than 8 CCDs, so they cannot utilize the available RAM bandwidth.
+        -   CPU candidates whose configurable TDP (cTDP) is
+            [in the 240-300 W range](https://www.amd.com/en/products/specifications/server-processor.html):
+            -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
+            -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
+        -   CPU candidates whose configurable TDP (cTDP) is
+            [above 300 W](https://www.amd.com/en/products/specifications/server-processor.html):
+            -   Zen 4: 9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554,
+                9554P, 9654, 9654P, 9684X, 9734, 9754, 9754S
+            -   Zen 5: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565,
+                9575F, 9645, 9655, 9655P, 9745, 9825, 9845
+    -   CPU minimal pick: AMD EPYC 9354
+        ([Wikipedia](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena))))
+        ([AMD](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9354.html))
+        ([TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-9354.c2923))
+        -   Cores: 32
+        -   TDP: 280 W
+        -   Configurable TDP: 240-300 W
+        -   Max. Memory: 12 x 128 = 1536 GB
+        -   PCI-Express: Gen 5, 128 Lanes (CPU only)
+        -   Rated Memory Speed: 4800 MT/s
+        -   Max memory bandwidth:
+            -   12 channels x 8 x 4.8 = 460.8 GB/s,
+            -   8 CCD x 32 x 1.8 GHz FCLK = 460.8 GB/s
+        -   Cache L3: 256 MB (shared)
 -   RAM:
+    -   The target system must support at least 2 NVIDIA RTX PRO 6000 Blackwell (96GB) GPUs
+        -   Required system RAM: >> total GPU VRAM
+            -   2x 96 GB GPUs: 192 GB minimum, 384 GB ideally
+            -   4x 96 GB GPUs: 384 GB minimum, 768 GB ideally
+            -   6x 96 GB GPUs: 576 GB minimum, 1152 GB ideally
+        -   Memory modules:
+            -   Note: From the Genoa (AMD EPYC 4004, 8004, 9004) platform on,
+                [single-rank memory modules will perform well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
+                >   The other important feature is dual rank versus single rank memory.
+                >   With Milan and most Intel platforms, dual-rank memory is crucial to
+                >   maximizing performance. There’s a 25% performance delta on Milan,
+                >   for example. With Genoa, this is brought down to 4.5%. This is
+                >   another considerable cost improvement because cheaper single-rank
+                >   memory can be used.
+            ([Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1))
+        -   Required system RAM bandwidth: min 63 GB/s per GPU (due to PCIe x16 bus bandwidth)
+            -   2 GPUs: min. 126 GB/s
+            -   4 GPUs: min. 252 GB/s
+            -   6 GPUs: min. 378 GB/s
+            -   Lower RAM bandwidth will work, but not at full performance
     -   [AMD EPYC 9004 Series Memory Population Recommendations](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
     -   4th Gen AMD EPYC processors support memory with the following characteristics:
         -   RDIMM: 16GB 1Rx8, 24GB 1Rx8, 32GB 1Rx4, 32GB 2Rx8, 40GB 2Rx8, 48GB 1Rx4, 48GB 2Rx8, 64GB 2Rx4, 80GB 2Rx4, 96GB 2Rx4
@@ -509,11 +496,18 @@ Desktop CPU Links:
                 -   Key: M-Key
         -   Widely used in community for stable performance ([Newegg.com][3.12]).
     -   [ASRock Rack GENOAD8QM3‑2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8QM3-2T/BCM#Specifications) /
-        -   Form factor: CEB
+        -   Not suitable: **Only 8 DIMM slots (1DPC)**, supports DDR5 RDIMM, RDIMM-3DS
         -   dual 10 GbE,
         -   MCIO NVMe support,
         -   PCIe 5.0 expansion with clean board layout suitable for GPUs.
         -   Popular in the community as a stable SP5 choice ([Newegg.com][3.7]).
+    -   [ASRock Rack GENOAD24QM3-2L2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD24QM3-2L2T%2FBCM&utm_source=GENOA+launch&utm_medium=11_landing+page#Specifications)
+        -   EEB (12" x 14")
+        -   Single Socket SP5 (LGA 6096), supports AMD EPYC™ 9005*/9004 (with AMD 3D V-Cache™ Technology) and 97x4 series processors
+        -   24 DIMM slots (2DPC), supports DDR5 RDIMM, RDIMM-3DS
+        -   2 PCIe5.0 x16
+        -   7 MCIO (PCIe5.0 x8), 2 MCIO (PCIe5.0 x8 or 8 SATA 6Gb/s)
+        -   Supports 2 M.2 (PCIe5.0 x4)
     -   [ASRock Rack GENOAD8UD‑2T/X550](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8UD-2T/X550#Specifications):
         -   Dimensions	10.4" x 10.5"
     -   [GIGABYTE MZ33-AR0](https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ33-AR0-rev-1x-3x)
@@ -592,15 +586,19 @@ Desktop CPU Links:
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
 -   PSU:
-    -   CPU + RAM + SSD + motherboard: ~300 W
+    -   CPU + RAM + SSD + motherboard: ~300-500 W
     -   GPU:
         -   NVIDIA GeForce RTX 5090: 575 W
     -   Total for a 2-GPU setup:
-        -   300 + 2 x 575 = 1450 W
+        -   500 + 2 x 575 = 1550 W
         -   Headroom: 50%
-        -   Required power supply: 2175 W
-    -   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://seasonic.com/atx3-prime-px-2200/)
-        -   Total continuous power 	2200 W
+        -   Required power supply: 2375 W
+        -   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://seasonic.com/atx3-prime-px-2200/)
+            -   Total continuous power 	2200 W
+    -   Total for a 4-GPU setup:
+        -   500 + 4 x 575 = 2800 W
+        -   Headroom: 50%
+        -   Required power supply: 4200 W
 -   Case: E-ATX
     -   [Fractal Design Define 7](https://www.fractal-design.com/products/cases/define/define-7/)
         -   Total fan mounts: 9 x 120/140 mm
@@ -640,33 +638,6 @@ Desktop CPU Links:
 
 <details><summary>Prices</summary>
 
-AMD EPYC Zen 4 / Zen 5 processors with a TDP of less than 300 W, as of 2025.08.09
-
-| CPU                |  Price [HUF] |  Price [EUR] |
-|--------------------|-------------:|-------------:|
-| **Zen 4**          |              |              |
-| [9354][pr9354]     |      601,460 |         1500 |
-| [9354P][pr9354P]   |      750,362 |         1900 |
-| [9454][pr9454]     |      928,075 |         2300 |
-| [9454P][pr9454P]   |      829,174 |         2100 |
-| [9534][pr9534]     |      753,990 |         1900 |
-| [9634][pr9634]     |    1,372,177 |         3400 |
-| **Zen 5**          |              |              |
-| [9355][pr9355]     |    1,259,666 |         3200 |
-| 9355P              |              |              |
-| 9365               |              |              |
-| 9455P              |              |              |
-| 9455               |              |              |
-| 9535               |    2,300,852 |         5800 |
-
-[pr9354]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9354-32-core-3-25ghz-sp5-tray-100-000000798-p923300802/
-[pr9354P]: https://kontaktor.hu/amd_epyc_9354p_processor_325_ghz_256_mb_l3_380250
-[pr9454]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9454-48-core-2-75ghz-sp5-tray-100-000000478-p923301999/
-[pr9454P]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9454p-48-core-2-75ghz-sp5-tray-100-000000873-p981692184/
-[pr9534]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9534-2-45ghz-sp5-tray-100-000000799-p985734456/
-[pr9634]: https://smicro.hu/amd-epyc-genoa-9634-dp-up-84c-168t-2-25g-384mb-290w-sp5-100-000000797-5
-[pr9355]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355-32-core-3-55ghz-sp5-tray-100-000001148-p1149737854/
-
 Vendor sites:
 -   https://smicro.hu/amd-socket-sp5-5
 -   https://www.senetic.hu/category/amd-cpu-epyc-9004-11151/
@@ -678,6 +649,90 @@ Vendor sites:
 
 Prices:
 -   CPU:
+    -   AMD EPYC Zen 4 / Zen 5 processors with a TDP of less than 300 W
+        -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
+            | Processor Model | Lowest Listed Price (Ft) | Notes / Citation                                 |
+            | --------------- | ------------------------ | ------------------------------------------------ |
+            | **EPYC 9354**   | **601 410 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
+            | **EPYC 9354P**  | **917 673 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
+            | **EPYC 9454**   | **913 180 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
+            | **EPYC 9454P**  | **829 448 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
+            | **EPYC 9534**   | **753 930 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_2]) |
+            | **EPYC 9634**   | **1 963 614 Ft**         | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_2]) |
+
+            [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+            [cpu_zen4_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+        -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
+            | Processor Model | Lowest Listed Price (Ft) | Notes / Citation                |
+            |-----------------|-------------------------|---------------------------------|
+            | 9355            | 1,175,000               | [Árukereső.hu][pr9355]          |
+            | 9355P           | —                       | —                               |
+            | 9365            | 1,365,900               | —                               |
+            | 9455P           | —                       | —                               |
+            | 9455            | 1,600,431               | —                               |
+            | 9535            | 2,300,852               | —                               |
+
+            [pr9355]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355-32-core-3-55ghz-sp5-tray-100-000001148-p1149737854/
+    -   CPU candidates whose configurable TDP (cTDP) is
+        [above 300 W](https://www.amd.com/en/products/specifications/server-processor.html):
+        -   Zen 4: 9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554,
+            9554P, 9654, 9654P, 9684X, 9734, 9754, 9754S
+            | Processor Model | Lowest Price (Ft)   | Notes / Citation                        |
+            |-----------------|---------------------|-----------------------------------------|
+            | **EPYC 9174F**  | 1 082 453 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
+            | **EPYC 9184X**  | 1 660 384 Ft        | ([Árukereső.hu][cpu_zen4_1_2])          |
+            | **EPYC 9274F**  |   655 800 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
+            | **EPYC 9374F**  |   985 980 Ft        | ([Árukereső.hu][cpu_zen4_1_3])          |
+            | **EPYC 9384X**  | 1 997 695 Ft        | ([Árukereső.hu][cpu_zen4_1_2])          |
+            | **EPYC 9474F**  | 1 572 490 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
+            | **EPYC 9554**   |   807 950 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
+            | **EPYC 9554P**  | 1 079 486 Ft        | ([Árukereső.hu][cpu_zen4_2_1])          |
+            | **EPYC 9654**   |   917 690 Ft        | ([Árukereső.hu][cpu_zen4_2_2])          |
+            | **EPYC 9654P**  |   935 813 Ft        | ([Árukereső.hu][cpu_zen4_2_2])          |
+            | **EPYC 9684X**  | 2 118 660 Ft        | ([Árukereső.hu][cpu_zen4_2_3])          |
+            | **EPYC 9734**   | 1 021 110 Ft        | ([Árukereső.hu][cpu_zen4_2_4])          |
+            | **EPYC 9754**   | 1 243 230 Ft        | ([Árukereső.hu][cpu_zen4_2_5])          |
+
+            [cpu_zen4_1_1]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+            [cpu_zen4_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C768-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
+            [cpu_zen4_1_3]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, AMD Socket SP5"
+            [cpu_zen4_2_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9554p-64-core-3-1ghz-sp5-tray-100-000000804-p924473337/?utm_source=chatgpt.com "AMD EPYC 9554P 64-Core 3.1GHz SP5 Tray (100-000000804 ..."
+            [cpu_zen4_2_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+            [cpu_zen4_2_3]: https://www.arukereso.hu/processzor-c3139/f%3A96-magos-processzor%2Camd-socket-sp5/?orderby=13&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - AMD ... - Árukereső.hu"
+            [cpu_zen4_2_4]: https://www.arukereso.hu/processzor-c3139/f%3A112-magos-processzor%2Camd-epyc/?utm_source=chatgpt.com "Típus: AMD Epyc, 112 magos processzor - Árukereső.hu"
+            [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/?utm_source=chatgpt.com "AMD EPYC 9754 128-Core 2.25GHz SP5 Tray (100-000001234 ..."
+            [cpu_zen4_2_6]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754s-2-25ghz-tray-p1046085382/?utm_source=chatgpt.com "AMD Epyc 9754S 2.25GHz Tray vásárlás, olcsó ... - Árukereső.hu"
+
+        -   Zen 5: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565,
+            9575F, 9645, 9655, 9655P, 9745, 9825, 9845
+            | Processor Model | Lowest Listed Price (Ft) | Notes / Source                                                                                                        |
+            |-----------------|-------------------------|------------------------------------------------------------------------------------------------------------------------|
+            | **EPYC 9175F**  | 1 130 275 Ft            | via L3 cache 512 MB ([Árukereső.hu][cpu_zen5_1_1])                                                                     |
+            | **EPYC 9275F**  | 1 143 398 Ft            | Single price listing ([Árukereső.hu][cpu_zen5_1_2])                                                                    |
+            | **EPYC 9375F**  | 2 129 697 Ft            | Product not available; last price recorded on Aug 9, 2025 ([Árukereső.hu][cpu_zen5_1_3])                               |
+            | **EPYC 9475F**  | 1 694 576 Ft            | via L3 cache 256 MB listing ([Árukereső.hu][cpu_zen5_1_4]); price trend shows minimum at 2 412 365 Ft ([cpu_zen5_1_5]) |
+            | **EPYC 9555**   | 2 329 744 Ft            | Current best price ([Árukereső.hu][cpu_zen5_1_6])                                                                      |
+            | **EPYC 9555P**  | 2 095 250 Ft            | from product listing ([Árukereső.hu][cpu_zen5_1_6])                                                                    |
+            | **EPYC 9565**   | 2 388 790 Ft            | via Socket SP5 filter ([Árukereső.hu][cpu_zen5_1_7])                                                                   |
+            | **EPYC 9575F**  | 2 840 784 Ft            | Listed as “Tray (100-000001554)”, Socket SP5 ([Árukereső.hu][cpu_zen5_2_1])                                            |
+            | **EPYC 9645**   | 2 770 900 Ft            | OEM Tray, Socket SP5 ([Árukereső.hu][cpu_zen5_2_2])                                                                    |
+            | **EPYC 9655**   | 2 431 037 Ft            | Tray model, Socket SP5 ([Árukereső.hu][cpu_zen5_2_1])                                                                  |
+            | **EPYC 9655P**  | 3 028 591 Ft            | Tray (P variant), Socket SP5 ([Árukereső.hu][cpu_zen5_2_3])                                                            |
+            | **EPYC 9745**   | — Not found —           | No listings located                                                                                                    |
+            | **EPYC 9825**   | — Not found —           | No listings located                                                                                                    |
+            | **EPYC 9845**   | — Not found —           | No listings located                                                                                                    |
+
+            [cpu_zen5_1_1]: https://www.arukereso.hu/processzor-c3139/512-mb-l3-cache/?utm_source=chatgpt.com "L3 cache: 512 MB - Processzor árak összehasonlítása - Árukereső.hu"
+            [cpu_zen5_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+            [cpu_zen5_1_3]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9375f-32-core-3-8ghz-sp5-tray-100-000001197-p1162090915/?utm_source=chatgpt.com "AMD EPYC 9375F 32-Core 3.8GHz SP5 Tray (100-000001197 ..."
+            [cpu_zen5_1_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C256-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
+            [cpu_zen5_1_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9475f-48-core-3-65ghz-sp5-tray-100-000001143-p1163945305/?utm_source=chatgpt.com "AMD EPYC 9475F 48-Core 3.65GHz SP5 Tray (100-000001143 ..."
+            [cpu_zen5_1_6]: https://www.arukereso.hu/processzor-c3139/f%3A64-magos-processzor%2Camd-epyc/?utm_source=chatgpt.com "Típus: AMD Epyc, 64 magos processzor - Árukereső.hu"
+            [cpu_zen5_1_7]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas/?orderby=1&start=75&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+            [cpu_zen5_2_1]: https://www.arukereso.hu/processzor-c3139/amd-socket-sp5/?utm_source=chatgpt.com "Processzor árak összehasonlítása - AMD Socket SP5 - Árukereső.hu"
+            [cpu_zen5_2_2]: https://www.arukereso.hu/processzor-c3139/96-magos-processzor/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - 96 magos processzor"
+            [cpu_zen5_2_3]: https://www.arukereso.hu/processzor-c3139/4-nm/?utm_source=chatgpt.com "Processzor árak összehasonlítása - Gyártási technológia: 4 nm"
+
 -   CPU cooler:
 -   RAM:
     -   [DDR5 RDIMM 1Rx4 or 2Rx8](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-32-gb,memoria-tipusa-ddr5,tipus-szerver-memoria,sebesseg=4800-9200/?orderby=1&st=RDIMM)
