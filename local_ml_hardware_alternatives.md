@@ -297,9 +297,12 @@ Desktop CPU Links:
 | RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
 | SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
 | Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
-| PSU         |                                                    |                     |                         |
-| Case        |                                                    |                     |                         |
-| **Total**   |                                                    |                     |         **1,972,522**   |
+| CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
+| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
+| **Total**   |                                                    |                     |         **2,285,102**   |
+
+[alternative](| Case + PSU  | Supermicro SuperChassis 747BTQ-R2K04B              |         505,935     |             505,935     |)
 
 
 <details><summary>Specs</summary>
@@ -358,6 +361,70 @@ Desktop CPU Links:
             -   12 channels x 8 x 4.8 = 460.8 GB/s,
             -   8 CCD x 32 x 1.8 GHz FCLK = 460.8 GB/s
         -   Cache L3: 256 MB (shared)
+-   CPU cooler:
+    - [Arctic Freezer 4U-SP5](https://www.arctic.de/en/Freezer-4U-SP5/ACFRE00158A)
+        - Thermal compound: ARCTIC MX-6 0.8 g syringe included
+        - Operating ambient temperature: 0–40 °C
+        - Dimensions: 124 mm (L) × 147 mm (W) × 145 mm (H)
+        - Weight: 1512 g
+        - Compatibility: AMD SP5, server rack unit 4U and up
+        - Heatsink:
+            - Direct touch heat pipes, 10 × Ø 6 mm
+            - 62 aluminum fins
+        - Fans:
+            - 2 × 120 mm PWM fans
+            - Speed: 300–3300 rpm (PWM controlled)
+            - Connector: 4-pin plug, 200 mm cable
+            - Bearing: dual ball bearing
+            - Noise level: 45.3 dBA
+            - Air flow: 81.04 cfm (137.69 m³/h)
+            - Static pressure: 4.35 mmH₂O
+            - Current/voltage: 0.29 A / 12 V DC
+            - Startup voltage: 3.1 V DC
+    -   [Silverstone XE360-SP5](https://www.silverstonetek.com/en/product/info/coolers/xe360_sp5/)
+        -   High Performance Triple 120mm All-In-One Liquid Cooler for AMD Socket SP5
+    -   [Silverstone XED120 WS](https://www.silverstonetek.com/en/product/info/coolers/xed120s_ws/)
+        -   4U Form Factor Industrial-Grade CPU Cooler with TDP 450W for Intel & AMD Server-Grade Sockets
+        -   Model No.: SST-XED120S-WS
+        -   Material: Copper heat pipes with aluminum fins
+        - Application:
+            - Intel LGA4677/4710 (CPU carrier not included)
+            - AMD Socket SP5, SP6, sTR5, SP3, TR4, sWRX8, sWRX9
+        - Fan
+        - Dimensions:
+            - 120mm (W) x 30mm (H) x 120mm (D)
+            - 4.72" (W) x 1.18" (H) x 4.72" (D)
+        - Speed: 500–3000 RPM
+        - Noise level: **44.9 dBA**
+        - Rated voltage: 12V
+        - Rated current: 0.35A
+        - Maximum airflow: 102 CFM
+        - Maximum air pressure: 8.24 mmH2O
+        - Connector: 4-pin PWM
+        - Bearing: Dual ball bearing
+        - MTTF: 70,000 hours
+        - CPU TDP support: up to 450W
+        - Dimensions (with cooler): 120mm (W) x 145mm (H) x 120mm (D)
+            - 4.72" (W) x 5.71" (H) x 4.72" (D)
+    -   [Silverstone XE04-SP5](https://www.silverstonetek.com/en/product/info/coolers/xe04_sp5/)
+        - 4U form factor server/workstation small form factor CPU cooler for AMD SP5 sockets
+        - Model numbers:
+            - SST-XE04-SP5 (Silver+Black)
+            - SST-XE04-SP5B (Black+Black)
+        - Material: aluminum fins and heat pipes
+        - Application: AMD Socket SP5
+        - Fan dimensions: 92mm (W) x 25mm (H) x 92mm (D)
+        - Fan speed: 1500 to 5000 RPM
+        - Noise level: **43 dBA at full speed**
+        - Rated voltage: 12V
+        - Rated current: 0.66A
+        - Maximum airflow: 77.7 CFM
+        - Maximum air pressure: 10.67 mmH2O
+        - Connector: 4-pin PWM
+        - Bearing type: dual ball bearing
+        - MTTF: 90,000 hours
+        - CPU TDP support: up to 400W
+        - Cooler dimensions: 93mm (W) x 128mm (H) x 118mm (D)
 -   RAM:
     -   The target system must support at least 2 NVIDIA RTX PRO 6000 Blackwell (96GB) GPUs
         -   Required system RAM: >> total GPU VRAM
@@ -613,7 +680,80 @@ Desktop CPU Links:
         -   500 + 4 x 575 = 2800 W
         -   Headroom: 50%
         -   Required power supply: 4200 W
--   Case: E-ATX
+-   Chassis: ATX, E-ATX ([Gamers Nexus - Best PC Cases of 2022 - Best Thermals (Fractal Torrent)](https://youtu.be/pL5uttjPWZE?t=678))
+    -   [Fractal Design Torrent](https://www.fractal-design.com/products/cases/torrent/torrent/black-solid/)
+        -   Expansion slots: 7
+        -   Front interface: 1x USB 3.2 Gen 2x2 Type-C (20 Gbps), 2x USB 3.0, HD Audio
+        -   Total fan mounts: 7x 120/140 mm or 4x 180 mm
+        -   Front fan: 3x 120/140 mm or 2x 180 mm (2x Dynamic GP-18 included in standard version, 2x Prisma AL-18 included in RGB version)
+        -   Rear fan: 1x 120/140 mm
+        -   Bottom fan: 3x 120/140 mm or 2x 180 mm (3x Dynamic GP-14 PWM included in standard version, 3x Prisma AL-14 PWM included in RGB version)
+        -   Dust filters: Front, Bottom
+        -   Fixed cable straps: Yes
+        -   Cable routing grommets: Yes
+        -   Tool-less push-to-lock: Both side panels
+        -   Captive thumbscrews: HDD brackets, SSD brackets, Top panel, Bottom fan bracket
+        -   Left side panel: Steel or Tempered glass (RGB version: Tempered glass only)
+        -   Right side panel: Steel or Tempered glass (Solid/White RGB: Steel, TG/Black RGB: Tempered Glass)
+        -   Compatibility:
+            -   Motherboard: E-ATX / ATX / mATX / ITX / SSI-EEB / SSI-CEB
+            -   Power supply: ATX
+            -   PSU max length: 230 mm
+            -   GPU max length: 461 mm total, 423 mm with front fan mounted
+            -   CPU cooler max height: 188 mm
+            -   Front radiator: Up to 360/420 mm, including 360x180 mm
+            -   Rear radiator: Up to 120/140 mm
+            -   Bottom radiator: Up to 360/420 mm (458 mm max length)
+            -   Cable routing space: 32 mm
+        -   Dimensions:
+            -   Case dimensions (LxWxH): 544 x 242 x 530 mm
+            -   Case dimensions w/o feet/protrusions/screws: 525 x 242 x 495 mm
+            -   Net weight: 11.1 kg (Solid: 10.4 kg, White TG: 10.8 kg)
+            -   Package dimensions (LxWxH): 640 x 343 x 674 mm
+            -   Gross weight: 13.7 kg (Solid: 13 kg, White TG: 13.4 kg)
+    -   [SilverStone SETA H2](https://www.silverstonetek.com/en/product/info/computer-chassis/seh2_b/)
+        -   Model No.: SST-SEH2-B
+        -   Material: Steel
+        -   Motherboard support: SSI-EEB, SSI-CEB, Extended ATX, ATX, Micro-ATX, Mini-ITX
+        -   Drive bays:
+            -   Internal: 3.5"/2.5" x 11, 3.5" x 1 / 2.5" x 2, 2.5" x 2
+        -   Cooling system:
+            -   Front: 120mm x 3 / 140mm x 3
+            -   Rear: 120mm x 1 / 140mm x 1
+            -   Top: 120mm x 3 / 140mm x 3 / 160mm x 2
+            -   Side: 120mm x 2
+        -   Radiator support:
+            -   Front: 120mm / 140mm / 240mm / 280mm / 360mm / 420mm
+            -   Rear: 120mm / 140mm
+            -   Top: 120mm / 140mm / 240mm / 280mm / 360mm / 420mm
+            -   Side: 120mm / 240mm
+        -   CPU cooler height limit: 188mm
+        -   Expansion slots: 8
+        -   Expansion card length limit:
+            -   428.9mm (with front 25mm thickness fans installed)
+            -   330mm (with side radiator & fans installed)
+        -   Power supply: Standard PS2 (ATX)
+            -   PSU length limit: 220mm
+        -   Front I/O ports:
+            -   USB Type-C x 1
+            -   USB 3.0 x 2
+            -   Combo Audio x 1
+        -   Dimensions: 244.9mm (W) x 528.3mm (H) x 543.2mm (D), 70.28 liters
+            -   9.64" (W) x 20.8" (H) x 21.39" (D), 70.28 liters
+        -   See also [Level1Techs: Our DUAL RTX 5090 Silverstone MADNESS Build: Part 1!](https://www.youtube.com/watch?v=VrTHwN6OKG0)
+    -   [SuperChassis 747BTQ-R2K04B](https://www.supermicro.com/en/products/chassis/4U/747/SC747BTQ-R2K04B)
+        -   8x 3.5” SAS/SATA Backplane for Hot-Swappable Drives (Support SES2)
+        -   11x Full-Height, Full-Length Expansion Slots Optimized for 4x Double Width GPU Solution
+        -   (2x) Rear Additional 80mm PWM Fans & (4x) Middle Lower 92mm PWM Fans
+        -   4U / Full Tower Chassis Supports max. Motherboard, Sizes – E-ATX 15.2” x 13.2”/ ATX/Micro ATX
+        -   2000W Redundant Titanium Level Certified High-Efficiency Power Supply
+        -   3x 5.25" External HDD Drive Bays & 8x 3.5” Hot-Swappable HDD Drives
+        -   Form Factor: 4U tower/rachmount chassis - supports for maximum motherboard sizes: 15.2" x 13.2"
+        -   Processor Support: Dual and Single Intel® and AMD processors
+        -   Systems Cooling Fans
+            -   2x 80mm Hot-swap PWM Fans
+            -   4x 92mm hot-swap fan(s)
+        -   Power Supply: 1U 2000W Titanium Redundant Power Supply W/PMbus
     -   [Fractal Design Define 7](https://www.fractal-design.com/products/cases/define/define-7/)
         -   Total fan mounts: 9 x 120/140 mm
         -   Front fan: 3 x 120/140 mm (2 x Dynamic X2 GP-14 included)
@@ -632,6 +772,12 @@ Desktop CPU Links:
             clearance, standard 2-slot GPU (<38mm thickness) recommended for
             optimum cooling
         -   Case dimensions (LxWxH): 547 x 240 x 475 mm
+    -   A 4U cassis cannot accommodate the [NVIDIA RTX PRO 6000 Blackwell Desktop](https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272)
+        version. The card is 137 mm high, but the power connector is located
+        at the top. The RTX 4090 is the same height, and the power connector
+        is also located on the top. The [Squeezing an RTX 4090 into the 4u Rosewell Server Chassis](https://youtu.be/HQ2EEQkbk8Y?t=289)
+        video demonstrates that even though the card itself fits into the
+        cassis, the protruding power connector prevents mounting the lid.
 -   GPU:
     -   AM5/X870E platforms split the CPU PEG lanes to x8/x8 for dual GPUs; x16/x16 isn’t available.
     -   Physical fit: most RTX 5090 cards are 3–3.5-slot wide. Fitting two often requires:
@@ -746,8 +892,8 @@ Prices:
             [cpu_zen5_2_1]: https://www.arukereso.hu/processzor-c3139/amd-socket-sp5/?utm_source=chatgpt.com "Processzor árak összehasonlítása - AMD Socket SP5 - Árukereső.hu"
             [cpu_zen5_2_2]: https://www.arukereso.hu/processzor-c3139/96-magos-processzor/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - 96 magos processzor"
             [cpu_zen5_2_3]: https://www.arukereso.hu/processzor-c3139/4-nm/?utm_source=chatgpt.com "Processzor árak összehasonlítása - Gyártási technológia: 4 nm"
-
 -   CPU cooler:
+    - [Arctic Freezer 4U-SP5](https://www.arukereso.hu/szamitogep-huto-c3094/arctic/freezer-4u-sp5-acfre00158a-p1161603583/): 70 EUR
 -   RAM:
     -   [DDR5 RDIMM 1Rx4 or 2Rx8](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-32-gb,memoria-tipusa-ddr5,tipus-szerver-memoria,sebesseg=4800-9200/?orderby=1&st=RDIMM)
     -   For 1-CPU architecture: 12 x 32 GB RDIMM 1Rx4 or 2Rx8 (384 GB in total)
@@ -807,7 +953,10 @@ Prices:
         -   [Supermicro MBD-H13SSL-NT-O](https://smicro.hu/supermicro-mbd-h13ssl-nt-o-4): 830 EUR
         -   [GIGABYTE MZ33-AR0](https://www.arukereso.hu/alaplap-c3128/gigabyte/mz33-ar0-p1005435430/): 1100 EUR
 -   PSU
--   Case
+    -   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://www.arukereso.hu/tapegyseg-c3158/seasonic/prime-px-2200-2200w-80-plus-platinum-p1129871905/): 630 EUR
+-   Chassis
+    -   [Fractal Design Torrent](https://www.arukereso.hu/szamitogep-haz-c3085/f:fractal-design,szelesseg=4/?orderby=1&st=torrent): 240 EUR
+    -   [SilverStone H1 SST-SEH1B-G](https://www.arukereso.hu/szamitogep-haz-c3085/silverstone/h1-sst-seh1b-g-p853480299/): 210 EUR
 -   Total price without GPU:
 
 </details> <!-- Server prices -->
@@ -853,6 +1002,7 @@ Prices:
     >   -   Operating system: Ubuntu Linux 22.04 LTS Server Edition (64-bit)
     >   -   Networking: 2 x 10GbE LAN ports (RJ45, X710-AT2), one utilized at 10Gb
     >   -   Additional PCIe 5.0 card: ASUS 90SC0M60-M0XBN0
+-
 
 </details> <!-- Server links -->
 
