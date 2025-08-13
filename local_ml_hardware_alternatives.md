@@ -291,15 +291,15 @@ Desktop CPU Links:
 ## Server
 
 
-| Component   | Model                                                      |   TDP   | Price each<br>[HUF] | Price subtotal<br>[HUF] |
-|-------------|------------------------------------------------------------|---------|--------------------:|------------------------:|
-| CPU         | [AMD EPYC 9354][pr9354]                                    | 280 W   |         601,460     |             601,460     |
-| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12           |         |          76,020     |             912,240     |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110           |         |         129,910     |             129,910     |
-| Motherboard | Supermicro MBD-H13SSL-NT                                   |         |         328,912     |             328,912     |
-| PSU         |                                                            |         |                     |                         |
-| Case        |                                                            |         |                     |                         |
-| **Total**   |                                                            |         |                     |         **1,972,522**   |
+| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|----------------------------------------------------|--------------------:|------------------------:|
+| CPU         | AMD EPYC 9354                                      |         601,460     |             601,460     |
+| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
+| Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
+| PSU         |                                                    |                     |                         |
+| Case        |                                                    |                     |                         |
+| **Total**   |                                                    |                     |         **1,972,522**   |
 
 
 <details><summary>Specs</summary>
