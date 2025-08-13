@@ -291,15 +291,15 @@ Desktop CPU Links:
 ## Server
 
 
-| Component   | Model                      |   TDP   | Price each<br>[HUF] | Price subtotal<br>[HUF] |
-|-------------|----------------------------|---------|--------------------:|------------------------:|
-| CPU         | [AMD EPYC 9354][pr9354]    | 280 W   |           601,460   |              601,460    |
-| CPU cooler  |                            |         |                     |                        |
-| RAM         |                            |         |                     |                        |
-| SSD         |                            |         |                     |                        |
-| Motherboard |                            |         |                     |                        |
-| PSU         |                            |         |                     |                        |
-| Case        |                            |         |                     |                        |
+| Component   | Model                                                      |   TDP   | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|------------------------------------------------------------|---------|--------------------:|------------------------:|
+| CPU         | [AMD EPYC 9354][pr9354]                                    | 280 W   |         601,460     |             601,460     |
+| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12           |         |          76,020     |             912,240     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110           |         |         129,910     |             129,910     |
+| Motherboard | Supermicro MBD-H13SSL-NT                                   |         |         328,912     |             328,912     |
+| PSU         |                                                            |         |                     |                         |
+| Case        |                                                            |         |                     |                         |
+| **Total**   |                                                            |         |                     |         **1,972,522**   |
 
 
 -   CPU:
@@ -311,13 +311,6 @@ Desktop CPU Links:
         -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://belso-ssd-meghajto.arukereso.hu/samsung/990-pro-4tb-mz-v9p4t0bw-p1002242350/): 300 EUR
--   Motherboard:
-    -   CEB:
-        -   [Asus K14PA-U12](https://smicro.hu/asus-k14pa-u12-90sb0ci0-m0uay0-4?aku=db3621a52f6055ee636a6fee6ff8a353): 800 EUR
-        -   [GENOAD8QM3‑2T/BCM](https://smicro.hu/asrock-rack-genoad8qm3-2t-bcm-5): 1700 EUR
-    -   ATX:
-        -   [Supermicro MBD-H13SSL-NT-O](https://smicro.hu/supermicro-mbd-h13ssl-nt-o-4): 830 EUR
-        -   [GIGABYTE MZ33-AR0](https://www.arukereso.hu/alaplap-c3128/gigabyte/mz33-ar0-p1005435430/): 1100 EUR
 -   PSU
 -   Case
 -   Total price without GPU:
@@ -456,7 +449,6 @@ Desktop CPU Links:
         | MTC20F1045S1RC48BR | Micron DDR5-4800 RDIMM 1Rx4 | 32 GB    | 4800  | RDIMM  | 1Rx4 | 40  |
         | MTC20F2085S1RC56BR | Micron DDR5-5600 RDIMM 2Rx8 | 32 GB    | 5600  | RDIMM  | 2Rx8 | 46  |
         | MTC20F1045S1RC56BR | Micron DDR5-5600 RDIMM 1Rx4 | 32 GB    | 5600  | RDIMM  | 1Rx4 | 46  |
-
 -   Motherboard:
     -   Supermicro
         [H13SSL‑NT](https://www.supermicro.com/en/products/motherboard/H13SSL-NT) /
@@ -495,12 +487,10 @@ Desktop CPU Links:
                 -   Form Factor: 2280/22110
                 -   Key: M-Key
         -   Widely used in community for stable performance ([Newegg.com][3.12]).
-    -   [ASRock Rack GENOAD8QM3‑2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8QM3-2T/BCM#Specifications) /
-        -   Not suitable: **Only 8 DIMM slots (1DPC)**, supports DDR5 RDIMM, RDIMM-3DS
-        -   dual 10 GbE,
-        -   MCIO NVMe support,
-        -   PCIe 5.0 expansion with clean board layout suitable for GPUs.
-        -   Popular in the community as a stable SP5 choice ([Newegg.com][3.7]).
+    -   [ASRock Rack GENOAD8QM3‑2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8QM3-2T/BCM#Specifications):
+        -   Not suitable: **Only 8 DIMM slots (1DPC)**
+    -   [ASRock Rack GENOAD8UD‑2T/X550](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8UD-2T/X550#Specifications):
+        -   Not suitable: **Only 8 DIMM slots (1DPC)**
     -   [ASRock Rack GENOAD24QM3-2L2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD24QM3-2L2T%2FBCM&utm_source=GENOA+launch&utm_medium=11_landing+page#Specifications)
         -   EEB (12" x 14")
         -   Single Socket SP5 (LGA 6096), supports AMD EPYC™ 9005*/9004 (with AMD 3D V-Cache™ Technology) and 97x4 series processors
@@ -508,8 +498,6 @@ Desktop CPU Links:
         -   2 PCIe5.0 x16
         -   7 MCIO (PCIe5.0 x8), 2 MCIO (PCIe5.0 x8 or 8 SATA 6Gb/s)
         -   Supports 2 M.2 (PCIe5.0 x4)
-    -   [ASRock Rack GENOAD8UD‑2T/X550](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8UD-2T/X550#Specifications):
-        -   Dimensions	10.4" x 10.5"
     -   [GIGABYTE MZ33-AR0](https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ33-AR0-rev-1x-3x)
         -   Form Factor: E-ATX, 305 x 330
         -   CPU
@@ -536,7 +524,30 @@ Desktop CPU Links:
             -   M.2:
                 -   1 x M.2 (2280/22110), PCIe Gen4 x4
             -   RAID: N/A
+    -   [GIGABYTE MZ33-CP1](https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ33-CP1-rev-3x)
+        -   Single AMD EPYC™ 9005/9004 Series Processors
+        -   12-Channel DDR5 RDIMM, 12 x DIMMs
+        -   2 x 1Gb/s LAN ports via Intel® I210-AT
+        -   4 x MCIO 8i connectors with PCIe Gen5 x8 interface
+        -   2 x MCIO 8i connectors with PCIe Gen4 x8 or SATA interface
+        -   1 x M.2 slot with PCIe Gen3 x4 interface
+        -   3 x PCIe Gen5 x16 expansion slots
+        -   1 x PCIe Gen4 x16 expansion slot
+        -   1 x OCP NIC 3.0 PCIe Gen5 x16 slot
+        -   Memory
+            -   12 x DIMM slots
+            -   DDR5 memory supported
+            -   12-Channel memory per processor
+            -   AMD EPYC™ 9005: RDIMM: Up to 6400 MT/s
+            -   AMD EPYC™ 9004: RDIMM: Up to 4800 MT/s
     -   [GIGABYTE MZ73-LM2](https://www.gigabyte.com/us/Enterprise/Server-Motherboard/MZ73-LM2-rev-3x)
+        -   Dual AMD EPYC™ 9005/9004 Series Processors
+        -   12-Channel DDR5 RDIMM, 24 x DIMMs
+        -   2 x 10Gb/s LAN ports via Broadcom® BCM57416
+        -   2 x MCIO 8i connectors with PCIe Gen5 x8 or SATA interface
+        -   1 x SlimSAS 4i connector with SATA interface
+        -   1 x M.2 slot with PCIe Gen5 x4 interface
+        -   4 x PCIe Gen5 x16 expansion slots
         -   E‑ATX form factor, includes
         -   multiple PCIe 5 slots (x16) spaced for GPUs.
         -   Reddit warns of interference issues between memory and GPU slots on some layouts - ASRock GENOA variants often preferred ([Reddit][3.13]).
@@ -585,6 +596,22 @@ Desktop CPU Links:
             >       -   they don't plan to release BIOS upgrade for Epyc Turin (I asked)
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
+    -   [MBD-H13SSL-NT compatible SSD list](https://www.supermicro.com/en/support/resources/m2ssd?SystemID=88241&ProductName=H13SSL-NT)
+        | Part Number                      | Manufacturer | Manufacturer Part #         | Interface   | Capacity | Description                                                      | PWRidle | PWRread | Wide Temp | EOL Date |
+        |----------------------------------|--------------|-----------------------------|-------------|----------|------------------------------------------------------------------|---------|---------|-----------|----------|
+        | HDS-M2N4-400G0-E3-TXD-NON-080    | Micron       | MTFDKBA400TFS-1BC1ZABYY     | NVMe GEN4   | 400GB    | Micron 7450 MAX 400GB NVMe PCIe 4.0 3D TLC M.2 22x80 mm, 3DWPD   | 2.9     | 7.1     | N         |          |
+        | HDS-M2N4-480G0-E1-T1E-OSE-080    | Micron       | MTFDKBA480TFR-1BC15ABYY     | NVMe GEN4   | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD | 2.9     | 7       | N         |          |
+        | HDS-M2N4-480G0-E1-TXD-NON-080    | Micron       | MTFDKBA480TFR-1BC1ZABYY     | NVMe GEN4   | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD    | 2.9     | 7       | N         |          |
+        | HDS-M2N4-800G0-E3-TXD-NON-080    | Micron       | MTFDKBA800TFS-1BC1ZABYY     | NVMe GEN4   | 800GB    | Micron 7450 MAX 800GB NVMe PCIe 4.0 M.2 22x80 mm, 3DWPD 3D TLC   | 2.9     | 7       | N         |          |
+        | HDS-M2N4-960G0-E1-TXE-OSE-080    | Micron       | MTFDKBA960TFR-1BC15ABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD | 2.9     | 7       | N         |          |
+        | HDS-M2N4-960G0-E1-TXD-NON-080    | Micron       | MTFDKBA960TFR-1BC1ZABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD    | 2.9     | 7       | N         |          |
+        | HDS-M2N4-001T9-E1-TXE-OSE-110    | Micron       | MTFDKBG1T9TFR-1BC15ABYY     | NVMe GEN4   | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm TCG Opal 2.0, 1DWPD | 2.9     | 7.5     | N         |          |
+        | HDS-M2N4-001T9-E1-TXD-NON-110    | Micron       | MTFDKBG1T9TFR-1BC1ZABYY     | NVMe GEN4   | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 7.5     | N         |          |
+        | HDS-M2N4-003T8-E1-TXD-NON-110    | Micron       | MTFDKBG3T8TFR-1BC1ZABYY     | NVMe GEN4   | 3840GB   | Micron 7450 PRO 3.8TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 8.2     | N         |          |
+        | HDS-M2N4-960G0-E1-TXD-NON-110    | Micron       | MTFDKBG960TFR-1BC1ZABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 5.7     | N         |          |
+        | HDS-M2N4-01T92-E1-T1D-SED-110    | Samsung      | MZ1L21T9HCLS-00A07          | NVMe M.2    | 1920GB   | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED     | 8.2     | 8.2     | N         |          |
+        | HDS-M2N4-003T8-E1-TXD-SED-110    | Samsung      | MZ1L23T8HBLA-00A07          | NVMe M.2    | 3840GB   | Samsung PM9A3 3.8TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED     | 8.2     | 8.2     | N         |          |
+        | HDS-M2N4-960G0-E1-T1D-SED-110    | Samsung      | MZ1L2960HCJR-00A07          | NVMe M.2    | 960GB    | Samsung PM9A3 960GB NVMe PCIe Gen4 V6 M.2 22x110M (1DWPD) SED    | 2.5     | 7.5     | N         |          |
 -   PSU:
     -   CPU + RAM + SSD + motherboard: ~300-500 W
     -   GPU:
@@ -789,7 +816,6 @@ Prices:
 -   Motherboard:
     -   CEB:
         -   [Asus K14PA-U12](https://smicro.hu/asus-k14pa-u12-90sb0ci0-m0uay0-4?aku=db3621a52f6055ee636a6fee6ff8a353): 800 EUR
-        -   [GENOAD8QM3‑2T/BCM](https://smicro.hu/asrock-rack-genoad8qm3-2t-bcm-5): 1700 EUR
     -   ATX:
         -   [Supermicro MBD-H13SSL-NT-O](https://smicro.hu/supermicro-mbd-h13ssl-nt-o-4): 830 EUR
         -   [GIGABYTE MZ33-AR0](https://www.arukereso.hu/alaplap-c3128/gigabyte/mz33-ar0-p1005435430/): 1100 EUR
