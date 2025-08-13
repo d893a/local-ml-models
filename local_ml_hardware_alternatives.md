@@ -302,19 +302,6 @@ Desktop CPU Links:
 | **Total**   |                                                            |         |                     |         **1,972,522**   |
 
 
--   CPU:
--   CPU cooler:
--   RAM:
-    -   DDR5 RDIMM 1Rx4 or 2Rx8
-    -   12 x [Samsung 32GB DDR5 4800MHz M323R4GA3BB0-CQK](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m323r4ga3bb0-cqk-p818973822/): 12 x 150 = 1800 EUR
-    -   For 2-CPU architecture:
-        -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
--   SSD:
-    -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://belso-ssd-meghajto.arukereso.hu/samsung/990-pro-4tb-mz-v9p4t0bw-p1002242350/): 300 EUR
--   PSU
--   Case
--   Total price without GPU:
-
 <details><summary>Specs</summary>
 
 -   CPU: AMD EPYC 9004 / 9005 (SP5 socket)
