@@ -16,7 +16,9 @@ See also the [Build your own machine](https://huggingface.co/docs/transformers/p
 
 ## Server
 
-One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling:
+Minimal 1-CPU configuration
+-   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling
+-   Theoretical maximum RAM bandwidth of 460.8 GB/s
 
 | Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
@@ -29,7 +31,54 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
 | Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
 | **Total**   |                                                    |                     |         **2,285,102**   |
 
-[alternative]: # (| Case + PSU  | Supermicro SuperChassis 747BTQ-R2K04B              |         505,935     |             505,935     |)
+1-CPU configuration optimized for Zen 4 CPU inference
+-   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
+-   Theoretical maximum RAM bandwidth of 460.8 GB/s
+
+| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|----------------------------------------------------|--------------------:|------------------------:|
+| CPU         | *AMD EPYC 9754*                                    |      *1,243,230*    |          *1,243,230*    |
+| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
+| Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
+| CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
+| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
+| **Total**   |                                                    |                     |         **2,926,872**   |
+
+<!--
+2-CPU configuration optimized for Zen 4 CPU inference
+-   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
+-   Theoretical maximum RAM bandwidth of 460.8 GB/s
+
+| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|----------------------------------------------------|--------------------:|------------------------:|
+| CPU         | *AMD EPYC 9754 x 2*                                |      *1,243,230*    |          *2,486,460*    |
+| RAM         | min DDR5 4800 RDIMM x 24                           |                     |                         |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
+| Motherboard |                                                    |         328,912     |             328,912     |
+| CPU cooler  | Arctic Freezer 4U-SP5?                             |          23,990     |              23,990     |
+| PSU         |                                                    |                     |                         |
+| Chassis     |                                                    |                     |                         |
+| **Total**   |                                                    |                     |         **2,926,872**   |
+-->
+
+<!--
+1-CPU configuration optimized for Zen 5 CPU inference
+-   Support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
+-   theoretical maximum RAM bandwidth of 844.8 GB/s
+
+| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|----------------------------------------------------|--------------------:|------------------------:|
+| CPU         | AMD EPYC 9175F                                     |       1,130,275     |           1,130,275     |
+| RAM         | Micron 32GB 2Rx8 6400MHz MTC20F2085S1RC64BR        |          89,093     |           1,069,116     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
+| Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
+| CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
+| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
+| **Total**   |                                                    |                     |         **2,970,793**   |
+-->
 
 ### Specs
 
@@ -47,12 +96,14 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
         -   Zen 5: 8 x 32 x 2.0 GHz = 512.0 GB/s
         -   Supports 6x PCIe 5.0 x16 GPUs (6 x 63 = 378 GB/s)
 -   CPU candidates which support PCIe 5.0 x16:
-    -   [Zen 4](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)):
-        Any AMD EPYC 9004 CPU, except 9124, 9224, 9254, 9334, because n_CCD < 8
-    -   [Zen 5](https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)):
-        Any AMD EPYC 9005 CPU, except 9015, 9115, 9135, 9255, 9335, 9365, because n_CCD < 8
-    -   [EPYC 9004 Series CPU Positioning](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-positioning.jpg)
-        ![EPYC 9004 Series CPU Positioning.png](<assets/EPYC 9004 Series CPU Positioning.png>)
+    -   [AMD EPYC 9004 series processors](https://www.amd.com/content/dam/amd/en/documents/products/epyc/epyc-9004-series-processors-data-sheet.pdf) \
+        ![EPYC 9004 Series CPU Positioning](<assets/AMD EPYC 9004 series processors.png>) \
+        [Zen 4](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)):
+        Any AMD EPYC 9004 CPU, except 9124, 9224, 9254, 9334, because n_CCD < 8. Minimum viable: 9354 / 9354P. Performance and TDP tuned: 9754
+    -   [AMD EPYC 9005 series processors](https://www.amd.com/content/dam/amd/en/documents/epyc-business-docs/datasheets/amd-epyc-9005-series-processor-datasheet.pdf) \
+        ![AMD EPYC 9005 series processors](<assets/AMD EPYC 9005 series processors.png>) \
+        [Zen 5](https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)):
+        Any AMD EPYC 9005 CPU, except 9015, 9115, 9135, 9255, 9335, 9365, because n_CCD < 8. Minimum viable: 9355 / 9355P. Performance and TDP tuned: 9745
     -   Complete list of CPU candidates:
         -   Zen 4: 9174F, 9184X, 9274F, 9354, 9354P, 9374F, 9384X,
             9454, 9454P, 9474F, 9534, 9554, 9554P, 9634, 9654, 9654P,
@@ -74,8 +125,8 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
             9554P, 9654, 9654P, 9684X, 9734, 9754, 9754S
         -   Zen 5: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565,
             9575F, 9645, 9655, 9655P, 9745, 9825, 9845
--   CPU minimal pick: AMD EPYC 9354
-    ([Wikipedia](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena))))
+-   **1-CPU minimal pick: AMD EPYC 9354**
+    ([Wikipedia](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)))
     ([AMD](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9354.html))
     ([TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-9354.c2923))
     -   Cores: 32
@@ -88,6 +139,45 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
         -   12 channels x 8 x 4.8 = 460.8 GB/s,
         -   8 CCD x 32 x 1.8 GHz FCLK = 460.8 GB/s
     -   Cache L3: 256 MB (shared)
+-   **Ideal pick for performance and low TDP: AMD EPYC 9754**
+    ([Wikipedia](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)))
+    ([AMD](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9754.html))
+    ([TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-9754.c3257))
+    -   Cores: 128
+    -   TDP: 360 W
+    -   Configurable TDP: 320-400 W
+    -   Max. Memory: 12 x 256 = 3072 GB
+    -   PCI-Express: Gen 5, 128 Lanes
+    -   Rated Memory Speed: 4800 MT/s
+    -   1-CPU configuration maximum memory bandwidth:
+        -   12 channels x 8 x 4.8 = 460.8 GB/s,
+        -   8 CCD x 32 x 1.8 GHz FCLK = 460.8 GB/s
+        -   Theoretical maximum bandwidth: 460.8 GB/s
+    -   2-CPU configuration maximum memory bandwidth:
+        -   24 channels x 8 x 4.8 GT/s = 921.6 GB/s
+        -   2 x 8 CCD x 32 x 2.0 GHz FCLK = 1024 GB/s
+        -   Theoretical maximum bandwidth: 921.6 GB/s
+        -   A 2-CPU configuration would require a server chassis with multiple
+            PSUs to deliver 2x 400 W (CPUs) + 2x 600 W (GPUs) + headroom = 3000 W total.
+    -   Cache L3: 256 MB (shared)
+    <!--
+    ([AMD](https://www.amd.com/en/products/processors/server/epyc/9005-series/amd-epyc-9754.html))
+    -   Rated Memory Speed: 6000 MT/s ([6400 MT/s for certain validated systems](https://chipsandcheese.com/p/amds-turin-5th-gen-epyc-launched))
+    -   1-CPU configuration maximum memory bandwidth:
+        -   12 channels x 8 x 6 GT/s = 576 GB/s
+        -   16 CCD x 32 x 2.0 GHz FCLK = 1024 GB/s
+        -   Theoretical maximum bandwidth: 576 GB/s
+    -   2-CPU configuration maximum memory bandwidth:
+        -   24 channels x 8 x 4.4 GT/s = 844.8 GB/s
+        -   2 x 16 CCD x 32 x 2.0 GHz FCLK = 2048 GB/s
+        -   Theoretical maximum bandwidth: 844.8 GB/s
+    -   Cache L3: 512 MB (shared)
+    -   Each CCX in the 9175F likely 32 MB of L3 cache (512 MB total ÷ 16
+        CCXs). This means each core has its own private 32 MB of L3 -- no
+        competition with other cores for cache space. Result: excellent data
+        locality and low cache contention in memory-intensive single-threaded
+        or lightly-threaded workloads.
+    -->
 
 </details>
 <details><summary>CPU cooler</summary>
@@ -180,27 +270,37 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
         -   6 GPUs: min. 378 GB/s
         -   Lower RAM bandwidth will work, but not at full performance
 -   [AMD EPYC 9004 Series Memory Population Recommendations](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
--   4th Gen AMD EPYC processors support memory with the following characteristics:
-    -   RDIMM: 16GB 1Rx8, 24GB 1Rx8, 32GB 1Rx4, 32GB 2Rx8, 40GB 2Rx8, 48GB 1Rx4, 48GB 2Rx8, 64GB 2Rx4, 80GB 2Rx4, 96GB 2Rx4
-    -   3DS RDIMM: 128GB 2S2Rx4, 192GB 2S2Rx4, 256GB 2S4Rx4, 384GB 2S4Rx4, 512GB 2S8R (pending ecosystem enablement)
-    -   ECC: 80b x4, 80b x8, 72b x4.
-    -   Optimized Bounded Fault ECC DRAM: 80b x4 AMDC, 80b x8, 72b x4
-    -   Use the same memory configuration for all NUMA domains in a single processor socket when using NPS=2 or NPS=4. “NPS” = NUMA node(s) per socket.
-    -   [Table 2-1 shows recommended memory speeds for a variety of memory types](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
-        ![alt text](<assets/AMD EPYC 9004 Processor Memory Population Recommendations.Recommended memory speeds.png>)
-        >   RDIMMs built from x4 and x8 devices are supported. The
-        >   frequencies shown apply to both. The capacities listed only
-        >   represent those of x4 DIMMs. RDIMMs built with x8 devices have
-        >   half the capacity of the x4 RDIMMs with an equal number of
-        >   ranks.
-        >
-        >   The following DIMM types are not supported: LRDIMM, UDIMM, NVDIMM-N, NVDIMM-P
-        >
-        >   All DIMM modules must be RDIMM or RDIMM 3DS module types with
-        >   the same ECC configuration. Do not mix DIMM module types
-        >   within a memory channel. Do not mix x4 and x8 DIMMs within a
-        >   memory channel. Do not mix 3DS and non-3DS memory modules in a
-        >   2DPC system.
+    -   4th Gen AMD EPYC processors support memory with the following characteristics:
+        -   RDIMM: 16GB 1Rx8, 24GB 1Rx8, 32GB 1Rx4, 32GB 2Rx8, 40GB 2Rx8, 48GB 1Rx4, 48GB 2Rx8, 64GB 2Rx4, 80GB 2Rx4, 96GB 2Rx4
+        -   3DS RDIMM: 128GB 2S2Rx4, 192GB 2S2Rx4, 256GB 2S4Rx4, 384GB 2S4Rx4, 512GB 2S8R (pending ecosystem enablement)
+        -   ECC: 80b x4, 80b x8, 72b x4.
+        -   Optimized Bounded Fault ECC DRAM: 80b x4 AMDC, 80b x8, 72b x4
+        -   Use the same memory configuration for all NUMA domains in a single processor socket when using NPS=2 or NPS=4. “NPS” = NUMA node(s) per socket.
+        -   [Table 2-1 shows recommended memory speeds for a variety of memory types](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
+            ![alt text](<assets/AMD EPYC 9004 Processor Memory Population Recommendations.Recommended memory speeds.png>)
+            >   RDIMMs built from x4 and x8 devices are supported. The
+            >   frequencies shown apply to both. The capacities listed only
+            >   represent those of x4 DIMMs. RDIMMs built with x8 devices have
+            >   half the capacity of the x4 RDIMMs with an equal number of
+            >   ranks.
+            >
+            >   The following DIMM types are not supported: LRDIMM, UDIMM, NVDIMM-N, NVDIMM-P
+            >
+            >   All DIMM modules must be RDIMM or RDIMM 3DS module types with
+            >   the same ECC configuration. Do not mix DIMM module types
+            >   within a memory channel. Do not mix x4 and x8 DIMMs within a
+            >   memory channel. Do not mix 3DS and non-3DS memory modules in a
+            >   2DPC system.
+-   Tested memory list for the [Supermicro H13SSL‑NT](https://www.supermicro.com/en/products/motherboard/H13SSL-NT) motherboard (see under "Resources"):
+    | Part Number         | Description                              | Compatible Motherboard Revision(s) |
+    |---------------------|------------------------------------------|------------------------------------|
+    | MEM-DR532MD-ER64    | 32GB DDR5-6400 2Rx8 (16Gb) ECC RDIMM     | R2.01 and above                    |
+
+    -   NOTE: 6400 MT/s speed requires motherboard revision 2.01 or higher and
+        BIOS v3.4 or newer. See FAQ
+        [#43110](https://www.supermicro.com/support/faqs/faq.cfm?faq=43110)
+        for more information.
+
 -   [Samsung candidates](https://semiconductor.samsung.com/dram/module/rdimm/#finder): RDIMM, DDR5, 32GB
     | Part Number      | Speed      | Org      | Density             |
     |------------------|------------|----------|---------------------|
@@ -240,9 +340,8 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
 </details>
 <details><summary>Motherboard</summary>
 
--   Supermicro
-    [H13SSL‑NT](https://www.supermicro.com/en/products/motherboard/H13SSL-NT) /
-    [H13SSL‑N](https://www.supermicro.com/en/products/motherboard/h13ssl-n):
+-   [Supermicro H13SSL‑NT](https://www.supermicro.com/en/products/motherboard/H13SSL-NT) /
+    [Supermicro H13SSL‑N](https://www.supermicro.com/en/products/motherboard/h13ssl-n):
     -   Form Factor: ATX
     -   LAN: N: 2x 1 Gbps LAN; NT: 2x 10 Gbps
     -   12 DDR5 slots,
@@ -384,6 +483,7 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
         >       -   relatively compact form factor
         >   -   Cons:
         >       -   they don't plan to release BIOS upgrade for Epyc Turin (I asked)
+
     [3.7]: https://www.newegg.com/p/pl?N=100007629+601411369&srsltid=AfmBOorDHas0epelrMNy2kXSwLPh7xgASlrIeIDU2XXqA3ZYBGRT9cm3&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
     [3.12]: https://www.newegg.com/p/pl?N=100007629+601411369&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
     [3.13]: https://www.reddit.com/r/homelab/comments/1h1iprj?utm_source=chatgpt.com "Epyc 97x4 Genoa Motherboard"
@@ -394,21 +494,21 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
 -   Supported SSDs may be limited by the motherboard's qualified vendor list (QVL)
 -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
 -   [MBD-H13SSL-NT compatible SSD list](https://www.supermicro.com/en/support/resources/m2ssd?SystemID=88241&ProductName=H13SSL-NT)
-    | Part Number                      | Manufacturer | Manufacturer Part #         | Interface   | Capacity | Description                                                      | PWRidle | PWRread | Wide Temp | EOL Date |
-    |----------------------------------|--------------|-----------------------------|-------------|----------|------------------------------------------------------------------|---------|---------|-----------|----------|
-    | HDS-M2N4-400G0-E3-TXD-NON-080    | Micron       | MTFDKBA400TFS-1BC1ZABYY     | NVMe GEN4   | 400GB    | Micron 7450 MAX 400GB NVMe PCIe 4.0 3D TLC M.2 22x80 mm, 3DWPD   | 2.9     | 7.1     | N         |          |
-    | HDS-M2N4-480G0-E1-T1E-OSE-080    | Micron       | MTFDKBA480TFR-1BC15ABYY     | NVMe GEN4   | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD | 2.9     | 7       | N         |          |
-    | HDS-M2N4-480G0-E1-TXD-NON-080    | Micron       | MTFDKBA480TFR-1BC1ZABYY     | NVMe GEN4   | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD    | 2.9     | 7       | N         |          |
-    | HDS-M2N4-800G0-E3-TXD-NON-080    | Micron       | MTFDKBA800TFS-1BC1ZABYY     | NVMe GEN4   | 800GB    | Micron 7450 MAX 800GB NVMe PCIe 4.0 M.2 22x80 mm, 3DWPD 3D TLC   | 2.9     | 7       | N         |          |
-    | HDS-M2N4-960G0-E1-TXE-OSE-080    | Micron       | MTFDKBA960TFR-1BC15ABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD | 2.9     | 7       | N         |          |
-    | HDS-M2N4-960G0-E1-TXD-NON-080    | Micron       | MTFDKBA960TFR-1BC1ZABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD    | 2.9     | 7       | N         |          |
-    | HDS-M2N4-001T9-E1-TXE-OSE-110    | Micron       | MTFDKBG1T9TFR-1BC15ABYY     | NVMe GEN4   | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm TCG Opal 2.0, 1DWPD | 2.9     | 7.5     | N         |          |
-    | HDS-M2N4-001T9-E1-TXD-NON-110    | Micron       | MTFDKBG1T9TFR-1BC1ZABYY     | NVMe GEN4   | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 7.5     | N         |          |
-    | HDS-M2N4-003T8-E1-TXD-NON-110    | Micron       | MTFDKBG3T8TFR-1BC1ZABYY     | NVMe GEN4   | 3840GB   | Micron 7450 PRO 3.8TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 8.2     | N         |          |
-    | HDS-M2N4-960G0-E1-TXD-NON-110    | Micron       | MTFDKBG960TFR-1BC1ZABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 5.7     | N         |          |
-    | HDS-M2N4-01T92-E1-T1D-SED-110    | Samsung      | MZ1L21T9HCLS-00A07          | NVMe M.2    | 1920GB   | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED     | 8.2     | 8.2     | N         |          |
-    | HDS-M2N4-003T8-E1-TXD-SED-110    | Samsung      | MZ1L23T8HBLA-00A07          | NVMe M.2    | 3840GB   | Samsung PM9A3 3.8TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED     | 8.2     | 8.2     | N         |          |
-    | HDS-M2N4-960G0-E1-T1D-SED-110    | Samsung      | MZ1L2960HCJR-00A07          | NVMe M.2    | 960GB    | Samsung PM9A3 960GB NVMe PCIe Gen4 V6 M.2 22x110M (1DWPD) SED    | 2.5     | 7.5     | N         |          |
+    | Part Number                   | Manufacturer | Manufacturer Part #         | Capacity | Description                                                    |
+    |-------------------------------|--------------|-----------------------------|----------|---------------------------------------------------------------|
+    | HDS-M2N4-400G0-E3-TXD-NON-080 | Micron       | MTFDKBA400TFS-1BC1ZABYY     | 400GB    | Micron 7450 MAX 400GB NVMe PCIe 4.0 3D TLC M.2 22x80 mm, 3DWPD |
+    | HDS-M2N4-480G0-E1-T1E-OSE-080 | Micron       | MTFDKBA480TFR-1BC15ABYY     | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD |
+    | HDS-M2N4-480G0-E1-TXD-NON-080 | Micron       | MTFDKBA480TFR-1BC1ZABYY     | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD  |
+    | HDS-M2N4-800G0-E3-TXD-NON-080 | Micron       | MTFDKBA800TFS-1BC1ZABYY     | 800GB    | Micron 7450 MAX 800GB NVMe PCIe 4.0 M.2 22x80 mm, 3DWPD 3D TLC |
+    | HDS-M2N4-960G0-E1-TXE-OSE-080 | Micron       | MTFDKBA960TFR-1BC15ABYY     | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD |
+    | HDS-M2N4-960G0-E1-TXD-NON-080 | Micron       | MTFDKBA960TFR-1BC1ZABYY     | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD  |
+    | HDS-M2N4-001T9-E1-TXE-OSE-110 | Micron       | MTFDKBG1T9TFR-1BC15ABYY     | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm TCG Opal 2.0, 1DWPD |
+    | HDS-M2N4-001T9-E1-TXD-NON-110 | Micron       | MTFDKBG1T9TFR-1BC1ZABYY     | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD |
+    | HDS-M2N4-003T8-E1-TXD-NON-110 | Micron       | MTFDKBG3T8TFR-1BC1ZABYY     | 3840GB   | Micron 7450 PRO 3.8TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD |
+    | HDS-M2N4-960G0-E1-TXD-NON-110 | Micron       | MTFDKBG960TFR-1BC1ZABYY     | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD |
+    | HDS-M2N4-01T92-E1-T1D-SED-110 | Samsung      | MZ1L21T9HCLS-00A07          | 1920GB   | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED   |
+    | HDS-M2N4-003T8-E1-TXD-SED-110 | Samsung      | MZ1L23T8HBLA-00A07          | 3840GB   | Samsung PM9A3 3.8TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED   |
+    | HDS-M2N4-960G0-E1-T1D-SED-110 | Samsung      | MZ1L2960HCJR-00A07          | 960GB    | Samsung PM9A3 960GB NVMe PCIe Gen4 V6 M.2 22x110M (1DWPD) SED  |
 
 </details>
 <details><summary>PSU</summary>
@@ -522,12 +622,12 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
         clearance, standard 2-slot GPU (&lt;38mm thickness) recommended for
         optimum cooling
     -   Case dimensions (LxWxH): 547 x 240 x 475 mm
--   A 4U cassis cannot accommodate the [NVIDIA RTX PRO 6000 Blackwell Desktop](https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272)
+-   A 4U chassis cannot accommodate the [NVIDIA RTX PRO 6000 Blackwell Desktop](https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272)
     version. The card is 137 mm high, but the power connector is located
     at the top. The RTX 4090 is the same height, and the power connector
     is also located on the top. The [Squeezing an RTX 4090 into the 4u Rosewell Server Chassis](https://youtu.be/HQ2EEQkbk8Y?t=289)
     video demonstrates that even though the card itself fits into the
-    cassis, the protruding power connector prevents mounting the lid.
+    chassis, the protruding power connector prevents mounting the lid.
 
 </details>
 <details><summary>GPU</summary>
@@ -551,49 +651,38 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
 
 
 -   AMD EPYC Zen 4 / Zen 5 processors with a TDP of less than 300 W
-    -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
-        | Processor Model | Lowest Listed Price (Ft) | Notes / Citation                                 |
-        | --------------- | ------------------------ | ------------------------------------------------ |
-        | **EPYC 9354**   | **601 410 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
-        | **EPYC 9354P**  | **917 673 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
-        | **EPYC 9454**   | **913 180 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
-        | **EPYC 9454P**  | **829 448 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
-        | **EPYC 9534**   | **753 930 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_2]) |
-        | **EPYC 9634**   | **1 963 614 Ft**         | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_2]) |
+    -   Zen 4:
+        -   Below 300 W: 9354, 9354P, 9454, 9454P, 9534, 9634
+        -   [Above 300 W](https://www.amd.com/en/products/specifications/server-processor.html):
+            9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554, 9554P, 9654, 9654P,
+            9684X, 9734, 9754, 9754S
+
+        | Processor Model   | Lowest Listed Price (Ft) | Notes / Citation               |
+        |-------------------|--------------------------|--------------------------------|
+        | **Below 300 W**   |                          |                                |
+        | 9354 ←            | 601 410                  | ([Árukereső.hu][cpu_zen4_0_1]) |
+        | 9354P             | 917 673                  | ([Árukereső.hu][cpu_zen4_0_1]) |
+        | 9454              | 913 180                  | ([Árukereső.hu][cpu_zen4_0_1]) |
+        | 9454P             | 829 448                  | ([Árukereső.hu][cpu_zen4_0_1]) |
+        | 9534 ←            | 753 930                  | ([Árukereső.hu][cpu_zen4_0_2]) |
+        | 9634              | 1 963 614                | ([Árukereső.hu][cpu_zen4_0_2]) |
+        | **Above 300 W**   |                          |                                |
+        | 9174F ←           | 1 082 453                | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9184X ←           | 1 660 384                | ([Árukereső.hu][cpu_zen4_1_2]) |
+        | 9274F             | 655 800                  | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9374F             | 985 980                  | ([Árukereső.hu][cpu_zen4_1_3]) |
+        | 9384X             | 1 997 695                | ([Árukereső.hu][cpu_zen4_1_2]) |
+        | 9474F             | 1 572 490                | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9554              | 807 950                  | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9554P             | 1 079 486                | ([Árukereső.hu][cpu_zen4_2_1]) |
+        | 9654              | 917 690                  | ([Árukereső.hu][cpu_zen4_2_2]) |
+        | 9654P             | 935 813                  | ([Árukereső.hu][cpu_zen4_2_2]) |
+        | 9684X             | 2 118 660                | ([Árukereső.hu][cpu_zen4_2_3]) |
+        | 9734              | 1 021 110                | ([Árukereső.hu][cpu_zen4_2_4]) |
+        | 9754 ←            | 1 243 230                | ([Árukereső.hu][cpu_zen4_2_5]) |
 
         [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
         [cpu_zen4_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-    -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
-        | Processor Model | Lowest Listed Price (Ft) | Notes / Citation                |
-        |-----------------|-------------------------|---------------------------------|
-        | 9355            | 1,175,000               | [Árukereső.hu][pr9355]          |
-        | 9355P           | —                       | —                               |
-        | 9365            | 1,365,900               | —                               |
-        | 9455P           | —                       | —                               |
-        | 9455            | 1,600,431               | —                               |
-        | 9535            | 2,300,852               | —                               |
-
-        [pr9355]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355-32-core-3-55ghz-sp5-tray-100-000001148-p1149737854/
--   CPU candidates whose configurable TDP (cTDP) is
-    [above 300 W](https://www.amd.com/en/products/specifications/server-processor.html):
-    -   Zen 4: 9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554,
-        9554P, 9654, 9654P, 9684X, 9734, 9754, 9754S
-        | Processor Model | Lowest Price (Ft)   | Notes / Citation                        |
-        |-----------------|---------------------|-----------------------------------------|
-        | **EPYC 9174F**  | 1 082 453 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
-        | **EPYC 9184X**  | 1 660 384 Ft        | ([Árukereső.hu][cpu_zen4_1_2])          |
-        | **EPYC 9274F**  |   655 800 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
-        | **EPYC 9374F**  |   985 980 Ft        | ([Árukereső.hu][cpu_zen4_1_3])          |
-        | **EPYC 9384X**  | 1 997 695 Ft        | ([Árukereső.hu][cpu_zen4_1_2])          |
-        | **EPYC 9474F**  | 1 572 490 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
-        | **EPYC 9554**   |   807 950 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
-        | **EPYC 9554P**  | 1 079 486 Ft        | ([Árukereső.hu][cpu_zen4_2_1])          |
-        | **EPYC 9654**   |   917 690 Ft        | ([Árukereső.hu][cpu_zen4_2_2])          |
-        | **EPYC 9654P**  |   935 813 Ft        | ([Árukereső.hu][cpu_zen4_2_2])          |
-        | **EPYC 9684X**  | 2 118 660 Ft        | ([Árukereső.hu][cpu_zen4_2_3])          |
-        | **EPYC 9734**   | 1 021 110 Ft        | ([Árukereső.hu][cpu_zen4_2_4])          |
-        | **EPYC 9754**   | 1 243 230 Ft        | ([Árukereső.hu][cpu_zen4_2_5])          |
-
         [cpu_zen4_1_1]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
         [cpu_zen4_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C768-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
         [cpu_zen4_1_3]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, AMD Socket SP5"
@@ -604,25 +693,39 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
         [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/?utm_source=chatgpt.com "AMD EPYC 9754 128-Core 2.25GHz SP5 Tray (100-000001234 ..."
         [cpu_zen4_2_6]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754s-2-25ghz-tray-p1046085382/?utm_source=chatgpt.com "AMD Epyc 9754S 2.25GHz Tray vásárlás, olcsó ... - Árukereső.hu"
 
-    -   Zen 5: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565,
-        9575F, 9645, 9655, 9655P, 9745, 9825, 9845
-        | Processor Model | Lowest Listed Price (Ft) | Notes / Source                                                                                                        |
-        |-----------------|-------------------------|------------------------------------------------------------------------------------------------------------------------|
-        | **EPYC 9175F**  | 1 130 275 Ft            | via L3 cache 512 MB ([Árukereső.hu][cpu_zen5_1_1])                                                                     |
-        | **EPYC 9275F**  | 1 143 398 Ft            | Single price listing ([Árukereső.hu][cpu_zen5_1_2])                                                                    |
-        | **EPYC 9375F**  | 2 129 697 Ft            | Product not available; last price recorded on Aug 9, 2025 ([Árukereső.hu][cpu_zen5_1_3])                               |
-        | **EPYC 9475F**  | 1 694 576 Ft            | via L3 cache 256 MB listing ([Árukereső.hu][cpu_zen5_1_4]); price trend shows minimum at 2 412 365 Ft ([cpu_zen5_1_5]) |
-        | **EPYC 9555**   | 2 329 744 Ft            | Current best price ([Árukereső.hu][cpu_zen5_1_6])                                                                      |
-        | **EPYC 9555P**  | 2 095 250 Ft            | from product listing ([Árukereső.hu][cpu_zen5_1_6])                                                                    |
-        | **EPYC 9565**   | 2 388 790 Ft            | via Socket SP5 filter ([Árukereső.hu][cpu_zen5_1_7])                                                                   |
-        | **EPYC 9575F**  | 2 840 784 Ft            | Listed as “Tray (100-000001554)”, Socket SP5 ([Árukereső.hu][cpu_zen5_2_1])                                            |
-        | **EPYC 9645**   | 2 770 900 Ft            | OEM Tray, Socket SP5 ([Árukereső.hu][cpu_zen5_2_2])                                                                    |
-        | **EPYC 9655**   | 2 431 037 Ft            | Tray model, Socket SP5 ([Árukereső.hu][cpu_zen5_2_1])                                                                  |
-        | **EPYC 9655P**  | 3 028 591 Ft            | Tray (P variant), Socket SP5 ([Árukereső.hu][cpu_zen5_2_3])                                                            |
-        | **EPYC 9745**   | — Not found —           | No listings located                                                                                                    |
-        | **EPYC 9825**   | — Not found —           | No listings located                                                                                                    |
-        | **EPYC 9845**   | — Not found —           | No listings located                                                                                                    |
+    -   Zen 5:
+        -   Below 300 W: 9355P, 9355, 9365, 9455P, 9455, 9535
+        -   Above 300 W: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565
 
+        | Processor Model   | Lowest Listed Price (Ft) | Notes / Citation               |
+        |-------------------|--------------------------|--------------------------------|
+        | **Below 300 W**   |                          |                                |
+        | 9355P             | 1 424 902                | ([Árukereső.hu][cpu_zen5_0_1]) |
+        | 9355 ←            | 1 170 521                | ([Árukereső.hu][cpu_zen5_0_2]) |
+        | 9365              | 1 365 900                | ([Árukereső.hu][cpu_zen5_0_2]) |
+        | 9455P             | 1 557 900                | ([Árukereső.hu][cpu_zen5_0_3]) |
+        | 9455              | 1 594 330                | ([Árukereső.hu][cpu_zen5_0_4]) |
+        | 9535              | — Not listed             | No listings found              |
+        | **Above 300 W**   |                          |                                |
+        | 9175F ←?          | 1 130 275                | ([Árukereső.hu][cpu_zen5_1_1]) |
+        | 9275F             | 1 143 398                | ([Árukereső.hu][cpu_zen5_1_2]) |
+        | 9375F             | 2 129 697                | ([Árukereső.hu][cpu_zen5_1_3]) |
+        | 9475F             | 1 694 576                | ([Árukereső.hu][cpu_zen5_1_4]) |
+        | 9555              | 2 329 744                | ([Árukereső.hu][cpu_zen5_1_6]) |
+        | 9555P             | 2 095 250                | ([Árukereső.hu][cpu_zen5_1_6]) |
+        | 9565              | 2 388 790                | ([Árukereső.hu][cpu_zen5_1_7]) |
+        | 9575F             | 2 840 784                | ([Árukereső.hu][cpu_zen5_2_1]) |
+        | 9645              | 2 770 900                | ([Árukereső.hu][cpu_zen5_2_2]) |
+        | 9655              | 2 431 037                | ([Árukereső.hu][cpu_zen5_2_1]) |
+        | 9655P             | 3 028 591                | ([Árukereső.hu][cpu_zen5_2_3]) |
+        | 9745              | — Not found —            | No listings located            |
+        | 9825              | — Not found —            | No listings located            |
+        | 9845              | — Not found —            | No listings located            |
+
+        [cpu_zen5_0_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355p-32-core-3-55ghz-sp5-tray-100-000001521-p1149737872/?utm_source=chatgpt.com "AMD EPYC 9355P 32-Core 3.55GHz SP5 Tray (100-000001521 ..."
+        [cpu_zen5_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A4-nm%2Camd-epyc/?orderby=13&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen5_0_3]: https://www.arukereso.hu/processzor-c3139/kiszereles-talcas-oem/?utm_source=chatgpt.com "Kiszerelés: Tálcás (OEM) - Processzor - Árukereső.hu"
+        [cpu_zen5_0_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas-oem/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
         [cpu_zen5_1_1]: https://www.arukereso.hu/processzor-c3139/512-mb-l3-cache/?utm_source=chatgpt.com "L3 cache: 512 MB - Processzor árak összehasonlítása - Árukereső.hu"
         [cpu_zen5_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
         [cpu_zen5_1_3]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9375f-32-core-3-8ghz-sp5-tray-100-000001197-p1162090915/?utm_source=chatgpt.com "AMD EPYC 9375F 32-Core 3.8GHz SP5 Tray (100-000001197 ..."
@@ -642,12 +745,14 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
 </details>
 <details><summary>RAM prices</summary>
 
--   [DDR5 RDIMM 1Rx4 or 2Rx8](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-32-gb,memoria-tipusa-ddr5,tipus-szerver-memoria,sebesseg=4800-9200/?orderby=1&st=RDIMM)
+-   Vendors:
+    -   [Micron RDIMM memory part catalog](https://www.micron.com/products/memory/dram-modules/rdimm/part-catalog)
+-   Requirement:
+    -   [DDR5 RDIMM 1Rx4 or 2Rx8](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-32-gb,memoria-tipusa-ddr5,tipus-szerver-memoria,sebesseg=4800-9200/?orderby=1&st=RDIMM)
+
 -   For 1-CPU architecture: 12 x 32 GB RDIMM 1Rx4 or 2Rx8 (384 GB in total)
-    -   Vendors:
-        -   [Micron RDIMM memory part catalog](https://www.micron.com/products/memory/dram-modules/rdimm/part-catalog)
     -   Candidates:
-        -   12 x [Micron RDIMM DDR5 32GB 2Rx8 6400MHz PC5-51200 ECC REGISTERED | MTC20F2085S1RC64BR](https://www.senetic.hu/product/MTC20F2085S1RC64BR): 12 x 225 = 2700 EUR
+        -   12 x [Micron RDIMM DDR5 32GB 2Rx8 6400MHz PC5-51200 ECC REGISTERED | MTC20F2085S1RC64BR](https://www.senetic.hu/product/MTC20F2085S1RC64BR): 12 x 180 = 2100 EUR
         -   12 x [Micron 32GB DDR5 4800MHz MTC20F2085S1RC48BR](https://www.arukereso.hu/memoria-modul-c3577/micron/32gb-ddr5-4800mhz-mtc20f2085s1rc48br-p1004252032/) 12 x 200 = 2400 EUR
         -   12 x [Samsung 32GB DDR5 5600MHz M321R4GA3PB0-CWM](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3pb0-cwm-p1051234201/): 12 x 200 = 2400 EUR
         -   12 x [M321R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga0bb0-cqk/),
@@ -770,7 +875,7 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
     >   -   Operating system: Ubuntu Linux 22.04 LTS Server Edition (64-bit)
     >   -   Networking: 2 x 10GbE LAN ports (RJ45, X710-AT2), one utilized at 10Gb
     >   -   Additional PCIe 5.0 card: ASUS 90SC0M60-M0XBN0
--
+
 
 </details> <!-- Server links -->
 
