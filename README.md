@@ -5,6 +5,9 @@ running machine learning models and large language models locally. The aim is
 to support engineers and stakeholders to make a well-informed decision when
 procuring LLM infrastructure.
 
+Actual hardware configuration is detailed in
+[local_ml_hardware_alternatives.md](local_ml_hardware_alternatives.md#server).
+
 The following use cases are considered, based on the [LocalScore](https://www.localscore.ai/about) benchmark:
 
 | Use<br>case | Description                                                                      | Prompt<br>Tokens | Text Generation<br>Tokens |
@@ -51,7 +54,6 @@ The following hardware configurations are examined.
 
 See the detailed analysis in [local_ml_models.md](local_ml_models.md)
 
-Actual hardware alternatives are detailed in [local_ml_hardware_alternatives.md](local_ml_hardware_alternatives.md)
 
 Table fo contents:
 - [Introduction](local_ml_models.md#introduction)

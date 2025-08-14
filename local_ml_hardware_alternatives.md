@@ -5,14 +5,7 @@
 -   [Workstation](#workstation)
 -   [Server](#server)
     -   [Requirements](#server-requirements)
-
-The following GPU alternatives are listed:
--   NVIDIA RTX PRO 6000 Blackwell (96GB)
--   NVIDIA GeForce RTX 5090 (32GB)
--   NVIDIA GeForce RTX 5070 Ti SUPER (24GB)
--   NVIDIA GeForce RTX 5080 SUPER (24GB)
--   AMD Radeon RX 7900 XTX (24GB)
--   AMD Radeon AI PRO R9700
+-   [GPUs](#gpus)
 
 Refer to the *[Which GPU(s) to Get for Deep Learning: My Experience
 and Advice for Using GPUs in Deep Learning](https://timdettmers.com/2023/01/30/which-gpu-for-deep-learning/)*
@@ -302,503 +295,695 @@ Desktop CPU Links:
 | Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
 | **Total**   |                                                    |                     |         **2,285,102**   |
 
-[alternative](| Case + PSU  | Supermicro SuperChassis 747BTQ-R2K04B              |         505,935     |             505,935     |)
+[alternative]: # (| Case + PSU  | Supermicro SuperChassis 747BTQ-R2K04B              |         505,935     |             505,935     |)
 
+### Specs
 
-<details><summary>Specs</summary>
+<details><summary>CPU: AMD EPYC 9004 / 9005 (SP5 socket)</summary>
 
--   CPU: AMD EPYC 9004 / 9005 (SP5 socket)
-    -   Minimum 12 x DDR5 4800 MT/s RAM
-        -   RAM module side memory bandwidth:
-            -   [1-CPU config](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-memory-capabilities.jpg):
-                12 x 8 x 4.8 GT/s = 460.8 GB/s
-                -   Supports 6x PCIe 5.0 x16 GPUs
-            -   2-CPU config: 24 x 8 x 4.8 GT/s = 921.6 GB/s
-    -   Minimum 8 CCDs per processor:
-        -   CPU side memory bandwidth:
-            -   Zen 4: 8 x 32 x 1.8 GHz = 460.8 GB/s
-            -   Zen 5: 8 x 32 x 2.0 GHz = 512.0 GB/s
-            -   Supports 6x PCIe 5.0 x16 GPUs (6 x 63 = 378 GB/s)
-    -   CPU candidates which support PCIe 5.0 x16:
-        -   [Zen 4](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)):
-            Any AMD EPYC 9004 CPU, except 9124, 9224, 9254, 9334, because n_CCD < 8
-        -   [Zen 5](https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)):
-            Any AMD EPYC 9005 CPU, except 9015, 9115, 9135, 9255, 9335, 9365, because n_CCD < 8
-        -   [EPYC 9004 Series CPU Positioning](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-positioning.jpg)
-            ![EPYC 9004 Series CPU Positioning.png](<assets/EPYC 9004 Series CPU Positioning.png>)
-        -   Complete list of CPU candidates:
-            -   Zen 4: 9174F, 9184X, 9274F, 9354, 9354P, 9374F, 9384X,
-                9454, 9454P, 9474F, 9534, 9554, 9554P, 9634, 9654, 9654P,
-                9684X, 9734, 9754, 9754S
-            -   Zen 5: 4245P, 4345P, 4465P, 4545P, 4565P, 4585PX, 9175F,
-                9275F, 9355, 9355P, 9375F, 9455, 9455P, 9475F, 9535, 9555,
-                9555P, 9565, 9575F, 9645, 9655, 9655P, 9745, 9755, 9825,
-                9845, 9965
-        -   If CPU inference is not a priority, then lower core count and
-            thus lower DTP/cDTP is sufficient.
-        -   All CPUs below the 240 TDP line have less than 8 CCDs, so they cannot utilize the available RAM bandwidth.
-        -   CPU candidates whose configurable TDP (cTDP) is
-            [in the 240-300 W range](https://www.amd.com/en/products/specifications/server-processor.html):
-            -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
-            -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
-        -   CPU candidates whose configurable TDP (cTDP) is
-            [above 300 W](https://www.amd.com/en/products/specifications/server-processor.html):
-            -   Zen 4: 9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554,
-                9554P, 9654, 9654P, 9684X, 9734, 9754, 9754S
-            -   Zen 5: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565,
-                9575F, 9645, 9655, 9655P, 9745, 9825, 9845
-    -   CPU minimal pick: AMD EPYC 9354
-        ([Wikipedia](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena))))
-        ([AMD](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9354.html))
-        ([TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-9354.c2923))
-        -   Cores: 32
-        -   TDP: 280 W
-        -   Configurable TDP: 240-300 W
-        -   Max. Memory: 12 x 128 = 1536 GB
-        -   PCI-Express: Gen 5, 128 Lanes (CPU only)
-        -   Rated Memory Speed: 4800 MT/s
-        -   Max memory bandwidth:
-            -   12 channels x 8 x 4.8 = 460.8 GB/s,
-            -   8 CCD x 32 x 1.8 GHz FCLK = 460.8 GB/s
-        -   Cache L3: 256 MB (shared)
--   CPU cooler:
-    - [Arctic Freezer 4U-SP5](https://www.arctic.de/en/Freezer-4U-SP5/ACFRE00158A)
-        - Thermal compound: ARCTIC MX-6 0.8 g syringe included
-        - Operating ambient temperature: 0–40 °C
-        - Dimensions: 124 mm (L) × 147 mm (W) × 145 mm (H)
-        - Weight: 1512 g
-        - Compatibility: AMD SP5, server rack unit 4U and up
-        - Heatsink:
-            - Direct touch heat pipes, 10 × Ø 6 mm
-            - 62 aluminum fins
-        - Fans:
-            - 2 × 120 mm PWM fans
-            - Speed: 300–3300 rpm (PWM controlled)
-            - Connector: 4-pin plug, 200 mm cable
-            - Bearing: dual ball bearing
-            - Noise level: 45.3 dBA
-            - Air flow: 81.04 cfm (137.69 m³/h)
-            - Static pressure: 4.35 mmH₂O
-            - Current/voltage: 0.29 A / 12 V DC
-            - Startup voltage: 3.1 V DC
-    -   [Silverstone XE360-SP5](https://www.silverstonetek.com/en/product/info/coolers/xe360_sp5/)
-        -   High Performance Triple 120mm All-In-One Liquid Cooler for AMD Socket SP5
-    -   [Silverstone XED120 WS](https://www.silverstonetek.com/en/product/info/coolers/xed120s_ws/)
-        -   4U Form Factor Industrial-Grade CPU Cooler with TDP 450W for Intel & AMD Server-Grade Sockets
-        -   Model No.: SST-XED120S-WS
-        -   Material: Copper heat pipes with aluminum fins
-        - Application:
-            - Intel LGA4677/4710 (CPU carrier not included)
-            - AMD Socket SP5, SP6, sTR5, SP3, TR4, sWRX8, sWRX9
-        - Fan
-        - Dimensions:
-            - 120mm (W) x 30mm (H) x 120mm (D)
-            - 4.72" (W) x 1.18" (H) x 4.72" (D)
-        - Speed: 500–3000 RPM
-        - Noise level: **44.9 dBA**
-        - Rated voltage: 12V
-        - Rated current: 0.35A
-        - Maximum airflow: 102 CFM
-        - Maximum air pressure: 8.24 mmH2O
-        - Connector: 4-pin PWM
-        - Bearing: Dual ball bearing
-        - MTTF: 70,000 hours
-        - CPU TDP support: up to 450W
-        - Dimensions (with cooler): 120mm (W) x 145mm (H) x 120mm (D)
-            - 4.72" (W) x 5.71" (H) x 4.72" (D)
-    -   [Silverstone XE04-SP5](https://www.silverstonetek.com/en/product/info/coolers/xe04_sp5/)
-        - 4U form factor server/workstation small form factor CPU cooler for AMD SP5 sockets
-        - Model numbers:
-            - SST-XE04-SP5 (Silver+Black)
-            - SST-XE04-SP5B (Black+Black)
-        - Material: aluminum fins and heat pipes
-        - Application: AMD Socket SP5
-        - Fan dimensions: 92mm (W) x 25mm (H) x 92mm (D)
-        - Fan speed: 1500 to 5000 RPM
-        - Noise level: **43 dBA at full speed**
-        - Rated voltage: 12V
-        - Rated current: 0.66A
-        - Maximum airflow: 77.7 CFM
-        - Maximum air pressure: 10.67 mmH2O
-        - Connector: 4-pin PWM
-        - Bearing type: dual ball bearing
-        - MTTF: 90,000 hours
-        - CPU TDP support: up to 400W
-        - Cooler dimensions: 93mm (W) x 128mm (H) x 118mm (D)
--   RAM:
-    -   The target system must support at least 2 NVIDIA RTX PRO 6000 Blackwell (96GB) GPUs
-        -   Required system RAM: >> total GPU VRAM
-            -   2x 96 GB GPUs: 192 GB minimum, 384 GB ideally
-            -   4x 96 GB GPUs: 384 GB minimum, 768 GB ideally
-            -   6x 96 GB GPUs: 576 GB minimum, 1152 GB ideally
-        -   Memory modules:
-            -   Note: From the Genoa (AMD EPYC 4004, 8004, 9004) platform on,
-                [single-rank memory modules will perform well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
-                >   The other important feature is dual rank versus single rank memory.
-                >   With Milan and most Intel platforms, dual-rank memory is crucial to
-                >   maximizing performance. There’s a 25% performance delta on Milan,
-                >   for example. With Genoa, this is brought down to 4.5%. This is
-                >   another considerable cost improvement because cheaper single-rank
-                >   memory can be used.
-            ([Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1))
-        -   Required system RAM bandwidth: min 63 GB/s per GPU (due to PCIe x16 bus bandwidth)
-            -   2 GPUs: min. 126 GB/s
-            -   4 GPUs: min. 252 GB/s
-            -   6 GPUs: min. 378 GB/s
-            -   Lower RAM bandwidth will work, but not at full performance
-    -   [AMD EPYC 9004 Series Memory Population Recommendations](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
-    -   4th Gen AMD EPYC processors support memory with the following characteristics:
-        -   RDIMM: 16GB 1Rx8, 24GB 1Rx8, 32GB 1Rx4, 32GB 2Rx8, 40GB 2Rx8, 48GB 1Rx4, 48GB 2Rx8, 64GB 2Rx4, 80GB 2Rx4, 96GB 2Rx4
-        -   3DS RDIMM: 128GB 2S2Rx4, 192GB 2S2Rx4, 256GB 2S4Rx4, 384GB 2S4Rx4, 512GB 2S8R (pending ecosystem enablement)
-        -   ECC: 80b x4, 80b x8, 72b x4.
-        -   Optimized Bounded Fault ECC DRAM: 80b x4 AMDC, 80b x8, 72b x4
-        -   Use the same memory configuration for all NUMA domains in a single processor socket when using NPS=2 or NPS=4. “NPS” = NUMA node(s) per socket.
-        -   [Table 2-1 shows recommended memory speeds for a variety of memory types](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
-            ![alt text](<assets/AMD EPYC 9004 Processor Memory Population Recommendations.Recommended memory speeds.png>)
-            >   RDIMMs built from x4 and x8 devices are supported. The
-            >   frequencies shown apply to both. The capacities listed only
-            >   represent those of x4 DIMMs. RDIMMs built with x8 devices have
-            >   half the capacity of the x4 RDIMMs with an equal number of
-            >   ranks.
-            >
-            >   The following DIMM types are not supported: LRDIMM, UDIMM, NVDIMM-N, NVDIMM-P
-            >
-            >   All DIMM modules must be RDIMM or RDIMM 3DS module types with
-            >   the same ECC configuration. Do not mix DIMM module types
-            >   within a memory channel. Do not mix x4 and x8 DIMMs within a
-            >   memory channel. Do not mix 3DS and non-3DS memory modules in a
-            >   2DPC system.
-    -   [Samsung candidates](https://semiconductor.samsung.com/dram/module/rdimm/#finder): RDIMM, DDR5, 32GB
-        | Part Number      | Speed      | Org      | Density             |
-        |------------------|------------|----------|---------------------|
-        | M321R4GA0BB0-CQK | 4800 Mbps  | 1R x 4   | (4G x 4) x 20       |
-        | M321R4GA3BB6-CQK | 4800 Mbps  | 2R x 8   | (2G x 8) x 20       |
-        | M329R4GA0BB0-CQK | 4800 Mbps  | 1R x 4   | (4G x 4) x 18 (9x4) |
-        | M321R4GA0EB2-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
-        | M321R4GA3EB2-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
-        | M321R4GA0EB0-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
-        | M321R4GA3EB0-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
-        | M321R4GA0PB0-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
-        | M321R4GA3PB0-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
-        | M321R4GA0EB2-CCP | 6400 Mbps  | 1R x 4   | (4G x 4) x 20       |
-        | M321R4GA3EB2-CCP | 6400 Mbps  | 2R x 8   | (2G x 8) x 20       |
-        | M321R4GA0PB2-CCP | 6400 Mbps  | 1R x 4   | (4G x 4) x 20       |
-        | M321R4GA3PB2-CCP | 6400 Mbps  | 2R x 8   | (2G x 8) x 20       |
-    -   [Kingston candidates](https://www.kingston.com/en/memory/server-premier?memory=ddr5&dimmtype=registered&capacity=32)
-        | Part Number           | Capacity | Org | Ranking | DRAM MFR | Speed MT/s |
-        |-----------------------|----------|-----|---------|----------|-----------:|
-        | KSM48R40BD8-32HA      | 32GB     | X8  | 2R      | Hynix    | 4800       |
-        | KSM48R40BD8-32MD      | 32GB     | X8  | 2R      | Micron   | 4800       |
-        | KSM56R46BD8-32HA      | 32GB     | X8  | 2R      | Hynix    | 5600       |
-        | KSM56R46BD8-32MD      | 32GB     | X8  | 2R      | Micron   | 5600       |
-        | KSM56R46BD8PMI-32HAI  | 32GB     | X8  | 2R      | Hynix    | 5600       |
-        | KSM56R46BD8PMI-32MDI  | 32GB     | X8  | 2R      | Micron   | 5600       |
-        | KSM56R46BS4PMI-32HAI  | 32GB     | X4  | 1R      | Hynix    | 5600       |
-        | KSM56R46BS4PMI-32MDI  | 32GB     | X4  | 1R      | Micron   | 5600       |
-        | KSM64R52BD8-32MD 	    | 32GB     | X8  | 2R      | 16Gbit   | 6400       |
-    -   [Micron candidates](https://www.crucial.com/catalog/memory/server?selectedValues=DDR5-4800@speed--DDR5-5600@speed--DDR5-6400@speed--RDIMM@module_type--DDR5@technology--32GB@density)
-        | Part Number        | Model                       | Capacity | Speed | Type   | Rank | CL  |
-        |--------------------|-----------------------------|----------|-------|--------|------|-----|
-        | MTC20F2085S1RC48BR | Micron DDR5-4800 RDIMM 2Rx8 | 32 GB    | 4800  | RDIMM  | 2Rx8 | 40  |
-        | MTC20F1045S1RC48BR | Micron DDR5-4800 RDIMM 1Rx4 | 32 GB    | 4800  | RDIMM  | 1Rx4 | 40  |
-        | MTC20F2085S1RC56BR | Micron DDR5-5600 RDIMM 2Rx8 | 32 GB    | 5600  | RDIMM  | 2Rx8 | 46  |
-        | MTC20F1045S1RC56BR | Micron DDR5-5600 RDIMM 1Rx4 | 32 GB    | 5600  | RDIMM  | 1Rx4 | 46  |
--   Motherboard:
-    -   Supermicro
-        [H13SSL‑NT](https://www.supermicro.com/en/products/motherboard/H13SSL-NT) /
-        [H13SSL‑N](https://www.supermicro.com/en/products/motherboard/h13ssl-n):
-        -   Form Factor: ATX
-        -   LAN: N: 2x 1 Gbps LAN; NT: 2x 10 Gbps
-        -   12 DDR5 slots,
-        -   up to 3TB RAM support, and
-        -   robust PCIe layout for multi‑GPU.
-        -   CPU: AMD EPYC™ 9004 series Processors
-            -   Single Socket SP5 supported, CPU TDP supports Up to 400W TDP
-        -   System Memory
-            -   Memory Capacity: 12 DIMM slots
-            -   Up to 3TB 3DS ECC Registered RDIMM, DDR5-4800MHz
-        -   Memory Type: 4800 MT/s ECC DDR5 RDIMM (3DS)
-            -   Up to 256GB of memory with speeds of up to 4800MHz (1DPC)
-        -   DIMM Sizes: 16GB, 24GB, 32GB, 40GB, 48GB, 64GB, 80GB, 96GB, 128GB, 192GB, 256GB
-        -   Memory Voltage: 1.1V
-        -   Network Controllers: Dual LAN with Broadcom BCM57416 10GBase-T
-        -   Input / Output
-            -   SATA: 8 SATA3 (6Gbps) port(s)
-            -   LAN: 1 RJ45 Dedicated IPMI LAN port
-            -   USB: 6 USB 3.0 port(s) (4 USB; 2 via header)
-            -   Video Output: 1 VGA port(s)
-            -   Serial Port: 1 COM Port(s) (1 header)
-            -   TPM: 1 TPM Header
-            -   Others
-                -   1 MCIO (PCIe 5.0 x8/SATA3) Port(s)
-                -   2 MCIO (PCIe 5.0 x8) Port(s)
-        -   Expansion Slots
-            -   PCIe
-                -   3 PCIe 5.0 x16 (in x16 slot),
-                -   2 PCIe 5.0 x8
-            -   M.2
-                -   M.2 Interface: 2 SATA/PCIe 4.0 x4
-                -   Form Factor: 2280/22110
-                -   Key: M-Key
-        -   Widely used in community for stable performance ([Newegg.com][3.12]).
-    -   [ASRock Rack GENOAD8QM3‑2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8QM3-2T/BCM#Specifications):
-        -   Not suitable: **Only 8 DIMM slots (1DPC)**
-    -   [ASRock Rack GENOAD8UD‑2T/X550](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8UD-2T/X550#Specifications):
-        -   Not suitable: **Only 8 DIMM slots (1DPC)**
-    -   [ASRock Rack GENOAD24QM3-2L2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD24QM3-2L2T%2FBCM&utm_source=GENOA+launch&utm_medium=11_landing+page#Specifications)
-        -   EEB (12" x 14")
-        -   Single Socket SP5 (LGA 6096), supports AMD EPYC™ 9005*/9004 (with AMD 3D V-Cache™ Technology) and 97x4 series processors
-        -   24 DIMM slots (2DPC), supports DDR5 RDIMM, RDIMM-3DS
-        -   2 PCIe5.0 x16
-        -   7 MCIO (PCIe5.0 x8), 2 MCIO (PCIe5.0 x8 or 8 SATA 6Gb/s)
-        -   Supports 2 M.2 (PCIe5.0 x4)
-    -   [GIGABYTE MZ33-AR0](https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ33-AR0-rev-1x-3x)
-        -   Form Factor: E-ATX, 305 x 330
-        -   CPU
-            -   AMD EPYC™ 9005 Series Processors
-            -   AMD EPYC™ 9004 Series Processors
-            -   Single processor, cTDP up to 400W
-        -   Socket: 1 x LGA 6096 Socket SP5
-        -   Memory
-            -   24 x DIMM slots, DDR5 memory supported
-            -   12-Channel memory per processor
-            -   AMD EPYC™ 9005:
-                -   RDIMM: Up to 4800 MT/s (1DPC)
-                -   RDIMM: Up to 4000 MT/s (1R 2DPC), 3600 MT/s (2R 2DPC)
-            -   AMD EPYC™ 9004:
-                -   RDIMM: Up to 4800 MT/s (1DPC), 3600 MT/s (2DPC)
-        -   LAN: 2 x 10Gb/s LAN (1 x Broadcom® BCM57416)
-            -   Support NCSI function
-            -   1 x 10/100/1000 Mbps Management LAN
-        -   Storage Interface
-            -   MCIO:
-                -   2 x MCIO 8i for 4 x Gen5 NVMe or 16 x SATA
-                -   4 x MCIO 8i for 8 x Gen5 NVMe
-                -   1 x MCIO 8i for 2 x Gen4 NVMe
-            -   M.2:
-                -   1 x M.2 (2280/22110), PCIe Gen4 x4
-            -   RAID: N/A
-    -   [GIGABYTE MZ33-CP1](https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ33-CP1-rev-3x)
-        -   Single AMD EPYC™ 9005/9004 Series Processors
-        -   12-Channel DDR5 RDIMM, 12 x DIMMs
-        -   2 x 1Gb/s LAN ports via Intel® I210-AT
-        -   4 x MCIO 8i connectors with PCIe Gen5 x8 interface
-        -   2 x MCIO 8i connectors with PCIe Gen4 x8 or SATA interface
-        -   1 x M.2 slot with PCIe Gen3 x4 interface
-        -   3 x PCIe Gen5 x16 expansion slots
-        -   1 x PCIe Gen4 x16 expansion slot
-        -   1 x OCP NIC 3.0 PCIe Gen5 x16 slot
-        -   Memory
-            -   12 x DIMM slots
-            -   DDR5 memory supported
-            -   12-Channel memory per processor
-            -   AMD EPYC™ 9005: RDIMM: Up to 6400 MT/s
-            -   AMD EPYC™ 9004: RDIMM: Up to 4800 MT/s
-    -   [GIGABYTE MZ73-LM2](https://www.gigabyte.com/us/Enterprise/Server-Motherboard/MZ73-LM2-rev-3x)
-        -   Dual AMD EPYC™ 9005/9004 Series Processors
-        -   12-Channel DDR5 RDIMM, 24 x DIMMs
-        -   2 x 10Gb/s LAN ports via Broadcom® BCM57416
-        -   2 x MCIO 8i connectors with PCIe Gen5 x8 or SATA interface
-        -   1 x SlimSAS 4i connector with SATA interface
-        -   1 x M.2 slot with PCIe Gen5 x4 interface
-        -   4 x PCIe Gen5 x16 expansion slots
-        -   E‑ATX form factor, includes
-        -   multiple PCIe 5 slots (x16) spaced for GPUs.
-        -   Reddit warns of interference issues between memory and GPU slots on some layouts - ASRock GENOA variants often preferred ([Reddit][3.13]).
-        -   [ServeTheHome forum post](https://forums.servethehome.com/index.php?threads/motherboard-for-dual-epyc-9965-one-that-actually-works-and-fits-a-5090-gpu.48129/#post-471063):
-            >   GigaByte MZ73-LM2 Rev. 3.x E-ATX: as well as its predecessors
-            >   have the famous ""WAIT FOR CHIPSET TO INITIALIZE"" issue and
-            >   the Gigabyte support that let's you down.
-    -   [Asus K14PA-U12](https://servers.asus.com/products/servers/server-motherboards/K14PA-U12#Specifications)
-        -   Form Factor: CEB, 12" x 10.5"
-        -   Processor / System Bus 1 x Socket SP5 (LGA 6096)
-        -   AMD EPYC™ Genoa Processor (up to 400W)
-        -   Memory
-            -   Total Slots: 12 (12-channel, 1-DIMM per Channel)
-            -   Capacity:Maximum up to 3TB
-            -   Memory Type: DDR5 4800 RDIMM/3DS RDIMM
-            -   Memory Size: 256GB, 128GB, 96GB, 64GB, 48GB, 32GB, 24GB, 16GB (RDIMM) (RDIMM)
-                -   Please refer to www.asus.com for latest memory AVL update
-        -   Expansion Slots:
-            -   Total Slot : 3
-            -   3 x PCIe 5.0  (x16 link, FL)
-        -   Storage
-            -   M.2: 1 x M.2 (PCIe Gen5x4, support 2280) (SATA Mode support)
-            -   MCIO
-                -   6 x MCIO connector (PCIe Gen5x8), support 12 x NVMe drives
-                -   2 x MCIO connector (PCIe Gen5x8), support 16 x SATA drives or 4 x NVMe drives
-        -   Networking: 2 x SFP28 25Gb/s (Broadcom BCM57414B1KFSBG) +1 x Mgmt LAN
-        -   On Board I/O
-            -   1 x USB 3.2 Gen1 header (2 port for front panel)
-            -   1 x USB 3.2 Gen1 port (1 port Type-A vertical)
-            -   1 x Serial port header
-            -   6 x FAN header (4-pin)
-            -   1 x TPM header
-            -   1 x Chassis Intruder header (2-pin)
-        -   [Reddit](https://www.reddit.com/r/homelab/comments/1h1iprj/epyc_97x4_genoa_motherboard/) thread:
-            >    I use Asus K14PA-U12.
-            >   -   Pros:
-            >       -   12 RAM slots
-            >       -   8 MCIO connectors (PCIe Gen5 x8)
-            >       -   3 x PCIe Gen5 x16
-            >       -   1 x M.2 (PCIe Gen5 x4)
-            >       -   dual 25 Gbps SFP28
-            >       -   price is ~700 USD
-            >       -   overclocking settings in BIOS
-            >       -   relatively compact form factor
-            >   -   Cons:
-            >       -   they don't plan to release BIOS upgrade for Epyc Turin (I asked)
--   SSD:
-    -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
-    -   [MBD-H13SSL-NT compatible SSD list](https://www.supermicro.com/en/support/resources/m2ssd?SystemID=88241&ProductName=H13SSL-NT)
-        | Part Number                      | Manufacturer | Manufacturer Part #         | Interface   | Capacity | Description                                                      | PWRidle | PWRread | Wide Temp | EOL Date |
-        |----------------------------------|--------------|-----------------------------|-------------|----------|------------------------------------------------------------------|---------|---------|-----------|----------|
-        | HDS-M2N4-400G0-E3-TXD-NON-080    | Micron       | MTFDKBA400TFS-1BC1ZABYY     | NVMe GEN4   | 400GB    | Micron 7450 MAX 400GB NVMe PCIe 4.0 3D TLC M.2 22x80 mm, 3DWPD   | 2.9     | 7.1     | N         |          |
-        | HDS-M2N4-480G0-E1-T1E-OSE-080    | Micron       | MTFDKBA480TFR-1BC15ABYY     | NVMe GEN4   | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD | 2.9     | 7       | N         |          |
-        | HDS-M2N4-480G0-E1-TXD-NON-080    | Micron       | MTFDKBA480TFR-1BC1ZABYY     | NVMe GEN4   | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD    | 2.9     | 7       | N         |          |
-        | HDS-M2N4-800G0-E3-TXD-NON-080    | Micron       | MTFDKBA800TFS-1BC1ZABYY     | NVMe GEN4   | 800GB    | Micron 7450 MAX 800GB NVMe PCIe 4.0 M.2 22x80 mm, 3DWPD 3D TLC   | 2.9     | 7       | N         |          |
-        | HDS-M2N4-960G0-E1-TXE-OSE-080    | Micron       | MTFDKBA960TFR-1BC15ABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD | 2.9     | 7       | N         |          |
-        | HDS-M2N4-960G0-E1-TXD-NON-080    | Micron       | MTFDKBA960TFR-1BC1ZABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD    | 2.9     | 7       | N         |          |
-        | HDS-M2N4-001T9-E1-TXE-OSE-110    | Micron       | MTFDKBG1T9TFR-1BC15ABYY     | NVMe GEN4   | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm TCG Opal 2.0, 1DWPD | 2.9     | 7.5     | N         |          |
-        | HDS-M2N4-001T9-E1-TXD-NON-110    | Micron       | MTFDKBG1T9TFR-1BC1ZABYY     | NVMe GEN4   | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 7.5     | N         |          |
-        | HDS-M2N4-003T8-E1-TXD-NON-110    | Micron       | MTFDKBG3T8TFR-1BC1ZABYY     | NVMe GEN4   | 3840GB   | Micron 7450 PRO 3.8TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 8.2     | N         |          |
-        | HDS-M2N4-960G0-E1-TXD-NON-110    | Micron       | MTFDKBG960TFR-1BC1ZABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 5.7     | N         |          |
-        | HDS-M2N4-01T92-E1-T1D-SED-110    | Samsung      | MZ1L21T9HCLS-00A07          | NVMe M.2    | 1920GB   | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED     | 8.2     | 8.2     | N         |          |
-        | HDS-M2N4-003T8-E1-TXD-SED-110    | Samsung      | MZ1L23T8HBLA-00A07          | NVMe M.2    | 3840GB   | Samsung PM9A3 3.8TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED     | 8.2     | 8.2     | N         |          |
-        | HDS-M2N4-960G0-E1-T1D-SED-110    | Samsung      | MZ1L2960HCJR-00A07          | NVMe M.2    | 960GB    | Samsung PM9A3 960GB NVMe PCIe Gen4 V6 M.2 22x110M (1DWPD) SED    | 2.5     | 7.5     | N         |          |
--   PSU:
-    -   CPU + RAM + SSD + motherboard: ~300-500 W
-    -   GPU:
-        -   NVIDIA GeForce RTX 5090: 575 W
-    -   Total for a 2-GPU setup:
-        -   500 + 2 x 575 = 1550 W
-        -   Headroom: 50%
-        -   Required power supply: 2375 W
-        -   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://seasonic.com/atx3-prime-px-2200/)
-            -   Total continuous power 	2200 W
-    -   Total for a 4-GPU setup:
-        -   500 + 4 x 575 = 2800 W
-        -   Headroom: 50%
-        -   Required power supply: 4200 W
--   Chassis: ATX, E-ATX ([Gamers Nexus - Best PC Cases of 2022 - Best Thermals (Fractal Torrent)](https://youtu.be/pL5uttjPWZE?t=678))
-    -   [Fractal Design Torrent](https://www.fractal-design.com/products/cases/torrent/torrent/black-solid/)
-        -   Expansion slots: 7
-        -   Front interface: 1x USB 3.2 Gen 2x2 Type-C (20 Gbps), 2x USB 3.0, HD Audio
-        -   Total fan mounts: 7x 120/140 mm or 4x 180 mm
-        -   Front fan: 3x 120/140 mm or 2x 180 mm (2x Dynamic GP-18 included in standard version, 2x Prisma AL-18 included in RGB version)
-        -   Rear fan: 1x 120/140 mm
-        -   Bottom fan: 3x 120/140 mm or 2x 180 mm (3x Dynamic GP-14 PWM included in standard version, 3x Prisma AL-14 PWM included in RGB version)
-        -   Dust filters: Front, Bottom
-        -   Fixed cable straps: Yes
-        -   Cable routing grommets: Yes
-        -   Tool-less push-to-lock: Both side panels
-        -   Captive thumbscrews: HDD brackets, SSD brackets, Top panel, Bottom fan bracket
-        -   Left side panel: Steel or Tempered glass (RGB version: Tempered glass only)
-        -   Right side panel: Steel or Tempered glass (Solid/White RGB: Steel, TG/Black RGB: Tempered Glass)
-        -   Compatibility:
-            -   Motherboard: E-ATX / ATX / mATX / ITX / SSI-EEB / SSI-CEB
-            -   Power supply: ATX
-            -   PSU max length: 230 mm
-            -   GPU max length: 461 mm total, 423 mm with front fan mounted
-            -   CPU cooler max height: 188 mm
-            -   Front radiator: Up to 360/420 mm, including 360x180 mm
-            -   Rear radiator: Up to 120/140 mm
-            -   Bottom radiator: Up to 360/420 mm (458 mm max length)
-            -   Cable routing space: 32 mm
-        -   Dimensions:
-            -   Case dimensions (LxWxH): 544 x 242 x 530 mm
-            -   Case dimensions w/o feet/protrusions/screws: 525 x 242 x 495 mm
-            -   Net weight: 11.1 kg (Solid: 10.4 kg, White TG: 10.8 kg)
-            -   Package dimensions (LxWxH): 640 x 343 x 674 mm
-            -   Gross weight: 13.7 kg (Solid: 13 kg, White TG: 13.4 kg)
-    -   [SilverStone SETA H2](https://www.silverstonetek.com/en/product/info/computer-chassis/seh2_b/)
-        -   Model No.: SST-SEH2-B
-        -   Material: Steel
-        -   Motherboard support: SSI-EEB, SSI-CEB, Extended ATX, ATX, Micro-ATX, Mini-ITX
-        -   Drive bays:
-            -   Internal: 3.5"/2.5" x 11, 3.5" x 1 / 2.5" x 2, 2.5" x 2
-        -   Cooling system:
-            -   Front: 120mm x 3 / 140mm x 3
-            -   Rear: 120mm x 1 / 140mm x 1
-            -   Top: 120mm x 3 / 140mm x 3 / 160mm x 2
-            -   Side: 120mm x 2
-        -   Radiator support:
-            -   Front: 120mm / 140mm / 240mm / 280mm / 360mm / 420mm
-            -   Rear: 120mm / 140mm
-            -   Top: 120mm / 140mm / 240mm / 280mm / 360mm / 420mm
-            -   Side: 120mm / 240mm
-        -   CPU cooler height limit: 188mm
-        -   Expansion slots: 8
-        -   Expansion card length limit:
-            -   428.9mm (with front 25mm thickness fans installed)
-            -   330mm (with side radiator & fans installed)
-        -   Power supply: Standard PS2 (ATX)
-            -   PSU length limit: 220mm
-        -   Front I/O ports:
-            -   USB Type-C x 1
-            -   USB 3.0 x 2
-            -   Combo Audio x 1
-        -   Dimensions: 244.9mm (W) x 528.3mm (H) x 543.2mm (D), 70.28 liters
-            -   9.64" (W) x 20.8" (H) x 21.39" (D), 70.28 liters
-        -   See also [Level1Techs: Our DUAL RTX 5090 Silverstone MADNESS Build: Part 1!](https://www.youtube.com/watch?v=VrTHwN6OKG0)
-    -   [SuperChassis 747BTQ-R2K04B](https://www.supermicro.com/en/products/chassis/4U/747/SC747BTQ-R2K04B)
-        -   8x 3.5” SAS/SATA Backplane for Hot-Swappable Drives (Support SES2)
-        -   11x Full-Height, Full-Length Expansion Slots Optimized for 4x Double Width GPU Solution
-        -   (2x) Rear Additional 80mm PWM Fans & (4x) Middle Lower 92mm PWM Fans
-        -   4U / Full Tower Chassis Supports max. Motherboard, Sizes – E-ATX 15.2” x 13.2”/ ATX/Micro ATX
-        -   2000W Redundant Titanium Level Certified High-Efficiency Power Supply
-        -   3x 5.25" External HDD Drive Bays & 8x 3.5” Hot-Swappable HDD Drives
-        -   Form Factor: 4U tower/rachmount chassis - supports for maximum motherboard sizes: 15.2" x 13.2"
-        -   Processor Support: Dual and Single Intel® and AMD processors
-        -   Systems Cooling Fans
-            -   2x 80mm Hot-swap PWM Fans
-            -   4x 92mm hot-swap fan(s)
-        -   Power Supply: 1U 2000W Titanium Redundant Power Supply W/PMbus
-    -   [Fractal Design Define 7](https://www.fractal-design.com/products/cases/define/define-7/)
-        -   Total fan mounts: 9 x 120/140 mm
-        -   Front fan: 3 x 120/140 mm (2 x Dynamic X2 GP-14 included)
-        -   Top fan: 3 x 120/140 mm
-        -   Rear fan: 1 x 120/140 mm (1 x Dynamic X2 GP-14 included)
-        -   Bottom fan: 2 x 120/140 mm
-        -   GPU max length:
-            -   Storage layout: 290 mm
-            -   Open layout: 470 mm (445 mm w/ front fan)
-        -   CPU cooler max height: 185 mm
-            -   OK with [Noctua NH-D15 G2](https://noctua.at/en/nh-d15-g2/specification) CPU cooler
-        -   Front radiator: Up to 360/280 mm
-        -   Top radiator: Up to 360/420 mm
-        -   Rear radiator: 120 mm
-        -   Vertical GPU Support (with Flex B-20 or Flex VRC-25): 65mm total
-            clearance, standard 2-slot GPU (<38mm thickness) recommended for
-            optimum cooling
-        -   Case dimensions (LxWxH): 547 x 240 x 475 mm
-    -   A 4U cassis cannot accommodate the [NVIDIA RTX PRO 6000 Blackwell Desktop](https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272)
-        version. The card is 137 mm high, but the power connector is located
-        at the top. The RTX 4090 is the same height, and the power connector
-        is also located on the top. The [Squeezing an RTX 4090 into the 4u Rosewell Server Chassis](https://youtu.be/HQ2EEQkbk8Y?t=289)
-        video demonstrates that even though the card itself fits into the
-        cassis, the protruding power connector prevents mounting the lid.
+-   Minimum 12 x DDR5 4800 MT/s RAM
+    -   RAM module side memory bandwidth:
+        -   [1-CPU config](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-memory-capabilities.jpg):
+            12 x 8 x 4.8 GT/s = 460.8 GB/s
+            -   Supports 6x PCIe 5.0 x16 GPUs
+        -   2-CPU config: 24 x 8 x 4.8 GT/s = 921.6 GB/s
+-   Minimum 8 CCDs per processor:
+    -   CPU side memory bandwidth:
+        -   Zen 4: 8 x 32 x 1.8 GHz = 460.8 GB/s
+        -   Zen 5: 8 x 32 x 2.0 GHz = 512.0 GB/s
+        -   Supports 6x PCIe 5.0 x16 GPUs (6 x 63 = 378 GB/s)
+-   CPU candidates which support PCIe 5.0 x16:
+    -   [Zen 4](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)):
+        Any AMD EPYC 9004 CPU, except 9124, 9224, 9254, 9334, because n_CCD < 8
+    -   [Zen 5](https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)):
+        Any AMD EPYC 9005 CPU, except 9015, 9115, 9135, 9255, 9335, 9365, because n_CCD < 8
+    -   [EPYC 9004 Series CPU Positioning](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-positioning.jpg)
+        ![EPYC 9004 Series CPU Positioning.png](<assets/EPYC 9004 Series CPU Positioning.png>)
+    -   Complete list of CPU candidates:
+        -   Zen 4: 9174F, 9184X, 9274F, 9354, 9354P, 9374F, 9384X,
+            9454, 9454P, 9474F, 9534, 9554, 9554P, 9634, 9654, 9654P,
+            9684X, 9734, 9754, 9754S
+        -   Zen 5: 4245P, 4345P, 4465P, 4545P, 4565P, 4585PX, 9175F,
+            9275F, 9355, 9355P, 9375F, 9455, 9455P, 9475F, 9535, 9555,
+            9555P, 9565, 9575F, 9645, 9655, 9655P, 9745, 9755, 9825,
+            9845, 9965
+    -   If CPU inference is not a priority, then lower core count and
+        thus lower DTP/cDTP is sufficient.
+    -   All CPUs below the 240 TDP line have less than 8 CCDs, so they cannot utilize the available RAM bandwidth.
+    -   CPU candidates whose configurable TDP (cTDP) is
+        [in the 240-300 W range](https://www.amd.com/en/products/specifications/server-processor.html):
+        -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
+        -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
+    -   CPU candidates whose configurable TDP (cTDP) is
+        [above 300 W](https://www.amd.com/en/products/specifications/server-processor.html):
+        -   Zen 4: 9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554,
+            9554P, 9654, 9654P, 9684X, 9734, 9754, 9754S
+        -   Zen 5: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565,
+            9575F, 9645, 9655, 9655P, 9745, 9825, 9845
+-   CPU minimal pick: AMD EPYC 9354
+    ([Wikipedia](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena))))
+    ([AMD](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9354.html))
+    ([TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-9354.c2923))
+    -   Cores: 32
+    -   TDP: 280 W
+    -   Configurable TDP: 240-300 W
+    -   Max. Memory: 12 x 128 = 1536 GB
+    -   PCI-Express: Gen 5, 128 Lanes (CPU only)
+    -   Rated Memory Speed: 4800 MT/s
+    -   Max memory bandwidth:
+        -   12 channels x 8 x 4.8 = 460.8 GB/s,
+        -   8 CCD x 32 x 1.8 GHz FCLK = 460.8 GB/s
+    -   Cache L3: 256 MB (shared)
+
+</details>
+<details><summary>CPU cooler</summary>
+
+- [Arctic Freezer 4U-SP5](https://www.arctic.de/en/Freezer-4U-SP5/ACFRE00158A)
+    - Thermal compound: ARCTIC MX-6 0.8 g syringe included
+    - Operating ambient temperature: 0–40 °C
+    - Dimensions: 124 mm (L) × 147 mm (W) × 145 mm (H)
+    - Weight: 1512 g
+    - Compatibility: AMD SP5, server rack unit 4U and up
+    - Heatsink:
+        - Direct touch heat pipes, 10 × Ø 6 mm
+        - 62 aluminum fins
+    - Fans:
+        - 2 × 120 mm PWM fans
+        - Speed: 300–3300 rpm (PWM controlled)
+        - Connector: 4-pin plug, 200 mm cable
+        - Bearing: dual ball bearing
+        - Noise level: 45.3 dBA
+        - Air flow: 81.04 cfm (137.69 m³/h)
+        - Static pressure: 4.35 mmH₂O
+        - Current/voltage: 0.29 A / 12 V DC
+        - Startup voltage: 3.1 V DC
+-   [Silverstone XE360-SP5](https://www.silverstonetek.com/en/product/info/coolers/xe360_sp5/)
+    -   High Performance Triple 120mm All-In-One Liquid Cooler for AMD Socket SP5
+-   [Silverstone XED120 WS](https://www.silverstonetek.com/en/product/info/coolers/xed120s_ws/)
+    -   4U Form Factor Industrial-Grade CPU Cooler with TDP 450W for Intel & AMD Server-Grade Sockets
+    -   Model No.: SST-XED120S-WS
+    -   Material: Copper heat pipes with aluminum fins
+    - Application:
+        - Intel LGA4677/4710 (CPU carrier not included)
+        - AMD Socket SP5, SP6, sTR5, SP3, TR4, sWRX8, sWRX9
+    - Fan
+    - Dimensions:
+        - 120mm (W) x 30mm (H) x 120mm (D)
+        - 4.72" (W) x 1.18" (H) x 4.72" (D)
+    - Speed: 500–3000 RPM
+    - Noise level: **44.9 dBA**
+    - Rated voltage: 12V
+    - Rated current: 0.35A
+    - Maximum airflow: 102 CFM
+    - Maximum air pressure: 8.24 mmH2O
+    - Connector: 4-pin PWM
+    - Bearing: Dual ball bearing
+    - MTTF: 70,000 hours
+    - CPU TDP support: up to 450W
+    - Dimensions (with cooler): 120mm (W) x 145mm (H) x 120mm (D)
+        - 4.72" (W) x 5.71" (H) x 4.72" (D)
+-   [Silverstone XE04-SP5](https://www.silverstonetek.com/en/product/info/coolers/xe04_sp5/)
+    - 4U form factor server/workstation small form factor CPU cooler for AMD SP5 sockets
+    - Model numbers:
+        - SST-XE04-SP5 (Silver+Black)
+        - SST-XE04-SP5B (Black+Black)
+    - Material: aluminum fins and heat pipes
+    - Application: AMD Socket SP5
+    - Fan dimensions: 92mm (W) x 25mm (H) x 92mm (D)
+    - Fan speed: 1500 to 5000 RPM
+    - Noise level: **43 dBA at full speed**
+    - Rated voltage: 12V
+    - Rated current: 0.66A
+    - Maximum airflow: 77.7 CFM
+    - Maximum air pressure: 10.67 mmH2O
+    - Connector: 4-pin PWM
+    - Bearing type: dual ball bearing
+    - MTTF: 90,000 hours
+    - CPU TDP support: up to 400W
+    - Cooler dimensions: 93mm (W) x 128mm (H) x 118mm (D)
+
+</details>
+<details><summary>RAM</summary>
+
+-   The target system must support at least 2 NVIDIA RTX PRO 6000 Blackwell (96GB) GPUs
+    -   Required system RAM: >> total GPU VRAM
+        -   2x 96 GB GPUs: 192 GB minimum, 384 GB ideally
+        -   4x 96 GB GPUs: 384 GB minimum, 768 GB ideally
+        -   6x 96 GB GPUs: 576 GB minimum, 1152 GB ideally
+    -   Memory modules:
+        -   Note: From the Genoa (AMD EPYC 4004, 8004, 9004) platform on,
+            [single-rank memory modules will perform well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
+            >   The other important feature is dual rank versus single rank memory.
+            >   With Milan and most Intel platforms, dual-rank memory is crucial to
+            >   maximizing performance. There’s a 25% performance delta on Milan,
+            >   for example. With Genoa, this is brought down to 4.5%. This is
+            >   another considerable cost improvement because cheaper single-rank
+            >   memory can be used.
+        ([Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1))
+    -   Required system RAM bandwidth: min 63 GB/s per GPU (due to PCIe x16 bus bandwidth)
+        -   2 GPUs: min. 126 GB/s
+        -   4 GPUs: min. 252 GB/s
+        -   6 GPUs: min. 378 GB/s
+        -   Lower RAM bandwidth will work, but not at full performance
+-   [AMD EPYC 9004 Series Memory Population Recommendations](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
+-   4th Gen AMD EPYC processors support memory with the following characteristics:
+    -   RDIMM: 16GB 1Rx8, 24GB 1Rx8, 32GB 1Rx4, 32GB 2Rx8, 40GB 2Rx8, 48GB 1Rx4, 48GB 2Rx8, 64GB 2Rx4, 80GB 2Rx4, 96GB 2Rx4
+    -   3DS RDIMM: 128GB 2S2Rx4, 192GB 2S2Rx4, 256GB 2S4Rx4, 384GB 2S4Rx4, 512GB 2S8R (pending ecosystem enablement)
+    -   ECC: 80b x4, 80b x8, 72b x4.
+    -   Optimized Bounded Fault ECC DRAM: 80b x4 AMDC, 80b x8, 72b x4
+    -   Use the same memory configuration for all NUMA domains in a single processor socket when using NPS=2 or NPS=4. “NPS” = NUMA node(s) per socket.
+    -   [Table 2-1 shows recommended memory speeds for a variety of memory types](https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/user-guides/amd-epyc-9004-ug-memory-population-recommendations.pdf)
+        ![alt text](<assets/AMD EPYC 9004 Processor Memory Population Recommendations.Recommended memory speeds.png>)
+        >   RDIMMs built from x4 and x8 devices are supported. The
+        >   frequencies shown apply to both. The capacities listed only
+        >   represent those of x4 DIMMs. RDIMMs built with x8 devices have
+        >   half the capacity of the x4 RDIMMs with an equal number of
+        >   ranks.
+        >
+        >   The following DIMM types are not supported: LRDIMM, UDIMM, NVDIMM-N, NVDIMM-P
+        >
+        >   All DIMM modules must be RDIMM or RDIMM 3DS module types with
+        >   the same ECC configuration. Do not mix DIMM module types
+        >   within a memory channel. Do not mix x4 and x8 DIMMs within a
+        >   memory channel. Do not mix 3DS and non-3DS memory modules in a
+        >   2DPC system.
+-   [Samsung candidates](https://semiconductor.samsung.com/dram/module/rdimm/#finder): RDIMM, DDR5, 32GB
+    | Part Number      | Speed      | Org      | Density             |
+    |------------------|------------|----------|---------------------|
+    | M321R4GA0BB0-CQK | 4800 Mbps  | 1R x 4   | (4G x 4) x 20       |
+    | M321R4GA3BB6-CQK | 4800 Mbps  | 2R x 8   | (2G x 8) x 20       |
+    | M329R4GA0BB0-CQK | 4800 Mbps  | 1R x 4   | (4G x 4) x 18 (9x4) |
+    | M321R4GA0EB2-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
+    | M321R4GA3EB2-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
+    | M321R4GA0EB0-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
+    | M321R4GA3EB0-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
+    | M321R4GA0PB0-CWM | 5600 Mbps  | 1R x 4   | (4G x 4) x 20       |
+    | M321R4GA3PB0-CWM | 5600 Mbps  | 2R x 8   | (2G x 8) x 20       |
+    | M321R4GA0EB2-CCP | 6400 Mbps  | 1R x 4   | (4G x 4) x 20       |
+    | M321R4GA3EB2-CCP | 6400 Mbps  | 2R x 8   | (2G x 8) x 20       |
+    | M321R4GA0PB2-CCP | 6400 Mbps  | 1R x 4   | (4G x 4) x 20       |
+    | M321R4GA3PB2-CCP | 6400 Mbps  | 2R x 8   | (2G x 8) x 20       |
+-   [Kingston candidates](https://www.kingston.com/en/memory/server-premier?memory=ddr5&dimmtype=registered&capacity=32)
+    | Part Number           | Capacity | Org | Ranking | DRAM MFR | Speed MT/s |
+    |-----------------------|----------|-----|---------|----------|-----------:|
+    | KSM48R40BD8-32HA      | 32GB     | X8  | 2R      | Hynix    | 4800       |
+    | KSM48R40BD8-32MD      | 32GB     | X8  | 2R      | Micron   | 4800       |
+    | KSM56R46BD8-32HA      | 32GB     | X8  | 2R      | Hynix    | 5600       |
+    | KSM56R46BD8-32MD      | 32GB     | X8  | 2R      | Micron   | 5600       |
+    | KSM56R46BD8PMI-32HAI  | 32GB     | X8  | 2R      | Hynix    | 5600       |
+    | KSM56R46BD8PMI-32MDI  | 32GB     | X8  | 2R      | Micron   | 5600       |
+    | KSM56R46BS4PMI-32HAI  | 32GB     | X4  | 1R      | Hynix    | 5600       |
+    | KSM56R46BS4PMI-32MDI  | 32GB     | X4  | 1R      | Micron   | 5600       |
+    | KSM64R52BD8-32MD 	    | 32GB     | X8  | 2R      | 16Gbit   | 6400       |
+-   [Micron candidates](https://www.crucial.com/catalog/memory/server?selectedValues=DDR5-4800@speed--DDR5-5600@speed--DDR5-6400@speed--RDIMM@module_type--DDR5@technology--32GB@density)
+    | Part Number        | Model                       | Capacity | Speed | Type   | Rank | CL  |
+    |--------------------|-----------------------------|----------|-------|--------|------|-----|
+    | MTC20F2085S1RC48BR | Micron DDR5-4800 RDIMM 2Rx8 | 32 GB    | 4800  | RDIMM  | 2Rx8 | 40  |
+    | MTC20F1045S1RC48BR | Micron DDR5-4800 RDIMM 1Rx4 | 32 GB    | 4800  | RDIMM  | 1Rx4 | 40  |
+    | MTC20F2085S1RC56BR | Micron DDR5-5600 RDIMM 2Rx8 | 32 GB    | 5600  | RDIMM  | 2Rx8 | 46  |
+    | MTC20F1045S1RC56BR | Micron DDR5-5600 RDIMM 1Rx4 | 32 GB    | 5600  | RDIMM  | 1Rx4 | 46  |
+
+</details>
+<details><summary>Motherboard</summary>
+
+-   Supermicro
+    [H13SSL‑NT](https://www.supermicro.com/en/products/motherboard/H13SSL-NT) /
+    [H13SSL‑N](https://www.supermicro.com/en/products/motherboard/h13ssl-n):
+    -   Form Factor: ATX
+    -   LAN: N: 2x 1 Gbps LAN; NT: 2x 10 Gbps
+    -   12 DDR5 slots,
+    -   up to 3TB RAM support, and
+    -   robust PCIe layout for multi‑GPU.
+    -   CPU: AMD EPYC™ 9004 series Processors
+        -   Single Socket SP5 supported, CPU TDP supports Up to 400W TDP
+    -   System Memory
+        -   Memory Capacity: 12 DIMM slots
+        -   Up to 3TB 3DS ECC Registered RDIMM, DDR5-4800MHz
+    -   Memory Type: 4800 MT/s ECC DDR5 RDIMM (3DS)
+        -   Up to 256GB of memory with speeds of up to 4800MHz (1DPC)
+    -   DIMM Sizes: 16GB, 24GB, 32GB, 40GB, 48GB, 64GB, 80GB, 96GB, 128GB, 192GB, 256GB
+    -   Memory Voltage: 1.1V
+    -   Network Controllers: Dual LAN with Broadcom BCM57416 10GBase-T
+    -   Input / Output
+        -   SATA: 8 SATA3 (6Gbps) port(s)
+        -   LAN: 1 RJ45 Dedicated IPMI LAN port
+        -   USB: 6 USB 3.0 port(s) (4 USB; 2 via header)
+        -   Video Output: 1 VGA port(s)
+        -   Serial Port: 1 COM Port(s) (1 header)
+        -   TPM: 1 TPM Header
+        -   Others
+            -   1 MCIO (PCIe 5.0 x8/SATA3) Port(s)
+            -   2 MCIO (PCIe 5.0 x8) Port(s)
+    -   Expansion Slots
+        -   PCIe
+            -   3 PCIe 5.0 x16 (in x16 slot),
+            -   2 PCIe 5.0 x8
+        -   M.2
+            -   M.2 Interface: 2 SATA/PCIe 4.0 x4
+            -   Form Factor: 2280/22110
+            -   Key: M-Key
+    -   Widely used in community for stable performance ([Newegg.com][3.12]).
+-   [ASRock Rack GENOAD8QM3‑2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8QM3-2T/BCM#Specifications):
+    -   Not suitable: **Only 8 DIMM slots (1DPC)**
+-   [ASRock Rack GENOAD8UD‑2T/X550](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8UD-2T/X550#Specifications):
+    -   Not suitable: **Only 8 DIMM slots (1DPC)**
+-   [ASRock Rack GENOAD24QM3-2L2T/BCM](https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD24QM3-2L2T%2FBCM&utm_source=GENOA+launch&utm_medium=11_landing+page#Specifications)
+    -   EEB (12" x 14")
+    -   Single Socket SP5 (LGA 6096), supports AMD EPYC™ 9005*/9004 (with AMD 3D V-Cache™ Technology) and 97x4 series processors
+    -   24 DIMM slots (2DPC), supports DDR5 RDIMM, RDIMM-3DS
+    -   2 PCIe5.0 x16
+    -   7 MCIO (PCIe5.0 x8), 2 MCIO (PCIe5.0 x8 or 8 SATA 6Gb/s)
+    -   Supports 2 M.2 (PCIe5.0 x4)
+-   [GIGABYTE MZ33-AR0](https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ33-AR0-rev-1x-3x)
+    -   Form Factor: E-ATX, 305 x 330
+    -   CPU
+        -   AMD EPYC™ 9005 Series Processors
+        -   AMD EPYC™ 9004 Series Processors
+        -   Single processor, cTDP up to 400W
+    -   Socket: 1 x LGA 6096 Socket SP5
+    -   Memory
+        -   24 x DIMM slots, DDR5 memory supported
+        -   12-Channel memory per processor
+        -   AMD EPYC™ 9005:
+            -   RDIMM: Up to 4800 MT/s (1DPC)
+            -   RDIMM: Up to 4000 MT/s (1R 2DPC), 3600 MT/s (2R 2DPC)
+        -   AMD EPYC™ 9004:
+            -   RDIMM: Up to 4800 MT/s (1DPC), 3600 MT/s (2DPC)
+    -   LAN: 2 x 10Gb/s LAN (1 x Broadcom® BCM57416)
+        -   Support NCSI function
+        -   1 x 10/100/1000 Mbps Management LAN
+    -   Storage Interface
+        -   MCIO:
+            -   2 x MCIO 8i for 4 x Gen5 NVMe or 16 x SATA
+            -   4 x MCIO 8i for 8 x Gen5 NVMe
+            -   1 x MCIO 8i for 2 x Gen4 NVMe
+        -   M.2:
+            -   1 x M.2 (2280/22110), PCIe Gen4 x4
+        -   RAID: N/A
+-   [GIGABYTE MZ33-CP1](https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ33-CP1-rev-3x)
+    -   Single AMD EPYC™ 9005/9004 Series Processors
+    -   12-Channel DDR5 RDIMM, 12 x DIMMs
+    -   2 x 1Gb/s LAN ports via Intel® I210-AT
+    -   4 x MCIO 8i connectors with PCIe Gen5 x8 interface
+    -   2 x MCIO 8i connectors with PCIe Gen4 x8 or SATA interface
+    -   1 x M.2 slot with PCIe Gen3 x4 interface
+    -   3 x PCIe Gen5 x16 expansion slots
+    -   1 x PCIe Gen4 x16 expansion slot
+    -   1 x OCP NIC 3.0 PCIe Gen5 x16 slot
+    -   Memory
+        -   12 x DIMM slots
+        -   DDR5 memory supported
+        -   12-Channel memory per processor
+        -   AMD EPYC™ 9005: RDIMM: Up to 6400 MT/s
+        -   AMD EPYC™ 9004: RDIMM: Up to 4800 MT/s
+-   [GIGABYTE MZ73-LM2](https://www.gigabyte.com/us/Enterprise/Server-Motherboard/MZ73-LM2-rev-3x)
+    -   Dual AMD EPYC™ 9005/9004 Series Processors
+    -   12-Channel DDR5 RDIMM, 24 x DIMMs
+    -   2 x 10Gb/s LAN ports via Broadcom® BCM57416
+    -   2 x MCIO 8i connectors with PCIe Gen5 x8 or SATA interface
+    -   1 x SlimSAS 4i connector with SATA interface
+    -   1 x M.2 slot with PCIe Gen5 x4 interface
+    -   4 x PCIe Gen5 x16 expansion slots
+    -   E‑ATX form factor, includes
+    -   multiple PCIe 5 slots (x16) spaced for GPUs.
+    -   Reddit warns of interference issues between memory and GPU slots on some layouts - ASRock GENOA variants often preferred ([Reddit][3.13]).
+    -   [ServeTheHome forum post](https://forums.servethehome.com/index.php?threads/motherboard-for-dual-epyc-9965-one-that-actually-works-and-fits-a-5090-gpu.48129/#post-471063):
+        >   GigaByte MZ73-LM2 Rev. 3.x E-ATX: as well as its predecessors
+        >   have the famous ""WAIT FOR CHIPSET TO INITIALIZE"" issue and
+        >   the Gigabyte support that let's you down.
+-   [Asus K14PA-U12](https://servers.asus.com/products/servers/server-motherboards/K14PA-U12#Specifications)
+    -   Form Factor: CEB, 12" x 10.5"
+    -   Processor / System Bus 1 x Socket SP5 (LGA 6096)
+    -   AMD EPYC™ Genoa Processor (up to 400W)
+    -   Memory
+        -   Total Slots: 12 (12-channel, 1-DIMM per Channel)
+        -   Capacity:Maximum up to 3TB
+        -   Memory Type: DDR5 4800 RDIMM/3DS RDIMM
+        -   Memory Size: 256GB, 128GB, 96GB, 64GB, 48GB, 32GB, 24GB, 16GB (RDIMM) (RDIMM)
+            -   Please refer to www.asus.com for latest memory AVL update
+    -   Expansion Slots:
+        -   Total Slot : 3
+        -   3 x PCIe 5.0  (x16 link, FL)
+    -   Storage
+        -   M.2: 1 x M.2 (PCIe Gen5x4, support 2280) (SATA Mode support)
+        -   MCIO
+            -   6 x MCIO connector (PCIe Gen5x8), support 12 x NVMe drives
+            -   2 x MCIO connector (PCIe Gen5x8), support 16 x SATA drives or 4 x NVMe drives
+    -   Networking: 2 x SFP28 25Gb/s (Broadcom BCM57414B1KFSBG) +1 x Mgmt LAN
+    -   On Board I/O
+        -   1 x USB 3.2 Gen1 header (2 port for front panel)
+        -   1 x USB 3.2 Gen1 port (1 port Type-A vertical)
+        -   1 x Serial port header
+        -   6 x FAN header (4-pin)
+        -   1 x TPM header
+        -   1 x Chassis Intruder header (2-pin)
+    -   [Reddit](https://www.reddit.com/r/homelab/comments/1h1iprj/epyc_97x4_genoa_motherboard/) thread:
+        >    I use Asus K14PA-U12.
+        >   -   Pros:
+        >       -   12 RAM slots
+        >       -   8 MCIO connectors (PCIe Gen5 x8)
+        >       -   3 x PCIe Gen5 x16
+        >       -   1 x M.2 (PCIe Gen5 x4)
+        >       -   dual 25 Gbps SFP28
+        >       -   price is ~700 USD
+        >       -   overclocking settings in BIOS
+        >       -   relatively compact form factor
+        >   -   Cons:
+        >       -   they don't plan to release BIOS upgrade for Epyc Turin (I asked)
+    [3.7]: https://www.newegg.com/p/pl?N=100007629+601411369&srsltid=AfmBOorDHas0epelrMNy2kXSwLPh7xgASlrIeIDU2XXqA3ZYBGRT9cm3&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
+    [3.12]: https://www.newegg.com/p/pl?N=100007629+601411369&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
+    [3.13]: https://www.reddit.com/r/homelab/comments/1h1iprj?utm_source=chatgpt.com "Epyc 97x4 Genoa Motherboard"
+
+</details>
+<details><summary>SSD</summary>
+
+-   Supported SSDs may be limited by the motherboard's qualified vendor list (QVL)
+-   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
+-   [MBD-H13SSL-NT compatible SSD list](https://www.supermicro.com/en/support/resources/m2ssd?SystemID=88241&ProductName=H13SSL-NT)
+    | Part Number                      | Manufacturer | Manufacturer Part #         | Interface   | Capacity | Description                                                      | PWRidle | PWRread | Wide Temp | EOL Date |
+    |----------------------------------|--------------|-----------------------------|-------------|----------|------------------------------------------------------------------|---------|---------|-----------|----------|
+    | HDS-M2N4-400G0-E3-TXD-NON-080    | Micron       | MTFDKBA400TFS-1BC1ZABYY     | NVMe GEN4   | 400GB    | Micron 7450 MAX 400GB NVMe PCIe 4.0 3D TLC M.2 22x80 mm, 3DWPD   | 2.9     | 7.1     | N         |          |
+    | HDS-M2N4-480G0-E1-T1E-OSE-080    | Micron       | MTFDKBA480TFR-1BC15ABYY     | NVMe GEN4   | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD | 2.9     | 7       | N         |          |
+    | HDS-M2N4-480G0-E1-TXD-NON-080    | Micron       | MTFDKBA480TFR-1BC1ZABYY     | NVMe GEN4   | 480GB    | Micron 7450 PRO 480GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD    | 2.9     | 7       | N         |          |
+    | HDS-M2N4-800G0-E3-TXD-NON-080    | Micron       | MTFDKBA800TFS-1BC1ZABYY     | NVMe GEN4   | 800GB    | Micron 7450 MAX 800GB NVMe PCIe 4.0 M.2 22x80 mm, 3DWPD 3D TLC   | 2.9     | 7       | N         |          |
+    | HDS-M2N4-960G0-E1-TXE-OSE-080    | Micron       | MTFDKBA960TFR-1BC15ABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm TCG Opal 2.0, 1DWPD | 2.9     | 7       | N         |          |
+    | HDS-M2N4-960G0-E1-TXD-NON-080    | Micron       | MTFDKBA960TFR-1BC1ZABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x80mm 3D TLC, 1DWPD    | 2.9     | 7       | N         |          |
+    | HDS-M2N4-001T9-E1-TXE-OSE-110    | Micron       | MTFDKBG1T9TFR-1BC15ABYY     | NVMe GEN4   | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm TCG Opal 2.0, 1DWPD | 2.9     | 7.5     | N         |          |
+    | HDS-M2N4-001T9-E1-TXD-NON-110    | Micron       | MTFDKBG1T9TFR-1BC1ZABYY     | NVMe GEN4   | 1920GB   | Micron 7450 PRO 1.9TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 7.5     | N         |          |
+    | HDS-M2N4-003T8-E1-TXD-NON-110    | Micron       | MTFDKBG3T8TFR-1BC1ZABYY     | NVMe GEN4   | 3840GB   | Micron 7450 PRO 3.8TB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 8.2     | N         |          |
+    | HDS-M2N4-960G0-E1-TXD-NON-110    | Micron       | MTFDKBG960TFR-1BC1ZABYY     | NVMe GEN4   | 960GB    | Micron 7450 PRO 960GB NVMe PCIe 4.0 M.2 22x110mm 3D TLC, 1DWPD   | 2.9     | 5.7     | N         |          |
+    | HDS-M2N4-01T92-E1-T1D-SED-110    | Samsung      | MZ1L21T9HCLS-00A07          | NVMe M.2    | 1920GB   | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED     | 8.2     | 8.2     | N         |          |
+    | HDS-M2N4-003T8-E1-TXD-SED-110    | Samsung      | MZ1L23T8HBLA-00A07          | NVMe M.2    | 3840GB   | Samsung PM9A3 3.8TB NVMe PCIe Gen4 V6 M.2 22x110 (1DWPD) SED     | 8.2     | 8.2     | N         |          |
+    | HDS-M2N4-960G0-E1-T1D-SED-110    | Samsung      | MZ1L2960HCJR-00A07          | NVMe M.2    | 960GB    | Samsung PM9A3 960GB NVMe PCIe Gen4 V6 M.2 22x110M (1DWPD) SED    | 2.5     | 7.5     | N         |          |
+
+</details>
+<details><summary>PSU</summary>
+
+-   CPU + RAM + SSD + motherboard: ~300-500 W
 -   GPU:
-    -   AM5/X870E platforms split the CPU PEG lanes to x8/x8 for dual GPUs; x16/x16 isn’t available.
-    -   Physical fit: most RTX 5090 cards are 3–3.5-slot wide. Fitting two often requires:
-        -   A case with 8+ expansion slots and generous bottom clearance
-        -   Motherboard slot spacing that leaves at least 3 full slots between
-            x16_1 and x16_2
-    -   Power: plan for a high-end PSU (typically 1600–2000W) and adequate
-        12V‑2×6 connectors; some boards (e.g., MSI GODLIKE) include a
-        supplemental PCIe slot power header that helps stability with dual
-        GPUs.
-    -   No SLI/NVLink for 5090; dual-GPU is for compute (CUDA/ML), not gaming AFR.
+    -   NVIDIA GeForce RTX 5090: 575 W
+-   Total for a 2-GPU setup:
+    -   500 + 2 x 575 = 1550 W
+    -   Headroom: 50%
+    -   Required power supply: 2375 W
+    -   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://seasonic.com/atx3-prime-px-2200/)
+        -   Total continuous power 	2200 W
+-   Total for a 4-GPU setup:
+    -   500 + 4 x 575 = 2800 W
+    -   Headroom: 50%
+    -   Required power supply: 4200 W
 
-[3.7]: https://www.newegg.com/p/pl?N=100007629+601411369&srsltid=AfmBOorDHas0epelrMNy2kXSwLPh7xgASlrIeIDU2XXqA3ZYBGRT9cm3&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
-[3.12]: https://www.newegg.com/p/pl?N=100007629+601411369&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
-[3.13]: https://www.reddit.com/r/homelab/comments/1h1iprj?utm_source=chatgpt.com "Epyc 97x4 Genoa Motherboard"
+</details>
+<details><summary>Chassis</summary>
 
-</details> <!-- Specs -->
+-   Review: ([Gamers Nexus - Best PC Cases of 2022 - Best Thermals (Fractal Torrent)](https://youtu.be/pL5uttjPWZE?t=678))
+-   [Fractal Design Torrent](https://www.fractal-design.com/products/cases/torrent/torrent/black-solid/)
+    -   Expansion slots: 7
+    -   Front interface: 1x USB 3.2 Gen 2x2 Type-C (20 Gbps), 2x USB 3.0, HD Audio
+    -   Total fan mounts: 7x 120/140 mm or 4x 180 mm
+    -   Front fan: 3x 120/140 mm or 2x 180 mm (2x Dynamic GP-18 included in standard version, 2x Prisma AL-18 included in RGB version)
+    -   Rear fan: 1x 120/140 mm
+    -   Bottom fan: 3x 120/140 mm or 2x 180 mm (3x Dynamic GP-14 PWM included in standard version, 3x Prisma AL-14 PWM included in RGB version)
+    -   Dust filters: Front, Bottom
+    -   Fixed cable straps: Yes
+    -   Cable routing grommets: Yes
+    -   Tool-less push-to-lock: Both side panels
+    -   Captive thumbscrews: HDD brackets, SSD brackets, Top panel, Bottom fan bracket
+    -   Left side panel: Steel or Tempered glass (RGB version: Tempered glass only)
+    -   Right side panel: Steel or Tempered glass (Solid/White RGB: Steel, TG/Black RGB: Tempered Glass)
+    -   Compatibility:
+        -   Motherboard: E-ATX / ATX / mATX / ITX / SSI-EEB / SSI-CEB
+        -   Power supply: ATX
+        -   PSU max length: 230 mm
+        -   GPU max length: 461 mm total, 423 mm with front fan mounted
+        -   CPU cooler max height: 188 mm
+        -   Front radiator: Up to 360/420 mm, including 360x180 mm
+        -   Rear radiator: Up to 120/140 mm
+        -   Bottom radiator: Up to 360/420 mm (458 mm max length)
+        -   Cable routing space: 32 mm
+    -   Dimensions:
+        -   Case dimensions (LxWxH): 544 x 242 x 530 mm
+        -   Case dimensions w/o feet/protrusions/screws: 525 x 242 x 495 mm
+        -   Net weight: 11.1 kg (Solid: 10.4 kg, White TG: 10.8 kg)
+        -   Package dimensions (LxWxH): 640 x 343 x 674 mm
+        -   Gross weight: 13.7 kg (Solid: 13 kg, White TG: 13.4 kg)
+-   [SilverStone SETA H2](https://www.silverstonetek.com/en/product/info/computer-chassis/seh2_b/)
+    -   Model No.: SST-SEH2-B
+    -   Material: Steel
+    -   Motherboard support: SSI-EEB, SSI-CEB, Extended ATX, ATX, Micro-ATX, Mini-ITX
+    -   Drive bays:
+        -   Internal: 3.5"/2.5" x 11, 3.5" x 1 / 2.5" x 2, 2.5" x 2
+    -   Cooling system:
+        -   Front: 120mm x 3 / 140mm x 3
+        -   Rear: 120mm x 1 / 140mm x 1
+        -   Top: 120mm x 3 / 140mm x 3 / 160mm x 2
+        -   Side: 120mm x 2
+    -   Radiator support:
+        -   Front: 120mm / 140mm / 240mm / 280mm / 360mm / 420mm
+        -   Rear: 120mm / 140mm
+        -   Top: 120mm / 140mm / 240mm / 280mm / 360mm / 420mm
+        -   Side: 120mm / 240mm
+    -   CPU cooler height limit: 188mm
+    -   Expansion slots: 8
+    -   Expansion card length limit:
+        -   428.9mm (with front 25mm thickness fans installed)
+        -   330mm (with side radiator & fans installed)
+    -   Power supply: Standard PS2 (ATX)
+        -   PSU length limit: 220mm
+    -   Front I/O ports:
+        -   USB Type-C x 1
+        -   USB 3.0 x 2
+        -   Combo Audio x 1
+    -   Dimensions: 244.9mm (W) x 528.3mm (H) x 543.2mm (D), 70.28 liters
+        -   9.64" (W) x 20.8" (H) x 21.39" (D), 70.28 liters
+    -   See also [Level1Techs: Our DUAL RTX 5090 Silverstone MADNESS Build: Part 1!](https://www.youtube.com/watch?v=VrTHwN6OKG0)
+-   [SuperChassis 747BTQ-R2K04B](https://www.supermicro.com/en/products/chassis/4U/747/SC747BTQ-R2K04B)
+    -   8x 3.5” SAS/SATA Backplane for Hot-Swappable Drives (Support SES2)
+    -   11x Full-Height, Full-Length Expansion Slots Optimized for 4x Double Width GPU Solution
+    -   (2x) Rear Additional 80mm PWM Fans & (4x) Middle Lower 92mm PWM Fans
+    -   4U / Full Tower Chassis Supports max. Motherboard, Sizes – E-ATX 15.2” x 13.2”/ ATX/Micro ATX
+    -   2000W Redundant Titanium Level Certified High-Efficiency Power Supply
+    -   3x 5.25" External HDD Drive Bays & 8x 3.5” Hot-Swappable HDD Drives
+    -   Form Factor: 4U tower/rachmount chassis - supports for maximum motherboard sizes: 15.2" x 13.2"
+    -   Processor Support: Dual and Single Intel® and AMD processors
+    -   Systems Cooling Fans
+        -   2x 80mm Hot-swap PWM Fans
+        -   4x 92mm hot-swap fan(s)
+    -   Power Supply: 1U 2000W Titanium Redundant Power Supply W/PMbus
+-   [Fractal Design Define 7](https://www.fractal-design.com/products/cases/define/define-7/)
+    -   Total fan mounts: 9 x 120/140 mm
+    -   Front fan: 3 x 120/140 mm (2 x Dynamic X2 GP-14 included)
+    -   Top fan: 3 x 120/140 mm
+    -   Rear fan: 1 x 120/140 mm (1 x Dynamic X2 GP-14 included)
+    -   Bottom fan: 2 x 120/140 mm
+    -   GPU max length:
+        -   Storage layout: 290 mm
+        -   Open layout: 470 mm (445 mm w/ front fan)
+    -   CPU cooler max height: 185 mm
+        -   OK with [Noctua NH-D15 G2](https://noctua.at/en/nh-d15-g2/specification) CPU cooler
+    -   Front radiator: Up to 360/280 mm
+    -   Top radiator: Up to 360/420 mm
+    -   Rear radiator: 120 mm
+    -   Vertical GPU Support (with Flex B-20 or Flex VRC-25): 65mm total
+        clearance, standard 2-slot GPU (&lt;38mm thickness) recommended for
+        optimum cooling
+    -   Case dimensions (LxWxH): 547 x 240 x 475 mm
+-   A 4U cassis cannot accommodate the [NVIDIA RTX PRO 6000 Blackwell Desktop](https://www.techpowerup.com/gpu-specs/rtx-pro-6000-blackwell.c4272)
+    version. The card is 137 mm high, but the power connector is located
+    at the top. The RTX 4090 is the same height, and the power connector
+    is also located on the top. The [Squeezing an RTX 4090 into the 4u Rosewell Server Chassis](https://youtu.be/HQ2EEQkbk8Y?t=289)
+    video demonstrates that even though the card itself fits into the
+    cassis, the protruding power connector prevents mounting the lid.
 
-<details><summary>Prices</summary>
+</details>
+<details><summary>GPU</summary>
 
-Vendor sites:
+-   AM5/X870E platforms split the CPU PEG lanes to x8/x8 for dual GPUs; x16/x16 isn’t available.
+-   Physical fit: most RTX 5090 cards are 3–3.5-slot wide. Fitting two often requires:
+    -   A case with 8+ expansion slots and generous bottom clearance
+    -   Motherboard slot spacing that leaves at least 3 full slots between
+        x16_1 and x16_2
+-   Power: plan for a high-end PSU (typically 1600–2000W) and adequate
+    12V‑2×6 connectors; some boards (e.g., MSI GODLIKE) include a
+    supplemental PCIe slot power header that helps stability with dual
+    GPUs.
+-   No SLI/NVLink for 5090; dual-GPU is for compute (CUDA/ML), not gaming AFR.
+
+</details>
+
+### Prices
+
+<details><summary>CPU prices</summary>
+
+
+-   AMD EPYC Zen 4 / Zen 5 processors with a TDP of less than 300 W
+    -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
+        | Processor Model | Lowest Listed Price (Ft) | Notes / Citation                                 |
+        | --------------- | ------------------------ | ------------------------------------------------ |
+        | **EPYC 9354**   | **601 410 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
+        | **EPYC 9354P**  | **917 673 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
+        | **EPYC 9454**   | **913 180 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
+        | **EPYC 9454P**  | **829 448 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
+        | **EPYC 9534**   | **753 930 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_2]) |
+        | **EPYC 9634**   | **1 963 614 Ft**         | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_2]) |
+
+        [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen4_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+    -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
+        | Processor Model | Lowest Listed Price (Ft) | Notes / Citation                |
+        |-----------------|-------------------------|---------------------------------|
+        | 9355            | 1,175,000               | [Árukereső.hu][pr9355]          |
+        | 9355P           | —                       | —                               |
+        | 9365            | 1,365,900               | —                               |
+        | 9455P           | —                       | —                               |
+        | 9455            | 1,600,431               | —                               |
+        | 9535            | 2,300,852               | —                               |
+
+        [pr9355]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355-32-core-3-55ghz-sp5-tray-100-000001148-p1149737854/
+-   CPU candidates whose configurable TDP (cTDP) is
+    [above 300 W](https://www.amd.com/en/products/specifications/server-processor.html):
+    -   Zen 4: 9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554,
+        9554P, 9654, 9654P, 9684X, 9734, 9754, 9754S
+        | Processor Model | Lowest Price (Ft)   | Notes / Citation                        |
+        |-----------------|---------------------|-----------------------------------------|
+        | **EPYC 9174F**  | 1 082 453 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
+        | **EPYC 9184X**  | 1 660 384 Ft        | ([Árukereső.hu][cpu_zen4_1_2])          |
+        | **EPYC 9274F**  |   655 800 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
+        | **EPYC 9374F**  |   985 980 Ft        | ([Árukereső.hu][cpu_zen4_1_3])          |
+        | **EPYC 9384X**  | 1 997 695 Ft        | ([Árukereső.hu][cpu_zen4_1_2])          |
+        | **EPYC 9474F**  | 1 572 490 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
+        | **EPYC 9554**   |   807 950 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
+        | **EPYC 9554P**  | 1 079 486 Ft        | ([Árukereső.hu][cpu_zen4_2_1])          |
+        | **EPYC 9654**   |   917 690 Ft        | ([Árukereső.hu][cpu_zen4_2_2])          |
+        | **EPYC 9654P**  |   935 813 Ft        | ([Árukereső.hu][cpu_zen4_2_2])          |
+        | **EPYC 9684X**  | 2 118 660 Ft        | ([Árukereső.hu][cpu_zen4_2_3])          |
+        | **EPYC 9734**   | 1 021 110 Ft        | ([Árukereső.hu][cpu_zen4_2_4])          |
+        | **EPYC 9754**   | 1 243 230 Ft        | ([Árukereső.hu][cpu_zen4_2_5])          |
+
+        [cpu_zen4_1_1]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+        [cpu_zen4_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C768-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
+        [cpu_zen4_1_3]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, AMD Socket SP5"
+        [cpu_zen4_2_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9554p-64-core-3-1ghz-sp5-tray-100-000000804-p924473337/?utm_source=chatgpt.com "AMD EPYC 9554P 64-Core 3.1GHz SP5 Tray (100-000000804 ..."
+        [cpu_zen4_2_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+        [cpu_zen4_2_3]: https://www.arukereso.hu/processzor-c3139/f%3A96-magos-processzor%2Camd-socket-sp5/?orderby=13&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - AMD ... - Árukereső.hu"
+        [cpu_zen4_2_4]: https://www.arukereso.hu/processzor-c3139/f%3A112-magos-processzor%2Camd-epyc/?utm_source=chatgpt.com "Típus: AMD Epyc, 112 magos processzor - Árukereső.hu"
+        [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/?utm_source=chatgpt.com "AMD EPYC 9754 128-Core 2.25GHz SP5 Tray (100-000001234 ..."
+        [cpu_zen4_2_6]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754s-2-25ghz-tray-p1046085382/?utm_source=chatgpt.com "AMD Epyc 9754S 2.25GHz Tray vásárlás, olcsó ... - Árukereső.hu"
+
+    -   Zen 5: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565,
+        9575F, 9645, 9655, 9655P, 9745, 9825, 9845
+        | Processor Model | Lowest Listed Price (Ft) | Notes / Source                                                                                                        |
+        |-----------------|-------------------------|------------------------------------------------------------------------------------------------------------------------|
+        | **EPYC 9175F**  | 1 130 275 Ft            | via L3 cache 512 MB ([Árukereső.hu][cpu_zen5_1_1])                                                                     |
+        | **EPYC 9275F**  | 1 143 398 Ft            | Single price listing ([Árukereső.hu][cpu_zen5_1_2])                                                                    |
+        | **EPYC 9375F**  | 2 129 697 Ft            | Product not available; last price recorded on Aug 9, 2025 ([Árukereső.hu][cpu_zen5_1_3])                               |
+        | **EPYC 9475F**  | 1 694 576 Ft            | via L3 cache 256 MB listing ([Árukereső.hu][cpu_zen5_1_4]); price trend shows minimum at 2 412 365 Ft ([cpu_zen5_1_5]) |
+        | **EPYC 9555**   | 2 329 744 Ft            | Current best price ([Árukereső.hu][cpu_zen5_1_6])                                                                      |
+        | **EPYC 9555P**  | 2 095 250 Ft            | from product listing ([Árukereső.hu][cpu_zen5_1_6])                                                                    |
+        | **EPYC 9565**   | 2 388 790 Ft            | via Socket SP5 filter ([Árukereső.hu][cpu_zen5_1_7])                                                                   |
+        | **EPYC 9575F**  | 2 840 784 Ft            | Listed as “Tray (100-000001554)”, Socket SP5 ([Árukereső.hu][cpu_zen5_2_1])                                            |
+        | **EPYC 9645**   | 2 770 900 Ft            | OEM Tray, Socket SP5 ([Árukereső.hu][cpu_zen5_2_2])                                                                    |
+        | **EPYC 9655**   | 2 431 037 Ft            | Tray model, Socket SP5 ([Árukereső.hu][cpu_zen5_2_1])                                                                  |
+        | **EPYC 9655P**  | 3 028 591 Ft            | Tray (P variant), Socket SP5 ([Árukereső.hu][cpu_zen5_2_3])                                                            |
+        | **EPYC 9745**   | — Not found —           | No listings located                                                                                                    |
+        | **EPYC 9825**   | — Not found —           | No listings located                                                                                                    |
+        | **EPYC 9845**   | — Not found —           | No listings located                                                                                                    |
+
+        [cpu_zen5_1_1]: https://www.arukereso.hu/processzor-c3139/512-mb-l3-cache/?utm_source=chatgpt.com "L3 cache: 512 MB - Processzor árak összehasonlítása - Árukereső.hu"
+        [cpu_zen5_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen5_1_3]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9375f-32-core-3-8ghz-sp5-tray-100-000001197-p1162090915/?utm_source=chatgpt.com "AMD EPYC 9375F 32-Core 3.8GHz SP5 Tray (100-000001197 ..."
+        [cpu_zen5_1_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C256-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
+        [cpu_zen5_1_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9475f-48-core-3-65ghz-sp5-tray-100-000001143-p1163945305/?utm_source=chatgpt.com "AMD EPYC 9475F 48-Core 3.65GHz SP5 Tray (100-000001143 ..."
+        [cpu_zen5_1_6]: https://www.arukereso.hu/processzor-c3139/f%3A64-magos-processzor%2Camd-epyc/?utm_source=chatgpt.com "Típus: AMD Epyc, 64 magos processzor - Árukereső.hu"
+        [cpu_zen5_1_7]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas/?orderby=1&start=75&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen5_2_1]: https://www.arukereso.hu/processzor-c3139/amd-socket-sp5/?utm_source=chatgpt.com "Processzor árak összehasonlítása - AMD Socket SP5 - Árukereső.hu"
+        [cpu_zen5_2_2]: https://www.arukereso.hu/processzor-c3139/96-magos-processzor/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - 96 magos processzor"
+        [cpu_zen5_2_3]: https://www.arukereso.hu/processzor-c3139/4-nm/?utm_source=chatgpt.com "Processzor árak összehasonlítása - Gyártási technológia: 4 nm"
+
+</details>
+<details><summary>CPU cooler prices</summary>
+
+- [Arctic Freezer 4U-SP5](https://www.arukereso.hu/szamitogep-huto-c3094/arctic/freezer-4u-sp5-acfre00158a-p1161603583/): 70 EUR
+
+</details>
+<details><summary>RAM prices</summary>
+
+-   [DDR5 RDIMM 1Rx4 or 2Rx8](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-32-gb,memoria-tipusa-ddr5,tipus-szerver-memoria,sebesseg=4800-9200/?orderby=1&st=RDIMM)
+-   For 1-CPU architecture: 12 x 32 GB RDIMM 1Rx4 or 2Rx8 (384 GB in total)
+    -   Vendors:
+        -   [Micron RDIMM memory part catalog](https://www.micron.com/products/memory/dram-modules/rdimm/part-catalog)
+    -   Candidates:
+        -   12 x [Micron RDIMM DDR5 32GB 2Rx8 6400MHz PC5-51200 ECC REGISTERED | MTC20F2085S1RC64BR](https://www.senetic.hu/product/MTC20F2085S1RC64BR): 12 x 225 = 2700 EUR
+        -   12 x [Micron 32GB DDR5 4800MHz MTC20F2085S1RC48BR](https://www.arukereso.hu/memoria-modul-c3577/micron/32gb-ddr5-4800mhz-mtc20f2085s1rc48br-p1004252032/) 12 x 200 = 2400 EUR
+        -   12 x [Samsung 32GB DDR5 5600MHz M321R4GA3PB0-CWM](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3pb0-cwm-p1051234201/): 12 x 200 = 2400 EUR
+        -   12 x [M321R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga0bb0-cqk/),
+            [Árukereső](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m321r4ga0bb0-cqk-p921898419/): 12 x 316 = 3800 EUR
+        -   12 x [M321R4GA3BB6-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga3bb6-cqk/),
+            [Árukereső](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m321r4ga3bb6-cqk-p872096736/): 12 x 255 = 3000 EUR
+        -   12 x [M329R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m329r4ga0bb0-cqk/)
+        -   Kingston
+            | Memory Module            | Price (HUF)            | Notes / Source                                         |
+            | ------------------------ | ---------------------- | ------------------------------------------------------ |
+            | **KSM48R40BD8-32HA**     | from 77 175 Ft         | Árukereső listings ([Árukereső.hu][ram_kingston_1])                 |
+            | **KSM48R40BD8-32MD**     | from 77 175 Ft         | Same listing covers both HA and MD ([Árukereső.hu][ram_kingston_1]) |
+            | **KSM56R46BD8-32MD**     | 76 590 Ft              | Direct offer ([Árukereső.hu][ram_kingston_2])                       |
+            | **KSM56R46BD8PMI-32MDI** | from 93 900 Ft         | Árukereső comparison ([Árukereső.hu][ram_kingston_3])               |
+            | **KSM64R52BD8-32MD**     | 161 890 Ft             | Direct listing ([Árukereső.hu][ram_kingston_4])                     |
+
+            [ram_kingston_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Ctipus-szerver-memoria/?start=75&utm_source=chatgpt.com "Vásárlás: Kingston Memória modul árak összehasonlítása - Típus"
+            [ram_kingston_2]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5600mhz-ksm56r46bd8-32md-p1128575413/?utm_source=chatgpt.com "Kingston 32GB DDR5 5600MHz KSM56R46BD8 ... - Árukereső.hu"
+            [ram_kingston_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Cmemoriakesleltetes-cl-46/?orderby=1&utm_source=chatgpt.com "Vásárlás: Kingston Memória modul árak ... - Árukereső.hu"
+            [ram_kingston_4]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5200mhz-ksm64r52bd8-32md-p1190480737/?utm_source=chatgpt.com "Kingston 32GB DDR5 5200MHz KSM64R52BD8-32MD memória ..."
+        -   Samsung
+            | Memory Module        | Price (HUF)         | Notes                                       |
+            |----------------------|---------------------|---------------------------------------------|
+            | **M321R4GA0BB0-CQK** | from **126 105 Ft** | Listed on Árukereső ([Árukereső.hu][ram_samsung_1])  |
+            | **M321R4GA3BB6-CQK** | from **91 900 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_1])  |
+            | **M321R4GA3EB0-CWM** | from **78 272 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_2])  |
+            | **M321R4GA3PB0-CWM** | from **74 580 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_3])  |
+
+            [ram_samsung_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoria-tipusa-ddr5/?orderby=1&utm_source=chatgpt.com "Olcsó DDR5 Samsung memória - Árukereső.hu"
+            [ram_samsung_2]: https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3eb0-cwm-p1194855955/?utm_source=chatgpt.com "Samsung 32GB DDR5 5600MHz M321R4GA3EB0-CWM memória ..."
+            [ram_samsung_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoriakesleltetes-cl-46/?utm_source=chatgpt.com "Vásárlás: Samsung Memória modul árak ... - Árukereső.hu"
+        -   Micron
+            | Memory Module                                 | Price (HUF)                                       | Availability |
+            | --------------------------------------------- | ------------------------------------------------- | ------------ |
+            | **MTC20F2085S1RC48BR** (32 GB, DDR5 4800 MHz) | from **82 648 Ft** ([Árukereső.hu][ram_micron_1]) | Available    |
+            | **MTC20F2085S1RC56BR** (32 GB, DDR5 5600 MHz) | from **69 602 Ft** ([Árukereső.hu][ram_micron_2]) | Available    |
+
+            [ram_micron_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Ckapacitas-32-gb/?utm_source=chatgpt.com "Vásárlás: Micron Memória modul árak összehasonlítása - Kapacitás ..."
+            [ram_micron_2]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Cmemoria-tipusa-ddr5/?utm_source=chatgpt.com "Micron Memória modul árak összehasonlítása - DDR5 - Árukereső.hu"
+-   For 2-CPU architecture:
+    -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
+
+</details>
+<details><summary>SSD prices</summary>
+
+-   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://belso-ssd-meghajto.arukereso.hu/samsung/990-pro-4tb-mz-v9p4t0bw-p1002242350/): 300 EUR
+
+</details>
+<details><summary>Motherboard prices</summary>
+
+-   CEB:
+    -   [Asus K14PA-U12](https://smicro.hu/asus-k14pa-u12-90sb0ci0-m0uay0-4?aku=db3621a52f6055ee636a6fee6ff8a353): 800 EUR
+-   ATX:
+    -   [Supermicro MBD-H13SSL-NT-O](https://smicro.hu/supermicro-mbd-h13ssl-nt-o-4): 830 EUR
+    -   [GIGABYTE MZ33-AR0](https://www.arukereso.hu/alaplap-c3128/gigabyte/mz33-ar0-p1005435430/): 1100 EUR
+
+</details>
+<details><summary>PSU prices</summary>
+
+-   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://www.arukereso.hu/tapegyseg-c3158/seasonic/prime-px-2200-2200w-80-plus-platinum-p1129871905/): 630 EUR
+
+</details>
+<details><summary>Chassis prices</summary>
+
+-   [Fractal Design Torrent](https://www.arukereso.hu/szamitogep-haz-c3085/f:fractal-design,szelesseg=4/?orderby=1&st=torrent): 240 EUR
+-   [SilverStone H1 SST-SEH1B-G](https://www.arukereso.hu/szamitogep-haz-c3085/silverstone/h1-sst-seh1b-g-p853480299/): 210 EUR
+
+</details>
+<details><summary>Vendor sites</summary>
+
 -   https://smicro.hu/amd-socket-sp5-5
 -   https://www.senetic.hu/category/amd-cpu-epyc-9004-11151/
 -   https://kontaktor.hu/muszaki_cikkek_357/szamitastechnika_1797/alkatreszek_11508/processzorok_11635/amd_epyc_11688
@@ -806,160 +991,9 @@ Vendor sites:
 -   Motherboards:
     -   https://smicro.hu/amd-sp5-5?filtrPriceFrom=&filtrPriceTo=&filter%5B2294%5D%5B%5D=39137&filter%5B2424%5D%5B%5D=42927&filter%5B2317%5D%5B%5D=38124&filter%5B2316%5D%5B%5D=38705&filter%5B2316%5D%5B%5D=39193&filter%5B2315%5D%5B%5D=40251&filter%5B2315%5D%5B%5D=43437&filter%5B2360%5D%5B%5D=39223
 
+</details>
 
-Prices:
--   CPU:
-    -   AMD EPYC Zen 4 / Zen 5 processors with a TDP of less than 300 W
-        -   Zen 4: 9354, 9354P, 9454, 9454P, 9534, 9634
-            | Processor Model | Lowest Listed Price (Ft) | Notes / Citation                                 |
-            | --------------- | ------------------------ | ------------------------------------------------ |
-            | **EPYC 9354**   | **601 410 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
-            | **EPYC 9354P**  | **917 673 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
-            | **EPYC 9454**   | **913 180 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
-            | **EPYC 9454P**  | **829 448 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_1]) |
-            | **EPYC 9534**   | **753 930 Ft**           | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_2]) |
-            | **EPYC 9634**   | **1 963 614 Ft**         | Tray version, AMD Socket SP5 ([Árukereső.hu][cpu_zen4_0_2]) |
-
-            [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-            [cpu_zen4_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-        -   Zen 5: 9355P, 9355, 9365, 9455P, 9455, 9535
-            | Processor Model | Lowest Listed Price (Ft) | Notes / Citation                |
-            |-----------------|-------------------------|---------------------------------|
-            | 9355            | 1,175,000               | [Árukereső.hu][pr9355]          |
-            | 9355P           | —                       | —                               |
-            | 9365            | 1,365,900               | —                               |
-            | 9455P           | —                       | —                               |
-            | 9455            | 1,600,431               | —                               |
-            | 9535            | 2,300,852               | —                               |
-
-            [pr9355]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355-32-core-3-55ghz-sp5-tray-100-000001148-p1149737854/
-    -   CPU candidates whose configurable TDP (cTDP) is
-        [above 300 W](https://www.amd.com/en/products/specifications/server-processor.html):
-        -   Zen 4: 9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554,
-            9554P, 9654, 9654P, 9684X, 9734, 9754, 9754S
-            | Processor Model | Lowest Price (Ft)   | Notes / Citation                        |
-            |-----------------|---------------------|-----------------------------------------|
-            | **EPYC 9174F**  | 1 082 453 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
-            | **EPYC 9184X**  | 1 660 384 Ft        | ([Árukereső.hu][cpu_zen4_1_2])          |
-            | **EPYC 9274F**  |   655 800 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
-            | **EPYC 9374F**  |   985 980 Ft        | ([Árukereső.hu][cpu_zen4_1_3])          |
-            | **EPYC 9384X**  | 1 997 695 Ft        | ([Árukereső.hu][cpu_zen4_1_2])          |
-            | **EPYC 9474F**  | 1 572 490 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
-            | **EPYC 9554**   |   807 950 Ft        | ([Árukereső.hu][cpu_zen4_1_1])          |
-            | **EPYC 9554P**  | 1 079 486 Ft        | ([Árukereső.hu][cpu_zen4_2_1])          |
-            | **EPYC 9654**   |   917 690 Ft        | ([Árukereső.hu][cpu_zen4_2_2])          |
-            | **EPYC 9654P**  |   935 813 Ft        | ([Árukereső.hu][cpu_zen4_2_2])          |
-            | **EPYC 9684X**  | 2 118 660 Ft        | ([Árukereső.hu][cpu_zen4_2_3])          |
-            | **EPYC 9734**   | 1 021 110 Ft        | ([Árukereső.hu][cpu_zen4_2_4])          |
-            | **EPYC 9754**   | 1 243 230 Ft        | ([Árukereső.hu][cpu_zen4_2_5])          |
-
-            [cpu_zen4_1_1]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-            [cpu_zen4_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C768-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
-            [cpu_zen4_1_3]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, AMD Socket SP5"
-            [cpu_zen4_2_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9554p-64-core-3-1ghz-sp5-tray-100-000000804-p924473337/?utm_source=chatgpt.com "AMD EPYC 9554P 64-Core 3.1GHz SP5 Tray (100-000000804 ..."
-            [cpu_zen4_2_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-            [cpu_zen4_2_3]: https://www.arukereso.hu/processzor-c3139/f%3A96-magos-processzor%2Camd-socket-sp5/?orderby=13&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - AMD ... - Árukereső.hu"
-            [cpu_zen4_2_4]: https://www.arukereso.hu/processzor-c3139/f%3A112-magos-processzor%2Camd-epyc/?utm_source=chatgpt.com "Típus: AMD Epyc, 112 magos processzor - Árukereső.hu"
-            [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/?utm_source=chatgpt.com "AMD EPYC 9754 128-Core 2.25GHz SP5 Tray (100-000001234 ..."
-            [cpu_zen4_2_6]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754s-2-25ghz-tray-p1046085382/?utm_source=chatgpt.com "AMD Epyc 9754S 2.25GHz Tray vásárlás, olcsó ... - Árukereső.hu"
-
-        -   Zen 5: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565,
-            9575F, 9645, 9655, 9655P, 9745, 9825, 9845
-            | Processor Model | Lowest Listed Price (Ft) | Notes / Source                                                                                                        |
-            |-----------------|-------------------------|------------------------------------------------------------------------------------------------------------------------|
-            | **EPYC 9175F**  | 1 130 275 Ft            | via L3 cache 512 MB ([Árukereső.hu][cpu_zen5_1_1])                                                                     |
-            | **EPYC 9275F**  | 1 143 398 Ft            | Single price listing ([Árukereső.hu][cpu_zen5_1_2])                                                                    |
-            | **EPYC 9375F**  | 2 129 697 Ft            | Product not available; last price recorded on Aug 9, 2025 ([Árukereső.hu][cpu_zen5_1_3])                               |
-            | **EPYC 9475F**  | 1 694 576 Ft            | via L3 cache 256 MB listing ([Árukereső.hu][cpu_zen5_1_4]); price trend shows minimum at 2 412 365 Ft ([cpu_zen5_1_5]) |
-            | **EPYC 9555**   | 2 329 744 Ft            | Current best price ([Árukereső.hu][cpu_zen5_1_6])                                                                      |
-            | **EPYC 9555P**  | 2 095 250 Ft            | from product listing ([Árukereső.hu][cpu_zen5_1_6])                                                                    |
-            | **EPYC 9565**   | 2 388 790 Ft            | via Socket SP5 filter ([Árukereső.hu][cpu_zen5_1_7])                                                                   |
-            | **EPYC 9575F**  | 2 840 784 Ft            | Listed as “Tray (100-000001554)”, Socket SP5 ([Árukereső.hu][cpu_zen5_2_1])                                            |
-            | **EPYC 9645**   | 2 770 900 Ft            | OEM Tray, Socket SP5 ([Árukereső.hu][cpu_zen5_2_2])                                                                    |
-            | **EPYC 9655**   | 2 431 037 Ft            | Tray model, Socket SP5 ([Árukereső.hu][cpu_zen5_2_1])                                                                  |
-            | **EPYC 9655P**  | 3 028 591 Ft            | Tray (P variant), Socket SP5 ([Árukereső.hu][cpu_zen5_2_3])                                                            |
-            | **EPYC 9745**   | — Not found —           | No listings located                                                                                                    |
-            | **EPYC 9825**   | — Not found —           | No listings located                                                                                                    |
-            | **EPYC 9845**   | — Not found —           | No listings located                                                                                                    |
-
-            [cpu_zen5_1_1]: https://www.arukereso.hu/processzor-c3139/512-mb-l3-cache/?utm_source=chatgpt.com "L3 cache: 512 MB - Processzor árak összehasonlítása - Árukereső.hu"
-            [cpu_zen5_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-            [cpu_zen5_1_3]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9375f-32-core-3-8ghz-sp5-tray-100-000001197-p1162090915/?utm_source=chatgpt.com "AMD EPYC 9375F 32-Core 3.8GHz SP5 Tray (100-000001197 ..."
-            [cpu_zen5_1_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C256-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
-            [cpu_zen5_1_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9475f-48-core-3-65ghz-sp5-tray-100-000001143-p1163945305/?utm_source=chatgpt.com "AMD EPYC 9475F 48-Core 3.65GHz SP5 Tray (100-000001143 ..."
-            [cpu_zen5_1_6]: https://www.arukereso.hu/processzor-c3139/f%3A64-magos-processzor%2Camd-epyc/?utm_source=chatgpt.com "Típus: AMD Epyc, 64 magos processzor - Árukereső.hu"
-            [cpu_zen5_1_7]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas/?orderby=1&start=75&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-            [cpu_zen5_2_1]: https://www.arukereso.hu/processzor-c3139/amd-socket-sp5/?utm_source=chatgpt.com "Processzor árak összehasonlítása - AMD Socket SP5 - Árukereső.hu"
-            [cpu_zen5_2_2]: https://www.arukereso.hu/processzor-c3139/96-magos-processzor/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - 96 magos processzor"
-            [cpu_zen5_2_3]: https://www.arukereso.hu/processzor-c3139/4-nm/?utm_source=chatgpt.com "Processzor árak összehasonlítása - Gyártási technológia: 4 nm"
--   CPU cooler:
-    - [Arctic Freezer 4U-SP5](https://www.arukereso.hu/szamitogep-huto-c3094/arctic/freezer-4u-sp5-acfre00158a-p1161603583/): 70 EUR
--   RAM:
-    -   [DDR5 RDIMM 1Rx4 or 2Rx8](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-32-gb,memoria-tipusa-ddr5,tipus-szerver-memoria,sebesseg=4800-9200/?orderby=1&st=RDIMM)
-    -   For 1-CPU architecture: 12 x 32 GB RDIMM 1Rx4 or 2Rx8 (384 GB in total)
-        -   Vendors:
-            -   [Kontaktor](https://kontaktor.hu/muszaki_cikkek_357/szamitastechnika_1797/alkatreszek_11508/memoriak_11224/ddr5_szerver_memoriak_11690?sort=p.price&order=ASC&page=1#content)
-            -   [Micron RDIMM memory part catalog](https://www.micron.com/products/memory/dram-modules/rdimm/part-catalog)
-        -   Candidates:
-            -   12 x [Micron RDIMM DDR5 32GB 4800MHz MTC20F2085S1RC48BA1R](https://kontaktor.hu/micron_rdimm_ddr5_32gb_4800mhz_mtc20f2085s1rc48ba1r_376749): 12 x 170 = 2040 EUR
-            -   12 x [Micron RDIMM DDR5 32GB 2Rx8 6400MHz PC5-51200 ECC REGISTERED | MTC20F2085S1RC64BR](https://www.senetic.hu/product/MTC20F2085S1RC64BR): 12 x 225 = 2700 EUR
-            -   12 x [Micron 32GB DDR5 4800MHz MTC20F2085S1RC48BR](https://www.arukereso.hu/memoria-modul-c3577/micron/32gb-ddr5-4800mhz-mtc20f2085s1rc48br-p1004252032/) 12 x 200 = 2400 EUR
-            -   12 x [Samsung 32GB DDR5 5600MHz M321R4GA3PB0-CWM](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3pb0-cwm-p1051234201/): 12 x 200 = 2400 EUR
-            -   12 x [M321R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga0bb0-cqk/),
-                [Árukereső](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m321r4ga0bb0-cqk-p921898419/): 12 x 316 = 3800 EUR
-            -   12 x [M321R4GA3BB6-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga3bb6-cqk/),
-                [Árukereső](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m321r4ga3bb6-cqk-p872096736/): 12 x 255 = 3000 EUR
-            -   12 x [M329R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m329r4ga0bb0-cqk/)
-            -   Kingston
-                | Memory Module            | Price (HUF)            | Notes / Source                                         |
-                | ------------------------ | ---------------------- | ------------------------------------------------------ |
-                | **KSM48R40BD8-32HA**     | from 77 175 Ft         | Árukereső listings ([Árukereső.hu][ram_kingston_1])                 |
-                | **KSM48R40BD8-32MD**     | from 77 175 Ft         | Same listing covers both HA and MD ([Árukereső.hu][ram_kingston_1]) |
-                | **KSM56R46BD8-32MD**     | 76 590 Ft              | Direct offer ([Árukereső.hu][ram_kingston_2])                       |
-                | **KSM56R46BD8PMI-32MDI** | from 93 900 Ft         | Árukereső comparison ([Árukereső.hu][ram_kingston_3])               |
-                | **KSM64R52BD8-32MD**     | 161 890 Ft             | Direct listing ([Árukereső.hu][ram_kingston_4])                     |
-
-                [ram_kingston_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Ctipus-szerver-memoria/?start=75&utm_source=chatgpt.com "Vásárlás: Kingston Memória modul árak összehasonlítása - Típus"
-                [ram_kingston_2]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5600mhz-ksm56r46bd8-32md-p1128575413/?utm_source=chatgpt.com "Kingston 32GB DDR5 5600MHz KSM56R46BD8 ... - Árukereső.hu"
-                [ram_kingston_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Cmemoriakesleltetes-cl-46/?orderby=1&utm_source=chatgpt.com "Vásárlás: Kingston Memória modul árak ... - Árukereső.hu"
-                [ram_kingston_4]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5200mhz-ksm64r52bd8-32md-p1190480737/?utm_source=chatgpt.com "Kingston 32GB DDR5 5200MHz KSM64R52BD8-32MD memória ..."
-            -   Samsung
-                | Memory Module        | Price (HUF)         | Notes                                       |
-                |----------------------|---------------------|---------------------------------------------|
-                | **M321R4GA0BB0-CQK** | from **126 105 Ft** | Listed on Árukereső ([Árukereső.hu][ram_samsung_1])  |
-                | **M321R4GA3BB6-CQK** | from **91 900 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_1])  |
-                | **M321R4GA3EB0-CWM** | from **78 272 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_2])  |
-                | **M321R4GA3PB0-CWM** | from **74 580 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_3])  |
-
-                [ram_samsung_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoria-tipusa-ddr5/?orderby=1&utm_source=chatgpt.com "Olcsó DDR5 Samsung memória - Árukereső.hu"
-                [ram_samsung_2]: https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3eb0-cwm-p1194855955/?utm_source=chatgpt.com "Samsung 32GB DDR5 5600MHz M321R4GA3EB0-CWM memória ..."
-                [ram_samsung_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoriakesleltetes-cl-46/?utm_source=chatgpt.com "Vásárlás: Samsung Memória modul árak ... - Árukereső.hu"
-            -   Micron
-                | Memory Module                                 | Price (HUF)                                       | Availability |
-                | --------------------------------------------- | ------------------------------------------------- | ------------ |
-                | **MTC20F2085S1RC48BR** (32 GB, DDR5 4800 MHz) | from **82 648 Ft** ([Árukereső.hu][ram_micron_1]) | Available    |
-                | **MTC20F2085S1RC56BR** (32 GB, DDR5 5600 MHz) | from **69 602 Ft** ([Árukereső.hu][ram_micron_2]) | Available    |
-
-                [ram_micron_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Ckapacitas-32-gb/?utm_source=chatgpt.com "Vásárlás: Micron Memória modul árak összehasonlítása - Kapacitás ..."
-                [ram_micron_2]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Cmemoria-tipusa-ddr5/?utm_source=chatgpt.com "Micron Memória modul árak összehasonlítása - DDR5 - Árukereső.hu"
-    -   For 2-CPU architecture:
-        -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
--   SSD:
-    -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://belso-ssd-meghajto.arukereso.hu/samsung/990-pro-4tb-mz-v9p4t0bw-p1002242350/): 300 EUR
--   Motherboard:
-    -   CEB:
-        -   [Asus K14PA-U12](https://smicro.hu/asus-k14pa-u12-90sb0ci0-m0uay0-4?aku=db3621a52f6055ee636a6fee6ff8a353): 800 EUR
-    -   ATX:
-        -   [Supermicro MBD-H13SSL-NT-O](https://smicro.hu/supermicro-mbd-h13ssl-nt-o-4): 830 EUR
-        -   [GIGABYTE MZ33-AR0](https://www.arukereso.hu/alaplap-c3128/gigabyte/mz33-ar0-p1005435430/): 1100 EUR
--   PSU
-    -   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://www.arukereso.hu/tapegyseg-c3158/seasonic/prime-px-2200-2200w-80-plus-platinum-p1129871905/): 630 EUR
--   Chassis
-    -   [Fractal Design Torrent](https://www.arukereso.hu/szamitogep-haz-c3085/f:fractal-design,szelesseg=4/?orderby=1&st=torrent): 240 EUR
-    -   [SilverStone H1 SST-SEH1B-G](https://www.arukereso.hu/szamitogep-haz-c3085/silverstone/h1-sst-seh1b-g-p853480299/): 210 EUR
--   Total price without GPU:
-
-</details> <!-- Server prices -->
+### Links
 
 <details><summary>Links</summary>
 
