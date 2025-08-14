@@ -723,6 +723,7 @@ One possible configuration to support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) De
 -   https://www.arukereso.hu/processzor-c3139/f:tdp=0-350,amd-socket-sp5,amd-epyc/?orderby=1
 -   Motherboards:
     -   https://smicro.hu/amd-sp5-5?filtrPriceFrom=&filtrPriceTo=&filter%5B2294%5D%5B%5D=39137&filter%5B2424%5D%5B%5D=42927&filter%5B2317%5D%5B%5D=38124&filter%5B2316%5D%5B%5D=38705&filter%5B2316%5D%5B%5D=39193&filter%5B2315%5D%5B%5D=40251&filter%5B2315%5D%5B%5D=43437&filter%5B2360%5D%5B%5D=39223
+-   https://geizhals.eu/
 
 </details>
 
