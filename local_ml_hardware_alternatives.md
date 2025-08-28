@@ -19,6 +19,7 @@ See also the [Build your own machine](https://huggingface.co/docs/transformers/p
 Minimal 1-CPU configuration
 -   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling
 -   Theoretical maximum RAM bandwidth of 460.8 GB/s
+-   Suggested processors: 9354, 9534.
 
 | Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
@@ -31,9 +32,12 @@ Minimal 1-CPU configuration
 | Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
 | **Total**   |                                                    |                     |         **2,285,102**   |
 
-1-CPU configuration optimized for Zen 4 CPU inference
+1-CPU maximum configuration with Zen 4 architecture
 -   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
 -   Theoretical maximum RAM bandwidth of 460.8 GB/s
+-   Suggested processors:
+    -   9754 (128 cores, L3 cache 256 MB),
+    -   9184X, 9384X, 9684X (16/32/96 cores, L3 cache 768/768/1152 MB)
 
 | Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
@@ -66,7 +70,7 @@ Minimal 1-CPU configuration
 <!--
 1-CPU configuration optimized for Zen 5 CPU inference
 -   Support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
--   theoretical maximum RAM bandwidth of 844.8 GB/s
+-   Theoretical maximum RAM bandwidth of 576.0 GB/s
 
 | Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
@@ -667,17 +671,17 @@ Minimal 1-CPU configuration
         | 9534 ←            | 753 930                  | ([Árukereső.hu][cpu_zen4_0_2]) |
         | 9634              | 1 963 614                | ([Árukereső.hu][cpu_zen4_0_2]) |
         | **Above 300 W**   |                          |                                |
-        | 9174F ←           | 1 082 453                | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9174F             | 1 082 453                | ([Árukereső.hu][cpu_zen4_1_1]) |
         | 9184X ←           | 1 660 384                | ([Árukereső.hu][cpu_zen4_1_2]) |
         | 9274F             | 655 800                  | ([Árukereső.hu][cpu_zen4_1_1]) |
         | 9374F             | 985 980                  | ([Árukereső.hu][cpu_zen4_1_3]) |
-        | 9384X             | 1 997 695                | ([Árukereső.hu][cpu_zen4_1_2]) |
+        | 9384X ←           | 1 997 695                | ([Árukereső.hu][cpu_zen4_1_2]) |
         | 9474F             | 1 572 490                | ([Árukereső.hu][cpu_zen4_1_1]) |
         | 9554              | 807 950                  | ([Árukereső.hu][cpu_zen4_1_1]) |
         | 9554P             | 1 079 486                | ([Árukereső.hu][cpu_zen4_2_1]) |
         | 9654              | 917 690                  | ([Árukereső.hu][cpu_zen4_2_2]) |
         | 9654P             | 935 813                  | ([Árukereső.hu][cpu_zen4_2_2]) |
-        | 9684X             | 2 118 660                | ([Árukereső.hu][cpu_zen4_2_3]) |
+        | 9684X ←           | 2 118 660                | ([Árukereső.hu][cpu_zen4_2_3]) |
         | 9734              | 1 021 110                | ([Árukereső.hu][cpu_zen4_2_4]) |
         | 9754 ←            | 1 243 230                | ([Árukereső.hu][cpu_zen4_2_5]) |
 
@@ -705,12 +709,12 @@ Minimal 1-CPU configuration
         | 9365              | 1 365 900                | ([Árukereső.hu][cpu_zen5_0_2]) |
         | 9455P             | 1 557 900                | ([Árukereső.hu][cpu_zen5_0_3]) |
         | 9455              | 1 594 330                | ([Árukereső.hu][cpu_zen5_0_4]) |
-        | 9535              | — Not listed             | No listings found              |
+        | 9535              | 2 369 884                | ([Árukereső.hu][cpu_zen5_0_5]) |
         | **Above 300 W**   |                          |                                |
-        | 9175F ←?          | 1 130 275                | ([Árukereső.hu][cpu_zen5_1_1]) |
+        | 9175F             | 1 130 275                | ([Árukereső.hu][cpu_zen5_1_1]) |
         | 9275F             | 1 143 398                | ([Árukereső.hu][cpu_zen5_1_2]) |
         | 9375F             | 2 129 697                | ([Árukereső.hu][cpu_zen5_1_3]) |
-        | 9475F             | 1 694 576                | ([Árukereső.hu][cpu_zen5_1_4]) |
+        | 9475F ←           | 1 694 576                | ([Árukereső.hu][cpu_zen5_1_4]) |
         | 9555              | 2 329 744                | ([Árukereső.hu][cpu_zen5_1_6]) |
         | 9555P             | 2 095 250                | ([Árukereső.hu][cpu_zen5_1_6]) |
         | 9565              | 2 388 790                | ([Árukereső.hu][cpu_zen5_1_7]) |
@@ -726,6 +730,7 @@ Minimal 1-CPU configuration
         [cpu_zen5_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A4-nm%2Camd-epyc/?orderby=13&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
         [cpu_zen5_0_3]: https://www.arukereso.hu/processzor-c3139/kiszereles-talcas-oem/?utm_source=chatgpt.com "Kiszerelés: Tálcás (OEM) - Processzor - Árukereső.hu"
         [cpu_zen5_0_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas-oem/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen5_0_5]: https://www.arukereso.hu/processzor-c3139/amd-epyc/?st=9535 "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc 9535"
         [cpu_zen5_1_1]: https://www.arukereso.hu/processzor-c3139/512-mb-l3-cache/?utm_source=chatgpt.com "L3 cache: 512 MB - Processzor árak összehasonlítása - Árukereső.hu"
         [cpu_zen5_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
         [cpu_zen5_1_3]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9375f-32-core-3-8ghz-sp5-tray-100-000001197-p1162090915/?utm_source=chatgpt.com "AMD EPYC 9375F 32-Core 3.8GHz SP5 Tray (100-000001197 ..."
