@@ -19,7 +19,7 @@ See also the [Build your own machine](https://huggingface.co/docs/transformers/p
 Minimal 1-CPU configuration
 -   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling
 -   Theoretical maximum RAM bandwidth of 460.8 GB/s
--   Suggested processors: 9354, 9534.
+-   Suggested processors: AMD EPYC 9354, 9534.
 
 | Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
