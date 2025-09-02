@@ -927,7 +927,6 @@ Minimal 1-CPU configuration
             -   52mm with 120mm fan [168mm total height]
 -   Chipsets
     ([AMD doc](https://www.amd.com/en/products/processors/chipsets/am5.html#specs))
-    ([Image](assets/amd-am5.png))
     ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-9-9950x3d.c3993#gallery-5)):
     ([Wikipedia](https://en.wikipedia.org/wiki/List_of_AMD_chipsets#AM5_chipsets))
     -   Has 24 PCIe 5.0 lanes: X870E, X870, X670E, B650E
