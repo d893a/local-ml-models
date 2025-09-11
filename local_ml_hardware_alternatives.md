@@ -1,6 +1,8 @@
 # Hardware alternatives for running machine learning models locally
 
 -   [Server](#server)
+-   [Energy efficient server](#energy-efficient-server)
+-   [Energy efficient server](#energy-efficient-server)
 -   [Workstation](#workstation)
 -   [Desktop PC](#desktop-pc)
 -   [Embedded / mobile CPU](#embedded--mobile-cpu)
@@ -885,6 +887,118 @@ Minimal 1-CPU configuration
 </details> <!-- Server links -->
 
 <div class="page"/>
+
+## Energy efficient server
+
+<!--
+Energy efficient server configuration
+-   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling
+-   Theoretical maximum RAM bandwidth of 115.2 GB/s
+-   Suggested processors: AMD EPYC 8224P, 8124P (8024P if 67.6 GB/s memory bandwidth is tolerable)
+
+| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|----------------------------------------------------|--------------------:|------------------------:|
+| CPU         | AMD EPYC [8224P][pr_8224P]                         |         402,090     |             402,090     |
+| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
+| Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
+| CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
+| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
+| **Total**   |                                                    |                     |         **2,285,102**   |
+-->
+
+[pr_8224P]: https://www.arukereso.hu/processzor-c3139/amd/epyc-8224p-24-core-2-55ghz-sp6-tray-100-000001134-p1035460933/
+
+
+### Specs
+
+<details><summary>CPU: AMD EPYC 8004 (SP6 socket)</summary>
+
+-   Minimum 6 x DDR5 4800 MT/s RAM
+    -   RAM module side memory bandwidth:
+        -   [1-CPU config](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-memory-capabilities.jpg):
+            6 x 8 x 4.8 GT/s = 230.4 GB/s
+-   Minimum 4 CCDs per processor:
+    -   CPU side memory bandwidth:
+        -   Zen 4:
+            -   4 CCD x 32 x 1.8 GHz = 230.4 GB/s
+            -   2 CCD x 32 x 1.8 GHz = 115.2 GB/s
+            -   1 CCD x 32 x 1.8 GHz = 67.6 GB/s
+        -   Supports 6x PCIe 5.0 x16 GPUs (6 x 63 = 378 GB/s)
+-   [Zen 4](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)):
+    -   [96 PCIe 5.0 lanes](https://www.techpowerup.com/cpu-specs/epyc-8224p.c3292#gallery-2) (5 x PCIe 5.0 x16 + 2x PCIe 5.0 x8)
+-   [CPU candidates](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series.html#tabs-4380fde236-item-a9a09e8dc2-tab) which support PCIe 5.0 x16:
+    -   [AMD EPYC 8004 series processors](https://www.amd.com/content/dam/amd/en/documents/products/epyc/epyc-9008-series-processors-data-sheet.pdf) \
+        ![EPYC 9008 Series processors](<assets/AMD EPYC 8004 series processors.png>)
+    -   1 CCD, 67.6 GB/s: 8024P
+    -   2 CCDs, 115.2 GB/s: 8124P, 8224P
+    -   4 CCDs, 230.4 GB/s: 8324P, 8434P, 8534P
+-   Suggested picks: AMD EPYC 8224P, 8324P
+
+</details>
+
+<details><summary>CPU cooler</summary>
+
+-   [Noctua NH-D9 TR5-SP6 4U](https://noctua.at/en/nh-d9-tr5-sp6-4u)
+    -   [Specification](https://noctua.at/en/nh-d9-tr5-sp6-4u/specification)
+    -   [CPU compatibility](https://ncc.noctua.at/cpus/model/AMD-Epyc-8324P-1779): OK
+    -   The NH-D9’s direction of airflow is parallel to the long axis of the
+        socket, so it is ideal for builds where the hot air is exhausted this
+        way.
+    -   Height (with fan): 134 mm
+    -   Max. airflow: 96,3 m³/h
+    -   Max. acoustical noise: 30,6 dB(A)
+
+</details>
+
+<details><summary>Motherboard</summary>
+
+-   [GIGABYTE ME03-PE0](https://www.gigabyte.com/Enterprise/Server-Motherboard/ME03-PE0-rev-1x)
+    -   3 x PCIe Gen5 x16 expansion slots
+    -   4 x PCIe Gen4 x16 and x8 expansion slots
+    -   **Not optimal: Need to use one PCIe 5.0 x16 and one PCIe 4.0 x16 slot**
+    -   [Qualified Vendor List](https://download.gigabyte.com/FileList/QVL/server_mb_qvl_ME03-PE0_v1.0.pdf?v=49453fe0c587e648d48438af52747fed)
+-   [ASRock Rack SIENAD8-2L2T](https://www.asrockrack.com/general/productdetail.asp?Model=SIENAD8-2L2T#Specifications)
+    ([Review](https://www.servethehome.com/asrock-rack-sienad8-2l2t-amd-epyc-8004-siena-motherboard-review/))
+    -   8 DIMM slots (2DPC/1DPC), supports DDR5 RDIMM
+    -   3 PCIe5.0 / CXL1.1 x16, 1 PCIe5.0 x16, 1 PCIe5.0 x8
+    -   2 MCIO (PCIe5.0 x8)
+    -   2 M.2 (PCIe5.0 x4)
+    -   [Memory QVL](https://www.asrockrack.com/general/productdetail.asp?Model=SIENAD8-2L2T#Memory)
+        | Type | Speed | DIMM  | Size  | Vendor  | Module                        | Part No         | Cell             |
+        |------|-------|-------|-------|---------|-------------------------------|-----------------|------------------|
+        | DDR5 | 5600  | RDIMM | 128GB | Micron  | MTC40F2047S1RC56BB1 QLFF      | 4FB7DD8GDF      | Micron           |
+        | DDR5 | 4800  | RDIMM | 96GB  | Micron  | MTC40F204WS1RC48BB1 IGFF      | 3LB75D8DHL      | Micron           |
+        | DDR5 | 4800  | RDIMM | 96GB  | Samsung | M321RYGA0BB0-CQKZJ            | K4RHE046VB BCQK | Sec              |
+        | DDR5 | 4800  | RDIMM | 64GB  | Micron  | MTC40F2046S1RC48BA1 GCCH      | IQA45D8BNH      | Micron           |
+        | DDR5 | 4800  | RDIMM | 64GB  | Micron  | MTC40F2046S1RC48BA1 FICC      | 3HA45D8BNH      | Micron           |
+        | DDR5 | 4800  | RDIMM | 64GB  | SMART   | SR8G8RD5445-SB                | K4RAH046VB BCQK | Sec              |
+        | DDR5 | 4800  | RDIMM | 32GB  | Micron  | MTC20F2085S1RC48BA1 NGCC      | 3FA45D8BNJ      | Micron           |
+        | DDR5 | 4800  | RDIMM | 32GB  | Micron  | MTC20F1045S1RC48BA2 HCCH      | IQA45D8BNH      | Micron           |
+        | DDR5 | 4800  | RDIMM | 32GB  | Samsung | M321R4GA0BB0-CQKET            | K4RAH046VB BCQK | Sec              |
+        | DDR5 | 4800  | RDIMM | 16GB  | SMART   | SR2G8RD5285-SB                | K4RAH086VB FCQK | Sec              |
+    -   **This motherboard is a viable choice**
+-   [ASRock Rack SIENAD8UD3](https://www.asrockrack.com/general/productdetail.asp?Model=SIENAD8UD3#Specifications)
+    -   2 PCIe5.0 / CXL1.1 x16
+    -   **Not suitable: PCIe slots are too close to each other**
+-   [ASRock Rack SIENAD8UD2-2Q](https://www.asrockrack.com/general/productdetail.asp?Model=SIENAD8UD2-2Q#Specifications)
+    -   2 PCIe5.0 / CXL1.1 x16, 1 PCIe5.0 / CXL1.1 x8
+    -   **Not suitable: PCIe slots are too close to each other**
+-   [ASRock Rack SIENAD8UD-2L2Q](https://www.asrockrack.com/general/productdetail.asp?Model=SIENAD8UD-2L2Q#Specifications)
+    -   2 PCIe5.0 / CXL1.1 x16, 1 PCIe5.0 / CXL1.1 x8,
+    -   **Not suitable: PCIe slots are too close to each other**
+-   [ASUS S14NA-U12](https://servers.asus.com/products/servers/server-motherboards/S14NA-U12)
+    -   2 x PCIe 5.0 x 16 slot (x16 link, FL)
+    -   1 x PCIe 5.0 x 8 slot (x8 link, FL)
+    -   **Not suitable: PCIe slots are too close to each other**
+-   [Advantech ASMB-561](https://www.advantech.com/en-eu/products/1f591987-697f-49f8-9fb0-0cca6b3e01eb/asmb-561/mod_57f454b0-03f1-4f7e-a1f6-a60a0176d7df)
+    -   Four PCIe Gen5 x16 slots with CXL support on slot 4/6
+    -   **Possible candidate**
+
+</details> <!-- Motherboard -->
+
+</details> <!-- Energy efficient server Server -->
 
 ## Workstation
 
