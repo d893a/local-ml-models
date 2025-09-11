@@ -2,7 +2,6 @@
 
 -   [Server](#server)
 -   [Energy efficient server](#energy-efficient-server)
--   [Energy efficient server](#energy-efficient-server)
 -   [Workstation](#workstation)
 -   [Desktop PC](#desktop-pc)
 -   [Embedded / mobile CPU](#embedded--mobile-cpu)
@@ -919,13 +918,11 @@ Energy efficient server configuration
     -   RAM module side memory bandwidth:
         -   [1-CPU config](https://hothardware.com/Image/Resize/?width=1170&height=1170&imageFile=/contentimages/Article/3257/content/big_epyc-cpu-memory-capabilities.jpg):
             6 x 8 x 4.8 GT/s = 230.4 GB/s
--   Minimum 4 CCDs per processor:
     -   CPU side memory bandwidth:
         -   Zen 4:
             -   4 CCD x 32 x 1.8 GHz = 230.4 GB/s
             -   2 CCD x 32 x 1.8 GHz = 115.2 GB/s
             -   1 CCD x 32 x 1.8 GHz = 67.6 GB/s
-        -   Supports 6x PCIe 5.0 x16 GPUs (6 x 63 = 378 GB/s)
 -   [Zen 4](https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)):
     -   [96 PCIe 5.0 lanes](https://www.techpowerup.com/cpu-specs/epyc-8224p.c3292#gallery-2) (5 x PCIe 5.0 x16 + 2x PCIe 5.0 x8)
 -   [CPU candidates](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series.html#tabs-4380fde236-item-a9a09e8dc2-tab) which support PCIe 5.0 x16:
@@ -935,20 +932,6 @@ Energy efficient server configuration
     -   2 CCDs, 115.2 GB/s: 8124P, 8224P
     -   4 CCDs, 230.4 GB/s: 8324P, 8434P, 8534P
 -   Suggested picks: AMD EPYC 8224P, 8324P
-
-</details>
-
-<details><summary>CPU cooler</summary>
-
--   [Noctua NH-D9 TR5-SP6 4U](https://noctua.at/en/nh-d9-tr5-sp6-4u)
-    -   [Specification](https://noctua.at/en/nh-d9-tr5-sp6-4u/specification)
-    -   [CPU compatibility](https://ncc.noctua.at/cpus/model/AMD-Epyc-8324P-1779): OK
-    -   The NH-D9’s direction of airflow is parallel to the long axis of the
-        socket, so it is ideal for builds where the hot air is exhausted this
-        way.
-    -   Height (with fan): 134 mm
-    -   Max. airflow: 96,3 m³/h
-    -   Max. acoustical noise: 30,6 dB(A)
 
 </details>
 
@@ -997,6 +980,20 @@ Energy efficient server configuration
     -   **Possible candidate**
 
 </details> <!-- Motherboard -->
+
+<details><summary>CPU cooler</summary>
+
+-   [Noctua NH-D9 TR5-SP6 4U](https://noctua.at/en/nh-d9-tr5-sp6-4u)
+    -   [Specification](https://noctua.at/en/nh-d9-tr5-sp6-4u/specification)
+    -   [CPU compatibility](https://ncc.noctua.at/cpus/model/AMD-Epyc-8324P-1779): OK
+    -   The NH-D9’s direction of airflow is parallel to the long axis of the
+        socket, so it is ideal for builds where the hot air is exhausted this
+        way.
+    -   Height (with fan): 134 mm
+    -   Max. airflow: 96,3 m³/h
+    -   Max. acoustical noise: 30,6 dB(A)
+
+</details>
 
 </details> <!-- Energy efficient server Server -->
 
