@@ -1,7 +1,7 @@
 # Hardware alternatives for running machine learning models locally
 
 -   [Server](#server)
--   [Energy efficient server](#energy-efficient-server)
+-   [Light server](#light-server)
 -   [Workstation](#workstation)
 -   [Desktop PC](#desktop-pc)
 -   [Embedded / mobile CPU](#embedded--mobile-cpu)
@@ -489,9 +489,9 @@ Minimal 1-CPU configuration
         >   -   Cons:
         >       -   they don't plan to release BIOS upgrade for Epyc Turin (I asked)
 
-    [3.7]: https://www.newegg.com/p/pl?N=100007629+601411369&srsltid=AfmBOorDHas0epelrMNy2kXSwLPh7xgASlrIeIDU2XXqA3ZYBGRT9cm3&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
-    [3.12]: https://www.newegg.com/p/pl?N=100007629+601411369&utm_source=chatgpt.com "Socket SP5 Server Motherboards | Newegg.com"
-    [3.13]: https://www.reddit.com/r/homelab/comments/1h1iprj?utm_source=chatgpt.com "Epyc 97x4 Genoa Motherboard"
+    [3.7]: https://www.newegg.com/p/pl?N=100007629+601411369&srsltid=AfmBOorDHas0epelrMNy2kXSwLPh7xgASlrIeIDU2XXqA3ZYBGRT9cm3 "Socket SP5 Server Motherboards | Newegg.com"
+    [3.12]: https://www.newegg.com/p/pl?N=100007629+601411369 "Socket SP5 Server Motherboards | Newegg.com"
+    [3.13]: https://www.reddit.com/r/homelab/comments/1h1iprj "Epyc 97x4 Genoa Motherboard"
 
 </details>
 <details><summary>SSD</summary>
@@ -686,17 +686,17 @@ Minimal 1-CPU configuration
         | 9734              | 1 021 110                | ([Árukereső.hu][cpu_zen4_2_4]) |
         | 9754 ←            | 1 243 230                | ([Árukereső.hu][cpu_zen4_2_5]) |
 
-        [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-        [cpu_zen4_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-        [cpu_zen4_1_1]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-        [cpu_zen4_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C768-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
+        [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen4_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+        [cpu_zen4_1_1]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+        [cpu_zen4_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C768-mb-l3-cache/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
         [cpu_zen4_1_3]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, AMD Socket SP5"
-        [cpu_zen4_2_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9554p-64-core-3-1ghz-sp5-tray-100-000000804-p924473337/?utm_source=chatgpt.com "AMD EPYC 9554P 64-Core 3.1GHz SP5 Tray (100-000000804 ..."
-        [cpu_zen4_2_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/?utm_source=chatgpt.com "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-        [cpu_zen4_2_3]: https://www.arukereso.hu/processzor-c3139/f%3A96-magos-processzor%2Camd-socket-sp5/?orderby=13&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - AMD ... - Árukereső.hu"
-        [cpu_zen4_2_4]: https://www.arukereso.hu/processzor-c3139/f%3A112-magos-processzor%2Camd-epyc/?utm_source=chatgpt.com "Típus: AMD Epyc, 112 magos processzor - Árukereső.hu"
-        [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/?utm_source=chatgpt.com "AMD EPYC 9754 128-Core 2.25GHz SP5 Tray (100-000001234 ..."
-        [cpu_zen4_2_6]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754s-2-25ghz-tray-p1046085382/?utm_source=chatgpt.com "AMD Epyc 9754S 2.25GHz Tray vásárlás, olcsó ... - Árukereső.hu"
+        [cpu_zen4_2_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9554p-64-core-3-1ghz-sp5-tray-100-000000804-p924473337/ "AMD EPYC 9554P 64-Core 3.1GHz SP5 Tray (100-000000804 ..."
+        [cpu_zen4_2_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
+        [cpu_zen4_2_3]: https://www.arukereso.hu/processzor-c3139/f%3A96-magos-processzor%2Camd-socket-sp5/?orderby=13 "Vásárlás: Processzor árak összehasonlítása - AMD ... - Árukereső.hu"
+        [cpu_zen4_2_4]: https://www.arukereso.hu/processzor-c3139/f%3A112-magos-processzor%2Camd-epyc/ "Típus: AMD Epyc, 112 magos processzor - Árukereső.hu"
+        [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/ "AMD EPYC 9754 128-Core 2.25GHz SP5 Tray (100-000001234 ..."
+        [cpu_zen4_2_6]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754s-2-25ghz-tray-p1046085382/ "AMD Epyc 9754S 2.25GHz Tray vásárlás, olcsó ... - Árukereső.hu"
 
     -   Zen 5:
         -   Below 300 W: 9355P, 9355, 9365, 9455P, 9455, 9535
@@ -727,21 +727,21 @@ Minimal 1-CPU configuration
         | 9825              | — Not found —            | No listings located            |
         | 9845              | — Not found —            | No listings located            |
 
-        [cpu_zen5_0_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355p-32-core-3-55ghz-sp5-tray-100-000001521-p1149737872/?utm_source=chatgpt.com "AMD EPYC 9355P 32-Core 3.55GHz SP5 Tray (100-000001521 ..."
-        [cpu_zen5_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A4-nm%2Camd-epyc/?orderby=13&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-        [cpu_zen5_0_3]: https://www.arukereso.hu/processzor-c3139/kiszereles-talcas-oem/?utm_source=chatgpt.com "Kiszerelés: Tálcás (OEM) - Processzor - Árukereső.hu"
-        [cpu_zen5_0_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas-oem/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen5_0_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355p-32-core-3-55ghz-sp5-tray-100-000001521-p1149737872/ "AMD EPYC 9355P 32-Core 3.55GHz SP5 Tray (100-000001521 ..."
+        [cpu_zen5_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A4-nm%2Camd-epyc/?orderby=13 "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen5_0_3]: https://www.arukereso.hu/processzor-c3139/kiszereles-talcas-oem/ "Kiszerelés: Tálcás (OEM) - Processzor - Árukereső.hu"
+        [cpu_zen5_0_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas-oem/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
         [cpu_zen5_0_5]: https://www.arukereso.hu/processzor-c3139/amd-epyc/?st=9535 "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc 9535"
-        [cpu_zen5_1_1]: https://www.arukereso.hu/processzor-c3139/512-mb-l3-cache/?utm_source=chatgpt.com "L3 cache: 512 MB - Processzor árak összehasonlítása - Árukereső.hu"
-        [cpu_zen5_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-        [cpu_zen5_1_3]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9375f-32-core-3-8ghz-sp5-tray-100-000001197-p1162090915/?utm_source=chatgpt.com "AMD EPYC 9375F 32-Core 3.8GHz SP5 Tray (100-000001197 ..."
-        [cpu_zen5_1_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C256-mb-l3-cache/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
-        [cpu_zen5_1_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9475f-48-core-3-65ghz-sp5-tray-100-000001143-p1163945305/?utm_source=chatgpt.com "AMD EPYC 9475F 48-Core 3.65GHz SP5 Tray (100-000001143 ..."
-        [cpu_zen5_1_6]: https://www.arukereso.hu/processzor-c3139/f%3A64-magos-processzor%2Camd-epyc/?utm_source=chatgpt.com "Típus: AMD Epyc, 64 magos processzor - Árukereső.hu"
-        [cpu_zen5_1_7]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas/?orderby=1&start=75&utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-        [cpu_zen5_2_1]: https://www.arukereso.hu/processzor-c3139/amd-socket-sp5/?utm_source=chatgpt.com "Processzor árak összehasonlítása - AMD Socket SP5 - Árukereső.hu"
-        [cpu_zen5_2_2]: https://www.arukereso.hu/processzor-c3139/96-magos-processzor/?utm_source=chatgpt.com "Vásárlás: Processzor árak összehasonlítása - 96 magos processzor"
-        [cpu_zen5_2_3]: https://www.arukereso.hu/processzor-c3139/4-nm/?utm_source=chatgpt.com "Processzor árak összehasonlítása - Gyártási technológia: 4 nm"
+        [cpu_zen5_1_1]: https://www.arukereso.hu/processzor-c3139/512-mb-l3-cache/ "L3 cache: 512 MB - Processzor árak összehasonlítása - Árukereső.hu"
+        [cpu_zen5_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen5_1_3]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9375f-32-core-3-8ghz-sp5-tray-100-000001197-p1162090915/ "AMD EPYC 9375F 32-Core 3.8GHz SP5 Tray (100-000001197 ..."
+        [cpu_zen5_1_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C256-mb-l3-cache/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
+        [cpu_zen5_1_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9475f-48-core-3-65ghz-sp5-tray-100-000001143-p1163945305/ "AMD EPYC 9475F 48-Core 3.65GHz SP5 Tray (100-000001143 ..."
+        [cpu_zen5_1_6]: https://www.arukereso.hu/processzor-c3139/f%3A64-magos-processzor%2Camd-epyc/ "Típus: AMD Epyc, 64 magos processzor - Árukereső.hu"
+        [cpu_zen5_1_7]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas/?orderby=1&start=75 "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen5_2_1]: https://www.arukereso.hu/processzor-c3139/amd-socket-sp5/ "Processzor árak összehasonlítása - AMD Socket SP5 - Árukereső.hu"
+        [cpu_zen5_2_2]: https://www.arukereso.hu/processzor-c3139/96-magos-processzor/ "Vásárlás: Processzor árak összehasonlítása - 96 magos processzor"
+        [cpu_zen5_2_3]: https://www.arukereso.hu/processzor-c3139/4-nm/ "Processzor árak összehasonlítása - Gyártási technológia: 4 nm"
 
 </details>
 <details><summary>CPU cooler prices</summary>
@@ -775,10 +775,10 @@ Minimal 1-CPU configuration
             | **KSM56R46BD8PMI-32MDI** | from 93 900 Ft         | Árukereső comparison ([Árukereső.hu][ram_kingston_3])               |
             | **KSM64R52BD8-32MD**     | 161 890 Ft             | Direct listing ([Árukereső.hu][ram_kingston_4])                     |
 
-            [ram_kingston_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Ctipus-szerver-memoria/?start=75&utm_source=chatgpt.com "Vásárlás: Kingston Memória modul árak összehasonlítása - Típus"
-            [ram_kingston_2]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5600mhz-ksm56r46bd8-32md-p1128575413/?utm_source=chatgpt.com "Kingston 32GB DDR5 5600MHz KSM56R46BD8 ... - Árukereső.hu"
-            [ram_kingston_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Cmemoriakesleltetes-cl-46/?orderby=1&utm_source=chatgpt.com "Vásárlás: Kingston Memória modul árak ... - Árukereső.hu"
-            [ram_kingston_4]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5200mhz-ksm64r52bd8-32md-p1190480737/?utm_source=chatgpt.com "Kingston 32GB DDR5 5200MHz KSM64R52BD8-32MD memória ..."
+            [ram_kingston_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Ctipus-szerver-memoria/?start=75 "Vásárlás: Kingston Memória modul árak összehasonlítása - Típus"
+            [ram_kingston_2]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5600mhz-ksm56r46bd8-32md-p1128575413/ "Kingston 32GB DDR5 5600MHz KSM56R46BD8 ... - Árukereső.hu"
+            [ram_kingston_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Cmemoriakesleltetes-cl-46/?orderby=1 "Vásárlás: Kingston Memória modul árak ... - Árukereső.hu"
+            [ram_kingston_4]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5200mhz-ksm64r52bd8-32md-p1190480737/ "Kingston 32GB DDR5 5200MHz KSM64R52BD8-32MD memória ..."
         -   Samsung
             | Memory Module        | Price (HUF)         | Notes                                       |
             |----------------------|---------------------|---------------------------------------------|
@@ -787,17 +787,17 @@ Minimal 1-CPU configuration
             | **M321R4GA3EB0-CWM** | from **78 272 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_2])  |
             | **M321R4GA3PB0-CWM** | from **74 580 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_3])  |
 
-            [ram_samsung_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoria-tipusa-ddr5/?orderby=1&utm_source=chatgpt.com "Olcsó DDR5 Samsung memória - Árukereső.hu"
-            [ram_samsung_2]: https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3eb0-cwm-p1194855955/?utm_source=chatgpt.com "Samsung 32GB DDR5 5600MHz M321R4GA3EB0-CWM memória ..."
-            [ram_samsung_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoriakesleltetes-cl-46/?utm_source=chatgpt.com "Vásárlás: Samsung Memória modul árak ... - Árukereső.hu"
+            [ram_samsung_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoria-tipusa-ddr5/?orderby=1 "Olcsó DDR5 Samsung memória - Árukereső.hu"
+            [ram_samsung_2]: https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3eb0-cwm-p1194855955/ "Samsung 32GB DDR5 5600MHz M321R4GA3EB0-CWM memória ..."
+            [ram_samsung_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoriakesleltetes-cl-46/ "Vásárlás: Samsung Memória modul árak ... - Árukereső.hu"
         -   Micron
             | Memory Module                                 | Price (HUF)                                       | Availability |
             | --------------------------------------------- | ------------------------------------------------- | ------------ |
             | **MTC20F2085S1RC48BR** (32 GB, DDR5 4800 MHz) | from **82 648 Ft** ([Árukereső.hu][ram_micron_1]) | Available    |
             | **MTC20F2085S1RC56BR** (32 GB, DDR5 5600 MHz) | from **69 602 Ft** ([Árukereső.hu][ram_micron_2]) | Available    |
 
-            [ram_micron_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Ckapacitas-32-gb/?utm_source=chatgpt.com "Vásárlás: Micron Memória modul árak összehasonlítása - Kapacitás ..."
-            [ram_micron_2]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Cmemoria-tipusa-ddr5/?utm_source=chatgpt.com "Micron Memória modul árak összehasonlítása - DDR5 - Árukereső.hu"
+            [ram_micron_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Ckapacitas-32-gb/ "Vásárlás: Micron Memória modul árak összehasonlítása - Kapacitás ..."
+            [ram_micron_2]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Cmemoria-tipusa-ddr5/ "Micron Memória modul árak összehasonlítása - DDR5 - Árukereső.hu"
 -   For 2-CPU architecture:
     -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
 
@@ -887,28 +887,31 @@ Minimal 1-CPU configuration
 
 <div class="page"/>
 
-## Energy efficient server
+## Light server
 
-<!--
-Energy efficient server configuration
+Light server configuration
 -   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling
 -   Theoretical maximum RAM bandwidth of 115.2 GB/s
 -   Suggested processors: AMD EPYC 8224P, 8124P (8024P if 67.6 GB/s memory bandwidth is tolerable)
+-   Suggested motherboards: ASRock Rack SIENAD8-2L2T.
+    -   Maybe GIGABYTE ME03-PE0 if using one x16 slot at PCIe 4.0.
+    -   Maybe ASUS S14NA-U12 if using MCIO extension.
 
-| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
-|-------------|----------------------------------------------------|--------------------:|------------------------:|
-| CPU         | AMD EPYC [8224P][pr_8224P]                         |         402,090     |             402,090     |
-| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
-| Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
-| CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
-| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
-| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
-| **Total**   |                                                    |                     |         **2,285,102**   |
--->
+| Component   | Model                                                            | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|------------------------------------------------------------------|--------------------:|------------------------:|
+| CPU         | AMD EPYC [8224P][pr_8224P]                                       |         402,090     |             402,090     |
+| RAM         | Micron 64GB DDR5 4800MHz [MTC40F2046S1RC48BA1R][ram_ls_64gb] × 6 |         163,690     |             982,140     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110                 |         129,910     |             129,910     |
+| Motherboard | ASRock Rack [SIENAD8-2L2T][mbd_SIENAD8-2L2T]                     |         317,034     |             317,034     |
+| CPU cooler  | Noctua [NH-D9 TR5-SP6 4U][sp6_clr_noctua]                        |          53,890     |              53,890     |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum                    |         212,990     |             212,990     |
+| Chassis     | Fractal Design Torrent                                           |          75,600     |              75,600     |
+| **Total**   |                                                                  |                     |         **2,173,654**   |
 
 [pr_8224P]: https://www.arukereso.hu/processzor-c3139/amd/epyc-8224p-24-core-2-55ghz-sp6-tray-100-000001134-p1035460933/
-
+[mbd_SIENAD8-2L2T]: https://www.senetic.hu/product/SIENAD8-2L2T
+[ram_ls_64gb]: https://www.arukereso.hu/memoria-modul-c3577/micron/64gb-ddr5-4800mhz-mtc40f2046s1rc48ba1r-p943393176/
+[sp6_clr_noctua]: https://ipon.hu/shop/termek/noctua-nh-d9-tr5-sp6-4u-cpu-cooler/2251012?aku=27dcaa5a946a5d25ecbc2b5ca46149b2
 
 ### Specs
 
@@ -937,11 +940,6 @@ Energy efficient server configuration
 
 <details><summary>Motherboard</summary>
 
--   [GIGABYTE ME03-PE0](https://www.gigabyte.com/Enterprise/Server-Motherboard/ME03-PE0-rev-1x)
-    -   3 x PCIe Gen5 x16 expansion slots
-    -   4 x PCIe Gen4 x16 and x8 expansion slots
-    -   **Not optimal: Need to use one PCIe 5.0 x16 and one PCIe 4.0 x16 slot**
-    -   [Qualified Vendor List](https://download.gigabyte.com/FileList/QVL/server_mb_qvl_ME03-PE0_v1.0.pdf?v=49453fe0c587e648d48438af52747fed)
 -   [ASRock Rack SIENAD8-2L2T](https://www.asrockrack.com/general/productdetail.asp?Model=SIENAD8-2L2T#Specifications)
     ([Review](https://www.servethehome.com/asrock-rack-sienad8-2l2t-amd-epyc-8004-siena-motherboard-review/))
     -   8 DIMM slots (2DPC/1DPC), supports DDR5 RDIMM
@@ -962,6 +960,11 @@ Energy efficient server configuration
         | DDR5 | 4800  | RDIMM | 32GB  | Samsung | M321R4GA0BB0-CQKET            | K4RAH046VB BCQK | Sec              |
         | DDR5 | 4800  | RDIMM | 16GB  | SMART   | SR2G8RD5285-SB                | K4RAH086VB FCQK | Sec              |
     -   **This motherboard is a viable choice**
+-   [GIGABYTE ME03-PE0](https://www.gigabyte.com/Enterprise/Server-Motherboard/ME03-PE0-rev-1x)
+    -   3 x PCIe Gen5 x16 expansion slots
+    -   4 x PCIe Gen4 x16 and x8 expansion slots
+    -   **Not optimal: Need to use one PCIe 5.0 x16 and one PCIe 4.0 x16 slot**
+    -   [Qualified Vendor List](https://download.gigabyte.com/FileList/QVL/server_mb_qvl_ME03-PE0_v1.0.pdf?v=49453fe0c587e648d48438af52747fed)
 -   [ASRock Rack SIENAD8UD3](https://www.asrockrack.com/general/productdetail.asp?Model=SIENAD8UD3#Specifications)
     -   2 PCIe5.0 / CXL1.1 x16
     -   **Not suitable: PCIe slots are too close to each other**
@@ -995,7 +998,42 @@ Energy efficient server configuration
 
 </details>
 
-</details> <!-- Energy efficient server Server -->
+<details><summary>Chassis</summary>
+
+-   Review: ([Gamers Nexus - Best PC Cases of 2022 - Best Thermals (Fractal Torrent)](https://youtu.be/pL5uttjPWZE?t=678))
+-   [Fractal Design Torrent](https://www.fractal-design.com/products/cases/torrent/torrent/black-solid/)
+    -   Expansion slots: 7
+    -   Front interface: 1x USB 3.2 Gen 2x2 Type-C (20 Gbps), 2x USB 3.0, HD Audio
+    -   Total fan mounts: 7x 120/140 mm or 4x 180 mm
+    -   Front fan: 3x 120/140 mm or 2x 180 mm (2x Dynamic GP-18 included in standard version, 2x Prisma AL-18 included in RGB version)
+    -   Rear fan: 1x 120/140 mm
+    -   Bottom fan: 3x 120/140 mm or 2x 180 mm (3x Dynamic GP-14 PWM included in standard version, 3x Prisma AL-14 PWM included in RGB version)
+    -   Dust filters: Front, Bottom
+    -   Fixed cable straps: Yes
+    -   Cable routing grommets: Yes
+    -   Tool-less push-to-lock: Both side panels
+    -   Captive thumbscrews: HDD brackets, SSD brackets, Top panel, Bottom fan bracket
+    -   Left side panel: Steel or Tempered glass (RGB version: Tempered glass only)
+    -   Right side panel: Steel or Tempered glass (Solid/White RGB: Steel, TG/Black RGB: Tempered Glass)
+    -   Compatibility:
+        -   Motherboard: E-ATX / ATX / mATX / ITX / SSI-EEB / SSI-CEB
+        -   Power supply: ATX
+        -   PSU max length: 230 mm
+        -   GPU max length: 461 mm total, 423 mm with front fan mounted
+        -   CPU cooler max height: 188 mm
+        -   Front radiator: Up to 360/420 mm, including 360x180 mm
+        -   Rear radiator: Up to 120/140 mm
+        -   Bottom radiator: Up to 360/420 mm (458 mm max length)
+        -   Cable routing space: 32 mm
+    -   Dimensions:
+        -   Case dimensions (LxWxH): 544 x 242 x 530 mm
+        -   Case dimensions w/o feet/protrusions/screws: 525 x 242 x 495 mm
+        -   Net weight: 11.1 kg (Solid: 10.4 kg, White TG: 10.8 kg)
+        -   Package dimensions (LxWxH): 640 x 343 x 674 mm
+        -   Gross weight: 13.7 kg (Solid: 13 kg, White TG: 13.4 kg)
+</details>
+
+</details> <!-- Light server Server -->
 
 ## Workstation
 
