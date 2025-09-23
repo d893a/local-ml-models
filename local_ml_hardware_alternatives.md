@@ -1037,7 +1037,143 @@ Light server configuration
 
 ## Workstation
 
-The AMD Threadripper platform is not evaluated; it seems to be targeting more computing power rather than more memory bandwidth.
+### Specs
+
+<details><summary>CPU: AMD Ryzen Threadripper / Threadripper Pro (sTR5 socket)</summary>
+
+-   PCIe 5.0 lanes:
+    -   Required: 2x PCIe 5.0 x16 = 32
+    -   Zen 4 provides 48 PCIe 5.0 lanes, Zen 5 128 PCIe 5.0 lanes
+        -   Either is fine
+-   Zen 4 Threadripper:
+    -   RAM module side memory bandwidth: 4 x 8 x 5.2 GT/s = 166.4 GB/s
+    -   CPU side memory bandwidth: 4 CCD x 32 x 1.8 GHz = 230.4 GB/s
+        -   Minimum 4 CCD is required to saturate the RAM
+    -   CPU candidates: AMD Ryzen Threadripper 7960X, 7970X, 7980X
+-   Zen 4 Threadripper Pro:
+    -   RAM module side memory bandwidth: 8 x 8 x 5.2 GT/s = 332.8 GB/s
+    -   CPU side memory bandwidth: 8 CCD x 32 x 1.8 GHz = 460.8 GB/s
+        -   Minimum 8 CCD is required to saturate the RAM
+    -   CPU candidates: AMD Ryzen Threadripper Pro 7985WX, 7995WX
+-   Zen 5 Threadripper:
+    -   RAM module side memory bandwidth: 4 x 8 x 6.4 GT/s = 204.8 GB/s
+    -   CPU side memory bandwidth: 4 CCD x 32 x 2.0 GHz = 256 GB/s
+        -   Minimum 4 CCD is required to saturate the RAM
+    -   CPU candidates: AMD Ryzen Threadripper Pro 9960X, 9970X, 9980X
+-   Zen 5 Threadripper Pro:
+    -   RAM module side memory bandwidth: 8 x 8 x 6.4 GT/s = 409.6 GB/s
+    -   CPU side memory bandwidth: 8 CCD x 32 x 2.0 GHz = 512 GB/s
+        -   Minimum 8 CCD is required to saturate the RAM
+    -   CPU candidates: AMD Ryzen Threadripper Pro 9985WX, 9995WX
+
+-   AMD Ryzen Threadripper CPU lineup
+    | Arch   | Branding           | Model    | Cores | L3 cache |
+    |--------|--------------------|----------|-------|----------|
+    | Zen 5  | Threadripper Pro   | 9995WX   | 96    | 384 MB   |
+    | Zen 5  | Threadripper Pro   | 9985WX   | 64    | 256 MB   |
+    | Zen 5  | Threadripper Pro   | 9975WX   | 32    | 128 MB   |
+    | Zen 5  | Threadripper Pro   | 9965WX   | 24    | 128 MB   |
+    | Zen 5  | Threadripper Pro   | 9955WX   | 16    | 64 MB    |
+    | Zen 5  | Threadripper Pro   | 9945WX   | 12    | 64 MB    |
+    | Zen 5  | Threadripper       | 9980X    | 64    | 256 MB   |
+    | Zen 5  | Threadripper       | 9970X    | 32    | 128 MB   |
+    | Zen 5  | Threadripper       | 9960X    | 24    | 128 MB   |
+    ||||||
+    | Zen 4  | Threadripper Pro   | 7995WX   | 96    | 384 MB   |
+    | Zen 4  | Threadripper Pro   | 7985WX   | 64    | 256 MB   |
+    | Zen 4  | Threadripper Pro   | 7975WX   | 32    | 128 MB   |
+    | Zen 4  | Threadripper Pro   | 7965WX   | 24    | 128 MB   |
+    | Zen 4  | Threadripper Pro   | 7955WX   | 16    | 64 MB    |
+    | Zen 4  | Threadripper Pro   | 7945WX   | 12    | 64 MB    |
+    | Zen 4  | Threadripper       | 7980X    | 64    | 256 MB   |
+    | Zen 4  | Threadripper       | 7970X    | 32    | 128 MB   |
+    | Zen 4  | Threadripper       | 7960X    | 24    | 128 MB   |
+
+-   Theoretical maximum memory bandwidth
+    -   The TRX50 motherboards supports both Threadripper and Threadripper Pro
+        CPUs, but only 4 memory channels. (Even if 8 RDIMM modules are
+        installed, they operate in a 4-channel configuration.)
+    -   The WRX90 motherboards support 8-channel memory configuration, but
+        they support only Threadripper Pro processors. The Threadripper line
+        is not supported.
+    -   This table assumes that a TRX50 motherboard is used, and calculates
+        with 4 memory channels even for the Threadripper Pro line.
+
+    | Model    | CCDs | CPU BW<br>[GB/s] | Mem ch | Mem speed | Mem BW<br>[GB/s] | OC Mem speed    | OC Mem BW   | Price |
+    |----------|------|------------------|--------|-----------|------------------|-----------------|-------------|------:|
+    | 9995WX   | 12   | 768.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       |       |
+    | 9985WX   | 8    | 512.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       | 3 417 990 Ft      |
+    | 9975WX   | 4    | 256.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       | 1 754 389 Ft |
+    | 9965WX   | 4    | 256.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       | 1 230 191 Ft |
+    | 9955WX   | 2    | 128.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |       |
+    | 9945WX   | 2    | 128.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |       |
+    | 9980X    | 8    | 512.0            | 4      | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       | 2 141 790 Ft |
+    | 9970X    | 4    | 256.0 ✅        | 4      | 6400 MT/s | 204.8            | 8000 MT/s ✅    | 256.0 ✅   | [1 157 190 Ft][cpu_tr_9970x] |
+    | 9960X    | 4    | 256.0 ✅        | 4      | 6400 MT/s | 204.8            | 8000 MT/s ✅    | 256.0 ✅   | [718 790 Ft][cpu_tr_9960x] |
+    ||||||||||
+    | 7995WX   | 12   | 499.2            | 4(8)   | 5200 MT/s | 332.8            | 8000 MT/s       | 256.0       |       |
+    | 7985WX   | 8    | 460.8            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       | 3 111 630 Ft |
+    | 7975WX   | 4    | 230.4            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       | 1 663 189 Ft |
+    | 7965WX   | 4    | 230.4            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       | 1 072 890 Ft |
+    | 7955WX   | 2    | 115.2            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |       |
+    | 7945WX   | 2    | 115.2            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |       |
+    | 7980X    | 8    | 460.8            | 4      | 5200 MT/s | 166.4            | 8000 MT/s       | 256.0       |       |
+    | 7970X    | 4    | 230.4 ✅        | 4      | 5200 MT/s | 166.4            | 7200 MT/s ✅    | 230.4 ✅   | [1 070 690 Ft][cpu_tr_7970x] |
+    | 7960X    | 4    | 230.4 ✅        | 4      | 5200 MT/s | 166.4            | 7200 MT/s ✅    | 230.4 ✅   | [621 980 Ft][cpu_tr_7960x] |
+
+    [cpu_tr_7960x]: https://www.arukereso.hu/processzor-c3139/amd/ryzen-threadripper-7960x-24-core-4-2ghz-sp6-str5-box-100-100001352wof-p1026372205/
+    [cpu_tr_7970x]: https://www.arukereso.hu/processzor-c3139/amd/ryzen-threadripper-7970x-32-core-4-0ghz-str5-box-100-100001351wof-p1026372193/
+    [cpu_tr_9960x]: https://www.arukereso.hu/processzor-c3139/amd/ryzen-threadripper-pro-9960x-24-core-5-4ghz-str5-box-100-100001595wof-p1215565084/
+    [cpu_tr_9970x]: https://www.arukereso.hu/processzor-c3139/amd/ryzen-threadripper-pro-9970x-32-core-5-4ghz-str5-box-100-100001594wof-p1215566377/
+
+</details>
+
+<details><summary>RAM: 256 GB</summary>
+
+-   RAM module candidates for 4 x 64 GB configuration
+    | Speed | Supplier    | Capacity | Rank     | Module P/N            | Chip Brand | Timing           | Voltage | Native |
+    |-------|-------------|----------|----------|-----------------------|------------|------------------|---------|--------|
+    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRA564G72D836         | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
+    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRA564G72D836Q ✅     | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
+    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRA564G72D836O        | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
+    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRAL564G72D836        | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
+    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRAL564G72D836Q ✅    | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
+    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRAL564G72D836O       | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
+    | 6400  | Micron      | 64GB     | 2Rx4     | MTC40F2046S1RC64BD2R  | Micron     | CL52             | 1.1V    | 6400   |
+    | 6400  | V-COLOR     | 64GB     | 2Rx4     | TR564G64D452          | Hynix A    | 52-52-52-103     | 1.1V    | 6400   |
+    | 6400  | V-COLOR     | 64GB     | 2Rx4     | TR564G64D452Q ✅      | Hynix A    | 52-52-52-103     | 1.1V    | 6400   |
+    | 6400  | V-COLOR     | 64GB     | 2Rx4     | TR564G64D452O         | Hynix A    | 52-52-52-103     | 1.1V    | 6400   |
+    | 6400  | V-COLOR     | 64GB     | 2Rx8     | TRL564G64D852         | Hynix M    | 52-52-52-103     | 1.1V    | 6400   |
+    | 6400  | V-COLOR     | 64GB     | 2Rx8     | TRL564G64D852Q        | Hynix M    | 52-52-52-103     | 1.1V    | 6400   |
+    | 6400  | V-COLOR     | 64GB     | 2Rx8     | TRL564G64D852O        | Hynix M    | 52-52-52-103     | 1.1V    | 6400   |
+
+    -   [Geizhals.eu](https://geizhals.eu/?cat=ramddr3&xf=7500_DDR5~7569_64GB~7571_6400MT%2Fs~7571_7200MT%2Fs~7761_RDIMM&offset=0&sort=p&promode=true&hloc=at&hloc=de&hloc=pl)
+        *All modules: DDR5 RDIMM 288-Pin, JEDEC PC5-51200R, Registered ECC.*
+        | Brand      | Model / P/N                  | Capacity | Speed   | CL          | Rank | ECC                  | Price (EUR) |
+        |------------|------------------------------|----------|---------|-------------|------|----------------------|-------------|
+        | Samsung    | M321R8GA0EB2-CCP             | 64 GB    | 6400 MT/s | CL52      | 2Rx4 | Sideband + On-Die    | 339.00      |
+        | Micron     | MTC40F2046S1RC64BR           | 64 GB    | 6400 MT/s | CL52-52-52| 2Rx4 | Sideband + On-Die    | 360.87      |
+        | Kingston   | KSM64R52BD4-64MD             | 64 GB    | 6400 MT/s | CL52-52-52| 2Rx4 | Sideband + On-Die    | 417.98      |
+        | Micron     | MTC40F2046S1RC64BD2R         | 64 GB    | 6400 MT/s | CL52-52-52| 2Rx4 | Sideband + On-Die    | 440.07      |
+        | Kingston   | KSM64R52BD4-64HA             | 64 GB    | 6400 MT/s | CL52-52-52| 2Rx4 | Sideband + On-Die    | 441.00      |
+        | G.Skill    | F5-6400R3644E64GQ4-T5N (Kit) | 256 GB   | 6400 MT/s | CL36-44-44-102 | 4x64GB | Sideband + On-Die | 1240.00 |
+
+-   RAM candidates for 8 x 32 GB configuration:
+-
+    | Speed | Supplier      | Capacity | Rank  | Module P/N             | Chip Brand | Timing           | Voltage | Native |
+    |-------|--------------|----------|-------|-------------------------|------------|------------------|---------|--------|
+    | 8000 ✅ | V-COLOR      | 32GB     | 1Rx8  | TRA532G80S842O          | Hynix M    | 42-60-60-126     | 1.4V    | 6400   |
+    | 8000 ✅ | V-COLOR      | 32GB     | 1Rx8  | TRAL532G80S842O         | Hynix M    | 42-60-60-126     | 1.4V    | 6400   |
+    | 7200 ✅ | V-COLOR      | 32GB     | 2Rx8  | TRA532G72D834O          | Hynix A    | 34-45-45-96      | 1.35V   | 6400   |
+    | 6800  | G.SKILL      | 32GB     |       | F5-6800R3445G32GE 8-Z R5NK | Hynix   | 34-45-45-108     | 1.4V    | 4800   |
+    | 6800  | Kingston FURY| 32GB     | 2Rx8  | KF568R34RBK8-256        | Hynix A    | 34-44-44-105     | 1.4V    | 4800   |
+    | 6800  | Kingston FURY| 32GB     | 2Rx8  | KF568R34RBK4-128        | Hynix A    | 34-44-44-105     | 1.4V    | 4800   |
+    | 6800  | Kingston FURY| 32GB     | 2Rx8  | KF568R34RB-32           | Hynix A    | 34-44-44-105     | 1.4V    | 4800   |
+    | 6400  | Kingston FURY| 32GB     | 1Rx4  | KF564R32RBK8-256        | Hynix A    | 32-39-39-80      | 1.4V    | 4800   |
+    | 6400  | Kingston FURY| 32GB     | 1Rx4  | KF564R32RBK4-128        | Hynix A    | 32-39-39-80      | 1.4V    | 4800   |
+    | 6400  | Kingston FURY| 32GB     | 1Rx4  | KF564R32RB-32           | Hynix A    | 32-39-39-80      | 1.4V    | 4800   |
+
+</details>
 
 ## Desktop PC
 
@@ -1466,5 +1602,5 @@ Variants:
 -   Computer Requirement:   Thunderbolt 3 port and support external GPU
 -   Transfer Speed: 40 Gbps
 
-
 </details>
+
