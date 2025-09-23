@@ -24,14 +24,14 @@ Minimal 1-CPU configuration
 
 | Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
-| CPU         | AMD EPYC 9354                                      |         601,460     |             601,460     |
+| CPU         | AMD EPYC 9354                                      |       1,120,491     |           1,120,491     |
 | RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
 | SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
 | Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
 | CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
 | PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
 | Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
-| **Total**   |                                                    |                     |         **2,285,102**   |
+| **Total**   |                                                    |                     |         **2,804,133**   |
 
 1-CPU maximum configuration with Zen 4 architecture
 -   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
@@ -42,14 +42,14 @@ Minimal 1-CPU configuration
 
 | Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
-| CPU         | *AMD EPYC 9754*                                    |      *1,243,230*    |          *1,243,230*    |
+| CPU         | *AMD EPYC 9754*                                    |      *2,891,190*    |          *2,891,190*    |
 | RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
 | SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
 | Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
 | CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
 | PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
 | Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
-| **Total**   |                                                    |                     |         **2,926,872**   |
+| **Total**   |                                                    |                     |         **4,574,832**   |
 
 <!--
 2-CPU configuration optimized for Zen 4 CPU inference
@@ -662,31 +662,31 @@ Minimal 1-CPU configuration
             9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554, 9554P, 9654, 9654P,
             9684X, 9734, 9754, 9754S
 
-        | Processor Model   | Lowest Listed Price (Ft) | Notes / Citation               |
-        |-------------------|--------------------------|--------------------------------|
-        | **Below 300 W**   |                          |                                |
-        | 9354 ←            | 601 410                  | ([Árukereső.hu][cpu_zen4_0_1]) |
-        | 9354P             | 917 673                  | ([Árukereső.hu][cpu_zen4_0_1]) |
-        | 9454              | 913 180                  | ([Árukereső.hu][cpu_zen4_0_1]) |
-        | 9454P             | 829 448                  | ([Árukereső.hu][cpu_zen4_0_1]) |
-        | 9534 ←            | 753 930                  | ([Árukereső.hu][cpu_zen4_0_2]) |
-        | 9634              | 1 963 614                | ([Árukereső.hu][cpu_zen4_0_2]) |
-        | **Above 300 W**   |                          |                                |
-        | 9174F             | 1 082 453                | ([Árukereső.hu][cpu_zen4_1_1]) |
-        | 9184X ←           | 1 660 384                | ([Árukereső.hu][cpu_zen4_1_2]) |
-        | 9274F             | 655 800                  | ([Árukereső.hu][cpu_zen4_1_1]) |
-        | 9374F             | 985 980                  | ([Árukereső.hu][cpu_zen4_1_3]) |
-        | 9384X ←           | 1 997 695                | ([Árukereső.hu][cpu_zen4_1_2]) |
-        | 9474F             | 1 572 490                | ([Árukereső.hu][cpu_zen4_1_1]) |
-        | 9554              | 807 950                  | ([Árukereső.hu][cpu_zen4_1_1]) |
-        | 9554P             | 1 079 486                | ([Árukereső.hu][cpu_zen4_2_1]) |
-        | 9654              | 917 690                  | ([Árukereső.hu][cpu_zen4_2_2]) |
-        | 9654P             | 935 813                  | ([Árukereső.hu][cpu_zen4_2_2]) |
-        | 9684X ←           | 2 118 660                | ([Árukereső.hu][cpu_zen4_2_3]) |
-        | 9734              | 1 021 110                | ([Árukereső.hu][cpu_zen4_2_4]) |
-        | 9754 ←            | 1 243 230                | ([Árukereső.hu][cpu_zen4_2_5]) |
+        | Processor Model   | Listed Price (Ft) | Notes / Citation               |
+        |-------------------|-------------------|--------------------------------|
+        | **Below 300 W**   |                   |                                |
+        | 9354 ←            | 1 120 491         | ([Árukereső.hu][cpu_zen4_0_1]) |
+        | 9354P             |   917 673         | ([Árukereső.hu][cpu_zen4_0_1]) |
+        | 9454              |   913 180         | ([Árukereső.hu][cpu_zen4_0_1]) |
+        | 9454P             |   829 448         | ([Árukereső.hu][cpu_zen4_0_1]) |
+        | 9534 ←            |   753 930         | ([Árukereső.hu][cpu_zen4_0_2]) |
+        | 9634              | 1 963 614         | ([Árukereső.hu][cpu_zen4_0_2]) |
+        | **Above 300 W**   |                   |                                |
+        | 9174F             | 1 082 453         | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9184X ←           | 1 660 384         | ([Árukereső.hu][cpu_zen4_1_2]) |
+        | 9274F             |   655 800         | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9374F             |   985 980         | ([Árukereső.hu][cpu_zen4_1_3]) |
+        | 9384X ←           | 1 997 695         | ([Árukereső.hu][cpu_zen4_1_2]) |
+        | 9474F             | 1 572 490         | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9554              |   807 950         | ([Árukereső.hu][cpu_zen4_1_1]) |
+        | 9554P             | 1 079 486         | ([Árukereső.hu][cpu_zen4_2_1]) |
+        | 9654              |   917 690         | ([Árukereső.hu][cpu_zen4_2_2]) |
+        | 9654P             |   935 813         | ([Árukereső.hu][cpu_zen4_2_2]) |
+        | 9684X ←           | 2 118 660         | ([Árukereső.hu][cpu_zen4_2_3]) |
+        | 9734              | 1 021 110         | ([Árukereső.hu][cpu_zen4_2_4]) |
+        | 9754 ←            | 2 891 190         | ([Árukereső.hu][cpu_zen4_2_5]) |
 
-        [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
+        [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9354-32-core-3-25ghz-sp5-tray-100-000000798-p923300802/
         [cpu_zen4_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
         [cpu_zen4_1_1]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
         [cpu_zen4_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C768-mb-l3-cache/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
@@ -695,7 +695,7 @@ Minimal 1-CPU configuration
         [cpu_zen4_2_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
         [cpu_zen4_2_3]: https://www.arukereso.hu/processzor-c3139/f%3A96-magos-processzor%2Camd-socket-sp5/?orderby=13 "Vásárlás: Processzor árak összehasonlítása - AMD ... - Árukereső.hu"
         [cpu_zen4_2_4]: https://www.arukereso.hu/processzor-c3139/f%3A112-magos-processzor%2Camd-epyc/ "Típus: AMD Epyc, 112 magos processzor - Árukereső.hu"
-        [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/ "AMD EPYC 9754 128-Core 2.25GHz SP5 Tray (100-000001234 ..."
+        [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/
         [cpu_zen4_2_6]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754s-2-25ghz-tray-p1046085382/ "AMD Epyc 9754S 2.25GHz Tray vásárlás, olcsó ... - Árukereső.hu"
 
     -   Zen 5:
@@ -1037,12 +1037,26 @@ Light server configuration
 
 ## Workstation
 
+The AMD Threadripper platform is not evaluated; it seems to be targeting more computing power rather than more memory bandwidth.
+
 ## Desktop PC
 
 <details><summary>Details</summary>
 
 -   10 GB LLM model expected CPU-only performance: Prompt processing: 125 token/s, Token generation: 8 token/s
 -   Supports 1 PCIe x16 GPU, or 2 PCIe x8 GPUs.
+
+| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|-------------|----------------------------------------------------|--------------------:|------------------------:|
+| CPU         | AMD Ryzen 9 9950X3D                                |       1,120,491     |           1,120,491     |
+| RAM         |     |          76,020     |             912,240     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
+| Motherboard |                            |         328,912     |             328,912     |
+| CPU cooler  | Noctua NH-D15 G2                                   |               |              23,990     |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
+| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
+| **Total**   |                                                    |                     |         **2,804,133**   |
+
 
 ### AMD Ryzen 9 9950X3D
 
@@ -1097,6 +1111,7 @@ Light server configuration
         -   Dual RTX 5090 readiness:
             -   Supported electrically (PCIe 5.0 x8/x8 for two GPUs).
             -   No supplemental PCIe slot power header is advertised; ensure robust PSU and airflow.
+        -   ❗**Note:** May burn the CPU with unfortunate PBO settings
     -   [ASUS ROG Crosshair X870E Hero](https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-hero-model/)
         -   Dual RTX 5090 readiness:
             -   Supported electrically (x8/x8).
@@ -1113,12 +1128,52 @@ Light server configuration
                 auxiliary PCIe slot power header—verify in the manual; strong
                 pick for dual GPUs.
     -   [MSI MEG X870E GODLIKE](https://www.msi.com/Motherboard/MEG-X870E-GODLIKE)
+        -   [Datasheet](https://storage-asset.msi.com/datasheet/mb/global/MEG-X870E-GODLIKE.pdf)
+        -   E-ATX
+        -   4x DDR5 UDIMM, Maximum Memory Capacity 256GB
+        -   Memory Support DDR5 9000 - 5600 (OC) MT/s / 5600 - 4800 (JEDEC) MT/s
+        -   Ryzen™ 9000 Series Processors max. overclocking frequency:
+            -   1DPC 1R Max speed up to 8400+ MT/s
+            -   1DPC 2R Max speed up to 6400+ MT/s
+            -   2DPC 1R Max speed up to 6400+ MT/s
+            -   2DPC 2R Max speed up to 6400+ MT/s
+        -   Supports AMD POR Speed and JEDEC Speed
+        -   Supports Memory Overclocking and AMD EXPO
+        -   Supports Dual-Channel mode
+        -   Supports Non-ECC, Un-buffered memory
+        -   Supports CUDIMM, Clock Driver bypass mode only*
         -   Dual RTX 5090 readiness:
             -   Yes. Includes a supplemental PCIe slot power header ("PCIe
                 Supplemental Power"); best-in-class choice for dual high-power
                 GPUs.
--   RAM:
-    -   CPU max RAM: [192 GB](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html)
+        -   RAM modules supported by the MSI MEG X870E GODLIKE motherboard: https://www.msi.com/Motherboard/MEG-X870E-GODLIKE/support#mem
+            | Vendor      | Model                              | SPD Speed (MHz) | Supported Speed (MHz) | Voltage (V) | Sided | Size (GB) | 1/2/4 DIMM |
+            |-------------|------------------------------------|-----------------|-----------------------|-------------|-------|-----------|------------|
+            | G.SKILL     | F5-6000J3644D64GX4-TR5NS           | 5600            | 6000                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | G.SKILL     | F5-6000J3644D64GX4-TZ5NR           | 5600            | 6000                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | G.SKILL     | F5-6000J3644D64GX4-FX5             | 5600            | 6000                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | G.SKILL     | F5-6000J3444F64GX4-FX5             | 5600            | 6000                  | 1.35        | DUAL  | 64        | √ √ √      |
+            | Kingston    | KF556C40BBK2-128                   | 4800            | 5600                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | Kingston    | KF556C36BBEAK2-128                 | 4800            | 5600                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | Kingston    | KF556C36BBE-64                     | 4800            | 5600                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | Kingston    | KF556C36BBEA-64                    | 4800            | 5600                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | Kingston    | KF556C36BBEK2-128                  | 4800            | 5600                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | Kingston    | KF556C40BBA-64                     | 4800            | 5600                  | 1.25        | DUAL  | 64        | √ √ √      |
+            | Crucial     | CT64G56C46U5.M16B1                 | 5600            | 3600                  | 1.1         | DUAL  | 64        | √ √ √      |
+            | Crucial     | CP64G56C46U5.M16B1                 | 5600            | 3600                  | 1.1         | DUAL  | 64        | √ √ √      |
+            | BIWIN       | OCBXL59264DW1-Q30FB                | 5600            | **6400**              | 1.4         | DUAL  | 48        | √ √ √      |
+            | ADATA(XPG)  | AX5U6000C2848G-BB300X4             | 4800            | 6000                  | 1.4         | DUAL  | 48        | √ √ √      |
+            | ADATA(XPG)  | AX5U6000C2848G-BW300X4             | 4800            | 6000                  | 1.4         | DUAL  | 48        | √ √ √      |
+            | KingBank    | KPR548G60C28-P                     | 4800            | 6000                  | 1.4         | DUAL  | 48        | √ √ √      |
+            | ADATA(XPG)  | AX5U6000C2848G-BLABBKX4            | 4800            | 6000                  | 1.4         | DUAL  | 48        | √ √ √      |
+            | BIWIN       | OCBXL59260DW1-Q28FB                | 5600            | 6000                  | 1.4         | DUAL  | 48        | √ √ √      |
+            | CORSAIR     | CMH192GX5M4B5200C38 ver5.53.13     | 4800            | 5200                  | 1.25        | DUAL  | 48        | √ √ √      |
+            | CORSAIR     | CMK192GX5M4B5200C38 ver3.53.02     | 4800            | 5200                  | 1.25        | DUAL  | 48        | √ √ √      |
+            | KLEVV       | KD5LGUD80-56G4600                  | 5600            | 3600                  | 1.1         | DUAL  | 48        | √ √ √      |
+            | Crucial     | CP48G56C46U5.C16B                  | 5600            | 3600                  | 1.1         | DUAL  | 48        | √ √ √      |
+            | Kingston    | KVR56U46BD8-48                     | 5600            | 3600                  | 1.1         | DUAL  | 48        | √ √ √      |
+-   RAM:\
+   \ -   CPU max RAM: [192 GB](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html)
     -   Motherboard: 2x/4x DDR5 DIMM slots
     -   [128 GB](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-128-gb,tipus-pc-memoria/?orderby=1): 360 EUR
         -   RAM BW upper limit: 2 x 8 x 5.6 = 89.6 GB/s
