@@ -899,14 +899,16 @@ Light server configuration
 
 | Component   | Model                                                            | Price each<br>[HUF] | Price subtotal<br>[HUF] |
 |-------------|------------------------------------------------------------------|--------------------:|------------------------:|
-| CPU         | AMD EPYC [8224P][pr_8224P]                                       |         402,090     |             402,090     |
+| CPU         | AMD EPYC [8224P][pr_8224P] (Zen 4)                               |         402,090     |             402,090     |
 | RAM         | Micron 64GB DDR5 4800MHz [MTC40F2046S1RC48BA1R][ram_ls_64gb] × 6 |         163,690     |             982,140     |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110                 |         129,910     |             129,910     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110                 |         129,910     |             259,820     |
 | Motherboard | ASRock Rack [SIENAD8-2L2T][mbd_SIENAD8-2L2T]                     |         317,034     |             317,034     |
-| CPU cooler  | Noctua [NH-D9 TR5-SP6 4U][sp6_clr_noctua]                        |          53,890     |              53,890     |
-| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum                    |         212,990     |             212,990     |
-| Chassis     | Fractal Design Torrent                                           |          75,600     |              75,600     |
-| **Total**   |                                                                  |                     |         **2,173,654**   |
+| CPU cooler  | BE QUIET! Silent Loop 3 360mm Liquid cooler                      |          60,960     |              60,960     |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum                    |         215,900     |             215,900     |
+| Chassis     | Corsair iCUE 9000D RGB Airflow Big-Tower                         |         266,700     |             266,700     |
+| Fans        | Noctua NF-F12 iPPC-3000 Industrial PWM 120mm × 13                |          13,208     |             171,704     |
+| **Total**   |                                                                  |                     |         **2,676,348**   |
+
 
 [pr_8224P]: https://www.arukereso.hu/processzor-c3139/amd/epyc-8224p-24-core-2-55ghz-sp6-tray-100-000001134-p1035460933/
 [mbd_SIENAD8-2L2T]: https://www.senetic.hu/product/SIENAD8-2L2T
@@ -1037,6 +1039,23 @@ Light server configuration
 
 ## Workstation
 
+Workstation configuration
+-   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling
+-   Theoretical maximum RAM bandwidth of 204.8 GB/s
+-   Suggested processors: AMD Ryzen Threadripper 9960X, 7960X
+
+| Component     | Model                                                                    | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+|---------------|--------------------------------------------------------------------------|--------------------:|------------------------:|
+| CPU           | AMD Ryzen Threadripper [9960X][cpu_tr_9960x] (Zen 5)                     |         718,790     |             718,790     |
+| RAM           | KSM64R52BD8-32HA, 32GB 6400MT/s DDR5 ECC Reg CL52 DIMM 2Rx8 Hynix A × 8  |          95,250     |             762,000     |
+| SSD           | Samsung 9100 PRO, PCIe 5.0, NVMe 2.0, 2TB M.2 SSD × 2                    |         109,220     |             218,440     |
+| Motherboard   | Gigabyte MB Sc Sc sTR5 TRX50 AI TOP, AMD TRX50, 8xDDR5, WI-FI, E-ATX     |         410,210     |             410,210     |
+| CPU cooler    | BE QUIET! Silent Loop 3 360mm Liquid cooler                              |          60,960     |              60,960     |
+| PSU           | Seasonic Prime PX-2200 2200W 80 PLUS Platinum                            |         215,900     |             215,900     |
+| Chassis       | Corsair iCUE 9000D RGB Airflow Big-Tower                                 |         266,700     |             266,700     |
+| Fans          | Noctua NF-F12 iPPC-3000 Industrial PWM 120mm × 13                        |          13,208     |             171,704     |
+| **Total**     |                                                                          |                     |         **2,824,604**   |
+
 ### Specs
 
 <details><summary>CPU: AMD Ryzen Threadripper / Threadripper Pro (sTR5 socket)</summary>
@@ -1102,7 +1121,7 @@ Light server configuration
     | Model    | CCDs | CPU BW<br>[GB/s] | Mem ch | Mem speed | Mem BW<br>[GB/s] | OC Mem speed    | OC Mem BW   | Price |
     |----------|------|------------------|--------|-----------|------------------|-----------------|-------------|------:|
     | 9995WX   | 12   | 768.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       |       |
-    | 9985WX   | 8    | 512.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       | 3 417 990 Ft      |
+    | 9985WX   | 8    | 512.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       | 3 417 990 Ft |
     | 9975WX   | 4    | 256.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       | 1 754 389 Ft |
     | 9965WX   | 4    | 256.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       | 1 230 191 Ft |
     | 9955WX   | 2    | 128.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |       |
@@ -1128,9 +1147,9 @@ Light server configuration
 
 </details>
 
-<details><summary>RAM: 256 GB</summary>
+<details><summary>RAM</summary>
 
--   RAM module candidates for 4 x 64 GB configuration
+-   RAM module candidates for the Threadripper 9000 series CPUs, 4 x 64 = 256 GB configuration:
     | Speed | Supplier    | Capacity | Rank     | Module P/N            | Chip Brand | Timing           | Voltage | Native |
     |-------|-------------|----------|----------|-----------------------|------------|------------------|---------|--------|
     | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRA564G72D836         | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
@@ -1158,20 +1177,65 @@ Light server configuration
         | Kingston   | KSM64R52BD4-64HA             | 64 GB    | 6400 MT/s | CL52-52-52| 2Rx4 | Sideband + On-Die    | 441.00      |
         | G.Skill    | F5-6400R3644E64GQ4-T5N (Kit) | 256 GB   | 6400 MT/s | CL36-44-44-102 | 4x64GB | Sideband + On-Die | 1240.00 |
 
--   RAM candidates for 8 x 32 GB configuration:
--
-    | Speed | Supplier      | Capacity | Rank  | Module P/N             | Chip Brand | Timing           | Voltage | Native |
-    |-------|--------------|----------|-------|-------------------------|------------|------------------|---------|--------|
-    | 8000 ✅ | V-COLOR      | 32GB     | 1Rx8  | TRA532G80S842O          | Hynix M    | 42-60-60-126     | 1.4V    | 6400   |
-    | 8000 ✅ | V-COLOR      | 32GB     | 1Rx8  | TRAL532G80S842O         | Hynix M    | 42-60-60-126     | 1.4V    | 6400   |
-    | 7200 ✅ | V-COLOR      | 32GB     | 2Rx8  | TRA532G72D834O          | Hynix A    | 34-45-45-96      | 1.35V   | 6400   |
-    | 6800  | G.SKILL      | 32GB     |       | F5-6800R3445G32GE 8-Z R5NK | Hynix   | 34-45-45-108     | 1.4V    | 4800   |
-    | 6800  | Kingston FURY| 32GB     | 2Rx8  | KF568R34RBK8-256        | Hynix A    | 34-44-44-105     | 1.4V    | 4800   |
-    | 6800  | Kingston FURY| 32GB     | 2Rx8  | KF568R34RBK4-128        | Hynix A    | 34-44-44-105     | 1.4V    | 4800   |
-    | 6800  | Kingston FURY| 32GB     | 2Rx8  | KF568R34RB-32           | Hynix A    | 34-44-44-105     | 1.4V    | 4800   |
-    | 6400  | Kingston FURY| 32GB     | 1Rx4  | KF564R32RBK8-256        | Hynix A    | 32-39-39-80      | 1.4V    | 4800   |
-    | 6400  | Kingston FURY| 32GB     | 1Rx4  | KF564R32RBK4-128        | Hynix A    | 32-39-39-80      | 1.4V    | 4800   |
-    | 6400  | Kingston FURY| 32GB     | 1Rx4  | KF564R32RB-32           | Hynix A    | 32-39-39-80      | 1.4V    | 4800   |
+-   RAM module candidates for the Threadripper 9000 series CPUs, 8 x 32 = 256 GB configuration:
+    | Speed  | Supplier       | Capacity | Rank  | Module P/N                | Chip Brand | Timing         | Voltage | Native |
+    |--------|----------------|----------|-------|---------------------------|------------|----------------|---------|--------|
+    | 8000 ✅ | V-COLOR       | 32GB     | 1Rx8  | TRA532G80S842O            | Hynix M    | 42-60-60-126   | 1.4V    | 6400   |
+    | 8000 ✅ | V-COLOR       | 32GB     | 1Rx8  | TRAL532G80S842O           | Hynix M    | 42-60-60-126   | 1.4V    | 6400   |
+    | 7200 ✅ | V-COLOR       | 32GB     | 2Rx8  | TRA532G72D834O            | Hynix A    | 34-45-45-96    | 1.35V   | 6400   |
+    | 6800   | G.SKILL        | 32GB     | —     | F5-6800R3445G32GE8-ZR5NK  | Hynix      | 34-45-45-108   | 1.4V    | 4800   |
+    | 6800   | Kingston FURY  | 32GB     | 2Rx8  | KF568R34RBK8-256          | Hynix A    | 34-44-44-105   | 1.4V    | 4800   |
+    | 6800   | Kingston FURY  | 32GB     | 2Rx8  | KF568R34RBK4-128          | Hynix A    | 34-44-44-105   | 1.4V    | 4800   |
+    | 6800   | Kingston FURY  | 32GB     | 2Rx8  | KF568R34RB-32             | Hynix A    | 34-44-44-105   | 1.4V    | 4800   |
+    | 6400   | Kingston FURY  | 32GB     | 1Rx4  | KF564R32RBK8-256          | Hynix A    | 32-39-39-80    | 1.4V    | 4800   |
+    | 6400   | Kingston FURY  | 32GB     | 1Rx4  | KF564R32RBK4-128          | Hynix A    | 32-39-39-80    | 1.4V    | 4800   |
+    | 6400   | Kingston FURY  | 32GB     | 1Rx4  | KF564R32RB-32             | Hynix A    | 32-39-39-80    | 1.4V    | 4800   |
+
+-   RAM module candidates for the Threadripper 9000 series CPUs, 4 x 48 = 192 GB configuration:
+    | Speed | Supplier   | Capacity | Rank  | Module P/N           | Chip Brand | Timing        | Voltage | Native |
+    |-------|------------|----------|-------|----------------------|------------|---------------|---------|--------|
+    | 7200  | V-COLOR    | 48GB     | 2Rx8  | TRA548G72D834        | Hynix M    | 34-45-45-96   | 1.35V   | 6400   |
+    | 7200  | V-COLOR    | 48GB     | 2Rx8  | TRA548G72D834Q       | Hynix M    | 34-45-45-96   | 1.35V   | 6400   |
+    | 7200  | V-COLOR    | 48GB     | 2Rx8  | TRA548G72D834O       | Hynix M    | 34-45-45-96   | 1.35V   | 6400   |
+    | 7200  | V-COLOR    | 48GB     | 2Rx8  | TRAL548G72D834       | Hynix M    | 34-45-45-96   | 1.35V   | 6400   |
+    | 7200  | V-COLOR    | 48GB     | 2Rx8  | TRAL548G72D834Q      | Hynix M    | 34-45-45-96   | 1.35V   | 6400   |
+    | 7200  | V-COLOR    | 48GB     | 2Rx8  | TRAL548G72D834O      | Hynix M    | 34-45-45-96   | 1.35V   | 6400   |
+    | 6800  | V-COLOR    | 48GB     | 2Rx8  | TRA548G68D834Q       | Hynix M    | 34-46-46-92   | 1.4V    | 4800   |
+    | 6800  | V-COLOR    | 48GB     | 2Rx8  | TRA548G68D834        | Hynix M    | 34-46-46-92   | 1.4V    | 4800   |
+    | 6400  | G.SKILL    | 48GB     | —     | F5-6400R3239G48GE8-ZR5NK | Hynix  | 32-39-39-102  | 1.4V    | 4800   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRA548G64D832Q       | Hynix M    | 32-39-39-102  | 1.4V    | 4800   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRA548G64D832        | Hynix M    | 32-39-39-102  | 1.4V    | 4800   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TR548G64D852         | Hynix M    | 52-52-52-103  | 1.1V    | 6400   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TR548G64D852Q        | Hynix M    | 52-52-52-103  | 1.1V    | 6400   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TR548G64D852O        | Hynix M    | 52-52-52-103  | 1.1V    | 6400   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRL548G64D852        | Hynix M    | 52-52-52-103  | 1.1V    | 6400   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRL548G64D852Q       | Hynix M    | 52-52-52-103  | 1.1V    | 6400   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRL548G64D852O       | Hynix M    | 52-52-52-103  | 1.1V    | 6400   |
+
+-   RAM module candidates for the Threadripper 7000 series CPUs, 8 x 32 = 256 GB configuration:
+    | Speed | Supplier     | Capacity | Rank  | Module P/N                | Chip Brand | Timing           | Voltage | Native |
+    |-------|--------------|----------|-------|---------------------------|------------|------------------|---------|--------|
+    | 6800  | G.SKILL      | 32GB     | 2Rx8  | F5-6800R3445G32GE8-ZR5NK  | Hynix      | 34-45-45-108     | 1.4V    | 4800   |
+    | 6400  | G.SKILL      | 32GB     | 2Rx8  | F5-6400R3239G32GE8-ZR5NK  | Hynix      | 32-39-39-102     | 1.4V    | 4800   |
+    | 6400  | Kingston FURY| 32GB     | 2Rx8  | KF564R32RBK8-256          | Hynix A    | —                | 1.4V    | 4800   |
+    | 6400  | Kingston FURY| 32GB     | 2Rx8  | KF564R32RBK4-128          | Hynix A    | —                | 1.4V    | 4800   |
+    | 6400  | Kingston FURY| 32GB     | 2Rx8  | KF564R32RB-32             | Hynix A    | —                | 1.4V    | 4800   |
+    | 6400  | ADATA        | 32GB     | 2Rx8  | AX5R6400C3232G-B          | Hynix A    | 32-39-39-89      | 1.4V    | 5600   |
+    | 6400  | ADATA        | 32GB     | 2Rx8  | AX5R6400C3232G-BLAR       | Hynix A    | 32-39-39-89      | 1.4V    | 5600   |
+    | 6400  | ADATA        | 32GB     | 2Rx8  | AX5R6400C3232G-SLAR       | Hynix A    | 32-39-39-89      | 1.4V    | 5600   |
+    | 6400  | ADATA        | 32GB     | 2Rx8  | AX5R6400C3232G-DTLAR      | Hynix A    | 32-39-39-89      | 1.4V    | 5600   |
+    | 6400  | V-COLOR      | 32GB     | 2Rx8  | TRA532G64D832Q            | Hynix A    | 32-39-39-102     | 1.4V    | 4800   |
+    | 6400  | V-COLOR      | 32GB     | 2Rx8  | TRA532G64D832             | Hynix A    | 32-39-39-102     | 1.4V    | 4800   |
+
+-   RAM module candidates for the Threadripper 7000 series CPUs, 4 x 48 = 192 GB configuration:
+    | Speed | Supplier   | Capacity | Rank  | Module P/N                | Chip Brand | Timing         | Voltage | Native |
+    |-------|------------|----------|-------|---------------------------|------------|----------------|---------|--------|
+    | 6800  | V-COLOR    | 48GB     | 2Rx8  | TRA548G68D834Q            | Hynix M    | 34-46-46-92    | 1.4V    | 4800   |
+    | 6800  | V-COLOR    | 48GB     | 2Rx8  | TRA548G68D834             | Hynix M    | 34-46-46-92    | 1.4V    | 4800   |
+    | 6400  | G.SKILL    | 48GB     | 2Rx8  | F5-6400R3239G48GE8-ZR5NK  | Hynix      | 32-39-39-102   | 1.4V    | 4800   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRA548G64D832Q            | Hynix M    | 32-39-39-102   | 1.4V    | 4800   |
+    | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRA548G64D832             | Hynix M    | 32-39-39-102   | 1.4V    | 4800   |
+
 
 </details>
 
