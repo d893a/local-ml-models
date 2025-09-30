@@ -1236,6 +1236,12 @@ Workstation configuration
     | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRA548G64D832Q            | Hynix M    | 32-39-39-102   | 1.4V    | 4800   |
     | 6400  | V-COLOR    | 48GB     | 2Rx8  | TRA548G64D832             | Hynix M    | 32-39-39-102   | 1.4V    | 4800   |
 
+</details>
+
+<details><summary>Motherboard</summary>
+
+-   [Why is the Gigabyte TRX50 AI Top the Most Returned Threadripper Motherboard?](https://www.youtube.com/watch?v=qVeyYnD0BZI)
+-   [BIGGEST AI Motherboard EVER Created & why it's THE BEST!! feat. Gigabyte TRX50 AI TOP](https://www.youtube.com/watch?v=u3Fe_3qhpCU)
 
 </details>
 
