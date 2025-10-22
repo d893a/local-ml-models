@@ -1,5 +1,74 @@
 # Running machine learning models locally <!-- omit from toc -->
 
+<details><summary>Table of contents</summary>
+
+- [Introduction](#introduction)
+- [Characteristics of large language models](#characteristics-of-large-language-models)
+    - [Model Size](#model-size)
+    - [Quantization](#quantization)
+    - [Prompt Length](#prompt-length)
+    - [Batch Size](#batch-size)
+        - [Required operations per token](#required-operations-per-token)
+    - [LLM inference performance indicators](#llm-inference-performance-indicators)
+        - [Prompt Processing Throughput](#prompt-processing-throughput)
+        - [Time to First Token](#time-to-first-token)
+        - [Token Generation Throughput](#token-generation-throughput)
+- [Hardware](#hardware)
+    - [CPU Performance](#cpu-performance)
+        - [CPU performance calculation example](#cpu-performance-calculation-example)
+    - [Hyperthreading: Use one thread per CPU core](#hyperthreading-use-one-thread-per-cpu-core)
+    - [Thread/Parallelism Efficiency](#threadparallelism-efficiency)
+    - [CPU-only inference](#cpu-only-inference)
+    - [Maximum theoretical system memory bandwidth calculation](#maximum-theoretical-system-memory-bandwidth-calculation)
+    - [Mobile CPUs with integrated NPU](#mobile-cpus-with-integrated-npu)
+    - [Desktop CPUs](#desktop-cpus)
+    - [Workstation CPUs](#workstation-cpus)
+    - [Server CPUs](#server-cpus)
+        - [GPU parameters](#gpu-parameters)
+        - [Memory Bandwidth and Latency](#memory-bandwidth-and-latency)
+    - [CPU cooler](#cpu-cooler)
+- [Benchmarks](#benchmarks)
+    - [Benchmarking and aggregator sites](#benchmarking-and-aggregator-sites)
+- [Performance](#performance)
+- [Models](#models)
+- [Benchmark](#benchmark)
+    - [CPU benchmark](#cpu-benchmark)
+    - [GPU benchmark](#gpu-benchmark)
+    - [Model benchmark](#model-benchmark)
+    - [CPU + NPU benchmark](#cpu--npu-benchmark)
+- [Performance](#performance-1)
+    - [Motherboard](#motherboard)
+    - [SSD](#ssd)
+    - [PSU](#psu)
+    - [GPU](#gpu)
+        - [NVIDIA GPU](#nvidia-gpu)
+        - [AMD GPU](#amd-gpu)
+    - [GPU link](#gpu-link)
+    - [Case](#case)
+    - [Mini PC](#mini-pc)
+    - [Mini PC + eGPU](#mini-pc--egpu)
+    - [tinybox](#tinybox)
+    - [PIM](#pim)
+- [Survey](#survey)
+- [Software](#software)
+    - [Software Optimization](#software-optimization)
+    - [AMD CPU](#amd-cpu)
+    - [AMD GPU](#amd-gpu-1)
+    - [NVIDIA GPU](#nvidia-gpu-1)
+    - [Multi-GPU](#multi-gpu)
+- [Library](#library)
+- [Framework](#framework)
+    - [tinygrad](#tinygrad)
+    - [TextSynth Server](#textsynth-server)
+    - [Text](#text)
+    - [Visual analysis and generation](#visual-analysis-and-generation)
+    - [Voice](#voice)
+    - [OCR](#ocr)
+    - [Embedding](#embedding)
+- [Papers](#papers)
+
+</details>
+
 ## Introduction
 
 This is a collection of links and information to assess the viability of
@@ -7,252 +76,164 @@ running machine learning models and large language models locally. The aim is
 to support engineers and stakeholders to make a well-informed decision when
 procuring LLM infrastructure.
 
-Running machine learning models requires:
-- Hardware
-- Models
-- Software
+The performance of the LLM is a combination of model characteristics, hardware
+capabilities, and software efficiency.
 
-## Hardware
+## Characteristics of running large language models
 
-LLM inference prefill (preprocessing) is compute-bound: The number of
-processing cores matter most. In the case of CPU inference CPU clock frequency,
-then (L3 and L1) cache size. Token generation is memory bandwidth-bound:
-Higher memory throughput results in faster token generation.
+The large language model runner takes a sequence of tokens as input (called a
+prompt) and produces a sequence of tokens as output.
 
-GPUs have both high computing power and high memory bandwidth. A GPU with even
-a small amount of memory can accelerate inference speeds considerably.
 
-The system RAM should be large enough to accommodate the model plus the
-context. If the system RAM is too small, then swapping to (relatively slow)
-SSD will degrade overall performance.
 
-In this assessment only AMD CPUs are examined.
+Important parameters are:
+-   [Model size](#model-size)
+    -   Larger models generally achieve higher accuracy and better
+        performance, but require more memory and computational resources.
+-   Model architecture
+-   [Model quantization](#model-quantization)
+    -   Lower bit depth (e.g., 8-bit, 4-bit) reduces memory and computation
+        needs but can decrease inference accuracy. Higher bit quantization
+        (16-bit, 32-bit) preserves precision but requires more memory and
+        processing.
+-   [Prompt length](#prompt-length)
+    -   Longer prompts require more computation
+-   [Batch size](#batch-size)
+    -   Processed multiple prompts in parallel can improve throughput if the
+        CPU has enough computing power.
 
-The following hardware configurations are considered:
--   CPU only
--   CPU + GPU: The model plus context fits into the GPU VRAM
--   Hybrid CPU + GPU, including mobile (laptop, mini PC) solutions. The model plus
-    context fits into the CPU memory, but does not fit into the GPU VRAM.
+### Model Size
 
-<div class="page"/>
+Larger models generally achieve higher accuracy and better performance, but
+require more memory and computational resources. Smaller models are faster,
+and use less memory, but may have lower accuracy and are worse at complex
+tasks. The trade-off is between performance and resource usage.
 
-### CPU only
+[todo]: # (Add reference to "weights and biases" in the next paragraph)
 
-For LLM inference the CPU needs to support the AVX-512 instruction set's
-bfloat16 format. It is available in the AMD [Zen 4](https://en.wikipedia.org/wiki/Zen_4)
-and [Zen 5](https://en.wikipedia.org/wiki/Zen_5) architectures.
+The size of an LLM is typically measured by the number of parameters -- the
+weights and biases in the artificial neural network. LLMs typically have
+millions or billions of parameters, and the total storage size is measured in
+gigabytes.
 
-#### Maximum theoretical system memory bandwidth calculation
+$S_{model}$: Size of the model file in GB. Typical values for publicly
+available language models:
 
-The maximum theoretical system memory bandwidth is determined by the memory
-modules' speed and how many there are, and how fast the CPU can exchange data
-with the memory modules.
+| Model Name                    | Parameters | $S_{model}$ FP16  |
+|-------------------------------|-----------:|------------------:|
+| Tiny models (e.g. DistilGPT2) | ~80M       | ~0.15 GB          |
+| GPT-2 Small                   | 124M       | ~0.25 GB          |
+| GPT-2 Medium                  | 345M       | ~0.70 GB          |
+| GPT-2 Large                   | 774M       | ~1.5 GB           |
+| GPT-2 XL                      | 1.5B       | ~3.0 GB           |
+| Llama 2 7B                    | 7B         | ~13 GB            |
+| Llama 2 13B                   | 13B        | ~25 GB            |
+| Llama 2 70B                   | 70B        | ~140 GB           |
+| Falcon 180B                   | 180B       | ~360 GB           |
+
+For number representation FP16 (16-bit floating point) is commonly used for
+inference, halving the storage compared to FP32, typically used when training
+the model. Actual file sizes vary slightly due to model architecture and
+tokenizer data. Some models (e.g., Mistral, Phi-2, Gemma) fall between these
+sizes (e.g., 2–8 GB for 1–3B parameters).
+
+### Model quantization
+
+Lower bit depth (e.g., 8-bit, 4-bit) reduces memory and computation needs but
+can decrease inference accuracy. Higher bit quantization (16-bit, 32-bit)
+preserves precision but uses more resources.
+
+Typical quantization values used in local LLMs are 4-bit (int4), 8-bit (int8),
+and sometimes 16-bit (fp16 or
+[bfloat16](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format).) The
+4-bit and 8-bit quantizations are most common for efficient inference, while
+16-bit is often used for training or higher-precision inference.
+
+There is no universal optimum bit depth -- it depends on the model, task, and
+expected accuracy. 32-bit models (fp32) are used when maximum precision is
+needed, such as during model development, debugging, or when training very
+large models where numerical stability is critical. 16-bit models (fp16 or
+bfloat16) are commonly used during training to save memory and speed up
+computation while maintaining good accuracy. For inference, 16-bit is often
+sufficient, but 32-bit may be used if highest accuracy is required. 8-bit is
+often a good balance for inference, while 4-bit is used for maximum efficiency
+with some accuracy trade-off.
+
+### Prompt length
+
+$L_{prompt}$: Number of tokens in the input prompt.
+
+Longer prompts require more computation, especially for attention mechanisms.
+
+-   Short prompts: 5–50 tokens (e.g., simple questions, instructions)
+-   Medium prompts: 50–200 tokens (e.g., paragraphs, multi-step instructions)
+-   Long prompts: 200–1000+ tokens (e.g., documents, code, multi-turn conversations)
+
+Most practical prompts are between 10 and 200 tokens. Some advanced
+applications (retrieval-augmented generation, long context tasks) may use much
+longer prompts, up to the model’s context window (often 2,048–32,768 tokens,
+or even more, depending on the model).
+
+Prompt processing time grows with the second power of prompt length. Token
+generation time grows linearly with prompt length, offset by the model size.
+
+### Batch size
+
+$B$: Batch size - number of prompts processed in parallel. Batching can
+improve throughput if the CPU has enough computing power. Typical batch sizes
+for LLM inference depend on the use case and available system resources:
+
+-   For interactive/chat use, $B = 1$
+    -   This is the most common if low latency is prioritized
+-   For batch processing / offline inference: $B = 2..16$ (sometimes up to 32 or 64 on high-end CPUs/GPUs)
+-   For CPU-based LLMs: Batch sizes are usually $B = 1..4$ due to memory and bandwidth constraints
+-   For GPU-based LLMs: Batch sizes can be much larger ($8..128+$), limited by GPU memory
+
+### Required operations per output token
+
+$OP_{token}$: Number of floating point operations needed to
+process/generate one token [FLOP/token]. As a rule of thumb:
 
 $$
-BW_{RAM} = RAM channels * 8 * RAM speed [GT/s] \\
-BW_{CPU} = n_CCDs per core * 32 * FCLK [GHz] \\
-BW = min(BW_{RAM}, BW_{CPU})
+OP_{token} [FLOP/token] \approx 2 \times N \times d_{model}^2,
 $$
 
-Where:
--   $BW_{RAM}$: Theoretical bandwidth on the RAM modules' side
--   $BW_{CPU}$: Theoretical bandwidth on the CPU memory controller side
--   BW: Theoretical system RAM bandwidth.
-    -   Actual values are measured between 30% to 95% of the theoretical maximum.
--   FCLK: Fabric Clock Speed - clock speed of the memory controller in the CPU.
-    -   Zen 4: 1.8 Ghz, Zen 5: 2.0 GHz. Some models can be overclocked.
--   CCD: Core complex Die - contains the memory controller on the CPU side.
-    -   Ranges from 1 to 16 per CPU core.
--   RAM speed: 4.8 GT/s to 8 GT/s.
--   RAM channels: 2-12 (24 for 2-CPU setups).
-    -   RAM sizes vary between 4-128 GB
-    -   Viable total memory size: 8 GB to 1536 GB. (3072 GB in the case of 24 x 128 GB modules.)
--   See also [fairydreaming's recommendation on Reddit](https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/):
-    >   To get the best memory bandwidth, (theoretically) you should:
-    >   -   Increase FCLK for 8-channel configurations with 2 or 4 CCDs (7945WX, 7955WX, 7965WX, 7975WX),
-    >   -   Use overclocked memory in all remaining Threadripper models,
-    >   -   For Epyc, purchase a motherboard with 12 memory slots and an Epyc 9004 processor with at least 8 CCDs. Fill all memory slots.
+where \
+$N$: Number of transformer layers, and \
+$d_{model}$: hidden size.
+
+Typical Values:
+
+| Model              | Op per token<br>[GFLOP/token] |
+|--------------------|------------------------------:|
+| GPT-2 Small (124M) | 2–3                           |
+| GPT-2 Medium (345M)| 6–8                           |
+| GPT-2 Large (774M) | 15–20                         |
+| GPT-3 6.7B         | 120–150                       |
+| GPT-3 13B          | 250–300                       |
+| Llama 7B           | 80–100                        |
+| Llama 13B          | 160–200                       |
+| Llama 70B          | 800–1000                      |
+
+These are rough estimates; actual values depend on architecture details and
+prompt length (due to attention scaling).
 
 
-Examples:
--   AMD Ryzen 5 7400F: n_CCD = 1, FCLK = 1.8 GHz, ch = 2.
-    -   BW = min(2 ch * 8 * 5.2 GT/s, 1 CCD * 32 * 1.8 GHz) = min(83.2, 57.6) GB/s = 57.6 GB/s
-    -   If the model size plus context is 10 GB, then the generation throughput is less than 5.8 token/s.
--   AMD EPYC 9755: n_CCD = 16, FCLK = 2.0 GHz, ch = 12.
-    -   BW = min(12 ch * 8 * 5.6 GT/s, 16 CCD * 32 * 2.0 GHz) = min(537.6, 1024) GB/s = 537.6 GB/s
-    -   If the LLM size plus context is 10 GB, then the generation throughput is less than 53.8 token/s.
+## LLM inference performance indicators
 
-In the next sections the following CPU categories are detailed:
--   Desktop CPUs
--   Workstation CPUs
--   Server CPUs
--   Mobile CPUs
-
-<div class="page"/>
-
-###  Mobile CPUs with integrated NPU
-
--   Sockets: FL1, FP7, FP7r2 or FP8 type packages
-    -   200: All models support DDR5-5600 or LPDDR5X-7500 in 128-bit "dual-channel" mode.
-    -   300: All models support DDR5-5600 or LPDDR5X-8000 in dual-channel mode.
--   Maximum RAM: 128 GB
--   Maximum cores: 4-12 (counts at prefill throughput)
--   Cache:
-    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
-    -   L2: 1 MB per core
-    -   L3: 8-64 MB
--   Maximum PCIe lanes: 16-20
--   Maximum theoretical memory bandwidth: 128 GB/s
-    -   This caps token generation throughput of a 10 GB LLM model at 12 token/s
-
-
-| CPU Series (embedded)    | Cores<br>type  | Max RAM    | Max RAM BW   | Token<br>generation |
-|--------------------------|---------------:|-----------:|-------------:|--------------------:|
-| [Ryzen 8040][8040]       | 4-8            | 128 GB     | 89.6 GB/s    |         3-9 token/s |
-| [Ryzen AI 200][200]      | 4-8            | 256 GB     | 128 GB/s     |        4-12 token/s |
-| [Ryzen AI 300][300]      | 4-12           | 256 GB     | 128 GB/s     |        4-12 token/s |
-| [Ryzen AI MAX/MAX+][MAX] | 6-16           | 128 GB     | 128 GB/s     |        4-12 token/s |
-
-[8040]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_(8040_series,_Zen_4/RDNA3/XDNA_based)
-[200]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_Refresh_(200_series,_Zen_4/RDNA3/XDNA_based)
-[300]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Point_and_Krackan_Point_(Zen_5/RDNA3.5/XDNA2_based)
-[MAX]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Halo_(Zen_5/RDNA3.5/XDNA2_based)
-
-Prices for a complete computer are in the 1,000--2,500 EUR range.
-
-<div class="page"/>
-
-### Desktop CPUs
-
--   Socket: [AM5](https://en.wikipedia.org/wiki/Socket_AM5) (dual-channel RAM)
--   Maximum RAM: 192 GB (limits LLM model + context size to ~100 GB)
--   Maximum cores: 16 (determines prefill throughput)
--   Maximum L3 cache: 32-128 MB (limits prefill throughput)
-    -   L1 cache (Zen 4/4c): 32+32 kB, L2: 1 MB, L3: 32 MB per CCD.
-    -   L1 cache (Zen 5/5c): 32+48 kB, L2: 1 MB, L3: 32 MB per CCD.
--   Maximum available PCIe lanes: 24.
-    -   Enough to handle only one CPIe 5.0 x16 GPU
--   Maximum theoretical memory bandwidth: 89.6 GB/s
-    -   This caps token generation for a 10 GB LLM model + context at 9 token/s.
-
-| CPU Series (AM5 socket)          | Cores | Max<br>RAM size | Max<br>RAM BW | Token<br>generation |
-|----------------------------------|-------|----------------:|--------------:|--------------------:|
-| Ryzen 7700/7900/7950             | 6-16  | 128 GB          | 83.2 GB/s     |         3-8 token/s |
-| Ryzen 7040/7045/8000F/8000G      | 6-16  | 128 GB          | 83.2 GB/s     |         3-8 token/s |
-| [EPYC 4004][4004]                | 4-16  | 128 GB          | 83.2 GB/s     |         3-8 token/s |
-| [Ryzen 9000][9000]               | 6-16  | 192 GB          | 89.6 GB/s     |         3-8 token/s |
-
-[4004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
-[9000]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Granite_Ridge_(9000_series,_Zen_5_based)
-
-Prices for a complete desktop computer are in the 1000--5000 EUR range.
-
-<div class="page"/>
-
-### Workstation CPUs
-
-This includes the AMD Ryzen Threadripper and EPYC 8004 processors.
-
--   Sockets:
-    -   [sTR5](https://en.wikipedia.org/wiki/Socket_sTR5):
-        -   Threadripper: 4-channel DDR5-5200/6400 (Zen 4/5)
-        -   Threadripper Pro: 8-channel DDR5-5200/6400 (Zen 4/5)
-    -   [SP6](https://en.wikipedia.org/wiki/Socket_SP6):
-        -   EPYC 8004: 6-channel DDR5-4800 (Zen 4 only)
--   Maximum RAM: 1024 GB (2048 GB?)
--   Maximum cores: 96 (counts at prefill throughput)
--   Cache:
-    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
-    -   L2: 1 MB per core
-    -   L3: 64-384 MB per CPU
--   Maximum PCIe lanes: 128 (Pro only;
-    -   Threadripper: 48 PCIe 5.0 and 24 PCIe 4.0
-        -   Enough to add 2 CPIe 5.0 x16 GPUs
-            ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-threadripper-9980x.c4169#gallery-2))
-    -   Threadripper Pro: 128 PCIe 5.0 lanes
-        -   Enough to add 6 CPIe 5.0 x16 GPUs
-            ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-threadripper-pro-9995wx.c4163#gallery-2))
--   Maximum number of CCDs per CPU: 12
--   Maximum theoretical memory bandwidth: 166.4 to 409.6 GB/s
-    -   Caps token generation throughput of 10 GB LLM model at 16 to 40 token/s
-
-| CPU Series               | Socket | Cores   | Max<br>RAM size | Max<br>RAM BW | Token<br>generation |
-|--------------------------|--------|--------:|----------------:|--------------:|--------------------:|
-| Threadripper 7000X       | sTR5   | 24-64   | 512 GB          | 166.4 GB/s    |        5-16 token/s |
-| Threadripper Pro 7000WX  | sTR5   | 12-96   | 1024 GB         | 332.8 GB/s    |       10-33 token/s |
-| Threadripper 9000X       | sTR5   | 24-64   | 512 GB          | 204.8 GB/s    |        6-20 token/s |
-| Threadripper Pro 9000WX  | sTR5   | 12-96   | 2048 GB         | 409.6 GB/s    |       13-40 token/s |
-| EPYC 8004                | SP6    | 8-64    | 768 GB          | 230.4 GB/s    |        7-23 token/s |
-
-Prices for a complete workstation computer are in the 10,000--20,000 EUR range.
-
-<div class="page"/>
-
-### Server CPUs
-
--   Socket: [SP5](https://en.wikipedia.org/wiki/Socket_SP5):
-    -   [EPYC 9004][9004]: 12-channel DDR5-4800 (Zen 4) (24 for 2-CPU config)
-    -   [EPYC 9005][9005]: 12-channel DDR5-5600 (Zen 5) (24 for 2-CPU config)
--   Maximum RAM: 3 TB (6 TB for 2-CPU config)
--   Maximum cores: 192 (counts at prefill throughput)
--   Cache:
-    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
-    -   L2: 1 MB per core
-    -   L3: 16-1152 MB per CPU
--   Maximum PCIe lanes: 128 (160 in 2-CPU config)
-    -   Enough to add 8 CPIe 5.0 x16 GPUs
-        ([TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-9755.c3881#gallery-5))
--   Maximum number of CCDs per CPU: 16
-    -   Minimum 9 CCDs are required to serve the RAM module bandwidth
-        -   Assert $9~CCD \times 32 \times 2.0~GHz \ge 12~ch \times 8 \times 6.0~GT/s$,
-            see [calculation](#maximum-theoretical-system-memory-bandwidth-calculation)
--   Maximum theoretical memory bandwidth: 460.8 to 1075.2 GB/s
-    -   Caps token generation throughput of 10 GB LLM model at 46 to 100 token/s
-    -   Note that from the Genoa platform on, [single-rank memory modules will perform
-        well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
-        >   The other important feature is dual rank versus single rank memory.
-        >   With Milan and most Intel platforms, dual-rank memory is crucial to
-        >   maximizing performance. There’s a 25% performance delta on Milan,
-        >   for example. With Genoa, this is brought down to 4.5%. This is
-        >   another considerable cost improvement because cheaper single-rank
-        >   memory can be used.
-        ([Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1))
-
-
-| Series<br>(SP5 socket) | Cores  | Max RAM size<br>(1/2-CPU) | Max RAM BW<br>(1/2-CPU) | Token generation<br>(1/2-CPU) |
-|------------------------|-------:|--------------------------:|------------------------:|------------------------------:|
-| [EPYC 9004][9004]      | 16-128 | 3 / 6 TB                  | 460.8 / 921.6 GB/s      | 15-46 / 21-72 token/s         |
-| [EPYC 9005][9005]      | 6-192  | 3 / 6 TB                  | 537.6 / 1075.2 GB/s     | 18-53 / 25-86 token/s         |
-
-[9004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
-[9005]: https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)
-
-Test results at [OpenBenchmarking.org](https://openbenchmarking.org/) for
-[llama.cpp](https://openbenchmarking.org/test/pts/llama-cpp&eval=528957f347896758ab932a93b883fc633206e394#metrics) and
-[LocalScore](https://openbenchmarking.org/test/pts/localscore&eval=b2ce18055004793cb1bdfa1d826b3ab6666d1756#metrics).
-
-Prices for a complete computer with SP5 CPU socket are in the 2,500--7,000 EUR range.
-
-<div class="page"/>
-
-## LLM system characteristics
-
-A large language model takes a sequence of tokens as input (called prompt) and produces a
-sequence of tokens as output. The performance of the LLM is a combination of
-model characteristics, hardware capabilities, and software efficiency. The
-following parameters are indicators of performance:
--   Prompt processing throughput [token/second]
--   Time to first token [millisecond]
+The following parameters are indicators of performance:
+-   [Prompt processing throughput](#prompt-processing-throughput) [token/second]
+-   [Time to first token](#time-to-first-token) [millisecond]
     (depends on prompt processing throughput plus input prompt length)
--   Token generation throughput [token/second]
+-   [Token generation throughput](#token-generation-throughput) [token/second]
 
-### LLM inference performance indicators
 
-#### Prompt Processing Throughput
+### Prompt Processing Throughput
 
 $PP$: Number of input tokens processed in a second. The model attends to all
 prompt tokens (full attention over the entire prompt). Computational cost
-grows with the second power of prompt length ($O(L_{prompt}^2)$ for attention).
+grows with the second power of [prompt length](#prompt-length)
+($O(L_{prompt}^2)$ for attention).
 
 The formula for prompt processing speed (token/s) is:
 
@@ -265,13 +246,14 @@ Where:
 -   $E_{par}$: Parallelism efficiency (0–1) $[1]$
 -   $OP_{token}$: Floating point operations required to process one token $[FLOP/token]$
 
-This formula assumes the process is compute-bound. For very large models, memory bandwidth may also become a limiting factor.
+This formula assumes the process is compute-bound. For very large models,
+memory bandwidth also becomes a limiting factor.
 
-#### Time to First Token
+### Time to First Token
 
-$T_{first}$: The time from submitting a prompt to receiving the first output token. It includes:
--   Processing the input prompt (attention over all prompt tokens).
--   Generating the first output token.
+$T_{first}$: The time from submitting a prompt to receiving the first output
+token. It includes the time to process the input prompt (attention over all
+prompt tokens), and the time needed to generate the first output token.
 
 A simplified formula:
 
@@ -282,9 +264,9 @@ $$
 Where:
 -   $L_{prompt}$: Prompt length (number of tokens) $[token]$
 -   The first term is the compute time for the prompt.
--   The second term is the time to load model weights from RAM (if not already cached).
+-   The second term is the time to load model weights from RAM (shorter if already cached).
 
-#### Token Generation Throughput
+### Token Generation Throughput
 
 $TG$: Token Generation Throughput. For large models, token generation is often memory-bound:
 
@@ -307,94 +289,31 @@ token) is more compute-bound and depends on prompt length and CPU speed.
 [todo]: # (Add typical values/ranges for $F_{cpu}$ and $OP_{token}$)
 
 
-#### Model Size
+## Hardware
 
-Larger models generally achieve higher accuracy and better performance, but
-require more memory and computational resources. Smaller models are faster,
-and use less memory, but may have lower accuracy and are worse at complex
-tasks. The trade-off is between performance and resource usage.
+LLM inference prefill (preprocessing) is compute-bound: The calculation speed
+of the processing cores matter most. In the case of CPU inference CPU clock
+frequency, then (L3 and L1) cache size. Token generation is memory
+bandwidth-bound: Higher memory throughput results in faster token generation.
 
-[todo]: # (Add reference to "weights and biases" in the next paragraph)
+GPUs have both high computing power and high memory bandwidth. A GPU with even
+a small amount of memory can accelerate inference speeds considerably.
 
-The size of an LLM is typically measured by the number of parameters -- the
-weights and biases in the artificial neural network. LLMs typically have
-millions or billions of parameters, and the total storage size is measured in
-gigabytes.
+The system RAM should be large enough to accommodate the model plus the
+context. If the system RAM is too small, then swapping to (relatively slow)
+SSD will degrade overall performance.
 
-$S_{model}$: Size of the model file in GB. Typical values for publicly
-available language models:
+In this assessment AMD CPUs are examined as examples.
 
-| Model Name                | Parameters | $S_{model}$ FP16  |
-|---------------------------|-----------:|------------------:|
-| Tiny models (e.g. DistilGPT2) | ~80M   | ~0.15 GB          |
-| GPT-2 Small               | 124M       | ~0.25 GB          |
-| GPT-2 Medium              | 345M       | ~0.70 GB          |
-| GPT-2 Large               | 774M       | ~1.5 GB           |
-| GPT-2 XL                  | 1.5B       | ~3.0 GB           |
-| Llama 2 7B                | 7B         | ~13 GB            |
-| Llama 2 13B               | 13B        | ~25 GB            |
-| Llama 2 70B               | 70B        | ~140 GB           |
-| Falcon 180B               | 180B       | ~360 GB           |
+The following hardware configurations are considered:
+-   CPU only
+-   CPU + GPU: The model plus context fits into the GPU VRAM
+-   Hybrid CPU + GPU, including mobile (laptop, mini PC) solutions. The model plus
+    context fits into the CPU memory, but does not fit into the GPU VRAM.
 
-FP16 (16-bit floating point) is commonly used for inference, halving the
-storage compared to FP32, typically used when training the model. Actual file
-sizes vary slightly due to model architecture and tokenizer data. Some models
-(e.g., Mistral, Phi-2, Gemma) fall between these sizes (e.g., 2–8 GB for 1–3B
-parameters).
+<div class="page"></div>
 
-#### Quantization
-
-Lower bit depth (e.g., 4-bit, 8-bit) reduces memory and computation needs but
-can decrease inference accuracy. Higher bit quantization (16-bit, 32-bit)
-preserves precision but uses more resources.
-
-Typical quantization values used in local LLMs are 4-bit (int4), 8-bit (int8),
-and sometimes 16-bit (fp16 or
-[bfloat16](https://en.wikipedia.org/wiki/Bfloat16_floating-point_format).) The
-4-bit and 8-bit quantizations are most common for efficient inference, while
-16-bit is often used for training or higher-precision inference.
-
-There is no universal optimum bit depth -- it depends on the model, task, and
-expected accuracy. 32-bit models (fp32) are used when maximum precision is
-needed, such as during model development, debugging, or when training very
-large models where numerical stability is critical. 16-bit models (fp16 or
-bfloat16) are commonly used during training to save memory and speed up
-computation while maintaining good accuracy. For inference, 16-bit is often
-sufficient, but 32-bit may be used if highest accuracy is required. 8-bit is
-often a good balance for inference, while 4-bit is used for maximum efficiency
-with some accuracy trade-off.
-
-#### Prompt Length
-
-$L_{prompt}$: Number of tokens in the input prompt.
-
-Longer prompts require more computation, especially for attention mechanisms.
-
--   Short prompts: 5–50 tokens (e.g., simple questions, instructions)
--   Medium prompts: 50–200 tokens (e.g., paragraphs, multi-step instructions)
--   Long prompts: 200–1000+ tokens (e.g., documents, code, multi-turn conversations)
-
-Most practical prompts are between 10 and 200 tokens. Some advanced
-applications (retrieval-augmented generation, long context tasks) may use much
-longer prompts, up to the model’s context window (often 2,048–32,768 tokens,
-depending on the model).
-
-Prompt processing time grows with the second power of prompt length. Token
-generation time grows linearly with prompt length, offset by the model size.
-
-#### Batch Size
-
-$B$: Batch size - number of prompts processed in parallel. Batching can
-improve throughput if the CPU has enough computing power. Typical batch sizes
-for LLM inference depend on the use case and available system resources:
-
--   For interactive/chat use, $B = 1$
-    -   This is the most common if low latency is prioritized
--   For batch processing / offline inference: $B = 2..16$ (sometimes up to 32 or 64 on high-end CPUs/GPUs)
--   For CPU-based LLMs: Batch sizes are usually $B = 1..4$ due to memory and bandwidth constraints
--   For GPU-based LLMs: Batch sizes can be much larger ($`8..128+`$), limited by GPU memory
-
-#### CPU Performance
+### CPU Performance
 
 $F_{cpu}$: CPU floating-point operations per second (FLOPS or FLOP/s). How
 quickly the computer can process data is directly affected by the number of
@@ -410,7 +329,7 @@ cores, clock speed, cache size, and architecture (e.g., AVX2/AVX-512 support).
 Actual sustained FLOPS for LLM inference is usually lower due to memory
 bottlenecks and non-ideal vectorization.
 
-##### Example
+#### CPU performance calculation example
 
 The Intel Core i5-1335U is a 13th Gen mobile CPU with a hybrid architecture
 (Performance and Efficiency cores). Intel does not publish official FLOPS
@@ -447,7 +366,18 @@ These are theoretical maximums assuming AVX2 FMA is fully utilized, which is
 rare in real-world workloads. Actual FLOPS will be lower due to memory,
 instruction mix, and other bottlenecks.
 
-#### Thread/Parallelism Efficiency
+### Hyperthreading: Use one thread per CPU core
+
+For LLM inference on CPUs, it is best to use one thread per physical core.
+
+Hyperthreading (SMT) usually provides limited or no benefit, and sometimes
+even reduces performance compared to running one thread per physical core.
+This is because LLM inference is typically memory bandwidth-bound.
+Hyperthreading helps when there are idle CPU resources (e.g., waiting on
+memory), but with LLMs, all threads often compete for the same memory
+bandwidth. Adding more threads can increase contention and cache thrashing.
+
+### Thread/Parallelism Efficiency
 
 $E_{par}$: How well the workload is parallelized. It is the ratio of actual
 speedup to theoretical maximum speedup. Typical values on a multi-core CPU
@@ -463,10 +393,258 @@ often $`0.6`$ to $`0.85`$ on modern CPUs, depending on model size, memory
 bandwidth, and software optimization. Larger models and memory-bound workloads
 tend to have lower values.
 
-#### Software Optimization
+### CPU-only inference
 
-Efficient libraries (e.g., BLAS, oneDNN) and threading can significantly
-impact throughput.
+For LLM inference the CPU needs to support the AVX-512 instruction set's
+bfloat16 format. It is available in the AMD [Zen 4](https://en.wikipedia.org/wiki/Zen_4)
+and [Zen 5](https://en.wikipedia.org/wiki/Zen_5) architectures.
+
+### Maximum theoretical system memory bandwidth calculation
+
+The maximum theoretical system memory bandwidth is determined by the memory
+modules' speed, how many there are, and how fast the CPU can exchange data
+with the memory modules.
+
+$$
+BW_{RAM} = RAM channels * 8 * RAM speed [GT/s]
+$$
+
+$$
+BW_{CPU} = n_CCDs per core * 32 * FCLK [GHz]
+$$
+
+$$
+BW = min(BW_{RAM}, BW_{CPU})
+$$
+
+Where:
+-   $BW_{RAM}$: Theoretical bandwidth on the RAM modules' side
+-   $BW_{CPU}$: Theoretical bandwidth on the CPU memory controller side
+-   BW: Theoretical system RAM bandwidth.
+    -   Actual values are measured between 30% to 95% of the theoretical maximum.
+-   FCLK: Fabric Clock Speed - clock speed of the memory controller in the CPU.
+    -   Zen 4: 1.8 Ghz, Zen 5: 2.0 GHz. Some models can be overclocked.
+-   CCD: Core complex Die - contains the memory controller on the CPU side.
+    -   Ranges from 1 to 16 per CPU core.
+-   RAM speed: 4.8 GT/s to 8 GT/s; can be overclocked
+-   RAM channels: 2-12 (24 for 2-CPU setups).
+    -   RAM sizes vary between 4-128 GB
+    -   Viable total memory size: 8 GB to 1536 GB. (3072 GB in the case of 24 x 128 GB modules.)
+-   See also [fairydreaming's recommendation on Reddit](https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/):
+    >   To get the best memory bandwidth, (theoretically) you should:
+    >   -   Increase FCLK for 8-channel configurations with 2 or 4 CCDs (7945WX, 7955WX, 7965WX, 7975WX),
+    >   -   Use overclocked memory in all remaining Threadripper models,
+    >   -   For Epyc, purchase a motherboard with 12 memory slots and an Epyc 9004 processor with at least 8 CCDs. Fill all memory slots.
+
+
+Examples:
+-   AMD Ryzen 5 7400F: n_CCD = 1, FCLK = 1.8 GHz, ch = 2.
+    -   BW = min(2 ch * 8 * 5.2 GT/s, 1 CCD * 32 * 1.8 GHz) = min(83.2, 57.6) GB/s = 57.6 GB/s
+    -   If the model size plus context is 10 GB, then the generation throughput is less than 5.8 token/s.
+-   AMD EPYC 9755: n_CCD = 16, FCLK = 2.0 GHz, ch = 12.
+    -   BW = min(12 ch * 8 * 5.6 GT/s, 16 CCD * 32 * 2.0 GHz) = min(537.6, 1024) GB/s = 537.6 GB/s
+    -   If the LLM size plus context is 10 GB, then the generation throughput is less than 53.8 token/s.
+
+In the next sections the following CPU categories are detailed:
+-   Desktop CPUs
+-   Workstation CPUs
+-   Server CPUs
+-   Mobile CPUs
+
+<div class="page"></div>
+
+###  Mobile CPUs with integrated NPU
+
+-   Sockets: FL1, FP7, FP7r2 or FP8 type packages
+    -   200: All models support DDR5-5600 or LPDDR5X-7500 in 128-bit "dual-channel" mode.
+    -   300: All models support DDR5-5600 or LPDDR5X-8000 in dual-channel mode.
+-   Maximum RAM: 128 GB
+-   Maximum cores: 4-12 (counts at prefill throughput)
+-   Cache:
+    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
+    -   L2: 1 MB per core
+    -   L3: 8-64 MB
+-   Maximum PCIe lanes: 16-20
+-   Maximum theoretical memory bandwidth: 128 GB/s
+    -   This caps token generation throughput of a 10 GB LLM model at 12 token/s
+
+
+| CPU Series (embedded)    | Cores<br>type  | Max RAM    | Max RAM BW   | Token<br>generation |
+|--------------------------|---------------:|-----------:|-------------:|--------------------:|
+| [Ryzen 8040][8040]       | 4-8            | 128 GB     | 89.6 GB/s    |         3-9 token/s |
+| [Ryzen AI 200][200]      | 4-8            | 256 GB     | 128 GB/s     |        4-12 token/s |
+| [Ryzen AI 300][300]      | 4-12           | 256 GB     | 128 GB/s     |        4-12 token/s |
+| [Ryzen AI MAX/MAX+][MAX] | 6-16           | 128 GB     | 128 GB/s     |        4-12 token/s |
+
+[8040]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_(8040_series,_Zen_4/RDNA3/XDNA_based)
+[200]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Hawk_Point_Refresh_(200_series,_Zen_4/RDNA3/XDNA_based)
+[300]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Point_and_Krackan_Point_(Zen_5/RDNA3.5/XDNA2_based)
+[MAX]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Strix_Halo_(Zen_5/RDNA3.5/XDNA2_based)
+
+Prices for a complete computer are in the 1,000--2,500 EUR range.
+
+Embedded CPU Links:
+-   https://www.techpowerup.com/cpu-specs/ryzen-ai-max-pro-395.c3998
+-   https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-plus-pro-395.html
+-   https://www.amd.com/en/blogs/2025/amd-ryzen-ai-max-395-processor-breakthrough-ai-.html
+-   https://www.tomshardware.com/pc-components/cpus/more-affordable-strix-halo-model-emerges-early-ryzen-ai-max-385-geekbench-result-reveals-an-eight-core-option
+
+<div class="page"></div>
+
+### Desktop CPUs
+
+-   Socket: [AM5](https://en.wikipedia.org/wiki/Socket_AM5) (dual-channel RAM)
+-   Maximum RAM: 192 GB (limits LLM model + context size to ~100 GB)  [todo]: # (Maybe 256 GB. Refer L1T video.)
+-   Maximum cores: 16 (determines prefill throughput)
+-   Maximum L3 cache: 32-128 MB (limits prefill throughput)
+    -   L1 cache (Zen 4/4c): 32+32 kB, L2: 1 MB, L3: 32 MB per CCD.
+    -   L1 cache (Zen 5/5c): 32+48 kB, L2: 1 MB, L3: 32 MB per CCD.
+-   Maximum available PCIe lanes: 24.
+    -   Enough to handle only one CPIe 5.0 x16 GPU
+-   Maximum theoretical memory bandwidth: 89.6 GB/s
+    -   This caps token generation for a 10 GB LLM model + context at 9 token/s.
+
+| CPU Series (AM5 socket)          | Cores | Max<br>RAM size | Max<br>RAM BW | Token<br>generation |
+|----------------------------------|-------|----------------:|--------------:|--------------------:|
+| Ryzen 7700/7900/7950             | 6-16  | 128 GB          | 83.2 GB/s     |         3-8 token/s |
+| Ryzen 7040/7045/8000F/8000G      | 6-16  | 128 GB          | 83.2 GB/s     |         3-8 token/s |
+| [EPYC 4004][EPYC_4004]           | 4-16  | 128 GB          | 83.2 GB/s     |         3-8 token/s |
+| [Ryzen 9000][Ryzen_9000]         | 6-16  | 192 GB          | 89.6 GB/s     |         3-8 token/s |
+
+[EPYC_4004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
+[Ryzen_9000]: https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Granite_Ridge_(9000_series,_Zen_5_based)
+
+Prices for a complete desktop computer are in the 1000--5000 EUR range.
+
+Desktop CPU links:
+-   https://www.anandtech.com/show/21524/the-amd-ryzen-9-9950x-and-ryzen-9-9900x-review/10
+-   https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html
+-   https://www.amd.com/en/products/processors/chipsets/am5.html
+-   https://skatterbencher.com/2025/03/11/skatterbencher-85-ryzen-9-9950x3d-overclocked-to-5900-mhz/
+
+<div class="page"></div>
+
+### Workstation CPUs
+
+This includes the AMD Ryzen Threadripper and EPYC 8004 processors.
+
+-   Sockets:
+    -   [sTR5](https://en.wikipedia.org/wiki/Socket_sTR5):
+        -   Threadripper: 4-channel DDR5-5200/6400 (Zen 4/5)
+        -   Threadripper Pro: 8-channel DDR5-5200/6400 (Zen 4/5)
+    -   [SP6](https://en.wikipedia.org/wiki/Socket_SP6):
+        -   EPYC 8004: 6-channel DDR5-4800 (Zen 4 only)
+-   Maximum RAM: 1024 GB (2048 GB?)
+-   Maximum cores: 96 (counts at prefill throughput)
+-   Cache:
+    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
+    -   L2: 1 MB per core
+    -   L3: 64-384 MB per CPU
+-   Maximum PCIe lanes:
+    -   Threadripper: 48 PCIe 5.0 and 24 PCIe 4.0
+        -   Enough to add 2 CPIe 5.0 x16 GPUs
+            ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-threadripper-9980x.c4169#gallery-2))
+    -   Threadripper Pro: 128 PCIe 5.0 lanes
+        -   Enough to add 6 CPIe 5.0 x16 GPUs
+            ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-threadripper-pro-9995wx.c4163#gallery-2))
+-   Maximum number of CCDs per CPU: 12
+-   Maximum theoretical memory bandwidth: 166.4 to 409.6 GB/s
+    -   Caps token generation throughput of 10 GB LLM model plus context at 16 to 40 token/s
+
+| CPU Series               | Socket | Cores   | Max<br>RAM size | Max<br>RAM BW | Token<br>generation |
+|--------------------------|--------|--------:|----------------:|--------------:|--------------------:|
+| Threadripper 7000X       | sTR5   | 24-64   | 512 GB          | 166.4 GB/s    |        5-16 token/s |
+| Threadripper Pro 7000WX  | sTR5   | 12-96   | 1024 GB         | 332.8 GB/s    |       10-33 token/s |
+| Threadripper 9000X       | sTR5   | 24-64   | 512 GB          | 204.8 GB/s    |        6-20 token/s |
+| Threadripper Pro 9000WX  | sTR5   | 12-96   | 2048 GB         | 409.6 GB/s    |       13-40 token/s |
+| EPYC 8004                | SP6    | 8-64    | 768 GB          | 230.4 GB/s    |        7-23 token/s |
+
+Prices for a complete workstation computer are in the 10,000--20,000 EUR range.
+
+Workstation CPU links:
+-   https://www.amd.com/en/products/processors/workstations/ryzen-threadripper.html
+
+<div class="page"></div>
+
+### Server CPUs
+
+-   Socket: [SP5](https://en.wikipedia.org/wiki/Socket_SP5):
+    -   [EPYC 9004][9004]: 12-channel DDR5-4800 (Zen 4) (24 for 2-CPU config)
+    -   [EPYC 9005][9005]: 12-channel DDR5-5600 (Zen 5) (24 for 2-CPU config)
+-   Maximum RAM: 3 TB (6 TB for 2-CPU config)
+-   Maximum cores: 192 (counts at prefill throughput)
+-   Cache:
+    -   L1: 80 KB (48 KB data + 32 KB instruction) per core.
+    -   L2: 1 MB per core
+    -   L3: 16-1152 MB per CPU
+-   Maximum PCIe lanes: 128 (160 in 2-CPU config)
+    -   Enough to add 8 CPIe 5.0 x16 GPUs
+        ([TechPowerUp](https://www.techpowerup.com/cpu-specs/epyc-9755.c3881#gallery-5))
+-   Maximum number of CCDs per CPU: 16
+    -   Minimum 9 CCDs are required to serve the RAM module bandwidth
+        -   Assert $9~CCD \times 32 \times 2.0~GHz \ge 12~ch \times 8 \times 5.6~GT/s$, \
+            -   See [calculation](#maximum-theoretical-system-memory-bandwidth-calculation)
+-   Maximum theoretical memory bandwidth: 460.8 to 1075.2 GB/s
+    -   Caps token generation throughput of 10 GB LLM model at 46 to 100 token/s
+    -   Note that from the Genoa platform on, [single-rank memory modules will perform
+        well](https://semianalysis.com/2022/11/10/amd-genoa-detailed-architecture-makes/)
+        >   The other important feature is dual rank versus single rank memory.
+        >   With Milan and most Intel platforms, dual-rank memory is crucial to
+        >   maximizing performance. There’s a 25% performance delta on Milan,
+        >   for example. With Genoa, this is brought down to 4.5%. This is
+        >   another considerable cost improvement because cheaper single-rank
+        >   memory can be used.
+
+        ([Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1))
+
+
+| Series<br>(SP5 socket) | Cores  | Max RAM size<br>(1/2-CPU) | Max RAM BW<br>(1/2-CPU) | Token generation<br>(1/2-CPU) |
+|------------------------|-------:|--------------------------:|------------------------:|------------------------------:|
+| [EPYC 9004][9004]      | 16-128 | 3 / 6 TB                  | 460.8 / 921.6 GB/s      | 15-46 / 21-72 token/s         |
+| [EPYC 9005][9005]      | 6-192  | 3 / 6 TB                  | 537.6 / 1075.2 GB/s     | 18-53 / 25-86 token/s         |
+
+[9004]: https://en.wikipedia.org/wiki/Epyc#Fourth_generation_Epyc_(Genoa,_Bergamo_and_Siena)
+[9005]: https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Grado,_Turin_and_Turin_Dense)
+
+Test results at [OpenBenchmarking.org](https://openbenchmarking.org/) for
+[llama.cpp](https://openbenchmarking.org/test/pts/llama-cpp&eval=528957f347896758ab932a93b883fc633206e394#metrics) and
+[LocalScore](https://openbenchmarking.org/test/pts/localscore&eval=b2ce18055004793cb1bdfa1d826b3ab6666d1756#metrics).
+
+Prices for a complete computer with SP5 CPU socket are in the 2,500--7,000 EUR range.
+
+Server CPU links:
+-   https://www.amd.com/en/products/specifications/server-processor.html
+-   https://forum.level1techs.com/t/amd-epyc-9005-series-sp5-single-slot-or-dual-slot-motherboard-suggestion/229954
+-   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-48-core-2-0ghz-sp6-tray-100-000001174-p1019326387/#termek-leiras
+-   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-64-core-2-0ghz-sp6-tray-100-000001172-p1019325790/#termek-leiras
+-   https://www.arukereso.hu/processzor-c3139/f:amd-socket-sp6,amd-epyc/?orderby=1
+-   https://www.techpowerup.com/cpu-specs/epyc-8024pn.c3295
+-   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-64-core-2-0ghz-sp6-tray-100-000001172-p1019325790/
+-   https://smicro.hu/amd-epyc-genoa-9554-dp-up-64c-128t-3-1g-256mb-360w-sp5-100-000000790-5
+-   https://smicro.hu/amd-epyc-genoa-9534-dp-up-64c-128t-2-45g-256mb-280w-sp5-100-000000799-5
+-   https://smicro.hu/amd-epyc-genoa-9554-dp-up-64c-128t-3-1g-256mb-360w-sp5-100-000000790-5
+-   https://www.reddit.com/r/LocalLLaMA/comments/1fcy8x6/memory_bandwidth_values_stream_triad_benchmark/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1h3doy8/stream_triad_memory_bandwidth_benchmark_values/
+-   https://www.reddit.com/r/LocalLLaMA/comments/1k57b1o/comment/moftfs0/?context=3
+-   https://www.senetic.hu/category/amd-cpu-epyc-9004-11151/?cat=amd_cpu_epyc_9004_tray_64848&f_page=1&f_size=48&f_order=price_asc
+-   https://www.senetic.hu/product/100-000000799
+-   https://www.senetic.hu/product/100-000000790
+-   https://kontaktor.hu/amd_epyc_9354_processor_325_ghz_256_mb_l3_380246
+-   https://kontaktor.hu/amd_epyc_9354p_processor_325_ghz_256_mb_l3_380250
+-   https://kontaktor.hu/amd_epyc_9274f_processor_405_ghz_256_mb_l3_400359
+-   https://kontaktor.hu/amd_epyc_9534_processor_245_ghz_256_mb_l3_408366
+-   https://kontaktor.hu/amd_epyc_9554_processor_31_ghz_256_mb_l3_380268
+-   https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Ryzen_AI_300_series
+-   https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Turin_and_Turin_Dense)
+-   https://en.wikipedia.org/wiki/Threadripper#Shimada_Peak_(Threadripper_9000_series,_Zen_5_based)
+-   https://www.amd.com/en/products/specifications/processors.html
+-   https://www.techpowerup.com/cpu-specs/
+-   https://www.techpowerup.com/327388/amd-granite-ridge-zen-5-processor-annotated
+-   https://www.thomas-krenn.com/en/wiki/Optimize_memory_performance_of_Intel_Xeon_Scalable_systems
+-   https://www.servethehome.com/memory-bandwidth-per-core-and-per-socket-for-intel-xeon-and-amd-epyc/
+-   https://smicro.hu/epyc-genoa-9004-5
+
+<div class="page"></div>
 
 #### GPU parameters
 
@@ -522,7 +700,7 @@ Learning](https://timdettmers.com/2023/01/30/which-gpu-for-deep-learning/#The_Mo
 
 If the model does not fit completely into the GPU VRAM, then hybrid CPU+GPU
 operation is needed. System performance is determined by how much data is
-moved within the system RAM.
+moved about within system RAM.
 
 Typical memory throughput values:
 
@@ -535,59 +713,37 @@ Typical memory throughput values:
     -   Consumer GPUs (e.g., RTX 4060): 250–400 GB/s
     -   High-end GPUs (e.g., RTX 4090, A100): 800–2000+ GB/s (with GDDR6X or HBM2/3)
 -   CPU+GPU:
-    -   Add CPU and GPU bandwidths separately; data transfer between them is
-        limited by PCIe (16–64 GB/s for PCIe 4.0/5.0 x16)
+    -   CPU and GPU bandwidths are added separately; data transfer between
+        them is limited by PCIe (16–64 GB/s for PCIe 4.0/5.0 x16)
 
 Real-world bandwidth is often lower than peak theoretical values -- observed
 bandwidth can be as low as 0.3 to 0.8 of the theoretical maximum. For AI/LLM
 workloads, GPU bandwidth is usually the bottleneck.
 (See [STREAM TRIAD benchmark results](https://www.reddit.com/r/LocalLLaMA/comments/1fcy8x6/memory_bandwidth_values_stream_triad_benchmark/).)
 
-#### Required operations per token
 
-$OP_{token}$: Number of floating point operations needed to
-process/generate one token [FLOP/token]. As a rule of thumb:
+### CPU cooler
 
-$$
-OP_{token} [FLOP/token] \approx 2 \times N \times d_{model}^2,
-$$
-
-where \
-$N$: Number of transformer layers, and \
-$d_{model}$: hidden size.
-
-Typical Values:
-
-| Model              | Op per token<br>[GFLOP/token] |
-|--------------------|------------------------------:|
-| GPT-2 Small (124M) | 2–3                           |
-| GPT-2 Medium (345M)| 6–8                           |
-| GPT-2 Large (774M) | 15–20                         |
-| GPT-3 6.7B         | 120–150                       |
-| GPT-3 13B          | 250–300                       |
-| Llama 7B           | 80–100                        |
-| Llama 13B          | 160–200                       |
-| Llama 70B          | 800–1000                      |
-
-These are rough estimates; actual values depend on architecture details and
-prompt length (due to attention scaling).
-
-
-#### Hyperthreading: Use one thread per CPU core
-
-For LLM inference on CPUs, it is best to use one thread per physical core.
-
-Hyperthreading (SMT) usually provides limited or no benefit, and sometimes
-even reduces performance compared to running one thread per physical core.
-This is because LLM inference is typically memory bandwidth-bound.
-Hyperthreading helps when there are idle CPU resources (e.g., waiting on
-memory), but with LLMs, all threads often compete for the same memory
-bandwidth. Adding more threads can increase contention and cache thrashing.
+CPU cooler links:
+-   https://noctua.at/en/products/fan/nf-a12x25-ls-pwm
+-   https://www.thermaltake.com/aw420-aio-liquid-cooler.html
+-   https://thermaltakeusa.com/products/aw360-aio-liquid-cooler-cl-w450-pl12bl-a
+-   https://www.arukereso.hu/szamitogep-huto-c3094/noctua/nh-u14s-tr5-sp6-p1054940377/
+-   https://www.silverstonetek.com/en/product/info/coolers/xed120s_ws/
+-   https://www.silverstonetek.com/en/product/info/coolers/xe04_sp5/
+-   https://forums.servethehome.com/index.php?threads/cooler-recommendations-for-400w-sp5.43530/
+-   https://noctua.at/en/nh-d9-tr5-sp6-4u/specification
+-   https://smicro.hu/supermicro-snk-p0084ap4
+-   https://www.coolserver.com.cn/en/product_view_397_283.html
+-   https://www.arctic.de/en/Freezer-4U-SP5/ACFRE00158A
+-   https://www.phoronix.com/review/arctic-freezer-4u-sp5
+-   https://www.aliexpress.com/item/1005006621774992.html
+-   https://www.coolserver.com.cn/en/product_view_598_283.html
 
 
 ## Benchmarks
 
-### Benchmark aggregator sites
+### Benchmarking and aggregator sites
 
 -   [OpenBenchmarking.org](https://openbenchmarking.org/):
     Storage of [Phoronix Test Suite](https://github.com/phoronix-test-suite/phoronix-test-suite) benchmark result data
@@ -599,8 +755,6 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
             Benchmark, oneDNN, ONNX Runtime, OpenCV, OpenVINO, OpenVINO GenAI,
             PlaidML, PyTorch, R Benchmark, Scikit-Learn, spaCy, TensorFlow,
             TensorFlow Lite, Whisper.cpp
-
-### Benchmarking sites
 
 -   [LocalScore](https://www.localscore.ai/about): Benchmarks for LLMs and a repository for the results.
     >   A LocalScore is a measure of three key performance metrics that matter for
@@ -654,7 +808,7 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
             | Qwen3-32B-Q4_K_M.gguf                    | 19,762,150,048 |
 
         -   A few selected results:
-            -   Model: Model: Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf - Acceleration: CPU
+            -   Model: Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf - Acceleration: CPU
 
                 | Component                   | Prompt Processing<br>[token/s] | Time To First Token<br>[ms] | Token Generation<br>[token/s] |
                 |-----------------------------|--------------------------------|-----------------------------|-------------------------------|
@@ -730,7 +884,9 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
 ### GPU benchmark
 
 -   https://llm-tracker.info/_TOORG/RTX-3090-vs-7900-XTX-Comparison
+    >   RTX 3090 vs 7900 XTX Comparison
 -   https://cprimozic.net/notes/posts/machine-learning-benchmarks-on-the-7900-xtx/
+    >   Machine Learning Benchmarks on the 7900 XTX
 -   https://espadrine.github.io/blog/posts/recomputing-gpu-performance.html
 -   https://www.reddit.com/r/LocalLLaMA/comments/191srof/amd_radeon_7900_xtxtx_inference_performance/
 -   https://embeddedllm.com/blog/vllm-now-supports-running-gguf-on-amd-radeon-gpu
@@ -754,80 +910,6 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
 -   https://wandb.ai/augmxnt/train-bench/reports/torchtune-vs-axolotl-vs-unsloth-Trainer-Comparison--Vmlldzo4MzU3NTAx
 -   https://github.com/underlines/awesome-ml/blob/master/llm-tools.md#benchmarking
 -   https://openbenchmarking.org/test/pts/llama-cpp-2.1.1
-
-## Hardware
-
-### CPU
-
-#### Embedded CPU
-
--   https://www.techpowerup.com/cpu-specs/ryzen-ai-max-pro-395.c3998
--   https://www.amd.com/en/products/processors/laptop/ryzen-pro/ai-max-pro-300-series/amd-ryzen-ai-max-plus-pro-395.html
--   https://www.amd.com/en/blogs/2025/amd-ryzen-ai-max-395-processor-breakthrough-ai-.html
--   https://www.tomshardware.com/pc-components/cpus/more-affordable-strix-halo-model-emerges-early-ryzen-ai-max-385-geekbench-result-reveals-an-eight-core-option
-
-#### Desktop CPU
-
--   https://www.anandtech.com/show/21524/the-amd-ryzen-9-9950x-and-ryzen-9-9900x-review/10
--   https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html
--   https://www.amd.com/en/products/processors/chipsets/am5.html
--   https://skatterbencher.com/2025/03/11/skatterbencher-85-ryzen-9-9950x3d-overclocked-to-5900-mhz/
-
-#### Workstation CPU
-
--   https://www.amd.com/en/products/processors/workstations/ryzen-threadripper.html
-
-#### Server CPU
-
--   https://www.amd.com/en/products/specifications/server-processor.html
--   https://forum.level1techs.com/t/amd-epyc-9005-series-sp5-single-slot-or-dual-slot-motherboard-suggestion/229954
--   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-48-core-2-0ghz-sp6-tray-100-000001174-p1019326387/#termek-leiras
--   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-64-core-2-0ghz-sp6-tray-100-000001172-p1019325790/#termek-leiras
--   https://www.arukereso.hu/processzor-c3139/f:amd-socket-sp6,amd-epyc/?orderby=1
--   https://www.techpowerup.com/cpu-specs/epyc-8024pn.c3295
--   https://www.arukereso.hu/processzor-c3139/amd/epyc-siena-64-core-2-0ghz-sp6-tray-100-000001172-p1019325790/
--   https://smicro.hu/amd-epyc-genoa-9554-dp-up-64c-128t-3-1g-256mb-360w-sp5-100-000000790-5
--   https://smicro.hu/amd-epyc-genoa-9534-dp-up-64c-128t-2-45g-256mb-280w-sp5-100-000000799-5
--   https://smicro.hu/amd-epyc-genoa-9554-dp-up-64c-128t-3-1g-256mb-360w-sp5-100-000000790-5
--   https://www.reddit.com/r/LocalLLaMA/comments/1fcy8x6/memory_bandwidth_values_stream_triad_benchmark/
--   https://www.reddit.com/r/LocalLLaMA/comments/1h3doy8/stream_triad_memory_bandwidth_benchmark_values/
--   https://www.reddit.com/r/LocalLLaMA/comments/1k57b1o/comment/moftfs0/?context=3
--   https://www.senetic.hu/category/amd-cpu-epyc-9004-11151/?cat=amd_cpu_epyc_9004_tray_64848&f_page=1&f_size=48&f_order=price_asc
--   https://www.senetic.hu/product/100-000000799
--   https://www.senetic.hu/product/100-000000790
--   https://kontaktor.hu/amd_epyc_9354_processor_325_ghz_256_mb_l3_380246
--   https://kontaktor.hu/amd_epyc_9354p_processor_325_ghz_256_mb_l3_380250
--   https://kontaktor.hu/amd_epyc_9274f_processor_405_ghz_256_mb_l3_400359
--   https://kontaktor.hu/amd_epyc_9534_processor_245_ghz_256_mb_l3_408366
--   https://kontaktor.hu/amd_epyc_9554_processor_31_ghz_256_mb_l3_380268
--   https://en.wikipedia.org/wiki/List_of_AMD_Ryzen_processors#Ryzen_AI_300_series
--   https://en.wikipedia.org/wiki/Epyc#Fifth_generation_Epyc_(Turin_and_Turin_Dense)
--   https://en.wikipedia.org/wiki/Threadripper#Shimada_Peak_(Threadripper_9000_series,_Zen_5_based)
--   https://www.amd.com/en/products/specifications/processors.html
--   https://www.techpowerup.com/cpu-specs/
--   https://www.techpowerup.com/327388/amd-granite-ridge-zen-5-processor-annotated
--   https://www.thomas-krenn.com/en/wiki/Optimize_memory_performance_of_Intel_Xeon_Scalable_systems
--   https://www.servethehome.com/memory-bandwidth-per-core-and-per-socket-for-intel-xeon-and-amd-epyc/
--   https://smicro.hu/epyc-genoa-9004-5
-
-### CPU cooler
-
--   https://noctua.at/en/products/fan/nf-a12x25-ls-pwm
--   https://www.thermaltake.com/aw420-aio-liquid-cooler.html
--   https://thermaltakeusa.com/products/aw360-aio-liquid-cooler-cl-w450-pl12bl-a
--   https://www.arukereso.hu/szamitogep-huto-c3094/noctua/nh-u14s-tr5-sp6-p1054940377/
--   https://www.silverstonetek.com/en/product/info/coolers/xed120s_ws/
--   https://www.silverstonetek.com/en/product/info/coolers/xe04_sp5/
--   https://forums.servethehome.com/index.php?threads/cooler-recommendations-for-400w-sp5.43530/
--   https://noctua.at/en/nh-d9-tr5-sp6-4u/specification
--   https://smicro.hu/supermicro-snk-p0084ap4
--   https://www.coolserver.com.cn/en/product_view_397_283.html
--   https://www.arctic.de/en/Freezer-4U-SP5/ACFRE00158A
--   https://www.phoronix.com/review/arctic-freezer-4u-sp5
--   https://www.aliexpress.com/item/1005006621774992.html
--   https://www.coolserver.com.cn/en/product_view_598_283.html
-
-### Memory
 
 ## Performance
 
@@ -977,27 +1059,77 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
 -   https://chatgpt.com/c/6830acbc-6258-800b-b8de-0b5a51a6ee13
 -   https://www.reddit.com/r/LocalLLaMA/comments/19crc6v/what_matters_cpuwise_for_gpu_inference/
 -   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=The%20biggest%20factor%20limiting%20performance,better%20suited%20for%20CPU%20inference
+    >   The biggest factor limiting performance during CPU inference is RAM
+    >   memory bandwidth, and maximizing bandwidth directly leads to
+    >   performance. This means that faster memory clock speed is preferred
+    >   over lower latency, and platforms that support more memory channels,
+    >   such as AMD Threadripper PRO or EPYCs, are better suited for CPU
+    >   inference.
 -   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=In%20contrast%2C%20CPU%20inference%20uses,model%20on%20a%20capable%20GPU
+    >   In contrast, CPU inference uses the system RAM instead of the VRAM,
+    >   making it much easier to run larger models that may not otherwise be
+    >   able to be loaded into a system’s VRAM. The major downside of this
+    >   approach is that performance is going to be much lower, somewhere in
+    >   the range of 10x to 100x slower, compared to running the same model on
+    >   a capable GPU.
 -   https://news.ycombinator.com/item?id=37067933#:~:text=Anything%20with%2064GB%20of%20memory,That%20should%20generate%20faster%20than
 -   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=GPU%20inference%2C%20RAM%E2%80%99s%20primary%20use,RAM%E2%80%99s%20job%20is%20essentially%20done
+    >   During GPU inference, RAM’s primary use is to facilitate loading a
+    >   model’s weights from storage into VRAM. For this reason, we recommend
+    >   having at least as much RAM as VRAM in a system, but preferably 1.5-2x
+    >   more RAM than VRAM. Attempting to load a model without sufficient RAM
+    >   can fail if the capacity of the RAM + system page file is exceeded by
+    >   the model, even if that model can fit on the available VRAM. However,
+    >   once the model is loaded, then the RAM’s job is essentially done.
 -   https://news.ycombinator.com/item?id=37067933#:~:text=Anything%20with%2064GB%20of%20memory,faster%20than%20you%20can%20read
 -   https://news.ycombinator.com/item?id=41046980#:~:text=match%20at%20L149%20A%20405B,disc%20and%20be%20unusably%20slow
 -   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=The%20biggest%20factor%20limiting%20performance,Threadripper%20PRO%20or%20EPYCs%2C%20are
--   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=Regardless%20of%20the%20inference%20method%2C,be%20much%20of%20a%20concern
+    >   Regardless of the inference method, storage does not play a
+    >   significant role. Like RAM in the case of GPU inference, once a model
+    >   is loaded, then there’s not much for the storage to do. A drive’s read
+    >   performance does impact how quickly a model can be read and loaded
+    >   into memory, so utilizing a fast NVMe drive to hold models’ weights
+    >   will help minimize the time spent loading into RAM or VRAM. But unless
+    >   someone is frequently loading and testing a variety of different
+    >   models, then this isn’t likely to be much of a concern.
 -   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=In%20addition%20to%20strictly%20CPU,the%20greater%20the%20performance%20impact
+    >   In addition to strictly CPU or GPU approaches, there are inference
+    >   libraries that support a hybrid method of inference utilizing both
+    >   CPU/RAM and GPU/VRAM resources, most notably llama.cpp. This can be a
+    >   good option for those who want to run a model that cannot fit entirely
+    >   within their VRAM. Intuitively, this results in performance that lands
+    >   somewhere between pure CPU and pure GPU inference. In this mode, the
+    >   more of a model that has to be offloaded into system RAM, the greater
+    >   the performance impact.
 -   https://www.reddit.com/r/LocalLLaMA/comments/1cj4det/llama_3_70b_instruct_works_surprisingly_well_on/
+    >   Llama 3 70b instruct works surprisingly well on 24gb VRAM cards
 -   https://medium.com/@markpalatucci/how-to-build-a-silent-multi-gpu-water-cooled-deep-learning-rig-for-under-10k-aefcdd1f96a5#:~:text=Power%20Supply%20,fan%20noise%20ramps%20considerably%20above
--   https://medium.com/@markpalatucci/how-to-build-a-silent-multi-gpu-water-cooled-deep-learning-rig-for-under-10k-aefcdd1f96a5#:~:text=Now%20multiply%20this%20noise%20by,next%20to%20a%20jet%20runway
--   https://medium.com/@markpalatucci/how-to-build-a-silent-multi-gpu-water-cooled-deep-learning-rig-for-under-10k-aefcdd1f96a5#:~:text=GPUs%3A%203x%20Nvidia%20Founder%E2%80%99s%20Edition,These%20were%20%241200%20each
--   https://news.ycombinator.com/item?id=41046980#:~:text=Energy%20costs%20are%20an%20important,hardware%20running%20in%20a%20homelab
--   https://news.ycombinator.com/item?id=37067933#:~:text=I%20built%20a%20DIY%20PC,a%20challenge%2C%20but%20it%27s%20possible
+    >   How to Build a Silent, Multi-GPU Water-Cooled Deep-Learning Rig for under $10k
 -   https://news.ycombinator.com/item?id=41046980#:~:text=Unsure%20if%20anyone%20has%20specific,1%20405b%20for%20roughly%20%2410k
--   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=One%20of%20the%20first%20forks,be%20run%20via%20the%20GPU
+    >   One of the first forks in the road that you will encounter when
+    >   starting with an LLM is whether to perform inference using the CPU or
+    >   GPU. If you have a workstation with a graphics card released in the
+    >   past five years or so, then it’s practically guaranteed that
+    >   performing inference with your GPU will provide much better
+    >   performance than if you were to use the CPU. However, especially with
+    >   single-GPU configurations, the amount of VRAM that the GPU features
+    >   (typically anywhere from 8GB to 48GB) is going to be the limiting
+    >   factor with regard to which models that can be run via the GPU.
 -   https://modal.com/blog/how-much-vram-need-inference#:~:text=Let%E2%80%99s%20consider%204,70B
 -   https://huggingface.co/blog/llama31#:~:text=70B%20%20140%20GB%20,405%20GB%20%20203%20GB
 -   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=NVIDIA%20vs%20AMD%20GPU%20Performance,Capability
 -   https://www.pugetsystems.com/labs/articles/tech-primer-what-hardware-do-you-need-to-run-a-local-llm/#:~:text=support%20base%2C%20NVIDIA%20GPUs%20also,in%20terms%20of%20raw%20performance
 -   https://www.hardware-corner.net/guides/qwq-llm-rtx-3090-benchmark/
+    >   RTX 3090 Benchmarked Qwen QwQ AI Model - The 5000+ Token Context Test
+    >   - Our most demanding test pushed the RTX 3090 near its memory limits
+    >   with an 8,192-token context window allocation, though the actual
+    >   context used was approximately 5,000 tokens. This configuration:
+
+    | Metric                      | Value            |
+    |:--------------------------- | :----------------|
+    | Prompt Processing Time      | 8.5 seconds      |
+    | Reasoning / Thinking Time   | 23 seconds       |
+    | Generation Speed            | 19 tokens/second |
 -   https://www.hardware-corner.net/amd-targets-faster-local-llms/
 -   https://www.hardware-corner.net/how-fast-ai-max-395-llm-20250317/
 -   https://www.hardware-corner.net/category/llm-news/page/2/
@@ -1062,6 +1194,11 @@ bandwidth. Adding more threads can increase contention and cache thrashing.
 -   https://chipsandcheese.com/p/amds-cdna-3-compute-architecture
 
 ## Software
+
+### Software Optimization
+
+Efficient libraries (e.g., BLAS, oneDNN) and threading can significantly
+impact throughput.
 
 ### AMD CPU
 
