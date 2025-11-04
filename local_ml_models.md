@@ -623,7 +623,7 @@ In the next sections the following CPU categories are detailed:
         >   another considerable cost improvement because cheaper single-rank
         >   memory can be used.
 
-        [Slide]("https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1"):
+        [Slide](https://i0.wp.com/semianalysis.com/wp-content/uploads/2024/11/https3A2F2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com2Fpublic2Fimages2F8aba2a1b-dc51-41c5-a618-3ad93dfcd169_5278x2891-scaled.jpg?ssl=1):
         ![AMD EPYC 9004 memory](<assets/AMD EPYC 9004 memory.png>)
 
 
@@ -1069,10 +1069,9 @@ CPU cooler links:
 -   https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-accelerator-tinybox-pro-goes-up-for-preorder-for-usd40-000-the-device-features-eight-rtx-4090s-and-two-amd-genoa-epyc-processors
 -   https://www.tweaktown.com/news/97110/tinycorps-new-tinybox-ai-system-amd-gpu-starts-at-15k-nvidia-25k/index.html
 -   https://www.tomshardware.com/pc-components/gpus/tinybox-ai-accelerator-now-available-starting-at-dollar15k-available-in-7900xtx-and-rtx-4090-variants
--   [George Hotz | AMD PC Build | tinygrad: building the new tinygrad computer | EPYC 7662 RX 7900 | ROCm]((https://www.youtube.com/watch?v=IhkXxFJ_qeI)):
-    ([Subtitles](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt))
-    ([Transcript](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt.txt))
-    ([Summary](assets/George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-[IhkXxFJ_qeI].en.srt.txt.technical_details.md))
+-   [George Hotz | AMD PC Build | tinygrad: building the new tinygrad computer | EPYC 7662 RX 7900 | ROCm](https://www.youtube.com/watch?v=IhkXxFJ_qeI):\
+    ([Details](https://github.com/d893a/local-ml-models/blob/main/assets/tinygrad/george_hotz_archive/20230430_George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-%5BIhkXxFJ_qeI%5D.description))
+    ([Summary](https://github.com/d893a/local-ml-models/blob/main/assets/tinygrad/george_hotz_archive/20230430_George_Hotz_AMD_PC_Build_tinygrad_-_building_the_new_tinygrad_computer_EPYC_7662_RX_7900_ROCm-%5BIhkXxFJ_qeI%5D.en-orig.srt.txt.summary.md))
     -   Date of stream 30 Apr 2023.
     -   Excerpt from the technical summary:
         -   Motherboard: ASRock Rack Rome a2t/BCM, 7 full bandwidth PCIe ports, $649 retail
