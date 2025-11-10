@@ -22,16 +22,16 @@ Minimal 1-CPU configuration
 -   Theoretical maximum RAM bandwidth of 460.8 GB/s
 -   Suggested processors: AMD EPYC 9354, 9534.
 
-| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+| Component   | Model                                              | Price each<br>[EUR] | Price subtotal<br>[EUR] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
-| CPU         | AMD EPYC 9354                                      |       1,120,491     |           1,120,491     |
-| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
-| Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
-| CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
-| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
-| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
-| **Total**   |                                                    |                     |         **2,804,133**   |
+| CPU         | AMD EPYC 9354                                      |       2800          |           2800          |
+| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |        190          |           2280          |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |        320          |            320          |
+| Motherboard | Supermicro MBD-H13SSL-NT                           |        820          |            820          |
+| CPU cooler  | Arctic Freezer 4U-SP5                              |         50          |             50          |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |        530          |            530          |
+| Chassis     | Fractal Design Torrent                             |        180          |            180          |
+| **Total**   |                                                    |                     |         **6980**        |
 
 1-CPU maximum configuration with Zen 4 architecture
 -   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
@@ -40,32 +40,32 @@ Minimal 1-CPU configuration
     -   9754 (128 cores, L3 cache 256 MB),
     -   9184X, 9384X, 9684X (16/32/96 cores, L3 cache 768/768/1152 MB)
 
-| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+| Component   | Model                                              | Price each<br>[EUR] | Price subtotal<br>[EUR] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
-| CPU         | *AMD EPYC 9754*                                    |      *2,891,190*    |          *2,891,190*    |
-| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |          76,020     |             912,240     |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
-| Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
-| CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
-| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
-| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
-| **Total**   |                                                    |                     |         **4,574,832**   |
+| CPU         | *AMD EPYC 9754*                                    |      *7220*         |         *7,220*         |
+| RAM         | Micron 32GB DDR5 5600MHz MTC20F2085S1RC56BR × 12   |       190           |          2,280          |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |       320           |            320          |
+| Motherboard | Supermicro MBD-H13SSL-NT                           |       820           |            820          |
+| CPU cooler  | Arctic Freezer 4U-SP5                              |       50            |             50          |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |       530           |            530          |
+| Chassis     | Fractal Design Torrent                             |       180           |            180          |
+| **Total**   |                                                    |                     |       **11,400**        |
 
 <!--
 2-CPU configuration optimized for Zen 4 CPU inference
 -   Supports 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
 -   Theoretical maximum RAM bandwidth of 460.8 GB/s
 
-| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+| Component   | Model                                              | Price each<br>[EUR] | Price subtotal<br>[EUR] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
-| CPU         | *AMD EPYC 9754 x 2*                                |      *1,243,230*    |          *2,486,460*    |
+| CPU         | *AMD EPYC 9754 x 2*                                |                     |                         |
 | RAM         | min DDR5 4800 RDIMM x 24                           |                     |                         |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
-| Motherboard |                                                    |         328,912     |             328,912     |
-| CPU cooler  | Arctic Freezer 4U-SP5?                             |          23,990     |              23,990     |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |                     |                         |
+| Motherboard |                                                    |                     |                         |
+| CPU cooler  | Arctic Freezer 4U-SP5?                             |                     |                         |
 | PSU         |                                                    |                     |                         |
 | Chassis     |                                                    |                     |                         |
-| **Total**   |                                                    |                     |         **2,926,872**   |
+| **Total**   |                                                    |                     |                         |
 -->
 
 <!--
@@ -73,16 +73,16 @@ Minimal 1-CPU configuration
 -   Support 2x NVIDIA RTX PRO 6000 Blackwell (96GB) Desktop GPUs with open-air cooling,
 -   Theoretical maximum RAM bandwidth of 576.0 GB/s
 
-| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+| Component   | Model                                              | Price each<br>[EUR] | Price subtotal<br>[EUR] |
 |-------------|----------------------------------------------------|--------------------:|------------------------:|
-| CPU         | AMD EPYC 9175F                                     |       1,130,275     |           1,130,275     |
-| RAM         | Micron 32GB 2Rx8 6400MHz MTC20F2085S1RC64BR        |          89,093     |           1,069,116     |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
-| Motherboard | Supermicro MBD-H13SSL-NT                           |         328,912     |             328,912     |
-| CPU cooler  | Arctic Freezer 4U-SP5                              |          23,990     |              23,990     |
-| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
-| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
-| **Total**   |                                                    |                     |         **2,970,793**   |
+| CPU         | AMD EPYC 9175F                                     |                     |                         |
+| RAM         | Micron 32GB 2Rx8 6400MHz MTC20F2085S1RC64BR        |                     |                         |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |                     |                         |
+| Motherboard | Supermicro MBD-H13SSL-NT                           |                     |                         |
+| CPU cooler  | Arctic Freezer 4U-SP5                              |                     |                         |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |                     |                         |
+| Chassis     | Fractal Design Torrent                             |                     |                         |
+| **Total**   |                                                    |                     |                         |
 -->
 
 ### Specs
@@ -662,91 +662,63 @@ Minimal 1-CPU configuration
             9174F, 9184X, 9274F, 9374F, 9384X, 9474F, 9554, 9554P, 9654, 9654P,
             9684X, 9734, 9754, 9754S
 
-        | Processor Model   | Listed Price (Ft) | Notes / Citation               |
-        |-------------------|-------------------|--------------------------------|
-        | **Below 300 W**   |                   |                                |
-        | 9354 ←            | 1 120 491         | ([Árukereső.hu][cpu_zen4_0_1]) |
-        | 9354P             |   917 673         | ([Árukereső.hu][cpu_zen4_0_1]) |
-        | 9454              |   913 180         | ([Árukereső.hu][cpu_zen4_0_1]) |
-        | 9454P             |   829 448         | ([Árukereső.hu][cpu_zen4_0_1]) |
-        | 9534 ←            |   753 930         | ([Árukereső.hu][cpu_zen4_0_2]) |
-        | 9634              | 1 963 614         | ([Árukereső.hu][cpu_zen4_0_2]) |
-        | **Above 300 W**   |                   |                                |
-        | 9174F             | 1 082 453         | ([Árukereső.hu][cpu_zen4_1_1]) |
-        | 9184X ←           | 1 660 384         | ([Árukereső.hu][cpu_zen4_1_2]) |
-        | 9274F             |   655 800         | ([Árukereső.hu][cpu_zen4_1_1]) |
-        | 9374F             |   985 980         | ([Árukereső.hu][cpu_zen4_1_3]) |
-        | 9384X ←           | 1 997 695         | ([Árukereső.hu][cpu_zen4_1_2]) |
-        | 9474F             | 1 572 490         | ([Árukereső.hu][cpu_zen4_1_1]) |
-        | 9554              |   807 950         | ([Árukereső.hu][cpu_zen4_1_1]) |
-        | 9554P             | 1 079 486         | ([Árukereső.hu][cpu_zen4_2_1]) |
-        | 9654              |   917 690         | ([Árukereső.hu][cpu_zen4_2_2]) |
-        | 9654P             |   935 813         | ([Árukereső.hu][cpu_zen4_2_2]) |
-        | 9684X ←           | 2 118 660         | ([Árukereső.hu][cpu_zen4_2_3]) |
-        | 9734              | 1 021 110         | ([Árukereső.hu][cpu_zen4_2_4]) |
-        | 9754 ←            | 2 891 190         | ([Árukereső.hu][cpu_zen4_2_5]) |
-
-        [cpu_zen4_0_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9354-32-core-3-25ghz-sp5-tray-100-000000798-p923300802/
-        [cpu_zen4_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-        [cpu_zen4_1_1]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-        [cpu_zen4_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C768-mb-l3-cache/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
-        [cpu_zen4_1_3]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, AMD Socket SP5"
-        [cpu_zen4_2_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9554p-64-core-3-1ghz-sp5-tray-100-000000804-p924473337/ "AMD EPYC 9554P 64-Core 3.1GHz SP5 Tray (100-000000804 ..."
-        [cpu_zen4_2_2]: https://www.arukereso.hu/processzor-c3139/f%3A5-nm%2Camd-socket-sp5/ "AMD Socket SP5, Gyártási technológia - Processzor - Árukereső.hu"
-        [cpu_zen4_2_3]: https://www.arukereso.hu/processzor-c3139/f%3A96-magos-processzor%2Camd-socket-sp5/?orderby=13 "Vásárlás: Processzor árak összehasonlítása - AMD ... - Árukereső.hu"
-        [cpu_zen4_2_4]: https://www.arukereso.hu/processzor-c3139/f%3A112-magos-processzor%2Camd-epyc/ "Típus: AMD Epyc, 112 magos processzor - Árukereső.hu"
-        [cpu_zen4_2_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754-128-core-2-25ghz-sp5-tray-100-000001234-p992134270/
-        [cpu_zen4_2_6]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9754s-2-25ghz-tray-p1046085382/ "AMD Epyc 9754S 2.25GHz Tray vásárlás, olcsó ... - Árukereső.hu"
+        | Processor Model   | Listed Price[EUR] |
+        |-------------------|-------------------|
+        | **Below 300 W**   |                   |
+        | 9354 ←            | 2800              |
+        | 9354P             | 2290              |
+        | 9454              | 2280              |
+        | 9454P             | 2070              |
+        | 9534 ←            | 1880              |
+        | 9634              | 4900              |
+        | **Above 300 W**   |                   |
+        | 9174F             | 2700              |
+        | 9184X ←           | 4150              |
+        | 9274F             | 1630              |
+        | 9374F             | 2460              |
+        | 9384X ←           | 4990              |
+        | 9474F             | 3930              |
+        | 9554              | 2010              |
+        | 9554P             | 2690              |
+        | 9654              | 2290              |
+        | 9654P             | 2330              |
+        | 9684X ←           | 5290              |
+        | 9734              | 2550              |
+        | 9754 ←            | 7220              |
 
     -   Zen 5:
         -   Below 300 W: 9355P, 9355, 9365, 9455P, 9455, 9535
         -   Above 300 W: 9175F, 9275F, 9375F, 9475F, 9555, 9555P, 9565
 
-        | Processor Model   | Lowest Listed Price (Ft) | Notes / Citation               |
-        |-------------------|--------------------------|--------------------------------|
-        | **Below 300 W**   |                          |                                |
-        | 9355P             | 1 424 902                | ([Árukereső.hu][cpu_zen5_0_1]) |
-        | 9355 ←            | 1 170 521                | ([Árukereső.hu][cpu_zen5_0_2]) |
-        | 9365              | 1 365 900                | ([Árukereső.hu][cpu_zen5_0_2]) |
-        | 9455P             | 1 557 900                | ([Árukereső.hu][cpu_zen5_0_3]) |
-        | 9455              | 1 594 330                | ([Árukereső.hu][cpu_zen5_0_4]) |
-        | 9535              | 2 369 884                | ([Árukereső.hu][cpu_zen5_0_5]) |
-        | **Above 300 W**   |                          |                                |
-        | 9175F             | 1 130 275                | ([Árukereső.hu][cpu_zen5_1_1]) |
-        | 9275F             | 1 143 398                | ([Árukereső.hu][cpu_zen5_1_2]) |
-        | 9375F             | 2 129 697                | ([Árukereső.hu][cpu_zen5_1_3]) |
-        | 9475F ←           | 1 694 576                | ([Árukereső.hu][cpu_zen5_1_4]) |
-        | 9555              | 2 329 744                | ([Árukereső.hu][cpu_zen5_1_6]) |
-        | 9555P             | 2 095 250                | ([Árukereső.hu][cpu_zen5_1_6]) |
-        | 9565              | 2 388 790                | ([Árukereső.hu][cpu_zen5_1_7]) |
-        | 9575F             | 2 840 784                | ([Árukereső.hu][cpu_zen5_2_1]) |
-        | 9645              | 2 770 900                | ([Árukereső.hu][cpu_zen5_2_2]) |
-        | 9655              | 2 431 037                | ([Árukereső.hu][cpu_zen5_2_1]) |
-        | 9655P             | 3 028 591                | ([Árukereső.hu][cpu_zen5_2_3]) |
-        | 9745              | — Not found —            | No listings located            |
-        | 9825              | — Not found —            | No listings located            |
-        | 9845              | — Not found —            | No listings located            |
-
-        [cpu_zen5_0_1]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9355p-32-core-3-55ghz-sp5-tray-100-000001521-p1149737872/ "AMD EPYC 9355P 32-Core 3.55GHz SP5 Tray (100-000001521 ..."
-        [cpu_zen5_0_2]: https://www.arukereso.hu/processzor-c3139/f%3A4-nm%2Camd-epyc/?orderby=13 "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-        [cpu_zen5_0_3]: https://www.arukereso.hu/processzor-c3139/kiszereles-talcas-oem/ "Kiszerelés: Tálcás (OEM) - Processzor - Árukereső.hu"
-        [cpu_zen5_0_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas-oem/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-        [cpu_zen5_0_5]: https://www.arukereso.hu/processzor-c3139/amd-epyc/?st=9535 "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc 9535"
-        [cpu_zen5_1_1]: https://www.arukereso.hu/processzor-c3139/512-mb-l3-cache/ "L3 cache: 512 MB - Processzor árak összehasonlítása - Árukereső.hu"
-        [cpu_zen5_1_2]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-socket-sp5%2Camd-epyc/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-        [cpu_zen5_1_3]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9375f-32-core-3-8ghz-sp5-tray-100-000001197-p1162090915/ "AMD EPYC 9375F 32-Core 3.8GHz SP5 Tray (100-000001197 ..."
-        [cpu_zen5_1_4]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2C256-mb-l3-cache/ "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc, L3 ..."
-        [cpu_zen5_1_5]: https://www.arukereso.hu/processzor-c3139/amd/epyc-9475f-48-core-3-65ghz-sp5-tray-100-000001143-p1163945305/ "AMD EPYC 9475F 48-Core 3.65GHz SP5 Tray (100-000001143 ..."
-        [cpu_zen5_1_6]: https://www.arukereso.hu/processzor-c3139/f%3A64-magos-processzor%2Camd-epyc/ "Típus: AMD Epyc, 64 magos processzor - Árukereső.hu"
-        [cpu_zen5_1_7]: https://www.arukereso.hu/processzor-c3139/f%3Aamd-epyc%2Ckiszereles-talcas/?orderby=1&start=75 "Vásárlás: Processzor árak összehasonlítása - Típus: AMD Epyc ..."
-        [cpu_zen5_2_1]: https://www.arukereso.hu/processzor-c3139/amd-socket-sp5/ "Processzor árak összehasonlítása - AMD Socket SP5 - Árukereső.hu"
-        [cpu_zen5_2_2]: https://www.arukereso.hu/processzor-c3139/96-magos-processzor/ "Vásárlás: Processzor árak összehasonlítása - 96 magos processzor"
-        [cpu_zen5_2_3]: https://www.arukereso.hu/processzor-c3139/4-nm/ "Processzor árak összehasonlítása - Gyártási technológia: 4 nm"
+        | Processor Model   | Approx. Price[EUR] |
+        |-------------------|--------------------|
+        | **Below 300 W**   |                    |
+        | 9355P             | 3560               |
+        | 9355 ←            | 2920               |
+        | 9365              | 3410               |
+        | 9455P             | 3890               |
+        | 9455              | 3980               |
+        | 9535              | 5920               |
+        | **Above 300 W**   |                    |
+        | 9175F             | 2820               |
+        | 9275F             | 2850               |
+        | 9375F             | 5320               |
+        | 9475F ←           | 4230               |
+        | 9555              | 5820               |
+        | 9555P             | 5230               |
+        | 9565              | 5970               |
+        | 9575F             | 7100               |
+        | 9645              | 6920               |
+        | 9655              | 6070               |
+        | 9655P             | 7570               |
+        | 9745              | — Not found —      |
+        | 9825              | — Not found —      |
+        | 9845              | — Not found —      |
 
 </details>
 <details><summary>CPU cooler prices</summary>
 
-- [Arctic Freezer 4U-SP5](https://www.arukereso.hu/szamitogep-huto-c3094/arctic/freezer-4u-sp5-acfre00158a-p1161603583/): 70 EUR
+- Arctic Freezer 4U-SP5: 70 EUR
 
 </details>
 <details><summary>RAM prices</summary>
@@ -754,86 +726,60 @@ Minimal 1-CPU configuration
 -   Vendors:
     -   [Micron RDIMM memory part catalog](https://www.micron.com/products/memory/dram-modules/rdimm/part-catalog)
 -   Requirement:
-    -   [DDR5 RDIMM 1Rx4 or 2Rx8](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-32-gb,memoria-tipusa-ddr5,tipus-szerver-memoria,sebesseg=4800-9200/?orderby=1&st=RDIMM)
+    -   DDR5 RDIMM 1Rx4 or 2Rx8
 
 -   For 1-CPU architecture: 12 x 32 GB RDIMM 1Rx4 or 2Rx8 (384 GB in total)
     -   Candidates:
-        -   12 x [Micron RDIMM DDR5 32GB 2Rx8 6400MHz PC5-51200 ECC REGISTERED | MTC20F2085S1RC64BR](https://www.senetic.hu/product/MTC20F2085S1RC64BR): 12 x 180 = 2100 EUR
-        -   12 x [Micron 32GB DDR5 4800MHz MTC20F2085S1RC48BR](https://www.arukereso.hu/memoria-modul-c3577/micron/32gb-ddr5-4800mhz-mtc20f2085s1rc48br-p1004252032/) 12 x 200 = 2400 EUR
-        -   12 x [Samsung 32GB DDR5 5600MHz M321R4GA3PB0-CWM](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3pb0-cwm-p1051234201/): 12 x 200 = 2400 EUR
-        -   12 x [M321R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga0bb0-cqk/),
-            [Árukereső](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m321r4ga0bb0-cqk-p921898419/): 12 x 316 = 3800 EUR
-        -   12 x [M321R4GA3BB6-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m321r4ga3bb6-cqk/),
-            [Árukereső](https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-4800mhz-m321r4ga3bb6-cqk-p872096736/): 12 x 255 = 3000 EUR
-        -   12 x [M329R4GA0BB0-CQK](https://semiconductor.samsung.com/dram/module/rdimm/m329r4ga0bb0-cqk/)
+        -   12 x Micron RDIMM DDR5 32GB 2Rx8 6400MHz PC5-51200 ECC REGISTERED | MTC20F2085S1RC64BR: 12 x 180 = 2100 EUR
+        -   12 x Micron 32GB DDR5 4800MHz MTC20F2085S1RC48BR: 12 x 200 = 2400 EUR
+        -   12 x Samsung 32GB DDR5 5600MHz M321R4GA3PB0-CWM: 12 x 200 = 2400 EUR
+        -   12 x M321R4GA0BB0-CQK: 12 x 316 = 3800 EUR
+        -   12 x M321R4GA3BB6-CQK: 12 x 255 = 3000 EUR
+        -   12 x M329R4GA0BB0-CQK
         -   Kingston
-            | Memory Module            | Price (HUF)            | Notes / Source                                         |
-            | ------------------------ | ---------------------- | ------------------------------------------------------ |
-            | **KSM48R40BD8-32HA**     | from 77 175 Ft         | Árukereső listings ([Árukereső.hu][ram_kingston_1])                 |
-            | **KSM48R40BD8-32MD**     | from 77 175 Ft         | Same listing covers both HA and MD ([Árukereső.hu][ram_kingston_1]) |
-            | **KSM56R46BD8-32MD**     | 76 590 Ft              | Direct offer ([Árukereső.hu][ram_kingston_2])                       |
-            | **KSM56R46BD8PMI-32MDI** | from 93 900 Ft         | Árukereső comparison ([Árukereső.hu][ram_kingston_3])               |
-            | **KSM64R52BD8-32MD**     | 161 890 Ft             | Direct listing ([Árukereső.hu][ram_kingston_4])                     |
-
-            [ram_kingston_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Ctipus-szerver-memoria/?start=75 "Vásárlás: Kingston Memória modul árak összehasonlítása - Típus"
-            [ram_kingston_2]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5600mhz-ksm56r46bd8-32md-p1128575413/ "Kingston 32GB DDR5 5600MHz KSM56R46BD8 ... - Árukereső.hu"
-            [ram_kingston_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Akingston%2Cmemoriakesleltetes-cl-46/?orderby=1 "Vásárlás: Kingston Memória modul árak ... - Árukereső.hu"
-            [ram_kingston_4]: https://www.arukereso.hu/memoria-modul-c3577/kingston/32gb-ddr5-5200mhz-ksm64r52bd8-32md-p1190480737/ "Kingston 32GB DDR5 5200MHz KSM64R52BD8-32MD memória ..."
+            - KSM48R40BD8-32HA
+            - KSM48R40BD8-32MD
+            - KSM56R46BD8-32MD
+            - KSM56R46BD8PMI-32MDI
+            - KSM64R52BD8-32MD
         -   Samsung
-            | Memory Module        | Price (HUF)         | Notes                                       |
-            |----------------------|---------------------|---------------------------------------------|
-            | **M321R4GA0BB0-CQK** | from **126 105 Ft** | Listed on Árukereső ([Árukereső.hu][ram_samsung_1])  |
-            | **M321R4GA3BB6-CQK** | from **91 900 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_1])  |
-            | **M321R4GA3EB0-CWM** | from **78 272 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_2])  |
-            | **M321R4GA3PB0-CWM** | from **74 580 Ft**  | Listed on Árukereső ([Árukereső.hu][ram_samsung_3])  |
-
-            [ram_samsung_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoria-tipusa-ddr5/?orderby=1 "Olcsó DDR5 Samsung memória - Árukereső.hu"
-            [ram_samsung_2]: https://www.arukereso.hu/memoria-modul-c3577/samsung/32gb-ddr5-5600mhz-m321r4ga3eb0-cwm-p1194855955/ "Samsung 32GB DDR5 5600MHz M321R4GA3EB0-CWM memória ..."
-            [ram_samsung_3]: https://www.arukereso.hu/memoria-modul-c3577/f%3Asamsung%2Cmemoriakesleltetes-cl-46/ "Vásárlás: Samsung Memória modul árak ... - Árukereső.hu"
+            - M321R4GA0BB0-CQK
+            - M321R4GA3BB6-CQK
+            - M321R4GA3EB0-CWM
+            - M321R4GA3PB0-CWM
         -   Micron
-            | Memory Module                                 | Price (HUF)                                       | Availability |
-            | --------------------------------------------- | ------------------------------------------------- | ------------ |
-            | **MTC20F2085S1RC48BR** (32 GB, DDR5 4800 MHz) | from **82 648 Ft** ([Árukereső.hu][ram_micron_1]) | Available    |
-            | **MTC20F2085S1RC56BR** (32 GB, DDR5 5600 MHz) | from **69 602 Ft** ([Árukereső.hu][ram_micron_2]) | Available    |
-
-            [ram_micron_1]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Ckapacitas-32-gb/ "Vásárlás: Micron Memória modul árak összehasonlítása - Kapacitás ..."
-            [ram_micron_2]: https://www.arukereso.hu/memoria-modul-c3577/f%3Amicron%2Cmemoria-tipusa-ddr5/ "Micron Memória modul árak összehasonlítása - DDR5 - Árukereső.hu"
+            - MTC20F2085S1RC48BR (32 GB, DDR5 4800 MHz)
 -   For 2-CPU architecture:
-    -   24 x [Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA](https://www.arukereso.hu/memoria-modul-c3577/kingston/16gb-ddr5-4800mhz-ksm48e40bs8ki-16ha-p1054408474/): 24 x 100 = 2400 EUR
+    -   24 x Kingston 16GB DDR5 4800MHz KSM48E40BS8KI-16HA: 24 x 100 = 2400 EUR
 
 </details>
 <details><summary>SSD prices</summary>
 
--   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://belso-ssd-meghajto.arukereso.hu/samsung/990-pro-4tb-mz-v9p4t0bw-p1002242350/): 300 EUR
+-   Samsung 990 PRO 4TB (MZ-V9P4T0BW): 300 EUR
 
 </details>
 <details><summary>Motherboard prices</summary>
 
 -   CEB:
-    -   [Asus K14PA-U12](https://smicro.hu/asus-k14pa-u12-90sb0ci0-m0uay0-4?aku=db3621a52f6055ee636a6fee6ff8a353): 800 EUR
+    -   Asus K14PA-U12: 800 EUR
 -   ATX:
-    -   [Supermicro MBD-H13SSL-NT-O](https://smicro.hu/supermicro-mbd-h13ssl-nt-o-4): 830 EUR
-    -   [GIGABYTE MZ33-AR0](https://www.arukereso.hu/alaplap-c3128/gigabyte/mz33-ar0-p1005435430/): 1100 EUR
+    -   Supermicro MBD-H13SSL-NT-O: 830 EUR
+    -   GIGABYTE MZ33-AR0: 1100 EUR
 
 </details>
 <details><summary>PSU prices</summary>
 
--   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://www.arukereso.hu/tapegyseg-c3158/seasonic/prime-px-2200-2200w-80-plus-platinum-p1129871905/): 630 EUR
+-   Seasonic Prime PX-2200 2200W 80 PLUS Platinum: 630 EUR
 
 </details>
 <details><summary>Chassis prices</summary>
 
--   [Fractal Design Torrent](https://www.arukereso.hu/szamitogep-haz-c3085/f:fractal-design,szelesseg=4/?orderby=1&st=torrent): 240 EUR
--   [SilverStone H1 SST-SEH1B-G](https://www.arukereso.hu/szamitogep-haz-c3085/silverstone/h1-sst-seh1b-g-p853480299/): 210 EUR
+-   Fractal Design Torrent: 240 EUR
+-   SilverStone H1 SST-SEH1B-G: 210 EUR
 
 </details>
 <details><summary>Vendor sites</summary>
 
--   https://smicro.hu/amd-socket-sp5-5
--   https://www.senetic.hu/category/amd-cpu-epyc-9004-11151/
--   https://www.arukereso.hu/processzor-c3139/f:tdp=0-350,amd-socket-sp5,amd-epyc/?orderby=1
--   Motherboards:
-    -   https://smicro.hu/amd-sp5-5?filtrPriceFrom=&filtrPriceTo=&filter%5B2294%5D%5B%5D=39137&filter%5B2424%5D%5B%5D=42927&filter%5B2317%5D%5B%5D=38124&filter%5B2316%5D%5B%5D=38705&filter%5B2316%5D%5B%5D=39193&filter%5B2315%5D%5B%5D=40251&filter%5B2315%5D%5B%5D=43437&filter%5B2360%5D%5B%5D=39223
 -   https://geizhals.eu/
 
 </details>
@@ -882,7 +828,6 @@ Minimal 1-CPU configuration
     >   -   Networking: 2 x 10GbE LAN ports (RJ45, X710-AT2), one utilized at 10Gb
     >   -   Additional PCIe 5.0 card: ASUS 90SC0M60-M0XBN0
 
-
 </details> <!-- Server links -->
 
 <div class="page"/>
@@ -897,23 +842,17 @@ Light server configuration
     -   Maybe GIGABYTE ME03-PE0 if using one x16 slot at PCIe 4.0.
     -   Maybe ASUS S14NA-U12 if using MCIO extension.
 
-| Component   | Model                                                            | Price each<br>[HUF] | Price subtotal<br>[HUF] |
-|-------------|------------------------------------------------------------------|--------------------:|------------------------:|
-| CPU         | AMD EPYC [8224P][pr_8224P] (Zen 4)                               |         402,090     |             402,090     |
-| RAM         | Micron 64GB DDR5 4800MHz [MTC40F2046S1RC48BA1R][ram_ls_64gb] × 6 |         163,690     |             982,140     |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110                 |         129,910     |             259,820     |
-| Motherboard | ASRock Rack [SIENAD8-2L2T][mbd_SIENAD8-2L2T]                     |         317,034     |             317,034     |
-| CPU cooler  | BE QUIET! Silent Loop 3 360mm Liquid cooler                      |          60,960     |              60,960     |
-| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum                    |         215,900     |             215,900     |
-| Chassis     | Corsair iCUE 9000D RGB Airflow Big-Tower                         |         266,700     |             266,700     |
-| Fans        | Noctua NF-F12 iPPC-3000 Industrial PWM 120mm × 13                |          13,208     |             171,704     |
-| **Total**   |                                                                  |                     |         **2,676,348**   |
-
-
-[pr_8224P]: https://www.arukereso.hu/processzor-c3139/amd/epyc-8224p-24-core-2-55ghz-sp6-tray-100-000001134-p1035460933/
-[mbd_SIENAD8-2L2T]: https://www.senetic.hu/product/SIENAD8-2L2T
-[ram_ls_64gb]: https://www.arukereso.hu/memoria-modul-c3577/micron/64gb-ddr5-4800mhz-mtc40f2046s1rc48ba1r-p943393176/
-[sp6_clr_noctua]: https://ipon.hu/shop/termek/noctua-nh-d9-tr5-sp6-4u-cpu-cooler/2251012?aku=27dcaa5a946a5d25ecbc2b5ca46149b2
+| Component   | Model                                             | Price each<br>[EUR] | Price subtotal<br>[EUR] |
+|-------------|---------------------------------------------------|--------------------:|------------------------:|
+| CPU         | AMD EPYC 8224P (Zen 4)                            |         1000        |             1000        |
+| RAM         | Micron 64GB DDR5 4800MHz MTC40F2046S1RC48BA1R × 6 |         400         |             2450        |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110  |         320         |             640         |
+| Motherboard | ASRock Rack SIENAD8-2L2T                          |         790         |             790         |
+| CPU cooler  | BE QUIET! Silent Loop 3 360mm Liquid cooler       |         150         |             150         |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum     |         530         |             530         |
+| Chassis     | Corsair iCUE 9000D RGB Airflow Big-Tower          |         660         |             660         |
+| Fans        | Noctua NF-F12 iPPC-3000 Industrial PWM 120mm × 13 |         30          |             420         |
+| **Total**   |                                                   |                     |          **6640**       |
 
 ### Specs
 
@@ -1044,17 +983,17 @@ Workstation configuration
 -   Theoretical maximum RAM bandwidth of 204.8 GB/s
 -   Suggested processors: AMD Ryzen Threadripper 9960X, 7960X
 
-| Component     | Model                                                                    | Price each<br>[HUF] | Price subtotal<br>[HUF] |
+| Component     | Model                                                                    | Price each<br>[EUR] | Price subtotal<br>[EUR] |
 |---------------|--------------------------------------------------------------------------|--------------------:|------------------------:|
-| CPU           | AMD Ryzen Threadripper [9960X][cpu_tr_9960x] (Zen 5)                     |         718,790     |             718,790     |
-| RAM           | KSM64R52BD8-32HA, 32GB 6400MT/s DDR5 ECC Reg CL52 DIMM 2Rx8 Hynix A × 8  |          95,250     |             762,000     |
-| SSD           | Samsung 9100 PRO, PCIe 5.0, NVMe 2.0, 2TB M.2 SSD × 2                    |         109,220     |             218,440     |
-| Motherboard   | Gigabyte MB Sc Sc sTR5 TRX50 AI TOP, AMD TRX50, 8xDDR5, WI-FI, E-ATX     |         410,210     |             410,210     |
-| CPU cooler    | BE QUIET! Silent Loop 3 360mm Liquid cooler                              |          60,960     |              60,960     |
-| PSU           | Seasonic Prime PX-2200 2200W 80 PLUS Platinum                            |         215,900     |             215,900     |
-| Chassis       | Corsair iCUE 9000D RGB Airflow Big-Tower                                 |         266,700     |             266,700     |
-| Fans          | Noctua NF-F12 iPPC-3000 Industrial PWM 120mm × 13                        |          13,208     |             171,704     |
-| **Total**     |                                                                          |                     |         **2,824,604**   |
+| CPU           | AMD Ryzen Threadripper [9960X][cpu_tr_9960x] (Zen 5)                     |         1790        |             1790        |
+| RAM           | KSM64R52BD8-32HA, 32GB 6400MT/s DDR5 ECC Reg CL52 DIMM 2Rx8 Hynix A × 8  |         230         |             1900        |
+| SSD           | Samsung 9100 PRO, PCIe 5.0, NVMe 2.0, 2TB M.2 SSD × 2                    |         270         |             540         |
+| Motherboard   | Gigabyte MB Sc Sc sTR5 TRX50 AI TOP, AMD TRX50, 8xDDR5, WI-FI, E-ATX     |         1020        |             1020        |
+| CPU cooler    | BE QUIET! Silent Loop 3 360mm Liquid cooler                              |         150         |             150         |
+| PSU           | Seasonic Prime PX-2200 2200W 80 PLUS Platinum                            |         530         |             530         |
+| Chassis       | Corsair iCUE 9000D RGB Airflow Big-Tower                                 |         660         |             660         |
+| Fans          | Noctua NF-F12 iPPC-3000 Industrial PWM 120mm × 13                        |         30          |             420         |
+| **Total**     |                                                                          |                     |          **7010**       |
 
 ### Specs
 
@@ -1118,32 +1057,27 @@ Workstation configuration
     -   This table assumes that a TRX50 motherboard is used, and calculates
         with 4 memory channels even for the Threadripper Pro line.
 
-    | Model    | CCDs | CPU BW<br>[GB/s] | Mem ch | Mem speed | Mem BW<br>[GB/s] | OC Mem speed    | OC Mem BW   | Price |
-    |----------|------|------------------|--------|-----------|------------------|-----------------|-------------|------:|
-    | 9995WX   | 12   | 768.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       |       |
-    | 9985WX   | 8    | 512.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       | 3 417 990 Ft |
-    | 9975WX   | 4    | 256.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       | 1 754 389 Ft |
-    | 9965WX   | 4    | 256.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       | 1 230 191 Ft |
-    | 9955WX   | 2    | 128.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |       |
-    | 9945WX   | 2    | 128.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |       |
-    | 9980X    | 8    | 512.0            | 4      | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       | 2 141 790 Ft |
-    | 9970X    | 4    | 256.0 ✅        | 4      | 6400 MT/s | 204.8            | 8000 MT/s ✅    | 256.0 ✅   | [1 157 190 Ft][cpu_tr_9970x] |
-    | 9960X    | 4    | 256.0 ✅        | 4      | 6400 MT/s | 204.8            | 8000 MT/s ✅    | 256.0 ✅   | [718 790 Ft][cpu_tr_9960x] |
-    ||||||||||
-    | 7995WX   | 12   | 499.2            | 4(8)   | 5200 MT/s | 332.8            | 8000 MT/s       | 256.0       |       |
-    | 7985WX   | 8    | 460.8            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       | 3 111 630 Ft |
-    | 7975WX   | 4    | 230.4            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       | 1 663 189 Ft |
-    | 7965WX   | 4    | 230.4            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       | 1 072 890 Ft |
-    | 7955WX   | 2    | 115.2            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |       |
-    | 7945WX   | 2    | 115.2            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |       |
-    | 7980X    | 8    | 460.8            | 4      | 5200 MT/s | 166.4            | 8000 MT/s       | 256.0       |       |
-    | 7970X    | 4    | 230.4 ✅        | 4      | 5200 MT/s | 166.4            | 7200 MT/s ✅    | 230.4 ✅   | [1 070 690 Ft][cpu_tr_7970x] |
-    | 7960X    | 4    | 230.4 ✅        | 4      | 5200 MT/s | 166.4            | 7200 MT/s ✅    | 230.4 ✅   | [621 980 Ft][cpu_tr_7960x] |
-
-    [cpu_tr_7960x]: https://www.arukereso.hu/processzor-c3139/amd/ryzen-threadripper-7960x-24-core-4-2ghz-sp6-str5-box-100-100001352wof-p1026372205/
-    [cpu_tr_7970x]: https://www.arukereso.hu/processzor-c3139/amd/ryzen-threadripper-7970x-32-core-4-0ghz-str5-box-100-100001351wof-p1026372193/
-    [cpu_tr_9960x]: https://www.arukereso.hu/processzor-c3139/amd/ryzen-threadripper-pro-9960x-24-core-5-4ghz-str5-box-100-100001595wof-p1215565084/
-    [cpu_tr_9970x]: https://www.arukereso.hu/processzor-c3139/amd/ryzen-threadripper-pro-9970x-32-core-5-4ghz-str5-box-100-100001594wof-p1215566377/
+    | Model    | CCDs | CPU BW<br>[GB/s] | Mem ch | Mem speed | Mem BW<br>[GB/s] | OC Mem speed    | OC Mem BW   | Approx. price[EUR] |
+    |----------|------|------------------|--------|-----------|------------------|-----------------|-------------|-------------------:|
+    | 9995WX   | 12   | 768.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       |                    |
+    | 9985WX   | 8    | 512.0            | 4(8)   | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       |              8540  |
+    | 9975WX   | 4    | 256.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |              4380  |
+    | 9965WX   | 4    | 256.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |              3070  |
+    | 9955WX   | 2    | 128.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |                    |
+    | 9945WX   | 2    | 128.0            | 4(8)   | 6400 MT/s | 204.8            | 7200 MT/s       | 230.4       |                    |
+    | 9980X    | 8    | 512.0            | 4      | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       |              5350  |
+    | 9970X    | 4    | 256.0 √          | 4      | 6400 MT/s | 204.8            | 8000 MT/s √     | 256.0 √     |              2890  |
+    | 9960X    | 4    | 256.0 √          | 4      | 6400 MT/s | 204.8            | 8000 MT/s √     | 256.0 √     |              1790  |
+      |||
+    | 7995WX   | 12   | 499.2            | 4(8)   | 5200 MT/s | 332.8            | 8000 MT/s       | 256.0       |              7770  |
+    | 7985WX   | 8    | 460.8            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |              4150  |
+    | 7975WX   | 4    | 230.4            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |              2680  |
+    | 7965WX   | 4    | 230.4            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |                    |
+    | 7955WX   | 2    | 115.2            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |                    |
+    | 7945WX   | 2    | 115.2            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |                    |
+    | 7980X    | 8    | 460.8            | 4      | 5200 MT/s | 166.4            | 8000 MT/s       | 256.0       |              2670  |
+    | 7970X    | 4    | 230.4 √          | 4      | 5200 MT/s | 166.4            | 7200 MT/s √     | 230.4 √     |              1550  |
+    | 7960X    | 4    | 230.4 √          | 4      | 5200 MT/s | 166.4            | 7200 MT/s √     | 230.4 √     |              7570  |
 
 </details>
 
@@ -1153,14 +1087,14 @@ Workstation configuration
     | Speed | Supplier    | Capacity | Rank     | Module P/N            | Chip Brand | Timing           | Voltage | Native |
     |-------|-------------|----------|----------|-----------------------|------------|------------------|---------|--------|
     | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRA564G72D836         | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
-    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRA564G72D836Q ✅     | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
+    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRA564G72D836Q √      | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
     | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRA564G72D836O        | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
     | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRAL564G72D836        | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
-    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRAL564G72D836Q ✅    | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
+    | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRAL564G72D836Q √     | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
     | 7200  | V-COLOR     | 64GB     | 2Rx8     | TRAL564G72D836O       | Hynix M    | 36-51-51-112     | 1.4V    | 6400   |
     | 6400  | Micron      | 64GB     | 2Rx4     | MTC40F2046S1RC64BD2R  | Micron     | CL52             | 1.1V    | 6400   |
     | 6400  | V-COLOR     | 64GB     | 2Rx4     | TR564G64D452          | Hynix A    | 52-52-52-103     | 1.1V    | 6400   |
-    | 6400  | V-COLOR     | 64GB     | 2Rx4     | TR564G64D452Q ✅      | Hynix A    | 52-52-52-103     | 1.1V    | 6400   |
+    | 6400  | V-COLOR     | 64GB     | 2Rx4     | TR564G64D452Q √       | Hynix A    | 52-52-52-103     | 1.1V    | 6400   |
     | 6400  | V-COLOR     | 64GB     | 2Rx4     | TR564G64D452O         | Hynix A    | 52-52-52-103     | 1.1V    | 6400   |
     | 6400  | V-COLOR     | 64GB     | 2Rx8     | TRL564G64D852         | Hynix M    | 52-52-52-103     | 1.1V    | 6400   |
     | 6400  | V-COLOR     | 64GB     | 2Rx8     | TRL564G64D852Q        | Hynix M    | 52-52-52-103     | 1.1V    | 6400   |
@@ -1180,9 +1114,9 @@ Workstation configuration
 -   RAM module candidates for the Threadripper 9000 series CPUs, 8 x 32 = 256 GB configuration:
     | Speed  | Supplier       | Capacity | Rank  | Module P/N                | Chip Brand | Timing         | Voltage | Native |
     |--------|----------------|----------|-------|---------------------------|------------|----------------|---------|--------|
-    | 8000 ✅ | V-COLOR       | 32GB     | 1Rx8  | TRA532G80S842O            | Hynix M    | 42-60-60-126   | 1.4V    | 6400   |
-    | 8000 ✅ | V-COLOR       | 32GB     | 1Rx8  | TRAL532G80S842O           | Hynix M    | 42-60-60-126   | 1.4V    | 6400   |
-    | 7200 ✅ | V-COLOR       | 32GB     | 2Rx8  | TRA532G72D834O            | Hynix A    | 34-45-45-96    | 1.35V   | 6400   |
+    | 8000 √ | V-COLOR        | 32GB     | 1Rx8  | TRA532G80S842O            | Hynix M    | 42-60-60-126   | 1.4V    | 6400   |
+    | 8000 √ | V-COLOR        | 32GB     | 1Rx8  | TRAL532G80S842O           | Hynix M    | 42-60-60-126   | 1.4V    | 6400   |
+    | 7200 √ | V-COLOR        | 32GB     | 2Rx8  | TRA532G72D834O            | Hynix A    | 34-45-45-96    | 1.35V   | 6400   |
     | 6800   | G.SKILL        | 32GB     | —     | F5-6800R3445G32GE8-ZR5NK  | Hynix      | 34-45-45-108   | 1.4V    | 4800   |
     | 6800   | Kingston FURY  | 32GB     | 2Rx8  | KF568R34RBK8-256          | Hynix A    | 34-44-44-105   | 1.4V    | 4800   |
     | 6800   | Kingston FURY  | 32GB     | 2Rx8  | KF568R34RBK4-128          | Hynix A    | 34-44-44-105   | 1.4V    | 4800   |
@@ -1252,17 +1186,19 @@ Workstation configuration
 -   10 GB LLM model expected CPU-only performance: Prompt processing: 125 token/s, Token generation: 8 token/s
 -   Supports 1 PCIe x16 GPU, or 2 PCIe x8 GPUs.
 
-| Component   | Model                                              | Price each<br>[HUF] | Price subtotal<br>[HUF] |
-|-------------|----------------------------------------------------|--------------------:|------------------------:|
-| CPU         | AMD Ryzen 9 9950X3D                                |       1,120,491     |           1,120,491     |
-| RAM         |     |          76,020     |             912,240     |
-| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110   |         129,910     |             129,910     |
-| Motherboard |                            |         328,912     |             328,912     |
-| CPU cooler  | Noctua NH-D15 G2                                   |               |              23,990     |
-| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum      |         212,990     |             212,990     |
-| Chassis     | Fractal Design Torrent                             |          75,600     |              75,600     |
-| **Total**   |                                                    |                     |         **2,804,133**   |
+| Component   | Model                                                |
+|-------------|------------------------------------------------------|
+| CPU         | AMD Ryzen 9 9950X3D                                  |
+| RAM         | [G.Skill 4x64GB F5-6000J3644D64GX4-TZ5NR 256GB][mem] |
+| SSD         | Samsung PM9A3 1.9TB NVMe PCIe Gen4 V6 M.2 22x110     |
+| Motherboard | [MSI B850 Tomahawk Max Wifi][mb_msi]                 |
+| CPU cooler  | Noctua NH-D15 G2                                     |
+| PSU         | Seasonic Prime PX-2200 2200W 80 PLUS Platinum        |
+| Chassis     | Fractal Design Torrent                               |
+| **Total**   |                                                      |
 
+[mb_msi]: https://www.youtube.com/watch?v=pA-R1FabTDY
+[mem]: https://www.youtube.com/watch?v=Rn18jQSi8vg
 
 ### AMD Ryzen 9 9950X3D
 
@@ -1281,7 +1217,7 @@ Workstation configuration
     -   Max memory bandwidth:
         -   2 modules -> 5600 MT/s -> 2 x 8 x 5.6 = 89.6 GB/s
         -   4 modules -> 3600 MT/s -> 2 x 8 x 3.6 = 57.6 GB/s
-            -   ❗**Note:** This is not sufficient to saturate the PCIe 5.0 x16 lanes, which require 63 GB/s.
+            -   **Note:** This is not sufficient to saturate the PCIe 5.0 x16 lanes, which require 63 GB/s.
     -   128MB L3 cache
         -   192MB L3 cache variant is [available](https://www.techpowerup.com/review/future-hardware-releases/#ryzenx3ddualcc)
             ([soon](https://www.techpowerup.com/339579/amd-readies-16-core-ryzen-9000x3d-cpu-with-192-mb-l3-cache-and-200-w-tdp))
@@ -1317,7 +1253,7 @@ Workstation configuration
         -   Dual RTX 5090 readiness:
             -   Supported electrically (PCIe 5.0 x8/x8 for two GPUs).
             -   No supplemental PCIe slot power header is advertised; ensure robust PSU and airflow.
-        -   ❗**Note:** May burn the CPU with unfortunate PBO settings
+        -   **Note:** May burn the CPU with unfortunate PBO settings
     -   [ASUS ROG Crosshair X870E Hero](https://rog.asus.com/motherboards/rog-crosshair/rog-crosshair-x870e-hero-model/)
         -   Dual RTX 5090 readiness:
             -   Supported electrically (x8/x8).
@@ -1381,16 +1317,16 @@ Workstation configuration
 -   RAM:\
    \ -   CPU max RAM: [192 GB](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html)
     -   Motherboard: 2x/4x DDR5 DIMM slots
-    -   [128 GB](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-128-gb,tipus-pc-memoria/?orderby=1): 360 EUR
+    -   128 GB: 360 EUR
         -   RAM BW upper limit: 2 x 8 x 5.6 = 89.6 GB/s
-    -   [192 GB](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-192-gb,tipus-pc-memoria/): 760 EUR
+    -   192 GB: 760 EUR
         -   [RAM BW upper limit](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html):
             2 channels x 8 x 3.6 MT/s = 57.6 GB/s
-            -   ❗**Note:** 192 GB (vs 128 GB) system RAM will **reduce** 10 GB
+            -   **Note:** 192 GB (vs 128 GB) system RAM will **reduce** 10 GB
                 LLM model CPU-only token generation speed from 8 token/s down
                 to 5 token/s maximum. Overclocking may improve a few token/s,
                 but no substantial improvement.
-            -   ❗**Note:** This practically limits the system RAM to 128 GB.
+            -   **Note:** This practically limits the system RAM to 128 GB.
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
 -   PSU:
@@ -1437,28 +1373,26 @@ Workstation configuration
 #### Price
 
 -   CPU:
-    -   [AMD Ryzen 9 9950X3D](https://www.arukereso.hu/processzor-c3139/?orderby=1&st=9950x3d): 700 EUR
+    -   AMD Ryzen 9 9950X3D: 700 EUR
 -   CPU cooler:
-    -   [Noctua NH-D15 G2](https://www.arukereso.hu/szamitogep-huto-c3094/noctua/nh-d15-g2-p1101386203/): 180 EUR
+    -   Noctua NH-D15 G2: 180 EUR
 -   RAM:
-    -   [128 GB](https://www.arukereso.hu/memoria-modul-c3577/f:kapacitas-128-gb,tipus-pc-memoria/?orderby=1): 360 EUR
+    -   128 GB: 360 EUR
 -   SSD:
-    -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://belso-ssd-meghajto.arukereso.hu/samsung/990-pro-4tb-mz-v9p4t0bw-p1002242350/): 300 EUR
+    -   Samsung 990 PRO 4TB (MZ-V9P4T0BW): 300 EUR
 -   Motherboard:
-    -   [ASRock X870E Taichi](https://www.arukereso.hu/alaplap-c3128/?st=ASRock+X870E+Taichi): 490 EUR
-    -   [Ausus ROG Crosshair X870E Hero](https://www.arukereso.hu/alaplap-c3128/?st=ROG+Crosshair+X870E): 650 EUR
-    -   [Ausus ROG Crosshair X870E Extreme](https://www.arukereso.hu/alaplap-c3128/?st=ROG+Crosshair+X870E): 1300 EUR
-    -   [Gigabyte X870E Aorus Xtreme AI TOP](https://www.arukereso.hu/alaplap-c3128/gigabyte/x870e-aorus-xtreme-ai-top-p1163326837/): 800 EUR
-    -   [MSI Meg X870E Godlike](https://www.arukereso.hu/alaplap-c3128/msi/meg-x870e-godlike-p1160493943/): 1300 EUR
+    -   ASRock X870E Taichi: 490 EUR
+    -   Ausus ROG Crosshair X870E Hero: 650 EUR
+    -   Ausus ROG Crosshair X870E Extreme: 1300 EUR
+    -   Gigabyte X870E Aorus Xtreme AI TOP: 800 EUR
+    -   MSI Meg X870E Godlike: 1300 EUR
 -   PSU
-    -   [Seasonic Prime PX-2200 2200W 80 PLUS Platinum](https://www.arukereso.hu/tapegyseg-c3158/seasonic/prime-px-2200-2200w-80-plus-platinum-p1129871905/): 550 EUR
+    -   Seasonic Prime PX-2200 2200W 80 PLUS Platinum: 550 EUR
 -   Case
-    -   [Fractal Design Define 7](https://www.arukereso.hu/szamitogep-haz-c3085/fractal-design/define-7-black-fd-c-def7a-01-p545013072/#): 240 EUR
+    -   Fractal Design Define 7: 240 EUR
 -   Total price without GPU:
     -   700 + 180 + 360 + 300 + 490 + 550 + 240 = 2820 EUR minimum.
     -   2520 + 300 ~= 3100 EUR with Gigabyte X870E Aorus Xtreme AI TOP motherboard.
-
-
 
 Desktop CPU Links:
 -   https://www.anandtech.com/show/21524/the-amd-ryzen-9-9950x-and-ryzen-9-9900x-review/10
@@ -1621,8 +1555,7 @@ Specs ([TechPowerUp](https://www.techpowerup.com/gpu-specs/radeon-rx-7900-xtx.c3
 -   Suggested PSU: 750 W
 
 Price:
--   [Árukereső](https://www.arukereso.hu/videokartya-c3142/f:amd-radeon-video-chipset,rx-7900-xtx/?orderby=1)
-    -   341,000 to 419,000 HUF (860 to 1100 EUR)
+-   860 to 1100 EUR
 
 ### AMD Radeon™AI PRO R9700
 
