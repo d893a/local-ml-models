@@ -479,7 +479,7 @@ Where:
 -   BW: Theoretical system RAM bandwidth.
     -   Actual values are measured between 30% to 95% of the theoretical maximum.
 -   FCLK: Fabric Clock Speed - clock speed of the memory controller in the CPU.
-    -   Zen 4: 1.8 Ghz, Zen 5: 2.0 GHz. Some models can be overclocked.
+    -   Zen 4: 1.8 GHz, Zen 5: 2.0 GHz. Some models can be overclocked.
 -   CCD: Core complex Die - contains the memory controller on the CPU side.
     -   Ranges from 1 to 16 per CPU core.
 -   RAM speed: 4.8 GT/s to 8 GT/s; can be overclocked

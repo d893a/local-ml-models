@@ -1068,7 +1068,9 @@ Workstation configuration
     | 9980X    | 8    | 512.0            | 4      | 6400 MT/s | 204.8            | 8000 MT/s       | 256.0       |              5350  |
     | 9970X    | 4    | 256.0 √          | 4      | 6400 MT/s | 204.8            | 8000 MT/s √     | 256.0 √     |              2890  |
     | 9960X    | 4    | 256.0 √          | 4      | 6400 MT/s | 204.8            | 8000 MT/s √     | 256.0 √     |              1790  |
-      |||
+
+    | Model    | CCDs | CPU BW<br>[GB/s] | Mem ch | Mem speed | Mem BW<br>[GB/s] | OC Mem speed    | OC Mem BW   | Approx. price[EUR] |
+    |----------|------|------------------|--------|-----------|------------------|-----------------|-------------|-------------------:|
     | 7995WX   | 12   | 499.2            | 4(8)   | 5200 MT/s | 332.8            | 8000 MT/s       | 256.0       |              7770  |
     | 7985WX   | 8    | 460.8            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |              4150  |
     | 7975WX   | 4    | 230.4            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |              2680  |
@@ -1077,7 +1079,7 @@ Workstation configuration
     | 7945WX   | 2    | 115.2            | 4(8)   | 5200 MT/s | 332.8            | 7200 MT/s       | 230.4       |                    |
     | 7980X    | 8    | 460.8            | 4      | 5200 MT/s | 166.4            | 8000 MT/s       | 256.0       |              2670  |
     | 7970X    | 4    | 230.4 √          | 4      | 5200 MT/s | 166.4            | 7200 MT/s √     | 230.4 √     |              1550  |
-    | 7960X    | 4    | 230.4 √          | 4      | 5200 MT/s | 166.4            | 7200 MT/s √     | 230.4 √     |              7570  |
+    | 7960X    | 4    | 230.4 √          | 4      | 5200 MT/s | 166.4            | 7200 MT/s √     | 230.4 √     |              1570  |
 
 </details>
 
@@ -1209,6 +1211,7 @@ Workstation configuration
     ([AMD](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html))
     ([TechPowerUp](https://www.techpowerup.com/cpu-specs/ryzen-9-9950x3d.c3993))
     -   Max. Memory: 192 GB
+    -   Zen 5: BW_CPU = 2 CCD x 32 x 2.0 GHz = 128.0 GB/s
     -   Max Memory Speed
         -   2x1R    DDR5-5600
         -   2x2R    DDR5-5600
@@ -1222,6 +1225,22 @@ Workstation configuration
         -   192MB L3 cache variant is [available](https://www.techpowerup.com/review/future-hardware-releases/#ryzenx3ddualcc)
             ([soon](https://www.techpowerup.com/339579/amd-readies-16-core-ryzen-9000x3d-cpu-with-192-mb-l3-cache-and-200-w-tdp))
         -   Default TDP: 170W
+-   RAM:
+    -   CPU max RAM: [192 GB](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html)
+    -   Motherboard: 2x/4x DDR5 DIMM slots
+    -   128 GB: 360 EUR
+        -   RAM BW upper limit: 2 x 8 x 5.6 = 89.6 GB/s
+    -   192 GB: 760 EUR
+        -   [RAM BW upper limit](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html):
+            2 channels x 8 x 3.6 MT/s = 57.6 GB/s
+            -   **Note:** 192 GB (vs 128 GB) system RAM will **reduce** 10 GB
+                LLM model CPU-only token generation speed from 8 token/s down
+                to 5 token/s maximum. Overclocking may improve a few token/s,
+                but no substantial improvement.
+            -   **Note:** This practically limits the system RAM to 128 GB.
+    -   256 GB may be viable, 4 modeles, at 6000 MT/s: [Level1Techs: 256 GB on AM5: E-Z Mode!](https://www.youtube.com/watch?v=pA-R1FabTDY)
+        -   BW_RAM = 2 ch x 8 x 8.0 MT/s = 128.0 GB/s
+        -   BW_RAM = 2 ch x 8 x 6.0 MT/s = 96.0 GB/s
 -   CPU cooler
     -   [Noctua NH-D15 G2](https://noctua.at/en/nh-d15-g2/specification)
         -   [CPU compatibility](https://ncc.noctua.at/cpus/model/AMD-Ryzen-9-9950X3D-1864): OK
@@ -1269,6 +1288,17 @@ Workstation configuration
             -   High confidence. AORUS XTREME-class boards usually include an
                 auxiliary PCIe slot power header—verify in the manual; strong
                 pick for dual GPUs.
+    -   [MSI MAG X870 TOMAHAWK WIFI](https://www.msi.com/Motherboard/MAG-X870-TOMAHAWK-WIFI/Overview)
+        -   Chipset: AMD X870
+        -   CPU: Supports AMD Ryzen™ 9000/ 8000/ 7000 Series Desktop Processors
+        -   Memory:
+            -   4x DDR5 UDIMM, Maximum Memory Capacity 256GB
+            -   Memory Support DDR5 8400 - 5600 (OC) MT/s / 5600 - 4800 (JEDEC) MT/s
+            -   Ryzen™ 9000 Series Processors max. overclocking frequency:
+                -   1DPC 1R Max speed up to 8400+ MT/s
+                -   1DPC 2R Max speed up to 6400+ MT/s
+                -   2DPC 1R Max speed up to 6400+ MT/s
+                -   2DPC 2R Max speed up to 6400+ MT/s
     -   [MSI MEG X870E GODLIKE](https://www.msi.com/Motherboard/MEG-X870E-GODLIKE)
         -   [Datasheet](https://storage-asset.msi.com/datasheet/mb/global/MEG-X870E-GODLIKE.pdf)
         -   E-ATX
@@ -1314,19 +1344,6 @@ Workstation configuration
             | KLEVV       | KD5LGUD80-56G4600                  | 5600            | 3600                  | 1.1         | DUAL  | 48        | √ √ √      |
             | Crucial     | CP48G56C46U5.C16B                  | 5600            | 3600                  | 1.1         | DUAL  | 48        | √ √ √      |
             | Kingston    | KVR56U46BD8-48                     | 5600            | 3600                  | 1.1         | DUAL  | 48        | √ √ √      |
--   RAM:\
-   \ -   CPU max RAM: [192 GB](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html)
-    -   Motherboard: 2x/4x DDR5 DIMM slots
-    -   128 GB: 360 EUR
-        -   RAM BW upper limit: 2 x 8 x 5.6 = 89.6 GB/s
-    -   192 GB: 760 EUR
-        -   [RAM BW upper limit](https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html):
-            2 channels x 8 x 3.6 MT/s = 57.6 GB/s
-            -   **Note:** 192 GB (vs 128 GB) system RAM will **reduce** 10 GB
-                LLM model CPU-only token generation speed from 8 token/s down
-                to 5 token/s maximum. Overclocking may improve a few token/s,
-                but no substantial improvement.
-            -   **Note:** This practically limits the system RAM to 128 GB.
 -   SSD:
     -   [Samsung 990 PRO 4TB (MZ-V9P4T0BW)](https://www.techpowerup.com/ssd-specs/samsung-990-pro-4-tb.d863)
 -   PSU:
@@ -1442,7 +1459,6 @@ Expected performance for a 10 GB LLM model:
     -   128GB LPDDR5x-8000 memory (soldered)
     -   Memory Bus width: 256-bit
     -   Memory Speed: 8000 MT/s
-    -
 -   [Price](https://frame.work/hu/en/products/desktop-diy-amd-aimax300/configuration/new):
     -   3200 EUR
     -   Ships 2025 Q4
